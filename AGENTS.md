@@ -155,3 +155,10 @@ scenario running; everything else can build on that foundation.
 
 ## Agent Log
 - [2025-12-09T06:34:22Z] Agent: ChatGPT | Intent: build initial simulation scaffold per docs | Plan: read docs, implement scaffold structure with minimal classes and tests, add configs/experiments, run pytest smoke.
+- [2025-12-09T07:16:21Z] Agent: ChatGPT | Intent: extend coordinated policy and add experiment sweeps | Plan: review docs/instructions, update coordinated policy with thresholds/host deficit, add sweep scripts/configs, update tests, run relevant checks.
+
+## Handoff
+- Snapshot: `pytest` (2 passed, 1 skipped due to missing matplotlib dependency). 
+- Decisions: Added linear host demand via `host_demand_rate`, coordinated policy uses energy thresholds plus host deficit, optional movement toward largest coverage gap; experiments generate CSV+plots from configs.
+- TODO: Install matplotlib in execution environment for plot generation; run new sweep scripts to produce updated outputs as needed.
+- Questions: None.

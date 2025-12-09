@@ -5,6 +5,7 @@
   "solar_flux": 1000,
   "num_agents": 6,
   "policy": "baseline",
+  "host_demand_rate": 0.25,
   "agent_parameters": {
     "pv_area": 0.4,
     "pv_efficiency": 0.25,

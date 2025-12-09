@@ -1,8 +1,9 @@
-"""SNS agent model with simple HARVEST and IDLE behaviors."""
+"""SNS agent model with baseline and coordinated behaviors."""
 
 from __future__ import annotations
 
 import enum
+import math
 from dataclasses import dataclass
 
 from src.utils.math_utils import clamp
@@ -13,6 +14,8 @@ class AgentMode(str, enum.Enum):
 
     HARVEST = "HARVEST"
     IDLE = "IDLE"
+    COMM_BEAM = "COMM_BEAM"
+    MOVE = "MOVE"
 
 
 @dataclass
@@ -29,10 +32,13 @@ class AgentParameters:
     high_threshold: float = 4.0
     beam_efficiency: float = 0.6
     beam_rate: float = 0.5
+    power_comm: float = 0.1
+    power_move: float = 0.2
+    move_rate: float = 0.0005
 
 
 class SNSAgent:
-    """Simple SNS agent that can harvest and idle."""
+    """Simple SNS agent supporting configurable policies."""
 
     def __init__(self, agent_id: int, theta: float, params: AgentParameters) -> None:
         self.id = agent_id
@@ -41,31 +47,31 @@ class SNSAgent:
         self.energy = params.initial_energy
         self.mode = AgentMode.HARVEST
 
-    def decide_mode(self, sunlit: bool) -> None:
-        """Choose mode based on illumination and stored energy."""
-
-        if sunlit:
-            self.mode = AgentMode.HARVEST
-        else:
-            self.mode = AgentMode.IDLE
-
     def harvest_power(self, flux: float) -> float:
         """Compute instantaneous harvest power in watts."""
 
         return flux * self.params.pv_area * self.params.pv_efficiency
 
-    def load_power(self) -> float:
-        """Power draw in watts for the current mode."""
+    def load_power(self, mode: AgentMode) -> float:
+        """Power draw in watts for the requested mode."""
 
-        if self.mode is AgentMode.HARVEST:
+        if mode is AgentMode.HARVEST:
             return self.params.power_idle
-        return self.params.power_idle_low
+        if mode is AgentMode.IDLE:
+            return self.params.power_idle_low
+        if mode is AgentMode.COMM_BEAM:
+            return self.params.power_comm
+        if mode is AgentMode.MOVE:
+            return self.params.power_move
+        return self.params.power_idle
 
-    def beam_to_host(self, host, dt: float) -> float:
-        """Optionally beam energy to the host for coordinated policies."""
+    def beam_to_host(self, host, dt: float, host_deficit: float) -> float:
+        """Beam energy to the host when available and requested."""
 
         available = max(0.0, self.energy - self.params.low_threshold)
-        transfer = min(available, self.params.beam_rate * dt / 3600.0)
+        transfer_limit = self.params.beam_rate * dt / 3600.0
+        requested = host_deficit / self.params.beam_efficiency if self.params.beam_efficiency > 0 else 0.0
+        transfer = min(available, transfer_limit, requested if requested > 0 else available)
         if transfer <= 0:
             return 0.0
         delivered = transfer * self.params.beam_efficiency
@@ -73,21 +79,33 @@ class SNSAgent:
         host.receive_energy(delivered)
         return delivered
 
-    def step(self, world, host, t: float, dt: float, coordinated: bool = False) -> None:
-        """Advance the agent by one timestep."""
+    def move_toward(self, target_theta: float, dt: float) -> None:
+        """Rotate the agent toward a target angular position."""
 
-        sunlit = world.is_sunlit(self.theta, t)
-        self.decide_mode(sunlit)
+        if target_theta is None:
+            return
+        delta = (target_theta - self.theta + math.pi) % (2 * math.pi) - math.pi
+        step = math.copysign(self.params.move_rate * dt, delta)
+        if abs(step) > abs(delta):
+            step = delta
+        self.theta = (self.theta + step) % (2 * math.pi)
 
-        flux = world.flux(self.theta, t) if self.mode is AgentMode.HARVEST else 0.0
+    def step(self, world, host, t: float, dt: float, policy, context) -> None:
+        """Advance the agent by one timestep using the provided policy."""
+
+        self.mode = policy.decide(self, context)
+
+        flux = world.flux(self.theta, t) if context.sunlit else 0.0
         harvest_power = self.harvest_power(flux)
-        load_power = self.load_power()
+        load_power = self.load_power(self.mode)
 
         delta_energy = (harvest_power - load_power) * dt / 3600.0
         self.energy = clamp(self.energy + delta_energy, 0.0, self.params.energy_max)
 
-        if coordinated and self.energy > self.params.high_threshold:
-            self.beam_to_host(host, dt)
+        if self.mode is AgentMode.COMM_BEAM and self.energy > self.params.low_threshold:
+            self.beam_to_host(host, dt, context.host_deficit)
+        elif self.mode is AgentMode.MOVE and context.target_theta is not None:
+            self.move_toward(context.target_theta, dt)
 
     def __repr__(self) -> str:  # pragma: no cover - convenience
         return f"SNSAgent(id={self.id}, theta={self.theta:.2f}, energy={self.energy:.2f}, mode={self.mode})"
