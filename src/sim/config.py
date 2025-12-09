@@ -13,7 +13,14 @@ from src.agents.sns_agent import AgentParameters
 
 @dataclass
 class SimulationConfig:
-    """Container for simulation parameters."""
+    """Container for simulation parameters.
+
+    Attributes
+    ----------
+    host_demand_rate:
+        Linear demand rate (Wh/hour) used to build a simple host demand
+        curve when an explicit demand function is not provided.
+    """
 
     duration: float = 2 * 3600.0
     dt: float = 60.0
@@ -21,6 +28,7 @@ class SimulationConfig:
     solar_flux: float = 1000.0
     num_agents: int = 5
     policy: str = "baseline"
+    host_demand_rate: float = 0.0
     agent_parameters: AgentParameters = field(default_factory=AgentParameters)
 
     @classmethod
@@ -36,6 +44,7 @@ class SimulationConfig:
             solar_flux=float(data.get("solar_flux", cls.solar_flux)),
             num_agents=int(data.get("num_agents", cls.num_agents)),
             policy=str(data.get("policy", cls.policy)),
+            host_demand_rate=float(data.get("host_demand_rate", cls.host_demand_rate)),
             agent_parameters=agent_params,
         )
 
@@ -56,5 +65,6 @@ class SimulationConfig:
             "solar_flux": self.solar_flux,
             "num_agents": self.num_agents,
             "policy": self.policy,
+            "host_demand_rate": self.host_demand_rate,
             "agent_parameters": self.agent_parameters.__dict__,
         }
