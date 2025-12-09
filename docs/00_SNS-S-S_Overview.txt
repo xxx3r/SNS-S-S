@@ -1,0 +1,32 @@
+SNS-S-S :: Solar-Nano-Sphere Simulation
+=======================================
+
+Purpose
+-------
+
+This repository hosts a small but extensible Python simulation framework
+for exploring Solar-Nano-Sphere (SNS) swarms as future space-based solar
+power infrastructure.
+
+The Q1 2026 objective is **not** to build a perfect physical model but a
+clean "toy universe" where we can:
+
+1. Represent simple orbital environments (starting with an asteroid belt
+   scout scenario).
+2. Populate them with SNS-like agents that harvest sunlight, store
+   energy, and choose when to beam energy to a host.
+3. Compare naive / uncoordinated behavior to simple coordinated swarm
+   policies.
+4. Generate plots + metrics that can feed into future whitepapers,
+   funding decks, and more realistic simulations.
+
+Design principles
+-----------------
+
+* Keep the codebase **small, legible, and testable**.
+* Prefer explicit, documented parameters over "magic numbers."
+* Make it easy to:
+  - plug in new environments (e.g., GEO ring segment),
+  - modify agent control rules,
+  - and run param sweeps as standalone scripts or notebooks.
+* Treat this repo as the **public, educational face** of the SNS concept.
