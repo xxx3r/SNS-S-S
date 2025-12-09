@@ -152,3 +152,6 @@ include:
 
 Focus first on getting a robust, well-structured **Asteroid Scout**
 scenario running; everything else can build on that foundation.
+
+## Agent Log
+- [2025-12-09T06:34:22Z] Agent: ChatGPT | Intent: build initial simulation scaffold per docs | Plan: read docs, implement scaffold structure with minimal classes and tests, add configs/experiments, run pytest smoke.
