@@ -1,0 +1,95 @@
+Simulation Architecture Sketch
+==============================
+
+This file describes the intended software structure for SNS-S-S.
+
+High-level layout
+-----------------
+
+Recommended directory structure:
+
+* src/
+  * world/           : orbital environments and illumination models
+  * agents/          : SNSAgent classes and policies
+  * host/            : HostCollector for energy accumulation and demand
+  * sim/             : Simulation loop, configs, metrics
+  * utils/           : common utilities (logging, math helpers, etc.)
+* experiments/       : small scripts to run specific scenarios
+* configs/           : YAML/JSON config files for reusable setups
+* docs/              : design notes, experiment plans (this folder)
+* tests/             : pytest-based unit tests and integration smoke tests
+
+Key modules
+-----------
+
+1. World model (src/world/asteroid_world.py)
+
+   * Class: AsteroidWorld
+   * Responsibilities:
+     - store asteroid radius, rotation rate, and sun direction
+     - provide is_sunlit(theta, t) → bool or flux value
+     - optional: helper methods for plotting day/night boundary
+
+2. SNS agent (src/agents/sns_agent.py)
+
+   * Class: SNSAgent
+   * State:
+     - theta, A_eff, E, mode, id
+   * Methods:
+     - step(world, host, dt): advance one timestep
+     - decide_mode(world, host): choose HARVEST/IDLE/COMM_BEAM/MOVE
+     - harvest(world, dt): compute power in from PV
+     - consume_power(dt): apply load for current mode
+     - beam_to_host(host, dt): transfer energy to host
+     - move(world, dt): update theta with motion cost
+
+3. Host model (src/host/host_collector.py)
+
+   * Class: HostCollector
+   * State:
+     - E_host
+     - optional demand curve E_demand(t)
+   * Methods:
+     - receive_energy(delta_E)
+     - get_deficit(t): helpful for swarm decisions
+
+4. Core simulation (src/sim/simulation.py)
+
+   * Classes:
+     - SimulationConfig : dataclass with experiment parameters
+     - Simulation       : holds world, agents, host, and metrics recorder
+
+   * Responsibilities:
+     - initialize world and agents from config
+     - run time loop: for t in np.arange(t0, t_end, dt)
+     - collect metrics while sim is running
+     - expose results as NumPy arrays or simple dicts for plotting
+
+5. Experiments (experiments/*.py)
+
+   * Example scripts:
+     - baseline_vs_coordinated.py
+     - sweep_eta_beam.py
+     - sweep_area_vs_count.py
+
+   * Each script:
+     - loads config(s)
+     - constructs Simulation objects
+     - runs one or several simulations
+     - writes plots to docs/ or a dedicated output folder
+
+Coding style
+------------
+
+* Prefer type hints (Python 3.10+).
+* Use small functions and classes with clear single responsibilities.
+* Avoid heavy dependencies; NumPy and matplotlib are likely enough.
+* Aim for "readable to a good undergraduate" rather than cleverness.
+
+Testing
+-------
+
+* tests/ should contain:
+  - simple unit tests for AsteroidWorld and SNSAgent.
+  - one or two end-to-end smoke tests that verify a short simulation
+    runs without error and produces plausible energy numbers.

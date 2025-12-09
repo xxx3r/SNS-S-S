@@ -1,0 +1,89 @@
+Q1 2026 Experiment Plan
+=======================
+
+Primary scenario: Asteroid Scout
+--------------------------------
+
+We simulate a small swarm of SNS-like units orbiting a single
+asteroid-like body.
+
+Simplified world model:
+
+* 2D angular coordinate theta ∈ [0, 2π) for position.
+* The asteroid rotates at angular rate omega_body.
+* The Sun is fixed in world coordinates.
+* Each SNS agent sits on a ring just above the asteroid and experiences
+  periodic day/night cycles as the asteroid rotates.
+
+Illumination:
+
+* When a given theta is on the "day" side, the local solar flux is
+  F_sun ≈ 1360 W/m^2 (or reduced by a configurable factor).
+* When on the "night" side, F_sun = 0.
+* Optionally include a cos(incidence) factor later.
+
+SNS agent model
+---------------
+
+Each agent maintains:
+
+* theta : angular position on the orbit (scalar, radians).
+* A_eff : effective illuminated PV area (0 → A_PV).
+* E : stored energy (Wh or arbitrary units).
+* mode : one of {HARVEST, IDLE, COMM_BEAM, MOVE}.
+
+Key parameters (per agent or shared):
+
+* A_PV : solar collection area (0.1 – 1.0 m^2).
+* eta_PV : PV efficiency (0.2 – 0.3).
+* E_max : storage capacity (e.g., 0.5 – 5 Wh).
+* P_idle, P_comm, P_move : housekeeping, comm, and maneuver power.
+* eta_beam : beaming efficiency (0–1).
+* E_beam_min : minimum stored energy before beaming is allowed.
+
+Power-chain dynamics per timestep Δt:
+
+1. Solar power harvested:
+   P_sun_i = Flux_sun_i * A_eff_i * eta_PV
+
+2. Load power consumption P_load_i depends on mode.
+
+3. Storage update:
+   E_i(t+Δt) = clamp(E_i(t) + (P_sun_i - P_load_i) * Δt, 0, E_max)
+
+4. If mode == COMM_BEAM and E_i > E_beam_min,
+   energy is transferred to the host (and optionally other SNS agents)
+   with efficiency eta_beam.
+
+Swarm- and host-level metrics
+-----------------------------
+
+We want to track at least:
+
+* E_host_total : total energy delivered to the host.
+* E_total_harvested : total solar energy harvested by the swarm.
+* Distribution of E_i at end of run (mean, variance, percent of "dead"
+  agents with E ≈ 0).
+* Coverage metrics: how well the swarm spreads around the asteroid.
+* Agent "mortality": how many agents have depleted batteries at any
+  given time.
+
+Planned experiments
+-------------------
+
+1. Baseline vs coordinated:
+   * Baseline: agents only try to keep themselves alive; no beaming.
+   * Coordinated: agents decide to beam energy when above a threshold
+     and the host needs power.
+
+2. Beaming efficiency sweep:
+   * Sweep eta_beam over a range (e.g., 0.1–0.9) and examine when beaming
+     becomes beneficial versus wasteful.
+
+3. PV area / swarm size tradeoff:
+   * For fixed total PV area, compare "few large" vs "many small" SNS
+     configurations.
+
+The goal is to generate plots and tables that show how even very simple
+coordination can change the effective usefulness of a swarm, without
+overcomplicating the physics in this first iteration.

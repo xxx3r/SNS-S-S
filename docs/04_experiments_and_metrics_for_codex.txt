@@ -1,0 +1,81 @@
+Experiments and Metrics (Guidance for the Coding Agent)
+======================================================
+
+This file is written directly for an AI coding agent (e.g., GitHub
+Copilot / OpenAI Codex / similar) that will implement the simulation.
+
+Core expectations
+-----------------
+
+* The codebase should support **running multiple experiments from the
+  command line** with minimal configuration changes.
+* All experiments should:
+  - be reproducible from a fixed random seed,
+  - write outputs (CSV/NPY + PNG plots) into a clearly named folder,
+  - and be easy to extend.
+
+Minimum experiments to support
+------------------------------
+
+1. Baseline vs coordinated
+
+   * Implement two SimulationConfig presets:
+     - `AsteroidBaselineConfig`
+     - `AsteroidCoordinatedConfig`
+
+   * Run each for a fixed time horizon (e.g., 48 or 72 hours of
+     simulated time).
+
+   * Output:
+     - E_host_total for each config.
+     - time-series plots:
+       - E_host(t)
+       - mean(E_i(t)) across agents
+       - number of agents with E_i ≈ 0 vs time
+
+2. Beaming efficiency sweep
+
+   * For eta_beam ∈ {0.1, 0.3, 0.5, 0.7, 0.9}:
+     - run a coordinated configuration.
+     - record E_host_total per run.
+
+   * Output:
+     - CSV with columns [eta_beam, E_host_total].
+     - single plot: E_host_total vs eta_beam.
+
+3. PV area vs swarm size tradeoff
+
+   * Fix total PV area A_total.
+   * Create configurations with:
+     - many_small: N_large, A_PV_small
+     - few_large: N_small, A_PV_large
+       such that N_large * A_PV_small = N_small * A_PV_large = A_total.
+
+   * Output:
+     - E_host_total for each configuration.
+     - A table summarizing (N_agents, A_PV, E_host_total).
+
+Metrics implementation notes
+----------------------------
+
+* Use a simple MetricsRecorder class that stores per-timestep arrays:
+  - t_values
+  - E_host_values
+  - E_mean_values
+  - E_min_values, E_max_values
+  - dead_agent_count
+
+* Provide helper methods to convert these arrays into Pandas DataFrames
+  for plotting and CSV export (optional, only if dependency is
+  acceptable).
+
+Testing expectations
+--------------------
+
+* At least one smoke test should:
+  - construct a small Simulation (e.g., N_agents = 3),
+  - run for a short time (e.g., 1–2 simulated hours),
+  - assert that:
+    - no exceptions are raised,
+    - energies remain within [0, E_max + epsilon],
+    - metrics arrays have expected lengths.

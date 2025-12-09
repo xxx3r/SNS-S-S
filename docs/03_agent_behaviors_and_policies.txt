@@ -1,0 +1,85 @@
+Agent Behaviors and Policies
+============================
+
+This document outlines the initial behavior rules for SNS agents.
+
+Modes
+-----
+
+Each SNSAgent operates in one of four modes:
+
+1. HARVEST
+   * Goal: maximize incoming solar energy.
+   * Behavior:
+     - if is_sunlit(theta, t): set A_eff = A_PV
+     - else: A_eff may be reduced (e.g., stowed) but the main priority
+       is to wait until sunlight returns.
+     - power consumption: P_idle
+
+2. IDLE
+   * Goal: conserve battery when not in a good harvest or beaming state.
+   * Behavior:
+     - A_eff can be small or 0.
+     - power consumption: P_idle_low
+   * Typical triggers:
+     - E is within a comfortable band and agent is in darkness.
+     - No urgent host demand and no need to move.
+
+3. COMM_BEAM
+   * Goal: transfer energy to the host (or other SNS agents).
+   * Behavior:
+     - When in line-of-sight region for host, beam at P_beam (capped by
+       hardware limits and remaining E).
+     - power consumption: P_comm + P_beam
+   * Constraints:
+     - Only allowed if E > E_beam_min.
+     - Beam efficiency: eta_beam ∈ (0, 1) applies.
+
+4. MOVE
+   * Goal: reposition to improve coverage or harvest opportunity.
+   * Behavior:
+     - Adjust theta by dtheta_per_joule * (energy used for motion).
+     - power consumption: P_move.
+   * Example policies:
+     - move toward under-populated regions of the orbit.
+     - move toward current or future daylight zones.
+
+Simple policy ideas
+-------------------
+
+Baseline policy (non-coordinated):
+
+* If E < low_threshold:
+  - If in sunlight → HARVEST
+  - Else → IDLE
+* If low_threshold ≤ E ≤ high_threshold:
+  - If in sunlight → HARVEST
+  - Else → IDLE
+* If E > high_threshold:
+  - Stay in HARVEST or IDLE, but never beam.
+  - No awareness of host needs.
+
+Coordinated policy (swarm awareness):
+
+* If E < low_threshold:
+  - As baseline (prioritize survival).
+* If low_threshold ≤ E ≤ high_threshold:
+  - Use MOVE occasionally to improve coverage if battery allows.
+* If E > high_threshold and host_deficit(t) > 0:
+  - Switch to COMM_BEAM when geometrically favorable (e.g., in a
+    certain angular window).
+* Optional:
+  - If neighbor agents are near-death, allow limited SNS→SNS transfers
+    to keep more units alive.
+
+Future extensions
+-----------------
+
+We can later add:
+
+* learning-based policies (small RL agents).
+* more detailed orbit/control mechanics.
+* cross-swarm signaling packets with energy costs.
+
+For Q1 2026, the focus should remain on deterministic, explainable rules
+that can be fully described in a short technical note.
