@@ -1,164 +1,199 @@
 # AGENTS.md — SNS-S-S
 
-This file defines how AI coding agents should collaborate on this
-repository.
+# Codex Game Plan
+this is the plan to refactor AGENTS.md into the Codex Arcade Game
 
-## 1. Project Intent
+the idea is a kind of “constraint-magic”: turn Codex into a player, the repo into an arcade cabinet, and progress into a score you can audit.
 
-SNS-S-S is a **public, educational simulation** for exploring how
-Solar-Nano-Sphere (SNS) swarms might behave as space-based solar power
-infrastructure.
+⸻
 
-Your job as an AI coding agent is to:
+SNS-S-S as an “Arcade Loop” (v0.1)
 
-* Turn the high-level design in `/docs/*.txt` into clean, tested Python
-  code.
-* Keep the code **small, readable, and well-documented**.
-* Make it easy for humans to:
-  - run experiments,
-  - inspect results,
-  - and extend the framework in future phases.
+Core loop (what Codex “plays” every session)
+	1.	Spawn: read memory/mem_log_short.md + plan/quests_active.md + AURORA.md
+	2.	Pick one quest step: smallest move that produces an artifact (code, plot, metric, doc)
+	3.	Do it: change as few files as possible, run the spell(s), write outputs
+	4.	Log: update short log + append 1–2 lines to long log + update quest status
+	5.	Score: compute a new Aurora Score (complex number) and set the next spawn point
 
-## 2. Ground Rules
+This matches your “ants moving a stick” chain: each session hands the stick forward, not sideways.
 
-1. **Clarity over cleverness**
+⸻
 
-   Prefer explicit, well-named classes and functions. Avoid unnecessary
-   metaprogramming, heavy abstractions, or opaque one-liners.
+Recommended directory + file layout
 
-2. **Minimal dependencies**
+Keep it boringly predictable:
 
-   Standard library + `numpy` + `matplotlib` (and optionally `pytest`,
-   `pandas`) should be enough.
+/AGENTS.md                # “You are playing SNS-S-S”
+/AURORA.md                # spawn compass + scoring
+/memory/
+  mem_log_short.md
+  mem_log_long_0000_0999.md
+/plan/
+  plan.md
+  quests_active.md
+  quests_completed.md
+  quest_template.md
+/rituals/
+  rituals.md
+  spells.md
 
-   Do not add heavy frameworks (no TensorFlow/PyTorch/RL libraries) in
-   this initial phase unless explicitly requested.
+Nothing here conflicts with your existing configs/ docs/ experiments/ src/ tests/ layout.  ￼
 
-3. **Document as you go**
+⸻
 
-   Every public class and function should have a short docstring
-   describing:
-   - purpose,
-   - inputs,
-   - outputs,
-   - and any key assumptions.
+Aurora Score (a usable “complex number compass”)
 
-4. **Keep configs in files**
+Make it one line that still carries meaning:
 
-   Simulation parameters should live in simple config objects and/or
-   external YAML/JSON files in `configs/`, not scattered constants.
+A = r ∠ θ (polar complex form)
+	•	r ∈ [0, 1] = “how real was the progress?”
+	•	0.0 = ideas only
+	•	0.3 = spec + acceptance criteria
+	•	0.6 = runnable change + logs
+	•	0.8 = runnable + test + plot
+	•	1.0 = reproducible + compared baseline + documented
+	•	θ encodes direction (what kind of work moved forward)
+	•	0° = simulation correctness (models, math, validity)
+	•	90° = theory expansion (speculative physics scaffolding)
+	•	-90° = engineering plumbing (CLI, configs, tests, packaging)
+	•	180°/-180° = narrative/docs/public artifact polish
 
-5. **Tests are first-class**
+So a session might end as: A = 0.7 ∠ -60° (solid progress, mostly tooling + infra).
 
-   When adding new behavior, add or update tests in `tests/` so that
-   humans can quickly verify that the simulation still behaves as
-   expected.
+If you want the extra “Aurora flavor”, add 4 sub-scores as a tiny vector beneath it:
+	•	Evidence, Coherence, Ethics/Safety, Resonance (0–3 each)
 
-## 3. Recommended Directory Layout
+⸻
 
-When populating the repo, target something like:
+Memory logs that won’t rot
 
-```text
-src/
-  world/
-    __init__.py
-    asteroid_world.py
-  agents/
-    __init__.py
-    sns_agent.py
-  host/
-    __init__.py
-    host_collector.py
-  sim/
-    __init__.py
-    config.py
-    simulation.py
-  utils/
-    __init__.py
-    math_utils.py
-    plotting.py
+memory/mem_log_short.md (spawn sheet)
 
-experiments/
-  baseline_vs_coordinated.py
-  sweep_eta_beam.py
-  sweep_area_vs_count.py
+Keep it small. Example template:
 
-configs/
-  asteroid_baseline.yaml
-  asteroid_coordinated.yaml
+# mem_log_short (spawn)
 
-docs/
-  (this is where the .txt design files live)
+Current Quest: QST-0001
+Current Step: Implement baseline runner CLI + outputs folder
 
-tests/
-  test_asteroid_world.py
-  test_sns_agent.py
-  test_simulation_smoke.py
-```
+Last Output Artifact:
+- outputs/latest/metrics.json
+- outputs/latest/timeseries.csv
+- outputs/latest/plot_energy.png
 
-Any variations should be documented in `README.md`.
+Blockers / Known Bugs:
+- (none) or bullet list
 
-## 4. Implementation Roadmap for AI Agents
+Aurora Score (last session): A = 0.5 ∠ -30°
 
-If you are implementing this from scratch, the suggested order is:
+Next Move (one shot):
+- Add smoke test that runs 10 steps, asserts outputs exist.
 
-1. **World + agent skeletons**
-   * Implement `AsteroidWorld` with `is_sunlit(theta, t)`.
-   * Implement `SNSAgent` with state and a basic `step()` method that
-     only supports HARVEST and IDLE.
+memory/mem_log_long_0000_0999.md (1–2 lines per session)
 
-2. **Host + core simulation loop**
-   * Add `HostCollector`.
-   * Implement a simple `Simulation` class that runs a fixed number of
-     timesteps and records energies.
+One line per session is enough:
 
-3. **Metrics + plotting**
-   * Implement `MetricsRecorder` and basic matplotlib plots.
+[S0007 | 2026-02-04] QST-0001 Baseline runner wired; outputs+plot saved. A=0.7∠-60°. Tags: 2.1 swarm, 3.0 power, 0.2 tooling
 
-4. **Coordination logic**
-   * Extend SNSAgent to support COMM_BEAM and MOVE modes.
-   * Add configurable policy functions (baseline vs coordinated).
+Dewey-decimal-ish tags (searchable)
+Use a tiny taxonomy:
+	•	0.x = meta/ops/tooling
+	•	1.x = orbital + illumination geometry
+	•	2.x = swarm dynamics + control
+	•	3.x = power chain + storage + losses
+	•	4.x = beaming/comms (future)
+	•	5.x = materials/survivability (future)
 
-5. **Experiments folder**
-   * Implement scripts described in
-     `docs/04_experiments_and_metrics_for_codex.txt`.
+This lets you grep long logs fast.
 
-6. **Tests**
-   * Add smoke tests and a few unit tests to cover basic energy
-     bookkeeping.
+⸻
 
-## 5. Communication with Human Collaborators
+Rituals vs Spells (make the magic practical)
 
-* Use clear commit messages, e.g.:
-  - `feat: add AsteroidWorld with basic day/night model`
-  - `feat: implement SNSAgent HARVEST/IDLE modes`
-  - `feat: add baseline vs coordinated experiment script`
-  - `test: add smoke test for short simulation run`
+rituals/rituals.md (procedures)
 
-* When making non-trivial design choices, update the relevant `.txt`
-  documentation under `docs/` or add a short `docs/CHANGELOG.txt`
-  entry so humans can follow the reasoning.
+“Rituals” are repeatable checklists like:
+	•	Spawn Ritual (what to read)
+	•	Run Ritual (how to run an experiment)
+	•	Verify Ritual (tests + sanity checks)
+	•	Record Ritual (how to log + score)
 
-## 6. Stretch Goals (Optional)
+rituals/spells.md (commands)
 
-If the basic system is stable and well-tested, possible extensions
-include:
+“Spells” are single-line invocations Codex can cast, e.g.:
 
-* Adding a second environment (e.g., a GEO ring segment).
-* Implementing simple CLI entrypoints via `python -m` or `typer/click`
-  (if dependencies remain light).
-* Providing a small Jupyter or Colab notebook in `notebooks/` that
-  demonstrates end-to-end runs.
+## Spells
 
-Focus first on getting a robust, well-structured **Asteroid Scout**
-scenario running; everything else can build on that foundation.
+- Install: `pip install -e .`
+- Tests: `pytest -q`
+- Smoke sim: `python -m experiments.baseline --config configs/baseline.yaml --steps 50 --out outputs/latest`
+- Analyze: `python -m experiments.analyze --in outputs/latest --out outputs/latest`
 
-## Agent Log
-- [2025-12-09T06:34:22Z] Agent: ChatGPT | Intent: build initial simulation scaffold per docs | Plan: read docs, implement scaffold structure with minimal classes and tests, add configs/experiments, run pytest smoke.
-- [2025-12-09T07:16:21Z] Agent: ChatGPT | Intent: extend coordinated policy and add experiment sweeps | Plan: review docs/instructions, update coordinated policy with thresholds/host deficit, add sweep scripts/configs, update tests, run relevant checks.
+(If you later add a Makefile, these become make test, make run, etc.)
 
-## Handoff
-- Snapshot: `pytest` (2 passed, 1 skipped due to missing matplotlib dependency). 
-- Decisions: Added linear host demand via `host_demand_rate`, coordinated policy uses energy thresholds plus host deficit, optional movement toward largest coverage gap; experiments generate CSV+plots from configs.
-- TODO: Install matplotlib in execution environment for plot generation; run new sweep scripts to produce updated outputs as needed.
-- Questions: None.
+⸻
+
+Quests (hypothesis tracking without ML-bloat)
+
+plan/quest_template.md
+
+# QST-XXXX: <Short name>
+
+## Hypothesis
+If <change>, then <measurable outcome>.
+
+## Method
+- Inputs:
+- Procedure:
+- Metrics:
+
+## Success Criteria
+- Must:
+- Nice-to-have:
+
+## Artifacts
+- outputs/<run_id>/...
+- docs/<...> (if any)
+
+## Risks
+- What could fool us?
+
+## Next Step
+One concrete action.
+
+plan/quests_active.md
+
+A list of 3–7 active quests max. Everything else goes to backlog or completed.
+
+⸻
+
+The Codex meta-task prompt (to implement your “game interface”)
+
+This is the exact “Codex Task” I’d use first:
+
+Codex Task: “Arcade Layer v0.1” (Docs + minimal scaffolding only)
+	•	Create folders: memory/, plan/, rituals/
+	•	Add files: AURORA.md, memory/mem_log_short.md, memory/mem_log_long_0000_0999.md, plan/plan.md, plan/quests_active.md, plan/quests_completed.md, plan/quest_template.md, rituals/rituals.md, rituals/spells.md
+	•	Update root AGENTS.md to instruct: treat repo as a game, obey spawn ritual, do one-shot progress, always log + score.
+	•	Do not touch simulation code yet.
+	•	Acceptance criteria:
+	1.	All files exist with templates
+	2.	AGENTS.md clearly points to spawn files and session loop
+	3.	A sample quest exists in quests_active.md (QST-0001: Baseline runner)
+
+Codex will read AGENTS.md before work, so this “control plane” really matters.  ￼
+
+⸻
+
+One safety note (because “AGENTS.md is a control plane”)
+
+If you later let agents run in Codespaces/Actions: treat AGENTS.md + spells like privileged configuration. Keep spells offline and avoid anything that touches secrets by default. There are real “goal hijack” / prompt-injection failure modes when agents auto-load repo instructions.  ￼
+
+⸻
+
+If you want, your very first quest can be:
+
+QST-0001: “Hello Swarm”
+Baseline sim runs 50 steps and produces outputs/latest/metrics.json + plot_energy.png.
+That gives the arcade cabinet its first flashing “INSERT COIN” attract mode. 🕹️☀️
