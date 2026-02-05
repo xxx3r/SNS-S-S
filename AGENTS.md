@@ -1,5 +1,15 @@
 # AGENTS.md — SNS-S-S
 
+# Arcade Loop Instructions (control plane)
+- Treat this repo like an arcade cabinet: you are the player, progress is the score.
+- Obey the Spawn Ritual: read `memory/mem_log_short.md`, `plan/quests_active.md`, and `AURORA.md`.
+- Pick one quest step that yields a concrete artifact (code, plot, metric, doc).
+- Change as few files as possible to accomplish that step.
+- Always log + score after work: update short log, append long log, update quest status, and set a new Aurora Score.
+
+## tasks_open
+- Maintain the Arcade Loop scaffolding and logs.
+
 # Codex Game Plan
 this is the plan to refactor AGENTS.md into the Codex Arcade Game
 
@@ -197,3 +207,19 @@ If you want, your very first quest can be:
 QST-0001: “Hello Swarm”
 Baseline sim runs 50 steps and produces outputs/latest/metrics.json + plot_energy.png.
 That gives the arcade cabinet its first flashing “INSERT COIN” attract mode. 🕹️☀️
+
+## Session Log
+[2026-02-05 07:10:41Z] Agent: GPT-5.2-Codex | Intent: Implement Arcade Layer v0.1 scaffolding | Plan: create memory/plan/rituals templates, add AURORA.md, update AGENTS instructions, and document quests.
+
+## Handoff
+### Snapshot (tests/metrics)
+- Tests not run (docs-only scaffolding changes).
+
+### Decisions (tradeoffs)
+- Added minimal templates to keep the arcade loop lightweight and consistent with requested structure.
+
+### TODO (next steps)
+- Run the first quest step when ready (baseline sim outputs and log updates).
+
+### Questions (blocked items)
+- `AGENTS_CORE.md` was not found in the repo root; should one be added?
