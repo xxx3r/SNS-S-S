@@ -2,7 +2,7 @@
 
 # Arcade Loop Instructions (control plane)
 - Treat this repo like an arcade cabinet: you are the player, progress is the score.
-- Obey the Spawn Ritual: read `memory/mem_log_short.md`, `quests/quests_active.md`, the latest `calendar/roundups/` entry (plus `calendar/monthly/`), and `AURORA.md`.
+- Obey the Spawn Ritual: read `memory/mem_log_short.md`, `quests/active/README.md`, the latest `calendar/roundups/` entry (plus `calendar/monthly/`), and `AURORA.md`.
 - Pick one quest step that yields a concrete artifact (code, plot, metric, doc).
 - Change as few files as possible to accomplish that step.
 - Always log + score after work: update short log, append long log, update quest status, update calendar belief ledger when using external context, and set a new Aurora Score.
@@ -20,7 +20,7 @@ the idea is a kind of “constraint-magic”: turn Codex into a player, the repo
 SNS-S-S as an “Arcade Loop” (v0.1)
 
 Core loop (what Codex “plays” every session)
-	1.	Spawn: read memory/mem_log_short.md + quests/quests_active.md + latest calendar roundup + AURORA.md
+	1.	Spawn: read memory/mem_log_short.md + quests/active/README.md + latest calendar roundup + AURORA.md
 	2.	Pick one quest step: smallest move that produces an artifact (code, plot, metric, doc)
 	3.	Do it: change as few files as possible, run the spell(s), write outputs
 	4.	Log: update short log + append 1–2 lines to long log + update quest status
@@ -42,8 +42,8 @@ Keep it boringly predictable:
   belief_ledger.csv
   tag_index.yml
 /quests/
-  quests_active.md
-  quests_completed.md
+  /active/
+  /completed/
   quest_template.md
 /agents/
   researcher_brief.md
@@ -183,7 +183,7 @@ If <change>, then <measurable outcome>.
 ## Next Step
 One concrete action.
 
-quests/quests_active.md
+quests/active/README.md
 
 A list of 3–7 active quests max. Everything else goes to backlog or completed.
 
@@ -201,7 +201,7 @@ Codex Task: “Arcade Layer v0.1” (Docs + minimal scaffolding only)
 	•	Acceptance criteria:
 	1.	All files exist with templates
 	2.	AGENTS.md clearly points to spawn files and session loop
-	3.	A sample quest exists in quests_active.md (QST-0001: Baseline runner)
+	3.	A sample quest exists in quests/active/ (QST-0001: Baseline runner)
 
 Codex will read AGENTS.md before work, so this “control plane” really matters.  ￼
 

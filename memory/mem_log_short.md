@@ -1,17 +1,17 @@
 # mem_log_short (spawn)
 
-Current Quest: QST-0100
-Current Step: Integrate calendar loop scaffolding + belief ledger into the arcade flow.
+Current Quest: QST-0001
+Current Step: Document a smoke test command in `rituals/spells.md`.
 
 Last Output Artifact:
-- calendar/roundups/2026-01-25.md
-- calendar/belief_ledger.csv
-- agents/researcher_brief.md
+- quests/active/README.md
+- quests/active/QST-0002-baseline-vs-coordinated.md
+- quests/active/QST-0003-beaming-efficiency-sweep.md
 
 Blockers / Known Bugs:
 - (none)
 
-Aurora Score (last session): A = 0.6 ∠ 170° | w_ext = 0.4
+Aurora Score (last session): A = 0.6 ∠ 180°
 
 Next Move (one shot):
-- Run the next weekly roundup and append belief shifts into the ledger.
+- Add the smoke test spell for QST-0001 to `rituals/spells.md`.
