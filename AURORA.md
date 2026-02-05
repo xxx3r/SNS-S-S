@@ -3,8 +3,9 @@
 ## Spawn Compass
 Read these before any work session:
 1. `memory/mem_log_short.md`
-2. `plan/quests_active.md`
-3. This file (`AURORA.md`)
+2. `quests/quests_active.md`
+3. Latest `calendar/roundups/` entry + `calendar/monthly/` (if available)
+4. This file (`AURORA.md`)
 
 ## Aurora Score
 Write one line after each session using polar complex form:
@@ -23,6 +24,11 @@ Where:
   - 90° = theory expansion (speculative physics scaffolding)
   - -90° = engineering plumbing (CLI, configs, tests, packaging)
   - 180°/-180° = narrative/docs/public artifact polish
+
+Optional external context weight (calendar-informed):
+- `w_ext ∈ [0, 1]` expresses how much external signals influenced the session.
+- Suggested source: average `weight` from the latest belief ledger entries.
+- Include it inline when relevant: `A = r ∠ θ | w_ext = 0.3`.
 
 Optional tiny vector beneath the score:
 - Evidence (0–3)

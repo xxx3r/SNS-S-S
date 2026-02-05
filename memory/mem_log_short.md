@@ -1,17 +1,17 @@
 # mem_log_short (spawn)
 
-Current Quest: QST-0001
-Current Step: Implement baseline runner CLI + outputs folder
+Current Quest: QST-0100
+Current Step: Integrate calendar loop scaffolding + belief ledger into the arcade flow.
 
 Last Output Artifact:
-- outputs/latest/metrics.json
-- outputs/latest/timeseries.csv
-- outputs/latest/plot_energy.png
+- calendar/roundups/2026-01-25.md
+- calendar/belief_ledger.csv
+- agents/researcher_brief.md
 
 Blockers / Known Bugs:
 - (none)
 
-Aurora Score (last session): A = 0.5 ∠ -30°
+Aurora Score (last session): A = 0.6 ∠ 170° | w_ext = 0.4
 
 Next Move (one shot):
-- Add smoke test that runs 10 steps, asserts outputs exist.
+- Run the next weekly roundup and append belief shifts into the ledger.

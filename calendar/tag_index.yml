@@ -1,0 +1,32 @@
+META:
+  label: Metasurfaces
+  lens: Metasurfaces
+  description: Control frameworks, design, and validation for metasurface systems.
+SBSP:
+  label: Space-Based Solar Power
+  lens: SBSP & Beaming
+  description: Power beaming, tracking, and relay chain control.
+SWARM:
+  label: Swarm Systems
+  lens: Swarms
+  description: Distributed autonomy, coordination, and energy-aware scheduling.
+CTRL:
+  label: Control & Interfaces
+  lens: Storage & Control
+  description: Control electronics, energy harvesting interfaces, and low-power control loops.
+PV:
+  label: Photovoltaics
+  lens: PV & Materials
+  description: PV materials, manufacturing, and efficiency reliability improvements.
+STOR:
+  label: Storage
+  lens: Storage & Control
+  description: Energy storage technologies and power-chain stability.
+MFG:
+  label: Manufacturing
+  lens: PV & Materials
+  description: Manufacturing repeatability and process control.
+MAT:
+  label: Materials
+  lens: PV & Materials
+  description: Materials science relevant to SNS components.
