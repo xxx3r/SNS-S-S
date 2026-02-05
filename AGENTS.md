@@ -2,10 +2,10 @@
 
 # Arcade Loop Instructions (control plane)
 - Treat this repo like an arcade cabinet: you are the player, progress is the score.
-- Obey the Spawn Ritual: read `memory/mem_log_short.md`, `plan/quests_active.md`, and `AURORA.md`.
+- Obey the Spawn Ritual: read `memory/mem_log_short.md`, `quests/quests_active.md`, the latest `calendar/roundups/` entry (plus `calendar/monthly/`), and `AURORA.md`.
 - Pick one quest step that yields a concrete artifact (code, plot, metric, doc).
 - Change as few files as possible to accomplish that step.
-- Always log + score after work: update short log, append long log, update quest status, and set a new Aurora Score.
+- Always log + score after work: update short log, append long log, update quest status, update calendar belief ledger when using external context, and set a new Aurora Score.
 
 ## tasks_open
 - Maintain the Arcade Loop scaffolding and logs.
@@ -20,7 +20,7 @@ the idea is a kind of “constraint-magic”: turn Codex into a player, the repo
 SNS-S-S as an “Arcade Loop” (v0.1)
 
 Core loop (what Codex “plays” every session)
-	1.	Spawn: read memory/mem_log_short.md + plan/quests_active.md + AURORA.md
+	1.	Spawn: read memory/mem_log_short.md + quests/quests_active.md + latest calendar roundup + AURORA.md
 	2.	Pick one quest step: smallest move that produces an artifact (code, plot, metric, doc)
 	3.	Do it: change as few files as possible, run the spell(s), write outputs
 	4.	Log: update short log + append 1–2 lines to long log + update quest status
@@ -36,14 +36,25 @@ Keep it boringly predictable:
 
 /AGENTS.md                # “You are playing SNS-S-S”
 /AURORA.md                # spawn compass + scoring
+/calendar/
+  /roundups/
+  /monthly/
+  belief_ledger.csv
+  tag_index.yml
+/quests/
+  quests_active.md
+  quests_completed.md
+  quest_template.md
+/agents/
+  researcher_brief.md
 /memory/
   mem_log_short.md
   mem_log_long_0000_0999.md
 /plan/
   plan.md
-  quests_active.md
-  quests_completed.md
-  quest_template.md
+  quests_active.md        # legacy (use /quests instead)
+  quests_completed.md     # legacy (use /quests instead)
+  quest_template.md       # legacy (use /quests instead)
 /rituals/
   rituals.md
   spells.md
@@ -172,7 +183,7 @@ If <change>, then <measurable outcome>.
 ## Next Step
 One concrete action.
 
-plan/quests_active.md
+quests/quests_active.md
 
 A list of 3–7 active quests max. Everything else goes to backlog or completed.
 
@@ -210,6 +221,7 @@ That gives the arcade cabinet its first flashing “INSERT COIN” attract mode.
 
 ## Session Log
 [2026-02-05 07:10:41Z] Agent: GPT-5.2-Codex | Intent: Implement Arcade Layer v0.1 scaffolding | Plan: create memory/plan/rituals templates, add AURORA.md, update AGENTS instructions, and document quests.
+[2026-02-05 22:28:41Z] Agent: GPT-5.2-Codex | Intent: Integrate /calendar loop into the arcade control plane | Plan: scaffold calendar/quests/agents directories, wire spawn ritual + Aurora scoring, and log updates.
 
 ## Handoff
 ### Snapshot (tests/metrics)
@@ -223,3 +235,16 @@ That gives the arcade cabinet its first flashing “INSERT COIN” attract mode.
 
 ### Questions (blocked items)
 - `AGENTS_CORE.md` was not found in the repo root; should one be added?
+
+## Handoff
+### Snapshot (tests/metrics)
+- Tests not run (docs-only scaffolding changes).
+
+### Decisions (tradeoffs)
+- Added a calendar loop and belief ledger to externalize weekly context without moving simulation code.
+
+### TODO (next steps)
+- Run the next weekly roundup and log belief shifts into the ledger.
+
+### Questions (blocked items)
+- Should the legacy `/plan/quests_*` files be retired or kept in sync with `/quests`?
