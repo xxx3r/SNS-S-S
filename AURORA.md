@@ -3,7 +3,7 @@
 ## Spawn Compass
 Read these before any work session:
 1. `memory/mem_log_short.md`
-2. `quests/quests_active.md`
+2. `quests/active/README.md`
 3. Latest `calendar/roundups/` entry + `calendar/monthly/` (if available)
 4. This file (`AURORA.md`)
 
