@@ -1,7 +1,7 @@
 # QST-0001: Hello Swarm
 
 Status: Active
-Updated: 2026-02-05
+Updated: 2026-02-06
 Tags: [SWARM, CTRL, PV]
 
 ## Hypothesis
@@ -25,4 +25,4 @@ If we run a baseline sim for 50 steps, then we will produce core output artifact
 - Missing config defaults could mask errors.
 
 ## Next Step
-Document a smoke test command in `rituals/spells.md`.
+Run the smoke test and confirm baseline simulation outputs can be generated.
