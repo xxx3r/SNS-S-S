@@ -8,7 +8,7 @@ Tags: [SWARM, CTRL, PV]
 If we run a baseline sim for 50 steps, then we will produce core output artifacts to validate the pipeline.
 
 ## Method
-- Inputs: `configs/astroid_baseline.json`
+- Inputs: `configs/asteroid_baseline.json`
 - Procedure: Run the baseline sim for 50 steps and save outputs to `outputs/latest/`.
 - Metrics: `metrics.json`, `timeseries.csv`, `plot_energy.png`
 
