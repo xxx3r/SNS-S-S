@@ -8,7 +8,7 @@ Tags: [SWARM, CTRL, PV]
 If we run a baseline sim for 50 steps, then we will produce core output artifacts to validate the pipeline.
 
 ## Method
-- Inputs: `configs/baseline.yaml`
+- Inputs: `configs/astroid_baseline.json`
 - Procedure: Run the baseline sim for 50 steps and save outputs to `outputs/latest/`.
 - Metrics: `metrics.json`, `timeseries.csv`, `plot_energy.png`
 
@@ -25,4 +25,4 @@ If we run a baseline sim for 50 steps, then we will produce core output artifact
 - Missing config defaults could mask errors.
 
 ## Next Step
-Run the smoke test and confirm baseline simulation outputs can be generated.
+Promote this baseline commnad into CI/docs so outputs/latest artifacts stay reproducible each session.
