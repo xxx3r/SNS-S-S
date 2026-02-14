@@ -1,0 +1,35 @@
+{
+  "policy": "baseline",
+  "config": {
+    "duration": 3000.0,
+    "dt": 60.0,
+    "rotation_rate": 0.000436332,
+    "solar_flux": 1000.0,
+    "num_agents": 6,
+    "policy": "baseline",
+    "host_demand_rate": 0.25,
+    "agent_parameters": {
+      "pv_area": 0.4,
+      "pv_efficiency": 0.25,
+      "energy_max": 4.0,
+      "initial_energy": 1.0,
+      "power_idle": 0.15,
+      "power_idle_low": 0.05,
+      "low_threshold": 0.4,
+      "high_threshold": 3.5,
+      "beam_efficiency": 0.6,
+      "beam_rate": 0.4,
+      "power_comm": 0.1,
+      "power_move": 0.2,
+      "move_rate": 0.0005
+    }
+  },
+  "steps": 50,
+  "final": {
+    "E_host": 0.0,
+    "E_mean": 2.9816667709995266,
+    "E_min": 0.9583333333333324,
+    "E_max": 4.0,
+    "dead_agent_count": 0
+  }
+}
