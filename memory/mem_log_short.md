@@ -1,22 +1,18 @@
 # mem_log_short (spawn)
 
-Current Quest: QST-0001
-Current Step: Run smoke test and generate baseline outputs/latest artifacts.
+Current Quest: QST-0002
+Current Step: Run and summarize baseline-vs-coordinated comparison artifacts.
 
 Last Output Artifact:
-- experiments/baseline_vs_coordinated.py
-- src/utils/plotting.py
-- outputs/latest/metrics.json
-- outputs/latest/timeseries.csv
-- outputs/latest/plot_energy.png
+- scripts/check_baseline_artifacts.sh
+- .github/workflows/baseline-artifacts.yml
+- docs/04_experiments_and_metrics_for_codex.txt
+- quests/completed/QST-0001-hello-swarm.md
 
 Blockers / Known Bugs:
-- `matplotlib` is unavailable in this environment (network/proxy blocks pip), so PNG plot generation is skipped with `PLOT_WARNING.txt`.
-- since matplotlib is unavailable in this environment; baseline plot now uses built-in PNG writer in `experiments/baseline.py`.
-- Now Generated PNG artifacts now ignored in git to avoid binary-file PR ingestion errors.
+- (none)
 
-Aurora Score (last session): A = 0.7 ∠ -120°
+Aurora Score (last session): A = 0.9 ∠ -110°
 
 Next Move (one shot):
-- Add/setup dependency documentation so quest runs can produce PNG plots in fully provisioned environments.
-- Wire `python -m experiments.baseline --config configs/asteroid_baseline.json --steps 50 --out outputs/latest` into a repeatable check script/CI step.
+- Execute `python -m experiments.baseline_vs_coordinated --out outputs/latest` and record comparison summary for QST-0002.

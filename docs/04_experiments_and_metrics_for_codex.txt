@@ -79,3 +79,17 @@ Testing expectations
     - no exceptions are raised,
     - energies remain within [0, E_max + epsilon],
     - metrics arrays have expected lengths.
+
+Baseline artifact reproducibility
+--------------------------------
+
+* Canonical baseline command (50 steps):
+  - `python -m experiments.baseline --config configs/asteroid_baseline.json --steps 50 --out outputs/latest`
+* CI/local check command:
+  - `bash scripts/check_baseline_artifacts.sh`
+* Required artifacts in `outputs/latest/`:
+  - `metrics.json`
+  - `timeseries.csv`
+  - `plot_energy.png`
+* Keep generated PNG artifacts out of git history:
+  - `outputs/**/*.png` is ignored in `.gitignore`.
