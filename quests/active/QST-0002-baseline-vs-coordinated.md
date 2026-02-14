@@ -1,7 +1,7 @@
 # QST-0002: Baseline vs Coordinated Experiment Harness
 
 Status: In Progress
-Updated: 2026-02-06
+Updated: 2026-02-14
 Tags: [SWARM, CTRL]
 
 ## Hypothesis
@@ -25,4 +25,4 @@ If we implement baseline and coordinated presets with shared metrics, then we ca
 - Divergent defaults between presets could invalidate comparisons.
 
 ## Next Step
-Run the harness and review the metrics CSV + plots for both presets.
+Add an environment/setup note so matplotlib is installed where PNG plots are required; current harness writes CSV + comparison + plot warning files when plotting deps are missing.
