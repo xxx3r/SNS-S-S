@@ -1,7 +1,7 @@
 # QST-0002: Baseline vs Coordinated Experiment Harness
 
-Status: Active
-Updated: 2026-02-05
+Status: In Progress
+Updated: 2026-02-06
 Tags: [SWARM, CTRL]
 
 ## Hypothesis
@@ -25,4 +25,4 @@ If we implement baseline and coordinated presets with shared metrics, then we ca
 - Divergent defaults between presets could invalidate comparisons.
 
 ## Next Step
-Define the two preset configs and stub a runner script in `experiments/`.
+Run the harness and review the metrics CSV + plots for both presets.
