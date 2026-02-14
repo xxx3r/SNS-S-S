@@ -13,8 +13,9 @@ Last Output Artifact:
 Blockers / Known Bugs:
 - `matplotlib` is unavailable in this environment (network/proxy blocks pip), so PNG plot generation is skipped with `PLOT_WARNING.txt`.
 - since matplotlib is unavailable in this environment; baseline plot now uses built-in PNG writer in `experiments/baseline.py`.
+- Now Generated PNG artifacts now ignored in git to avoid binary-file PR ingestion errors.
 
-Aurora Score (last session): A = 0.8 ∠ -45°
+Aurora Score (last session): A = 0.7 ∠ -120°
 
 Next Move (one shot):
 - Add/setup dependency documentation so quest runs can produce PNG plots in fully provisioned environments.
