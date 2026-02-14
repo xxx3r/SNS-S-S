@@ -13,3 +13,5 @@
 [S0006 | 2026-02-14] QST-0002 Harness run completed; CSV + comparison artifacts succeed even without matplotlib via graceful plot-skip warnings. A=0.7∠-90°. Tags: 2.1 swarm, 0.2 tooling
 
 [S0007 | 2026-02-14] QST-0001 Smoke test passed and baseline artifacts regenerated in outputs/latest. A=0.8∠-45°. Tags: 2.1 swarm, 0.2 tooling
+
+[S0008 | 2026-02-14] QST-0001 Prevented binary PR failures by ignoring generated outputs PNG artifacts in git. A=0.7∠-120°. Tags: 0.2 tooling
