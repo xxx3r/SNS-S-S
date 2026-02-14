@@ -11,3 +11,5 @@
 [S0005 | 2026-02-06] QST-0002 Baseline vs coordinated harness now writes metrics CSVs and comparison table. A=0.6∠-90°. Tags: 2.1 swarm, 0.2 tooling
 
 [S0006 | 2026-02-14] QST-0002 Harness run completed; CSV + comparison artifacts succeed even without matplotlib via graceful plot-skip warnings. A=0.7∠-90°. Tags: 2.1 swarm, 0.2 tooling
+
+[S0007 | 2026-02-14] QST-0001 Smoke test passed and baseline artifacts regenerated in outputs/latest. A=0.8∠-45°. Tags: 2.1 swarm, 0.2 tooling
