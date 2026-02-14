@@ -2,12 +2,28 @@
 
 from __future__ import annotations
 
+import importlib
+import importlib.util
 from pathlib import Path
 from typing import Optional
 
-import matplotlib.pyplot as plt
-
 from src.sim.metrics import MetricsRecorder
+
+
+def _get_pyplot():
+    """Load matplotlib.pyplot lazily.
+
+    This keeps experiment scripts runnable in environments that do not have
+    plotting dependencies installed; callers can choose to handle the runtime
+    error and continue producing non-plot artifacts.
+    """
+
+    try:
+        if importlib.util.find_spec("matplotlib.pyplot") is None:
+            raise RuntimeError("matplotlib is not installed")
+    except ModuleNotFoundError as exc:
+        raise RuntimeError("matplotlib is not installed") from exc
+    return importlib.import_module("matplotlib.pyplot")
 
 
 def plot_host_energy(metrics: MetricsRecorder, output_path: Optional[str] = None) -> Path:
@@ -27,6 +43,7 @@ def plot_host_energy(metrics: MetricsRecorder, output_path: Optional[str] = None
         Location of the saved figure.
     """
 
+    plt = _get_pyplot()
     output_file = Path(output_path or "host_energy.png")
     fig, ax = plt.subplots()
     ax.plot(metrics.t_values, metrics.E_host_values, label="Host energy")
@@ -44,6 +61,7 @@ def plot_host_energy(metrics: MetricsRecorder, output_path: Optional[str] = None
 def plot_mean_agent_energy(metrics: MetricsRecorder, output_path: Optional[str] = None) -> Path:
     """Plot mean agent energy over time using matplotlib."""
 
+    plt = _get_pyplot()
     output_file = Path(output_path or "mean_agent_energy.png")
     fig, ax = plt.subplots()
     ax.plot(metrics.t_values, metrics.E_mean_values, label="Mean agent energy")
@@ -61,6 +79,7 @@ def plot_mean_agent_energy(metrics: MetricsRecorder, output_path: Optional[str] 
 def plot_dead_agent_count(metrics: MetricsRecorder, output_path: Optional[str] = None) -> Path:
     """Plot dead agent count over time using matplotlib."""
 
+    plt = _get_pyplot()
     output_file = Path(output_path or "dead_agent_count.png")
     fig, ax = plt.subplots()
     ax.plot(metrics.t_values, metrics.dead_agent_count, label="Dead agent count")

@@ -17,6 +17,20 @@ from src.sim.simulation import Simulation  # noqa: E402
 from src.utils.plotting import plot_dead_agent_count, plot_host_energy, plot_mean_agent_energy  # noqa: E402
 
 
+def _try_generate_plots(metrics, plots_dir: Path) -> dict:
+    """Generate plots when matplotlib is available."""
+
+    try:
+        plot_host_energy(metrics, plots_dir / "host_energy.png")
+        plot_mean_agent_energy(metrics, plots_dir / "mean_agent_energy.png")
+        plot_dead_agent_count(metrics, plots_dir / "dead_agent_count.png")
+        return {"plots_generated": True, "plot_warning": ""}
+    except RuntimeError as err:
+        warning = f"Plot generation skipped: {err}"
+        (plots_dir / "PLOT_WARNING.txt").write_text(warning + "\n")
+        return {"plots_generated": False, "plot_warning": warning}
+
+
 def _write_metrics_csv(metrics, output_path: Path) -> None:
     rows = [
         {
@@ -57,15 +71,14 @@ def run_scenario(config_path: Path, output_dir: Path) -> dict:
     plots_dir.mkdir(parents=True, exist_ok=True)
 
     _write_metrics_csv(metrics, run_dir / "metrics.csv")
-    plot_host_energy(metrics, plots_dir / "host_energy.png")
-    plot_mean_agent_energy(metrics, plots_dir / "mean_agent_energy.png")
-    plot_dead_agent_count(metrics, plots_dir / "dead_agent_count.png")
+    plot_state = _try_generate_plots(metrics, plots_dir)
     summary = {
         "policy": config.policy,
         "config": asdict(config),
         "final_host_energy": metrics.E_host_values[-1] if metrics.E_host_values else 0.0,
         "mean_agent_energy": metrics.E_mean_values[-1] if metrics.E_mean_values else 0.0,
         "dead_agent_count": metrics.dead_agent_count[-1] if metrics.dead_agent_count else 0,
+        **plot_state,
     }
     return summary
 

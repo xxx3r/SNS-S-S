@@ -9,3 +9,5 @@
 [S0004 | 2026-02-06] QST-0001 Smoke test spell documented in rituals list. A=0.3∠180°. Tags: 0.2 tooling, 0.1 docs
 
 [S0005 | 2026-02-06] QST-0002 Baseline vs coordinated harness now writes metrics CSVs and comparison table. A=0.6∠-90°. Tags: 2.1 swarm, 0.2 tooling
+
+[S0006 | 2026-02-14] QST-0002 Harness run completed; CSV + comparison artifacts succeed even without matplotlib via graceful plot-skip warnings. A=0.7∠-90°. Tags: 2.1 swarm, 0.2 tooling
