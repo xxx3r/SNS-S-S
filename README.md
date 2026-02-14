@@ -150,3 +150,26 @@ include:
 
 Focus first on getting a robust, well-structured **Asteroid Scout**
 scenario running; everything else can build on that foundation.
+
+## 7. Reproducible QST-0001 baseline run
+
+Use the checked-in baseline config and helper script to regenerate `outputs/latest` artifacts:
+
+```bash
+scripts/check_baseline_artifacts.sh
+```
+
+Expected artifacts:
+- `outputs/latest/metrics.json`
+- `outputs/latest/timeseries.csv`
+- `outputs/latest/plot_energy.png`
+
+### Dependencies for plotting and CI parity
+
+For fully provisioned environments (local + CI), install:
+
+```bash
+python -m pip install numpy matplotlib pytest
+```
+
+`matplotlib` keeps other experiment plotting scripts functional, while QST-0001's baseline PNG is generated directly by the baseline runner.
