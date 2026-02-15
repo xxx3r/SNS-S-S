@@ -1,0 +1,9 @@
+seed: 7
+f0_hz: 10.0e9
+r_mm_min: 0.6
+r_mm_max: 1.4
+h_mm_min: 1.4
+h_mm_max: 2.6
+grid_r: 11
+grid_h: 11
+target_phases_deg: [0, 90, 180, 270]

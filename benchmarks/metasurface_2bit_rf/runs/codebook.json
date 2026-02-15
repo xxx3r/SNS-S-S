@@ -1,0 +1,58 @@
+{
+  "targets_deg": [
+    0.0,
+    90.0,
+    180.0,
+    270.0
+  ],
+  "states": [
+    {
+      "state": 0,
+      "target_phase_deg": 0.0,
+      "params": {
+        "r_mm": 1.4,
+        "h_mm": 2.6
+      },
+      "predicted": {
+        "phase_deg": 168.02595,
+        "amp": 0.098462
+      }
+    },
+    {
+      "state": 1,
+      "target_phase_deg": 90.0,
+      "params": {
+        "r_mm": 1.4,
+        "h_mm": 2.6
+      },
+      "predicted": {
+        "phase_deg": 168.02595,
+        "amp": 0.098462
+      }
+    },
+    {
+      "state": 2,
+      "target_phase_deg": 180.0,
+      "params": {
+        "r_mm": 0.6,
+        "h_mm": 1.4
+      },
+      "predicted": {
+        "phase_deg": 175.603156,
+        "amp": 0.036212
+      }
+    },
+    {
+      "state": 3,
+      "target_phase_deg": 270.0,
+      "params": {
+        "r_mm": 0.6,
+        "h_mm": 1.4
+      },
+      "predicted": {
+        "phase_deg": 175.603156,
+        "amp": 0.036212
+      }
+    }
+  ]
+}

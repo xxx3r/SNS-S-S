@@ -28,7 +28,7 @@ Assemble an initial 8-paper list and assign feasibility tags.
 
 
 ## QST-META-0005a: Metasurface DL Benchmark (2-bit Beam-Steering Tile)
-Status: Active
+Status: Completed
 Created: 2026-02-14
 Tags: [META, CTRL, SIM, BENCH]
 
@@ -46,6 +46,8 @@ Artifacts:
 - benchmarks/metasurface_2bit_rf/README.md
 - benchmarks/metasurface_2bit_rf/config.yaml
 - benchmarks/metasurface_2bit_rf/*.py
+- benchmarks/metasurface_2bit_rf/runs/codebook.json
+- benchmarks/metasurface_2bit_rf/runs/validate_report.md
 - docs/benchmarks/metasurface_2bit_rf_tile.md
 - tests/test_meta_tile.py
 

@@ -1,15 +1,17 @@
 # mem_log_short (spawn)
 
-Current Quest: QST-0002
-Current Step: Validate matplotlib plotting path for baseline/coordinated harness outputs.
+Current Quest: QST-META-0005a
+Current Step: Implement minimal DL-assisted metasurface 2-bit benchmark with analytic backend and tests.
 
 Last Output Artifact:
-- quests/active/QST-0002-baseline-vs-coordinated.md (2026-02-15 plotting validation attempt log)
+- benchmarks/metasurface_2bit_rf/runs/codebook.json
+- benchmarks/metasurface_2bit_rf/runs/validate_report.md
+- docs/benchmarks/metasurface_2bit_rf_tile.md
 
 Blockers / Known Bugs:
-- `python -m pip install matplotlib` fails in this environment due proxy/network restrictions, so PNG generation cannot be validated locally.
+- PyTorch is optional; environment fell back to deterministic table surrogate in train_forward.py.
 
-Aurora Score (last session): A = 0.6 ∠ -80°
+Aurora Score (last session): A = 0.9 ∠ -65°
 
 Next Move (one shot):
-- Run `python -m experiments.baseline_vs_coordinated` in a matplotlib-enabled environment and confirm PNG outputs for both policies.
+- Add analytic-vs-fullwave comparison harness after wiring a real full-wave backend implementation.
