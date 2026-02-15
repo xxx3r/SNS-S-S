@@ -1,7 +1,7 @@
 # QST-0002: Baseline vs Coordinated Experiment Harness
 
 Status: In Progress
-Updated: 2026-02-14
+Updated: 2026-02-15
 Tags: [SWARM, CTRL]
 
 ## Hypothesis
@@ -29,6 +29,14 @@ If we implement baseline and coordinated presets with shared metrics, then we ca
 - Coordinated: `final_host_energy=0.502777264753466`, `mean_agent_energy=3.9195708328900323`, `dead_agent_count=0`
 - Delta (`coordinated - baseline`): `final_host_energy=+0.502777264753466`, `mean_agent_energy=-0.05459677277237755`, `dead_agent_count=0`
 
+## Plotting Validation Attempt (2026-02-15)
+- Commands:
+  - `python -m pip install matplotlib`
+  - `python -m experiments.baseline_vs_coordinated`
+- Result: install failed in this environment due proxy/network restrictions (`ProxyError` + `No matching distribution found for matplotlib`).
+- Verification: harness still emitted CSV + summary outputs and generated `PLOT_WARNING.txt` (no PNG files were produced for either policy).
+- Action: leave quest **In Progress** and rerun in an environment with matplotlib access to fully close the plotting-path criterion.
+
 ## Environment Note
 Install plotting dependency when PNG outputs are required:
 - `python -m pip install matplotlib`
@@ -39,4 +47,4 @@ Without matplotlib, the harness still emits CSV + summary artifacts and writes `
 - Divergent defaults between presets could invalidate comparisons.
 
 ## Next Step
-- Validate plotting path by running the harness in an environment with matplotlib and confirm PNG generation for both policies.
+- Re-run `python -m experiments.baseline_vs_coordinated` in an environment where `matplotlib` installs successfully, then confirm PNG generation in both `baseline/plots/` and `coordinated/plots/`.
