@@ -20,3 +20,5 @@
 
 [S0010 | 2026-02-14] QST-0002 comparison run recorded; coordinated policy improved final host energy by +0.503 while preserving zero dead agents; matplotlib setup note added. A=0.8∠-70°. Tags: 2.1 swarm, 0.2 tooling
 [S0011 | 2026-02-15] QST-0100 turned 2026-02-08 roundup actions into six concrete quest specs (SBSP/CTRL/SWARM/META/STOR) and synced ledger context. A=0.5∠165°|w_ext=0.3. Tags: 0.1 docs, 0.2 tooling
+
+[S0012 | 2026-02-15] QST-0002 attempted matplotlib plotting validation; harness reran and emitted CSV/summary with plot warnings, but matplotlib install blocked by proxy so PNG confirmation remains pending. A=0.6∠-80°. Tags: 2.1 swarm, 0.2 tooling
