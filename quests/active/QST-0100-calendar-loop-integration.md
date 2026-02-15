@@ -1,7 +1,7 @@
 # QST-0100: Calendar Loop Integration
 
 Status: Active
-Updated: 2026-02-05
+Updated: 2026-02-15
 Tags: [META, DOCS]
 
 ## Hypothesis
@@ -18,11 +18,17 @@ If we formalize the calendar roundup loop with belief tracking, then weekly exte
 
 ## Artifacts
 - calendar/roundups/2026-01-25.md
+- calendar/roundups/2026-02-08.md
 - calendar/belief_ledger.csv
-- agents/researcher_brief.md
+- quests/active/QST-SBSP-0001-relay-chain-reality-check.md
+- quests/active/QST-CTRL-0002-toy-relay-jitter-sim.md
+- quests/active/QST-SBSP-0003-darpa-power-crib-sheet.md
+- quests/active/QST-SWARM-0004-starling-constraints-extraction.md
+- quests/active/QST-META-0005-dl-metasurface-pipeline.md
+- quests/active/QST-STOR-0006-night-side-energy-budget.md
 
 ## Risks
 - Inconsistent quest sources (plan vs quests) could cause drift.
 
 ## Next Step
-Run the next weekly roundup and append belief shifts into the ledger.
+Prioritize one new quest (recommended: QST-CTRL-0002) and produce the first runnable artifact.

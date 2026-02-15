@@ -1,19 +1,20 @@
 # mem_log_short (spawn)
 
-Current Quest: QST-0002
-Current Step: Validate plotting path by running baseline-vs-coordinated in an environment with matplotlib.
+Current Quest: QST-0100
+Current Step: Convert 2026-02-08 roundup actions into concrete quest specs and seed follow-on work.
 
 Last Output Artifact:
-- experiments/outputs/baseline_vs_coordinated/baseline/metrics.csv
-- experiments/outputs/baseline_vs_coordinated/coordinated/metrics.csv
-- experiments/outputs/baseline_vs_coordinated/baseline_vs_coordinated_comparison.csv
-- experiments/outputs/baseline_vs_coordinated/baseline_vs_coordinated_summary.json
-- quests/active/QST-0002-baseline-vs-coordinated.md
+- quests/active/QST-SBSP-0001-relay-chain-reality-check.md
+- quests/active/QST-CTRL-0002-toy-relay-jitter-sim.md
+- quests/active/QST-SBSP-0003-darpa-power-crib-sheet.md
+- quests/active/QST-SWARM-0004-starling-constraints-extraction.md
+- quests/active/QST-META-0005-dl-metasurface-pipeline.md
+- quests/active/QST-STOR-0006-night-side-energy-budget.md
 
 Blockers / Known Bugs:
-- matplotlib not installed in this runtime, so harness writes `PLOT_WARNING.txt` instead of PNG plots.
+- Active quest count is above the preferred 3–7 range; next pass should prioritize/trim.
 
-Aurora Score (last session): A = 0.8 ∠ -70°
+Aurora Score (last session): A = 0.5 ∠ 165° | w_ext = 0.3
 
 Next Move (one shot):
-- Install matplotlib and rerun `python -m experiments.baseline_vs_coordinated` to confirm both policy plot PNG artifacts.
+- Start QST-CTRL-0002 with a CSV-first prototype sweep for received power vs jitter.
