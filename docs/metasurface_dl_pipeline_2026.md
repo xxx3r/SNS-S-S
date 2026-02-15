@@ -215,3 +215,31 @@ Things that push you out of 2026:
 3. Choose one inverse method (tandem or diffusion) and make it generate *something*, even ugly.
 
 That’s enough to turn this quest from “literature vibes” into a living pipeline.
+
+
+
+
+## 8) References 
+The 8 core references included (with feasibility tags)
+
+•	https://www.spiedigitallibrary.org/journals/advanced-photonics/volume-7/issue-3/034005/Deep-learning-in-metasurfaces--from-automated-design-to-adaptive/10.1117/1.AP.7.3.034005.full?utm_source=chatgpt.com Saifullah et al., “Deep learning in metasurfaces: from automated design to adaptive control” (2025) → SIM NOW.  ￼
+
+•    https://www.sciencedirect.com/science/article/abs/pii/S0079672725000023?utm_source=chatgpt.com Yang et al., “Exploring AI in metasurface structures with forward and inverse designs” (2025) → SIM NOW.  ￼
+
+•	https://www.sciencedirect.com/science/article/abs/pii/S0079672725000023?utm_source=chatgpt.com Dong et al., advanced DL approaches in metasurface design/modeling (2025) → SIM NOW.  ￼
+
+•	https://onlinelibrary.wiley.com/doi/10.1002/lpor.202503115?utm_source=chatgpt.com Deep-learning-enabled inverse design of large-scale aperiodic metasurfaces (Laser & Photonics Reviews, 2025) → BENCH NOW (with fab access/service).  ￼
+
+•	https://pubs.acs.org/doi/10.1021/acsphotonics.5c00993?utm_source=chatgpt.com Seo et al., fabrication-aware inverse design (diffusion/multi-objective) (ACS Photonics, 2025) → SIM NOW → BENCH NOW.  ￼
+
+•	https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_205.pdf?utm_source=chatgpt.com Tsukerman, diffusion-based EM inverse design (NeurIPS ML4PS workshop, 2025) → SIM NOW.  ￼
+
+•	https://pubs.acs.org/doi/full/10.1021/acsphotonics.5c00552?utm_source=chatgpt.com Lynch et al., physics-guided surrogate solvers for Maxwell (ACS Photonics, 2025) → SIM NOW.  ￼
+
+•	https://www.sciencedirect.com/science/article/pii/S258900422402772X?utm_source=chatgpt.com Kang et al., FNO surrogate + adjoint optimization for metasurface control (2025) → SIM NOW → BENCH NOW.  ￼
+
+### (public dataset anchors)
+
+• https://fanlab.stanford.edu/wp-content/papercite-data/pdf/jiang2020metanet.pdf?utm_source=chatgpt.com MetaNet
+
+• https://opg.optica.org/abstract.cfm?URI=oe-28-21-31932&utm_source=chatgpt.com open meta-atom dataset
