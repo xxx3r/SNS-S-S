@@ -5,11 +5,11 @@ from __future__ import annotations
 import csv
 import json
 import sys
+import argparse
 from copy import deepcopy
 from pathlib import Path
 from typing import Iterable, List, Tuple
 
-import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -56,11 +56,21 @@ def run_eta_beam_sweep(
         writer.writeheader()
         writer.writerows(results)
 
-    _plot_results(results, out_dir / "eta_beam_vs_E_host_total.png")
+    plot_warning = _plot_results(results, out_dir / "plots" / "eta_beam_vs_host_energy.png")
+    if plot_warning:
+        print(plot_warning)
     return results
 
 
-def _plot_results(results: List[dict], output_path: Path) -> None:
+def _plot_results(results: List[dict], output_path: Path) -> str:
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        import matplotlib.pyplot as plt
+    except ModuleNotFoundError as err:
+        warning = f"Plot generation skipped: {err}"
+        (output_path.parent / "PLOT_WARNING.txt").write_text(warning + "\n")
+        return warning
+
     eta = [row["eta_beam"] for row in results]
     totals = [row["E_host_total"] for row in results]
     fig, ax = plt.subplots()
@@ -69,14 +79,27 @@ def _plot_results(results: List[dict], output_path: Path) -> None:
     ax.set_ylabel("E_host_total (Wh)")
     ax.set_title("Beaming efficiency sweep")
     fig.tight_layout()
-    output_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output_path)
     plt.close(fig)
+    return ""
 
 
 def main() -> None:
-    base_config = ROOT / "configs" / "eta_beam_sweep_base.json"
-    run_eta_beam_sweep(base_config)
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--config",
+        type=Path,
+        default=ROOT / "configs" / "asteroid_coordinated.json",
+        help="Path to the coordinated base config to sweep.",
+    )
+    parser.add_argument(
+        "--out",
+        type=Path,
+        default=ROOT / "experiments" / "outputs" / "eta_beam_sweep",
+        help="Directory where CSV + plot outputs are written.",
+    )
+    args = parser.parse_args()
+    run_eta_beam_sweep(args.config, output_dir=args.out)
 
 
 if __name__ == "__main__":
