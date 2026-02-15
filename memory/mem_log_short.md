@@ -1,18 +1,19 @@
 # mem_log_short (spawn)
 
 Current Quest: QST-0002
-Current Step: Run and summarize baseline-vs-coordinated comparison artifacts.
+Current Step: Validate plotting path by running baseline-vs-coordinated in an environment with matplotlib.
 
 Last Output Artifact:
-- scripts/check_baseline_artifacts.sh
-- .github/workflows/baseline-artifacts.yml
-- docs/04_experiments_and_metrics_for_codex.txt
-- quests/completed/QST-0001-hello-swarm.md
+- experiments/outputs/baseline_vs_coordinated/baseline/metrics.csv
+- experiments/outputs/baseline_vs_coordinated/coordinated/metrics.csv
+- experiments/outputs/baseline_vs_coordinated/baseline_vs_coordinated_comparison.csv
+- experiments/outputs/baseline_vs_coordinated/baseline_vs_coordinated_summary.json
+- quests/active/QST-0002-baseline-vs-coordinated.md
 
 Blockers / Known Bugs:
-- (none)
+- matplotlib not installed in this runtime, so harness writes `PLOT_WARNING.txt` instead of PNG plots.
 
-Aurora Score (last session): A = 0.9 ∠ -110°
+Aurora Score (last session): A = 0.8 ∠ -70°
 
 Next Move (one shot):
-- Execute `python -m experiments.baseline_vs_coordinated --out outputs/latest` and record comparison summary for QST-0002.
+- Install matplotlib and rerun `python -m experiments.baseline_vs_coordinated` to confirm both policy plot PNG artifacts.
