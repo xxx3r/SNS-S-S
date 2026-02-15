@@ -24,3 +24,4 @@
 [S0012 | 2026-02-15] QST-0002 attempted matplotlib plotting validation; harness reran and emitted CSV/summary with plot warnings, but matplotlib install blocked by proxy so PNG confirmation remains pending. A=0.6∠-80°. Tags: 2.1 swarm, 0.2 tooling
 
 [S0013 | 2026-02-15] QST-META-0005a delivered metasurface_2bit_rf benchmark (dataset/train/inverse/validate/export), docs, and tests with deterministic analytic backend. A=0.9∠-65°. Tags: 4.0 metasurface, 0.2 tooling
+[S0013 | 2026-02-15] QST-0003 eta_beam sweep runner now defaults to coordinated config with CLI output targeting; CSV generated and plotting degrades to PLOT_WARNING when matplotlib is missing. A=0.7∠-70°. Tags: 4.0 beaming, 0.2 tooling
