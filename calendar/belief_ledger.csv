@@ -7,3 +7,6 @@ date,tag,delta,weight,source,notes
 2026-01-25,STOR,0.2,0.6,calendar/roundups/2026-01-25.md,Steady progress without a January breakout.
 2026-02-14,SBSP,1.0,0.3,calendar/roundups/2026-02-08.md,Power-beaming demo cadence supports relay-focused experiment priorities.
 2026-02-14,SWARM,1.0,0.3,calendar/roundups/2026-02-08.md,Distributed beamforming-under-uncertainty progress increases confidence in coordination experiments.
+2026-02-15,SBSP,1.0,0.3,calendar/roundups/2026-02-08.md,Relay-chain framing reinforced around coherence/pointing/loss minimization and demo readiness.
+2026-02-15,SWARM,1.0,0.3,calendar/roundups/2026-02-08.md,Uncertainty-aware beamforming and Starling-like operations justify new swarm constraint questing.
+2026-02-15,STOR,0.4,0.3,calendar/roundups/2026-02-08.md,Night-side storage planning elevated from background risk to explicit budget-target quest.
