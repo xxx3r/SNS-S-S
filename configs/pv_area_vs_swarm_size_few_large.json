@@ -1,0 +1,21 @@
+{
+  "duration": 7200,
+  "dt": 60,
+  "rotation_rate": 0.000436332,
+  "solar_flux": 1000,
+  "num_agents": 3,
+  "policy": "coordinated",
+  "host_demand_rate": 0.25,
+  "agent_parameters": {
+    "pv_area": 0.8,
+    "pv_efficiency": 0.25,
+    "energy_max": 4.0,
+    "initial_energy": 1.0,
+    "power_idle": 0.15,
+    "power_idle_low": 0.05,
+    "low_threshold": 0.4,
+    "high_threshold": 2.5,
+    "beam_efficiency": 0.6,
+    "beam_rate": 0.4
+  }
+}
