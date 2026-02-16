@@ -1,0 +1,3 @@
+variant,N_agents,A_PV,A_total,E_host_total
+pv_area_vs_swarm_size_few_large,3,0.8,2.4000000000000004,0.49749999999986627
+pv_area_vs_swarm_size_many_small,12,0.2,2.4000000000000004,0.5269743039298216

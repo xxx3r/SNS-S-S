@@ -1,7 +1,7 @@
 # QST-0004: PV Area vs Swarm Size Tradeoff
 
 Status: Active
-Updated: 2026-02-05
+Updated: 2026-02-16
 Tags: [PV, SWARM]
 
 ## Hypothesis
@@ -23,5 +23,10 @@ If we hold total PV area constant while varying swarm size, then we can quantify
 ## Risks
 - Edge cases where per-agent overhead dominates small units.
 
+## Progress
+- Defined fixed-total-area variants in `configs/pv_area_vs_swarm_size_few_large.json` and `configs/pv_area_vs_swarm_size_many_small.json` with `A_total = 2.4` for both scenarios.
+- Added `experiments/compare_pv_area_vs_swarm_size.py` to run both variants, write a comparison CSV, and generate a bar chart when matplotlib is available.
+- Ran the comparison and generated `outputs/latest/pv_area_vs_swarm_size/pv_area_vs_swarm_size.csv`; plotting gracefully degraded to `plots/PLOT_WARNING.txt` because matplotlib is not installed.
+
 ## Next Step
-Define the two configuration variants and add a comparison runner script.
+Interpret the comparison output and add a short takeaway on whether many-small or few-large performs better under this configuration.
