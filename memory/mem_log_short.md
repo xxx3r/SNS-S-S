@@ -1,17 +1,17 @@
 # mem_log_short (spawn)
 
-Current Quest: QST-0004
-Current Step: Interpret fixed-total-PV comparison output and capture tradeoff takeaway.
+Current Quest: QST-0100
+Current Step: Integrate 2026-02-15 weekly roundup into belief ledger + active quest list.
 
 Last Output Artifact:
-- outputs/latest/pv_area_vs_swarm_size/pv_area_vs_swarm_size.csv
-- outputs/latest/pv_area_vs_swarm_size/plots/PLOT_WARNING.txt
-- experiments/compare_pv_area_vs_swarm_size.py
+- calendar/belief_ledger.csv
+- quests/active/QST-PV-0007-leo-perovskite-risk-register-refresh.md
+- quests/active/QST-0100-calendar-loop-integration.md
 
 Blockers / Known Bugs:
-- `matplotlib` is not installed in this environment, so plot output is recorded as `PLOT_WARNING.txt`.
+- None for docs/quest updates; implementation artifacts still pending for suggested actions.
 
-Aurora Score (last session): A = 0.7 ∠ -75°
+Aurora Score (last session): A = 0.6 ∠ 170° | w_ext = 0.4
 
 Next Move (one shot):
-- Add a concise interpretation note to QST-0004 from the generated comparison table.
+- Draft `docs/pv_leo_perovskite_risk_register.md` with gate criteria and evidence requirements from QST-PV-0007.

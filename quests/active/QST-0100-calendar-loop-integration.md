@@ -1,7 +1,7 @@
 # QST-0100: Calendar Loop Integration
 
 Status: Active
-Updated: 2026-02-15
+Updated: 2026-02-19
 Tags: [META, DOCS]
 
 ## Hypothesis
@@ -26,9 +26,10 @@ If we formalize the calendar roundup loop with belief tracking, then weekly exte
 - quests/active/QST-SWARM-0004-starling-constraints-extraction.md
 - quests/active/QST-META-0005-dl-metasurface-pipeline.md
 - quests/active/QST-STOR-0006-night-side-energy-budget.md
+- quests/active/QST-PV-0007-leo-perovskite-risk-register-refresh.md
 
 ## Risks
 - Inconsistent quest sources (plan vs quests) could cause drift.
 
 ## Next Step
-Prioritize one new quest (recommended: QST-CTRL-0002) and produce the first runnable artifact.
+Execute one suggested action artifact from the latest roundup (recommended: draft `docs/pv_leo_perovskite_risk_register.md` for QST-PV-0007).
