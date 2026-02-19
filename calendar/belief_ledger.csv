@@ -10,3 +10,8 @@ date,tag,delta,weight,source,notes
 2026-02-15,SBSP,1.0,0.3,calendar/roundups/2026-02-08.md,Relay-chain framing reinforced around coherence/pointing/loss minimization and demo readiness.
 2026-02-15,SWARM,1.0,0.3,calendar/roundups/2026-02-08.md,Uncertainty-aware beamforming and Starling-like operations justify new swarm constraint questing.
 2026-02-15,STOR,0.4,0.3,calendar/roundups/2026-02-08.md,Night-side storage planning elevated from background risk to explicit budget-target quest.
+2026-02-19,SBSP,1.2,0.4,calendar/roundups/2026-02-15.md,DARPA POWER framing strengthened requirements emphasis on multi-path relay metrics and safety envelopes.
+2026-02-19,CTRL,1.0,0.4,calendar/roundups/2026-02-15.md,PMU baseline architecture raises confidence in explicit harvest→MPPT→store/regulate budget modeling.
+2026-02-19,SWARM,0.8,0.4,calendar/roundups/2026-02-15.md,Starling operational constraints reinforce autonomy-window and fault-handling realism requirements.
+2026-02-19,PV,0.7,0.4,calendar/roundups/2026-02-15.md,LEO perovskite taxonomy clarifies scale-up gates around stability and environment survivability.
+2026-02-19,META,0.6,0.4,calendar/roundups/2026-02-15.md,FNO/operator-learning signal supports design-time surrogate workflow rather than on-node dependence.

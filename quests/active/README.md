@@ -13,3 +13,4 @@ Use one file per quest. If a quest grows large, give it a subdirectory and keep 
 - [QST-SWARM-0004: Starling-Informed Swarm Constraints](QST-SWARM-0004-starling-constraints-extraction.md)
 - [QST-META-0005: DL Metasurface Design Pipeline](QST-META-0005-dl-metasurface-pipeline.md)
 - [QST-STOR-0006: Night-Side Energy Budget Target](QST-STOR-0006-night-side-energy-budget.md)
+- [QST-PV-0007: LEO Perovskite PV Risk Register Refresh](QST-PV-0007-leo-perovskite-risk-register-refresh.md)
