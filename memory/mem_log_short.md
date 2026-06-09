@@ -1,17 +1,17 @@
 # mem_log_short (spawn)
 
-Current Quest: QST-0100
-Current Step: Integrate 2026-02-15 weekly roundup into belief ledger + active quest list.
+Current Quest: QST-PV-0007
+Current Step: Convert PV risk register into machine-readable checklist + readiness scoring script.
 
 Last Output Artifact:
-- calendar/belief_ledger.csv
+- docs/pv_leo_perovskite_risk_register.md
 - quests/active/QST-PV-0007-leo-perovskite-risk-register-refresh.md
-- quests/active/QST-0100-calendar-loop-integration.md
+- calendar/belief_ledger.csv
 
 Blockers / Known Bugs:
-- None for docs/quest updates; implementation artifacts still pending for suggested actions.
+- PV risk gates are still qualitative; no readiness scoring script exists yet.
 
-Aurora Score (last session): A = 0.6 ∠ 170° | w_ext = 0.4
+Aurora Score (last session): A = 0.7 ∠ 175° | w_ext = 0.5
 
 Next Move (one shot):
-- Draft `docs/pv_leo_perovskite_risk_register.md` with gate criteria and evidence requirements from QST-PV-0007.
+- Add `data/pv_leo_perovskite_risks.csv` plus a small script that computes gate coverage/readiness from the register.
