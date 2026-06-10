@@ -1,17 +1,18 @@
 # mem_log_short (spawn)
 
 Current Quest: QST-PV-0007
-Current Step: Convert PV risk register into machine-readable checklist + readiness scoring script.
+Current Step: Update individual PV gate statuses only when proof artifacts advance a gate.
 
 Last Output Artifact:
+- data/pv_leo_perovskite_risks.csv
+- scripts/score_pv_readiness.py
+- outputs/latest/pv_readiness_summary.json
 - docs/pv_leo_perovskite_risk_register.md
-- quests/active/QST-PV-0007-leo-perovskite-risk-register-refresh.md
-- calendar/belief_ledger.csv
 
 Blockers / Known Bugs:
-- PV risk gates are still qualitative; no readiness scoring script exists yet.
+- Current readiness is intentionally low: 0 mission-ready gates closed, 29 open gates, and 1 in-progress tabletop protocol gate.
 
-Aurora Score (last session): A = 0.7 ∠ 175° | w_ext = 0.5
+Aurora Score (last session): A = 0.8 ∠ -35° | w_ext = 0.5
 
 Next Move (one shot):
-- Add `data/pv_leo_perovskite_risks.csv` plus a small script that computes gate coverage/readiness from the register.
+- Attach real evidence artifacts to PV-02/PV-06/PV-10 before changing any gate from open to in_progress or closed.

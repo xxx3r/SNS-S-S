@@ -2,7 +2,7 @@
 
 Quest: QST-PV-0007  
 Date: 2026-06-09  
-Status: Investigation draft
+Status: Checklist-backed investigation draft
 
 ## Scope
 
@@ -37,9 +37,22 @@ This register captures early scale-up risks for using perovskite solar cells (PS
 3. **Short in-space demos are pathfinders, not closure.** A two-month exposure can unlock a subscale gate, but mission-ready status requires duration scaling, environment telemetry, and uncertainty-bounded degradation modeling.
 4. **Macro deployables are the bridge architecture.** Until PSC films close the package/deployment gates, SNS should treat ROSA-like deployable heritage as the structural reference and PSC as an experimental blanket material.
 
+## Machine-Readable Checklist + Readiness Snapshot
+
+The risk table is mirrored in `data/pv_leo_perovskite_risks.csv` so gate status can be updated without hand-scoring this markdown. Run `python scripts/score_pv_readiness.py --json-out outputs/latest/pv_readiness_summary.json` to compute the current readiness snapshot.
+
+Current v0.1 scorer output:
+
+- Risks: 10
+- Gates: 30
+- Gate status counts: 0 closed, 1 in progress, 29 open
+- Mission-ready gates closed: 0/10 (0.0%)
+- Weighted readiness score: 0.013
+- Highest-priority unresolved risks: PV-02 thermal cycling, PV-06 encapsulation/barrier design, and PV-10 measurement optimism
+
 ## Next Investigation Step
 
-Convert this register into a machine-readable CSV/JSON checklist and add a tiny scoring script that computes a PV readiness score from gate status, evidence freshness, and combined-stressor coverage.
+Replace the default `open`/`in_progress` gate statuses with evidence-backed updates as tabletop, hosted-payload, or mission-qualification artifacts become available.
 
 ## External References
 
