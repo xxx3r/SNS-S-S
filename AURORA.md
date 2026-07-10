@@ -1,40 +1,57 @@
-# AURORA — Spawn Compass + Scoring
+# AURORA: Evidence Compass
 
-## Spawn Compass
-Read these before any work session:
+AURORA is the repo's session compass. It rewards reality contact, not volume of prose.
+
+## Spawn
+
+Read:
+
 1. `memory/mem_log_short.md`
 2. `quests/active/README.md`
-3. Latest `calendar/roundups/` entry + `calendar/monthly/` (if available)
-4. This file (`AURORA.md`)
+3. latest weekly and monthly calendar entries
+4. the relevant system or ARCI doc
 
-## Aurora Score
-Write one line after each session using polar complex form:
+## Score
 
-`A = r ∠ θ`
+Record:
+
+`A = r ∠ θ | w_ext = e`
 
 Where:
-- `r ∈ [0, 1]` measures how real the progress was.
-  - 0.0 = ideas only
-  - 0.3 = spec + acceptance criteria
-  - 0.6 = runnable change + logs
-  - 0.8 = runnable + test + plot
-  - 1.0 = reproducible + compared baseline + documented
-- `θ` encodes direction (what kind of work moved forward).
-  - 0° = simulation correctness (models, math, validity)
-  - 90° = theory expansion (speculative physics scaffolding)
-  - -90° = engineering plumbing (CLI, configs, tests, packaging)
-  - 180°/-180° = narrative/docs/public artifact polish
 
-Optional external context weight (calendar-informed):
-- `w_ext ∈ [0, 1]` expresses how much external signals influenced the session.
-- Suggested source: average `weight` from the latest belief ledger entries.
-- Include it inline when relevant: `A = r ∠ θ | w_ext = 0.3`.
+- `r` is evidence depth in `[0, 1]`
+  - `0.2`: idea or note
+  - `0.4`: specification with acceptance criteria
+  - `0.6`: runnable change
+  - `0.8`: runnable, tested, and documented
+  - `1.0`: reproducible comparison with explicit uncertainty
+- `θ` is direction
+  - `0°`: model validity and simulation correctness
+  - `45°`: ARCI / measurement language
+  - `90°`: research synthesis and hypothesis expansion
+  - `-45°`: system engineering and energy-chain architecture
+  - `-90°`: tooling, packaging, CI, and calendar plumbing
+  - `180°`: public narrative and documentation
+- `w_ext` is the weight of external evidence used in the session
 
-Optional tiny vector beneath the score:
-- Evidence (0–3)
-- Coherence (0–3)
-- Ethics/Safety (0–3)
-- Resonance (0–3)
+## Evidence gate
 
-## Next Spawn Point
-Record the next concrete move in `memory/mem_log_short.md` under **Next Move (one shot)**.
+Before raising `r`, ask:
+
+- What changed in the model or artifact?
+- What measurement, test, or source supports it?
+- What remains placeholder or speculative?
+- What result would falsify the current belief?
+
+## Four-axis audit
+
+Optionally record scores from 0–3:
+
+- Evidence
+- Coherence
+- Safety / governance
+- Usefulness
+
+## Next spawn point
+
+Write one action only in `memory/mem_log_short.md`. It must produce a file, test, plot, table, metric, or documented decision.

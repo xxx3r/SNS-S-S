@@ -1,175 +1,204 @@
 # SNS-S-S
-Python simulation framework for space-based solar-nano-sphere swarm dynamics and power-chain modeling power### v01 repo structure
 
-## 1. Project Intent
+**Solar-Nano-Sphere Simulation + Surveying**
 
-SNS-S-S is a **public, educational simulation** for exploring how
-Solar-Nano-Sphere (SNS) swarms might behave as space-based solar power
-infrastructure.
+SNS-S-S is Aurora Lab's open Python framework for turning the Solar-Nano-Sphere concept into a formal research instrument.
 
-Your job as an AI coding agent is to:
+The Summer 2026 mission is not hardware readiness. It is **model readiness**: a legible, testable system for swarm dynamics, energy-chain accounting, asteroid-resource confidence, literature tracking, and quest-based research execution.
 
-* Turn the high-level design in `/docs/*.txt` into clean, tested Python
-  code.
-* Keep the code **small, readable, and well-documented**.
-* Make it easy for humans to:
-  - run experiments,
-  - inspect results,
-  - and extend the framework in future phases.
+> **SNS does not mine asteroids. SNS helps decide which asteroids deserve miners.**
 
-## 2. Ground Rules
+The long-horizon vision remains an intelligent solar-system energy mesh. The near-term path is narrower and more credible: build the measurement language, simulation spine, and uncertainty framework that future sensing swarms could sharpen.
 
-1. **Clarity over cleverness**
+## Current program phase
 
-   Prefer explicit, well-named classes and functions. Avoid unnecessary
-   metaprogramming, heavy abstractions, or opaque one-liners.
+**2026: definition, simulation, and narrative**
 
-2. **Minimal dependencies**
+This repository should make the following questions inspectable:
 
-   Standard library + `numpy` + `matplotlib` (and optionally `pytest`,
-   `pandas`) should be enough.
+1. How does an SNS-like node allocate sunlight among direct loads, pulse storage, survival storage, beaming, and curtailment?
+2. When does a coordinated swarm outperform independent nodes?
+3. How do asteroid illumination, thermal cycles, coverage gaps, and communication geometry affect mission value?
+4. What evidence is required before an asteroid target becomes credible enough for a precursor mission?
+5. How should weekly literature signals become explicit belief shifts and repo quests?
 
-   Do not add heavy frameworks (no TensorFlow/PyTorch/RL libraries) in
-   this initial phase unless explicitly requested.
-
-3. **Document as you go**
-
-   Every public class and function should have a short docstring
-   describing:
-   - purpose,
-   - inputs,
-   - outputs,
-   - and any key assumptions.
-
-4. **Keep configs in files**
-
-   Simulation parameters should live in simple config objects and/or
-   external YAML/JSON files in `configs/`, not scattered constants.
-
-5. **Tests are first-class**
-
-   When adding new behavior, add or update tests in `tests/` so that
-   humans can quickly verify that the simulation still behaves as
-   expected.
-
-## 3. Recommended Directory Layout
-
-When populating the repo, target something like:
+## Summer 2026 architecture
 
 ```text
-src/
-  world/
-    __init__.py
-    asteroid_world.py
-  agents/
-    __init__.py
-    sns_agent.py
-  host/
-    __init__.py
-    host_collector.py
-  sim/
-    __init__.py
-    config.py
-    simulation.py
-  utils/
-    __init__.py
-    math_utils.py
-    plotting.py
-
-experiments/
-  baseline_vs_coordinated.py
-  sweep_eta_beam.py
-  sweep_area_vs_count.py
-
-configs/
-  asteroid_baseline.yaml
-  asteroid_coordinated.yaml
+calendar/
+  roundups/          weekly research with machine-usable front matter
+  monthly/           roundup-of-roundups and belief consolidation
 
 docs/
-  (this is where the .txt design files live)
+  system/            SNS system definition, constraints, budgets, risks
+  arci/              Asteroid Resource Confidence Index
+  architecture/      repository and simulation design
 
-tests/
-  test_asteroid_world.py
-  test_sns_agent.py
-  test_simulation_smoke.py
+src/
+  agents/            role-aware SNS nodes and policies
+  world/             asteroid and GEO-ring environments
+  sim/               config, simulation loop, metrics, storage audits
+  arci/              transparent confidence scoring
+  research/          roundup parser and quest generation
+
+quests/
+  active/            3–8 current research or implementation quests
+  completed/         evidence-bearing completed work
+
+experiments/          reproducible runs and parameter sweeps
+configs/              versioned experiment inputs
+outputs/              generated artifacts, not arguments by assertion
 ```
 
-Any variations should be documented in `README.md`.
+## Node ontology
 
-## 4. Implementation Roadmap for AI Agents
+The Summer 2026 model treats an SNS node as a small thermodynamic agent, not a panel attached to a giant battery.
 
-If you are implementing this from scratch, the suggested order is:
+Each node tracks:
 
-1. **World + agent skeletons**
-   * Implement `AsteroidWorld` with `is_sunlit(theta, t)`.
-   * Implement `SNSAgent` with state and a basic `step()` method that
-     only supports HARVEST and IDLE.
+- role: `scout`, `sensor`, `relay`, or `storage`
+- mode: harvest, scout, relay, move, idle, sleep, or reflect
+- survival battery energy
+- pulse-buffer energy
+- health state
+- core-temperature proxy
+- harvested, directly used, stored, delivered, and curtailed energy
 
-2. **Host + core simulation loop**
-   * Add `HostCollector`.
-   * Implement a simple `Simulation` class that runs a fixed number of
-     timesteps and records energies.
+The dominant storage lesson is architectural: a 10 mm seed cannot warehouse the output of a 0.1–1.0 m² kite. The model therefore makes curtailment visible and treats meaningful Wh-scale storage as a role-specialized or host-level function.
 
-3. **Metrics + plotting**
-   * Implement `MetricsRecorder` and basic matplotlib plots.
+## Mission scenarios
 
-4. **Coordination logic**
-   * Extend SNSAgent to support COMM_BEAM and MOVE modes.
-   * Add configurable policy functions (baseline vs coordinated).
+### Asteroid resource intelligence
 
-5. **Experiments folder**
-   * Implement scripts described in
-     `docs/04_experiments_and_metrics_for_codex.txt`.
+A rotating asteroid world with:
 
-6. **Tests**
-   * Add smoke tests and a few unit tests to cover basic energy
-     bookkeeping.
+- cosine-weighted illumination
+- day/night temperature proxies
+- coverage bins
+- role-aware surveying and relay behavior
+- host-energy demand
 
-## 5. Communication with Human Collaborators
-
-* Use clear commit messages, e.g.:
-  - `feat: add AsteroidWorld with basic day/night model`
-  - `feat: implement SNSAgent HARVEST/IDLE modes`
-  - `feat: add baseline vs coordinated experiment script`
-  - `test: add smoke test for short simulation run`
-
-* When making non-trivial design choices, update the relevant `.txt`
-  documentation under `docs/` or add a short `docs/CHANGELOG.txt`
-  entry so humans can follow the reasoning.
-
-## 6. Stretch Goals (Optional)
-
-If the basic system is stable and well-tested, possible extensions
-include:
-
-* Adding a second environment (e.g., a GEO ring segment).
-* Implementing simple CLI entrypoints via `python -m` or `typer/click`
-  (if dependencies remain light).
-* Providing a small Jupyter or Colab notebook in `notebooks/` that
-  demonstrates end-to-end runs.
-
-Focus first on getting a robust, well-structured **Asteroid Scout**
-scenario running; everything else can build on that foundation.
-
-## 7. Reproducible QST-0001 baseline run
-
-Use the checked-in baseline config and helper script to regenerate `outputs/latest` artifacts:
+Run:
 
 ```bash
-scripts/check_baseline_artifacts.sh
+python experiments/baseline.py \
+  --config configs/summer_2026_asteroid.json \
+  --out outputs/summer_2026_asteroid
 ```
 
-Expected artifacts:
-- `outputs/latest/metrics.json`
-- `outputs/latest/timeseries.csv`
-- `outputs/latest/plot_energy.png`
+### GEO / SBSP field diagnostics
 
-### Dependencies for plotting and CI parity
+An idealized GEO ring with:
 
-For fully provisioned environments (local + CI), install:
+- eclipse windows
+- orbital coverage bins
+- sensor, relay, scout, and storage roles
+- energy delivery and field-coverage metrics
+
+Run:
 
 ```bash
-python -m pip install numpy matplotlib pytest
+python experiments/baseline.py \
+  --config configs/summer_2026_geo_ring.json \
+  --out outputs/summer_2026_geo_ring
 ```
 
-`matplotlib` keeps other experiment plotting scripts functional, while QST-0001's baseline PNG is generated directly by the baseline runner.
+## Core metrics
+
+Every mission run should expose at least:
+
+- total energy harvested
+- energy delivered to the host
+- energy curtailed
+- node survival / failure count
+- coverage fraction
+- battery distribution
+- role distribution
+- mode distribution
+- health distribution
+- mean temperature proxy
+
+A useful result is not merely a high score. It is a result whose assumptions, units, and losses are visible.
+
+## ARCI
+
+`src/arci/` contains the first transparent Asteroid Resource Confidence Index scaffold.
+
+ARCI v0.1 separates:
+
+- target score
+- evidence confidence
+- confidence-adjusted score
+- uncertainty bounds
+- recommendation gate
+
+The current dimensions are:
+
+1. composition
+2. accessibility
+3. recoverability
+4. energy environment
+5. surface-operations risk
+6. communications geometry
+7. market / mission value
+
+ARCI is not a mineral-valuation oracle. It is a research framework for exposing what is known, what is inferred, and what measurement should come next.
+
+## Research calendar
+
+Weekly roundups use Markdown plus JSON-compatible YAML 1.2 front matter. Each Sunday roundup must emit:
+
+- `weighted_belief_shifts`
+- `suggested_actions`
+- `sns_awareness_update`
+
+The parser lives in `src/research/roundup.py`. Suggested actions can be normalized into quest drafts through `src/research/quest_engine.py`.
+
+Template: `calendar/roundups/TEMPLATE.md`
+
+## Active quests
+
+The canonical index is `quests/active/README.md`.
+
+Summer 2026 priorities are:
+
+1. minimal role-aware SNS agent
+2. asteroid illumination and coverage model
+3. GEO-ring power-chain model
+4. storage and thermal-control refinement
+5. metasurface steering abstraction
+6. ARCI v0.1
+7. roundup-to-quest pipeline
+8. public artifact outline
+
+Do not create a new theory galaxy when one measurable quest step will do.
+
+## Install and test
+
+```bash
+python -m pip install -e .
+python -m pytest -q
+```
+
+The core favors the standard library. NumPy remains an explicit dependency for the pre-existing metasurface benchmark; `pytest` and `matplotlib` are development dependencies.
+
+## Evidence rules
+
+- Simulation outputs are evidence about the model, not proof of hardware feasibility.
+- Placeholder parameters must be labeled.
+- Score and confidence must remain separate.
+- Claims about external technology require sources in the research calendar or system docs.
+- A completed quest must point to a reproducible artifact, test, calculation, or documented decision.
+
+## 2026 win condition
+
+By the end of Summer 2026, an outside expert should be able to:
+
+1. understand the mission in ten minutes,
+2. run asteroid and GEO examples,
+3. inspect the energy ledger,
+4. critique the system assumptions,
+5. evaluate an ARCI example,
+6. trace a literature signal into a quest.
+
+That is the first flag on the ridge: not deployment, but legitimacy.

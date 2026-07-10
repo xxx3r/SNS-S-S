@@ -1,16 +1,25 @@
-# Active Quests
+# Active Quests: Summer 2026
 
-Use one file per quest. If a quest grows large, give it a subdirectory and keep a short README inside that directory.
+Only quests listed here are active. Historical Q1 / Spring 2026 quest files have been removed from this directory and summarized in `quests/backlog/legacy_spring_2026.md`.
+
+Keep 3–8 active quests. Each quest must produce an inspectable artifact and state what could invalidate its conclusion.
 
 ## Active Index
-- [QST-0002: Baseline vs Coordinated Experiment Harness](QST-0002-baseline-vs-coordinated.md)
-- [QST-0003: Beaming Efficiency Sweep](QST-0003-beaming-efficiency-sweep.md)
-- [QST-0004: PV Area vs Swarm Size Tradeoff](QST-0004-pv-area-vs-swarm-size.md)
-- [QST-0100: Calendar Loop Integration](QST-0100-calendar-loop-integration.md)
-- [QST-SBSP-0001: Relay Chain Reality Check](QST-SBSP-0001-relay-chain-reality-check.md)
-- [QST-CTRL-0002: Toy Relay Jitter Simulation](QST-CTRL-0002-toy-relay-jitter-sim.md)
-- [QST-SBSP-0003: DARPA POWER Requirements Crib Sheet](QST-SBSP-0003-darpa-power-crib-sheet.md)
-- [QST-SWARM-0004: Starling-Informed Swarm Constraints](QST-SWARM-0004-starling-constraints-extraction.md)
-- [QST-META-0005: DL Metasurface Design Pipeline](QST-META-0005-dl-metasurface-pipeline.md)
-- [QST-STOR-0006: Night-Side Energy Budget Target](QST-STOR-0006-night-side-energy-budget.md)
-- [QST-PV-0007: LEO Perovskite PV Risk Register Refresh](QST-PV-0007-leo-perovskite-risk-register-refresh.md)
+
+1. [QST-STOR-0002: Thermal-Derated Shadow Survival](QST-STOR-0002-thermal-derated-shadow-survival.md)
+2. [QST-SIM-0002: Asteroid Illumination + Coverage Model](QST-SIM-0002-asteroid-illumination-model.md)
+3. [QST-SIM-0003: GEO Ring Power-Chain Model](QST-SIM-0003-geo-ring-power-chain.md)
+4. [QST-PV-0001: PV Degradation Parameter Sheet](QST-PV-0001-pv-degradation-parameters.md)
+5. [QST-META-0001: Metasurface Beam-Steering Abstraction](QST-META-0001-metasurface-beam-abstraction.md)
+6. [QST-ARCI-0001: ARCI v0.1 Draft + Synthetic Target](QST-ARCI-0001-arci-v0-1.md)
+7. [QST-CALENDAR-0001: Weekly Roundup → Quest Pipeline](QST-CALENDAR-0001-roundup-parser.md)
+8. [QST-FUND-0001: Summer 2026 Public Artifact](QST-FUND-0001-public-artifact-outline.md)
+
+## Recently completed
+
+- `QST-STOR-0001`: storage geometry audit
+- `QST-SIM-0001`: role-aware SNS agent and explicit power-state baseline
+
+## Selection rule
+
+Prefer the quest that removes the most uncertainty per unit effort. Current default spawn: `QST-STOR-0002`.
