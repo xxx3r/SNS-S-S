@@ -1,19 +1,18 @@
 # mem_log_short (spawn)
 
-Current Quest: QST-STOR-0001
-Current Step: Storage geometry audit completed; hand off to thermal derating.
+Current Quest: QST-PV-0007
+Current Step: Update individual PV gate statuses only when proof artifacts advance a gate.
 
 Last Output Artifact:
-- outputs/qst_stor_0001/summary.json
-- outputs/qst_stor_0001/active_duty_cycle_sensitivity.csv
-- docs/qst_stor_0001_findings.md
-- notebooks/QST-STOR-0001_storage_geometry_audit.ipynb
+- data/pv_leo_perovskite_risks.csv
+- scripts/score_pv_readiness.py
+- outputs/latest/pv_readiness_summary.json
+- docs/pv_leo_perovskite_risk_register.md
 
 Blockers / Known Bugs:
-- Geometry PASS does not include thermal, radiation, aging, heater, or packaging derating.
-- Full-repository CI remains the final integration check after PR creation.
+- Current readiness is intentionally low: 0 mission-ready gates closed, 29 open gates, and 1 in-progress tabletop protocol gate.
 
-Aurora Score (last session): A = 0.95 ∠ -20°
+Aurora Score (last session): A = 0.8 ∠ -35° | w_ext = 0.5
 
 Next Move (one shot):
-- Create QST-STOR-0002 thermal-derated shadow survival model with battery temperature and PCM/heater terms.
+- Attach real evidence artifacts to PV-02/PV-06/PV-10 before changing any gate from open to in_progress or closed.

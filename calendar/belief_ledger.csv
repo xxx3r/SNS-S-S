@@ -15,3 +15,5 @@ date,tag,delta,weight,source,notes
 2026-02-19,SWARM,0.8,0.4,calendar/roundups/2026-02-15.md,Starling operational constraints reinforce autonomy-window and fault-handling realism requirements.
 2026-02-19,PV,0.7,0.4,calendar/roundups/2026-02-15.md,LEO perovskite taxonomy clarifies scale-up gates around stability and environment survivability.
 2026-02-19,META,0.6,0.4,calendar/roundups/2026-02-15.md,FNO/operator-learning signal supports design-time surrogate workflow rather than on-node dependence.
+2026-06-09,PV,0.6,0.5,docs/pv_leo_perovskite_risk_register.md,External review plus Ricoh/JAXA demo signals support LEO PSC promise but keep qualification burden centered on combined-stressor gates.
+2026-06-09,MAT,0.4,0.5,docs/pv_leo_perovskite_risk_register.md,Encapsulation and stack chemistry remain primary material readiness risks for flexible LEO PSC surfaces.

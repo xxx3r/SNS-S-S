@@ -28,4 +28,7 @@
 
 [S0014 | 2026-02-16] QST-0004 defined few-large/many-small configs and added comparison runner; generated fixed-total-area CSV with plot warning fallback. A=0.7∠-75°. Tags: 1.0 PV, 2.1 swarm, 0.2 tooling
 [S0015 | 2026-02-19] QST-0100 integrated 2026-02-15 roundup into belief ledger and spawned QST-PV-0007 for perovskite risk-gate artifact planning. A=0.6∠170°|w_ext=0.4. Tags: 0.1 docs, 0.2 tooling, 1.0 PV
-[S0016 | 2026-07-10] QST-STOR-0001 audited 1,296 storage geometries, replaced the 10 mm seed's foggy 0.1–10 Wh range with 0.0138–0.2094 Wh, added duty-cycle stress tests, reproducible outputs, notebook, and five passing tests. A=0.95∠-20°. Tags: 3.0 storage, 0.2 tooling, 0.1 docs
+
+[S0016 | 2026-06-09] QST-PV-0007 began LEO perovskite PV risk investigation; drafted 10-risk register with tabletop/subscale/mission gates and proof artifacts. A=0.7∠175°|w_ext=0.5. Tags: 1.0 PV, 5.0 materials, 0.1 docs
+
+[S0017 | 2026-06-09] QST-PV-0007 converted the perovskite risk register into CSV checklist + scorer; readiness snapshot is 30 gates, 0 mission-ready closed, weighted score 0.013. A=0.8∠-35°|w_ext=0.5. Tags: 1.0 PV, 5.0 materials, 0.2 tooling

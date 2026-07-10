@@ -1,7 +1,7 @@
 # QST-PV-0007: LEO Perovskite PV Risk Register Refresh
 
 Status: Active
-Updated: 2026-02-19
+Updated: 2026-06-09
 Tags: [PV, MAT, RISK, DOCS]
 
 ## Hypothesis
@@ -18,9 +18,16 @@ If SNS captures a concise LEO perovskite constraint taxonomy as a risk register,
 
 ## Artifacts
 - docs/pv_leo_perovskite_risk_register.md
+- data/pv_leo_perovskite_risks.csv
+- scripts/score_pv_readiness.py
+- outputs/latest/pv_readiness_summary.json
 
 ## Risks
 - Public information may under-specify private test conditions and overstate readiness.
 
+## Progress
+- 2026-06-09: Drafted `docs/pv_leo_perovskite_risk_register.md` with 10 risks, gate criteria, and evidence artifacts.
+- 2026-06-09: Added `data/pv_leo_perovskite_risks.csv` and `scripts/score_pv_readiness.py`; current snapshot is 30 gates, 0 mission-ready gates closed, and weighted readiness 0.013.
+
 ## Next Step
-Draft the risk table skeleton and pre-fill mandatory gate columns from the 2026-02-15 roundup constraints.
+Update individual gate statuses only when a proof artifact closes or advances a tabletop, subscale in-space, or mission-ready gate.
