@@ -1,0 +1,40 @@
+{
+  "eclipse_hours": 0.6,
+  "sweep": {
+    "core_diameter_mm": [
+      10,
+      20,
+      30
+    ],
+    "shell_thickness_mm": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "energy_density_wh_per_l": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "reserve_fraction": [
+      0.1,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "round_trip_efficiency": [
+      0.6,
+      0.75,
+      0.9
+    ],
+    "active_duty_cycle": [
+      0.1,
+      0.25,
+      0.5
+    ],
+    "load_power_mw": [
+      10
+    ]
+  }
+}

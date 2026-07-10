@@ -1,17 +1,18 @@
 # mem_log_short (spawn)
 
-Current Quest: QST-0100
-Current Step: Integrate 2026-02-15 weekly roundup into belief ledger + active quest list.
+Current Quest: QST-STOR-0001
+Current Step: Resolve PR#19 reproducibility review by regenerating storage audit summary schema.
 
 Last Output Artifact:
-- calendar/belief_ledger.csv
-- quests/active/QST-PV-0007-leo-perovskite-risk-register-refresh.md
-- quests/active/QST-0100-calendar-loop-integration.md
+- outputs/qst_stor_0001/summary.json
+- outputs/qst_stor_0001/storage_sweep.csv
+- outputs/qst_stor_0001/active_duty_sensitivity.csv
+- outputs/qst_stor_0001/report.md
 
 Blockers / Known Bugs:
-- None for docs/quest updates; implementation artifacts still pending for suggested actions.
+- None; checked-in summary now matches the runner output schema.
 
-Aurora Score (last session): A = 0.6 ∠ 170° | w_ext = 0.4
+Aurora Score (last session): A = 0.8 ∠ -45°
 
 Next Move (one shot):
-- Draft `docs/pv_leo_perovskite_risk_register.md` with gate criteria and evidence requirements from QST-PV-0007.
+- Feed QST-STOR-0001 usable-energy bounds into QST-STOR-0006 night-side energy budget assumptions.

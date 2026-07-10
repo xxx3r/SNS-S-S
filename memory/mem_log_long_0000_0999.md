@@ -28,3 +28,4 @@
 
 [S0014 | 2026-02-16] QST-0004 defined few-large/many-small configs and added comparison runner; generated fixed-total-area CSV with plot warning fallback. A=0.7∠-75°. Tags: 1.0 PV, 2.1 swarm, 0.2 tooling
 [S0015 | 2026-02-19] QST-0100 integrated 2026-02-15 roundup into belief ledger and spawned QST-PV-0007 for perovskite risk-gate artifact planning. A=0.6∠170°|w_ext=0.4. Tags: 0.1 docs, 0.2 tooling, 1.0 PV
+[S0016 | 2026-07-10] QST-STOR-0001 Regenerated storage geometry audit artifacts from runner; summary now uses nested by_core_diameter schema and reproducibility test locks it. A=0.8∠-45°. Tags: 3.0 storage, 0.2 tooling

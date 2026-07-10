@@ -1,0 +1,25 @@
+{
+  "best_margin_wh": 1.043062212263759,
+  "by_core_diameter": {
+    "10_mm": {
+      "fail": 10,
+      "pass": 422,
+      "pass_rate": 0.9768518518518519
+    },
+    "20_mm": {
+      "fail": 0,
+      "pass": 432,
+      "pass_rate": 1.0
+    },
+    "30_mm": {
+      "fail": 0,
+      "pass": 432,
+      "pass_rate": 1.0
+    }
+  },
+  "fail_count": 10,
+  "pass_count": 1286,
+  "pass_rate": 0.9922839506172839,
+  "scenario_count": 1296,
+  "worst_margin_wh": -0.0014401992474926695
+}
