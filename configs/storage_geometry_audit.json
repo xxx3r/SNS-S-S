@@ -1,0 +1,21 @@
+{
+  "sweep": {
+    "core_diameter_mm": [10, 20, 30],
+    "battery_volume_fraction": [0.15, 0.30, 0.50],
+    "battery_energy_density_Wh_L": [220, 450, 600, 1000],
+    "sleep_power_uW": [10, 100, 1000],
+    "active_power_mW": [1, 10, 100],
+    "shadow_duration_h": [0.5, 2, 12, 72]
+  },
+  "assumptions": {
+    "usable_fraction": 0.80,
+    "discharge_efficiency": 0.90,
+    "charge_efficiency": 0.90,
+    "reserve_fraction": 0.20,
+    "active_duty_cycle": 0.01,
+    "battery_density_g_cm3": 2.0,
+    "pv_charge_power_W": 27.0,
+    "max_charge_c_rate": 1.0
+  },
+  "sensitivity_active_duty_cycles": [0.0, 0.01, 0.05, 0.10, 1.0]
+}
