@@ -6,3 +6,4 @@
 - Smoke sim: `python -m experiments.baseline --config configs/asteroid_baseline.json --steps 50 --out outputs/latest`
 - Analyze: `python -m experiments.analyze --in outputs/latest --out outputs/latest`
 - Baseline artifact check: `scripts/check_baseline_artifacts.sh`
+- PV readiness score: `python scripts/score_pv_readiness.py --json-out outputs/latest/pv_readiness_summary.json`

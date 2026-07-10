@@ -1,0 +1,73 @@
+{
+  "total_risks": 10,
+  "total_gates": 30,
+  "gate_status_counts": {
+    "closed": 0,
+    "in_progress": 1,
+    "open": 29
+  },
+  "mission_ready_closed": 0,
+  "mission_ready_closed_percent": 0.0,
+  "weighted_readiness_score": 0.013,
+  "combined_stressor_coverage_counts": {
+    "none": 3,
+    "partial": 7
+  },
+  "highest_priority_unresolved": [
+    {
+      "risk_id": "PV-02",
+      "risk_title": "Thermal cycling causes microcracks, delamination, and interfacial stress",
+      "severity": "High",
+      "likelihood": "High",
+      "priority_score": 9,
+      "tabletop_status": "open",
+      "subscale_in_space_status": "open",
+      "mission_ready_status": "open",
+      "proof_artifact": "Thermal-vacuum cycling report; microscopy; power retention curve."
+    },
+    {
+      "risk_id": "PV-06",
+      "risk_title": "Encapsulation/barrier design trades protection against mass, flexibility, optical loss, and repairability",
+      "severity": "High",
+      "likelihood": "High",
+      "priority_score": 9,
+      "tabletop_status": "open",
+      "subscale_in_space_status": "open",
+      "mission_ready_status": "open",
+      "proof_artifact": "Encapsulation trade matrix; selected stack drawing; areal-density budget."
+    },
+    {
+      "risk_id": "PV-10",
+      "risk_title": "Measurement optimism: short demonstrations under-report long-duration, combined-stressor degradation",
+      "severity": "High",
+      "likelihood": "High",
+      "priority_score": 9,
+      "tabletop_status": "in_progress",
+      "subscale_in_space_status": "open",
+      "mission_ready_status": "open",
+      "proof_artifact": "Qualification protocol; data schema; validated degradation model."
+    },
+    {
+      "risk_id": "PV-01",
+      "risk_title": "Proton/electron radiation creates defects, charge traps, and output decay",
+      "severity": "High",
+      "likelihood": "Medium",
+      "priority_score": 6,
+      "tabletop_status": "open",
+      "subscale_in_space_status": "open",
+      "mission_ready_status": "open",
+      "proof_artifact": "Radiation test report; dose model; EOL power budget."
+    },
+    {
+      "risk_id": "PV-03",
+      "risk_title": "Vacuum and heat drive volatile loss, stoichiometry shifts, ion migration, or electrode reactions",
+      "severity": "High",
+      "likelihood": "Medium",
+      "priority_score": 6,
+      "tabletop_status": "open",
+      "subscale_in_space_status": "open",
+      "mission_ready_status": "open",
+      "proof_artifact": "TVAC/outgassing report; materials compatibility matrix."
+    }
+  ]
+}

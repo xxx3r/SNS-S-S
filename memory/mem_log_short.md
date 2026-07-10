@@ -1,17 +1,18 @@
 # mem_log_short (spawn)
 
-Current Quest: QST-0100
-Current Step: Integrate 2026-02-15 weekly roundup into belief ledger + active quest list.
+Current Quest: QST-PV-0007
+Current Step: Update individual PV gate statuses only when proof artifacts advance a gate.
 
 Last Output Artifact:
-- calendar/belief_ledger.csv
-- quests/active/QST-PV-0007-leo-perovskite-risk-register-refresh.md
-- quests/active/QST-0100-calendar-loop-integration.md
+- data/pv_leo_perovskite_risks.csv
+- scripts/score_pv_readiness.py
+- outputs/latest/pv_readiness_summary.json
+- docs/pv_leo_perovskite_risk_register.md
 
 Blockers / Known Bugs:
-- None for docs/quest updates; implementation artifacts still pending for suggested actions.
+- Current readiness is intentionally low: 0 mission-ready gates closed, 29 open gates, and 1 in-progress tabletop protocol gate.
 
-Aurora Score (last session): A = 0.6 ∠ 170° | w_ext = 0.4
+Aurora Score (last session): A = 0.8 ∠ -35° | w_ext = 0.5
 
 Next Move (one shot):
-- Draft `docs/pv_leo_perovskite_risk_register.md` with gate criteria and evidence requirements from QST-PV-0007.
+- Attach real evidence artifacts to PV-02/PV-06/PV-10 before changing any gate from open to in_progress or closed.
