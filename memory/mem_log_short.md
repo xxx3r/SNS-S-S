@@ -1,17 +1,19 @@
 # mem_log_short (spawn)
 
-Current Quest: QST-0100
-Current Step: Integrate 2026-02-15 weekly roundup into belief ledger + active quest list.
+Current Quest: QST-STOR-0001
+Current Step: Storage geometry audit completed; hand off to thermal derating.
 
 Last Output Artifact:
-- calendar/belief_ledger.csv
-- quests/active/QST-PV-0007-leo-perovskite-risk-register-refresh.md
-- quests/active/QST-0100-calendar-loop-integration.md
+- outputs/qst_stor_0001/summary.json
+- outputs/qst_stor_0001/active_duty_cycle_sensitivity.csv
+- docs/qst_stor_0001_findings.md
+- notebooks/QST-STOR-0001_storage_geometry_audit.ipynb
 
 Blockers / Known Bugs:
-- None for docs/quest updates; implementation artifacts still pending for suggested actions.
+- Geometry PASS does not include thermal, radiation, aging, heater, or packaging derating.
+- Full-repository CI remains the final integration check after PR creation.
 
-Aurora Score (last session): A = 0.6 ∠ 170° | w_ext = 0.4
+Aurora Score (last session): A = 0.95 ∠ -20°
 
 Next Move (one shot):
-- Draft `docs/pv_leo_perovskite_risk_register.md` with gate criteria and evidence requirements from QST-PV-0007.
+- Create QST-STOR-0002 thermal-derated shadow survival model with battery temperature and PCM/heater terms.
