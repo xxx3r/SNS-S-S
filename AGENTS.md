@@ -1,250 +1,100 @@
-# AGENTS.md — SNS-S-S
+# AGENTS.md: SNS-S-S Summer 2026 Control Plane
 
-# Arcade Loop Instructions (control plane)
-- Treat this repo like an arcade cabinet: you are the player, progress is the score.
-- Obey the Spawn Ritual: read `memory/mem_log_short.md`, `quests/active/README.md`, the latest `calendar/roundups/` entry (plus `calendar/monthly/`), and `AURORA.md`.
-- Pick one quest step that yields a concrete artifact (code, plot, metric, doc).
-- Change as few files as possible to accomplish that step.
-- Always log + score after work: update short log, append long log, update quest status, update calendar belief ledger when using external context, and set a new Aurora Score.
+This repository is a formal research instrument for Solar-Nano-Sphere swarm dynamics, energy-chain modeling, asteroid-resource intelligence, and research-calendar execution.
 
-## tasks_open
-- Maintain the Arcade Loop scaffolding and logs.
+## Mission
 
-# Codex Game Plan
-this is the plan to refactor AGENTS.md into the Codex Arcade Game
+Advance one shared objective:
 
-the idea is a kind of “constraint-magic”: turn Codex into a player, the repo into an arcade cabinet, and progress into a score you can audit.
+> Make SNS disciplined enough that outside experts can run it, inspect it, criticize it, and improve it.
 
-⸻
+The repository is not flight software and must not imply hardware readiness.
 
-SNS-S-S as an “Arcade Loop” (v0.1)
+## Spawn ritual
 
-Core loop (what Codex “plays” every session)
-	1.	Spawn: read memory/mem_log_short.md + quests/active/README.md + latest calendar roundup + AURORA.md
-	2.	Pick one quest step: smallest move that produces an artifact (code, plot, metric, doc)
-	3.	Do it: change as few files as possible, run the spell(s), write outputs
-	4.	Log: update short log + append 1–2 lines to long log + update quest status
-	5.	Score: compute a new Aurora Score (complex number) and set the next spawn point
+Read, in order:
 
-This matches your “ants moving a stick” chain: each session hands the stick forward, not sideways.
+1. `README.md`
+2. `memory/mem_log_short.md`
+3. `quests/active/README.md`
+4. latest `calendar/roundups/*.md`
+5. latest `calendar/monthly/*.md`, when present
+6. `AURORA.md`
 
-⸻
+Then select one active quest step with a concrete artifact.
 
-Recommended directory + file layout
+## Canonical 2026 workstreams
 
-Keep it boringly predictable:
+- `SIM`: agent, environment, policy, metrics, experiments
+- `STOR`: battery, pulse buffer, thermal control, curtailment, host storage
+- `PV`: flexible PV output, degradation, thermal/radiation assumptions
+- `META`: beam steering, pointing loss, receiver coupling, control cost
+- `ARCI`: target scoring, uncertainty, evidence trails, worked examples
+- `CALENDAR`: roundup schema, belief ledger, quest generation
+- `FUND`: public artifact, funding narrative, partner legibility
 
-/AGENTS.md                # “You are playing SNS-S-S”
-/AURORA.md                # spawn compass + scoring
-/calendar/
-  /roundups/
-  /monthly/
-  belief_ledger.csv
-  tag_index.yml
-/quests/
-  /active/
-  /completed/
-  quest_template.md
-/agents/
-  researcher_brief.md
-/memory/
-  mem_log_short.md
-  mem_log_long_0000_0999.md
-/plan/
-  plan.md
-  quests_active.md        # legacy (use /quests instead)
-  quests_completed.md     # legacy (use /quests instead)
-  quest_template.md       # legacy (use /quests instead)
-/rituals/
-  rituals.md
-  spells.md
+## Required engineering rules
 
-Nothing here conflicts with your existing configs/ docs/ experiments/ src/ tests/ layout.  ￼
+1. **Clarity over cleverness.** Prefer dataclasses, enums, explicit units, and small functions.
+2. **Preserve units in names.** Use suffixes such as `_W`, `_Wh`, `_s`, `_K`, and `_m2` where ambiguity is possible.
+3. **Track losses.** Harvested energy must resolve into direct use, storage, delivery, or curtailment.
+4. **Separate score from confidence.** Especially in ARCI.
+5. **Keep scenarios configurable.** No mission-defining constants hidden in code.
+6. **Maintain compatibility intentionally.** Legacy Q1 experiments may remain runnable, but new work follows the Summer 2026 ontology.
+7. **No hardware overclaiming.** Simulation PASS means model criteria passed, not space qualification.
+8. **Test every new behavior.** At minimum add a focused unit or smoke test.
 
-⸻
+## Quest loop
 
-Aurora Score (a usable “complex number compass”)
+1. Choose one quest from `quests/active/README.md`.
+2. State the smallest falsifiable or inspectable objective.
+3. Implement the minimum coherent change.
+4. Run tests and the relevant experiment.
+5. Save artifacts under `outputs/<quest-or-run-id>/` when outputs matter.
+6. Update the quest record with evidence.
+7. Update `memory/mem_log_short.md` and append the long log.
+8. Record an Aurora score.
 
-Make it one line that still carries meaning:
+## Definition of done
 
-A = r ∠ θ (polar complex form)
-	•	r ∈ [0, 1] = “how real was the progress?”
-	•	0.0 = ideas only
-	•	0.3 = spec + acceptance criteria
-	•	0.6 = runnable change + logs
-	•	0.8 = runnable + test + plot
-	•	1.0 = reproducible + compared baseline + documented
-	•	θ encodes direction (what kind of work moved forward)
-	•	0° = simulation correctness (models, math, validity)
-	•	90° = theory expansion (speculative physics scaffolding)
-	•	-90° = engineering plumbing (CLI, configs, tests, packaging)
-	•	180°/-180° = narrative/docs/public artifact polish
+A quest step is done only when:
 
-So a session might end as: A = 0.7 ∠ -60° (solid progress, mostly tooling + infra).
+- the artifact exists,
+- assumptions and units are explicit,
+- validation passes,
+- uncertainty or limitations are written down,
+- docs and active-quest state agree,
+- the next move is one concrete action.
 
-If you want the extra “Aurora flavor”, add 4 sub-scores as a tiny vector beneath it:
-	•	Evidence, Coherence, Ethics/Safety, Resonance (0–3 each)
+## Directory contract
 
-⸻
+- `src/`: reusable model code only
+- `experiments/`: reproducible runs, sweeps, and artifact writers
+- `configs/`: declared inputs
+- `docs/system/`: canonical system assumptions and risks
+- `docs/arci/`: ARCI method and examples
+- `calendar/`: external evidence translated into belief shifts and actions
+- `quests/`: execution state
+- `outputs/`: generated evidence
+- `memory/`: short handoff and append-only session history
 
-Memory logs that won’t rot
+## Summer 2026 anti-drift rules
 
-memory/mem_log_short.md (spawn sheet)
+Do not:
 
-Keep it small. Example template:
+- add an unrelated subsystem without a quest,
+- treat the 10 mm seed as Wh-scale bulk storage,
+- optimize host delivery while ignoring curtailment and thermal state,
+- collapse asteroid value into one unsupported dollar number,
+- let old Q1 quest files silently compete with the Summer backlog,
+- replace a small inspectable model with a heavy framework without evidence that it is needed.
 
-# mem_log_short (spawn)
+## Session handoff
 
-Current Quest: QST-0001
-Current Step: Implement baseline runner CLI + outputs folder
+End every coding session with:
 
-Last Output Artifact:
-- outputs/latest/metrics.json
-- outputs/latest/timeseries.csv
-- outputs/latest/plot_energy.png
-
-Blockers / Known Bugs:
-- (none) or bullet list
-
-Aurora Score (last session): A = 0.5 ∠ -30°
-
-Next Move (one shot):
-- Add smoke test that runs 10 steps, asserts outputs exist.
-
-memory/mem_log_long_0000_0999.md (1–2 lines per session)
-
-One line per session is enough:
-
-[S0007 | 2026-02-04] QST-0001 Baseline runner wired; outputs+plot saved. A=0.7∠-60°. Tags: 2.1 swarm, 3.0 power, 0.2 tooling
-
-Dewey-decimal-ish tags (searchable)
-Use a tiny taxonomy:
-	•	0.x = meta/ops/tooling
-	•	1.x = orbital + illumination geometry
-	•	2.x = swarm dynamics + control
-	•	3.x = power chain + storage + losses
-	•	4.x = beaming/comms (future)
-	•	5.x = materials/survivability (future)
-
-This lets you grep long logs fast.
-
-⸻
-
-Rituals vs Spells (make the magic practical)
-
-rituals/rituals.md (procedures)
-
-“Rituals” are repeatable checklists like:
-	•	Spawn Ritual (what to read)
-	•	Run Ritual (how to run an experiment)
-	•	Verify Ritual (tests + sanity checks)
-	•	Record Ritual (how to log + score)
-
-rituals/spells.md (commands)
-
-“Spells” are single-line invocations Codex can cast, e.g.:
-
-## Spells
-
-- Install: `pip install -e .`
-- Tests: `pytest -q`
-- Smoke sim: `python -m experiments.baseline --config configs/baseline.yaml --steps 50 --out outputs/latest`
-- Analyze: `python -m experiments.analyze --in outputs/latest --out outputs/latest`
-
-(If you later add a Makefile, these become make test, make run, etc.)
-
-⸻
-
-Quests (hypothesis tracking without ML-bloat)
-
-plan/quest_template.md
-
-# QST-XXXX: <Short name>
-
-## Hypothesis
-If <change>, then <measurable outcome>.
-
-## Method
-- Inputs:
-- Procedure:
-- Metrics:
-
-## Success Criteria
-- Must:
-- Nice-to-have:
-
-## Artifacts
-- outputs/<run_id>/...
-- docs/<...> (if any)
-
-## Risks
-- What could fool us?
-
-## Next Step
-One concrete action.
-
-quests/active/README.md
-
-A list of 3–7 active quests max. Everything else goes to backlog or completed.
-
-⸻
-
-The Codex meta-task prompt (to implement your “game interface”)
-
-This is the exact “Codex Task” I’d use first:
-
-Codex Task: “Arcade Layer v0.1” (Docs + minimal scaffolding only)
-	•	Create folders: memory/, plan/, rituals/
-	•	Add files: AURORA.md, memory/mem_log_short.md, memory/mem_log_long_0000_0999.md, plan/plan.md, plan/quests_active.md, plan/quests_completed.md, plan/quest_template.md, rituals/rituals.md, rituals/spells.md
-	•	Update root AGENTS.md to instruct: treat repo as a game, obey spawn ritual, do one-shot progress, always log + score.
-	•	Do not touch simulation code yet.
-	•	Acceptance criteria:
-	1.	All files exist with templates
-	2.	AGENTS.md clearly points to spawn files and session loop
-	3.	A sample quest exists in quests/active/ (QST-0001: Baseline runner)
-
-Codex will read AGENTS.md before work, so this “control plane” really matters.  ￼
-
-⸻
-
-One safety note (because “AGENTS.md is a control plane”)
-
-If you later let agents run in Codespaces/Actions: treat AGENTS.md + spells like privileged configuration. Keep spells offline and avoid anything that touches secrets by default. There are real “goal hijack” / prompt-injection failure modes when agents auto-load repo instructions.  ￼
-
-⸻
-
-If you want, your very first quest can be:
-
-QST-0001: “Hello Swarm”
-Baseline sim runs 50 steps and produces outputs/latest/metrics.json + plot_energy.png.
-That gives the arcade cabinet its first flashing “INSERT COIN” attract mode. 🕹️☀️
-
-## Session Log
-[2026-02-05 07:10:41Z] Agent: GPT-5.2-Codex | Intent: Implement Arcade Layer v0.1 scaffolding | Plan: create memory/plan/rituals templates, add AURORA.md, update AGENTS instructions, and document quests.
-[2026-02-05 22:28:41Z] Agent: GPT-5.2-Codex | Intent: Integrate /calendar loop into the arcade control plane | Plan: scaffold calendar/quests/agents directories, wire spawn ritual + Aurora scoring, and log updates.
-
-## Handoff
-### Snapshot (tests/metrics)
-- Tests not run (docs-only scaffolding changes).
-
-### Decisions (tradeoffs)
-- Added minimal templates to keep the arcade loop lightweight and consistent with requested structure.
-
-### TODO (next steps)
-- Run the first quest step when ready (baseline sim outputs and log updates).
-
-### Questions (blocked items)
-- `AGENTS_CORE.md` was not found in the repo root; should one be added?
-
-## Handoff
-### Snapshot (tests/metrics)
-- Tests not run (docs-only scaffolding changes).
-
-### Decisions (tradeoffs)
-- Added a calendar loop and belief ledger to externalize weekly context without moving simulation code.
-
-### TODO (next steps)
-- Run the next weekly roundup and log belief shifts into the ledger.
-
-### Questions (blocked items)
-- Should the legacy `/plan/quests_*` files be retired or kept in sync with `/quests`?
+- tests run,
+- artifacts created,
+- assumptions changed,
+- blockers discovered,
+- exact next move.

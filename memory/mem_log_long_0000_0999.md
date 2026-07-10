@@ -32,3 +32,5 @@
 [S0016 | 2026-06-09] QST-PV-0007 began LEO perovskite PV risk investigation; drafted 10-risk register with tabletop/subscale/mission gates and proof artifacts. A=0.7∠175°|w_ext=0.5. Tags: 1.0 PV, 5.0 materials, 0.1 docs
 
 [S0017 | 2026-06-09] QST-PV-0007 converted the perovskite risk register into CSV checklist + scorer; readiness snapshot is 30 gates, 0 mission-ready closed, weighted score 0.013. A=0.8∠-35°|w_ext=0.5. Tags: 1.0 PV, 5.0 materials, 0.2 tooling
+
+[S0018 | 2026-07-10] Summer 2026 consolidation refactored SNS-S-S into a mission-aware research instrument: role-specialized nodes, explicit energy flows and curtailment, asteroid/GEO environments, ARCI, calendar-to-quest tooling, canonical docs, and eight aligned quests. Local reconstructed suite: 10 passed. A=0.8∠-30°|w_ext=0.7. Tags: 0.1 docs, 0.2 tooling, 2.1 swarm, 3.0 power, 6.0 ARCI

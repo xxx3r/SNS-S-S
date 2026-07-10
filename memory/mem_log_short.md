@@ -1,18 +1,24 @@
-# mem_log_short (spawn)
+# mem_log_short: Summer 2026 Spawn
 
-Current Quest: QST-PV-0007
-Current Step: Update individual PV gate statuses only when proof artifacts advance a gate.
+Current Program: SNS-S-S as formal research instrument
 
-Last Output Artifact:
-- data/pv_leo_perovskite_risks.csv
-- scripts/score_pv_readiness.py
-- outputs/latest/pv_readiness_summary.json
-- docs/pv_leo_perovskite_risk_register.md
+Current Quest: QST-STOR-0002
 
-Blockers / Known Bugs:
-- Current readiness is intentionally low: 0 mission-ready gates closed, 29 open gates, and 1 in-progress tabletop protocol gate.
+Current Step: Add thermal derating, heater load, and phase-change buffering to shadow survival.
 
-Aurora Score (last session): A = 0.8 ∠ -35° | w_ext = 0.5
+Last Evidence:
+
+- QST-STOR-0001 retired the 10 Wh seed assumption.
+- Summer 2026 architecture adds role-aware nodes, pulse storage, curtailment, asteroid/GEO scenarios, ARCI scaffolding, and roundup-to-quest parsing.
+
+Blockers / Known Limits:
+
+- Thermal dynamics are first-order proxies only.
+- Pointing, receiver coupling, PV degradation, and communication loss remain abstractions.
+- ARCI v0.1 is a transparent weighted baseline, not a calibrated industry standard.
+
+Aurora Score: A = 0.8 ∠ -30° | w_ext = 0.7
 
 Next Move (one shot):
-- Attach real evidence artifacts to PV-02/PV-06/PV-10 before changing any gate from open to in_progress or closed.
+
+- Implement and test `QST-STOR-0002: Thermal-Derated Shadow Survival`.

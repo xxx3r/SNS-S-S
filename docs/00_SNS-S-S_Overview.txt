@@ -1,32 +1,47 @@
-SNS-S-S :: Solar-Nano-Sphere Simulation
-=======================================
+SNS-S-S :: Summer 2026 Overview
+================================
 
 Purpose
 -------
+SNS-S-S is a Python simulation and research-calendar framework for:
 
-This repository hosts a small but extensible Python simulation framework
-for exploring Solar-Nano-Sphere (SNS) swarms as future space-based solar
-power infrastructure.
+1. SNS swarm dynamics.
+2. Electrical and thermal energy-chain accounting.
+3. Asteroid and GEO mission environments.
+4. Asteroid Resource Confidence Index (ARCI) research.
+5. Literature-to-belief-to-quest execution.
 
-The Q1 2026 objective is **not** to build a perfect physical model but a
-clean "toy universe" where we can:
+Current phase
+-------------
+The project is not hardware-ready. It is ready to become a formal research
+instrument. Summer 2026 therefore prioritizes legibility, reproducibility,
+uncertainty, and disciplined external critique.
 
-1. Represent simple orbital environments (starting with an asteroid belt
-   scout scenario).
-2. Populate them with SNS-like agents that harvest sunlight, store
-   energy, and choose when to beam energy to a host.
-3. Compare naive / uncoordinated behavior to simple coordinated swarm
-   policies.
-4. Generate plots + metrics that can feed into future whitepapers,
-   funding decks, and more realistic simulations.
+Strategic interpretation
+------------------------
+The long-horizon Solar-Nano-Sphere remains an intelligent energy mote operating
+inside future SBSP infrastructure. The strongest early product frame is
+resource and environmental intelligence:
 
-Design principles
+    SNS does not mine asteroids.
+    SNS helps decide which asteroids deserve miners.
+
+Canonical scenarios
+-------------------
+- Asteroid resource-intelligence swarm.
+- GEO / SBSP field-diagnostics swarm.
+
+Canonical metrics
 -----------------
+- harvested, stored, delivered, and curtailed energy
+- node survival and health
+- coverage
+- role and mode distributions
+- temperature proxies
+- ARCI score, confidence, and uncertainty
 
-* Keep the codebase **small, legible, and testable**.
-* Prefer explicit, documented parameters over "magic numbers."
-* Make it easy to:
-  - plug in new environments (e.g., GEO ring segment),
-  - modify agent control rules,
-  - and run param sweeps as standalone scripts or notebooks.
-* Treat this repo as the **public, educational face** of the SNS concept.
+Design constraint
+-----------------
+The 10 mm seed is a survival-and-control node, not a warehouse for the full
+output of a large deployable PV kite. Storage, beaming, and thermal control must
+therefore be modeled as network architecture rather than one scalar battery.

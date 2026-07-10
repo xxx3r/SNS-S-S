@@ -1,0 +1,12 @@
+{
+  "target": "SYNTHETIC-2026-A",
+  "dimensions": {
+    "composition": {"score": 0.78, "confidence": 0.55, "rationale": "Synthetic metallic indicators with incomplete subsurface evidence."},
+    "accessibility": {"score": 0.84, "confidence": 0.80, "rationale": "Synthetic low-delta-v mission case."},
+    "recoverability": {"score": 0.52, "confidence": 0.35, "rationale": "Anchoring and processing remain poorly constrained."},
+    "energy_environment": {"score": 0.81, "confidence": 0.70, "rationale": "Favorable synthetic illumination profile."},
+    "surface_operations": {"score": 0.48, "confidence": 0.30, "rationale": "Unknown regolith cohesion and dust behavior."},
+    "communications": {"score": 0.76, "confidence": 0.65, "rationale": "Mostly favorable line-of-sight geometry."},
+    "market_mission_value": {"score": 0.64, "confidence": 0.40, "rationale": "Mission value is scenario-dependent and not a commodity-price claim."}
+  }
+}
