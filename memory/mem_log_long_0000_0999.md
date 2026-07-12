@@ -34,3 +34,5 @@
 [S0017 | 2026-06-09] QST-PV-0007 converted the perovskite risk register into CSV checklist + scorer; readiness snapshot is 30 gates, 0 mission-ready closed, weighted score 0.013. A=0.8∠-35°|w_ext=0.5. Tags: 1.0 PV, 5.0 materials, 0.2 tooling
 
 [S0018 | 2026-07-10] Summer 2026 consolidation refactored SNS-S-S into a mission-aware research instrument: role-specialized nodes, explicit energy flows and curtailment, asteroid/GEO environments, ARCI, calendar-to-quest tooling, canonical docs, and eight aligned quests. Local reconstructed suite: 10 passed. A=0.8∠-30°|w_ext=0.7. Tags: 0.1 docs, 0.2 tooling, 2.1 swarm, 3.0 power, 6.0 ARCI
+
+[S0019 | 2026-07-12] Weekly evidence scan recorded modest shifts for auxiliary safe-mode power, local optical energy services, resource-coupled swarm thresholds, and metasurface abstraction; PV and ARCI readiness held steady. No new quest spawned; QST-STOR-0002 remains first. A=0.62∠90°|w_ext=0.58. Tags: 0.1 docs, 1.0 PV, 2.1 swarm, 3.0 power, 4.0 metasurface, 5.0 materials
