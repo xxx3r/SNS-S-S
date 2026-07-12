@@ -17,3 +17,8 @@ date,tag,delta,weight,source,notes
 2026-02-19,META,0.6,0.4,calendar/roundups/2026-02-15.md,FNO/operator-learning signal supports design-time surrogate workflow rather than on-node dependence.
 2026-06-09,PV,0.6,0.5,docs/pv_leo_perovskite_risk_register.md,External review plus Ricoh/JAXA demo signals support LEO PSC promise but keep qualification burden centered on combined-stressor gates.
 2026-06-09,MAT,0.4,0.5,docs/pv_leo_perovskite_risk_register.md,Encapsulation and stack chemistry remain primary material readiness risks for flexible LEO PSC surfaces.
+2026-07-12,STOR,0.15,0.55,calendar/roundups/2026-07-12.md,Orbital betavoltaic demonstration supports auxiliary safe-mode sensitivity but does not reduce battery/heater/PCM uncertainty.
+2026-07-12,SBSP,0.30,0.55,calendar/roundups/2026-07-12.md,Private financing and a stated 2026 in-space test strengthen local optical power-service plausibility without on-orbit performance proof.
+2026-07-12,SWARM,0.20,0.45,calendar/roundups/2026-07-12.md,Resource-aware scheduling evidence supports coupled bottleneck and nonlinear collapse-threshold experiments.
+2026-07-12,META,0.15,0.40,calendar/roundups/2026-07-12.md,Mobile nanoimprinted photonic surfaces inform abstraction and manufacturing dimensions but not vacuum actuation readiness.
+2026-07-12,PV,0.00,0.60,calendar/roundups/2026-07-12.md,No recent primary result changed the existing combined-stressor perovskite risk posture.
