@@ -1,0 +1,33 @@
+{
+  "case_count": 3,
+  "cases": {
+    "baseline_no_pcm": {
+      "electrical_margin_Wh": 0.1288912153279914,
+      "electrical_status": "PASS",
+      "heater_energy_Wh": 0.07466666666666669,
+      "minimum_temperature_K": 255.2494116651828,
+      "pcm_latent_energy_used_J": 0.0,
+      "status": "PASS",
+      "temperature_status": "PASS"
+    },
+    "baseline_with_2g_pcm": {
+      "electrical_margin_Wh": 0.1684732999931473,
+      "electrical_status": "PASS",
+      "heater_energy_Wh": 0.045333333333333316,
+      "minimum_temperature_K": 258.0962870351335,
+      "pcm_latent_energy_used_J": 360.0,
+      "status": "PASS",
+      "temperature_status": "PASS"
+    },
+    "undersized_battery_with_10g_pcm": {
+      "electrical_margin_Wh": -0.011360000000000006,
+      "electrical_status": "FAIL",
+      "heater_energy_Wh": 0.0,
+      "minimum_temperature_K": 273.15,
+      "pcm_latent_energy_used_J": 1456.647736275059,
+      "status": "FAIL",
+      "temperature_status": "PASS"
+    }
+  },
+  "pass_count": 2
+}
