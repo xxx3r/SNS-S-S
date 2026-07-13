@@ -24,7 +24,7 @@ A small SNS survival battery remains credible only when temperature-dependent ca
 
 ## Current evidence: minimal 2-hour slice
 
-Implemented on `aurora/qst-stor-0002-minimal-thermal-shadow`:
+Implemented and artifacted on `aurora/qst-stor-0002-minimal-thermal-shadow`:
 
 - lumped thermal integration with explicit units;
 - piecewise-linear battery-capacity derating;
@@ -32,9 +32,18 @@ Implemented on `aurora/qst-stor-0002-minimal-thermal-shadow`:
 - finite PCM latent-energy buffering;
 - separate thermal, electrical, and combined status;
 - declared no-PCM, 2 g PCM, and undersized-battery cases;
-- focused tests for PCM benefit and limitation.
+- focused tests for PCM benefit and limitation;
+- checked-in `cases.csv` and `summary.json` from the declared configuration.
 
-This slice establishes model plumbing and acceptance semantics. Its thermal capacitance, conductance, environment temperature, and PCM properties remain placeholders rather than measured SNS values.
+Observed model outputs:
+
+- `baseline_no_pcm`: PASS; minimum temperature 255.249 K; heater energy 0.07467 Wh; electrical margin 0.12889 Wh.
+- `baseline_with_2g_pcm`: PASS; minimum temperature 258.096 K; heater energy 0.04533 Wh; electrical margin 0.16847 Wh.
+- `undersized_battery_with_10g_pcm`: thermal PASS but electrical FAIL; minimum temperature 273.15 K; electrical margin -0.01136 Wh.
+
+Within this placeholder model, 2 g of PCM raises the minimum temperature by 2.847 K and reduces heater energy by 0.02933 Wh, while 10 g of PCM cannot rescue an undersized battery. These are model-behavior checks, not hardware evidence.
+
+Thermal capacitance, conductance, environment temperature, and PCM properties remain placeholders rather than measured SNS values.
 
 ## Artifacts
 
@@ -43,7 +52,8 @@ This slice establishes model plumbing and acceptance semantics. Its thermal capa
 - `configs/thermal_shadow_survival.json`
 - `tests/test_thermal_storage.py`
 - `docs/system/thermal_shadow_survival.md`
-- `outputs/qst_stor_0002/` after running the declared experiment
+- `outputs/qst_stor_0002/cases.csv`
+- `outputs/qst_stor_0002/summary.json`
 
 ## Falsifier
 
@@ -51,4 +61,4 @@ If temperature support mass or heater demand eliminates the 10 mm survival margi
 
 ## Next step
 
-Run the declared cases in CI/local execution, save the output artifacts, then replace placeholder thermal properties with geometry-derived ranges for the full sweep.
+Derive thermal-capacitance and conductance ranges from explicit 10 mm geometry and material assumptions, then run the full eclipse-duration, initial-temperature, PCM-mass, and duty-cycle sweep.
