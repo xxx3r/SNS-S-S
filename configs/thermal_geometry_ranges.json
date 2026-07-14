@@ -1,0 +1,7 @@
+{
+  "cases": [
+    {"name":"low_emissivity_no_parasitic","outer_diameter_m":0.01,"core_diameter_m":0.008,"core_density_kg_m3":1800.0,"core_specific_heat_J_kg_K":900.0,"shell_density_kg_m3":1200.0,"shell_specific_heat_J_kg_K":1000.0,"effective_emissivity":0.05,"linearization_temperature_K":270.0,"parasitic_conductance_W_K":0.0},
+    {"name":"baseline_surface","outer_diameter_m":0.01,"core_diameter_m":0.008,"core_density_kg_m3":1800.0,"core_specific_heat_J_kg_K":900.0,"shell_density_kg_m3":1200.0,"shell_specific_heat_J_kg_K":1000.0,"effective_emissivity":0.2,"linearization_temperature_K":270.0,"parasitic_conductance_W_K":0.0002},
+    {"name":"high_emissivity_high_parasitic","outer_diameter_m":0.01,"core_diameter_m":0.008,"core_density_kg_m3":1800.0,"core_specific_heat_J_kg_K":900.0,"shell_density_kg_m3":1200.0,"shell_specific_heat_J_kg_K":1000.0,"effective_emissivity":0.8,"linearization_temperature_K":270.0,"parasitic_conductance_W_K":0.001}
+  ]
+}
