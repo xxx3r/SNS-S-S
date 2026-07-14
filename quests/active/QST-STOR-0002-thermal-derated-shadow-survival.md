@@ -6,13 +6,14 @@ Tags: [STOR, THERMAL, SIM]
 
 ## Hypothesis
 
-A small SNS survival battery remains credible only when temperature-dependent capacity, heater load, eclipse duration, and phase-change buffering are modeled together.
+A small SNS survival battery remains credible only when temperature-dependent capacity, heater load, eclipse duration, phase-change buffering, and geometry-derived thermal properties are modeled together.
 
 ## Method
 
 - Extend the storage geometry audit with battery and core temperature.
 - Add heater thresholds and load.
 - Add a phase-change thermal buffer with explicit mass and latent heat.
+- Derive heat capacity and conductance from explicit 10 mm geometry.
 - Sweep shadow duration, initial temperature, PCM mass, and duty cycle.
 
 ## Success criteria
@@ -21,39 +22,35 @@ A small SNS survival battery remains credible only when temperature-dependent ca
 - Electrical and thermal assumptions declared in config.
 - PASS / FAIL distinguishes geometry survival from temperature survival.
 - At least one case shows where PCM helps and where it cannot.
+- Placeholder thermal properties are replaced by traceable geometry-derived ranges.
 
-## Current evidence: minimal 2-hour slice
+## Current evidence
 
-Implemented and artifacted on `aurora/qst-stor-0002-minimal-thermal-shadow`:
+The minimal coupled model and checked-in two-hour cases remain reproducible. The geometry-range slice now adds:
 
-- lumped thermal integration with explicit units;
-- piecewise-linear battery-capacity derating;
-- thermostatic heater load coupled into electrical consumption;
-- finite PCM latent-energy buffering;
-- separate thermal, electrical, and combined status;
-- declared no-PCM, 2 g PCM, and undersized-battery cases;
-- focused tests for PCM benefit and limitation;
-- checked-in `cases.csv` and `summary.json` from the declared configuration.
+- a 10 mm outer sphere with an explicit 8 mm core and shell volume;
+- component density and specific-heat inputs;
+- linearized radiative conductance from emissivity, area, and temperature;
+- separately declared parasitic conductance;
+- three low/baseline/high-loss cases, focused tests, and CSV/JSON artifacts.
 
-Observed model outputs:
-
-- `baseline_no_pcm`: PASS; minimum temperature 255.249 K; heater energy 0.07467 Wh; electrical margin 0.12889 Wh.
-- `baseline_with_2g_pcm`: PASS; minimum temperature 258.096 K; heater energy 0.04533 Wh; electrical margin 0.16847 Wh.
-- `undersized_battery_with_10g_pcm`: thermal PASS but electrical FAIL; minimum temperature 273.15 K; electrical margin -0.01136 Wh.
-
-Within this placeholder model, 2 g of PCM raises the minimum temperature by 2.847 K and reduces heater energy by 0.02933 Wh, while 10 g of PCM cannot rescue an undersized battery. These are model-behavior checks, not hardware evidence.
-
-Thermal capacitance, conductance, environment temperature, and PCM properties remain placeholders rather than measured SNS values.
+For the declared baseline composition, total mass is 0.789 g and lumped heat capacity is 0.741 J/K. Total conductance spans 7.01e-5 to 2.12e-3 W/K across the declared surface/parasitic cases. The previous 50 J/K placeholder is therefore about 67 times larger than this first geometry-derived estimate. This strongly weakens the prior thermal-inertia assumption but is not yet hardware evidence because component packing, coatings, internal interfaces, and material selections remain provisional.
 
 ## Artifacts
 
 - `src/sim/thermal_storage.py`
+- `src/sim/thermal_geometry.py`
 - `experiments/thermal_shadow_survival.py`
+- `experiments/derive_thermal_geometry_ranges.py`
 - `configs/thermal_shadow_survival.json`
+- `configs/thermal_geometry_ranges.json`
 - `tests/test_thermal_storage.py`
+- `tests/test_thermal_geometry.py`
 - `docs/system/thermal_shadow_survival.md`
 - `outputs/qst_stor_0002/cases.csv`
 - `outputs/qst_stor_0002/summary.json`
+- `outputs/qst_stor_0002/thermal_geometry_ranges.csv`
+- `outputs/qst_stor_0002/thermal_geometry_summary.json`
 
 ## Falsifier
 
@@ -61,4 +58,4 @@ If temperature support mass or heater demand eliminates the 10 mm survival margi
 
 ## Next step
 
-Derive thermal-capacitance and conductance ranges from explicit 10 mm geometry and material assumptions, then run the full eclipse-duration, initial-temperature, PCM-mass, and duty-cycle sweep.
+Feed the geometry-derived heat-capacity and conductance cases into the coupled shadow model and run the full eclipse-duration, initial-temperature, PCM-mass, and duty-cycle sweep.
