@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 20,
+  "quest_id": "QST-STOR-0001",
+  "acceptance_slice": "storage summary reproducibility repair",
+  "state": "superseded",
+  "owner_run_id": "RUN-20260715T025557598419Z-monthly-governance-00c6d834a923ef8c40f5",
+  "source_commit": "ee039bbf75498c9ef69b4262846f784d73e9a459",
+  "head_commit": "1a246f28d466ca5ae3973ef801403e05f5481edd",
+  "updated_at": "2026-07-15T02:55:34Z",
+  "next_review_after": "2026-07-15T02:55:34Z",
+  "supersedes": [],
+  "reason": "Closed after later merged storage architecture superseded the branch. Its unique checked-in-summary regression was ported to PR #26."
+}
