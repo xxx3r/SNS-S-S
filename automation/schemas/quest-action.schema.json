@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sns-s-s.local/schemas/quest-action.schema.json",
+  "title": "SNS semantic quest action",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "quest_action_id", "action_type", "quest_id", "target_quest_ids", "proposed_by_loop", "authority", "rationale", "recorded_at"],
+  "properties": {
+    "schema": {"const": "sns.quest-action.v1"},
+    "quest_action_id": {"type": "string", "pattern": "^QA-"},
+    "action_type": {"enum": ["refine_existing", "propose_new", "block", "retire", "merge_with", "no_action"]},
+    "quest_id": {"type": "string"},
+    "target_quest_ids": {"type": "array", "items": {"type": "string", "pattern": "^QST-"}, "uniqueItems": true},
+    "proposed_by_loop": {"enum": ["daily-research-operator", "weekly-evidence-synthesis", "monthly-governance", "system-audit"]},
+    "authority": {"enum": ["proposal", "enacted", "emergency_escalation"]},
+    "rationale": {"type": "string", "minLength": 1},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  }
+}

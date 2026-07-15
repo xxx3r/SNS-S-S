@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sns-s-s.local/schemas/belief-event.schema.json",
+  "title": "SNS immutable belief event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "belief_event_id", "belief_key", "evidence_ids", "magnitude", "confidence", "effect", "rationale", "recorded_at"],
+  "properties": {
+    "schema": {"const": "sns.belief-event.v1"},
+    "belief_event_id": {"type": "string", "pattern": "^BEL-"},
+    "belief_key": {"type": "string", "minLength": 1},
+    "evidence_ids": {"type": "array", "items": {"type": "string", "pattern": "^EVID-"}, "minItems": 1, "uniqueItems": true},
+    "magnitude": {"type": "number", "minimum": -1, "maximum": 1},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "effect": {"enum": ["strengthen", "weaken", "uncertainty_increase", "uncertainty_decrease", "no_change"]},
+    "rationale": {"type": "string", "minLength": 1},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  }
+}
