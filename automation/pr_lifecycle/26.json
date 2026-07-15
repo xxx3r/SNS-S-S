@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 26,
+  "quest_id": "",
+  "acceptance_slice": "Issue #24 autonomous-loop transaction layer",
+  "state": "merge_ready",
+  "owner_run_id": "RUN-20260715T030301123456Z-daily-research-operator-825885c59652d79abf58",
+  "source_commit": "b7f924a122a8282a3766cbbf8d6bcb8a8bfdef33",
+  "head_commit": "2c68e3ac162f4a88028a68d253263c4c0a27f926",
+  "updated_at": "2026-07-15T03:03:01Z",
+  "next_review_after": "2026-07-15T03:03:01Z",
+  "supersedes": [20],
+  "reason": "All required GitHub checks pass, repository semantic validation is green, live PR ownership is reconciled, and the bounded Issue #24 acceptance slice is complete."
+}

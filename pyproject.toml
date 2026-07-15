@@ -4,13 +4,17 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sns-s-s"
-version = "0.2.0"
-description = "Solar-Nano-Sphere swarm, energy-chain, ARCI, and research-calendar framework"
+version = "0.3.0"
+description = "Solar-Nano-Sphere swarm, energy-chain, ARCI, research-calendar, and transactional loop framework"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "matplotlib>=3.8"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "automation*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

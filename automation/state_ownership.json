@@ -1,0 +1,150 @@
+{
+  "schema": "sns.state-ownership.v1",
+  "version": "1.0.0",
+  "surfaces": [
+    {
+      "path": "automation/contracts/**",
+      "authority": "human",
+      "daily": "read",
+      "weekly": "read",
+      "monthly": "read",
+      "audit": "observe",
+      "reconciliation": "Contract changes require a dedicated reviewed PR; no running loop edits its own active contract."
+    },
+    {
+      "path": "automation/runs/**",
+      "authority": "human",
+      "daily": "write",
+      "weekly": "write",
+      "monthly": "write",
+      "audit": "write",
+      "reconciliation": "Each loop creates a unique immutable file with exclusive-create semantics; corrections are new linked receipts."
+    },
+    {
+      "path": "automation/pr_lifecycle/**",
+      "authority": "monthly-governance",
+      "daily": "write",
+      "weekly": "read",
+      "monthly": "write",
+      "audit": "observe",
+      "reconciliation": "Daily may update its owned PR record; monthly resolves cross-PR conflicts, stale work, splits, and supersession."
+    },
+    {
+      "path": "memory/mem_log_short.md",
+      "authority": "monthly-governance",
+      "daily": "propose",
+      "weekly": "propose",
+      "monthly": "write",
+      "audit": "observe",
+      "reconciliation": "Monthly governance publishes the canonical move; explicit human instructions may override it."
+    },
+    {
+      "path": "memory/mem_log_long_0000_0999.md",
+      "authority": "human",
+      "daily": "none",
+      "weekly": "none",
+      "monthly": "none",
+      "audit": "observe",
+      "reconciliation": "Legacy history is preserved but no longer receives mandatory scheduled appends; generated reports derive from immutable receipts."
+    },
+    {
+      "path": "calendar/evidence/**",
+      "authority": "weekly-evidence-synthesis",
+      "daily": "read",
+      "weekly": "write",
+      "monthly": "read",
+      "audit": "observe",
+      "reconciliation": "Evidence events are immutable and cluster by underlying claim; source corrections create new events."
+    },
+    {
+      "path": "calendar/belief_events/**",
+      "authority": "weekly-evidence-synthesis",
+      "daily": "read",
+      "weekly": "write",
+      "monthly": "read",
+      "audit": "observe",
+      "reconciliation": "Raw belief events are immutable proposals with normalized scales and evidence provenance."
+    },
+    {
+      "path": "calendar/consolidated_beliefs.json",
+      "authority": "monthly-governance",
+      "daily": "read",
+      "weekly": "propose",
+      "monthly": "write",
+      "audit": "observe",
+      "reconciliation": "Monthly governance regenerates the consolidated view from immutable belief events."
+    },
+    {
+      "path": "calendar/roundups/**",
+      "authority": "weekly-evidence-synthesis",
+      "daily": "read",
+      "weekly": "write",
+      "monthly": "read",
+      "audit": "observe",
+      "reconciliation": "Roundups are dated human-readable views; raw event files are canonical for machine reconciliation."
+    },
+    {
+      "path": "calendar/monthly/**",
+      "authority": "monthly-governance",
+      "daily": "read",
+      "weekly": "read",
+      "monthly": "write",
+      "audit": "observe",
+      "reconciliation": "One accepted monthly synthesis governs queue-wide decisions for its period."
+    },
+    {
+      "path": "quests/actions/**",
+      "authority": "monthly-governance",
+      "daily": "propose",
+      "weekly": "propose",
+      "monthly": "write",
+      "audit": "observe",
+      "reconciliation": "Weekly and daily emit proposals; monthly records acceptance, rejection, or deferral."
+    },
+    {
+      "path": "quests/active/**",
+      "authority": "monthly-governance",
+      "daily": "read",
+      "weekly": "propose",
+      "monthly": "write",
+      "audit": "observe",
+      "reconciliation": "Monthly governance owns queue membership and ordering; daily may add scoped evidence without changing queue authority."
+    },
+    {
+      "path": "quests/completed/**",
+      "authority": "monthly-governance",
+      "daily": "propose",
+      "weekly": "read",
+      "monthly": "write",
+      "audit": "observe",
+      "reconciliation": "Completion requires accepted evidence and cross-queue ID validation."
+    },
+    {
+      "path": "quests/proposed/**",
+      "authority": "monthly-governance",
+      "daily": "propose",
+      "weekly": "propose",
+      "monthly": "write",
+      "audit": "observe",
+      "reconciliation": "Proposed quests cannot reuse IDs from any queue and do not become active without governance."
+    },
+    {
+      "path": "quests/blocked/**",
+      "authority": "monthly-governance",
+      "daily": "propose",
+      "weekly": "propose",
+      "monthly": "write",
+      "audit": "observe",
+      "reconciliation": "Blocked status preserves artifacts, blocker evidence, and a reactivation condition."
+    },
+    {
+      "path": "src/**|experiments/**|configs/**|tests/**|outputs/**",
+      "authority": "daily-research-operator",
+      "daily": "write",
+      "weekly": "read",
+      "monthly": "read",
+      "audit": "observe",
+      "reconciliation": "Only the active quest acceptance slice and its owning PR may mutate scientific implementation surfaces."
+    }
+  ]
+}

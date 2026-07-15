@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sns-s-s.local/schemas/pr-lifecycle.schema.json",
+  "title": "SNS automation pull-request lifecycle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "pr_number", "quest_id", "acceptance_slice", "state", "owner_run_id", "source_commit", "head_commit", "updated_at", "next_review_after", "supersedes"],
+  "properties": {
+    "schema": {"const": "sns.pr-lifecycle.v1"},
+    "pr_number": {"type": "integer", "minimum": 1},
+    "quest_id": {"type": "string"},
+    "acceptance_slice": {"type": "string", "minLength": 1},
+    "state": {"enum": ["draft_active", "ready_for_review", "changes_requested", "merge_ready", "merged", "blocked", "split_required", "superseded", "closed_abandoned"]},
+    "owner_run_id": {"type": "string", "pattern": "^RUN-"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "head_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "next_review_after": {"type": "string", "format": "date-time"},
+    "supersedes": {"type": "array", "items": {"type": "integer", "minimum": 1}, "uniqueItems": true},
+    "reason": {"type": "string"}
+  }
+}

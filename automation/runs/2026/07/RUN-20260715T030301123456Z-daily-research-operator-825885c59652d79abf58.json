@@ -1,0 +1,33 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260715T030301123456Z-daily-research-operator-825885c59652d79abf58",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-07-15T03:02:30Z",
+  "source_commit": "2c68e3ac162f4a88028a68d253263c4c0a27f926",
+  "state_hash": "sha256:fe224a41e757b138cfb550db11bdc335e8b1aa4592f4be34efdfa04cce66a906",
+  "quest_context": {"issue": 24, "acceptance_slice": "transaction layer phases 0-7 and live reconciliation"},
+  "pr_context": {"pr_number": 26, "lifecycle_state": "merge_ready"},
+  "consumed_ids": [
+    "RUN-20260715T025557598419Z-monthly-governance-00c6d834a923ef8c40f5",
+    "RUN-20260715T025557598419Z-daily-research-operator-83b4fb2e17597cfd9398"
+  ],
+  "artifacts": [
+    {"path": "automation/reports/issue_24_acceptance.md", "kind": "acceptance_review"},
+    {"path": "automation/reports/migration_status.md", "kind": "migration_status"},
+    {"path": "automation/pr_lifecycle/26.json", "kind": "pr_lifecycle"},
+    {"path": "automation/reports/generated_long_log.md", "kind": "generated_history"}
+  ],
+  "checks": [
+    {"name": "full pytest", "status": "passed", "evidence": "GitHub Actions tests run 29385539905 completed successfully on head 2c68e3ac162f4a88028a68d253263c4c0a27f926."},
+    {"name": "baseline artifacts", "status": "passed", "evidence": "GitHub Actions baseline-artifacts run 29385539944 completed successfully."},
+    {"name": "transaction validation", "status": "passed", "evidence": "GitHub Actions automation-transaction run 29385539954 passed transaction tests, repository semantic validation, and the full pytest suite."},
+    {"name": "mergeability", "status": "passed", "evidence": "GitHub reports PR #26 mergeable against main."}
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE",
+  "next_action": "Merge PR #26 into main and run the post-merge acceptance review.",
+  "created_at": "2026-07-15T03:03:01.123456Z",
+  "correction_of": "RUN-20260715T025557598419Z-daily-research-operator-83b4fb2e17597cfd9398"
+}

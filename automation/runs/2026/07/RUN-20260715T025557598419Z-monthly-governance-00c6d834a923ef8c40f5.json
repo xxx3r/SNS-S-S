@@ -1,0 +1,28 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260715T025557598419Z-monthly-governance-00c6d834a923ef8c40f5",
+  "loop_id": "monthly-governance",
+  "contract_version": "1.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-07-15T02:55:00Z",
+  "source_commit": "b7f924a122a8282a3766cbbf8d6bcb8a8bfdef33",
+  "state_hash": "sha256:520310d923784c1a4b874e3f67b3de08d20b86f7a16fd38239e234e702643635",
+  "quest_context": {},
+  "pr_context": {"pr_numbers": [20, 22, 23, 26], "lifecycle_state": "reconciled"},
+  "consumed_ids": [],
+  "artifacts": [
+    {"path": "automation/pr_lifecycle/20.json", "kind": "pr_lifecycle"},
+    {"path": "automation/pr_lifecycle/22.json", "kind": "pr_lifecycle"},
+    {"path": "automation/pr_lifecycle/23.json", "kind": "pr_lifecycle"},
+    {"path": "automation/inventory/open_pr_ownership_2026-07-14.md", "kind": "inventory"},
+    {"path": "tests/test_storage_geometry_audit.py", "kind": "preserved_regression"}
+  ],
+  "checks": [
+    {"name": "open PR comparison", "status": "passed", "evidence": "PR #20 was 21 commits behind main; unique summary-regression value was ported before closure."},
+    {"name": "lifecycle authority", "status": "passed", "evidence": "PR #22 remains sole QST-STOR-0002 implementation owner and PR #23 remains an evidence proposal."}
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Complete PR #26 validation and promote its lifecycle state when all checks pass.",
+  "created_at": "2026-07-15T02:55:57.598419Z"
+}

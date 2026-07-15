@@ -1,0 +1,27 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260715T025557598419Z-daily-research-operator-83b4fb2e17597cfd9398",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-07-15T02:10:00Z",
+  "source_commit": "b7f924a122a8282a3766cbbf8d6bcb8a8bfdef33",
+  "state_hash": "sha256:520310d923784c1a4b874e3f67b3de08d20b86f7a16fd38239e234e702643635",
+  "quest_context": {"issue": 24, "acceptance_slice": "transaction layer phases 0-7"},
+  "pr_context": {"pr_number": 26, "lifecycle_state": "draft_active"},
+  "consumed_ids": ["RUN-20260715T025557598419Z-monthly-governance-00c6d834a923ef8c40f5"],
+  "artifacts": [
+    {"path": "automation/README.md", "kind": "control_plane"},
+    {"path": "automation/reports/migration_evaluation.md", "kind": "evaluation"},
+    {"path": "automation/reports/migration_status.md", "kind": "migration_status"},
+    {"path": ".github/workflows/automation-transaction.yml", "kind": "verification"}
+  ],
+  "checks": [
+    {"name": "isolated transaction suite", "status": "passed", "evidence": "23 passed locally before publication."},
+    {"name": "GitHub Actions", "status": "not_run", "evidence": ""}
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Resolve GitHub validation, record a correction receipt, and merge PR #26 only when every gate is green.",
+  "created_at": "2026-07-15T02:56:30Z"
+}
