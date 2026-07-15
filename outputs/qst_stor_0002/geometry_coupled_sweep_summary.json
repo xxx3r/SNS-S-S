@@ -1,0 +1,43 @@
+{
+  "case_count": 243,
+  "grid": {
+    "geometry_cases": 3,
+    "eclipse_duration_h": [0.5, 1.0, 2.0],
+    "initial_temperature_K": [263.15, 273.15, 283.15],
+    "pcm_mass_kg": [0.0, 0.0005, 0.002],
+    "duty_cycle": [0.25, 0.5, 1.0]
+  },
+  "by_geometry": {
+    "low_emissivity_no_parasitic": {
+      "case_count": 81,
+      "thermal_pass_count": 81,
+      "electrical_pass_count": 81,
+      "combined_pass_count": 81,
+      "minimum_temperature_K": 253.0316908654673,
+      "minimum_electrical_margin_Wh": 0.06675954624124511
+    },
+    "baseline_surface": {
+      "case_count": 81,
+      "thermal_pass_count": 6,
+      "electrical_pass_count": 81,
+      "combined_pass_count": 6,
+      "minimum_temperature_K": 46.69441094724056,
+      "minimum_electrical_margin_Wh": 0.04236111111110969
+    },
+    "high_emissivity_high_parasitic": {
+      "case_count": 81,
+      "thermal_pass_count": 0,
+      "electrical_pass_count": 81,
+      "combined_pass_count": 0,
+      "minimum_temperature_K": 12.433962508348374,
+      "minimum_electrical_margin_Wh": 0.042083333333331883
+    }
+  },
+  "acceptance_observations": {
+    "low_loss_two_hour_has_combined_pass": true,
+    "baseline_surface_two_hour_combined_pass_count": 0,
+    "high_loss_combined_pass_count": 0,
+    "electrical_and_thermal_statuses_remain_independent": true
+  },
+  "interpretation": "Under the declared first-order assumptions, survival is dominated by surface and parasitic thermal conductance rather than battery energy. The baseline geometry has only six combined passes, all at 0.5 h; no baseline case survives 1 h or 2 h. This is sensitivity evidence, not hardware qualification."
+}
