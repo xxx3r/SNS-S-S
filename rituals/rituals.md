@@ -1,22 +1,12 @@
 # Rituals
 
-## Spawn Ritual
-1. Read `memory/mem_log_short.md`.
-2. Read `quests/active/README.md`.
-3. Read `AURORA.md`.
+Executable loop behavior lives in `automation/contracts/`. This file is human orientation only.
 
-## Run Ritual
-1. Pick the smallest quest step that produces an artifact.
-2. Change as few files as possible.
-3. Run the relevant spell(s).
-4. Write outputs to the appropriate location.
+1. Select the contract matching the trigger.
+2. Capture source and state snapshots.
+3. Execute one bounded artifact-bearing slice within ownership.
+4. Verify and recheck concurrency before publication.
+5. Write one immutable receipt with a terminal state and next action.
+6. Generate human-readable views from records when needed.
 
-## Verify Ritual
-1. Run tests or checks if available.
-2. Note any failures or environment limits.
-
-## Record Ritual
-1. Update `memory/mem_log_short.md`.
-2. Append 1–2 lines to `memory/mem_log_long_0000_0999.md`.
-3. Update quest status in `quests/active/` or `quests/completed/`.
-4. Record a new Aurora Score in `memory/mem_log_short.md`.
+Do not maintain a second copy of queue governance, retry rules, or mutation permissions here.

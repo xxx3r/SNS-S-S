@@ -1,100 +1,66 @@
-# AGENTS.md: SNS-S-S Summer 2026 Control Plane
+# AGENTS.md: SNS-S-S Stable Law
 
-This repository is a formal research instrument for Solar-Nano-Sphere swarm dynamics, energy-chain modeling, asteroid-resource intelligence, and research-calendar execution.
+SNS-S-S is a formal research instrument for Solar-Nano-Sphere swarm dynamics, explicit energy-chain modeling, asteroid-resource intelligence, and evidence-driven research execution. It is not flight software and must never imply hardware readiness.
 
-## Mission
+## Authority order
 
-Advance one shared objective:
+1. platform safety and explicit human instruction;
+2. this stable law;
+3. the selected active contract in `automation/contracts/`;
+4. the active issue and PR acceptance slice;
+5. the active quest record;
+6. accepted monthly governance;
+7. accepted weekly evidence;
+8. `memory/mem_log_short.md`;
+9. historical logs and older plans.
 
-> Make SNS disciplined enough that outside experts can run it, inspect it, criticize it, and improve it.
+No lower layer silently overrides a higher layer.
 
-The repository is not flight software and must not imply hardware readiness.
+## Loop routing
 
-## Spawn ritual
+Select exactly one contract before acting:
 
-Read, in order:
+- daily implementation: `automation/contracts/daily-research-operator.v1.md`;
+- weekly evidence: `automation/contracts/weekly-evidence-synthesis.v1.md`;
+- monthly governance: `automation/contracts/monthly-governance.v1.md`;
+- system audit: `automation/contracts/system-audit.v1.md`.
 
-1. `README.md`
-2. `memory/mem_log_short.md`
-3. `quests/active/README.md`
-4. latest `calendar/roundups/*.md`
-5. latest `calendar/monthly/*.md`, when present
-6. `AURORA.md`
+Read only the contract’s required inputs plus files needed for the acceptance slice. Every trigger ends with one immutable receipt under `automation/runs/**` and one explicit terminal state.
 
-Then select one active quest step with a concrete artifact.
+## Scientific and engineering invariants
 
-## Canonical 2026 workstreams
+1. Prefer explicit dataclasses, enums, units, and small inspectable functions.
+2. Preserve units in names such as `_W`, `_Wh`, `_s`, `_K`, and `_m2`.
+3. Resolve harvested energy into direct use, storage, delivery, or curtailment.
+4. Separate score from confidence, especially in ARCI.
+5. Keep mission assumptions configurable rather than hidden in code.
+6. Preserve legacy compatibility intentionally; new work follows the Summer 2026 ontology.
+7. Simulation PASS means declared model criteria passed, not space qualification.
+8. Test every new behavior and record limitations, uncertainty, and falsifiers.
+9. Keep active quests artifact-first and bounded to 1–8 entries.
+10. Do not alter scientific claims through automation-infrastructure work.
 
-- `SIM`: agent, environment, policy, metrics, experiments
-- `STOR`: battery, pulse buffer, thermal control, curtailment, host storage
-- `PV`: flexible PV output, degradation, thermal/radiation assumptions
-- `META`: beam steering, pointing loss, receiver coupling, control cost
-- `ARCI`: target scoring, uncertainty, evidence trails, worked examples
-- `CALENDAR`: roundup schema, belief ledger, quest generation
-- `FUND`: public artifact, funding narrative, partner legibility
+## Shared-state law
 
-## Required engineering rules
+`automation/state_ownership.json` is normative. Daily loops execute within accepted scope. Weekly loops normalize evidence and propose changes. Monthly governance owns queue-wide decisions, consolidated beliefs, stale-work resolution, and the canonical next move. Audit loops observe and recommend.
 
-1. **Clarity over cleverness.** Prefer dataclasses, enums, explicit units, and small functions.
-2. **Preserve units in names.** Use suffixes such as `_W`, `_Wh`, `_s`, `_K`, and `_m2` where ambiguity is possible.
-3. **Track losses.** Harvested energy must resolve into direct use, storage, delivery, or curtailment.
-4. **Separate score from confidence.** Especially in ARCI.
-5. **Keep scenarios configurable.** No mission-defining constants hidden in code.
-6. **Maintain compatibility intentionally.** Legacy Q1 experiments may remain runnable, but new work follows the Summer 2026 ontology.
-7. **No hardware overclaiming.** Simulation PASS means model criteria passed, not space qualification.
-8. **Test every new behavior.** At minimum add a focused unit or smoke test.
+Raw run, evidence, belief, and quest-action events are immutable. Corrections are linked new events. Shared Markdown append history is not a required write surface. Generated logs derive from receipts.
 
-## Quest loop
+## Concurrency and PR law
 
-1. Choose one quest from `quests/active/README.md`.
-2. State the smallest falsifiable or inspectable objective.
-3. Implement the minimum coherent change.
-4. Run tests and the relevant experiment.
-5. Save artifacts under `outputs/<quest-or-run-id>/` when outputs matter.
-6. Update the quest record with evidence.
-7. Update `memory/mem_log_short.md` and append the long log.
-8. Record an Aurora score.
+Record source commit and state hashes before work. Recheck governance, owned state, and PR ownership immediately before publication. One PR owns one quest acceptance slice. Continue the valid owner, split expanding work, and classify stale or superseded branches explicitly. Automatic merge remains conservative.
+
+## Terminal states
+
+Use only:
+
+- `DONE`, `DONE_WITH_LIMITATIONS`;
+- `BLOCKED_ENVIRONMENT`, `BLOCKED_MISSING_EVIDENCE`, `BLOCKED_CONFLICT`;
+- `VERIFICATION_FAILED`;
+- `NEEDS_SCIENTIFIC_DECISION`, `NEEDS_GOVERNANCE_REVIEW`, `NEEDS_APPROVAL`.
+
+A precise blocker is a valid outcome. Do not continue merely to avoid reporting one.
 
 ## Definition of done
 
-A quest step is done only when:
-
-- the artifact exists,
-- assumptions and units are explicit,
-- validation passes,
-- uncertainty or limitations are written down,
-- docs and active-quest state agree,
-- the next move is one concrete action.
-
-## Directory contract
-
-- `src/`: reusable model code only
-- `experiments/`: reproducible runs, sweeps, and artifact writers
-- `configs/`: declared inputs
-- `docs/system/`: canonical system assumptions and risks
-- `docs/arci/`: ARCI method and examples
-- `calendar/`: external evidence translated into belief shifts and actions
-- `quests/`: execution state
-- `outputs/`: generated evidence
-- `memory/`: short handoff and append-only session history
-
-## Summer 2026 anti-drift rules
-
-Do not:
-
-- add an unrelated subsystem without a quest,
-- treat the 10 mm seed as Wh-scale bulk storage,
-- optimize host delivery while ignoring curtailment and thermal state,
-- collapse asteroid value into one unsupported dollar number,
-- let old Q1 quest files silently compete with the Summer backlog,
-- replace a small inspectable model with a heavy framework without evidence that it is needed.
-
-## Session handoff
-
-End every coding session with:
-
-- tests run,
-- artifacts created,
-- assumptions changed,
-- blockers discovered,
-- exact next move.
+An acceptance slice is complete only when its artifact exists, checks are evidenced, assumptions and limitations are explicit, ownership is current, semantic repository validation passes, the receipt is immutable, and the next action is one concrete transition.
