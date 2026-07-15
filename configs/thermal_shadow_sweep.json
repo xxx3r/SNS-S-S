@@ -1,0 +1,31 @@
+{
+  "geometry_config": "configs/thermal_geometry_ranges.json",
+  "sweep": {
+    "eclipse_duration_h": [0.5, 1.0, 2.0],
+    "initial_temperature_K": [263.15, 273.15, 283.15],
+    "pcm_mass_kg": [0.0, 0.0005, 0.002],
+    "duty_cycle": [0.25, 0.5, 1.0]
+  },
+  "fixed": {
+    "time_step_s": 5.0,
+    "environment_temperature_K": 3.0,
+    "heater_threshold_K": 253.15,
+    "heater_power_W": 0.02,
+    "sleep_load_W": 0.001,
+    "active_load_W": 0.004,
+    "nominal_battery_Wh": 0.25,
+    "discharge_efficiency": 0.9,
+    "reserve_fraction": 0.2,
+    "derating_reference_K": 293.15,
+    "derating_floor_K": 243.15,
+    "minimum_capacity_fraction": 0.5,
+    "minimum_operating_temperature_K": 233.15,
+    "pcm_latent_heat_J_kg": 180000.0,
+    "pcm_transition_temperature_K": 273.15
+  },
+  "acceptance": {
+    "require_independent_statuses": true,
+    "baseline_surface_2h_combined_pass_max": 0,
+    "low_loss_2h_combined_pass_min": 1
+  }
+}
