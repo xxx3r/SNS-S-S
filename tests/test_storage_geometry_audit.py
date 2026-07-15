@@ -90,3 +90,13 @@ def test_audit_runner_writes_reproducible_artifacts(tmp_path):
     assert (tmp_path / "out" / "summary.json").exists()
     assert (tmp_path / "out" / "active_duty_cycle_sensitivity.csv").exists()
     assert (tmp_path / "out" / "README.md").exists()
+
+
+def test_checked_in_summary_matches_current_runner(tmp_path):
+    _, expected = run_storage_geometry_audit(
+        ROOT / "configs" / "storage_geometry_audit.json",
+        tmp_path / "regenerated",
+    )
+    actual = json.loads((ROOT / "outputs" / "qst_stor_0001" / "summary.json").read_text())
+    assert actual == expected
+    assert "by_core_diameter" in actual
