@@ -26,15 +26,16 @@ A small SNS survival battery remains credible only when temperature-dependent ca
 
 ## Current evidence
 
-The minimal coupled model and checked-in two-hour cases remain reproducible. The geometry-range slice now adds:
+The geometry-derived properties are now propagated through a 243-case Cartesian sweep spanning three conductance cases, eclipse durations of 0.5/1/2 h, initial temperatures of 263.15/273.15/283.15 K, PCM masses of 0/0.5/2 g, and duty cycles of 0.25/0.5/1.0.
 
-- a 10 mm outer sphere with an explicit 8 mm core and shell volume;
-- component density and specific-heat inputs;
-- linearized radiative conductance from emissivity, area, and temperature;
-- separately declared parasitic conductance;
-- three low/baseline/high-loss cases, focused tests, and CSV/JSON artifacts.
+Observed aggregate result:
 
-For the declared baseline composition, total mass is 0.789 g and lumped heat capacity is 0.741 J/K. Total conductance spans 7.01e-5 to 2.12e-3 W/K across the declared surface/parasitic cases. The previous 50 J/K placeholder is therefore about 67 times larger than this first geometry-derived estimate. This strongly weakens the prior thermal-inertia assumption but is not yet hardware evidence because component packing, coatings, internal interfaces, and material selections remain provisional.
+- low-emissivity/no-parasitic: 81/81 combined PASS;
+- baseline surface: 6/81 combined PASS, all at 0.5 h;
+- high-emissivity/high-parasitic: 0/81 combined PASS;
+- electrical margin remains positive in every declared case, while thermal survival collapses as conductance increases.
+
+This makes surface emissivity and parasitic heat paths the dominant uncertainty in the current model. The result is sensitivity evidence only. It does not establish a flight-feasible coating, internal architecture, heater, battery, or PCM package.
 
 ## Artifacts
 
@@ -42,15 +43,19 @@ For the declared baseline composition, total mass is 0.789 g and lumped heat cap
 - `src/sim/thermal_geometry.py`
 - `experiments/thermal_shadow_survival.py`
 - `experiments/derive_thermal_geometry_ranges.py`
+- `experiments/thermal_shadow_sweep.py`
 - `configs/thermal_shadow_survival.json`
 - `configs/thermal_geometry_ranges.json`
+- `configs/thermal_shadow_sweep.json`
 - `tests/test_thermal_storage.py`
 - `tests/test_thermal_geometry.py`
+- `tests/test_thermal_shadow_sweep.py`
 - `docs/system/thermal_shadow_survival.md`
 - `outputs/qst_stor_0002/cases.csv`
 - `outputs/qst_stor_0002/summary.json`
 - `outputs/qst_stor_0002/thermal_geometry_ranges.csv`
 - `outputs/qst_stor_0002/thermal_geometry_summary.json`
+- `outputs/qst_stor_0002/geometry_coupled_sweep_summary.json`
 
 ## Falsifier
 
@@ -58,4 +63,4 @@ If temperature support mass or heater demand eliminates the 10 mm survival margi
 
 ## Next step
 
-Feed the geometry-derived heat-capacity and conductance cases into the coupled shadow model and run the full eclipse-duration, initial-temperature, PCM-mass, and duty-cycle sweep.
+Validate the committed sweep in CI, then inspect the six baseline-surface 0.5 h survivors to identify the exact PCM, initial-temperature, and duty-cycle combinations that preserve thermal survival.
