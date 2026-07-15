@@ -1,0 +1,30 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260715T030611654321Z-monthly-governance-e3066d8f803ef32ec01f",
+  "loop_id": "monthly-governance",
+  "contract_version": "1.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-07-15T03:05:40Z",
+  "source_commit": "25abdba204fd6394b42d1474b2bb89e5f4f98ca9",
+  "state_hash": "sha256:a7638885c3daab06ef5afd0f90e549b1117891d57cc497fa6a98f8e1dcf664a3",
+  "quest_context": {"issue": 24, "acceptance_slice": "post-merge terminal-state reconciliation"},
+  "pr_context": {"pr_number": 26, "lifecycle_state": "merged", "merge_commit": "25abdba204fd6394b42d1474b2bb89e5f4f98ca9"},
+  "consumed_ids": [
+    "RUN-20260715T030301123456Z-daily-research-operator-825885c59652d79abf58"
+  ],
+  "artifacts": [
+    {"path": "automation/pr_lifecycle/26.json", "kind": "terminal_pr_lifecycle"},
+    {"path": "automation/reports/issue_24_acceptance.md", "kind": "post_merge_acceptance"},
+    {"path": "automation/reports/migration_status.md", "kind": "completed_migration_status"},
+    {"path": "automation/reports/generated_long_log.md", "kind": "generated_history"}
+  ],
+  "checks": [
+    {"name": "PR merge", "status": "passed", "evidence": "PR #26 squash-merged successfully as commit 25abdba204fd6394b42d1474b2bb89e5f4f98ca9."},
+    {"name": "accepted tree on main", "status": "passed", "evidence": "automation/reports/issue_24_acceptance.md was fetched from main after merge."},
+    {"name": "final head validation", "status": "passed", "evidence": "Final PR head passed tests run 29385638872, baseline-artifacts run 29385638896, and automation-transaction run 29385638932."}
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE",
+  "next_action": "Merge the terminal-state closure PR and close Issue #24 as completed.",
+  "created_at": "2026-07-15T03:06:11.654321Z"
+}
