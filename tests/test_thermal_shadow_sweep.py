@@ -1,4 +1,8 @@
-from experiments.thermal_shadow_sweep import build_sweep_rows, summarize
+from experiments.thermal_shadow_sweep import (
+    baseline_survivor_report,
+    build_sweep_rows,
+    summarize,
+)
 
 
 def _config():
@@ -44,6 +48,16 @@ def _geometry():
     ]}
 
 
+def _baseline_geometry():
+    return {"cases": [
+        {"name":"baseline_surface","outer_diameter_m":0.01,"core_diameter_m":0.008,
+         "core_density_kg_m3":1800.0,"core_specific_heat_J_kg_K":900.0,
+         "shell_density_kg_m3":1200.0,"shell_specific_heat_J_kg_K":1000.0,
+         "effective_emissivity":0.2,"linearization_temperature_K":270.0,
+         "parasitic_conductance_W_K":0.0002},
+    ]}
+
+
 def test_sweep_is_cartesian_and_preserves_independent_statuses():
     rows = build_sweep_rows(_config(), _geometry())
     assert len(rows) == 2 * 2 * 1 * 2 * 2
@@ -70,3 +84,22 @@ def test_summary_counts_geometry_cases():
     report = summarize(rows)
     assert report["case_count"] == len(rows)
     assert set(report["by_geometry"]) == {"low", "high"}
+
+
+def test_baseline_survivor_report_exposes_declared_grid_boundary():
+    config = _config()
+    config["sweep"]["initial_temperature_K"] = [263.15, 273.15, 283.15]
+    config["sweep"]["duty_cycle"] = [0.25, 0.5, 1.0]
+    rows = build_sweep_rows(config, _baseline_geometry())
+    report = baseline_survivor_report(rows)
+
+    assert report["combined_pass_count"] == 6
+    assert report["boundary"] == {
+        "maximum_eclipse_duration_h": 0.5,
+        "minimum_initial_temperature_K": 273.15,
+        "minimum_pcm_mass_kg": 0.002,
+        "passing_duty_cycles": [0.25, 0.5, 1.0],
+        "heater_activation_observed": False,
+    }
+    assert all(case["pcm_mass_kg"] == 0.002 for case in report["survivors"])
+    assert all(case["minimum_temperature_K"] == 273.15 for case in report["survivors"])
