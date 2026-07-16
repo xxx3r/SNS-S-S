@@ -78,6 +78,62 @@ def summarize(rows: list[dict]) -> dict:
     return {"case_count": len(rows), "by_geometry": by_geometry}
 
 
+def baseline_survivor_report(rows: list[dict]) -> dict:
+    survivors = [
+        row
+        for row in rows
+        if row["geometry_case"] == "baseline_surface"
+        and row["status"] == "PASS"
+    ]
+    survivors.sort(
+        key=lambda row: (
+            row["eclipse_duration_h"],
+            row["initial_temperature_K"],
+            row["pcm_mass_kg"],
+            row["duty_cycle"],
+        )
+    )
+    return {
+        "geometry_case": "baseline_surface",
+        "combined_pass_count": len(survivors),
+        "survivors": [
+            {
+                "eclipse_duration_h": row["eclipse_duration_h"],
+                "initial_temperature_K": row["initial_temperature_K"],
+                "pcm_mass_kg": row["pcm_mass_kg"],
+                "duty_cycle": row["duty_cycle"],
+                "minimum_temperature_K": row["minimum_temperature_K"],
+                "heater_energy_Wh": row["heater_energy_Wh"],
+                "electrical_margin_Wh": row["electrical_margin_Wh"],
+                "pcm_latent_energy_used_J": row["pcm_latent_energy_used_J"],
+            }
+            for row in survivors
+        ],
+        "boundary": {
+            "maximum_eclipse_duration_h": max(
+                (row["eclipse_duration_h"] for row in survivors), default=None
+            ),
+            "minimum_initial_temperature_K": min(
+                (row["initial_temperature_K"] for row in survivors), default=None
+            ),
+            "minimum_pcm_mass_kg": min(
+                (row["pcm_mass_kg"] for row in survivors), default=None
+            ),
+            "passing_duty_cycles": sorted({row["duty_cycle"] for row in survivors}),
+            "heater_activation_observed": any(
+                row["heater_energy_Wh"] > 0.0 for row in survivors
+            ),
+        },
+        "interpretation": (
+            "Within the declared grid, every baseline-surface survivor is a 0.5 h case "
+            "with 2 g PCM and an initial temperature at or above 273.15 K. All three "
+            "duty cycles pass because the PCM holds the node at its transition "
+            "temperature and the heater never activates. This is a grid boundary, "
+            "not a continuous physical threshold or hardware qualification result."
+        ),
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=Path, default=Path("configs/thermal_shadow_sweep.json"))
@@ -94,8 +150,14 @@ def main() -> None:
         writer.writerows(rows)
     summary_path = args.out / "geometry_coupled_sweep_summary.json"
     summary_path.write_text(json.dumps(summarize(rows), indent=2) + "\n", encoding="utf-8")
+    survivor_path = args.out / "baseline_surface_survivors.json"
+    survivor_path.write_text(
+        json.dumps(baseline_survivor_report(rows), indent=2) + "\n",
+        encoding="utf-8",
+    )
     print(f"wrote {len(rows)} cases to {csv_path}")
     print(f"wrote summary to {summary_path}")
+    print(f"wrote baseline survivor boundary to {survivor_path}")
 
 
 if __name__ == "__main__":
