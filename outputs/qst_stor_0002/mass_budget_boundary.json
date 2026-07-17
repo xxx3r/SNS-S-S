@@ -1,0 +1,13 @@
+{
+  "case_count": 63,
+  "combined_pass_count": 0,
+  "thermal_pass_count": 0,
+  "electrical_pass_count": 63,
+  "maximum_pcm_mass_fraction": 0.5,
+  "maximum_pcm_mass_kg": 0.0003945840372908781,
+  "geometry_total_mass_kg": 0.0007891680745817562,
+  "minimum_temperature_K": 65.43775310052982,
+  "minimum_electrical_margin_Wh": 0.07819444444444451,
+  "survivors": [],
+  "interpretation": "No declared baseline-surface 30-minute case survives when PCM is constrained to 0-50% of the fixed 0.789 g node mass and displaces baseline sensible mass. This falsifies the prior 2 g apparent survivor within the current envelope."
+}
