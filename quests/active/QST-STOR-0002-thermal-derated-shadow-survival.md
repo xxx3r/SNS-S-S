@@ -16,6 +16,7 @@ A small SNS survival battery remains credible only when temperature-dependent ca
 - Derive heat capacity and conductance from explicit 10 mm geometry.
 - Sweep shadow duration, initial temperature, PCM mass, and duty cycle.
 - Constrain PCM to a fraction of fixed total node mass and reduce displaced sensible capacity proportionally.
+- Sweep effective emissivity and parasitic conductance under the most favorable declared admissible mass-budget case.
 
 ## Success criteria
 
@@ -25,6 +26,7 @@ A small SNS survival battery remains credible only when temperature-dependent ca
 - At least one case shows where PCM helps and where it cannot.
 - Placeholder thermal properties are replaced by traceable geometry-derived ranges.
 - Apparent survivors are rejected when their support mass exceeds the node envelope.
+- The first declared emissivity/parasitic-loss survivor is recorded without treating an effective parameter as a qualified material claim.
 
 ## Current evidence
 
@@ -47,7 +49,20 @@ Mass-budget result:
 - maximum allowed PCM mass in the declared sweep: 0.395 g;
 - minimum electrical margin: 0.0782 Wh.
 
-This falsifies the prior 2 g apparent survivor within the current 10 mm baseline-surface envelope. The result remains sensitivity evidence, not hardware qualification. PCM sensible heat, packaging mass, density-driven geometry changes, component gradients, temperature-dependent conductance, view factors, hysteresis, aging, and rate effects remain omitted.
+A third 42-case boundary sweep held the deliberately favorable admissible case fixed at 283.15 K initial temperature, 50% PCM mass fraction, and 25% duty cycle while varying effective emissivity and parasitic conductance.
+
+Loss-boundary result:
+
+- combined PASS: 18/42;
+- electrical PASS: 42/42;
+- effective emissivity 0.2: 0/7 PASS, including zero parasitic conductance;
+- effective emissivity 0.15: 0/7 PASS;
+- first declared survivor: effective emissivity 0.1 with parasitic conductance 5e-5 W/K;
+- first-survivor total conductance: 1.9025e-4 W/K;
+- first-survivor minimum temperature: 238.98 K;
+- first-survivor electrical margin: 0.0880 Wh.
+
+This converts the thermal blocker into an inspectable target: the current proxy needs effective emissivity below the baseline 0.2 and tightly bounded parasitic leakage. The result is a model boundary, not proof that a realizable coating/interface stack can achieve it. PCM sensible heat, packaging mass, density-driven geometry changes, component gradients, temperature-dependent conductance, exact radiative exchange, view factors, hysteresis, aging, and rate effects remain omitted.
 
 ## Artifacts
 
@@ -57,14 +72,17 @@ This falsifies the prior 2 g apparent survivor within the current 10 mm baseline
 - `experiments/derive_thermal_geometry_ranges.py`
 - `experiments/thermal_shadow_sweep.py`
 - `experiments/thermal_shadow_mass_budget.py`
+- `experiments/thermal_shadow_loss_boundary.py`
 - `configs/thermal_shadow_survival.json`
 - `configs/thermal_geometry_ranges.json`
 - `configs/thermal_shadow_sweep.json`
 - `configs/thermal_shadow_mass_budget.json`
+- `configs/thermal_shadow_loss_boundary.json`
 - `tests/test_thermal_storage.py`
 - `tests/test_thermal_geometry.py`
 - `tests/test_thermal_shadow_sweep.py`
 - `tests/test_thermal_shadow_mass_budget.py`
+- `tests/test_thermal_shadow_loss_boundary.py`
 - `docs/system/thermal_shadow_survival.md`
 - `outputs/qst_stor_0002/cases.csv`
 - `outputs/qst_stor_0002/summary.json`
@@ -73,6 +91,7 @@ This falsifies the prior 2 g apparent survivor within the current 10 mm baseline
 - `outputs/qst_stor_0002/geometry_coupled_sweep_summary.json`
 - `outputs/qst_stor_0002/baseline_surface_survivors.json`
 - `outputs/qst_stor_0002/mass_budget_boundary.json`
+- `outputs/qst_stor_0002/loss_boundary.json`
 
 ## Falsifier
 
@@ -80,4 +99,4 @@ If temperature support mass or heater demand eliminates the 10 mm survival margi
 
 ## Next step
 
-Quantify the conductance reduction required for at least one physically admissible 30-minute baseline case to survive with PCM capped at 50 percent of total node mass. Produce a threshold sweep over effective emissivity and parasitic conductance rather than adding more unconstrained storage mass.
+Translate the effective boundary into a material/interface evidence checklist: identify candidate low-emissivity surface systems and quantify whether a full packaged 10 mm node can plausibly keep parasitic conductance at or below 5e-5 W/K. Do not promote a material claim without measured or primary-source evidence.
