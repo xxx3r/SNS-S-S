@@ -1,0 +1,42 @@
+{
+  "geometry_config": "configs/thermal_geometry_ranges.json",
+  "geometry_case": "baseline_surface",
+  "eclipse_duration_h": 0.5,
+  "initial_temperature_K": 283.15,
+  "pcm_mass_fraction": 0.5,
+  "duty_cycle": 0.25,
+  "effective_emissivity": [0.2, 0.15, 0.1, 0.075, 0.05, 0.02],
+  "parasitic_conductance_W_K": [0.0002, 0.00015, 0.0001, 0.000075, 0.00005, 0.000025, 0.0],
+  "fixed": {
+    "time_step_s": 5.0,
+    "environment_temperature_K": 3.0,
+    "heater_threshold_K": 253.15,
+    "heater_power_W": 0.02,
+    "sleep_load_W": 0.001,
+    "active_load_W": 0.004,
+    "nominal_battery_Wh": 0.25,
+    "discharge_efficiency": 0.9,
+    "reserve_fraction": 0.2,
+    "derating_reference_K": 293.15,
+    "derating_floor_K": 243.15,
+    "minimum_capacity_fraction": 0.5,
+    "minimum_operating_temperature_K": 233.15,
+    "pcm_latent_heat_J_kg": 180000.0,
+    "pcm_transition_temperature_K": 273.15
+  },
+  "acceptance": {
+    "case_count": 42,
+    "baseline_emissivity_0_2_must_have_zero_survivors": true,
+    "first_declared_survivor": {
+      "effective_emissivity": 0.1,
+      "parasitic_conductance_W_K": 0.00005
+    },
+    "all_survivors_must_have_positive_electrical_margin": true
+  },
+  "assumptions": {
+    "best_case_initial_temperature_selected": true,
+    "maximum_admissible_pcm_fraction_selected": true,
+    "minimum_declared_duty_cycle_selected": true,
+    "surface_emissivity_and_parasitic_conductance_are_effective_parameters": true
+  }
+}
