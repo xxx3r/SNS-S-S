@@ -1,0 +1,17 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "be_20260719_power_allocation_fairness",
+  "belief_id": "SNS.SBSP.ALLOCATION_REQUIRES_STARVATION_METRICS",
+  "evidence_ids": ["ev_20260719_leo_sbsp_allocation"],
+  "claim_cluster_ids": ["cluster_20260616_leo_sbsp_allocation"],
+  "direction": 1,
+  "magnitude": 0.25,
+  "confidence": 0.66,
+  "source_quality": 0.72,
+  "environment_match": 0.62,
+  "novelty": 0.70,
+  "status": "proposed",
+  "reason": "A modeled constellation can deliver substantial aggregate power while leaving receivers unserved; SNS relay evaluation therefore needs starvation and fairness metrics.",
+  "supersedes": [],
+  "created_by_run_id": "run_weekly_20260719T145804Z_c3a91e"
+}
