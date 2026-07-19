@@ -1,0 +1,73 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "run_weekly_20260719T145804Z_c3a91e",
+  "loop_id": "weekly-evidence-synthesis",
+  "contract_version": "1.0.0",
+  "trigger_type": "scheduled",
+  "triggered_at": "2026-07-19T14:58:04Z",
+  "started_at": "2026-07-19T14:58:04Z",
+  "completed_at": "2026-07-19T15:19:00Z",
+  "source_commit": "25318716f1778f10a405273b4bd13c1d0b4dc419",
+  "source_branch": "main",
+  "working_branch": "aurora/weekly-roundup-2026-07-19",
+  "quest_ids": ["QST-STOR-0002", "QST-SIM-0002", "QST-SIM-0003"],
+  "pull_requests": [],
+  "consumed_run_ids": [],
+  "consumed_evidence_ids": [],
+  "question": "What recent evidence materially changes SNS subsystem beliefs or creates bounded testable refinements without displacing QST-STOR-0002?",
+  "success_criteria": [
+    "Create a dated roundup with machine-readable belief shifts, actions, and awareness update.",
+    "Normalize selected primary evidence into immutable evidence events.",
+    "Propose belief and quest actions without changing monthly-owned canonical governance.",
+    "Keep the active queue unchanged and QST-STOR-0002 canonical."
+  ],
+  "artifacts": [
+    "calendar/roundups/2026-07-19.md",
+    "calendar/evidence/2026/07/ev_20260719_nrl_laser_power.json",
+    "calendar/evidence/2026/07/ev_20260719_leo_sbsp_allocation.json",
+    "calendar/evidence/2026/07/ev_20260719_swarm_design_reconfiguration.json",
+    "calendar/evidence/2026/07/ev_20260719_space_weather_margin.json",
+    "calendar/belief_events/2026/07/be_20260719_power_allocation_fairness.json",
+    "calendar/belief_events/2026/07/be_20260719_swarm_design_first.json",
+    "quests/actions/2026/07/qa_20260719_qst_stor_0002_environmental_margins.json"
+  ],
+  "checks": [
+    {
+      "command": "manual schema review against docs/SNS_autonomous_loop_transaction_plan.md sections 13-15",
+      "status": "passed",
+      "evidence": "Evidence, belief, and quest-action records contain the required v1 fields and declared scales."
+    },
+    {
+      "command": "repository semantic review",
+      "status": "passed",
+      "evidence": "No active quest, canonical move, consolidated belief ledger, ARCI weight, dependency, or automation contract was changed."
+    },
+    {
+      "command": "GitHub Actions",
+      "status": "not_run_yet",
+      "evidence": "Workflow state will be inspected after PR publication."
+    }
+  ],
+  "belief_events": [
+    "be_20260719_power_allocation_fairness",
+    "be_20260719_swarm_design_first"
+  ],
+  "quest_actions": [
+    "qa_20260719_qst_stor_0002_environmental_margins"
+  ],
+  "assumptions_changed": [
+    "Power-network evaluation must include starvation and fairness metrics, not aggregate delivery alone.",
+    "Swarm persistence should treat topology, role substitution, and passive design as first-class variables.",
+    "Thermal-loss candidate evidence should carry environmental degradation margins."
+  ],
+  "limitations": [
+    "The NRL demonstration is terrestrial and does not establish orbital end-to-end performance.",
+    "The LEO SBSP result is a simulation preprint and policy-dependent.",
+    "The modular robotic swarm operates at a different scale and mechanical regime from 10 mm SNS nodes.",
+    "No new combined-stressor PV flight result was identified.",
+    "Weekly authority does not update monthly-owned short spawn memory or consolidated belief state."
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Continue QST-STOR-0002 by producing the thermal-loss material/interface evidence checklist with environmental margins; monthly governance may later accept the SIM refinements.",
+  "aurora_score": 0.8
+}
