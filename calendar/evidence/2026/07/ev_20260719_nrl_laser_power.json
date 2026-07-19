@@ -1,0 +1,27 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "ev_20260719_nrl_laser_power",
+  "recorded_at": "2026-07-19T14:58:04Z",
+  "source_title": "NRL Demonstrates Dual-Use Laser System for Power Beaming and Counter-UAS Operations",
+  "source_url": "https://www.navy.mil/Press-Office/News-Stories/display-news/Article/4519573/nrl-demonstrates-dual-use-laser-system-for-power-beaming-and-counter-uas-operat/",
+  "source_type": "primary-agency-report",
+  "publication_date": "2026-06-17",
+  "event_date": "2026-06-17",
+  "primary_or_secondary": "primary",
+  "claim_cluster_id": "cluster_20260617_nrl_dual_use_laser",
+  "environment": "terrestrial-field",
+  "demonstrated_scale": "system",
+  "subsystems": ["SBSP", "META", "CTRL"],
+  "mission_relevance": ["power-beaming", "tracking", "mode-switching"],
+  "evidence_tier": "B",
+  "directness": 0.55,
+  "novelty": 0.65,
+  "limitations": [
+    "Terrestrial demonstration rather than orbital operation.",
+    "Public report does not close end-to-end efficiency, receiver thermal load, pointing jitter, or safety constraints.",
+    "Dual-use mission framing is not itself an SNS requirement."
+  ],
+  "fact_summary": "NRL reported a long-distance laser power-beaming system that could rapidly transition between mission modes during a terrestrial demonstration with Boeing and the U.S. Army.",
+  "inference_summary": "Tracking, receiver-state management, mode switching, and command authority should be explicit fields in the SNS beam-control abstraction.",
+  "speculation_summary": "Future SNS relays could share apertures across communication, sensing, and power delivery, but only with explicit scheduling and safety constraints."
+}
