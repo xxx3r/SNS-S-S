@@ -1,0 +1,17 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "be_20260719_swarm_design_first",
+  "belief_id": "SNS.SWARM.MAINTENANCE_IS_DESIGN_AND_CONTROL",
+  "evidence_ids": ["ev_20260719_swarm_design_reconfiguration"],
+  "claim_cluster_ids": ["cluster_202606_swarm_reconfiguration"],
+  "direction": 1,
+  "magnitude": 0.20,
+  "confidence": 0.60,
+  "source_quality": 0.70,
+  "environment_match": 0.50,
+  "novelty": 0.68,
+  "status": "proposed",
+  "reason": "Fault-tolerant reconfiguration strengthens the case for modeling topology, role substitution, and graded capability loss before relying on controller complexity alone.",
+  "supersedes": [],
+  "created_by_run_id": "run_weekly_20260719T145804Z_c3a91e"
+}
