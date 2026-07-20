@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260719T145804000000Z-refine-qst-stor-0002-d25dbac053534a7819eb",
+  "action_type": "refine_existing",
+  "quest_id": "QST-STOR-0002",
+  "target_quest_ids": [],
+  "proposed_by_loop": "weekly-evidence-synthesis",
+  "authority": "proposal",
+  "rationale": "Depends on PR #22. Extend the planned artifact `docs/system/qst_stor_0002_thermal_loss_evidence_checklist.md` so candidate coatings and interfaces report environmental exposure basis, degraded values, uncertainty, and transfer limits. Success requires every candidate to distinguish measured fact from extrapolation and assess whether effective emissivity <= 0.10 and parasitic conductance <= 5e-5 W/K remain credible after vacuum, radiation, contamination, and thermal-cycling margins. Supporting evidence: EVID-20260719T145804000000Z-space-weather-margin-6d1eb98b2888c55d1f62. Priority effect: none.",
+  "recorded_at": "2026-07-19T15:12:00Z"
+}

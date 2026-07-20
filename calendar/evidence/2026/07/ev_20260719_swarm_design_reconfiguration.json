@@ -1,0 +1,36 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260719T145804000000Z-swarm-design-reconfiguration-b809a25e65993b3fd8cc",
+  "claim_cluster_id": "CLM-20260719T145804000000Z-swarm-reconfiguration-cluster-0cc0cea12ca087b2c7d5",
+  "claim": "Cooperative reconfiguration can preserve modular-swarm manipulation capability after joint failures without spare replacement modules.",
+  "source_uri": "https://doi.org/10.1088/2631-7990/ae6bde",
+  "source_kind": "primary_paper",
+  "source_fingerprint": "sha256:0801437168c89f2c4fa66bbe566776eb58382ba4f936d049ec2838475180ffd5",
+  "observed_at": "2026-07-19T14:58:04Z",
+  "independence": "independent",
+  "polarity": "supports",
+  "confidence": 0.58,
+  "provenance": {
+    "source_title": "Fault-tolerant modular robotic swarm through cooperative reconfiguration for large-scale on-orbit assembly",
+    "publication_date": "2026-06-10",
+    "event_date": "2026-06-10",
+    "primary_or_secondary": "primary",
+    "environment": "laboratory-and-simulation",
+    "demonstrated_scale": "component",
+    "subsystems": ["SWARM", "CTRL", "MFG"],
+    "mission_relevance": ["fault-tolerance", "role-substitution", "on-orbit-assembly"],
+    "evidence_tier": "B",
+    "directness": 0.58,
+    "novelty": 0.68,
+    "limitations": [
+      "Modular robotic assembly scale is larger and mechanically different from a 10 mm SNS node.",
+      "Transfer to free-flying orbital swarms is not demonstrated.",
+      "Capability preservation depends on the declared module and failure model."
+    ],
+    "fact_summary": "The authors present cooperative reconfiguration intended to preserve modular-swarm manipulation capability after joint failures without spare replacement modules.",
+    "inference_summary": "SNS swarm models should represent local role substitution, topology change, and graded capability loss instead of binary node survival alone.",
+    "speculation_summary": "Reconfiguration may be most applicable to larger relay, assembly, or service nodes within a heterogeneous SNS ecology.",
+    "created_by_run_id": "RUN-20260719T145804000000Z-weekly-evidence-synthesis-f8e3ccd335c1798175a9"
+  },
+  "artifacts": ["calendar/roundups/2026-07-19.md"]
+}

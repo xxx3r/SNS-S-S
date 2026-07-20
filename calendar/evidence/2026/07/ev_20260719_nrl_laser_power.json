@@ -1,0 +1,36 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260719T145804000000Z-nrl-laser-power-b9299b30bd9756976663",
+  "claim_cluster_id": "CLM-20260719T145804000000Z-nrl-laser-cluster-391b847ed9171f545d0f",
+  "claim": "A terrestrial long-distance laser system demonstrated power beaming with rapid mission-mode switching.",
+  "source_uri": "https://www.navy.mil/Press-Office/News-Stories/display-news/Article/4519573/nrl-demonstrates-dual-use-laser-system-for-power-beaming-and-counter-uas-operat/",
+  "source_kind": "official_statement",
+  "source_fingerprint": "sha256:4b421a651ce6590b424fe24953a5ca7d8d5d17d83591ed148a9ffefb5a2c4c92",
+  "observed_at": "2026-07-19T14:58:04Z",
+  "independence": "independent",
+  "polarity": "supports",
+  "confidence": 0.55,
+  "provenance": {
+    "source_title": "NRL Demonstrates Dual-Use Laser System for Power Beaming and Counter-UAS Operations",
+    "publication_date": "2026-06-17",
+    "event_date": "2026-06-17",
+    "primary_or_secondary": "primary",
+    "environment": "terrestrial-field",
+    "demonstrated_scale": "system",
+    "subsystems": ["SBSP", "META", "CTRL"],
+    "mission_relevance": ["power-beaming", "tracking", "mode-switching"],
+    "evidence_tier": "B",
+    "directness": 0.55,
+    "novelty": 0.65,
+    "limitations": [
+      "Terrestrial demonstration rather than orbital operation.",
+      "Public report does not close end-to-end efficiency, receiver thermal load, pointing jitter, or safety constraints.",
+      "Dual-use mission framing is not itself an SNS requirement."
+    ],
+    "fact_summary": "NRL reported a long-distance laser power-beaming system that could rapidly transition between mission modes during a terrestrial demonstration with Boeing and the U.S. Army.",
+    "inference_summary": "Tracking, receiver-state management, mode switching, and command authority should be explicit fields in the SNS beam-control abstraction.",
+    "speculation_summary": "Future SNS relays could share apertures across communication, sensing, and power delivery, but only with explicit scheduling and safety constraints.",
+    "created_by_run_id": "RUN-20260719T145804000000Z-weekly-evidence-synthesis-f8e3ccd335c1798175a9"
+  },
+  "artifacts": ["calendar/roundups/2026-07-19.md"]
+}
