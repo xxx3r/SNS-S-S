@@ -8,15 +8,29 @@ This directory coordinates daily, weekly, monthly, and audit research loops with
 platform safety / explicit human instruction
   -> AGENTS.md stable law
   -> active versioned loop contract
+  -> executable schema + semantic validator
   -> issue / PR acceptance slice
   -> active quest
   -> monthly governance
   -> accepted weekly evidence
   -> compact memory
-  -> historical records
+  -> historical records and older plans
 ```
 
 Daily executes. Weekly proposes from evidence. Monthly governs shared state. Audit observes and recommends.
+
+## Canonical record dialect
+
+`automation/schemas/*.schema.json` and the matching Python validators are normative for record identity and field shape. `docs/SNS_autonomous_loop_schema_reconciliation.md` provides copyable examples and supersedes conflicting lower-case examples in the original transaction plan.
+
+Use `automation.ids.new_event_id` and `automation.ids.new_run_id`. New immutable identifiers use `RUN-`, `EVID-`, `CLM-`, `BEL-`, and `QA-`, followed by a UTC timestamp, namespace, and 20-hex collision suffix.
+
+Never validate new records only by comparing them with prose. Before publication run:
+
+```bash
+python -m pytest -q tests/test_automation_*.py
+python -m automation.cli validate-repository
+```
 
 ## Layout
 
@@ -42,7 +56,7 @@ python -m automation.cli audit \
 
 ## Immutability
 
-A receipt or semantic event is never edited after publication. Corrections are new records linked to the original ID. Human-readable long logs and audit reports are generated views and may be regenerated.
+A receipt or semantic event is never edited after publication. Corrections are new records linked to the original ID. Human-readable long logs and audit reports are generated views and may be regenerated. A still-unmerged draft record may be corrected before acceptance because it has not entered canonical history.
 
 ## Optimistic concurrency
 

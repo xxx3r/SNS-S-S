@@ -7,14 +7,15 @@ SNS-S-S is a formal research instrument for Solar-Nano-Sphere swarm dynamics, ex
 1. platform safety and explicit human instruction;
 2. this stable law;
 3. the selected active contract in `automation/contracts/`;
-4. the active issue and PR acceptance slice;
-5. the active quest record;
-6. accepted monthly governance;
-7. accepted weekly evidence;
-8. `memory/mem_log_short.md`;
-9. historical logs and older plans.
+4. executable record schemas in `automation/schemas/` and their matching validators;
+5. the active issue and PR acceptance slice;
+6. the active quest record;
+7. accepted monthly governance;
+8. accepted weekly evidence;
+9. `memory/mem_log_short.md`;
+10. historical logs and older plans.
 
-No lower layer silently overrides a higher layer.
+No lower layer silently overrides a higher layer. For automation record identity or field shape, `docs/SNS_autonomous_loop_schema_reconciliation.md` explains the executable authority. Older planning examples are historical and non-normative when they conflict with schemas or validators.
 
 ## Loop routing
 
@@ -26,6 +27,19 @@ Select exactly one contract before acting:
 - system audit: `automation/contracts/system-audit.v1.md`.
 
 Read only the contract’s required inputs plus files needed for the acceptance slice. Every trigger ends with one immutable receipt under `automation/runs/**` and one explicit terminal state.
+
+## Record-shape law
+
+Create immutable IDs only through `automation.ids.new_event_id` or `automation.ids.new_run_id`. New run, evidence, claim-cluster, belief, and quest-action IDs use the canonical uppercase prefixes `RUN-`, `EVID-`, `CLM-`, `BEL-`, and `QA-`.
+
+Before publication, validate new records against the executable repository:
+
+```bash
+python -m pytest -q tests/test_automation_*.py
+python -m automation.cli validate-repository
+```
+
+Do not copy lower-case `run_*`, `ev_*`, `be_*`, or `qa_*` examples from historical plans. Do not claim schema validation from manual comparison with prose. If executable validation fails, stop with an honest terminal state or correct only the still-unmerged records.
 
 ## Scientific and engineering invariants
 
