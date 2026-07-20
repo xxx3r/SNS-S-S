@@ -54,13 +54,13 @@
     },
     {
       "name": "repository semantic validation",
-      "status": "not_run",
-      "evidence": ""
+      "status": "passed",
+      "evidence": "automation-transaction run 29755004672 passed focused automation tests, `python -m automation.cli validate-repository`, and the full pytest suite against the PR #29 schema authority."
     },
     {
       "name": "GitHub Actions",
-      "status": "not_run",
-      "evidence": ""
+      "status": "passed",
+      "evidence": "tests run 29755004486, automation-transaction run 29755004672, and baseline-artifacts run 29755002744 completed successfully."
     }
   ],
   "belief_effects": [
