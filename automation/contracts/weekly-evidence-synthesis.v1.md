@@ -10,6 +10,8 @@ allowed_triggers:
 reads:
   - AGENTS.md
   - automation/contracts/weekly-evidence-synthesis.v1.md
+  - automation/schemas/**
+  - docs/SNS_autonomous_loop_schema_reconciliation.md
   - calendar/evidence/**
   - calendar/roundups/**
   - calendar/belief_events/**
@@ -39,16 +41,25 @@ retry_budget: 2
 
 Translate current primary evidence into normalized evidence events, claim clusters, belief-event proposals, and bounded quest-action proposals without silently becoming the governance authority.
 
+## Canonical record authority
+
+For record identity and field shape, the executable files in `automation/schemas/` and their Python validators are normative. Use `automation.ids.new_event_id` and `automation.ids.new_run_id`; new identifiers use `RUN-`, `EVID-`, `CLM-`, `BEL-`, and `QA-` prefixes.
+
+`docs/SNS_autonomous_loop_schema_reconciliation.md` contains copyable examples. Lower-case examples in older planning documents are historical and must not be copied into new records.
+
 ## Transaction
 
-1. Record source commit, trigger time, and the last accepted weekly/monthly receipts consumed.
+1. Record source commit, trigger time, a state hash, and the last accepted weekly/monthly receipts consumed.
 2. Normalize each source with provenance and a source fingerprint.
 3. Group reports of one underlying event into one claim cluster while retaining source diversity and genuine independent replications.
 4. Record supporting, weakening, falsifying, negative, and uncertainty-increasing evidence.
 5. Emit belief events on the declared `[-1, 1]` magnitude and `[0, 1]` confidence scales.
 6. Use semantic quest actions. Refinement is not creation.
 7. Publish queue changes only as proposals. Monthly governance or explicit human authority enacts them.
-8. Write one immutable receipt and terminate after the bounded synthesis slice.
+8. Run `python -m pytest -q tests/test_automation_*.py` and `python -m automation.cli validate-repository` against the complete proposed tree.
+9. Write one immutable receipt and terminate after the bounded synthesis slice.
+
+A manual comparison with prose is not schema validation. If executable validation fails, correct only still-unmerged records or terminate `VERIFICATION_FAILED` with the exact incompatibility.
 
 ## Emergency falsification
 
