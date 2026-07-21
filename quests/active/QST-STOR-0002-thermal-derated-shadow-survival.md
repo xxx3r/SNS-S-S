@@ -6,7 +6,7 @@ Tags: [STOR, THERMAL, SIM]
 
 ## Hypothesis
 
-A small SNS survival battery remains credible only when temperature-dependent capacity, heater load, eclipse duration, phase-change buffering, geometry-derived thermal properties, and a closed node mass budget are modeled together.
+A small SNS survival battery remains credible only when temperature-dependent capacity, heater load, eclipse duration, phase-change buffering, geometry-derived thermal properties, a closed node mass budget, and environmentally qualified surface/interface evidence are modeled together.
 
 ## Method
 
@@ -17,6 +17,7 @@ A small SNS survival battery remains credible only when temperature-dependent ca
 - Sweep shadow duration, initial temperature, PCM mass, and duty cycle.
 - Constrain PCM to a fraction of fixed total node mass and reduce displaced sensible capacity proportionally.
 - Sweep effective emissivity and parasitic conductance under the most favorable declared admissible mass-budget case.
+- Translate the resulting loss boundary into a qualification-style evidence checklist that separates coupon properties from complete-package performance.
 
 ## Success criteria
 
@@ -27,6 +28,8 @@ A small SNS survival battery remains credible only when temperature-dependent ca
 - Placeholder thermal properties are replaced by traceable geometry-derived ranges.
 - Apparent survivors are rejected when their support mass exceeds the node envelope.
 - The first declared emissivity/parasitic-loss survivor is recorded without treating an effective parameter as a qualified material claim.
+- Candidate thermal paths distinguish measured, inferred, heritage, proposed, and unknown evidence.
+- Promotion requires package-level emissivity and assembled-conductance evidence after uncertainty and environmental margins.
 
 ## Current evidence
 
@@ -64,6 +67,15 @@ Loss-boundary result:
 
 This converts the thermal blocker into an inspectable target: the current proxy needs effective emissivity below the baseline 0.2 and tightly bounded parasitic leakage. The result is a model boundary, not proof that a realizable coating/interface stack can achieve it. PCM sensible heat, packaging mass, density-driven geometry changes, component gradients, temperature-dependent conductance, exact radiative exchange, view factors, hysteresis, aging, and rate effects remain omitted.
 
+The new evidence checklist compared this boundary against NASA and ESA primary/heritage sources. NASA's May 2026 Small Spacecraft Technology review gives a low-emissivity SmallSat coating example near 0.25 and warns that low thermal mass, limited MLI volume, interfaces, and MLI edge effects control transients. LDEF heritage reports clear chromic anodized aluminum near 0.16. MLI and foil shields can lower effective emittance, but their performance is installation-, seam-, contact-, pressure-, and scale-dependent. No reviewed source demonstrates a complete wired, penetrated, deployable 10 mm package simultaneously meeting `epsilon_eff <= 0.10` and `G_parasitic <= 5e-5 W/K` after environmental margins.
+
+Evidence-gate result:
+
+- emissivity path: **HOLD / MISSING PACKAGE EVIDENCE**;
+- parasitic-conductance path: **UNKNOWN / NO FULL-ASSEMBLY BUDGET**;
+- no candidate material or architecture is promoted as an SNS package solution;
+- a full assembly must be evaluated for both eclipse heat retention and illuminated-state heat rejection.
+
 ## Artifacts
 
 - `src/sim/thermal_storage.py`
@@ -84,6 +96,7 @@ This converts the thermal blocker into an inspectable target: the current proxy 
 - `tests/test_thermal_shadow_mass_budget.py`
 - `tests/test_thermal_shadow_loss_boundary.py`
 - `docs/system/thermal_shadow_survival.md`
+- `docs/system/qst_stor_0002_thermal_loss_evidence_checklist.md`
 - `outputs/qst_stor_0002/cases.csv`
 - `outputs/qst_stor_0002/summary.json`
 - `outputs/qst_stor_0002/thermal_geometry_ranges.csv`
@@ -95,8 +108,8 @@ This converts the thermal blocker into an inspectable target: the current proxy 
 
 ## Falsifier
 
-If temperature support mass or heater demand eliminates the 10 mm survival margin across plausible cases, the seed envelope must grow, its thermal conductance must fall materially, or the mission eclipse duty must change.
+If temperature support mass or heater demand eliminates the 10 mm survival margin across plausible cases, or if no complete package can meet the radiative and conductive loss targets after environmental margins, the seed envelope must grow, its mission eclipse duty must change, or thermal/storage responsibility must move to a specialized host.
 
 ## Next step
 
-Translate the effective boundary into a material/interface evidence checklist: identify candidate low-emissivity surface systems and quantify whether a full packaged 10 mm node can plausibly keep parasitic conductance at or below 5e-5 W/K. Do not promote a material claim without measured or primary-source evidence.
+Build a geometry-closed parasitic-conductance budget for one explicit 10 mm package architecture, including supports, wiring, adhesive bonds, PV hinge/traces, and PCM containment. Feed the upper-bound conductance and end-of-life emissivity range back into the coupled shadow-survival model.
