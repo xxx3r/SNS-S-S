@@ -1,0 +1,30 @@
+{
+  "name": "sns_10mm_package_v0_screening",
+  "target_parasitic_conductance_W_K": 5e-05,
+  "uncertainty_multiplier": 1.5,
+  "nominal_total_conductance_W_K": 0.00011305,
+  "conservative_total_conductance_W_K": 0.000169575,
+  "margin_W_K": -0.000119575,
+  "status": "FAIL",
+  "dominant_path": "core_to_shell_adhesive_bonds",
+  "category_totals_W_K": {
+    "adhesives": 6e-05,
+    "wiring": 1.95e-05,
+    "feedthroughs": 1.875e-05,
+    "supports": 1e-05,
+    "pcm_containment": 4e-06,
+    "pv_hinge_and_traces": 8e-07
+  },
+  "interpretation": {
+    "ratio_to_target_nominal": 2.261,
+    "ratio_to_target_conservative": 3.3915,
+    "dominant_fraction_of_nominal": 0.5307386112,
+    "claim_boundary": "Screening calculation only; no path dimension or material is qualified hardware evidence."
+  },
+  "limitations": [
+    "All dimensions are explicit screening assumptions, not a released mechanical design.",
+    "One-dimensional kA/L paths omit contact resistance, spreading, temperature dependence, and internal radiation.",
+    "The 1.5 uncertainty multiplier is a declared placeholder pending tolerance and contact-resistance data.",
+    "The budget evaluates eclipse heat leakage only; illuminated-state rejection remains a separate constraint."
+  ]
+}
