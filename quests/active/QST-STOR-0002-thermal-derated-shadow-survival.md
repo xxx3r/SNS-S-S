@@ -18,6 +18,7 @@ A small SNS survival battery remains credible only when temperature-dependent ca
 - Constrain PCM to a fraction of fixed total node mass and reduce displaced sensible capacity proportionally.
 - Sweep effective emissivity and parasitic conductance under the most favorable declared admissible mass-budget case.
 - Translate the resulting loss boundary into a qualification-style evidence checklist that separates coupon properties from complete-package performance.
+- Close one explicit package architecture by summing supports, wiring, adhesive bonds, PV hinge/traces, feedthroughs, and PCM containment with `G = kA/L` and a declared uncertainty multiplier.
 
 ## Success criteria
 
@@ -30,6 +31,7 @@ A small SNS survival battery remains credible only when temperature-dependent ca
 - The first declared emissivity/parasitic-loss survivor is recorded without treating an effective parameter as a qualified material claim.
 - Candidate thermal paths distinguish measured, inferred, heritage, proposed, and unknown evidence.
 - Promotion requires package-level emissivity and assembled-conductance evidence after uncertainty and environmental margins.
+- At least one complete screening package reports every conductive path, dominant contributors, uncertainty multiplier, and margin against the `5e-5 W/K` proxy target.
 
 ## Current evidence
 
@@ -67,7 +69,7 @@ Loss-boundary result:
 
 This converts the thermal blocker into an inspectable target: the current proxy needs effective emissivity below the baseline 0.2 and tightly bounded parasitic leakage. The result is a model boundary, not proof that a realizable coating/interface stack can achieve it. PCM sensible heat, packaging mass, density-driven geometry changes, component gradients, temperature-dependent conductance, exact radiative exchange, view factors, hysteresis, aging, and rate effects remain omitted.
 
-The new evidence checklist compared this boundary against NASA and ESA primary/heritage sources. NASA's May 2026 Small Spacecraft Technology review gives a low-emissivity SmallSat coating example near 0.25 and warns that low thermal mass, limited MLI volume, interfaces, and MLI edge effects control transients. LDEF heritage reports clear chromic anodized aluminum near 0.16. MLI and foil shields can lower effective emittance, but their performance is installation-, seam-, contact-, pressure-, and scale-dependent. No reviewed source demonstrates a complete wired, penetrated, deployable 10 mm package simultaneously meeting `epsilon_eff <= 0.10` and `G_parasitic <= 5e-5 W/K` after environmental margins.
+The evidence checklist compared this boundary against NASA and ESA primary/heritage sources. NASA's May 2026 Small Spacecraft Technology review gives a low-emissivity SmallSat coating example near 0.25 and warns that low thermal mass, limited MLI volume, interfaces, and MLI edge effects control transients. LDEF heritage reports clear chromic anodized aluminum near 0.16. MLI and foil shields can lower effective emittance, but their performance is installation-, seam-, contact-, pressure-, and scale-dependent. No reviewed source demonstrates a complete wired, penetrated, deployable 10 mm package simultaneously meeting `epsilon_eff <= 0.10` and `G_parasitic <= 5e-5 W/K` after environmental margins.
 
 Evidence-gate result:
 
@@ -76,25 +78,42 @@ Evidence-gate result:
 - no candidate material or architecture is promoted as an SNS package solution;
 - a full assembly must be evaluated for both eclipse heat retention and illuminated-state heat rejection.
 
+A geometry-closed first screening package now declares six path families: polymer supports, copper battery leads, PV flex traces, adhesive bonds, ceramic feedthroughs, and PCM containment ribs. Each path is explicit in count, conductivity, cross-section, length, and evidence class. The nominal sum is `1.1305e-4 W/K`; applying the declared 1.5 uncertainty multiplier gives `1.69575e-4 W/K`, or 3.39 times the current `5e-5 W/K` proxy target. Adhesive bonds dominate at `6e-5 W/K` (53.1% of nominal), followed by battery wiring at `1.95e-5 W/K` and feedthroughs at `1.875e-5 W/K`.
+
+Package-budget result:
+
+- status: **FAIL**;
+- nominal assembled conductance: `1.1305e-4 W/K`;
+- conservative assembled conductance: `1.69575e-4 W/K`;
+- target margin: `-1.19575e-4 W/K`;
+- dominant path: core-to-shell adhesive bonds;
+- all dimensions and material properties remain screening assumptions, not released package geometry or qualification evidence.
+
+This is useful negative evidence: the first complete package budget does not merely miss the target because of one exotic component. Ordinary bonds, leads, and feedthroughs collectively consume the thermal allowance before environmental margin.
+
 ## Artifacts
 
 - `src/sim/thermal_storage.py`
 - `src/sim/thermal_geometry.py`
+- `src/sim/package_conductance.py`
 - `experiments/thermal_shadow_survival.py`
 - `experiments/derive_thermal_geometry_ranges.py`
 - `experiments/thermal_shadow_sweep.py`
 - `experiments/thermal_shadow_mass_budget.py`
 - `experiments/thermal_shadow_loss_boundary.py`
+- `experiments/package_conductance_budget.py`
 - `configs/thermal_shadow_survival.json`
 - `configs/thermal_geometry_ranges.json`
 - `configs/thermal_shadow_sweep.json`
 - `configs/thermal_shadow_mass_budget.json`
 - `configs/thermal_shadow_loss_boundary.json`
+- `configs/qst_stor_0002_package_conductance.json`
 - `tests/test_thermal_storage.py`
 - `tests/test_thermal_geometry.py`
 - `tests/test_thermal_shadow_sweep.py`
 - `tests/test_thermal_shadow_mass_budget.py`
 - `tests/test_thermal_shadow_loss_boundary.py`
+- `tests/test_package_conductance.py`
 - `docs/system/thermal_shadow_survival.md`
 - `docs/system/qst_stor_0002_thermal_loss_evidence_checklist.md`
 - `outputs/qst_stor_0002/cases.csv`
@@ -105,6 +124,8 @@ Evidence-gate result:
 - `outputs/qst_stor_0002/baseline_surface_survivors.json`
 - `outputs/qst_stor_0002/mass_budget_boundary.json`
 - `outputs/qst_stor_0002/loss_boundary.json`
+- `outputs/qst_stor_0002/package_conductance/package_conductance_summary.json`
+- `outputs/qst_stor_0002/package_conductance/package_conductance_paths.csv`
 
 ## Falsifier
 
@@ -112,4 +133,4 @@ If temperature support mass or heater demand eliminates the 10 mm survival margi
 
 ## Next step
 
-Build a geometry-closed parasitic-conductance budget for one explicit 10 mm package architecture, including supports, wiring, adhesive bonds, PV hinge/traces, and PCM containment. Feed the upper-bound conductance and end-of-life emissivity range back into the coupled shadow-survival model.
+Propagate the conservative package conductance (`1.69575e-4 W/K`) and an explicit beginning-/end-of-life emissivity range through the 30-minute shadow model. Determine whether any mass-admissible survivor remains; if none does, compare the smallest envelope growth or host-assisted architecture that restores survival.
