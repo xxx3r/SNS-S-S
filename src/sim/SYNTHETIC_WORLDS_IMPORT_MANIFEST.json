@@ -1,0 +1,115 @@
+{
+  "approved_candidate_file_set_hash": "b4a99d4a3521298ca52fcb7771b5e512d1ed543aeaadc5bcce97346a1a03ecf3",
+  "approved_export_manifest_path": "docs/synthetic_worlds/APPROVED_EXPORT_MANIFEST.json",
+  "approved_export_manifest_self_hash": "920322db9a6aaa4391a97da8f5d91b16b52cec387419cba249f13cd3cfd602fa",
+  "approved_qualification_receipt_hash": "07255fe22895be85d40fafab8122d4a7a0007b38aeecfc1931cf6137c5386ce1",
+  "campaign_state": "NEEDS_GOVERNANCE_REVIEW",
+  "candidate_identity": "synthetic_worlds",
+  "candidate_version": "0.1.0-candidate",
+  "human_release_state": "APPROVED_FOR_PUBLIC_IMPORT",
+  "import_manifest_sha256": "9376ce095922a0ebb8f790e35e9222278b1fd5bca151d1327ffec4da7c4bf4f9",
+  "imported_files": [
+    {
+      "bytes": 565,
+      "destination_path": "docs/synthetic_worlds/LICENSE_NOTES.md",
+      "sha256": "6a8a0b963cf633703a2076b7651cf26484cf3c106225236c325ee25d94fb59b5",
+      "source_path": "LICENSE_NOTES.md"
+    },
+    {
+      "bytes": 1287,
+      "destination_path": "docs/synthetic_worlds/REPRODUCTION.md",
+      "sha256": "8887ae1846a1f5c2a73b86112e1f3a93ade32738f9d8d8578ecc1344c064b109",
+      "source_path": "REPRODUCTION.md"
+    },
+    {
+      "bytes": 550,
+      "destination_path": "configs/synthetic_worlds/basic_world.json",
+      "sha256": "972a6a9f6cac537da9350825a1f05d478ff1517ae2e5a9ed156ce4f79f38d395",
+      "source_path": "example_recipes/basic_world.json"
+    },
+    {
+      "bytes": 806,
+      "destination_path": "outputs/synthetic_worlds_import/shards/shard-00000.jsonl",
+      "sha256": "28897e9c4a8c04d603bc619e3199a78ded69170342d5dde059502c1765b0e100",
+      "source_path": "shards/shard-00000.jsonl"
+    },
+    {
+      "bytes": 806,
+      "destination_path": "outputs/synthetic_worlds_import/shards/shard-00001.jsonl",
+      "sha256": "0684cf68f28966d09ddd97763a071e5ace4ca9a873bfee9f246bcad93ac0d09f",
+      "source_path": "shards/shard-00001.jsonl"
+    },
+    {
+      "bytes": 861,
+      "destination_path": "src/sim/synthetic_worlds/__init__.py",
+      "sha256": "456d9ebec6a307becdcf439ecf847f1ec6ffc98db30e3e298891ea0c49bc5665",
+      "source_path": "synthetic_worlds/__init__.py"
+    },
+    {
+      "bytes": 2365,
+      "destination_path": "src/sim/synthetic_worlds/cli.py",
+      "sha256": "e3b2059454884338dce517249c4bda545f2d621533bda6bbbe80f6c7ad733c11",
+      "source_path": "synthetic_worlds/cli.py"
+    },
+    {
+      "bytes": 3275,
+      "destination_path": "src/sim/synthetic_worlds/common.py",
+      "sha256": "94c2a778c2569a4eddc91b0723f06deb03fa3e2b4b0bb92f97abfb320eb648fc",
+      "source_path": "synthetic_worlds/common.py"
+    },
+    {
+      "bytes": 225,
+      "destination_path": "src/sim/synthetic_worlds/core.py",
+      "sha256": "4039f40f796599dca7741cfcb2a87090ac94631b6dc765f06915721a04bffd01",
+      "source_path": "synthetic_worlds/core.py"
+    },
+    {
+      "bytes": 9164,
+      "destination_path": "src/sim/synthetic_worlds/qualification.py",
+      "sha256": "b57924a9f34af7a692c5b08237de2fa7d25dca33850afe8fde1b6cd8f574b368",
+      "source_path": "synthetic_worlds/qualification.py"
+    },
+    {
+      "bytes": 9626,
+      "destination_path": "src/sim/synthetic_worlds/recipe.py",
+      "sha256": "194b288c18122889e10c0e5afb6daca3ee4fce14a5e49578236cc7b5bad66ab0",
+      "source_path": "synthetic_worlds/recipe.py"
+    },
+    {
+      "bytes": 7960,
+      "destination_path": "src/sim/synthetic_worlds/shards.py",
+      "sha256": "d4c0d4303db8cae4662cf4b5ba892c17335b10780116543dc2f9c4a1d363e834",
+      "source_path": "synthetic_worlds/shards.py"
+    }
+  ],
+  "license_disposition": "Covered by the SNS-S-S repository MIT license; exact candidate license notes are preserved.",
+  "limitations": [
+    "This import establishes a bounded synthetic-world instrument, not physical-world evidence or hardware readiness.",
+    "No ongoing synchronization channel exists; future updates require a newly approved snapshot.",
+    "QST-SYNTH-0001 is not activated by this import."
+  ],
+  "omitted_allowlisted_files": [
+    {
+      "reason": "Repository-local ignore policy is owned by SNS-S-S and is not runtime content.",
+      "source_path": ".gitignore"
+    },
+    {
+      "reason": "Private review evidence remains behind the release membrane; its approved hashes and disposition are preserved without publishing internal review vocabulary.",
+      "source_path": "SECURITY_AND_SCOPE_REVIEW.md"
+    },
+    {
+      "reason": "The private staging-layout harness is replaced by SNS-owned public import, hash, isolation, and round-trip tests.",
+      "source_path": "tests/test_core.py"
+    }
+  ],
+  "public_owner": "SNS-S-S",
+  "public_test_commands": [
+    "python -m pytest -q tests/test_synthetic_worlds_public_import.py",
+    "PYTHONDONTWRITEBYTECODE=1 python -m pytest -q tests/test_synthetic_worlds_public_import.py"
+  ],
+  "runtime_dependencies": [
+    "Python 3.10+ standard library"
+  ],
+  "schema_version": "sns.synthetic-world-import.v1",
+  "terminal_state": "SNS_SYNTHETIC_WORLD_CORE_IMPORTED"
+}
