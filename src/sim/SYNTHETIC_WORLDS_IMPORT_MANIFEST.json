@@ -1,13 +1,14 @@
 {
   "approved_candidate_file_set_hash": "b4a99d4a3521298ca52fcb7771b5e512d1ed543aeaadc5bcce97346a1a03ecf3",
+  "approved_export_manifest_file_sha256": "4e25ff1533b8c75c556338436bd37faecdd5e70f981763cb3c9f1767669607ae",
   "approved_export_manifest_path": "docs/synthetic_worlds/APPROVED_EXPORT_MANIFEST.json",
-  "approved_export_manifest_self_hash": "920322db9a6aaa4391a97da8f5d91b16b52cec387419cba249f13cd3cfd602fa",
+  "approved_export_manifest_payload_hash": "920322db9a6aaa4391a97da8f5d91b16b52cec387419cba249f13cd3cfd602fa",
   "approved_qualification_receipt_hash": "07255fe22895be85d40fafab8122d4a7a0007b38aeecfc1931cf6137c5386ce1",
   "campaign_state": "NEEDS_GOVERNANCE_REVIEW",
   "candidate_identity": "synthetic_worlds",
   "candidate_version": "0.1.0-candidate",
   "human_release_state": "APPROVED_FOR_PUBLIC_IMPORT",
-  "import_manifest_sha256": "9376ce095922a0ebb8f790e35e9222278b1fd5bca151d1327ffec4da7c4bf4f9",
+  "import_manifest_sha256": "4a15c6723542db7f9c601bb52769699c2cd8ee9bf5618782ea0714310c1d152a",
   "imported_files": [
     {
       "bytes": 565,

@@ -26,7 +26,8 @@ from synthetic_worlds import (  # noqa: E402
 IMPORT_MANIFEST_PATH = ROOT / "src" / "sim" / "SYNTHETIC_WORLDS_IMPORT_MANIFEST.json"
 APPROVED_EXPORT_MANIFEST_PATH = ROOT / "docs" / "synthetic_worlds" / "APPROVED_EXPORT_MANIFEST.json"
 RECIPE_PATH = ROOT / "configs" / "synthetic_worlds" / "basic_world.json"
-EXPECTED_EXPORT_SELF_HASH = "920322db9a6aaa4391a97da8f5d91b16b52cec387419cba249f13cd3cfd602fa"
+EXPECTED_EXPORT_PAYLOAD_HASH = "920322db9a6aaa4391a97da8f5d91b16b52cec387419cba249f13cd3cfd602fa"
+EXPECTED_EXPORT_FILE_SHA256 = "4e25ff1533b8c75c556338436bd37faecdd5e70f981763cb3c9f1767669607ae"
 FORBIDDEN_PUBLIC_MARKERS = (
     "Grav_grav",
     "relativity_engine",
@@ -71,8 +72,10 @@ def test_public_import_manifest_binds_exact_approved_bytes():
     assert approved["candidate_identity"] == "synthetic_worlds"
     assert approved["terminal_state"] == "PRIVATE_EXPORT_CANDIDATE_QUALIFIED"
     assert approved["human_release_state"] == "NOT_REVIEWED"
-    assert approved["manifest_sha256"] == EXPECTED_EXPORT_SELF_HASH
-    assert manifest["approved_export_manifest_self_hash"] == EXPECTED_EXPORT_SELF_HASH
+    assert approved["manifest_sha256"] == EXPECTED_EXPORT_PAYLOAD_HASH
+    assert manifest["approved_export_manifest_payload_hash"] == EXPECTED_EXPORT_PAYLOAD_HASH
+    assert manifest["approved_export_manifest_file_sha256"] == EXPECTED_EXPORT_FILE_SHA256
+    assert _sha256(APPROVED_EXPORT_MANIFEST_PATH) == EXPECTED_EXPORT_FILE_SHA256
     assert manifest["approved_qualification_receipt_hash"] == approved["qualification_receipt"]["receipt_sha256"]
     assert manifest["approved_candidate_file_set_hash"] == approved["qualification_receipt"]["file_set_sha256"]
 

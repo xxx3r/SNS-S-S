@@ -22,6 +22,8 @@ This directory documents the deliberate one-way import of a qualified, hash-boun
 
 The approved export manifest records `human_release_state: NOT_REVIEWED` because it is the immutable pre-decision candidate receipt. The SNS import manifest separately records the later human decision `APPROVED_FOR_PUBLIC_IMPORT`. The original export manifest is not edited after approval.
 
+Its internal `manifest_sha256` is the SHA-256 of the canonical manifest payload before that field is added. It is not the SHA-256 of the serialized JSON file bytes. The SNS import manifest records both the canonical payload hash and the raw imported file SHA-256 so the two identities cannot be confused.
+
 ## Deliberate omissions
 
 The public import copies only exact allowlisted bytes needed for public operation and reproducibility. It does not publish the private review narrative, repository-local ignore policy, or the private staging-layout test harness. Their approved dispositions remain represented through the export-manifest and qualification hashes. SNS-S-S supplies its own public boundary tests.
@@ -40,4 +42,4 @@ This import does not activate `QST-SYNTH-0001`, change the active quest queue, o
 python -m pytest -q tests/test_synthetic_worlds_public_import.py
 ```
 
-The test verifies destination SHA-256 and byte identities, the approved export-manifest self-hash, absence of prohibited private identifiers and network dependencies, deterministic generation, strict shard validation, and an isolated tiny round trip.
+The test verifies destination SHA-256 and byte identities, the approved export-manifest canonical payload hash and raw-file SHA-256, absence of prohibited private identifiers and network dependencies, deterministic generation, strict shard validation, and an isolated tiny round trip.
