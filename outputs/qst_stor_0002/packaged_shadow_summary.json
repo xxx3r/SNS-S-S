@@ -1,0 +1,29 @@
+{
+  "case_count": 24,
+  "combined_pass_count": 0,
+  "thermal_pass_count": 0,
+  "electrical_pass_count": 24,
+  "eol_combined_pass_count": 0,
+  "gate": "FAIL",
+  "declared_inputs": {
+    "eclipse_duration_h": 0.5,
+    "initial_temperature_K": 283.15,
+    "duty_cycle": 0.25,
+    "pcm_mass_fraction": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5],
+    "effective_emissivity": [0.1, 0.15, 0.2, 0.25],
+    "conservative_package_conductance_W_K": 0.000169575
+  },
+  "by_emissivity_case": {
+    "BOL_target": {"effective_emissivity": 0.1, "case_count": 6, "combined_pass_count": 0, "thermal_pass_count": 0, "electrical_pass_count": 6},
+    "BOL_degraded": {"effective_emissivity": 0.15, "case_count": 6, "combined_pass_count": 0, "thermal_pass_count": 0, "electrical_pass_count": 6},
+    "EOL_moderate": {"effective_emissivity": 0.2, "case_count": 6, "combined_pass_count": 0, "thermal_pass_count": 0, "electrical_pass_count": 6},
+    "EOL_conservative": {"effective_emissivity": 0.25, "case_count": 6, "combined_pass_count": 0, "thermal_pass_count": 0, "electrical_pass_count": 6}
+  },
+  "interpretation": "No mass-admissible 10 mm case survives a 30-minute eclipse after the first complete package conductance budget is propagated, even at the optimistic emissivity target. Electrical energy remains sufficient in all declared cases; thermal retention fails in all declared cases. This is a screening-model falsifier, not hardware qualification.",
+  "limitations": [
+    "Emissivity values are model targets or screening proxies, not qualified package measurements.",
+    "Package conductance dimensions and properties remain explicit screening assumptions.",
+    "PCM sensible heat, containment mass, contact resistance, internal radiation, temperature dependence, and tolerance distributions remain omitted.",
+    "Illuminated-state heat rejection is outside this eclipse-retention gate."
+  ]
+}
