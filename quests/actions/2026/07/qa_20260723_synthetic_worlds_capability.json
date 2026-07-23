@@ -1,0 +1,13 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260723T011500000000Z-propose-qst-synth-0001-a8b4c7d2e1905f63b1aa",
+  "action_type": "propose_new",
+  "quest_id": "QST-SYNTH-0001",
+  "target_quest_ids": [
+    "QST-STOR-0002"
+  ],
+  "proposed_by_loop": "daily-research-operator",
+  "authority": "proposal",
+  "rationale": "The verified synthetic_worlds instrument is now available on main at src/sim/synthetic_worlds/ with terminal state SNS_SYNTHETIC_WORLD_CORE_IMPORTED. At the next monthly governance transaction, explicitly choose one disposition: activate QST-SYNTH-0001 when a lawful queue slot exists; attach a smaller bounded synthetic-world experiment to a suitable active quest such as QST-STOR-0002 after its owning acceptance slice permits it; or defer with a reactivation condition. Consult docs/system/research_instrument_registry.md. This proposal does not activate a quest, change priority, begin generation, or treat synthetic output as physical-world evidence.",
+  "recorded_at": "2026-07-23T01:15:00Z"
+}
