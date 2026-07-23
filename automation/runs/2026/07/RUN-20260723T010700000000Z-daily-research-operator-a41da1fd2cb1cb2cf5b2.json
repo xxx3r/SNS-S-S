@@ -1,0 +1,79 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260723T010700000000Z-daily-research-operator-a41da1fd2cb1cb2cf5b2",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-07-23T01:07:00Z",
+  "source_commit": "1b068a6fc2c271b76d044664aba35d39b7e4ea3a",
+  "state_hash": "sha256:a41da1fd2cb1cb2cf5b2119590b883e4e89fbf76b07557d5d2942e439bbcc49f",
+  "quest_context": {
+    "issue": 30,
+    "quest_id": "QST-SYNTH-0001",
+    "quest_state": "inactive",
+    "acceptance_slice": "approved synthetic-world core import only"
+  },
+  "pr_context": {
+    "pr_number": 31,
+    "implementation_head": "1b068a6fc2c271b76d044664aba35d39b7e4ea3a",
+    "state": "merge_ready"
+  },
+  "consumed_ids": [
+    "RUN-20260723T005646000000Z-daily-research-operator-7104af0471f05815bff7"
+  ],
+  "artifacts": [
+    {
+      "path": "src/sim/synthetic_worlds/",
+      "kind": "exact_imported_runtime"
+    },
+    {
+      "path": "src/sim/SYNTHETIC_WORLDS_IMPORT_MANIFEST.json",
+      "kind": "public_import_manifest"
+    },
+    {
+      "path": "docs/synthetic_worlds/APPROVED_EXPORT_MANIFEST.json",
+      "kind": "approved_hash_provenance"
+    },
+    {
+      "path": "tests/test_synthetic_worlds_public_import.py",
+      "kind": "public_boundary_tests"
+    }
+  ],
+  "checks": [
+    {
+      "name": "exact candidate identity",
+      "status": "passed",
+      "evidence": "Imported destinations match approved byte counts and SHA-256 values. Canonical export payload hash 920322db9a6aaa4391a97da8f5d91b16b52cec387419cba249f13cd3cfd602fa and raw export-manifest file SHA-256 4e25ff1533b8c75c556338436bd37faecdd5e70f981763cb3c9f1767669607ae are separately bound and tested."
+    },
+    {
+      "name": "full pytest",
+      "status": "passed",
+      "evidence": "GitHub Actions tests run 29970851374 completed successfully on head 1b068a6fc2c271b76d044664aba35d39b7e4ea3a. Independent verification reported 50 passed and one optional matplotlib skip."
+    },
+    {
+      "name": "baseline artifacts",
+      "status": "passed",
+      "evidence": "GitHub Actions baseline-artifacts run 29970851378 completed successfully on the same head."
+    },
+    {
+      "name": "transaction validation",
+      "status": "passed",
+      "evidence": "GitHub Actions automation-transaction run 29970851350 completed successfully, including automation tests, repository semantic validation, and the full pytest suite."
+    },
+    {
+      "name": "privacy and independence boundary",
+      "status": "passed",
+      "evidence": "No private source identifier, authenticated URL, archive identifier, private Git history, runtime bridge, network dependency, credential, or model-write path crossed the public boundary."
+    },
+    {
+      "name": "quest governance",
+      "status": "passed",
+      "evidence": "No quest or governance file changed. QST-SYNTH-0001 remains inactive and the campaign remains NEEDS_GOVERNANCE_REVIEW."
+    }
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Merge PR #31 and retain Issue #30 for monthly governance to authorize or defer the thermal stress campaign.",
+  "created_at": "2026-07-23T01:07:00Z",
+  "correction_of": "RUN-20260723T005646000000Z-daily-research-operator-7104af0471f05815bff7"
+}

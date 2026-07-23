@@ -1,0 +1,15 @@
+{
+  "schema_version": "synthetic-worlds.recipe.v1",
+  "name": "basic_public_world",
+  "description": "Tiny deterministic fixture for bounded synthetic-world generation.",
+  "seed": "public-demo-seed-001",
+  "records": 4,
+  "parameters": {
+    "amplitude": {"values": [0.1, 0.2]},
+    "frequency": {"start": 1, "stop": 2, "step": 1}
+  },
+  "samplers": [
+    {"name": "space", "type": "spatial_grid", "bounds": [[0.0, 1.0], [0.0, 1.0]], "counts": [2, 2]},
+    {"name": "time", "type": "temporal_sequence", "start": 0.0, "stop": 0.2, "step": 0.1}
+  ]
+}
