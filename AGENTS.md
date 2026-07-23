@@ -28,6 +28,10 @@ Select exactly one contract before acting:
 
 Read only the contract’s required inputs plus files needed for the acceptance slice. Every trigger ends with one immutable receipt under `automation/runs/**` and one explicit terminal state.
 
+## Instrument discovery
+
+When a selected acceptance slice may benefit from reusable simulation, generation, validation, or analysis machinery, inspect the relevant entry in `docs/system/research_instrument_registry.md`. Registry entries advertise available tools but never activate a quest, change queue priority, grant evidence authority, or permit model writes. Read only entries relevant to the bounded acceptance slice.
+
 ## Record-shape law
 
 Create immutable IDs only through `automation.ids.new_event_id` or `automation.ids.new_run_id`. New run, evidence, claim-cluster, belief, and quest-action IDs use the canonical uppercase prefixes `RUN-`, `EVID-`, `CLM-`, `BEL-`, and `QA-`.
