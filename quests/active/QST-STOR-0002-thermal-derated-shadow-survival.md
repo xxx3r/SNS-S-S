@@ -19,6 +19,7 @@ A small SNS survival battery remains credible only when temperature-dependent ca
 - Sweep effective emissivity and parasitic conductance under the most favorable declared admissible mass-budget case.
 - Translate the resulting loss boundary into a qualification-style evidence checklist that separates coupon properties from complete-package performance.
 - Close one explicit package architecture by summing supports, wiring, adhesive bonds, PV hinge/traces, feedthroughs, and PCM containment with `G = kA/L` and a declared uncertainty multiplier.
+- Propagate the conservative assembled package conductance independently across declared BOL/EOL emissivity proxies in the mass-admissible 30-minute shadow model.
 
 ## Success criteria
 
@@ -32,6 +33,7 @@ A small SNS survival battery remains credible only when temperature-dependent ca
 - Candidate thermal paths distinguish measured, inferred, heritage, proposed, and unknown evidence.
 - Promotion requires package-level emissivity and assembled-conductance evidence after uncertainty and environmental margins.
 - At least one complete screening package reports every conductive path, dominant contributors, uncertainty multiplier, and margin against the `5e-5 W/K` proxy target.
+- BOL and EOL emissivity proxies are propagated separately from package conductance, and any zero-survivor result is recorded as an architecture falsifier rather than hidden by parameter optimism.
 
 ## Current evidence
 
@@ -78,7 +80,7 @@ Evidence-gate result:
 - no candidate material or architecture is promoted as an SNS package solution;
 - a full assembly must be evaluated for both eclipse heat retention and illuminated-state heat rejection.
 
-A geometry-closed first screening package now declares six path families: polymer supports, copper battery leads, PV flex traces, adhesive bonds, ceramic feedthroughs, and PCM containment ribs. Each path is explicit in count, conductivity, cross-section, length, and evidence class. The nominal sum is `1.1305e-4 W/K`; applying the declared 1.5 uncertainty multiplier gives `1.69575e-4 W/K`, or 3.39 times the current `5e-5 W/K` proxy target. Adhesive bonds dominate at `6e-5 W/K` (53.1% of nominal), followed by battery wiring at `1.95e-5 W/K` and feedthroughs at `1.875e-5 W/K`.
+A geometry-closed first screening package declares six path families: polymer supports, copper battery leads, PV flex traces, adhesive bonds, ceramic feedthroughs, and PCM containment ribs. Each path is explicit in count, conductivity, cross-section, length, and evidence class. The nominal sum is `1.1305e-4 W/K`; applying the declared 1.5 uncertainty multiplier gives `1.69575e-4 W/K`, or 3.39 times the current `5e-5 W/K` proxy target. Adhesive bonds dominate at `6e-5 W/K` (53.1% of nominal), followed by battery wiring at `1.95e-5 W/K` and feedthroughs at `1.875e-5 W/K`.
 
 Package-budget result:
 
@@ -91,6 +93,21 @@ Package-budget result:
 
 This is useful negative evidence: the first complete package budget does not merely miss the target because of one exotic component. Ordinary bonds, leads, and feedthroughs collectively consume the thermal allowance before environmental margin.
 
+The conservative package conductance was then propagated across 24 mass-admissible 30-minute cases: six PCM fractions from 0 to 50 percent of total node mass and effective-emissivity proxies of 0.10, 0.15, 0.20, and 0.25. The run holds the favorable 283.15 K initial temperature and 25 percent duty cycle.
+
+Packaged-shadow result:
+
+- combined PASS: **0/24**;
+- thermal PASS: **0/24**;
+- electrical PASS: **24/24**;
+- BOL target (`epsilon_eff = 0.10`): **0/6 PASS**;
+- BOL degraded (`epsilon_eff = 0.15`): **0/6 PASS**;
+- EOL moderate (`epsilon_eff = 0.20`): **0/6 PASS**;
+- EOL conservative (`epsilon_eff = 0.25`): **0/6 PASS**;
+- package gate: **FAIL**.
+
+This closes the current 10 mm screening branch: once ordinary package leakage is included, no admissible PCM allocation survives even under the optimistic emissivity target. The battery remains sufficient in every declared case. The active failure is thermal architecture, not stored electrical energy.
+
 ## Artifacts
 
 - `src/sim/thermal_storage.py`
@@ -102,18 +119,21 @@ This is useful negative evidence: the first complete package budget does not mer
 - `experiments/thermal_shadow_mass_budget.py`
 - `experiments/thermal_shadow_loss_boundary.py`
 - `experiments/package_conductance_budget.py`
+- `experiments/packaged_shadow_survival.py`
 - `configs/thermal_shadow_survival.json`
 - `configs/thermal_geometry_ranges.json`
 - `configs/thermal_shadow_sweep.json`
 - `configs/thermal_shadow_mass_budget.json`
 - `configs/thermal_shadow_loss_boundary.json`
 - `configs/qst_stor_0002_package_conductance.json`
+- `configs/qst_stor_0002_packaged_shadow.json`
 - `tests/test_thermal_storage.py`
 - `tests/test_thermal_geometry.py`
 - `tests/test_thermal_shadow_sweep.py`
 - `tests/test_thermal_shadow_mass_budget.py`
 - `tests/test_thermal_shadow_loss_boundary.py`
 - `tests/test_package_conductance.py`
+- `tests/test_packaged_shadow_survival.py`
 - `docs/system/thermal_shadow_survival.md`
 - `docs/system/qst_stor_0002_thermal_loss_evidence_checklist.md`
 - `outputs/qst_stor_0002/cases.csv`
@@ -126,11 +146,14 @@ This is useful negative evidence: the first complete package budget does not mer
 - `outputs/qst_stor_0002/loss_boundary.json`
 - `outputs/qst_stor_0002/package_conductance/package_conductance_summary.json`
 - `outputs/qst_stor_0002/package_conductance/package_conductance_paths.csv`
+- `outputs/qst_stor_0002/packaged_shadow_summary.json`
 
 ## Falsifier
 
 If temperature support mass or heater demand eliminates the 10 mm survival margin across plausible cases, or if no complete package can meet the radiative and conductive loss targets after environmental margins, the seed envelope must grow, its mission eclipse duty must change, or thermal/storage responsibility must move to a specialized host.
 
+The first complete package propagation has now triggered this falsifier for the declared 30-minute case: 0/24 thermal survivors despite 24/24 electrical survivors.
+
 ## Next step
 
-Propagate the conservative package conductance (`1.69575e-4 W/K`) and an explicit beginning-/end-of-life emissivity range through the 30-minute shadow model. Determine whether any mass-admissible survivor remains; if none does, compare the smallest envelope growth or host-assisted architecture that restores survival.
+Compare the smallest bounded architectural escape routes rather than continuing to optimize the falsified baseline: (1) increased seed diameter, (2) shorter/no-eclipse mission duty, and (3) host-assisted thermal/storage responsibility. Produce a matched comparison that reports mass, thermal capacity, conductive/radiative loss, electrical margin, and which change first restores survival.
