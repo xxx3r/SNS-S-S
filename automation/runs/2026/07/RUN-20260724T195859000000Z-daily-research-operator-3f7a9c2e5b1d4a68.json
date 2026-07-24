@@ -1,0 +1,69 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260724T195859000000Z-daily-research-operator-3f7a9c2e5b1d4a68",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-07-24T19:58:59Z",
+  "source_commit": "189f3c231ddbe2f8476c5bcd1466dd631845f5b0",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "quest_id": "QST-STOR-0002",
+    "acceptance_slice": "Compare one-lever architectural escape routes after the packaged 10 mm, 30-minute falsifier.",
+    "source_quest_blob": "d5be5aaaa776890d351d325dbfedb7c260929310",
+    "state_hash_limitation": "The connector runtime did not expose the repository snapshot/hash helper. Source commit, quest blob, branch, PR ownership, artifacts, and CI evidence are recorded explicitly; the empty-manifest state hash is not claimed as a complete mutable-state snapshot."
+  },
+  "pr_context": {
+    "pr_number": 22,
+    "head_branch": "aurora/qst-stor-0002-minimal-thermal-shadow",
+    "base_branch": "main",
+    "continued_existing_owner": true
+  },
+  "consumed_ids": [],
+  "artifacts": [
+    "configs/qst_stor_0002_escape_routes.json",
+    "experiments/architectural_escape_comparison.py",
+    "tests/test_architectural_escape_comparison.py",
+    "outputs/qst_stor_0002/architectural_escape_thresholds.json",
+    "quests/active/QST-STOR-0002-escape-route-comparison.md",
+    "memory/mem_log_short.md",
+    "memory/mem_log_long_0000_0999.md"
+  ],
+  "checks": [
+    {
+      "name": "matched three-route comparison",
+      "status": "passed",
+      "evidence": "The experiment preserves the falsified baseline and varies seed diameter, eclipse duration, or host-supplied thermostatic heat one lever at a time."
+    },
+    {
+      "name": "first-pass threshold regression",
+      "status": "passed",
+      "evidence": "GitHub Actions pytest pins first declared survivors at 15 mm, 0.25 h eclipse, and 0.08 W external heater power."
+    },
+    {
+      "name": "full repository validation",
+      "status": "passed",
+      "evidence": "The tests workflow passed on implementation commit f101d16c956aca1ac540d5edca1ecd0edfd99d0d; baseline-artifacts and automation-transaction also passed."
+    }
+  ],
+  "belief_effects": [
+    {
+      "subsystem": "STOR",
+      "direction": "decrease-10mm-autonomous-eclipse-confidence",
+      "statement": "The packaged 10 mm node still requires either a shorter eclipse or external thermal responsibility; the 30-minute autonomous baseline remains falsified."
+    },
+    {
+      "subsystem": "MISSION",
+      "direction": "increase-short-shadow-priority",
+      "statement": "A 15-minute maximum eclipse is the smallest declared conceptual escape because it changes neither node size nor host dependence, but mission geometry must establish availability."
+    },
+    {
+      "subsystem": "THERMAL",
+      "direction": "increase-architectural-clarity",
+      "statement": "The comparison separates self-contained scaling, mission-duty change, and host service into auditable thresholds rather than blending them into one optimistic case."
+    }
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Test whether the asteroid-scout or hosted mission geometry can guarantee a maximum continuous shadow interval of 15 minutes while retaining the 10 mm thermal acceptance boundary.",
+  "created_at": "2026-07-24T20:20:00Z"
+}
