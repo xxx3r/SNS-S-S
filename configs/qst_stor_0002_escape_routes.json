@@ -1,0 +1,51 @@
+{
+  "geometry_config": "configs/thermal_geometry_ranges.json",
+  "geometry_case": "baseline_surface",
+  "baseline": {
+    "outer_diameter_m": 0.01,
+    "core_diameter_ratio": 0.8,
+    "eclipse_duration_h": 0.5,
+    "initial_temperature_K": 283.15,
+    "pcm_mass_fraction": 0.5,
+    "duty_cycle": 0.25,
+    "effective_emissivity": 0.10,
+    "package_conductance_W_K": 0.000169575,
+    "nominal_battery_Wh": 0.25
+  },
+  "routes": {
+    "increased_seed_diameter": {
+      "outer_diameter_m": [0.01, 0.012, 0.015, 0.02, 0.025, 0.03],
+      "package_conductance_scaling": "fixed_absolute_screening_value",
+      "battery_scaling": "volume_ratio"
+    },
+    "shorter_eclipse": {
+      "eclipse_duration_h": [0.5, 0.4, 0.3333333333, 0.25, 0.1666666667, 0.0833333333]
+    },
+    "host_assisted_thermal": {
+      "external_heater_power_W": [0.02, 0.04, 0.06, 0.08, 0.10],
+      "heater_energy_drawn_from_node": false
+    }
+  },
+  "fixed": {
+    "time_step_s": 5.0,
+    "environment_temperature_K": 3.0,
+    "heater_threshold_K": 253.15,
+    "local_heater_power_W": 0.02,
+    "sleep_load_W": 0.001,
+    "active_load_W": 0.004,
+    "discharge_efficiency": 0.9,
+    "reserve_fraction": 0.2,
+    "derating_reference_K": 293.15,
+    "derating_floor_K": 243.15,
+    "minimum_capacity_fraction": 0.5,
+    "minimum_operating_temperature_K": 233.15,
+    "pcm_latent_heat_J_kg": 180000.0,
+    "pcm_transition_temperature_K": 273.15
+  },
+  "interpretation": {
+    "diameter_route_isolates_added_thermal_mass": true,
+    "short_eclipse_route_isolates_mission_duty": true,
+    "host_route_models_external_thermostatic_heat": true,
+    "all_results_are_screening_only": true
+  }
+}
