@@ -1,0 +1,40 @@
+{
+  "schema": "sns.qst-stor-0002.escape-thresholds.v1",
+  "baseline": {
+    "outer_diameter_m": 0.01,
+    "eclipse_duration_h": 0.5,
+    "effective_emissivity": 0.10,
+    "package_conductance_W_K": 0.000169575,
+    "pcm_mass_fraction": 0.5,
+    "duty_cycle": 0.25,
+    "initial_temperature_K": 283.15,
+    "status": "FAIL"
+  },
+  "first_surviving_screening_cases": {
+    "increased_seed_diameter": {
+      "outer_diameter_m": 0.015,
+      "change_from_baseline": "1.5x diameter; mass, sensible capacity, PCM allocation, and battery capacity scale with volume",
+      "package_conductance_assumption": "fixed absolute conservative screening value"
+    },
+    "shorter_eclipse": {
+      "eclipse_duration_h": 0.25,
+      "change_from_baseline": "30 minutes reduced to 15 minutes"
+    },
+    "host_assisted_thermal": {
+      "external_heater_power_W": 0.08,
+      "change_from_baseline": "thermostatic heat supplied by host; heater energy excluded from node battery ledger"
+    }
+  },
+  "verification": {
+    "method": "GitHub Actions pytest regression",
+    "test": "tests/test_architectural_escape_comparison.py",
+    "status": "passed"
+  },
+  "limitations": [
+    "Thresholds are discrete-grid first passes, not optimized minima.",
+    "The diameter route holds package conductance fixed rather than redesigning every conductive path.",
+    "The host route models external thermostatic heat, not a released host interface.",
+    "The model remains lumped, linearized, eclipse-only, and screening-grade.",
+    "No route is promoted as flight hardware or canonical architecture by this artifact."
+  ]
+}
