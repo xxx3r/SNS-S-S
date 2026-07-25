@@ -1,0 +1,28 @@
+{
+  "acceptance_limit_h": 0.25,
+  "surface_fixed_cases": [
+    {"name": "ultrafast_15_min_rotation", "rotation_period_h": 0.25},
+    {"name": "boundary_30_min_rotation", "rotation_period_h": 0.5},
+    {"name": "one_hour_rotation", "rotation_period_h": 1.0},
+    {"name": "rubble_pile_screening_period", "rotation_period_h": 2.2},
+    {"name": "four_hour_rotation", "rotation_period_h": 4.0}
+  ],
+  "passive_circular_orbit_cases": [
+    {"name": "near_surface_low_density", "asteroid_density_kg_m3": 1200.0, "orbital_radius_ratio": 1.2},
+    {"name": "near_surface_baseline_density", "asteroid_density_kg_m3": 2000.0, "orbital_radius_ratio": 1.2},
+    {"name": "near_surface_high_density", "asteroid_density_kg_m3": 5000.0, "orbital_radius_ratio": 1.2},
+    {"name": "two_radius_baseline_density", "asteroid_density_kg_m3": 2000.0, "orbital_radius_ratio": 2.0},
+    {"name": "five_radius_baseline_density", "asteroid_density_kg_m3": 2000.0, "orbital_radius_ratio": 5.0}
+  ],
+  "hosted_cases": [
+    {"name": "active_sunward_standoff", "sunward_constraint_maintained": true},
+    {"name": "unmaintained_host_geometry", "sunward_constraint_maintained": false}
+  ],
+  "interpretation": {
+    "surface_pass_requires_target_selection": true,
+    "passive_orbit_uses_central_umbra_screening": true,
+    "hosted_pass_requires_active_station_keeping": true,
+    "thermal_acceptance_is_inherited_from_qst_stor_0002": true,
+    "results_are_mission_screening_not_trajectory_design": true
+  }
+}
