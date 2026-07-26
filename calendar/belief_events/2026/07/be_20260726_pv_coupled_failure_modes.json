@@ -1,0 +1,13 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "BEL-20260726T145840000000Z-pv-coupled-failure-modes-293a4b5c6d7e8f901a2b",
+  "belief_key": "PV.tandem_coupled_failure_modes",
+  "evidence_ids": [
+    "EVID-20260726T145840000000Z-perovskite-tandem-reliability-a1b2c3d4e5f60718293a"
+  ],
+  "magnitude": 0.12,
+  "confidence": 0.74,
+  "effect": "uncertainty_increase",
+  "rationale": "The July 2026 review weakens independent single-stressor simplifications and increases confidence that buried interfaces, current matching, and coupled environmental stressors must be explicit in tandem-PV readiness models.",
+  "recorded_at": "2026-07-26T15:08:00Z"
+}
