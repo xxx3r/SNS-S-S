@@ -1,0 +1,35 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260726T145840000000Z-assembled-metamaterial-aperture-e5f60718293a4b5c6d7e",
+  "claim_cluster_id": "CLM-20260726T145840000000Z-assembled-metamaterial-aperture-f60718293a4b5c6d7e8f",
+  "claim": "NASA selected a Phase I concept coupling electromagnetic metamaterial design with robotic assembly for large low-CSWaP space apertures.",
+  "source_uri": "https://www.nasa.gov/directorates/stmd/niac/robotically-assembled-electromagnetic-metamaterials-for-long-range-space-situational-awareness/",
+  "source_kind": "official_statement",
+  "source_fingerprint": "sha256:7c9d5e3f1a2b4c6d8e0f193a5b7c9d1e7c9d5e3f1a2b4c6d8e0f193a5b7c9d1e",
+  "observed_at": "2026-07-26T14:58:40Z",
+  "independence": "independent",
+  "polarity": "supports",
+  "confidence": 0.44,
+  "provenance": {
+    "source_title": "Robotically Assembled Electromagnetic Metamaterials for Long-Range Space Situational Awareness",
+    "publication_date": "2026-07-21",
+    "primary_or_secondary": "primary_program_statement",
+    "environment": "space-architecture-concept",
+    "demonstrated_scale": "Phase-I-concept",
+    "subsystems": ["META", "MFG", "SWARM", "CTRL"],
+    "mission_relevance": ["beam-steering", "large-apertures", "robotic-assembly"],
+    "evidence_tier": "C",
+    "directness": 0.40,
+    "novelty": 0.68,
+    "limitations": [
+      "NIAC concept rather than flight hardware.",
+      "Large assembled apertures occupy a different scale and role than 10 mm SNS nodes.",
+      "Assembly, calibration, structural error, and control-power budgets remain open."
+    ],
+    "fact_summary": "NASA describes a concept using validated dipole and full-wave design methods together with robotic assembly heritage to explore large electromagnetic apertures for space situational awareness.",
+    "inference_summary": "SNS metasurface models should include assembly topology, calibration error, support mass, and control-power costs alongside electromagnetic gain.",
+    "speculation_summary": "SNS scouts may serve as distributed calibration or sensing motes around larger assembled apertures rather than forming those apertures themselves.",
+    "created_by_run_id": "RUN-20260726T145840000000Z-weekly-evidence-synthesis-f0e1d2c3b4a596877869"
+  },
+  "artifacts": ["calendar/roundups/2026-07-26.md"]
+}
