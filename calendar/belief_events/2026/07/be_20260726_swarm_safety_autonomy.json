@@ -1,0 +1,13 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "BEL-20260726T145840000000Z-swarm-safety-autonomy-3a4b5c6d7e8f901a2b3c",
+  "belief_key": "SWARM.safety_autonomy_is_separate_layer",
+  "evidence_ids": [
+    "EVID-20260726T145840000000Z-onboard-collision-avoidance-0718293a4b5c6d7e8f90"
+  ],
+  "magnitude": 0.15,
+  "confidence": 0.61,
+  "effect": "strengthen",
+  "rationale": "OB-ASTRA strengthens the case that conjunction risk, maneuver intent, and safety coordination are distinct swarm-control concerns rather than implicit details of task allocation.",
+  "recorded_at": "2026-07-26T15:09:00Z"
+}
