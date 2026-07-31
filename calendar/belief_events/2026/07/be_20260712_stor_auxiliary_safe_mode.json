@@ -1,0 +1,11 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "BEL-20260731T025500000000Z-stor-auxiliary-safe-mode-99aabbccddeeff001122",
+  "belief_key": "STOR.auxiliary_safe_mode_power",
+  "evidence_ids": ["EVID-20260712T150552000000Z-betavoltaic-safe-mode-11a22b33c44d55e66f77"],
+  "magnitude": 0.15,
+  "confidence": 0.55,
+  "effect": "strengthen",
+  "rationale": "The recovered July 12 evidence modestly strengthens an auxiliary safe-mode power role while leaving rechargeable storage, thermal control, heater demand, and burst-power requirements unchanged.",
+  "recorded_at": "2026-07-31T02:55:00Z"
+}

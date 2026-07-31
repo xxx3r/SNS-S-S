@@ -1,0 +1,23 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260712T150552000000Z-resource-aware-task-allocation-55e66f778899aabbccdd",
+  "claim_cluster_id": "CLM-20260712T150552000000Z-resource-aware-task-allocation-66f778899aabbccddeef",
+  "claim": "Distributed satellite task performance can collapse nonlinearly under coupled compute, storage, bandwidth, battery, traffic, and eclipse constraints, with energy not necessarily the first limiting resource.",
+  "source_uri": "https://arxiv.org/abs/2601.06706",
+  "source_kind": "primary_paper",
+  "source_fingerprint": "sha256:263652e7f961b94224d48799159d483946376784a44920e25705dd60bcc45ba6",
+  "observed_at": "2026-07-12T15:05:52Z",
+  "independence": "independent",
+  "polarity": "supports",
+  "confidence": 0.45,
+  "provenance": {
+    "source_title": "Resource-Aware Task Allocator Design for Distributed Satellite Constellations",
+    "publication_date": "2026-01-10",
+    "subsystems": ["SWARM", "CTRL", "STOR"],
+    "fact_summary": "The study evaluated coupled resource constraints, reported nonlinear degradation, and found CPU availability rather than energy dominated blocking in its tested architecture.",
+    "inference_summary": "SNS simulations should search for coupled resource-collapse surfaces rather than assume energy is always the first bottleneck or optimize average performance alone.",
+    "limitations": ["Preprint evidence rather than flight validation.", "Architecture and workload are not SNS-specific.", "The reported dominant constraint may not transfer to small energy motes."],
+    "recovered_from_pr": 23
+  },
+  "artifacts": ["calendar/roundups/2026-07-12.md"]
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "BEL-20260731T025500000000Z-sbsp-local-optical-services-aabbccddeeff00112233",
+  "belief_key": "SBSP.local_optical_power_services",
+  "evidence_ids": ["EVID-20260712T150552000000Z-star-catcher-optical-services-33c44d55e66f778899aa"],
+  "magnitude": 0.30,
+  "confidence": 0.55,
+  "effect": "strengthen",
+  "rationale": "The financing and stated orbital test modestly strengthen the ecosystem pathway for local optical power services but do not increase confidence in demonstrated orbital efficiency, safety, receiver compatibility, or commercial viability.",
+  "recorded_at": "2026-07-31T02:55:00Z"
+}

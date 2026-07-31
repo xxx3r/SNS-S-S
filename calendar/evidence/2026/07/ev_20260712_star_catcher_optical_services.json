@@ -1,0 +1,23 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260712T150552000000Z-star-catcher-optical-services-33c44d55e66f778899aa",
+  "claim_cluster_id": "CLM-20260712T150552000000Z-star-catcher-optical-services-44d55e66f778899aabbc",
+  "claim": "Private financing and a stated 2026 orbital test strengthen the ecosystem case for satellite-to-satellite optical power services without establishing orbital efficiency, safety, or commercial viability.",
+  "source_uri": "https://www.space.com/technology/star-catcher-just-raised-usd65-million-to-build-the-worlds-first-power-grid-in-space-with-lasers",
+  "source_kind": "secondary_report",
+  "source_fingerprint": "sha256:dc49fec4ad68be5e534084d87b105ce9190d19a40be6b68e88d1da1d62d2ea23",
+  "observed_at": "2026-07-12T15:05:52Z",
+  "independence": "unknown",
+  "polarity": "context_only",
+  "confidence": 0.55,
+  "provenance": {
+    "source_title": "Star Catcher financing and stated orbital-test reporting",
+    "publication_date": "2026-05-12",
+    "subsystems": ["SBSP", "META", "CTRL"],
+    "fact_summary": "Public reporting described substantial financing and a stated 2026 in-space test after terrestrial demonstrations.",
+    "inference_summary": "Local orbital optical-power services are a nearer demonstration pathway than bulk terrestrial baseload delivery.",
+    "limitations": ["Financing and a stated test plan are ecosystem evidence, not performance evidence.", "No accepted orbital efficiency, pointing, receiver-tolerance, thermal, or safety data.", "Commercial claims remain unverified."],
+    "recovered_from_pr": 23
+  },
+  "artifacts": ["calendar/roundups/2026-07-12.md"]
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260712T150552000000Z-magneto-photonic-metaparticles-778899aabbccddeeff00",
+  "claim_cluster_id": "CLM-20260712T150552000000Z-magneto-photonic-metaparticles-8899aabbccddeeff0011",
+  "claim": "A field-programmable magneto-photonic metaparticle demonstration supports separating optical steering physics, fabrication, mechanical orientation, and actuation mechanism, while its aqueous magnetic actuation is not a space baseline.",
+  "source_uri": "https://arxiv.org/abs/2603.00310",
+  "source_kind": "primary_paper",
+  "source_fingerprint": "sha256:6c4bf0e72807b62dc7a965a35dd7dfb537769282d11682aaef61316060962ff0",
+  "observed_at": "2026-07-12T15:05:52Z",
+  "independence": "independent",
+  "polarity": "context_only",
+  "confidence": 0.40,
+  "provenance": {
+    "source_title": "Field-Programmable Mobile Magneto-Photonic Metaparticles for Active Light Manipulation and Steering",
+    "publication_date": "2026-02-27",
+    "subsystems": ["META", "MFG", "CTRL"],
+    "fact_summary": "The authors demonstrated nanoimprinted photonic microstructures with controlled translation, rotation, and beam steering in an aqueous magnetic-actuation environment.",
+    "inference_summary": "The SNS metasurface abstraction should keep aperture, optical response, fabrication route, orientation, control input, and environmental compatibility as separate fields.",
+    "limitations": ["Aqueous actuation is not transferable to vacuum without a new mechanism.", "No radiation, thermal-cycle, launch, or long-duration space evidence.", "Does not establish 10 mm SNS integration."],
+    "recovered_from_pr": 23
+  },
+  "artifacts": ["calendar/roundups/2026-07-12.md"]
+}

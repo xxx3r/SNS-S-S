@@ -1,0 +1,11 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "BEL-20260731T025500000000Z-swarm-coupled-resource-collapse-bbccddeeff0011223344",
+  "belief_key": "SWARM.coupled_resource_collapse",
+  "evidence_ids": ["EVID-20260712T150552000000Z-resource-aware-task-allocation-55e66f778899aabbccdd"],
+  "magnitude": 0.20,
+  "confidence": 0.45,
+  "effect": "strengthen",
+  "rationale": "The recovered task-allocation evidence strengthens the requirement to model coupled resource-collapse thresholds rather than energy-only or average-utilization behavior.",
+  "recorded_at": "2026-07-31T02:55:00Z"
+}
