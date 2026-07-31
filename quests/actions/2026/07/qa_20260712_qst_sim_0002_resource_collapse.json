@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260731T025500000000Z-refine-qst-sim-0002-eeff0011223344556677",
+  "action_type": "refine_existing",
+  "quest_id": "QST-SIM-0002",
+  "target_quest_ids": [],
+  "proposed_by_loop": "weekly-evidence-synthesis",
+  "authority": "proposal",
+  "rationale": "Refine the asteroid-survey simulation with a reproducible coupled resource-collapse surface that distinguishes energy-, compute-, bandwidth-, and storage-limited failure. Supporting evidence: EVID-20260712T150552000000Z-resource-aware-task-allocation-55e66f778899aabbccdd.",
+  "recorded_at": "2026-07-31T02:55:00Z"
+}
