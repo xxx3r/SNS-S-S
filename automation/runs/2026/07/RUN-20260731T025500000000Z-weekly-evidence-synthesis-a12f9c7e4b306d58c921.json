@@ -1,0 +1,81 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260731T025500000000Z-weekly-evidence-synthesis-a12f9c7e4b306d58c921",
+  "loop_id": "weekly-evidence-synthesis",
+  "contract_version": "1.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-07-31T02:55:00Z",
+  "source_commit": "d98ee2a15dd74e0211a1ab5ef07dc60928736061",
+  "state_hash": "sha256:d193433262cae204827be5843223f691ad317c3755e58e185abee9fd670b9f4b",
+  "quest_context": {
+    "quest_id": "QST-STOR-0002",
+    "related_quest_ids": ["QST-SIM-0002", "QST-META-0001", "QST-PV-0001"],
+    "question": "Can the stranded July 12 weekly synthesis be recovered without reactivating pre-transaction mutable history as authoritative state?",
+    "success_criteria": [
+      "Preserve the original dated roundup.",
+      "Normalize each selected external source into immutable evidence records.",
+      "Translate belief shifts and quest consequences into proposal-only events.",
+      "Do not change active queue priority, consolidated beliefs, ARCI weights, or the canonical next move."
+    ],
+    "assumptions_changed": [
+      "The July 12 synthesis is historical evidence input rather than enacted governance.",
+      "Legacy belief-ledger and long-log additions from PR #23 are compatibility mirrors, not current authority.",
+      "Later accepted QST-STOR-0002 evidence and the July 19 and July 26 syntheses take precedence where conclusions evolved."
+    ],
+    "limitations": [
+      "Two selected sources are secondary reporting and remain ecosystem or context evidence.",
+      "This recovery does not retroactively claim that the original pre-contract run used transactional tooling.",
+      "Monthly governance must reconcile the recovered proposals against later evidence rather than accepting them automatically."
+    ]
+  },
+  "pr_context": {
+    "original_pr_number": 23,
+    "working_branch": "agent/recover-weekly-roundup-2026-07-12",
+    "lifecycle_state": "recovered_for_review"
+  },
+  "consumed_ids": [
+    "RUN-20260719T145804000000Z-weekly-evidence-synthesis-f8e3ccd335c1798175a9",
+    "RUN-20260726T145840000000Z-weekly-evidence-synthesis-f0e1d2c3b4a596877869"
+  ],
+  "artifacts": [
+    "calendar/roundups/2026-07-12.md",
+    "calendar/evidence/2026/07/ev_20260712_betavoltaic_safe_mode.json",
+    "calendar/evidence/2026/07/ev_20260712_star_catcher_optical_services.json",
+    "calendar/evidence/2026/07/ev_20260712_resource_aware_task_allocation.json",
+    "calendar/evidence/2026/07/ev_20260712_magneto_photonic_metaparticles.json",
+    "calendar/belief_events/2026/07/be_20260712_stor_auxiliary_safe_mode.json",
+    "calendar/belief_events/2026/07/be_20260712_sbsp_local_optical_services.json",
+    "calendar/belief_events/2026/07/be_20260712_swarm_coupled_resource_collapse.json",
+    "calendar/belief_events/2026/07/be_20260712_meta_steering_actuation_separation.json",
+    "quests/actions/2026/07/qa_20260712_qst_stor_0002_auxiliary_safe_mode.json",
+    "quests/actions/2026/07/qa_20260712_qst_sim_0002_resource_collapse.json",
+    "quests/actions/2026/07/qa_20260712_qst_meta_0001_steering_abstraction.json"
+  ],
+  "checks": [
+    {
+      "name": "historical source preservation",
+      "status": "passed",
+      "evidence": "The original July 12 roundup from PR #23 is preserved without changing its scientific wording."
+    },
+    {
+      "name": "authority boundary",
+      "status": "passed",
+      "evidence": "Recovered belief and quest records are immutable proposals; no monthly-owned queue, consolidated-belief, short-memory, or canonical-next-move surface changes."
+    },
+    {
+      "name": "repository semantic validation",
+      "status": "not_run",
+      "evidence": "GitHub Actions will execute the current automation tests and repository semantic validation on the recovery PR."
+    }
+  ],
+  "belief_effects": [
+    "BEL-20260731T025500000000Z-stor-auxiliary-safe-mode-99aabbccddeeff001122",
+    "BEL-20260731T025500000000Z-sbsp-local-optical-services-aabbccddeeff00112233",
+    "BEL-20260731T025500000000Z-swarm-coupled-resource-collapse-bbccddeeff0011223344",
+    "BEL-20260731T025500000000Z-meta-steering-actuation-separation-ccddeeff001122334455"
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Monthly governance on 2026-08-02 should reconcile the July 12, July 19, and July 26 weekly proposals against the accepted QST-STOR-0002 evidence and publish one authoritative August program.",
+  "created_at": "2026-07-31T02:55:00Z",
+  "platform_prompt_revision": "weekly-evidence-synthesis.v1 recovery of pre-contract PR #23"
+}
