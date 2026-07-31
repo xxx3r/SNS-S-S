@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260731T025500000000Z-refine-qst-meta-0001-ff001122334455667788",
+  "action_type": "refine_existing",
+  "quest_id": "QST-META-0001",
+  "target_quest_ids": [],
+  "proposed_by_loop": "weekly-evidence-synthesis",
+  "authority": "proposal",
+  "rationale": "Refine the metasurface abstraction so steering physics, actuation mechanism, fabrication route, update energy, aperture efficiency, and environment compatibility remain independent fields. Supporting evidence: EVID-20260712T150552000000Z-magneto-photonic-metaparticles-778899aabbccddeeff00. Aqueous magnetic locomotion remains explicitly outside the space baseline.",
+  "recorded_at": "2026-07-31T02:55:00Z"
+}
