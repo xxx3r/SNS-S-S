@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260726T145840000000Z-refine-qst-pv-0001-4b5c6d7e8f901a2b3c4d",
+  "action_type": "refine_existing",
+  "quest_id": "QST-PV-0001",
+  "target_quest_ids": [],
+  "proposed_by_loop": "weekly-evidence-synthesis",
+  "authority": "proposal",
+  "rationale": "Add a coupled tandem failure matrix to the planned PV degradation parameter sheet. The artifact should distinguish subcells, buried interfaces, current matching, combined radiation/vacuum/atomic-oxygen/UV/thermal stress, observable degradation, evidence class, uncertainty, and falsifiers. Supporting evidence: EVID-20260726T145840000000Z-perovskite-tandem-reliability-a1b2c3d4e5f60718293a. This is a refinement only; it does not displace QST-STOR-0002 or change active-queue priority.",
+  "recorded_at": "2026-07-26T15:10:00Z"
+}

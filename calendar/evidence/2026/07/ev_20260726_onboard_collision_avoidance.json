@@ -1,0 +1,31 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260726T145840000000Z-onboard-collision-avoidance-0718293a4b5c6d7e8f90",
+  "claim_cluster_id": "CLM-20260726T145840000000Z-onboard-collision-avoidance-18293a4b5c6d7e8f901a",
+  "claim": "ESA-supported OB-ASTRA moves conjunction screening, collision-risk estimation, maneuver planning, and intent exchange onboard spacecraft.",
+  "source_uri": "https://indico.esa.int/event/644/contributions/12218/",
+  "source_kind": "primary_report",
+  "source_fingerprint": "sha256:8d0e6f4a2b3c5d7e9f1029384756a1b28d0e6f4a2b3c5d7e9f1029384756a1b2",
+  "observed_at": "2026-07-26T14:58:40Z",
+  "independence": "independent",
+  "polarity": "supports",
+  "confidence": 0.61,
+  "provenance": {
+    "source_title": "OB-ASTRA: Enabling Autonomous Onboard Collision Avoidance",
+    "publication_date": "2026-07-02",
+    "primary_or_secondary": "primary_project_presentation",
+    "environment": "orbital-spacecraft",
+    "demonstrated_scale": "subsystem-development",
+    "subsystems": ["SWARM", "CTRL", "MAT"],
+    "mission_relevance": ["collision-safety", "intent-exchange", "onboard-autonomy"],
+    "evidence_tier": "B",
+    "directness": 0.63,
+    "novelty": 0.58,
+    "limitations": ["Conference project description rather than peer-reviewed flight results.", "Compact satellite subsystem does not establish 10 mm SNS feasibility.", "Energy, maneuver, communication, and false-alarm costs are not closed for SNS."],
+    "fact_summary": "OB-ASTRA relocates conjunction detection, collision probability estimation, maneuver planning, and cooperative ephemeris and intent exchange onboard using standard spacecraft sensors and a low-power inter-satellite link.",
+    "inference_summary": "SNS swarm models should separate mission task allocation from safety state, maneuver intent, communication confidence, and energy cost.",
+    "speculation_summary": "Small SNS scouts may delegate safety computation to host or relay nodes while retaining minimal local fail-safe behavior.",
+    "created_by_run_id": "RUN-20260726T145840000000Z-weekly-evidence-synthesis-f0e1d2c3b4a596877869"
+  },
+  "artifacts": ["calendar/roundups/2026-07-26.md"]
+}

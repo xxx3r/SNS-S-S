@@ -1,0 +1,75 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260726T145840000000Z-weekly-evidence-synthesis-f0e1d2c3b4a596877869",
+  "loop_id": "weekly-evidence-synthesis",
+  "contract_version": "1.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-07-26T14:58:40Z",
+  "source_commit": "2facbb40463e0cd84ab456c101a91e7b82e6faf5",
+  "state_hash": "sha256:9e1f7a3c5b8d02468193a5c7e9f1b3d59e1f7a3c5b8d02468193a5c7e9f1b3d5",
+  "quest_context": {
+    "quest_id": "QST-STOR-0002",
+    "related_quest_ids": ["QST-PV-0001", "QST-SIM-0002", "QST-META-0001"],
+    "question": "What current evidence changes SNS subsystem beliefs or creates bounded refinements without displacing the active thermal architecture decision?",
+    "success_criteria": [
+      "Create a dated roundup with machine-readable belief shifts, actions, and awareness update.",
+      "Normalize selected evidence into immutable evidence events.",
+      "Propose belief and quest actions without changing monthly-owned governance.",
+      "Keep the active queue and QST-STOR-0002 canonical."
+    ],
+    "assumptions_changed": [
+      "Two-terminal tandem PV readiness requires coupled layer, buried-interface, current-matching, and multi-stressor modeling.",
+      "Swarm safety and maneuver-intent exchange are distinct from mission-task allocation.",
+      "Metamaterial and photonic capability must include assembly, calibration, thermal, and control-power costs."
+    ],
+    "limitations": [
+      "The tandem-PV source is a review rather than a new flight experiment.",
+      "Both NASA NIAC sources are Phase I proposals rather than demonstrated systems.",
+      "OB-ASTRA does not establish 10 mm SNS feasibility.",
+      "No new orbital SBSP performance or ARCI composition evidence was selected.",
+      "Weekly authority does not update monthly-owned short memory or consolidated belief state."
+    ]
+  },
+  "pr_context": {
+    "pr_number": 33,
+    "lifecycle_state": "ready_for_review",
+    "working_branch": "aurora/weekly-roundup-2026-07-26"
+  },
+  "consumed_ids": [
+    "RUN-20260719T145804000000Z-weekly-evidence-synthesis-f8e3ccd335c1798175a9"
+  ],
+  "artifacts": [
+    "calendar/roundups/2026-07-26.md",
+    "calendar/evidence/2026/07/ev_20260726_perovskite_tandem_reliability.json",
+    "calendar/evidence/2026/07/ev_20260726_plasmonic_rtpv.json",
+    "calendar/evidence/2026/07/ev_20260726_assembled_metamaterial_aperture.json",
+    "calendar/evidence/2026/07/ev_20260726_onboard_collision_avoidance.json",
+    "calendar/belief_events/2026/07/be_20260726_pv_coupled_failure_modes.json",
+    "calendar/belief_events/2026/07/be_20260726_swarm_safety_autonomy.json",
+    "quests/actions/2026/07/qa_20260726_qst_pv_0001_coupled_failures.json"
+  ],
+  "checks": [
+    {
+      "name": "source and governance review",
+      "status": "passed",
+      "evidence": "Sources were deduplicated; fact, inference, and speculation remain separated; no active quest, canonical move, consolidated belief state, ARCI weight, dependency, or automation contract changed."
+    },
+    {
+      "name": "repository semantic validation",
+      "status": "not_run",
+      "evidence": "GitHub Actions will execute focused automation tests and repository semantic validation on the published PR head."
+    },
+    {
+      "name": "GitHub Actions",
+      "status": "not_run",
+      "evidence": "Workflow checks were triggered by PR publication and the receipt commit."
+    }
+  ],
+  "belief_effects": [
+    "BEL-20260726T145840000000Z-pv-coupled-failure-modes-293a4b5c6d7e8f901a2b",
+    "BEL-20260726T145840000000Z-swarm-safety-autonomy-3a4b5c6d7e8f901a2b3c"
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Keep QST-STOR-0002 canonical; monthly governance may accept the QST-PV-0001 coupled-failure refinement and future swarm-safety interface after review.",
+  "created_at": "2026-07-26T15:12:00Z"
+}
