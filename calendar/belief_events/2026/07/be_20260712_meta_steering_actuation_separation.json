@@ -1,0 +1,11 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "BEL-20260731T025500000000Z-meta-steering-actuation-separation-ccddeeff001122334455",
+  "belief_key": "META.steering_actuation_separation",
+  "evidence_ids": ["EVID-20260712T150552000000Z-magneto-photonic-metaparticles-778899aabbccddeeff00"],
+  "magnitude": 0.15,
+  "confidence": 0.40,
+  "effect": "strengthen",
+  "rationale": "The recovered metaparticle demonstration strengthens the abstraction-level separation between steering physics, fabrication, mechanical orientation, actuation, control energy, and environmental compatibility.",
+  "recorded_at": "2026-07-31T02:55:00Z"
+}
