@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260731T025500000000Z-refine-qst-stor-0002-ddeeff00112233445566",
+  "action_type": "refine_existing",
+  "quest_id": "QST-STOR-0002",
+  "target_quest_ids": [],
+  "proposed_by_loop": "weekly-evidence-synthesis",
+  "authority": "proposal",
+  "rationale": "Historical refinement recovered from the July 12 synthesis: after the accepted thermal-shadow baseline, test whether micro-watt-class continuous auxiliary generation changes safe-mode survival without treating it as nominal power. Later QST-STOR-0002 evidence takes precedence; monthly governance should accept, defer, or reject this proposal explicitly.",
+  "recorded_at": "2026-07-31T02:55:00Z"
+}
