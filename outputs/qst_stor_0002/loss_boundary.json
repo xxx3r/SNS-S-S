@@ -1,0 +1,41 @@
+{
+  "case_count": 42,
+  "combined_pass_count": 18,
+  "thermal_pass_count": 18,
+  "electrical_pass_count": 42,
+  "baseline_emissivity_0_2_pass_count": 0,
+  "first_declared_survivor": {
+    "effective_emissivity": 0.1,
+    "parasitic_conductance_W_K": 5e-05,
+    "total_conductance_W_K": 0.0001902532369035298,
+    "minimum_temperature_K": 238.98250596158763,
+    "electrical_margin_Wh": 0.08804166666666668,
+    "heater_energy_Wh": 0.0010833333333333344,
+    "pcm_latent_energy_remaining_J": 0.0,
+    "temperature_status": "PASS",
+    "electrical_status": "PASS",
+    "status": "PASS"
+  },
+  "survivors": [
+    {"effective_emissivity":0.1,"parasitic_conductance_W_K":5e-05,"total_conductance_W_K":0.0001902532369035298,"minimum_temperature_K":238.98250596158763,"electrical_margin_Wh":0.08804166666666668,"heater_energy_Wh":0.0010833333333333344,"pcm_latent_energy_remaining_J":0.0,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.1,"parasitic_conductance_W_K":2.5e-05,"total_conductance_W_K":0.0001652532369035298,"minimum_temperature_K":258.17996152209054,"electrical_margin_Wh":0.11617893073976299,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":0.0,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.1,"parasitic_conductance_W_K":0.0,"total_conductance_W_K":0.0001402532369035298,"minimum_temperature_K":273.15,"electrical_margin_Wh":0.143125,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":6.458361740838652,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.075,"parasitic_conductance_W_K":7.5e-05,"total_conductance_W_K":0.00018018992767764732,"minimum_temperature_K":245.82600576658393,"electrical_margin_Wh":0.09335847704651776,"heater_energy_Wh":0.0005833333333333335,"pcm_latent_energy_remaining_J":0.0,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.075,"parasitic_conductance_W_K":5e-05,"total_conductance_W_K":0.00015518992767764734,"minimum_temperature_K":270.98275740395906,"electrical_margin_Wh":0.13922396332712636,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":0.0,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.075,"parasitic_conductance_W_K":2.5e-05,"total_conductance_W_K":0.00013018992767764733,"minimum_temperature_K":273.15,"electrical_margin_Wh":0.143125,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":11.354225537536096,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.075,"parasitic_conductance_W_K":0.0,"total_conductance_W_K":0.00010518992767764734,"minimum_temperature_K":273.15,"electrical_margin_Wh":0.143125,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":23.511619502439793,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.05,"parasitic_conductance_W_K":0.0001,"total_conductance_W_K":0.0001701266184517649,"minimum_temperature_K":252.4708234718912,"electrical_margin_Wh":0.1058747044716264,"heater_energy_Wh":2.777777777777778e-05,"pcm_latent_energy_remaining_J":0.0,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.05,"parasitic_conductance_W_K":7.5e-05,"total_conductance_W_K":0.0001451266184517649,"minimum_temperature_K":273.15,"electrical_margin_Wh":0.143125,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":4.08842075495684,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.05,"parasitic_conductance_W_K":5e-05,"total_conductance_W_K":0.00012012661845176489,"minimum_temperature_K":273.15,"electrical_margin_Wh":0.143125,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":16.245822112988513,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.05,"parasitic_conductance_W_K":2.5e-05,"total_conductance_W_K":9.512661845176489e-05,"minimum_temperature_K":273.15,"electrical_margin_Wh":0.143125,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":28.40321607789221,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.05,"parasitic_conductance_W_K":0.0,"total_conductance_W_K":7.01266184517649e-05,"minimum_temperature_K":273.15,"electrical_margin_Wh":0.143125,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":40.56057104603488,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.02,"parasitic_conductance_W_K":0.00015,"total_conductance_W_K":0.00017805064738070595,"minimum_temperature_K":247.59032332898474,"electrical_margin_Wh":0.0966290257703881,"heater_energy_Wh":0.0004722222222222225,"pcm_latent_energy_remaining_J":0.0,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.02,"parasitic_conductance_W_K":0.0001,"total_conductance_W_K":0.00012805064738070595,"minimum_temperature_K":273.15,"electrical_margin_Wh":0.143125,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":12.392439615769044,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.02,"parasitic_conductance_W_K":7.5e-05,"total_conductance_W_K":0.00010305064738070595,"minimum_temperature_K":273.15,"electrical_margin_Wh":0.143125,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":24.549836188624385,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.02,"parasitic_conductance_W_K":5e-05,"total_conductance_W_K":7.805064738070595e-05,"minimum_temperature_K":273.15,"electrical_margin_Wh":0.143125,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":36.70715564757517,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.02,"parasitic_conductance_W_K":2.5e-05,"total_conductance_W_K":5.305064738070595e-05,"minimum_temperature_K":273.15,"electrical_margin_Wh":0.143125,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":48.86454911224348,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"},
+    {"effective_emissivity":0.02,"parasitic_conductance_W_K":0.0,"total_conductance_W_K":2.8050647380705955e-05,"minimum_temperature_K":273.15,"electrical_margin_Wh":0.143125,"heater_energy_Wh":0.0,"pcm_latent_energy_remaining_J":61.02189716004818,"temperature_status":"PASS","electrical_status":"PASS","status":"PASS"}
+  ],
+  "interpretation": "No declared case survives at effective emissivity 0.2, even with zero parasitic conductance. The first declared survivor requires emissivity 0.1 and parasitic conductance 5e-5 W/K under the deliberately favorable 283.15 K, 50% PCM, 25% duty case.",
+  "artifact_scope": "Compact checked result. Re-run the experiment to regenerate the full 42-row matrix."
+}

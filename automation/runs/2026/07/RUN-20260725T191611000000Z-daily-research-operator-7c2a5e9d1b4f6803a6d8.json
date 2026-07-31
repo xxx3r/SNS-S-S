@@ -1,0 +1,53 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260725T191611000000Z-daily-research-operator-7c2a5e9d1b4f6803a6d8",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-07-25T19:16:11Z",
+  "source_commit": "91a9a22aa7e7533721fceda68e6e138087c0b71f",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "quest_id": "QST-STOR-0002",
+    "acceptance_slice": "Test whether an asteroid-scout or hosted mission geometry can guarantee the 15-minute maximum continuous shadow interval inherited from the packaged 10 mm thermal acceptance boundary.",
+    "source_quest_blob": "d5be5aaaa776890d351d325dbfedb7c260929310",
+    "state_hash_limitation": "The connector runtime did not expose the repository snapshot/hash helper. Source commit, quest blob, branch, PR ownership, artifacts, and CI evidence are recorded explicitly; the empty-manifest state hash is not claimed as a complete mutable-state snapshot."
+  },
+  "pr_context": {
+    "pr_number": 22,
+    "head_branch": "aurora/qst-stor-0002-minimal-thermal-shadow",
+    "base_branch": "main",
+    "continued_existing_owner": true
+  },
+  "consumed_ids": [],
+  "artifacts": [
+    "src/sim/mission_shadow.py",
+    "configs/qst_stor_0002_mission_shadow.json",
+    "experiments/mission_shadow_feasibility.py",
+    "tests/test_mission_shadow_feasibility.py",
+    "quests/active/QST-STOR-0002-mission-shadow-feasibility.md",
+    "memory/mem_log_short.md",
+    "memory/mem_log_long_0000_0999.md"
+  ],
+  "checks": [
+    {
+      "name": "mission geometry separation",
+      "status": "passed",
+      "evidence": "The experiment keeps surface-fixed, passive circular-orbit, and active sunward-hosted guarantee classes separate and preserves the 0.25 h thermal acceptance limit."
+    },
+    {
+      "name": "15-minute boundary regression",
+      "status": "passed",
+      "evidence": "GitHub Actions pytest pins the surface boundary at a 0.5 h rotation period, rejects the declared passive circular-orbit grid, and requires maintained active sunward geometry for zero occultation."
+    },
+    {
+      "name": "full repository validation",
+      "status": "passed",
+      "evidence": "The tests, baseline-artifacts, and automation-transaction workflows passed on implementation head d64070c9d73bfdaddf2ea4e210c59855219e0aa2."
+    }
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Compare fast-rotator surface deployment against active sunward hosted operation on one matched mission ledger that charges propulsion and host-service dependencies.",
+  "created_at": "2026-07-25T19:30:00Z"
+}

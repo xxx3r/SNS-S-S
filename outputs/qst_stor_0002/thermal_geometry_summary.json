@@ -1,0 +1,15 @@
+{
+  "case_count": 3,
+  "thermal_capacity_J_K": {
+    "min": 0.7409132114226169,
+    "max": 0.7409132114226169
+  },
+  "total_conductance_W_K": {
+    "min": 7.01266184517649e-05,
+    "max": 0.0021220258952282384
+  },
+  "placeholder_comparison": {
+    "prior_thermal_capacity_J_K": 50.0,
+    "prior_thermal_conductance_W_K": 0.005
+  }
+}

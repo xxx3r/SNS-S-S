@@ -1,0 +1,52 @@
+{
+  "cases": [
+    {
+      "name": "baseline_no_pcm",
+      "eclipse_duration_h": 2.0,
+      "time_step_s": 60.0,
+      "initial_temperature_K": 283.15,
+      "environment_temperature_K": 220.0,
+      "thermal_capacity_J_K": 50.0,
+      "thermal_conductance_W_K": 0.005,
+      "heater_threshold_K": 263.15,
+      "heater_power_W": 0.08,
+      "base_load_W": 0.01,
+      "nominal_battery_Wh": 0.5,
+      "pcm_mass_kg": 0.0,
+      "pcm_latent_heat_J_kg": 180000.0,
+      "pcm_transition_temperature_K": 273.15
+    },
+    {
+      "name": "baseline_with_2g_pcm",
+      "eclipse_duration_h": 2.0,
+      "time_step_s": 60.0,
+      "initial_temperature_K": 283.15,
+      "environment_temperature_K": 220.0,
+      "thermal_capacity_J_K": 50.0,
+      "thermal_conductance_W_K": 0.005,
+      "heater_threshold_K": 263.15,
+      "heater_power_W": 0.08,
+      "base_load_W": 0.01,
+      "nominal_battery_Wh": 0.5,
+      "pcm_mass_kg": 0.002,
+      "pcm_latent_heat_J_kg": 180000.0,
+      "pcm_transition_temperature_K": 273.15
+    },
+    {
+      "name": "undersized_battery_with_10g_pcm",
+      "eclipse_duration_h": 2.0,
+      "time_step_s": 60.0,
+      "initial_temperature_K": 283.15,
+      "environment_temperature_K": 220.0,
+      "thermal_capacity_J_K": 50.0,
+      "thermal_conductance_W_K": 0.005,
+      "heater_threshold_K": 263.15,
+      "heater_power_W": 0.08,
+      "base_load_W": 0.01,
+      "nominal_battery_Wh": 0.015,
+      "pcm_mass_kg": 0.01,
+      "pcm_latent_heat_J_kg": 180000.0,
+      "pcm_transition_temperature_K": 273.15
+    }
+  ]
+}

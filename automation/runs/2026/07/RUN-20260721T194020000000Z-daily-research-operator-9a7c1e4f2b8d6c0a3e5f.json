@@ -1,0 +1,59 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260721T194020000000Z-daily-research-operator-9a7c1e4f2b8d6c0a3e5f",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-07-21T19:40:20Z",
+  "source_commit": "5501454e6c95b87755ae4a6940cfc6eee0a6a682",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "quest_id": "QST-STOR-0002",
+    "acceptance_slice": "Translate the thermal-loss boundary into a material/interface evidence checklist.",
+    "source_quest_blob": "159e5eccae6133682e25ac04d73473d364dae2ab",
+    "state_hash_limitation": "The runtime could not execute the repository snapshot/hash helper. The recorded state_hash is the SHA-256 of an empty manifest and is not claimed as a complete mutable-state snapshot. Source commit, quest blob, branch, and PR ownership are recorded explicitly."
+  },
+  "pr_context": {
+    "pr_number": 22,
+    "head_branch": "aurora/qst-stor-0002-minimal-thermal-shadow",
+    "base_branch": "main",
+    "continued_existing_owner": true
+  },
+  "consumed_ids": [],
+  "artifacts": [
+    "docs/system/qst_stor_0002_thermal_loss_evidence_checklist.md",
+    "quests/active/QST-STOR-0002-thermal-derated-shadow-survival.md"
+  ],
+  "checks": [
+    {
+      "name": "primary-source evidence classification",
+      "status": "passed",
+      "evidence": "Checklist distinguishes measured, inferred, heritage, proposed, and unknown evidence; fact, inference, unknown, and speculation are separated."
+    },
+    {
+      "name": "quest acceptance alignment",
+      "status": "passed",
+      "evidence": "The active quest records the evidence gate and one next action without changing queue priority or physical model constants."
+    },
+    {
+      "name": "repository validation",
+      "status": "not_run",
+      "evidence": "Docs-and-receipt slice committed through the GitHub connector; GitHub Actions and semantic repository validation must confirm the merged-base view."
+    }
+  ],
+  "belief_effects": [
+    {
+      "subsystem": "STOR",
+      "direction": "decrease-package-confidence",
+      "statement": "No reviewed evidence currently demonstrates a complete 10 mm package meeting both declared thermal-loss thresholds after environmental margins."
+    },
+    {
+      "subsystem": "THERMAL",
+      "direction": "increase-measurement-clarity",
+      "statement": "The emissivity and conductance thresholds now have explicit package-level evidence and falsification gates."
+    }
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Build a geometry-closed parasitic-conductance budget for one explicit 10 mm package architecture and propagate its upper-bound conductance into the shadow-survival model.",
+  "created_at": "2026-07-21T20:12:00Z"
+}

@@ -1,0 +1,74 @@
+{
+  "geometry_case": "baseline_surface",
+  "combined_pass_count": 6,
+  "survivors": [
+    {
+      "eclipse_duration_h": 0.5,
+      "initial_temperature_K": 273.15,
+      "pcm_mass_kg": 0.002,
+      "duty_cycle": 0.25,
+      "minimum_temperature_K": 273.15,
+      "heater_energy_Wh": 0.0,
+      "electrical_margin_Wh": 0.143125,
+      "pcm_latent_energy_used_J": 233.65588301815484
+    },
+    {
+      "eclipse_duration_h": 0.5,
+      "initial_temperature_K": 273.15,
+      "pcm_mass_kg": 0.002,
+      "duty_cycle": 0.5,
+      "minimum_temperature_K": 273.15,
+      "heater_energy_Wh": 0.0,
+      "electrical_margin_Wh": 0.14275,
+      "pcm_latent_energy_used_J": 233.65588301815484
+    },
+    {
+      "eclipse_duration_h": 0.5,
+      "initial_temperature_K": 273.15,
+      "pcm_mass_kg": 0.002,
+      "duty_cycle": 1.0,
+      "minimum_temperature_K": 273.15,
+      "heater_energy_Wh": 0.0,
+      "electrical_margin_Wh": 0.142,
+      "pcm_latent_energy_used_J": 233.65588301815484
+    },
+    {
+      "eclipse_duration_h": 0.5,
+      "initial_temperature_K": 283.15,
+      "pcm_mass_kg": 0.002,
+      "duty_cycle": 0.25,
+      "minimum_temperature_K": 273.15,
+      "heater_energy_Wh": 0.0,
+      "electrical_margin_Wh": 0.143125,
+      "pcm_latent_energy_used_J": 226.39255298131843
+    },
+    {
+      "eclipse_duration_h": 0.5,
+      "initial_temperature_K": 283.15,
+      "pcm_mass_kg": 0.002,
+      "duty_cycle": 0.5,
+      "minimum_temperature_K": 273.15,
+      "heater_energy_Wh": 0.0,
+      "electrical_margin_Wh": 0.14275,
+      "pcm_latent_energy_used_J": 226.39255298131843
+    },
+    {
+      "eclipse_duration_h": 0.5,
+      "initial_temperature_K": 283.15,
+      "pcm_mass_kg": 0.002,
+      "duty_cycle": 1.0,
+      "minimum_temperature_K": 273.15,
+      "heater_energy_Wh": 0.0,
+      "electrical_margin_Wh": 0.142,
+      "pcm_latent_energy_used_J": 226.39255298131843
+    }
+  ],
+  "boundary": {
+    "maximum_eclipse_duration_h": 0.5,
+    "minimum_initial_temperature_K": 273.15,
+    "minimum_pcm_mass_kg": 0.002,
+    "passing_duty_cycles": [0.25, 0.5, 1.0],
+    "heater_activation_observed": false
+  },
+  "interpretation": "Within the declared grid, every baseline-surface survivor is a 0.5 h case with 2 g PCM and an initial temperature at or above 273.15 K. All three duty cycles pass because the PCM holds the node at its transition temperature and the heater never activates. This is a grid boundary, not a continuous physical threshold or hardware qualification result."
+}

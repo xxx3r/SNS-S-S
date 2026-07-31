@@ -1,0 +1,7 @@
+name,category,count,thermal_conductivity_W_m_K,cross_section_area_m2,length_m,evidence_class,single_path_conductance_W_K,total_conductance_W_K,fraction_of_nominal_total
+core_to_shell_adhesive_bonds,adhesives,3,0.2,1e-08,0.0001,assumed_geometry_and_proxy_material,2e-05,6e-05,0.5307386112
+copper_battery_power_leads,wiring,2,390.0,1e-10,0.004,assumed_geometry_and_reference_material,9.75e-06,1.95e-05,0.172489
+ceramic_signal_feedthroughs,feedthroughs,2,1.5,5e-09,0.0008,assumed_geometry_and_proxy_material,9.375e-06,1.875e-05,0.165855815
+polymer_core_support_struts,supports,3,0.25,2e-08,0.0015,assumed_geometry_and_proxy_material,3.3333333333333333e-06,1e-05,0.0884564352
+pcm_containment_ribs,pcm_containment,2,0.2,1e-08,0.001,assumed_geometry_and_proxy_material,2e-06,4e-06,0.035382573
+pv_hinge_flex_traces,pv_hinge_and_traces,4,20.0,6e-11,0.006,effective_conductivity_proxy,2e-07,8e-07,0.0070765148
