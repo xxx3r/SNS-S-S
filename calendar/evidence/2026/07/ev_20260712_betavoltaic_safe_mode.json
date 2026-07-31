@@ -1,0 +1,23 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260712T150552000000Z-betavoltaic-safe-mode-11a22b33c44d55e66f77",
+  "claim_cluster_id": "CLM-20260712T150552000000Z-betavoltaic-safe-mode-22b33c44d55e66f77889",
+  "claim": "A July 2026 commercial CubeSat demonstration placed a long-duration betavoltaic source in orbit as an auxiliary low-power technology, not as the spacecraft's primary operational power system.",
+  "source_uri": "https://www.space.com/space-exploration/launches-spacecraft/spacex-just-launched-the-1st-ever-nuclear-powered-commercial-satellite",
+  "source_kind": "secondary_report",
+  "source_fingerprint": "sha256:9317e23e35875295c51284ed55e8d8d347db2f086fd93086c093ca6f1a622cf0",
+  "observed_at": "2026-07-12T15:05:52Z",
+  "independence": "unknown",
+  "polarity": "supports",
+  "confidence": 0.55,
+  "provenance": {
+    "source_title": "Commercial betavoltaic orbital demonstration reporting",
+    "publication_date": "2026-07-07",
+    "subsystems": ["STOR", "CTRL", "MAT"],
+    "fact_summary": "The reported CubeSat retained solar power for general operations while demonstrating a long-lived low-power NanoTritium source.",
+    "inference_summary": "SNS may evaluate micro-watt-class auxiliary generation for dormant safe mode or wake-up functions after rechargeable and thermal baselines close.",
+    "limitations": ["Secondary reporting rather than primary flight data.", "No SNS-scale output, mass, thermal, radiation, or integration envelope.", "Does not support heaters, beaming, propulsion, or nominal compute loads."],
+    "recovered_from_pr": 23
+  },
+  "artifacts": ["calendar/roundups/2026-07-12.md"]
+}
