@@ -1,0 +1,50 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260803T195814000000Z-daily-research-operator-4d8a1c7e2b9f6053a4c1",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-03T19:58:14Z",
+  "source_commit": "29c9ae7baf44df05ffcfa830da893bc3aeeca9d9",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "quest_id": "QST-STOR-0002",
+    "acceptance_slice": "Compare the two remaining 10 mm-compatible routes on one matched mission dependency ledger.",
+    "source_quest_blob": "11ef067fe10b6c534f5a694f0eb87940384dfdfd",
+    "state_hash_limitation": "The connector did not expose the repository snapshot helper. The empty-manifest hash is not claimed as a complete state snapshot; source commit and authoritative input blobs are recorded explicitly."
+  },
+  "pr_context": {
+    "pr_number": 35,
+    "head_branch": "aurora/qst-stor-0002-mission-dependency-ledger",
+    "base_branch": "main",
+    "continued_existing_owner": false
+  },
+  "consumed_ids": [
+    "RUN-20260725T191611000000Z-daily-research-operator-7c2a5e9d1b4f6803a6d8"
+  ],
+  "artifacts": [
+    "src/sim/mission_dependency.py",
+    "experiments/mission_dependency_ledger.py",
+    "tests/test_mission_dependency_ledger.py",
+    "outputs/qst_stor_0002/mission_dependency_readme.md"
+  ],
+  "checks": [
+    {
+      "name": "focused and repository tests",
+      "status": "passed",
+      "evidence": "GitHub Actions tests run 30848091055 passed on implementation head a864254e72ce46c9e61769fafa360070101f6075."
+    },
+    {
+      "name": "baseline artifact validation",
+      "status": "passed",
+      "evidence": "GitHub Actions baseline-artifacts run 30848091362 passed on implementation head a864254e72ce46c9e61769fafa360070101f6075."
+    }
+  ],
+  "belief_effects": [
+    "The declared fast-rotator surface route better preserves min_materials than the declared active hosted route, conditional on measured target rotation.",
+    "Active hosting broadens geometry availability but adds continuous service dependencies that remain screening allocations."
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Monthly governance should decide whether the target-selection constraint is acceptable enough to keep QST-STOR-0002 active or whether the hosted route requires a better bounded allocation model.",
+  "created_at": "2026-08-03T20:06:00Z"
+}
