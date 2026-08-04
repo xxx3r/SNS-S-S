@@ -94,6 +94,29 @@ class DependencyCase:
         }
 
 
+def _interpret_winner(winner: str) -> str:
+    interpretations = {
+        "fast_rotator_surface": (
+            "The surface route uses less declared supporting mass, but only for a measured "
+            "target within the rotation limit. Hosting broadens availability by adding "
+            "navigation, stationkeeping, resilience, and host-service dependencies."
+        ),
+        "active_sunward_hosted": (
+            "The hosted route uses less declared supporting mass for this configured ledger; "
+            "its active-service assumptions remain conditional screening inputs."
+        ),
+        "MASS_TIE": (
+            "The routes tie on declared total mass; mission availability, reliability, and "
+            "unmodeled dependencies remain decision variables."
+        ),
+        "NO_MATCHED_WINNER": (
+            "No matched winner is reported because at least one configured route fails its "
+            "declared geometry condition."
+        ),
+    }
+    return interpretations[winner]
+
+
 def compare_min_materials(surface: DependencyCase, hosted: DependencyCase) -> dict:
     if surface.architecture != "fast_rotator_surface":
         raise ValueError("surface architecture mismatch")
@@ -113,9 +136,5 @@ def compare_min_materials(surface: DependencyCase, hosted: DependencyCase) -> di
         "winner_by_declared_total_mass": winner,
         "hosted_minus_surface_mass_kg": hosted.total_mass_kg - surface.total_mass_kg,
         "hosted_minus_surface_daily_energy_Wh": hosted.daily_energy_Wh - surface.daily_energy_Wh,
-        "interpretation": (
-            "The surface route uses less declared supporting mass, but only for a measured "
-            "target within the rotation limit. Hosting broadens availability by adding "
-            "navigation, stationkeeping, resilience, and host-service dependencies."
-        ),
+        "interpretation": _interpret_winner(winner),
     }
