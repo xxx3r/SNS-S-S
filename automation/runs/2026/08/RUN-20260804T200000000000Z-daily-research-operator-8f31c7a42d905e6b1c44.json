@@ -1,0 +1,52 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260804T200000000000Z-daily-research-operator-8f31c7a42d905e6b1c44",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-08-04T20:00:00Z",
+  "source_commit": "a313a9df43322d621e115727000595be83a716a9",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "quest_id": "QST-STOR-0002",
+    "acceptance_slice": "Repair the missing immutable dependency-ledger result artifact and contradictory configurable interpretation from merged PR 35.",
+    "state_hash_limitation": "The connector does not expose the repository snapshot helper; source commit and changed paths are recorded explicitly."
+  },
+  "pr_context": {
+    "pr_number": 36,
+    "head_branch": "aurora/qst-stor-0002-ledger-artifact-repair",
+    "base_branch": "main",
+    "continued_existing_owner": false
+  },
+  "consumed_ids": [
+    "RUN-20260803T195814000000Z-daily-research-operator-4d8a1c7e2b9f6053a4c1"
+  ],
+  "artifacts": [
+    "outputs/qst_stor_0002/mission_dependency_ledger.json",
+    "src/sim/mission_dependency.py",
+    "tests/test_mission_dependency_ledger.py"
+  ],
+  "checks": [
+    {
+      "name": "tests",
+      "status": "passed",
+      "evidence": "GitHub Actions run 30945688498 passed on head 26484c4edc98fbfc3414c415946d187a25cb138e."
+    },
+    {
+      "name": "baseline-artifacts",
+      "status": "passed",
+      "evidence": "GitHub Actions run 30945688457 passed on head 26484c4edc98fbfc3414c415946d187a25cb138e."
+    }
+  ],
+  "belief_effects": [
+    "The prior route comparison is now backed by a committed inspectable result artifact.",
+    "The interpretation now follows the configured winner or geometry failure instead of asserting the default outcome unconditionally."
+  ],
+  "limitations": [
+    "Mission allocations remain embedded in build_cases and are not yet loaded from a versioned configuration.",
+    "This repair does not enact the pending architectural choice."
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Monthly governance should disposition the surface-versus-hosted architectural choice and decide whether a versioned allocation configuration is required before further QST-STOR-0002 execution.",
+  "created_at": "2026-08-04T20:00:00Z"
+}
