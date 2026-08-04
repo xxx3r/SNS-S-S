@@ -1,0 +1,28 @@
+{
+  "schema": "sns.qst-stor-0002.mission-dependency-ledger.v1",
+  "cases": [
+    {
+      "name": "measured_fast_rotator_surface",
+      "geometry_status": "PASS_CONDITIONAL_TARGET",
+      "total_mass_kg": 0.002789,
+      "daily_energy_Wh": 0.048
+    },
+    {
+      "name": "active_sunward_hosted",
+      "geometry_status": "PASS_CONDITIONAL_ACTIVE_HOST",
+      "total_mass_kg": 1.002789,
+      "daily_energy_Wh": 240.048
+    }
+  ],
+  "comparison": {
+    "winner_by_declared_total_mass": "fast_rotator_surface",
+    "hosted_minus_surface_mass_kg": 1.0,
+    "hosted_minus_surface_daily_energy_Wh": 240.0,
+    "interpretation": "The surface route uses less declared supporting mass, conditional on a measured target within the rotation limit."
+  },
+  "limitations": [
+    "Values are screening allocations, not a released design.",
+    "Target scarcity and survey cost remain omitted.",
+    "Monthly governance owns architectural selection."
+  ]
+}
