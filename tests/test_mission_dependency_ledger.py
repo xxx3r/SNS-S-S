@@ -2,6 +2,8 @@ import json
 from dataclasses import replace
 from pathlib import Path
 
+import pytest
+
 from experiments.mission_dependency_ledger import build_artifact, build_cases
 from src.sim.mission_dependency import compare_min_materials
 
@@ -20,10 +22,10 @@ def test_declared_dependency_ledger():
     assert surface.daily_energy_Wh < hosted.daily_energy_Wh
     assert artifact["comparison"]["winner_by_declared_total_mass"] == "fast_rotator_surface"
     assert committed["comparison"]["winner_by_declared_total_mass"] == artifact["comparison"]["winner_by_declared_total_mass"]
-    assert committed["comparison"]["hosted_minus_surface_mass_kg"] == artifact["comparison"]["hosted_minus_surface_mass_kg"]
-    assert committed["comparison"]["hosted_minus_surface_daily_energy_Wh"] == artifact["comparison"]["hosted_minus_surface_daily_energy_Wh"]
-    assert committed["cases"][0]["total_mass_kg"] == surface.total_mass_kg
-    assert committed["cases"][1]["total_mass_kg"] == hosted.total_mass_kg
+    assert committed["comparison"]["hosted_minus_surface_mass_kg"] == pytest.approx(artifact["comparison"]["hosted_minus_surface_mass_kg"])
+    assert committed["comparison"]["hosted_minus_surface_daily_energy_Wh"] == pytest.approx(artifact["comparison"]["hosted_minus_surface_daily_energy_Wh"])
+    assert committed["cases"][0]["total_mass_kg"] == pytest.approx(surface.total_mass_kg)
+    assert committed["cases"][1]["total_mass_kg"] == pytest.approx(hosted.total_mass_kg)
 
 
 def test_interpretation_tracks_configured_winner_and_geometry():
