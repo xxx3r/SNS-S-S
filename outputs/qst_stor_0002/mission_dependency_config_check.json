@@ -1,0 +1,7 @@
+{
+  "schema": "sns.qst-stor-0002.mission-dependency-config-check.v1",
+  "allocation_config": "configs/qst_stor_0002/mission_dependency_allocations.v1.json",
+  "matches_accepted_inputs": true,
+  "mismatches": [],
+  "limitation": "The accepted experiment still owns loading until governance authorizes replacing its embedded defaults."
+}
