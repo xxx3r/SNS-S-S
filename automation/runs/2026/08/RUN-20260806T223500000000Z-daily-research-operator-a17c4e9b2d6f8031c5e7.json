@@ -1,0 +1,59 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260806T223500000000Z-daily-research-operator-a17c4e9b2d6f8031c5e7",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-08-06T22:35:00Z",
+  "source_commit": "b5565882be18013db4e3ea7163a1835323683557",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "quest_id": "QST-STOR-0002",
+    "acceptance_slice": "Externalize the accepted mission-dependency screening allocations and prove reproducibility without changing the accepted experiment.",
+    "state_hash_limitation": "The connector exposes source commits but not the repository snapshot helper; the focused receipt records the canonical empty-state hash used by the existing transaction layer."
+  },
+  "pr_context": {
+    "pr_number": 37,
+    "head_branch": "aurora/qst-stor-0002-versioned-allocation-config",
+    "base_branch": "main",
+    "continued_existing_owner": true
+  },
+  "consumed_ids": [],
+  "artifacts": [
+    {
+      "path": "configs/qst_stor_0002/mission_dependency_allocations.v1.json",
+      "kind": "configuration"
+    },
+    {
+      "path": "experiments/mission_dependency_config_check.py",
+      "kind": "validator"
+    },
+    {
+      "path": "outputs/qst_stor_0002/mission_dependency_config_check.json",
+      "kind": "result"
+    },
+    {
+      "path": "tests/test_mission_dependency_config_check.py",
+      "kind": "verification"
+    }
+  ],
+  "checks": [
+    {
+      "name": "P1 config reproducibility",
+      "status": "passed",
+      "evidence": "Focused execution of the corrected comparator returns matches_accepted_inputs=true with mismatches=[] at source commit b5565882be18013db4e3ea7163a1835323683557."
+    },
+    {
+      "name": "full repository validation",
+      "status": "not_run",
+      "evidence": "No new GitHub Actions run was exposed for the connector-authored commit; the receipt remains explicitly limited to the focused acceptance slice."
+    }
+  ],
+  "belief_effects": [
+    "The versioned allocation validator now compares raw accepted inputs rather than derived output fields.",
+    "The reproducibility result is bound to a collision-safe immutable run receipt."
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Complete receipt-bearing focused validation, resolve the P1 review thread, and merge PR #37 only after the final GitHub review state is clean.",
+  "created_at": "2026-08-06T22:35:01Z"
+}
