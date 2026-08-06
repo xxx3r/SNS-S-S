@@ -1,0 +1,9 @@
+{
+  "schema": "sns.qst-stor-0002.mission-dependency-config-check.v1",
+  "run_id": "RUN-20260806T223500000000Z-daily-research-operator-a17c4e9b2d6f8031c5e7",
+  "source_commit": "b5565882be18013db4e3ea7163a1835323683557",
+  "allocation_config": "configs/qst_stor_0002/mission_dependency_allocations.v1.json",
+  "matches_accepted_inputs": true,
+  "mismatches": [],
+  "limitation": "The accepted experiment still owns loading until governance authorizes replacing its embedded defaults."
+}

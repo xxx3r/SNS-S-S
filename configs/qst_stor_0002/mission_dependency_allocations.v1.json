@@ -1,0 +1,48 @@
+{
+  "schema": "sns.qst-stor-0002.mission-dependency-allocations.v1",
+  "version": "1.0.0",
+  "cases": [
+    {
+      "name": "measured_fast_rotator_surface",
+      "architecture": "fast_rotator_surface",
+      "node_mass_kg": 0.000789,
+      "deployment_mass_kg": 0.002,
+      "navigation_mass_kg": 0.0,
+      "stationkeeping_mass_kg": 0.0,
+      "resilience_mass_kg": 0.0,
+      "host_service_mass_kg": 0.0,
+      "node_power_W": 0.002,
+      "navigation_power_W": 0.0,
+      "stationkeeping_power_W": 0.0,
+      "host_service_power_W": 0.0,
+      "target_rotation_period_h": 0.5,
+      "rotation_limit_h": 0.5,
+      "assumptions": [
+        "target rotation is measured before deployment",
+        "two grams are allocated to attachment and release",
+        "terrain and latitude do not extend the inherited shadow bound"
+      ]
+    },
+    {
+      "name": "active_sunward_hosted",
+      "architecture": "active_sunward_hosted",
+      "node_mass_kg": 0.000789,
+      "deployment_mass_kg": 0.002,
+      "navigation_mass_kg": 0.2,
+      "stationkeeping_mass_kg": 0.5,
+      "resilience_mass_kg": 0.2,
+      "host_service_mass_kg": 0.1,
+      "node_power_W": 0.002,
+      "navigation_power_W": 3.0,
+      "stationkeeping_power_W": 5.0,
+      "host_service_power_W": 2.0,
+      "target_rotation_period_h": null,
+      "rotation_limit_h": 0.5,
+      "assumptions": [
+        "supporting allocations are screening values",
+        "the host maintains the required geometry",
+        "failure probability and illuminated-state rejection are outside scope"
+      ]
+    }
+  ]
+}
