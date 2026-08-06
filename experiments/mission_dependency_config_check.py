@@ -8,6 +8,22 @@ from experiments.mission_dependency_ledger import build_cases
 
 
 CONFIG_PATH = Path("configs/qst_stor_0002/mission_dependency_allocations.v1.json")
+FIELDS = (
+    "name",
+    "architecture",
+    "node_mass_kg",
+    "deployment_mass_kg",
+    "navigation_mass_kg",
+    "stationkeeping_mass_kg",
+    "resilience_mass_kg",
+    "host_service_mass_kg",
+    "node_power_W",
+    "navigation_power_W",
+    "stationkeeping_power_W",
+    "host_service_power_W",
+    "target_rotation_period_h",
+    "rotation_limit_h",
+)
 
 
 def load_config_cases(path: Path = CONFIG_PATH) -> list[dict]:
@@ -19,35 +35,25 @@ def load_config_cases(path: Path = CONFIG_PATH) -> list[dict]:
     return payload["cases"]
 
 
+def _accepted_fields(case: object) -> dict[str, object]:
+    """Expose the raw accepted inputs instead of derived to_dict fields."""
+    return {field: getattr(case, field) for field in FIELDS}
+
+
 def build_check() -> dict:
     configured = load_config_cases()
-    accepted = [case.to_dict() for case in build_cases()]
-    fields = (
-        "name",
-        "architecture",
-        "node_mass_kg",
-        "deployment_mass_kg",
-        "navigation_mass_kg",
-        "stationkeeping_mass_kg",
-        "resilience_mass_kg",
-        "host_service_mass_kg",
-        "node_power_W",
-        "navigation_power_W",
-        "stationkeeping_power_W",
-        "host_service_power_W",
-        "target_rotation_period_h",
-        "rotation_limit_h",
-    )
+    accepted = build_cases()
     mismatches = []
     for configured_case, accepted_case in zip(configured, accepted, strict=True):
-        for field in fields:
-            if configured_case[field] != accepted_case[field]:
+        accepted_fields = _accepted_fields(accepted_case)
+        for field in FIELDS:
+            if configured_case[field] != accepted_fields[field]:
                 mismatches.append(
                     {
                         "case": configured_case["name"],
                         "field": field,
                         "configured": configured_case[field],
-                        "accepted": accepted_case[field],
+                        "accepted": accepted_fields[field],
                     }
                 )
     return {
