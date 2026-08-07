@@ -11,6 +11,7 @@ reads:
   - AGENTS.md
   - automation/contracts/monthly-governance.v1.1.md
   - automation/delegations/**
+  - automation/authorizations/**
   - calendar/evidence/**
   - calendar/belief_events/**
   - calendar/consolidated_beliefs.json
