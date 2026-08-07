@@ -10,7 +10,9 @@ from enum import Enum
 from pathlib import Path
 from typing import Iterable, Mapping
 
+from .authorizations import validate_governance_authorization
 from .contracts import ContractRegistry
+from .governance import validate_delegation_envelope
 from .receipts import ReceiptStore
 from .semantics import cluster_evidence_events, consolidate_belief_events, validate_pr_lifecycle, validate_quest_action
 
@@ -78,12 +80,19 @@ def validate_ownership_matrix(matrix: Mapping[str, object]) -> None:
     if not isinstance(surfaces, list) or not surfaces:
         raise ValueError("ownership matrix requires surfaces")
     seen: set[str] = set()
-    authorities = {"daily-research-operator", "weekly-evidence-synthesis", "monthly-governance", "system-audit", "human"}
+    authorities = {
+        "daily-governance-triage",
+        "daily-research-operator",
+        "weekly-evidence-synthesis",
+        "monthly-governance",
+        "system-audit",
+        "human",
+    }
     permissions = {"read", "write", "propose", "none", "observe"}
     for surface in surfaces:
         if not isinstance(surface, dict):
             raise ValueError("each state surface must be an object")
-        required = {"path", "authority", "daily", "weekly", "monthly", "audit", "reconciliation"}
+        required = {"path", "authority", "triage", "daily", "weekly", "monthly", "audit", "reconciliation"}
         if required - set(surface):
             raise ValueError(f"state surface missing: {sorted(required - set(surface))}")
         path = str(surface["path"])
@@ -92,7 +101,7 @@ def validate_ownership_matrix(matrix: Mapping[str, object]) -> None:
         seen.add(path)
         if surface["authority"] not in authorities:
             raise ValueError(f"unknown authority for {path}")
-        for key in ("daily", "weekly", "monthly", "audit"):
+        for key in ("triage", "daily", "weekly", "monthly", "audit"):
             if surface[key] not in permissions:
                 raise ValueError(f"invalid {key} permission for {path}")
         if not str(surface["reconciliation"]).strip():
@@ -144,6 +153,36 @@ def validate_repository_state(root: str | Path, *, strict: bool = True) -> dict[
         errors.append(f"quest IDs appear in multiple queues: {duplicates}")
     if not 1 <= len(queues["active"]) <= 8:
         errors.append(f"active quest queue must contain 1-8 quests, found {len(queues['active'])}")
+
+    delegation_records = _load_json_files(repo / "automation/delegations")
+    counts["governance_delegations"] = len(delegation_records)
+    delegations: dict[str, dict[str, object]] = {}
+    for envelope in delegation_records:
+        try:
+            validate_delegation_envelope(envelope)
+            delegation_id = str(envelope["delegation_id"])
+            if delegation_id in delegations:
+                raise ValueError(f"duplicate delegation_id: {delegation_id}")
+            delegations[delegation_id] = envelope
+        except Exception as exc:
+            errors.append(f"delegation {envelope.get('delegation_id', '<unknown>')}: {exc}")
+
+    authorization_records = _load_json_files(repo / "automation/authorizations")
+    counts["governance_authorizations"] = len(authorization_records)
+    seen_authorizations: set[str] = set()
+    for authorization in authorization_records:
+        try:
+            validate_governance_authorization(
+                authorization,
+                delegations=delegations,
+                active_ids=queues["active"],
+            )
+            authorization_id = str(authorization["authorization_id"])
+            if authorization_id in seen_authorizations:
+                raise ValueError(f"duplicate authorization_id: {authorization_id}")
+            seen_authorizations.add(authorization_id)
+        except Exception as exc:
+            errors.append(f"authorization {authorization.get('authorization_id', '<unknown>')}: {exc}")
 
     actions = _load_json_files(repo / "quests/actions")
     counts["quest_actions"] = len(actions)
