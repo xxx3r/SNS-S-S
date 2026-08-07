@@ -30,8 +30,9 @@ retry_budget: 2
 """
 
 
-def test_registry_requires_all_four_active_contracts(tmp_path: Path) -> None:
+def test_registry_requires_all_five_active_contracts(tmp_path: Path) -> None:
     loops = [
+        "daily-governance-triage",
         "daily-research-operator",
         "weekly-evidence-synthesis",
         "monthly-governance",
@@ -41,6 +42,7 @@ def test_registry_requires_all_four_active_contracts(tmp_path: Path) -> None:
         (tmp_path / f"{loop}.v1.md").write_text(contract_text(loop), encoding="utf-8")
     registry = ContractRegistry.from_directory(tmp_path)
     registry.validate_required_loops()
+    assert registry.active("daily-governance-triage").contract_version == "1.0.0"
     assert registry.active("monthly-governance").contract_version == "1.0.0"
 
 
