@@ -15,6 +15,7 @@ from .models import LoopTerminalState
 _SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 _SEMVER_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 _ALLOWED_LOOPS = {
+    "daily-governance-triage",
     "daily-research-operator",
     "weekly-evidence-synthesis",
     "monthly-governance",
