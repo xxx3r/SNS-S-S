@@ -182,6 +182,7 @@ class ContractRegistry:
 
     def validate_required_loops(self) -> None:
         required = {
+            "daily-governance-triage",
             "daily-research-operator",
             "weekly-evidence-synthesis",
             "monthly-governance",
