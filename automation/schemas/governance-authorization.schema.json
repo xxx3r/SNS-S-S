@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sns-s-s.local/schemas/governance-authorization.schema.json",
+  "title": "SNS fast-governance authorization",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "authorization_id",
+    "issued_by_loop",
+    "action_type",
+    "quest_id",
+    "recorded_at",
+    "authorization"
+  ],
+  "properties": {
+    "schema": {"const": "sns.governance-authorization.v1"},
+    "authorization_id": {"type": "string", "pattern": "^AUTH-[0-9]{8}T[0-9]{12}Z-[a-z0-9-]+-[0-9a-f]{20}$"},
+    "issued_by_loop": {"const": "daily-governance-triage"},
+    "action_type": {"const": "refine_existing"},
+    "quest_id": {"type": "string", "pattern": "^QST-[A-Z0-9]+-[0-9]{4}$"},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "delegation_id",
+        "authorized_loop",
+        "acceptance_slice",
+        "source_commit",
+        "expires_at",
+        "allowed_write_surfaces",
+        "budgets",
+        "max_pull_requests",
+        "max_run_receipts",
+        "mandatory_checks",
+        "stop_conditions",
+        "next_action"
+      ],
+      "properties": {
+        "delegation_id": {"type": "string", "pattern": "^DELEG-[A-Z0-9-]+$"},
+        "authorized_loop": {"const": "daily-research-operator"},
+        "acceptance_slice": {"type": "string", "minLength": 1},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "expires_at": {"type": "string", "format": "date-time"},
+        "allowed_write_surfaces": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "budgets": {"type": "object", "minProperties": 1},
+        "max_pull_requests": {"const": 1},
+        "max_run_receipts": {"const": 1},
+        "mandatory_checks": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "stop_conditions": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "next_action": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}
