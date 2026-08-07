@@ -10,10 +10,11 @@ SNS-S-S is a formal research instrument for Solar-Nano-Sphere swarm dynamics, ex
 4. executable record schemas in `automation/schemas/` and their matching validators;
 5. the active issue and PR acceptance slice;
 6. the active quest record;
-7. accepted monthly governance;
-8. accepted weekly evidence;
-9. `memory/mem_log_short.md`;
-10. historical logs and older plans.
+7. accepted monthly governance and its current delegation envelope;
+8. accepted fast-governance authorization for the bounded slice, when present;
+9. accepted weekly evidence;
+10. `memory/mem_log_short.md`;
+11. historical logs and older plans.
 
 No lower layer silently overrides a higher layer. For automation record identity or field shape, `docs/SNS_autonomous_loop_schema_reconciliation.md` explains the executable authority. Older planning examples are historical and non-normative when they conflict with schemas or validators.
 
@@ -21,12 +22,24 @@ No lower layer silently overrides a higher layer. For automation record identity
 
 Select exactly one contract before acting:
 
-- daily implementation: `automation/contracts/daily-research-operator.v1.md`;
+- pre-game bounded governance: `automation/contracts/daily-governance-triage.v1.md`;
+- daily implementation: active `daily-research-operator` contract, currently v1.1.0;
 - weekly evidence: `automation/contracts/weekly-evidence-synthesis.v1.md`;
-- monthly governance: `automation/contracts/monthly-governance.v1.md`;
+- monthly constitutional governance: active `monthly-governance` contract, currently v1.1.0;
 - system audit: `automation/contracts/system-audit.v1.md`.
 
-Read only the contract’s required inputs plus files needed for the acceptance slice. Every trigger ends with one immutable receipt under `automation/runs/**` and one explicit terminal state.
+The ordinary operating sequence is **pre-game triage -> daily execution -> weekly evidence -> monthly constitutional direction**, with audit observing the system rather than governing it.
+
+Every trigger ends with one immutable receipt under `automation/runs/**` and one explicit terminal state. Triage may disposition multiple independent administrative candidates in one run; the Daily Research Operator still produces one smallest coherent implementation slice.
+
+## Work-conserving law
+
+1. Approval does not consume the scientific research slot. Routine Level-1 governance runs before daily implementation.
+2. Acknowledgement is not an artifact. A Daily Research Operator with a valid bounded authorization must attempt the authorized slice rather than spend a run restating approval.
+3. Approved work begins immediately when bounded. The daily receipt records the consumed authorization ID.
+4. Triage may authorize but may not implement science. It cannot widen its own delegation.
+5. One implementation acceptance slice still has one current owner, at most one implementation PR, exactly one implementation receipt, and one terminal disposition.
+6. Queue membership, priority, consolidated beliefs, canonical memory, major architecture choices, contracts, schemas, and external/public actions remain outside fast-governance authority.
 
 ## Instrument discovery
 
@@ -34,7 +47,7 @@ When a selected acceptance slice may benefit from reusable simulation, generatio
 
 ## Record-shape law
 
-Create immutable IDs only through `automation.ids.new_event_id` or `automation.ids.new_run_id`. New run, evidence, claim-cluster, belief, and quest-action IDs use the canonical uppercase prefixes `RUN-`, `EVID-`, `CLM-`, `BEL-`, and `QA-`.
+Create immutable IDs only through the repository's canonical ID helpers when the record family has one. New run, evidence, claim-cluster, belief, and quest-action IDs use the canonical uppercase prefixes `RUN-`, `EVID-`, `CLM-`, `BEL-`, and `QA-`. Fast-governance authorization IDs use the schema-defined `AUTH-` format and delegation envelopes use `DELEG-` IDs.
 
 Before publication, validate new records against the executable repository:
 
@@ -60,13 +73,28 @@ Do not copy lower-case `run_*`, `ev_*`, `be_*`, or `qa_*` examples from historic
 
 ## Shared-state law
 
-`automation/state_ownership.json` is normative. Daily loops execute within accepted scope. Weekly loops normalize evidence and propose changes. Monthly governance owns queue-wide decisions, consolidated beliefs, stale-work resolution, and the canonical next move. Audit loops observe and recommend.
+`automation/state_ownership.json` is normative.
 
-Raw run, evidence, belief, and quest-action events are immutable. Corrections are linked new events. Shared Markdown append history is not a required write surface. Generated logs derive from receipts.
+- Pre-game triage reads the current delegation, compact lineage, quest proposals, live PR state, and accepted governance. It may create immutable bounded authorizations and mechanically synchronize unambiguous PR lifecycle facts, but it cannot mutate the queue, beliefs, canonical memory, or scientific implementation surfaces.
+- Daily loops execute within accepted quest scope and may consume one valid triage authorization directly.
+- Weekly loops normalize evidence and propose changes.
+- Monthly governance owns queue-wide decisions, consolidated beliefs, stale/ambiguous work resolution, canonical memory, and the delegation envelope.
+- Audit loops observe, measure, and recommend.
+
+Raw run, evidence, belief, quest-action, delegation, and authorization records preserve history. Corrections or replacements are new linked or superseding records rather than silent rewrites. Shared Markdown append history is not a required write surface. Generated logs derive from immutable receipts.
+
+## Decision ladder
+
+- **L0:** local reversible implementation detail inside an accepted slice -> Daily Research Operator.
+- **L1:** bounded reversible sub-experiment or routine mechanically verifiable lifecycle decision inside the current delegation -> Daily Governance Triage.
+- **L2:** quest activation, reprioritization, retirement, canonical move, consolidated belief change, major architecture choice, ambiguous stale-work disposition -> Monthly Governance.
+- **L3:** protected scientific assumption, external publication/action, strategic choice, or reserved authority -> Human.
+
+Escalation is based on authority and evidence, not on calendar latency. Monthly governance is a constitutional role with a monthly scheduled review; it may also be explicitly triggered when a genuine non-delegable L2 decision cannot reasonably wait.
 
 ## Concurrency and PR law
 
-Record source commit and state hashes before work. Recheck governance, owned state, and PR ownership immediately before publication. One PR owns one quest acceptance slice. Continue the valid owner, split expanding work, and classify stale or superseded branches explicitly. Automatic merge remains conservative.
+Record source commit and state hashes before work. Recheck governance, delegation, authorization, owned state, and PR ownership immediately before publication. One PR owns one quest acceptance slice. Continue the valid owner, split expanding work, and classify stale or superseded branches explicitly. Automatic merge remains conservative.
 
 ## Terminal states
 
@@ -77,8 +105,8 @@ Use only:
 - `VERIFICATION_FAILED`;
 - `NEEDS_SCIENTIFIC_DECISION`, `NEEDS_GOVERNANCE_REVIEW`, `NEEDS_APPROVAL`.
 
-A precise blocker is a valid outcome. Do not continue merely to avoid reporting one.
+A precise blocker is a valid outcome. Do not continue merely to avoid reporting one. A blocker does not imply that the next scheduled daily run should spend its entire slot acknowledging the blocker; fast governance should disposition lawful L1 cases before implementation starts.
 
 ## Definition of done
 
-An acceptance slice is complete only when its artifact exists, checks are evidenced, assumptions and limitations are explicit, ownership is current, semantic repository validation passes, the receipt is immutable, and the next action is one concrete transition.
+An implementation acceptance slice is complete only when its artifact exists, checks are evidenced, assumptions and limitations are explicit, ownership is current, semantic repository validation passes, the receipt is immutable, any consumed authorization is current and scope-valid, and the next action is one concrete transition.
