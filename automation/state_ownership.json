@@ -1,10 +1,11 @@
 {
   "schema": "sns.state-ownership.v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "surfaces": [
     {
       "path": "automation/contracts/**",
       "authority": "human",
+      "triage": "read",
       "daily": "read",
       "weekly": "read",
       "monthly": "read",
@@ -14,6 +15,7 @@
     {
       "path": "automation/runs/**",
       "authority": "human",
+      "triage": "write",
       "daily": "write",
       "weekly": "write",
       "monthly": "write",
@@ -21,26 +23,49 @@
       "reconciliation": "Each loop creates a unique immutable file with exclusive-create semantics; corrections are new linked receipts."
     },
     {
+      "path": "automation/delegations/**",
+      "authority": "monthly-governance",
+      "triage": "read",
+      "daily": "read",
+      "weekly": "read",
+      "monthly": "write",
+      "audit": "observe",
+      "reconciliation": "Monthly governance publishes bounded delegation envelopes. Explicit human instruction may bootstrap or override an envelope. Triage may consume but never widen it."
+    },
+    {
+      "path": "automation/authorizations/**",
+      "authority": "daily-governance-triage",
+      "triage": "write",
+      "daily": "read",
+      "weekly": "read",
+      "monthly": "read",
+      "audit": "observe",
+      "reconciliation": "Triage may create immutable bounded authorizations only inside the current delegation envelope. Daily consumes them directly; monthly may review, narrow, revoke prospectively, or supersede through a new envelope."
+    },
+    {
       "path": "automation/pr_lifecycle/**",
       "authority": "monthly-governance",
+      "triage": "write",
       "daily": "write",
       "weekly": "read",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Daily may update its owned PR record; monthly resolves cross-PR conflicts, stale work, splits, and supersession."
+      "reconciliation": "Daily may update its owned PR record. Triage may perform only mechanically verifiable lifecycle synchronization from live GitHub state. Monthly resolves cross-PR conflicts, stale work, splits, supersession, abandonment, and ambiguous ownership."
     },
     {
       "path": "memory/mem_log_short.md",
       "authority": "monthly-governance",
+      "triage": "read",
       "daily": "propose",
       "weekly": "propose",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Monthly governance publishes the canonical move; explicit human instructions may override it."
+      "reconciliation": "Monthly governance publishes the canonical move; triage may not rewrite it. Explicit human instructions may override it."
     },
     {
       "path": "memory/mem_log_long_0000_0999.md",
       "authority": "human",
+      "triage": "none",
       "daily": "none",
       "weekly": "none",
       "monthly": "none",
@@ -50,6 +75,7 @@
     {
       "path": "calendar/evidence/**",
       "authority": "weekly-evidence-synthesis",
+      "triage": "read",
       "daily": "read",
       "weekly": "write",
       "monthly": "read",
@@ -59,6 +85,7 @@
     {
       "path": "calendar/belief_events/**",
       "authority": "weekly-evidence-synthesis",
+      "triage": "read",
       "daily": "read",
       "weekly": "write",
       "monthly": "read",
@@ -68,15 +95,17 @@
     {
       "path": "calendar/consolidated_beliefs.json",
       "authority": "monthly-governance",
+      "triage": "read",
       "daily": "read",
       "weekly": "propose",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Monthly governance regenerates the consolidated view from immutable belief events."
+      "reconciliation": "Monthly governance regenerates the consolidated view from immutable belief events. Triage has no belief-write authority."
     },
     {
       "path": "calendar/roundups/**",
       "authority": "weekly-evidence-synthesis",
+      "triage": "read",
       "daily": "read",
       "weekly": "write",
       "monthly": "read",
@@ -86,65 +115,72 @@
     {
       "path": "calendar/monthly/**",
       "authority": "monthly-governance",
+      "triage": "read",
       "daily": "read",
       "weekly": "read",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "One accepted monthly synthesis governs queue-wide decisions for its period."
+      "reconciliation": "One accepted monthly synthesis governs queue-wide decisions for its period. Triage reads but never rewrites constitutional state."
     },
     {
       "path": "quests/actions/**",
       "authority": "monthly-governance",
+      "triage": "read",
       "daily": "propose",
       "weekly": "propose",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Weekly and daily emit proposals; monthly records acceptance, rejection, or deferral."
+      "reconciliation": "Weekly and daily emit proposals; triage may classify proposals but does not rewrite quest-action history. Monthly records queue-wide acceptance, rejection, or deferral."
     },
     {
       "path": "quests/active/**",
       "authority": "monthly-governance",
+      "triage": "read",
       "daily": "read",
       "weekly": "propose",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Monthly governance owns queue membership and ordering; daily may add scoped evidence without changing queue authority."
+      "reconciliation": "Monthly governance owns queue membership and ordering. Triage may authorize only bounded refinements inside IDs already active and delegated."
     },
     {
       "path": "quests/completed/**",
       "authority": "monthly-governance",
+      "triage": "read",
       "daily": "propose",
       "weekly": "read",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Completion requires accepted evidence and cross-queue ID validation."
+      "reconciliation": "Completion requires accepted evidence and cross-queue ID validation. Triage cannot move a quest between queues."
     },
     {
       "path": "quests/proposed/**",
       "authority": "monthly-governance",
+      "triage": "read",
       "daily": "propose",
       "weekly": "propose",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Proposed quests cannot reuse IDs from any queue and do not become active without governance."
+      "reconciliation": "Proposed quests cannot reuse IDs from any queue and do not become active without monthly governance. Triage has no activation authority."
     },
     {
       "path": "quests/blocked/**",
       "authority": "monthly-governance",
+      "triage": "read",
       "daily": "propose",
       "weekly": "propose",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Blocked status preserves artifacts, blocker evidence, and a reactivation condition."
+      "reconciliation": "Blocked status preserves artifacts, blocker evidence, and a reactivation condition. Triage may not block or reactivate queue membership."
     },
     {
       "path": "src/**|experiments/**|configs/**|tests/**|outputs/**",
       "authority": "daily-research-operator",
+      "triage": "read",
       "daily": "write",
       "weekly": "read",
       "monthly": "read",
       "audit": "observe",
-      "reconciliation": "Only the active quest acceptance slice and its owning PR may mutate scientific implementation surfaces."
+      "reconciliation": "Only the Daily Research Operator inside an active quest acceptance slice may mutate scientific implementation surfaces. Triage may authorize scope but never write the science itself."
     }
   ]
 }
