@@ -12,6 +12,7 @@ reads:
   - automation/contracts/daily-research-operator.v1.1.md
   - automation/state_ownership.json
   - automation/delegations/**
+  - automation/authorizations/**
   - memory/mem_log_short.md
   - quests/active/**
   - quests/actions/**
@@ -42,7 +43,7 @@ Produce the smallest coherent verified scientific or engineering outcome inside 
 
 ## Pre-game authorization rule
 
-Before selecting a fresh slice, inspect current unexpired enacted `refine_existing` quest actions issued by `daily-governance-triage` and bound to the accepted source/delegation state.
+Before selecting a fresh slice, inspect current unexpired `sns.governance-authorization.v1` artifacts issued by `daily-governance-triage` and bound to the accepted source/delegation state.
 
 - If exactly one valid authorization owns the next executable slice and no competing implementation owner exists, consume it and begin the authorized work in this run.
 - If several valid authorizations exist, choose the highest-priority one consistent with accepted monthly objectives and one-owner law; leave the others unconsumed.
@@ -58,7 +59,7 @@ Before selecting a fresh slice, inspect current unexpired enacted `refine_existi
 5. Implement one artifact-bearing slice and run focused verification.
 6. Recheck source commit, delegation, governance, authorization, and PR ownership before publication.
 7. On conflict, preserve useful branch-local artifacts and terminate `BLOCKED_CONFLICT` or `NEEDS_GOVERNANCE_REVIEW`.
-8. Write exactly one immutable run receipt. Include the consumed triage quest-action ID when an authorization was used. Mutable summaries are generated views, not the source of history.
+8. Write exactly one immutable run receipt. Include the consumed authorization ID in `consumed_ids` when an authorization was used. Mutable summaries are generated views, not the source of history.
 
 ## Mutation boundary
 
