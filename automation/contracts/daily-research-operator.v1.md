@@ -2,7 +2,7 @@
 schema: sns.loop-contract.v1
 loop_id: daily-research-operator
 contract_version: 1.0.0
-status: active
+status: retired
 owner: SNS-S-S
 allowed_triggers:
   - scheduled
