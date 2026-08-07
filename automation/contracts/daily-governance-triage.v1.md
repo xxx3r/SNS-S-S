@@ -12,6 +12,7 @@ reads:
   - automation/contracts/daily-governance-triage.v1.md
   - automation/state_ownership.json
   - automation/delegations/**
+  - automation/authorizations/**
   - automation/runs/**
   - automation/pr_lifecycle/**
   - quests/actions/**
@@ -20,8 +21,8 @@ reads:
   - memory/mem_log_short.md
 writes:
   - automation/runs/**
+  - automation/authorizations/**
   - automation/pr_lifecycle/**
-  - quests/actions/**
 terminal_states:
   - DONE
   - DONE_WITH_LIMITATIONS
@@ -57,20 +58,20 @@ Before claiming a connector or repository environment is unavailable, attempt th
 ## Triage transaction
 
 1. Freeze accepted `main` and the current delegation envelope.
-2. Read only compact lineage: recent receipts, current open PR ownership/checks/reviews, pending quest-action proposals, mechanical lifecycle drift, and the canonical next move.
+2. Read only compact lineage: recent receipts, current open PR ownership/checks/reviews, pending quest-action proposals, existing unconsumed authorizations, mechanical lifecycle drift, and the canonical next move.
 3. Classify each candidate using the decision ladder:
    - L0 local implementation detail -> leave to Daily Research Operator;
    - L1 bounded reversible refinement inside delegation -> triage may authorize;
    - L2 queue, belief, canonical-memory, major architecture, or constitutional decision -> monthly governance;
    - L3 protected scientific assumption, external/public action, strategic or reserved authority -> human.
-4. For each L1 research authorization, emit an enacted `refine_existing` quest action with a machine-readable `authorization` object bound to the accepted source commit and current delegation.
+4. For each L1 research authorization, emit one immutable `sns.governance-authorization.v1` artifact under `automation/authorizations/**`, bound to the accepted source commit and current delegation.
 5. Mechanically synchronize a PR lifecycle record only when live GitHub evidence is unambiguous and the change is a direct terminal/status reflection. Supersession, abandonment, split decisions, ownership ambiguity, or scientific interpretation remain monthly-owned.
-6. Recheck source commit, delegation, and PR ownership before publication.
+6. Recheck source commit, delegation, authorization uniqueness, and PR ownership before publication.
 7. Write exactly one immutable triage receipt listing every decision, authorization, lifecycle synchronization, deferral, and limitation.
 
 ## Delegated authority
 
-Triage may enact only `refine_existing` actions for already-active quests and only when every requested surface, budget, check, stop condition, and expiry is inside the current machine-readable delegation envelope.
+Triage may authorize only bounded refinements inside already-active quests and only when every requested surface, budget, check, stop condition, and expiry is inside the current machine-readable delegation envelope.
 
 Triage may not:
 
