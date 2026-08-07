@@ -13,7 +13,7 @@
   "properties": {
     "schema": {"const": "sns.loop-run.v1"},
     "run_id": {"type": "string", "pattern": "^RUN-[0-9]{8}T[0-9]{12}Z-[a-z0-9-]+-[0-9a-f]{20}$"},
-    "loop_id": {"enum": ["daily-research-operator", "weekly-evidence-synthesis", "monthly-governance", "system-audit"]},
+    "loop_id": {"enum": ["daily-governance-triage", "daily-research-operator", "weekly-evidence-synthesis", "monthly-governance", "system-audit"]},
     "contract_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
     "trigger": {"enum": ["scheduled", "explicit-human", "replay"]},
     "trigger_time": {"type": "string", "format": "date-time"},

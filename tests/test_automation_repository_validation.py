@@ -31,13 +31,19 @@ retry_budget: 1
 def test_repository_validator_enforces_cross_queue_uniqueness(tmp_path: Path) -> None:
     contract_dir = tmp_path / "automation/contracts"
     contract_dir.mkdir(parents=True)
-    for loop in ("daily-research-operator", "weekly-evidence-synthesis", "monthly-governance", "system-audit"):
+    for loop in (
+        "daily-governance-triage",
+        "daily-research-operator",
+        "weekly-evidence-synthesis",
+        "monthly-governance",
+        "system-audit",
+    ):
         (contract_dir / f"{loop}.v1.md").write_text(CONTRACT.format(loop=loop), encoding="utf-8")
     matrix = {
         "schema": "sns.state-ownership.v1",
         "surfaces": [{
             "path": "quests/active/**", "authority": "monthly-governance",
-            "daily": "read", "weekly": "propose", "monthly": "write", "audit": "observe",
+            "triage": "read", "daily": "read", "weekly": "propose", "monthly": "write", "audit": "observe",
             "reconciliation": "Monthly governance is authoritative."
         }],
     }

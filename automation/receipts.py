@@ -15,6 +15,7 @@ from .models import LoopTerminalState
 _SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 _SEMVER_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 _ALLOWED_LOOPS = {
+    "daily-governance-triage",
     "daily-research-operator",
     "weekly-evidence-synthesis",
     "monthly-governance",
@@ -36,6 +37,7 @@ def validate_run_receipt(
     receipt: Mapping[str, object],
     *,
     contracts: ContractRegistry | None = None,
+    allow_retired_contract: bool = False,
 ) -> None:
     required = {
         "schema",
@@ -71,7 +73,7 @@ def validate_run_receipt(
     if not _SEMVER_RE.fullmatch(contract_version):
         raise ValueError("contract_version must be semantic version X.Y.Z")
     if contracts is not None:
-        contract = contracts.resolve(loop_id, contract_version)
+        contract = contracts.resolve(loop_id, contract_version, replay=allow_retired_contract)
         if str(receipt["trigger"]) not in contract.allowed_triggers:
             raise ValueError("receipt trigger is not allowed by its contract")
 
@@ -132,6 +134,8 @@ class ReceiptStore:
         self.contracts = contracts
 
     def write(self, receipt: Mapping[str, object]) -> Path:
+        # New receipts must resolve against a currently active contract. Historical
+        # receipts are handled separately by load_all() with explicit replay mode.
         validate_run_receipt(receipt, contracts=self.contracts)
         path = self.root / receipt_relative_path(receipt)
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -148,7 +152,8 @@ class ReceiptStore:
         seen: set[str] = set()
         for path in sorted(self.root.glob("**/*.json")):
             receipt = json.loads(path.read_text(encoding="utf-8"))
-            validate_run_receipt(receipt, contracts=self.contracts)
+            # Accepted history remains valid after a contract version is retired.
+            validate_run_receipt(receipt, contracts=self.contracts, allow_retired_contract=True)
             run_id = str(receipt["run_id"])
             if run_id in seen:
                 raise ValueError(f"duplicate run_id across receipt files: {run_id}")

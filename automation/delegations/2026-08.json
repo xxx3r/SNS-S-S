@@ -1,0 +1,51 @@
+{
+  "schema": "sns.governance-delegation.v1",
+  "delegation_id": "DELEG-20260807-HUMAN-FAST-TRIAGE-V1",
+  "period": "2026-08",
+  "authority": "explicit-human",
+  "authorized_loop": "daily-governance-triage",
+  "allowed_action_types": [
+    "refine_existing"
+  ],
+  "allowed_quest_ids": [
+    "QST-STOR-0002",
+    "QST-SIM-0002",
+    "QST-SIM-0003",
+    "QST-PV-0001",
+    "QST-META-0001",
+    "QST-ARCI-0001",
+    "QST-CALENDAR-0001",
+    "QST-FUND-0001"
+  ],
+  "authorized_implementation_surfaces": [
+    "src/**",
+    "experiments/**",
+    "configs/**",
+    "tests/**",
+    "outputs/**"
+  ],
+  "forbidden_surfaces": [
+    "automation/contracts/**",
+    "automation/schemas/**",
+    "automation/state_ownership.json",
+    "automation/delegations/**",
+    "calendar/consolidated_beliefs.json",
+    "calendar/monthly/**",
+    "memory/**",
+    "quests/active/**",
+    "quests/completed/**",
+    "quests/proposed/**",
+    "quests/blocked/**",
+    ".github/**"
+  ],
+  "max_authorizations_per_run": 4,
+  "max_pull_requests_per_authorization": 1,
+  "max_run_receipts_per_authorization": 1,
+  "required_checks": [
+    "python -m pytest -q tests/test_automation_*.py",
+    "python -m automation.cli validate-repository"
+  ],
+  "recorded_at": "2026-08-07T17:34:44Z",
+  "expires_at": "2026-09-01T14:00:00Z",
+  "rationale": "Explicit human authorization for the August observation month. Daily governance triage may approve only bounded reversible refinements inside the eight already-active quests. It may not change queue membership or priority, consolidated beliefs, canonical memory, contracts, schemas, protected scientific assumptions, or external publication authority."
+}
