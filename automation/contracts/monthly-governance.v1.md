@@ -2,7 +2,7 @@
 schema: sns.loop-contract.v1
 loop_id: monthly-governance
 contract_version: 1.0.0
-status: active
+status: retired
 owner: SNS-S-S
 allowed_triggers:
   - scheduled
