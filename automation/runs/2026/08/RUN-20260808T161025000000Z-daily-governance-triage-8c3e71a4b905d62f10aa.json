@@ -1,0 +1,69 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260808T161025000000Z-daily-governance-triage-8c3e71a4b905d62f10aa",
+  "loop_id": "daily-governance-triage",
+  "contract_version": "1.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-08T16:10:25Z",
+  "source_commit": "613346cba7a82b09ae0b789e23aa9c97a6baea5b",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "primary_handoff_quest_id": "QST-CALENDAR-0001",
+    "decision_summary": [
+      "L0: local implementation details for duplicate-ID validation remain owned by Daily Research Operator.",
+      "L1: QST-CALENDAR-0001 deterministic duplicate quest-ID validation is a bounded reversible refinement inside the active August delegation and is authorized.",
+      "L1 mechanical: PR #37 merged lifecycle fact was synchronized without scientific reinterpretation.",
+      "L2: stale QST-STOR-0002 canonical memory and next architecture choice remain monthly-governance owned.",
+      "L2: PR #22 and PR #23 stale/supersession lifecycle judgments remain monthly-governance owned under the accepted campaign.",
+      "L3: no protected scientific assumption, external action, or human-only strategic decision was taken."
+    ],
+    "state_hash_limitation": "The connector exposes repository objects but not the transaction-layer snapshot helper; this receipt preserves the canonical empty-state hash convention used by recent connector-authored receipts."
+  },
+  "pr_context": {
+    "open_pull_requests_at_recheck": 0,
+    "mechanically_synchronized_pr": 37,
+    "implementation_pr_created_by_triage": false
+  },
+  "consumed_ids": [
+    "DELEG-20260807-HUMAN-FAST-TRIAGE-V1"
+  ],
+  "artifacts": [
+    {
+      "path": "automation/pr_lifecycle/37.json",
+      "kind": "mechanical-lifecycle-synchronization"
+    },
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260808T161025000000Z-calendar-duplicate-id-4a8f91c2d7e603b5a124.json",
+      "kind": "bounded-governance-authorization"
+    }
+  ],
+  "checks": [
+    {
+      "name": "GitHub connector preflight",
+      "status": "passed",
+      "evidence": "GitHub get_repo succeeded for xxx3r/SNS-S-S with pull, push, triage, maintain, and admin authority before mutation."
+    },
+    {
+      "name": "delegation and authorization boundary review",
+      "status": "passed",
+      "evidence": "Authorization is refine_existing for active QST-CALENDAR-0001, uses only src/**, tests/**, outputs/** surfaces, expires before the August delegation, preserves one PR/one receipt limits, and excludes staging CLI, belief, queue, memory, and activation authority."
+    },
+    {
+      "name": "PR ownership recheck",
+      "status": "passed",
+      "evidence": "Live GitHub search found zero open pull requests immediately before receipt publication."
+    },
+    {
+      "name": "repository-hosted semantic validation after triage writes",
+      "status": "not_run",
+      "evidence": "No pull request was created by triage and no post-write GitHub Actions result was available through the inspected execution surface during this bounded pre-game sweep."
+    }
+  ],
+  "belief_effects": [
+    "No consolidated belief, quest priority, canonical memory, or protected scientific assumption was changed.",
+    "The accepted backlog inventory identifies deterministic duplicate-ID validation as the only clearly separable active-quest validation slice suitable for bounded cleanup."
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Daily Research Operator should consume AUTH-20260808T161025000000Z-calendar-duplicate-id-4a8f91c2d7e603b5a124 and implement only deterministic duplicate quest-ID rejection in the existing roundup parsing/normalization path with focused tests and mandatory repository checks.",
+  "created_at": "2026-08-08T16:10:25Z"
+}
