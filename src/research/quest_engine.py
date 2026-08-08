@@ -58,14 +58,31 @@ def _quest_from_action(action: dict, source_week: str) -> QuestSpec:
     )
 
 
+def _quests_with_unique_ids(roundup: Roundup) -> list[tuple[dict, QuestSpec]]:
+    """Normalize suggested actions and fail closed on duplicate quest IDs."""
+
+    normalized: list[tuple[dict, QuestSpec]] = []
+    seen_ids: set[str] = set()
+    for raw in roundup.suggested_actions:
+        action = dict(raw)
+        quest = _quest_from_action(action, roundup.week)
+        if quest.quest_id in seen_ids:
+            raise ValueError(f"roundup contains duplicate quest ID: {quest.quest_id}")
+        seen_ids.add(quest.quest_id)
+        normalized.append((action, quest))
+    return normalized
+
+
 def quests_from_roundup(roundup: Roundup) -> list[QuestSpec]:
     """Compatibility view of roundup suggestions.
 
     New automation should call :func:`quest_actions_from_roundup` so an existing
     quest is represented as a refinement rather than staged as a duplicate file.
+    Both views reject duplicate quest IDs deterministically before producing
+    downstream quest artifacts.
     """
 
-    return [_quest_from_action(action, roundup.week) for action in roundup.suggested_actions]
+    return [quest for _, quest in _quests_with_unique_ids(roundup)]
 
 
 def quest_actions_from_roundup(
@@ -79,14 +96,7 @@ def quest_actions_from_roundup(
     active = set(active_quest_ids)
     existing = set(all_quest_ids)
     actions: list[QuestActionSpec] = []
-    seen_ids: set[str] = set()
-    for raw in roundup.suggested_actions:
-        action = dict(raw)
-        quest = _quest_from_action(action, roundup.week)
-        if quest.quest_id in seen_ids:
-            raise ValueError(f"roundup contains duplicate quest ID: {quest.quest_id}")
-        seen_ids.add(quest.quest_id)
-
+    for action, quest in _quests_with_unique_ids(roundup):
         declared = action.get("action_type")
         if declared is None:
             action_type = QuestActionType.REFINE_EXISTING.value if quest.quest_id in active else QuestActionType.PROPOSE_NEW.value
