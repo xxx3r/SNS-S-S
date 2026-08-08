@@ -1,0 +1,64 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260808T191400000000Z-daily-research-operator-c7e4a91b2d805f63a1e9",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.1.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-08T19:10:52Z",
+  "source_commit": "b8895944e956980738d64dd16ce2d71e6a9d184f",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "quest_id": "QST-CALENDAR-0001",
+    "acceptance_slice": "Add deterministic duplicate quest-ID validation to the existing roundup parsing/normalization path with focused tests. Do not implement the staging CLI, append belief shifts, process a real roundup, activate quests, or mutate queue/canonical state.",
+    "authorization_source_commit": "b947bf0af93dda0a0d2725ed89e30b9996372819",
+    "source_binding_note": "The authorization source commit is an ancestor of accepted main; the only intervening accepted-main changes before implementation were the immutable authorization and triage receipt that issued this slice."
+  },
+  "pr_context": {
+    "pr_number": 43,
+    "head_branch": "agent/qst-calendar-duplicate-id-validation",
+    "base_branch": "main",
+    "continued_existing_owner": false
+  },
+  "consumed_ids": [
+    "AUTH-20260808T161025000000Z-calendar-duplicate-id-4a8f91c2d7e603b5a124"
+  ],
+  "artifacts": [
+    {
+      "path": "src/research/quest_engine.py",
+      "kind": "implementation"
+    },
+    {
+      "path": "tests/test_summer_2026_architecture.py",
+      "kind": "verification"
+    }
+  ],
+  "checks": [
+    {
+      "name": "python -m pytest -q tests/test_automation_*.py",
+      "status": "passed",
+      "evidence": "GitHub Actions automation-transaction run 31273860470 completed successfully; transaction-layer step 5 passed."
+    },
+    {
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed",
+      "evidence": "GitHub Actions automation-transaction run 31273860470 completed successfully; transaction-layer step 6 passed."
+    },
+    {
+      "name": "python -m pytest -q",
+      "status": "passed",
+      "evidence": "GitHub Actions automation-transaction run 31273860470 completed successfully through the full pytest step, and tests workflow run 31273860295 completed successfully."
+    },
+    {
+      "name": "baseline-artifacts",
+      "status": "passed",
+      "evidence": "GitHub Actions baseline-artifacts run 31273860302 completed successfully for implementation head 6ff2b0c1d25bdd4fa81a64bf8591a0ace3241d2f."
+    }
+  ],
+  "belief_effects": [
+    "No scientific belief, quest priority, queue membership, or canonical memory changed.",
+    "Both roundup quest normalization views now fail closed on repeated quest IDs before downstream quest artifacts are produced."
+  ],
+  "terminal_state": "DONE",
+  "next_action": "Monthly governance retains the remaining QST-CALENDAR-0001 route decisions; Daily must not expand this authorization into staging CLI, belief-ledger, real-roundup, activation, or canonical-state work.",
+  "created_at": "2026-08-08T19:14:00Z"
+}
