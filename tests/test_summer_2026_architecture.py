@@ -13,6 +13,7 @@ from src.agents.sns_agent import AgentMode, AgentParameters, AgentRole, SNSAgent
 from src.arci import ArciAssessment, ArciDimension
 from src.host.host_collector import HostCollector
 from src.research import parse_roundup, quests_from_roundup
+from src.research.quest_engine import quest_actions_from_roundup
 from src.sim.config import SimulationConfig
 from src.sim.simulation import Simulation
 from src.world.asteroid_world import AsteroidWorld
@@ -103,27 +104,55 @@ def test_arci_keeps_score_and_confidence_separate():
     assert result.lower_bound < result.score < result.upper_bound
 
 
-def test_roundup_to_quest_pipeline(tmp_path: Path):
+def _write_roundup(tmp_path: Path, suggested_actions: list[dict[str, str]]) -> Path:
     metadata = {
         "week": "2026-07-12",
         "research_paths": [3, 8],
         "weighted_belief_shifts": [
             {"subsystem": "STOR", "delta": 0.1, "confidence": 0.8, "rationale": "geometry audit"}
         ],
-        "suggested_actions": [
+        "suggested_actions": suggested_actions,
+        "sns_awareness_update": {"summary": "Storage is architectural."},
+    }
+    path = tmp_path / "roundup.md"
+    path.write_text(f"---\n{json.dumps(metadata)}\n---\n# Notes\nEvidence body.")
+    return path
+
+
+def test_roundup_to_quest_pipeline(tmp_path: Path):
+    path = _write_roundup(
+        tmp_path,
+        [
             {
                 "id": "QST-STOR-0002",
                 "title": "Thermal derating",
                 "objective": "Add temperature effects.",
                 "artifact": "outputs/thermal.json",
-                "success_metric": "One reproducible sweep."
+                "success_metric": "One reproducible sweep.",
             }
         ],
-        "sns_awareness_update": {"summary": "Storage is architectural."}
-    }
-    path = tmp_path / "roundup.md"
-    path.write_text(f"---\n{json.dumps(metadata)}\n---\n# Notes\nEvidence body.")
+    )
     roundup = parse_roundup(path)
     quests = quests_from_roundup(roundup)
     assert roundup.week == "2026-07-12"
     assert quests[0].quest_id == "QST-STOR-0002"
+
+
+def test_roundup_rejects_duplicate_quest_ids_in_all_normalization_views(tmp_path: Path):
+    duplicate = {
+        "id": "QST-STOR-0002",
+        "title": "Thermal derating",
+        "objective": "Add temperature effects.",
+        "artifact": "outputs/thermal.json",
+        "success_metric": "One reproducible sweep.",
+    }
+    roundup = parse_roundup(_write_roundup(tmp_path, [duplicate, {**duplicate, "title": "Duplicate"}]))
+
+    with pytest.raises(ValueError, match="roundup contains duplicate quest ID: QST-STOR-0002"):
+        quests_from_roundup(roundup)
+    with pytest.raises(ValueError, match="roundup contains duplicate quest ID: QST-STOR-0002"):
+        quest_actions_from_roundup(
+            roundup,
+            active_quest_ids={"QST-STOR-0002"},
+            all_quest_ids={"QST-STOR-0002"},
+        )
