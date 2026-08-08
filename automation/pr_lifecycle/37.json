@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 37,
+  "quest_id": "QST-STOR-0002",
+  "acceptance_slice": "Externalize the accepted mission-dependency screening allocations and prove reproducibility without changing the accepted experiment.",
+  "state": "merged",
+  "owner_run_id": "RUN-20260806T223500000000Z-daily-research-operator-a17c4e9b2d6f8031c5e7",
+  "source_commit": "b5565882be18013db4e3ea7163a1835323683557",
+  "head_commit": "c0285b301986b80c29921d3612f53e16edb479be",
+  "updated_at": "2026-08-06T22:36:49Z",
+  "next_review_after": "2026-08-06T22:36:49Z",
+  "supersedes": [],
+  "reason": "Mechanical synchronization from live GitHub: PR #37 merged on 2026-08-06 at merge commit 73225b9d09a43e0e3616250519ec908b7b723c14. This record does not reinterpret the scientific result or change quest state."
+}
