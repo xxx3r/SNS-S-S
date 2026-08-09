@@ -2,12 +2,10 @@
   "schema": "sns.belief-event.v1",
   "belief_event_id": "BEL-20260809T150000000000Z-calendar-fail-closed-3a824b5c6d7e8f901234",
   "belief_key": "CALENDAR.fail_closed_validation",
-  "evidence_ids": [
-    "EVID-20260809T150000000000Z-calendar-duplicate-ids-c31bd4e5f60718293a4b"
-  ],
+  "evidence_ids": ["EVID-20260809T150000000000Z-calendar-duplicate-ids-c31bd4e5f60718293a4b"],
   "magnitude": 0.10,
   "confidence": 0.91,
-  "effect": "support",
+  "effect": "strengthen",
   "rationale": "Duplicate quest identifiers now fail closed across both roundup normalization views with regression coverage, strengthening confidence in deterministic proposal validation without expanding governance authority.",
   "recorded_at": "2026-08-09T15:00:00Z"
 }
