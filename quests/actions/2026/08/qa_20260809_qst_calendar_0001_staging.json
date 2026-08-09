@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260809T150000000000Z-refine-qst-calendar-0001-5ca46d7e8f9012345678",
+  "action_type": "refine_existing",
+  "quest_id": "QST-CALENDAR-0001",
+  "target_quest_ids": [],
+  "proposed_by_loop": "weekly-evidence-synthesis",
+  "authority": "proposal",
+  "rationale": "After accepted duplicate-ID rejection, finish only the deterministic staging/validation CLI boundary. Suggested artifact: src/research/roundup_staging.py. Success requires staged generation and validation without activating quests, mutating consolidated beliefs, or bypassing weekly/monthly authority.",
+  "recorded_at": "2026-08-09T15:00:00Z"
+}
