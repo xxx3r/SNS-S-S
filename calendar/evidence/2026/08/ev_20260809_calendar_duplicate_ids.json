@@ -8,23 +8,8 @@
   "source_fingerprint": "sha256:00d28e96ad5a58c3c882b1c58ecb441e40b60abaf8e4db20d917bd2048b12fd8",
   "observed_at": "2026-08-09T15:00:00Z",
   "independence": "independent",
-  "polarity": "supporting",
+  "polarity": "supports",
   "confidence": 0.91,
-  "provenance": {
-    "source_title": "Reject duplicate quest IDs across roundup normalization",
-    "publication_date": "2026-08-08",
-    "primary_or_secondary": "primary_repository_artifact",
-    "environment": "SNS automation transaction layer",
-    "demonstrated_scale": "repository regression test",
-    "subsystems": ["CALENDAR", "AUTOMATION"],
-    "evidence_tier": "A-repository",
-    "directness": 0.98,
-    "novelty": 0.75,
-    "limitations": ["Does not validate source interpretation or belief weights.", "Does not grant parser authority to activate or reprioritize quests."],
-    "fact_summary": "PR #43 merged a fail-closed helper and focused regression coverage for duplicate quest IDs.",
-    "inference_summary": "One deterministic ambiguity in the weekly proposal pipeline is now mechanically closed.",
-    "speculation_summary": "Additional staging validation may further reduce clerical weekly failures without widening governance authority.",
-    "created_by_run_id": "RUN-20260809T150000000000Z-weekly-evidence-synthesis-9f0e1d2c3b4a59687786"
-  },
+  "provenance": {"source_title": "Reject duplicate quest IDs across roundup normalization", "publication_date": "2026-08-08", "primary_or_secondary": "primary_repository_artifact", "environment": "SNS automation transaction layer", "demonstrated_scale": "repository regression test", "subsystems": ["CALENDAR", "AUTOMATION"], "evidence_tier": "A-repository", "directness": 0.98, "novelty": 0.75, "limitations": ["Does not validate source interpretation or belief weights.", "Does not grant parser authority to activate or reprioritize quests."], "fact_summary": "PR #43 merged a fail-closed helper and focused regression coverage for duplicate quest IDs.", "inference_summary": "One deterministic ambiguity in the weekly proposal pipeline is now mechanically closed.", "speculation_summary": "Additional staging validation may further reduce clerical weekly failures without widening governance authority.", "created_by_run_id": "RUN-20260809T150000000000Z-weekly-evidence-synthesis-9f0e1d2c3b4a59687786"},
   "artifacts": ["calendar/roundups/2026-08-09.md"]
 }
