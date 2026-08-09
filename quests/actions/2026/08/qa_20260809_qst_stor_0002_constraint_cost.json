@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260809T150000000000Z-refine-qst-stor-0002-4b935c6d7e8f90123456",
+  "action_type": "refine_existing",
+  "quest_id": "QST-STOR-0002",
+  "target_quest_ids": [],
+  "proposed_by_loop": "weekly-evidence-synthesis",
+  "authority": "proposal",
+  "rationale": "Before monthly governance selects a surface or hosted architecture, quantify the hidden cost of the <=30-minute fast-rotator constraint and illuminated-state heat rejection. Suggested artifact: outputs/qst_stor_0002/fast_rotator_constraint_cost.json. Success requires explicit target-availability assumptions, thermal constraints, uncertainty, and a falsifier without enacting architecture selection.",
+  "recorded_at": "2026-08-09T15:00:00Z"
+}
