@@ -1,0 +1,14 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "BEL-20260809T150000000000Z-stor-constraint-accounting-29713a4b5c6d7e8f9012",
+  "belief_key": "STOR.constraint_accounting",
+  "evidence_ids": [
+    "EVID-20260809T150000000000Z-stor-mission-dependency-a109b2c3d4e5f6071829",
+    "EVID-20260809T150000000000Z-roman-sun-facing-075f18293a4b5c6d7e8f"
+  ],
+  "magnitude": 0.12,
+  "confidence": 0.86,
+  "effect": "support",
+  "rationale": "Accepted SNS evidence now makes host-service cost explicit while retaining the surface route only under a fast-rotator constraint; current mission context independently reinforces that Sun-facing geometry is a designed system service rather than free background context.",
+  "recorded_at": "2026-08-09T15:00:00Z"
+}
