@@ -1,0 +1,79 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260809T150000000000Z-weekly-evidence-synthesis-9f0e1d2c3b4a59687786",
+  "loop_id": "weekly-evidence-synthesis",
+  "contract_version": "1.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-09T15:00:00Z",
+  "source_commit": "09b9348e21e0e75a211ac918329f72efc0331c19",
+  "state_hash": "sha256:a99d19a572d284825d45c18d6414d328489fa92394c61b8ceaa45ea9e00d7ae2",
+  "quest_context": {
+    "quest_id": "QST-STOR-0002",
+    "related_quest_ids": ["QST-CALENDAR-0001", "QST-PV-0001", "QST-SIM-0002"],
+    "question": "What accepted work and current primary evidence since the last accepted weekly synthesis changes SNS beliefs or creates bounded proposals without enacting monthly governance?",
+    "success_criteria": [
+      "Consume every accepted Daily Research Operator receipt since the July 26 weekly receipt.",
+      "Create one dated roundup and normalized evidence, belief, and quest-action proposals.",
+      "Keep queue membership, consolidated beliefs, short memory, and canonical next move unchanged.",
+      "Publish only after GitHub-hosted checks and repository semantic validation are green."
+    ],
+    "assumptions_changed": [
+      "The fast-rotator surface route must pay target-selection and illuminated-state thermal costs before architecture selection.",
+      "Duplicate quest IDs are a fail-closed validation condition rather than harmless parser noise."
+    ],
+    "limitations": [
+      "No accepted August monthly-governance synthesis was found in the inspected accepted commit history; monthly-owned state is therefore not inferred from absent records.",
+      "A targeted Google Drive search returned no relevant SNS artifacts; no broader absence claim is made.",
+      "SPRAT 29 is an upcoming conference, not a new qualification result.",
+      "Roman is macroscale contextual evidence and does not establish 10 mm SNS control feasibility.",
+      "No local shell execution is claimed; GitHub Actions is the validation surface."
+    ]
+  },
+  "pr_context": {
+    "pr_number": 0,
+    "lifecycle_state": "ready_for_review",
+    "working_branch": "aurora/weekly-roundup-2026-08-09"
+  },
+  "consumed_ids": [
+    "RUN-20260726T145840000000Z-weekly-evidence-synthesis-f0e1d2c3b4a596877869",
+    "RUN-20260803T195814000000Z-daily-research-operator-4d8a1c7e2b9f6053a4c1",
+    "RUN-20260804T200000000000Z-daily-research-operator-8f31c7a42d905e6b1c44",
+    "RUN-20260806T223500000000Z-daily-research-operator-a17c4e9b2d6f8031c5e7",
+    "RUN-20260808T191400000000Z-daily-research-operator-c7e4a91b2d805f63a1e9"
+  ],
+  "artifacts": [
+    "calendar/roundups/2026-08-09.md",
+    "calendar/evidence/2026/08/ev_20260809_stor_mission_dependency.json",
+    "calendar/evidence/2026/08/ev_20260809_calendar_duplicate_ids.json",
+    "calendar/evidence/2026/08/ev_20260809_sprat29_watch.json",
+    "calendar/evidence/2026/08/ev_20260809_roman_sun_facing.json",
+    "calendar/belief_events/2026/08/be_20260809_stor_constraint_accounting.json",
+    "calendar/belief_events/2026/08/be_20260809_calendar_fail_closed.json",
+    "quests/actions/2026/08/qa_20260809_qst_stor_0002_constraint_cost.json",
+    "quests/actions/2026/08/qa_20260809_qst_calendar_0001_staging.json"
+  ],
+  "checks": [
+    {
+      "name": "source and governance review",
+      "status": "passed",
+      "evidence": "Accepted repository evidence is separated from web context; Drive search absence is bounded; fact, inference, uncertainty, and speculation are labeled; no monthly-owned state is mutated."
+    },
+    {
+      "name": "repository semantic validation",
+      "status": "not_run",
+      "evidence": "GitHub Actions will execute repository semantic validation on the published PR head."
+    },
+    {
+      "name": "GitHub Actions",
+      "status": "not_run",
+      "evidence": "No local shell execution is claimed; workflow checks are the execution surface after PR publication."
+    }
+  ],
+  "belief_effects": [
+    "BEL-20260809T150000000000Z-stor-constraint-accounting-29713a4b5c6d7e8f9012",
+    "BEL-20260809T150000000000Z-calendar-fail-closed-3a824b5c6d7e8f901234"
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Monthly governance should decide whether to accept the QST-STOR-0002 constraint-cost refinement and QST-CALENDAR-0001 staging refinement; hold PV belief changes until post-SPRAT technical evidence exists.",
+  "created_at": "2026-08-09T15:00:00Z"
+}
