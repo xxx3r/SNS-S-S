@@ -1,0 +1,30 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260809T150000000000Z-roman-sun-facing-075f18293a4b5c6d7e8f",
+  "claim_cluster_id": "CLM-20260809T150000000000Z-orientation-service-1860293a4b5c6d7e8f90",
+  "claim": "Roman's Solar Array Sun Shield is designed to continuously face the Sun while supplying about 4.1 kW at Sun-Earth L2, making orientation geometry an explicit power-system service in a current mission.",
+  "source_uri": "https://science.nasa.gov/blogs/roman/2026/07/16/telescope-milestone-teams-check-out-nasa-roman-solar-panels/",
+  "source_kind": "official_statement",
+  "source_fingerprint": "sha256:3a9a1348453a9ac0be7fbe526adcaba289d747d93c40124d335899c8f9d15dad",
+  "observed_at": "2026-08-09T15:00:00Z",
+  "independence": "independent",
+  "polarity": "context_only",
+  "confidence": 0.90,
+  "provenance": {
+    "source_title": "Telescope Milestone: Teams Check Out NASA Roman Solar Panels",
+    "publication_date": "2026-07-16",
+    "primary_or_secondary": "primary_official",
+    "environment": "Sun-Earth L2 observatory",
+    "demonstrated_scale": "macroscale flight observatory",
+    "subsystems": ["PV", "MISSION", "CTRL"],
+    "evidence_tier": "B-context",
+    "directness": 0.48,
+    "novelty": 0.40,
+    "limitations": ["Roman is macroscale and cannot establish 10 mm SNS control feasibility.", "The source does not quantify the incremental mass or power cost of Sun-facing control for SNS-like nodes."],
+    "fact_summary": "NASA states Roman's six-panel solar-array sun-shield will continuously face the Sun and provide about 4.1 kW.",
+    "inference_summary": "Hosted SNS comparisons should continue to charge orientation and geometry maintenance rather than treating sunward pointing as free.",
+    "speculation_summary": "Future SNS host platforms may provide sunward geometry as a shared service if the system-level mass and energy trade closes.",
+    "created_by_run_id": "RUN-20260809T150000000000Z-weekly-evidence-synthesis-9f0e1d2c3b4a59687786"
+  },
+  "artifacts": ["calendar/roundups/2026-08-09.md"]
+}
