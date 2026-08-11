@@ -1,0 +1,54 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260811T200200000000Z-daily-research-operator-5a7c1e9d3b8064f2a011",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.1.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-11T19:57:16Z",
+  "source_commit": "1448cd2a972b2f2736a13079984c43b462587633",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "quest_id": "QST-CALENDAR-0001",
+    "acceptance_slice": "Deterministic serialization/output generation for synthetic proposal-only staged roundups under the accepted staging boundary.",
+    "authorization_id": "AUTH-20260811T160132000000Z-calendar-staging-output-6e2f4a91c8b7053d1f20",
+    "limitations": [
+      "No scripts/** surface was edited.",
+      "No real weekly roundup was processed.",
+      "No belief, quest queue, canonical memory, contract, schema, delegation, or workflow-policy state was changed.",
+      "Staged serialization intentionally excludes immutable quest-action IDs because their timestamp/random material is not deterministic staging semantics."
+    ]
+  },
+  "pr_context": {
+    "pr_number": 46,
+    "lifecycle_state": "ready_for_review",
+    "branch": "agent/calendar-staging-output-20260811"
+  },
+  "consumed_ids": [
+    "AUTH-20260811T160132000000Z-calendar-staging-output-6e2f4a91c8b7053d1f20"
+  ],
+  "artifacts": [
+    "src/research/roundup_staging.py",
+    "tests/test_automation_roundup_staging.py"
+  ],
+  "checks": [
+    {
+      "name": "python -m pytest -q tests/test_automation_*.py",
+      "status": "passed",
+      "evidence": "GitHub Actions automation-transaction run 31530649854, job 93909589936, step 5 completed successfully on implementation head e0489ddb9b76df0b525ddae98aa57be504da8925."
+    },
+    {
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed",
+      "evidence": "GitHub Actions automation-transaction run 31530649854, job 93909589936, step 6 completed successfully on implementation head e0489ddb9b76df0b525ddae98aa57be504da8925."
+    },
+    {
+      "name": "python -m pytest -q",
+      "status": "passed",
+      "evidence": "GitHub Actions automation-transaction run 31530649854, job 93909589936, step 7 completed successfully on implementation head e0489ddb9b76df0b525ddae98aa57be504da8925."
+    }
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE",
+  "next_action": "Return to Pre-Game Governance Triage for any further QST-CALENDAR-0001 work; this authorization is consumed and does not permit scripts/**, real-roundup evidence processing, belief append, quest activation, queue mutation, or canonical-memory changes.",
+  "created_at": "2026-08-11T20:02:00Z"
+}
