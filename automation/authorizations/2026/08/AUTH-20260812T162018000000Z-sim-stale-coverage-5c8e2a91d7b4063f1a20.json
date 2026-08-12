@@ -1,0 +1,37 @@
+{
+  "schema": "sns.governance-authorization.v1",
+  "authorization_id": "AUTH-20260812T162018000000Z-sim-stale-coverage-5c8e2a91d7b4063f1a20",
+  "issued_by_loop": "daily-governance-triage",
+  "action_type": "refine_existing",
+  "quest_id": "QST-SIM-0002",
+  "recorded_at": "2026-08-12T16:20:18Z",
+  "authorization": {
+    "delegation_id": "DELEG-20260807-HUMAN-FAST-TRIAGE-V1",
+    "authorized_loop": "daily-research-operator",
+    "acceptance_slice": "Add a deterministic stale-coverage time-window metric to the existing AsteroidWorld coverage model, with focused synthetic tests, without selecting or comparing survey policies.",
+    "source_commit": "2e36b7cc586770bef991f8ff0f3b2c96bda9c931",
+    "expires_at": "2026-08-13T16:20:18Z",
+    "allowed_write_surfaces": ["src/**", "tests/**", "outputs/**"],
+    "budgets": {
+      "implementation_prs": 1,
+      "run_receipts": 1,
+      "scientific_claim_changes": 0,
+      "quest_state_changes": 0,
+      "policy_comparisons": 0
+    },
+    "max_pull_requests": 1,
+    "max_run_receipts": 1,
+    "mandatory_checks": [
+      "python -m pytest -q tests/test_automation_*.py",
+      "python -m automation.cli validate-repository"
+    ],
+    "stop_conditions": [
+      "Stop if implementing the metric requires changing quest state, canonical memory, consolidated beliefs, contracts, schemas, delegation law, or CI/security policy.",
+      "Stop if the slice requires choosing between independent and survey policies or interpreting which policy is scientifically superior.",
+      "Stop if irregular-rotation physics, configurable shadow profiles, or new environmental assumptions become necessary to define the metric.",
+      "Stop if real mission evidence or external/public claims are required.",
+      "Stop if another implementation PR or unconsumed authorization already owns this acceptance slice."
+    ],
+    "next_action": "Implement the smallest deterministic stale-coverage time-window metric on the existing QST-SIM-0002 AsteroidWorld coverage baseline, add focused synthetic tests, open exactly one implementation PR, run mandatory checks, and stop before policy comparison or new physical assumptions."
+  }
+}
