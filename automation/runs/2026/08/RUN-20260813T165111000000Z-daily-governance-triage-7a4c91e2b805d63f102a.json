@@ -1,0 +1,85 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260813T165111000000Z-daily-governance-triage-7a4c91e2b805d63f102a",
+  "loop_id": "daily-governance-triage",
+  "contract_version": "1.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-13T16:51:11Z",
+  "source_commit": "d447648bb7eb69fb276e1e4817c65225f0cdc5c7",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "primary_handoff_quest_id": "QST-SIM-0002",
+    "decision_summary": [
+      "L0: PR #47's NaN-input defect is a local reversible implementation repair, but Daily cannot lawfully resume it under the expired authorization.",
+      "L1: no new authorization was issued because PR #47 already owns the acceptance slice and its mandatory semantic-validation surface is currently red on the receipt-bearing head.",
+      "L2: the receipt-bearing validator reports an immutable receipt with an invalid check status plus missing historical PR-lifecycle owner-run references; deciding the lawful correction mechanism for immutable provenance is governance-owned and must not be guessed by triage.",
+      "L2: any QST-SIM-0002 policy comparison, irregular-rotation/shadow-model choice, or interpretation of swarm advantage remains outside fast-governance authority.",
+      "L3: no protected scientific assumption, external/public action, strategic choice, or human-only authority was exercised."
+    ],
+    "state_hash_limitation": "The connector exposes repository objects but not the transaction-layer snapshot helper; this receipt preserves the canonical empty-state hash convention used by prior connector-authored triage receipts."
+  },
+  "pr_context": {
+    "open_pull_requests_at_initial_check": 1,
+    "open_pull_requests_at_recheck": 1,
+    "mechanically_synchronized_pr": null,
+    "implementation_pr_created_by_triage": false,
+    "blocking_pull_request": 47,
+    "blocking_head": "f53ab7422bfb05a0bec08bf2a1a2cae4597b8879"
+  },
+  "consumed_ids": [
+    "DELEG-20260807-HUMAN-FAST-TRIAGE-V1",
+    "AUTH-20260812T162018000000Z-sim-stale-coverage-5c8e2a91d7b4063f1a20",
+    "RUN-20260812T162018000000Z-daily-governance-triage-4d7a91c2e5b8063f1a20",
+    "RUN-20260812T195600000000Z-daily-research-operator-6b2d8f1a4c905e73d211"
+  ],
+  "artifacts": [],
+  "checks": [
+    {
+      "name": "GitHub connector preflight",
+      "status": "passed",
+      "evidence": "Live GitHub repository and accepted-main reads succeeded before any publication."
+    },
+    {
+      "name": "accepted-main freeze",
+      "status": "passed",
+      "evidence": "Accepted main was frozen at d447648bb7eb69fb276e1e4817c65225f0cdc5c7 before this triage publication."
+    },
+    {
+      "name": "delegation review",
+      "status": "passed",
+      "evidence": "DELEG-20260807-HUMAN-FAST-TRIAGE-V1 remains valid through 2026-09-01 and includes QST-SIM-0002 refine_existing authority."
+    },
+    {
+      "name": "authorization validity",
+      "status": "failed",
+      "evidence": "AUTH-20260812T162018000000Z-sim-stale-coverage-5c8e2a91d7b4063f1a20 expired at 2026-08-13T16:20:18Z and therefore cannot authorize further Daily mutation."
+    },
+    {
+      "name": "PR #47 review and ownership",
+      "status": "failed",
+      "evidence": "PR #47 is still the sole open implementation owner and has an unresolved P2 review finding requiring NaN time inputs to fail closed."
+    },
+    {
+      "name": "receipt-bearing semantic validation",
+      "status": "failed",
+      "evidence": "GitHub Actions run 31635066434 failed at python -m automation.cli validate-repository. The validator reports an invalid receipt check status and missing historical PR-lifecycle owner-run references; full pytest was consequently skipped in that transaction workflow."
+    },
+    {
+      "name": "repository-hosted tests",
+      "status": "passed",
+      "evidence": "On PR #47 receipt-bearing head f53ab7422bfb05a0bec08bf2a1a2cae4597b8879, the separate tests workflow and baseline-artifacts workflow completed successfully; automation-transaction remains failed and therefore blocks terminal merge."
+    }
+  ],
+  "belief_effects": [
+    "No consolidated belief, quest priority, queue membership, canonical memory, protected scientific assumption, policy preference, or external claim changed.",
+    "No replacement authorization was issued while the existing implementation owner has unresolved review feedback and a failed mandatory evaluator."
+  ],
+  "limitations": [
+    "Triage may not edit scientific implementation code or tests to repair the NaN defect.",
+    "Triage may not rewrite the immutable Daily receipt to change its invalid pending_receipt_head status.",
+    "The lawful correction path for historical missing owner-run provenance is not mechanically unambiguous and is therefore not synchronized here."
+  ],
+  "terminal_state": "NEEDS_GOVERNANCE_REVIEW",
+  "next_action": "Monthly Governance should determine the append-only correction mechanism for the invalid immutable receipt and missing historical PR-lifecycle owner-run provenance. After that mechanism makes repository semantic validation capable of passing without rewriting history, Pre-Game may issue a fresh bounded repair authorization for the existing PR #47 owner to reject NaN time inputs, add focused tests, resolve the review thread, publish one new receipt, and rerun all mandatory checks before merge.",
+  "created_at": "2026-08-13T16:51:11Z"
+}
