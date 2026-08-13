@@ -84,6 +84,39 @@ def test_geo_ring_has_eclipse_and_sunlight():
     assert world.is_sunlit(0.0, 0.0)
 
 
+def test_stale_coverage_fraction_tracks_time_window_without_policy_choice():
+    world = AsteroidWorld(rotation_rate=0.0, coverage_bin_count=4)
+    observations = [(0, 80.0), (1, 40.0), (1, 95.0)]
+
+    # At t=100 with a 20-second window, bins 0 and 1 are fresh while the
+    # two never-observed bins are stale. The latest observation wins.
+    assert world.stale_coverage_fraction(observations, t=100.0, stale_after_s=20.0) == pytest.approx(0.5)
+
+    # Advancing time makes both previously fresh bins stale deterministically.
+    assert world.stale_coverage_fraction(observations, t=121.0, stale_after_s=20.0) == pytest.approx(1.0)
+
+
+def test_stale_coverage_fraction_rejects_invalid_observations():
+    world = AsteroidWorld(rotation_rate=0.0, coverage_bin_count=4)
+    with pytest.raises(ValueError, match="stale_after_s must be non-negative"):
+        world.stale_coverage_fraction([], t=10.0, stale_after_s=-1.0)
+    with pytest.raises(ValueError, match="outside coverage bins"):
+        world.stale_coverage_fraction([(4, 0.0)], t=10.0, stale_after_s=10.0)
+    with pytest.raises(ValueError, match="future"):
+        world.stale_coverage_fraction([(0, 11.0)], t=10.0, stale_after_s=10.0)
+
+
+@pytest.mark.parametrize("bad_time", [math.nan, math.inf, -math.inf])
+def test_stale_coverage_fraction_rejects_nonfinite_time_inputs(bad_time):
+    world = AsteroidWorld(rotation_rate=0.0, coverage_bin_count=4)
+    with pytest.raises(ValueError, match="t must be finite"):
+        world.stale_coverage_fraction([], t=bad_time, stale_after_s=10.0)
+    with pytest.raises(ValueError, match="stale_after_s must be finite"):
+        world.stale_coverage_fraction([], t=10.0, stale_after_s=bad_time)
+    with pytest.raises(ValueError, match="observation time must be finite"):
+        world.stale_coverage_fraction([(0, bad_time)], t=10.0, stale_after_s=10.0)
+
+
 def test_arci_keeps_score_and_confidence_separate():
     dimensions = {
         name: ArciDimension(score=0.8, confidence=0.5, rationale="synthetic")
