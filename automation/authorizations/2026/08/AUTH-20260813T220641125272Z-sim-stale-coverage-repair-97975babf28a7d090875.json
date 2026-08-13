@@ -1,0 +1,41 @@
+{
+  "schema": "sns.governance-authorization.v1",
+  "authorization_id": "AUTH-20260813T220641125272Z-sim-stale-coverage-repair-97975babf28a7d090875",
+  "issued_by_loop": "daily-governance-triage",
+  "action_type": "refine_existing",
+  "quest_id": "QST-SIM-0002",
+  "recorded_at": "2026-08-13T22:06:41Z",
+  "authorization": {
+    "delegation_id": "DELEG-20260807-HUMAN-FAST-TRIAGE-V1",
+    "authorized_loop": "daily-research-operator",
+    "acceptance_slice": "Continue the existing QST-SIM-0002 PR #47 acceptance slice: repair the deterministic stale-coverage time-window metric so t, stale_after_s, and observation timestamps reject non-finite values; add focused synthetic tests; correct the still-unmerged candidate receipt under the explicit pre-canonical correction disposition; publish one linked correction receipt; synchronize PR #47 lifecycle state; and rerun all mandatory checks. Do not create a new quest or implementation PR, compare survey policies, add irregular-rotation/shadow physics, change governance contracts/schemas, or make scientific claims.",
+    "source_commit": "4bea30081231450eff08e229325c29057c72309a",
+    "expires_at": "2026-08-14T22:06:41Z",
+    "allowed_write_surfaces": [
+      "src/**",
+      "tests/**",
+      "outputs/**"
+    ],
+    "budgets": {
+      "implementation_prs": 1,
+      "run_receipts": 1,
+      "scientific_claim_changes": 0,
+      "quest_state_changes": 0,
+      "policy_comparisons": 0
+    },
+    "max_pull_requests": 1,
+    "max_run_receipts": 1,
+    "mandatory_checks": [
+      "python -m pytest -q tests/test_automation_*.py",
+      "python -m automation.cli validate-repository"
+    ],
+    "stop_conditions": [
+      "Stop if PR #47 is no longer the sole implementation owner of QST-SIM-0002's acceptance slice.",
+      "Stop if the correction requires changing automation contracts, schemas, delegation law, state ownership, CI/security policy, quest state, canonical memory, or consolidated beliefs.",
+      "Stop if policy comparison, irregular-rotation/shadow physics, a new environmental assumption, external evidence, or a scientific interpretation is required.",
+      "Stop if the candidate receipt cannot be normalized as a truthful pre-canonical VERIFICATION_FAILED record without rewriting accepted main history.",
+      "Do not create a new quest, branch, or implementation PR; continue the existing PR #47 branch only."
+    ],
+    "next_action": "Continue branch automation/qst-sim-0002-stale-coverage-window for PR #47. First normalize the unmerged candidate receipt RUN-20260812T195600000000Z-daily-research-operator-6b2d8f1a4c905e73d211 to a valid VERIFICATION_FAILED record with the observed validator failure. Then add finite-value validation and focused NaN tests, publish exactly one new receipt linked with correction_of to that candidate, create the current PR #47 lifecycle record, rerun mandatory and full hosted checks, resolve the NaN review thread, and merge only after every gate is green."
+  }
+}
