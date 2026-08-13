@@ -60,6 +60,10 @@ class AsteroidWorld:
         The metric is policy-agnostic: callers provide only region/time
         observations, so this method does not choose or compare survey policy.
         """
+        if not math.isfinite(t):
+            raise ValueError("t must be finite")
+        if not math.isfinite(stale_after_s):
+            raise ValueError("stale_after_s must be finite")
         if stale_after_s < 0.0:
             raise ValueError("stale_after_s must be non-negative")
 
@@ -67,6 +71,8 @@ class AsteroidWorld:
         for region_id, observed_at_s in observations:
             if not 0 <= region_id < self.coverage_bin_count:
                 raise ValueError("observation region_id is outside coverage bins")
+            if not math.isfinite(observed_at_s):
+                raise ValueError("observation time must be finite")
             if observed_at_s > t:
                 raise ValueError("observation time cannot be in the future")
             latest_observation_s[region_id] = max(

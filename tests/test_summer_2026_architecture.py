@@ -106,6 +106,17 @@ def test_stale_coverage_fraction_rejects_invalid_observations():
         world.stale_coverage_fraction([(0, 11.0)], t=10.0, stale_after_s=10.0)
 
 
+@pytest.mark.parametrize("bad_time", [math.nan, math.inf, -math.inf])
+def test_stale_coverage_fraction_rejects_nonfinite_time_inputs(bad_time):
+    world = AsteroidWorld(rotation_rate=0.0, coverage_bin_count=4)
+    with pytest.raises(ValueError, match="t must be finite"):
+        world.stale_coverage_fraction([], t=bad_time, stale_after_s=10.0)
+    with pytest.raises(ValueError, match="stale_after_s must be finite"):
+        world.stale_coverage_fraction([], t=10.0, stale_after_s=bad_time)
+    with pytest.raises(ValueError, match="observation time must be finite"):
+        world.stale_coverage_fraction([(0, bad_time)], t=10.0, stale_after_s=10.0)
+
+
 def test_arci_keeps_score_and_confidence_separate():
     dimensions = {
         name: ArciDimension(score=0.8, confidence=0.5, rationale="synthetic")
