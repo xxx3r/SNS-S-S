@@ -1,0 +1,101 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260813T220901285600Z-daily-research-operator-789bc1cd6d7140f01a9b",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.1.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-08-13T22:09:01Z",
+  "source_commit": "4d79135192203f5d5a20da0b81aaee7e8ba6aaa3",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "quest_id": "QST-SIM-0002",
+    "acceptance_slice": "Continue the existing PR #47 deterministic stale-coverage time-window metric without selecting or comparing survey policies.",
+    "authorization_id": "AUTH-20260813T220641125272Z-sim-stale-coverage-repair-97975babf28a7d090875",
+    "correction_disposition_run_id": "RUN-20260813T220641125272Z-daily-governance-triage-024a58a73d5de348685b",
+    "correction_of_candidate": "RUN-20260812T195600000000Z-daily-research-operator-6b2d8f1a4c905e73d211",
+    "measurement_only": true
+  },
+  "pr_context": {
+    "pull_request": 47,
+    "branch": "automation/qst-sim-0002-stale-coverage-window",
+    "implementation_head_before_receipt": "8b06de7574f8a75cfbff906e2824e29eafdf56d9",
+    "source_main_commit": "4d79135192203f5d5a20da0b81aaee7e8ba6aaa3",
+    "review_thread_resolved": true,
+    "lifecycle_record_path": "automation/pr_lifecycle/47.json"
+  },
+  "consumed_ids": [
+    "DELEG-20260807-HUMAN-FAST-TRIAGE-V1",
+    "AUTH-20260813T220641125272Z-sim-stale-coverage-repair-97975babf28a7d090875",
+    "RUN-20260813T220641125272Z-daily-governance-triage-024a58a73d5de348685b",
+    "RUN-20260812T195600000000Z-daily-research-operator-6b2d8f1a4c905e73d211"
+  ],
+  "artifacts": [
+    {
+      "path": "src/world/asteroid_world.py",
+      "kind": "finite-time-validation-repair"
+    },
+    {
+      "path": "tests/test_summer_2026_architecture.py",
+      "kind": "focused-nonfinite-time-tests"
+    },
+    {
+      "path": "automation/pr_lifecycle/47.json",
+      "kind": "current-pr-lifecycle-record"
+    }
+  ],
+  "checks": [
+    {
+      "name": "GitHub connector preflight",
+      "status": "passed",
+      "evidence": "Existing PR #47 branch, current main, fresh authorization, and review state were read through the connected GitHub tool before publication."
+    },
+    {
+      "name": "fresh authorization validation",
+      "status": "passed",
+      "evidence": "AUTH-20260813T220641125272Z-sim-stale-coverage-repair-97975babf28a7d090875 is bound to QST-SIM-0002, current accepted main 4d79135192203f5d5a20da0b81aaee7e8ba6aaa3 at repair execution, the existing PR #47 owner, one implementation PR, and one correction receipt."
+    },
+    {
+      "name": "candidate receipt correction",
+      "status": "passed",
+      "evidence": "Candidate RUN-20260812T195600000000Z-daily-research-operator-6b2d8f1a4c905e73d211 is now a valid pre-canonical VERIFICATION_FAILED record with correction disposition RUN-20260813T220641125272Z-daily-governance-triage-024a58a73d5de348685b; this receipt links to it through correction_of."
+    },
+    {
+      "name": "automation tests",
+      "status": "passed",
+      "evidence": "GitHub Actions automation-transaction run 31748819605 passed python -m pytest -q tests/test_automation_*.py."
+    },
+    {
+      "name": "repository semantic validation",
+      "status": "passed",
+      "evidence": "GitHub Actions automation-transaction run 31748819605 passed python -m automation.cli validate-repository; full pytest then passed in the same transaction job."
+    },
+    {
+      "name": "full pytest",
+      "status": "passed",
+      "evidence": "GitHub Actions tests run 31748819618 passed python -m pytest -q."
+    },
+    {
+      "name": "baseline artifacts",
+      "status": "passed",
+      "evidence": "GitHub Actions baseline-artifacts run 31748819643 completed successfully."
+    },
+    {
+      "name": "NaN review thread",
+      "status": "passed",
+      "evidence": "The sole unresolved PR #47 review thread was resolved after the finite-value repair and green hosted checks."
+    }
+  ],
+  "belief_effects": [
+    "No consolidated belief, quest priority, queue membership, canonical memory, protected scientific assumption, policy preference, or external claim changed.",
+    "The implementation remains a policy-agnostic measurement primitive; this repair only rejects non-finite simulation time inputs."
+  ],
+  "limitations": [
+    "The stale-coverage metric still does not choose or compare survey policies.",
+    "No irregular rotation, shadow physics, new environmental assumption, external claim, or quest-state mutation was introduced.",
+    "The linked receipt and lifecycle record are on the unmerged branch; merge remains gated on their receipt-bearing checks and final lifecycle synchronization."
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "After the receipt-bearing correction commit and final PR lifecycle state are green, merge PR #47 with expected head verification; then return to Pre-Game Governance Triage before any further QST-SIM-0002 slice.",
+  "created_at": "2026-08-13T22:09:01Z",
+  "correction_of": "RUN-20260812T195600000000Z-daily-research-operator-6b2d8f1a4c905e73d211"
+}
