@@ -1,0 +1,33 @@
+{
+  "schema": "sns.qst-sim-0002.two-rotation-regime-stale-coverage.v1",
+  "quest_id": "QST-SIM-0002",
+  "measurement_only": true,
+  "coverage_bin_count": 4,
+  "stale_after_s": 20.0,
+  "synthetic_observation_schedule": [
+    {"region_id": 0, "observed_at_s": 80.0},
+    {"region_id": 1, "observed_at_s": 40.0},
+    {"region_id": 1, "observed_at_s": 95.0}
+  ],
+  "measurement_times_s": [100.0, 121.0],
+  "rotation_regimes": [
+    {
+      "name": "two_hour_constant_rotation",
+      "rotation_period_s": 7200.0,
+      "rotation_rate_rad_s": 0.0008726646259971648,
+      "stale_coverage_fraction": [0.5, 1.0]
+    },
+    {
+      "name": "twelve_hour_constant_rotation",
+      "rotation_period_s": 43200.0,
+      "rotation_rate_rad_s": 0.0001454441043328608,
+      "stale_coverage_fraction": [0.5, 1.0]
+    }
+  ],
+  "limitations": [
+    "Both regimes use the identical declared body-fixed observation schedule.",
+    "This measurement does not compare survey policies.",
+    "Constant rotation rate is the only varied world parameter; irregular rotation and shadow physics are excluded.",
+    "Equal stale-coverage traces are recorded without architectural or policy interpretation."
+  ]
+}

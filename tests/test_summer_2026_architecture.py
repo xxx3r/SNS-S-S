@@ -117,6 +117,35 @@ def test_stale_coverage_fraction_rejects_nonfinite_time_inputs(bad_time):
         world.stale_coverage_fraction([(0, bad_time)], t=10.0, stale_after_s=10.0)
 
 
+def test_two_rotation_regime_stale_coverage_measurement_is_reproducible():
+    artifact = json.loads(
+        Path("outputs/qst_sim_0002/two_rotation_regime_stale_coverage.json").read_text()
+    )
+    schedule = [
+        (entry["region_id"], entry["observed_at_s"])
+        for entry in artifact["synthetic_observation_schedule"]
+    ]
+
+    assert artifact["measurement_only"] is True
+    assert len(artifact["rotation_regimes"]) == 2
+    assert len({regime["rotation_rate_rad_s"] for regime in artifact["rotation_regimes"]}) == 2
+
+    for regime in artifact["rotation_regimes"]:
+        world = AsteroidWorld(
+            rotation_rate=regime["rotation_rate_rad_s"],
+            coverage_bin_count=artifact["coverage_bin_count"],
+        )
+        reproduced = [
+            world.stale_coverage_fraction(
+                schedule,
+                t=measurement_time_s,
+                stale_after_s=artifact["stale_after_s"],
+            )
+            for measurement_time_s in artifact["measurement_times_s"]
+        ]
+        assert reproduced == pytest.approx(regime["stale_coverage_fraction"])
+
+
 def test_arci_keeps_score_and_confidence_separate():
     dimensions = {
         name: ArciDimension(score=0.8, confidence=0.5, rationale="synthetic")
