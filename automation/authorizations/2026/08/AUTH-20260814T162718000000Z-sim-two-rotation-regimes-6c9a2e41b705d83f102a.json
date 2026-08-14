@@ -1,0 +1,39 @@
+{
+  "schema": "sns.governance-authorization.v1",
+  "authorization_id": "AUTH-20260814T162718000000Z-sim-two-rotation-regimes-6c9a2e41b705d83f102a",
+  "issued_by_loop": "daily-governance-triage",
+  "action_type": "refine_existing",
+  "quest_id": "QST-SIM-0002",
+  "recorded_at": "2026-08-14T16:27:18Z",
+  "authorization": {
+    "delegation_id": "DELEG-20260807-HUMAN-FAST-TRIAGE-V1",
+    "authorized_loop": "daily-research-operator",
+    "acceptance_slice": "Exercise the accepted AsteroidWorld coverage-over-time/stale-coverage measurement under exactly two declared constant rotation-rate regimes using a fixed synthetic observation schedule, producing deterministic measurement evidence and focused tests without selecting or comparing survey policies.",
+    "source_commit": "a7dbe59da96752f3b913333fe80a19e333fb823d",
+    "expires_at": "2026-08-15T16:27:18Z",
+    "allowed_write_surfaces": ["src/**", "tests/**", "outputs/**"],
+    "budgets": {
+      "implementation_prs": 1,
+      "run_receipts": 1,
+      "scientific_claim_changes": 0,
+      "quest_state_changes": 0,
+      "policy_comparisons": 0,
+      "rotation_regimes": 2
+    },
+    "max_pull_requests": 1,
+    "max_run_receipts": 1,
+    "mandatory_checks": [
+      "python -m pytest -q tests/test_automation_*.py",
+      "python -m automation.cli validate-repository"
+    ],
+    "stop_conditions": [
+      "Stop if the slice requires changing quest state, canonical memory, consolidated beliefs, contracts, schemas, delegation law, or CI/security policy.",
+      "Stop if implementation requires irregular/tumbling rotation, configurable shadow physics, terrain, seasonal geometry, or another new environmental assumption; this authorization is limited to two constant rotation rates already representable by AsteroidWorld.",
+      "Stop if choosing, comparing, or interpreting independent versus survey policies becomes necessary.",
+      "Stop if the fixed synthetic observation schedule cannot be stated explicitly and kept identical across both rotation regimes.",
+      "Stop if real mission evidence, external/public claims, or protected scientific interpretation is required.",
+      "Stop if another implementation PR or unconsumed authorization already owns this acceptance slice."
+    ],
+    "next_action": "Use the existing constant-rate AsteroidWorld and accepted stale-coverage primitive to create the smallest deterministic two-rotation-regime coverage-over-time measurement with an identical synthetic observation schedule, add focused tests and optional machine-readable output, open exactly one implementation PR, run mandatory checks, and stop before policy comparison, irregular rotation, or scientific interpretation."
+  }
+}
