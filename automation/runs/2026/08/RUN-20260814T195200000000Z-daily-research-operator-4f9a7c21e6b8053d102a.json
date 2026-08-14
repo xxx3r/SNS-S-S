@@ -1,0 +1,82 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260814T195200000000Z-daily-research-operator-4f9a7c21e6b8053d102a",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.1.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-14T19:47:37Z",
+  "source_commit": "856665458c4bdcf60da72456383e12d3ffd70b2c",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "quest_id": "QST-SIM-0002",
+    "acceptance_slice": "Exercise the accepted stale-coverage measurement under exactly two constant rotation rates using one identical synthetic observation schedule, without selecting or comparing survey policies.",
+    "authorization_id": "AUTH-20260814T162718000000Z-sim-two-rotation-regimes-6c9a2e41b7053f102a",
+    "measurement_only": true
+  },
+  "pr_context": {
+    "pull_request": 48,
+    "branch": "automation/qst-sim-0002-two-rotation-regimes",
+    "implementation_head_before_receipt": "ccbad359989866a9d2715151d6d45cb4f86e7623",
+    "source_main_commit": "856665458c4bdcf60da72456383e12d3ffd70b2c",
+    "lifecycle_record_path": "automation/pr_lifecycle/48.json",
+    "lifecycle_state": "blocked"
+  },
+  "consumed_ids": [
+    "DELEG-20260807-HUMAN-FAST-TRIAGE-V1",
+    "AUTH-20260814T162718000000Z-sim-two-rotation-regimes-6c9a2e41b705d83f102a",
+    "RUN-20260814T162718000000Z-daily-governance-triage-8d4a91c2e6b7053f102a"
+  ],
+  "artifacts": [
+    {
+      "path": "outputs/qst_sim_0002/two_rotation_regime_stale_coverage.json",
+      "kind": "deterministic two-constant-rotation-regime measurement"
+    },
+    {
+      "path": "tests/test_summer_2026_architecture.py",
+      "kind": "focused measurement reproduction test"
+    },
+    {
+      "path": "automation/pr_lifecycle/48.json",
+      "kind": "blocked PR lifecycle record"
+    }
+  ],
+  "checks": [
+    {
+      "name": "GitHub connector preflight",
+      "status": "passed",
+      "evidence": "Repository authority, AGENTS.md, Daily v1.1.0, current main, Issue #38, delegation, authorization, active quest, open PR ownership, recent loop lineage, and relevant implementation files were read through the connected GitHub provider."
+    },
+    {
+      "name": "authorization validation",
+      "status": "passed",
+      "evidence": "AUTH-20260814T162718000000Z-sim-two-rotation-regimes-6c9a2e41b7053f102a is unexpired through 2026-08-15T16:27:18Z, bound to active QST-SIM-0002 and accepted source lineage, permits outputs/** and tests/**, and uniquely owns PR #48."
+    },
+    {
+      "name": "implementation and focused reproduction",
+      "status": "passed",
+      "evidence": "GitHub Actions tests run 31835156988 passed the full pytest suite including the focused test that reconstructs both AsteroidWorld regimes and reproduces the stored stale-coverage traces."
+    },
+    {
+      "name": "automation tests",
+      "status": "passed",
+      "evidence": "GitHub Actions automation-transaction run 31835156966 passed python -m pytest -q tests/test_automation_*.py: 36 passed."
+    },
+    {
+      "name": "baseline artifacts",
+      "status": "passed",
+      "evidence": "GitHub Actions baseline-artifacts run 31835157032 completed successfully."
+    },
+    {
+      "name": "repository semantic validation",
+      "status": "failed",
+      "evidence": "GitHub Actions automation-transaction run 31835156966 failed python -m automation.cli validate-repository because accepted Pre-Game receipt RUN-20260814T162718000000Z-daily-governance-triage-8d4a91c2e6b7053f102a lacks schema-required pr_context. Receipt loading then returned zero receipts and lifecycle-owner checks cascaded, including PR #48. This governance receipt defect is outside the authorized SIM write surfaces."
+    }
+  ],
+  "belief_effects": [
+    "No consolidated belief, quest priority, queue membership, canonical memory, policy preference, scientific claim, protected assumption, or external claim changed.",
+    "The artifact records equal stale-coverage traces under the identical body-fixed observation schedule without interpreting that equality as a policy or architecture result."
+  ],
+  "terminal_state": "VERIFICATION_FAILED",
+  "next_action": "Governance must publish an append-only correction for the malformed August 14 Pre-Game receipt or otherwise restore truthful receipt loading; then revalidate the existing PR #48 owner without creating a duplicate branch or widening into policy comparison.",
+  "created_at": "2026-08-14T19:52:00Z"
+}
