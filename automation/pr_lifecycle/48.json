@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 48,
+  "quest_id": "QST-SIM-0002",
+  "acceptance_slice": "Exercise the accepted stale-coverage measurement under exactly two constant rotation rates using one identical synthetic observation schedule, without selecting or comparing survey policies.",
+  "state": "ready_for_review",
+  "owner_run_id": "RUN-20260814T195200000000Z-daily-research-operator-4f9a7c21e6b8053d102a",
+  "source_commit": "856665458c4bdcf60da72456383e12d3ffd70b2c",
+  "head_commit": "ef6143e30b38700e0887e11be4eab6c5de401c8c",
+  "updated_at": "2026-08-14T19:52:00Z",
+  "next_review_after": "2026-08-14T20:22:00Z",
+  "supersedes": [],
+  "reason": "PR #48 is the sole implementation owner for the bounded two-constant-rotation-regime measurement authorized by AUTH-20260814T162718000000Z-sim-two-rotation-regimes-6c9a2e41b705d83f102a. Implementation-head tests and baseline-artifacts passed; receipt publication and semantic validation remain."
+}
