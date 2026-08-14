@@ -1,0 +1,76 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260814T162718000000Z-daily-governance-triage-8d4a91c2e6b7053f102a",
+  "loop_id": "daily-governance-triage",
+  "contract_version": "1.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-14T16:27:18Z",
+  "source_commit": "a7dbe59da96752f3b913333fe80a19e333fb823d",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "quest_id": "QST-SIM-0002",
+    "acceptance_slice": "Authorize exactly two constant rotation-rate regimes for the accepted coverage-over-time/stale-coverage measurement using one identical synthetic observation schedule.",
+    "decision_ladder": {
+      "L0": "Local implementation details and fixture shape remain Daily-owned.",
+      "L1": "Two deterministic constant-rate regimes using the already accepted AsteroidWorld and stale-coverage primitive are a bounded reversible refinement and are authorized.",
+      "L2": "Irregular/tumbling rotation or configurable shadow physics; independent-versus-survey policy comparison or interpretation; stale canonical memory; and any quest/belief/priority change remain Monthly-owned.",
+      "L3": "No protected assumption, external/public action, or reserved strategic decision was required."
+    }
+  },
+  "consumed_ids": [
+    "DELEG-20260807-HUMAN-FAST-TRIAGE-V1",
+    "RUN-20260813T220901285600Z-daily-research-operator-789bc1cd6d7140f01a9b",
+    "AUTH-20260814T162718000000Z-sim-two-rotation-regimes-6c9a2e41b705d83f102a"
+  ],
+  "artifacts": [
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260814T162718000000Z-sim-two-rotation-regimes-6c9a2e41b705d83f102a.json",
+      "kind": "bounded research authorization"
+    }
+  ],
+  "checks": [
+    {
+      "name": "GitHub connector preflight",
+      "status": "passed",
+      "evidence": "Repository authority, AGENTS.md, triage contract, current main, delegation, open PR ownership, Issue #38, recent triage/daily lineage, active QST-SIM-0002, and current AsteroidWorld were read through the connected GitHub provider."
+    },
+    {
+      "name": "current main freeze",
+      "status": "passed",
+      "evidence": "Accepted main was frozen at a7dbe59da96752f3b913333fe80a19e333fb823d before authorization publication."
+    },
+    {
+      "name": "delegation validation",
+      "status": "passed",
+      "evidence": "DELEG-20260807-HUMAN-FAST-TRIAGE-V1 remains valid through 2026-09-01T14:00:00Z, includes QST-SIM-0002 refine_existing work, and permits src/**, experiments/**, configs/**, tests/**, outputs/** while protecting governance and memory surfaces."
+    },
+    {
+      "name": "prior PR #47 terminal state",
+      "status": "passed",
+      "evidence": "PR #47 was merged after its finite-time correction and green evaluator gates; main now contains a terminal merged lifecycle record, so no current implementation owner remains."
+    },
+    {
+      "name": "authorization uniqueness and ownership recheck",
+      "status": "passed",
+      "evidence": "No open PR existed at publication recheck and no existing authorization matched AUTH-20260814T162718000000Z-sim-two-rotation-regimes-6c9a2e41b705d83f102a before creation."
+    },
+    {
+      "name": "Issue #38 guard",
+      "status": "passed",
+      "evidence": "Issue #38 remains open; completed PR #35-#37 STOR slices were not repeated or reopened."
+    }
+  ],
+  "belief_effects": [
+    "No scientific belief, quest priority, queue membership, canonical memory, policy preference, external claim, or protected assumption changed.",
+    "This authorization only permits measurement under two constant rotation rates already representable by the accepted AsteroidWorld model."
+  ],
+  "limitations": [
+    "The authorization does not permit irregular/tumbling rotation or configurable shadow physics, so it does not complete that remaining QST-SIM-0002 method item.",
+    "It does not authorize independent-versus-survey policy comparison or scientific interpretation of which policy is superior.",
+    "The canonical short-memory STOR pointer remains stale and Monthly-owned.",
+    "No Google Drive read was needed because the bounded decision depended only on repository-canonical state."
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Daily Research Operator may consume AUTH-20260814T162718000000Z-sim-two-rotation-regimes-6c9a2e41b705d83f102a to produce deterministic two-regime coverage-over-time measurement evidence with one identical synthetic observation schedule, focused tests, at most one implementation PR and one receipt, then stop before irregular rotation, policy comparison, or interpretation.",
+  "created_at": "2026-08-14T16:27:18Z"
+}
