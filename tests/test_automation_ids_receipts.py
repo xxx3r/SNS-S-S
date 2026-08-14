@@ -100,3 +100,21 @@ def test_generated_log_is_derived_not_shared_mutable_history() -> None:
     text = generate_long_log([receipt(second_id, "weekly-evidence-synthesis"), receipt(first_id)])
     assert "Do not edit by hand" in text
     assert first_id in text and second_id in text
+
+def test_receipt_store_accepts_append_only_correction_for_invalid_historical_record(tmp_path: Path) -> None:
+    original_id = new_run_id("daily-governance-triage", now=NOW, token_factory=lambda _: "8" * 20)
+    correction_id = new_run_id("daily-governance-triage", now=NOW, token_factory=lambda _: "9" * 20)
+    original = receipt(original_id)
+    del original["pr_context"]
+    original_path = tmp_path / "2026/07" / f"{original_id}.json"
+    original_path.parent.mkdir(parents=True)
+    original_path.write_text(json.dumps(original), encoding="utf-8")
+
+    correction = receipt(correction_id, "daily-governance-triage")
+    correction["correction_of"] = original_id
+    ReceiptStore(tmp_path).write(correction)
+
+    loaded = ReceiptStore(tmp_path).load_all()
+
+    assert [item["run_id"] for item in loaded] == [correction_id]
+    assert json.loads(original_path.read_text(encoding="utf-8")) == original

@@ -150,19 +150,51 @@ class ReceiptStore:
     def load_all(self) -> list[dict[str, object]]:
         receipts: list[dict[str, object]] = []
         seen: set[str] = set()
+        invalid: dict[str, Exception] = {}
+
         for path in sorted(self.root.glob("**/*.json")):
             receipt = json.loads(path.read_text(encoding="utf-8"))
-            # Accepted history remains valid after a contract version is retired.
-            validate_run_receipt(receipt, contracts=self.contracts, allow_retired_contract=True)
-            run_id = str(receipt["run_id"])
+            run_id = str(receipt.get("run_id", "<unknown>"))
+            try:
+                # Accepted history remains valid after a contract version is retired.
+                validate_run_receipt(receipt, contracts=self.contracts, allow_retired_contract=True)
+            except Exception as exc:
+                # A malformed historical receipt may remain immutable when a valid
+                # append-only correction names it. Keep the original file untouched
+                # and let the correction become the validated read model.
+                invalid[run_id] = exc
+                continue
             if run_id in seen:
                 raise ValueError(f"duplicate run_id across receipt files: {run_id}")
             seen.add(run_id)
             receipts.append(receipt)
+
+        correction_targets: dict[str, list[str]] = {}
+        for receipt in receipts:
+            correction_of = receipt.get("correction_of")
+            if correction_of:
+                correction_targets.setdefault(str(correction_of), []).append(str(receipt["run_id"]))
+
+        unresolved = {
+            run_id: error
+            for run_id, error in invalid.items()
+            if run_id not in correction_targets
+        }
+        if unresolved:
+            raise next(iter(unresolved.values()))
+
+        ambiguous = {
+            original_id: correction_ids
+            for original_id, correction_ids in correction_targets.items()
+            if original_id in invalid and len(correction_ids) != 1
+        }
+        if ambiguous:
+            raise ValueError(f"multiple corrections for invalid receipt: {ambiguous}")
+
         receipt_ids = {str(receipt["run_id"]) for receipt in receipts}
         for receipt in receipts:
             correction_of = receipt.get("correction_of")
-            if correction_of and correction_of not in receipt_ids:
+            if correction_of and correction_of not in receipt_ids and correction_of not in invalid:
                 raise ValueError(f"correction cites missing receipt: {correction_of}")
         return receipts
 

@@ -1,0 +1,97 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260814T203500000000Z-daily-governance-triage-5c8e2a91d7b4063f1a20",
+  "loop_id": "daily-governance-triage",
+  "contract_version": "1.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-08-14T20:35:00Z",
+  "source_commit": "856665458c4bdcf60da72456383e12d3ffd70b2c",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "quest_id": "QST-SIM-0002",
+    "acceptance_slice": "Restore truthful receipt loading for the accepted August 14 Pre-Game governance record so the existing PR #48 measurement can be revalidated in place.",
+    "human_intervention": "Explicit human intervention on 2026-08-14 approved an append-only governance correction and correction-aware validation support. No new quest, branch, implementation PR, authorization, repeated measurement, policy comparison, or scientific-claim change is permitted.",
+    "correction_disposition": {
+      "kind": "APPEND_ONLY_CANONICAL_RECEIPT_CORRECTION",
+      "correction_of": "RUN-20260814T162718000000Z-daily-governance-triage-8d4a91c2e6b7053f102a",
+      "actual_validator_failure": "The accepted Pre-Game receipt omitted schema-required pr_context. ReceiptStore.load_all rejected it, returned zero receipts, and lifecycle-owner errors cascaded.",
+      "preservation_rule": "The malformed original remains immutable. This valid receipt is the linked correction and is the validated read model for downstream semantic checks.",
+      "forbidden_shortcut": "Do not rewrite or delete the original record, create a duplicate PR, or repeat the two-rotation measurement."
+    }
+  },
+  "pr_context": {
+    "pull_request": 48,
+    "branch": "automation/qst-sim-0002-two-rotation-regimes",
+    "implementation_head": "0aa5162be65788e5dc24165471a476a42ab8499d",
+    "source_main_commit": "856665458c4bdcf60da72456383e12d3ffd70b2c",
+    "existing_owner_preserved": true,
+    "lifecycle_record_path": "automation/pr_lifecycle/48.json",
+    "revalidation_target": "existing PR #48"
+  },
+  "consumed_ids": [
+    "RUN-20260814T162718000000Z-daily-governance-triage-8d4a91c2e6b7053f102a",
+    "RUN-20260814T195200000000Z-daily-research-operator-4f9a7c21e6b8053d102a"
+  ],
+  "artifacts": [
+    {
+      "path": "automation/runs/2026/08/RUN-20260814T162718000000Z-daily-governance-triage-8d4a91c2e6b7053f102a.json",
+      "kind": "immutable malformed source receipt preserved for correction linkage"
+    },
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260814T162718000000Z-sim-two-rotation-regimes-6c9a2e41b705d83f102a.json",
+      "kind": "existing bounded authorization; not reissued or reconsumed"
+    },
+    {
+      "path": "automation/schemas/loop-run.schema.json",
+      "kind": "canonical receipt schema"
+    },
+    {
+      "path": "automation/receipts.py",
+      "kind": "append-only correction-aware receipt loading"
+    },
+    {
+      "path": "tests/test_automation_ids_receipts.py",
+      "kind": "focused immutable-correction regression"
+    }
+  ],
+  "checks": [
+    {
+      "name": "GitHub connector preflight",
+      "status": "passed",
+      "evidence": "Current main, the accepted Pre-Game receipt, PR #48, its lifecycle record, the Daily receipt, schema, contracts, and live workflow failure were read before mutation."
+    },
+    {
+      "name": "Google Drive relevance check",
+      "status": "passed",
+      "evidence": "Connected Google Drive search for SNS-S-S returned no relevant artifact; GitHub remains canonical for this correction."
+    },
+    {
+      "name": "malformed Pre-Game receipt diagnosis",
+      "status": "failed",
+      "evidence": "The accepted receipt RUN-20260814T162718000000Z-daily-governance-triage-8d4a91c2e6b7053f102a omits required pr_context. The live automation-transaction run 31835320176 therefore reported run receipt missing fields: pr_context, followed by zero-receipt lifecycle-owner cascades."
+    },
+    {
+      "name": "append-only correction disposition",
+      "status": "passed",
+      "evidence": "The original receipt remains untouched; this new receipt links it through correction_of and records the exact validator failure, human intervention, preserved PR #48 owner, and no-repeat/no-new-PR boundaries."
+    },
+    {
+      "name": "correction-aware loader regression",
+      "status": "not_run",
+      "evidence": "Hosted validation is required after publication."
+    },
+    {
+      "name": "PR #48 revalidation",
+      "status": "not_run",
+      "evidence": "Deferred until the correction is present on main and the existing receipt-bearing head is rechecked."
+    }
+  ],
+  "belief_effects": [
+    "No scientific belief, quest priority, queue membership, canonical memory, policy preference, protected assumption, external claim, or measurement artifact changed.",
+    "This intervention changes only control-plane receipt provenance handling so immutable malformed history can be corrected without rewriting it."
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Revalidate the existing PR #48 receipt-bearing head against corrected accepted main; update only its current lifecycle record, merge only after automation tests, semantic validation, full pytest, baseline artifacts, review, and ownership gates are green.",
+  "created_at": "2026-08-14T20:35:00Z",
+  "correction_of": "RUN-20260814T162718000000Z-daily-governance-triage-8d4a91c2e6b7053f102a"
+}
