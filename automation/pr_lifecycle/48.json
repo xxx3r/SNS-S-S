@@ -3,12 +3,12 @@
   "pr_number": 48,
   "quest_id": "QST-SIM-0002",
   "acceptance_slice": "Exercise the accepted stale-coverage measurement under exactly two constant rotation rates using one identical synthetic observation schedule, without selecting or comparing survey policies.",
-  "state": "ready_for_review",
+  "state": "blocked",
   "owner_run_id": "RUN-20260814T195200000000Z-daily-research-operator-4f9a7c21e6b8053d102a",
   "source_commit": "856665458c4bdcf60da72456383e12d3ffd70b2c",
-  "head_commit": "ef6143e30b38700e0887e11be4eab6c5de401c8c",
-  "updated_at": "2026-08-14T19:52:00Z",
-  "next_review_after": "2026-08-14T20:22:00Z",
+  "head_commit": "95b7406b3b388a4a4d500f99f399f11691683414",
+  "updated_at": "2026-08-14T19:54:00Z",
+  "next_review_after": "2026-08-15T16:27:18Z",
   "supersedes": [],
-  "reason": "PR #48 is the sole implementation owner for the bounded two-constant-rotation-regime measurement authorized by AUTH-20260814T162718000000Z-sim-two-rotation-regimes-6c9a2e41b705d83f102a. Implementation-head tests and baseline-artifacts passed; receipt publication and semantic validation remain."
+  "reason": "PR #48 preserves the bounded two-regime measurement, but mandatory semantic validation failed in automation-transaction run 31835156966 because accepted Pre-Game receipt RUN-20260814T162718000000Z-daily-governance-triage-8d4a91c2e6b7053f102a lacks schema-required pr_context. Receipt loading therefore aborts and lifecycle-owner validation cascades. Repair is outside this SIM authorization and requires governance correction."
 }
