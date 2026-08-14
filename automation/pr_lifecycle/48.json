@@ -5,10 +5,10 @@
   "acceptance_slice": "Exercise the accepted stale-coverage measurement under exactly two constant rotation rates using one identical synthetic observation schedule, without selecting or comparing survey policies.",
   "state": "blocked",
   "owner_run_id": "RUN-20260814T195200000000Z-daily-research-operator-4f9a7c21e6b8053d102a",
-  "source_commit": "856665458c4bdcf60da72456383e12d3ffd70b2c",
-  "head_commit": "95b7406b3b388a4a4d500f99f399f11691683414",
-  "updated_at": "2026-08-14T19:54:00Z",
+  "source_commit": "a7795431390ae70c02589cc1094bb9a9678bb65d",
+  "head_commit": "0aa5162be65788e5dc24165471a476a42ab8499d",
+  "updated_at": "2026-08-14T20:39:00Z",
   "next_review_after": "2026-08-15T16:27:18Z",
   "supersedes": [],
-  "reason": "PR #48 preserves the bounded two-regime measurement, but mandatory semantic validation failed in automation-transaction run 31835156966 because accepted Pre-Game receipt RUN-20260814T162718000000Z-daily-governance-triage-8d4a91c2e6b7053f102a lacks schema-required pr_context. Receipt loading therefore aborts and lifecycle-owner validation cascades. Repair is outside this SIM authorization and requires governance correction."
+  "reason": "Human governance published append-only correction RUN-20260814T203500000000Z-daily-governance-triage-5c8e2a91d7b4063f1a20 for malformed accepted Pre-Game receipt RUN-20260814T162718000000Z-daily-governance-triage-8d4a91c2e6b7053f102a. PR #48 remains the sole owner and preserves the original two-regime measurement; revalidation is pending against corrected main. No new authorization, quest, branch, PR, repeated measurement, policy comparison, or scientific claim is permitted."
 }
