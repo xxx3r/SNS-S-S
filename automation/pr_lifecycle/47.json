@@ -3,12 +3,12 @@
   "pr_number": 47,
   "quest_id": "QST-SIM-0002",
   "acceptance_slice": "Add a deterministic stale-coverage time-window metric to the existing AsteroidWorld coverage model, with focused synthetic tests, without selecting or comparing survey policies.",
-  "state": "merge_ready",
+  "state": "merged",
   "owner_run_id": "RUN-20260813T220901285600Z-daily-research-operator-789bc1cd6d7140f01a9b",
   "source_commit": "4d79135192203f5d5a20da0b81aaee7e8ba6aaa3",
   "head_commit": "3a1c594c76083a773d05c6798dada56578727bdb",
-  "updated_at": "2026-08-13T22:12:35Z",
-  "next_review_after": "2026-08-13T22:12:35Z",
+  "updated_at": "2026-08-14T00:25:04Z",
+  "next_review_after": "2026-08-14T00:25:04Z",
   "supersedes": [],
-  "reason": "Continuation of the existing sole owner. Human-authorized pre-canonical receipt correction completed; non-finite time validation repaired; the linked correction receipt is present; automation tests, semantic validation, full pytest, baseline artifacts, and the sole review thread are green/resolved. PR #47 is merge_ready pending expected-head merge verification."
+  "reason": "Mechanical synchronization from live GitHub: PR #47 merged at merge commit ee3151ac5eb553b074d2312ce62c3e1e22c8aa2d after the human-authorized pre-canonical receipt correction, finite-time validation repair, linked correction receipt, green automation/full-test/baseline gates, and resolved review thread. This record does not reinterpret the scientific result or change quest state."
 }
