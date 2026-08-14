@@ -3,12 +3,12 @@
   "pr_number": 48,
   "quest_id": "QST-SIM-0002",
   "acceptance_slice": "Exercise the accepted stale-coverage measurement under exactly two constant rotation rates using one identical synthetic observation schedule, without selecting or comparing survey policies.",
-  "state": "blocked",
+  "state": "merge_ready",
   "owner_run_id": "RUN-20260814T195200000000Z-daily-research-operator-4f9a7c21e6b8053d102a",
   "source_commit": "a7795431390ae70c02589cc1094bb9a9678bb65d",
-  "head_commit": "0aa5162be65788e5dc24165471a476a42ab8499d",
-  "updated_at": "2026-08-14T20:39:00Z",
+  "head_commit": "1f6044e3b8fa92318552c219047da9e8adc9a6cd",
+  "updated_at": "2026-08-14T20:41:00Z",
   "next_review_after": "2026-08-15T16:27:18Z",
   "supersedes": [],
-  "reason": "Human governance published append-only correction RUN-20260814T203500000000Z-daily-governance-triage-5c8e2a91d7b4063f1a20 for malformed accepted Pre-Game receipt RUN-20260814T162718000000Z-daily-governance-triage-8d4a91c2e6b7053f102a. PR #48 remains the sole owner and preserves the original two-regime measurement; revalidation is pending against corrected main. No new authorization, quest, branch, PR, repeated measurement, policy comparison, or scientific claim is permitted."
+  "reason": "PR #48 is the sole owner of the bounded two-constant-rotation measurement. Human append-only correction RUN-20260814T203500000000Z-daily-governance-triage-5c8e2a91d7b4063f1a20 restores truthful receipt loading without rewriting the malformed Pre-Game receipt. Automation transaction 31838824096 passed 37 automation tests, semantic validation with 30 receipts and no errors, and full pytest 105; tests run 31838824191 passed; baseline artifacts run 31838824166 passed; the only review thread is resolved. No new authorization, quest, branch, PR, repeated measurement, policy comparison, or scientific claim was created."
 }
