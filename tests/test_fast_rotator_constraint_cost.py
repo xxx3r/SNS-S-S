@@ -46,14 +46,16 @@ def test_fast_rotator_constraint_cost_is_reproducible_and_bounded():
         for case in committed["thermal_screen"]["cases"]
     }
     assert thermal[0.1]["shadow_status"] == "PASS"
-    assert thermal[0.1]["dual_pass_count"] == 4
+    assert thermal[0.1]["dual_pass_count"] == 0
+    assert thermal[0.1]["illuminated_radiative_rejection_budget_at_reference_W"] == pytest.approx(0.011450590081828837)
     assert thermal[0.15]["shadow_status"] == "PASS"
-    assert thermal[0.15]["dual_pass_count"] == 5
+    assert thermal[0.15]["dual_pass_count"] == 0
+    assert thermal[0.15]["illuminated_radiative_rejection_budget_at_reference_W"] == pytest.approx(0.01717588512274325)
     assert thermal[0.2]["shadow_status"] == "FAIL"
     assert thermal[0.25]["shadow_status"] == "FAIL"
     assert committed["falsifier"] == {
-        "triggered": False,
-        "status": "CONDITIONAL_SCREENING_SURVIVOR",
+        "triggered": True,
+        "status": "FALSIFIED_ON_DECLARED_GRID",
         "rule": config["falsifier"],
     }
     assert "No surface or hosted architecture is selected or recommended." in committed[
