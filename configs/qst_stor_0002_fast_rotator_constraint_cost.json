@@ -1,0 +1,38 @@
+{
+  "geometry_config": "configs/thermal_geometry_ranges.json",
+  "geometry_case": "baseline_surface",
+  "rotation_limit_h": 0.5,
+  "target_availability_probability": [0.001, 0.01, 0.05, 0.1],
+  "discovery_confidence": 0.95,
+  "max_screened_targets": 100,
+  "effective_emissivity": [0.1, 0.15, 0.2, 0.25],
+  "synthetic_absorbed_heat_load_W": [0.02, 0.04, 0.06, 0.08, 0.1],
+  "thermal_reference_K": 283.15,
+  "initial_temperature_K": 283.15,
+  "environment_temperature_K": 3.0,
+  "pcm_mass_fraction": 0.5,
+  "duty_cycle": 0.25,
+  "conservative_package_conductance_W_K": 0.000169575,
+  "fixed": {
+    "time_step_s": 5.0,
+    "heater_threshold_K": 253.15,
+    "heater_power_W": 0.02,
+    "sleep_load_W": 0.001,
+    "active_load_W": 0.004,
+    "nominal_battery_Wh": 0.25,
+    "discharge_efficiency": 0.9,
+    "reserve_fraction": 0.2,
+    "derating_reference_K": 293.15,
+    "derating_floor_K": 243.15,
+    "minimum_capacity_fraction": 0.5,
+    "minimum_operating_temperature_K": 233.15,
+    "pcm_latent_heat_J_kg": 180000.0,
+    "pcm_transition_temperature_K": 273.15
+  },
+  "assumption_classes": {
+    "target_availability_probability": "synthetic sensitivity grid; not an asteroid population estimate",
+    "synthetic_absorbed_heat_load_W": "screening grid; not a measured optical or package load",
+    "thermal_parameters": "reused from accepted QST-STOR-0002 package and escape-route artifacts"
+  },
+  "falsifier": "The fast-rotator surface escape is falsified on this declared grid if no target-availability case reaches 95% discovery confidence within 100 screened targets or no emissivity/load case simultaneously passes the inherited 15-minute shadow model and the illuminated rejection reference."
+}
