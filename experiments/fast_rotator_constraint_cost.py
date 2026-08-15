@@ -10,6 +10,9 @@ from src.sim.thermal_geometry import ThermalGeometryCase, derive_thermal_propert
 from src.sim.thermal_storage import ThermalShadowScenario, scenario_with_result
 
 
+STEFAN_BOLTZMANN_W_M2_K4 = 5.670374419e-8
+
+
 def load_json(path: Path) -> dict:
     with path.open(encoding="utf-8") as handle:
         return json.load(handle)
@@ -64,8 +67,15 @@ def _thermal_row(config: dict, geometry_raw: dict, emissivity: float) -> dict:
         pcm_transition_temperature_K=fixed["pcm_transition_temperature_K"],
     )
     shadow = scenario_with_result(scenario)
-    rejection_budget_W = derived.total_conductance_W_K * (
-        config["thermal_reference_K"] - config["environment_temperature_K"]
+    radiating_area_m2 = math.pi * geometry.outer_diameter_m**2
+    rejection_budget_W = (
+        emissivity
+        * STEFAN_BOLTZMANN_W_M2_K4
+        * radiating_area_m2
+        * (
+            config["thermal_reference_K"] ** 4
+            - config["environment_temperature_K"] ** 4
+        )
     )
     illuminated = [
         {
@@ -93,7 +103,9 @@ def _thermal_row(config: dict, geometry_raw: dict, emissivity: float) -> dict:
             "conservative_package_conductance_W_K"
         ],
         "total_conductance_W_K": derived.total_conductance_W_K,
-        "illuminated_rejection_budget_at_reference_W": rejection_budget_W,
+        "illuminated_model": "exact outer-sphere radiation only; package conductance is eclipse-only",
+        "illuminated_radiating_area_m2": radiating_area_m2,
+        "illuminated_radiative_rejection_budget_at_reference_W": rejection_budget_W,
         "illuminated_load_cases": illuminated,
         "dual_pass_count": sum(
             case["dual_shadow_and_illuminated_status"] == "PASS"
@@ -162,7 +174,7 @@ def build_artifact(config: dict, geometry_config: dict) -> dict:
         "uncertainty": [
             config["assumption_classes"]["target_availability_probability"],
             config["assumption_classes"]["synthetic_absorbed_heat_load_W"],
-            "The illuminated rejection calculation is a lumped reference-budget screen, not transient package qualification.",
+            "Illuminated rejection uses exact outer-sphere radiation at the declared reference temperature; the accepted package conductance remains confined to eclipse leakage.",
             "Rotation period alone omits irregular shape, terrain, latitude, tumbling, and seasonal Sun geometry.",
         ],
         "nonclaims": [
