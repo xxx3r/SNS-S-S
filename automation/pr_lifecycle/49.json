@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 49,
+  "quest_id": "QST-STOR-0002",
+  "acceptance_slice": "Quantify the hidden cost of the <=30-minute fast-rotator surface constraint and illuminated heat rejection using explicit synthetic screening assumptions, uncertainty, and a falsifier, without selecting between surface and hosted architectures.",
+  "state": "ready_for_review",
+  "owner_run_id": "RUN-20260815T190132000000Z-daily-research-operator-8f4a91c2e7b6053d102a",
+  "source_commit": "5151a227ce89b4d600d452aa0904342a76f7efbf",
+  "head_commit": "1ebaf3421fd682958a549c51a41e2d89e9ce140e",
+  "updated_at": "2026-08-15T19:13:00Z",
+  "next_review_after": "2026-08-16T16:51:14Z",
+  "supersedes": [],
+  "reason": "PR #49 uniquely owns the authorized fast-rotator target-availability and illuminated-rejection screening slice. Implementation-head tests and baseline artifacts are green; receipt-bearing automation tests, semantic validation, and review clearance remain required before merge."
+}
