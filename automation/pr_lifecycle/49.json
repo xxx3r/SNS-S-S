@@ -3,12 +3,12 @@
   "pr_number": 49,
   "quest_id": "QST-STOR-0002",
   "acceptance_slice": "Quantify the hidden cost of the <=30-minute fast-rotator surface constraint and illuminated heat rejection using explicit synthetic screening assumptions, uncertainty, and a falsifier, without selecting between surface and hosted architectures.",
-  "state": "changes_requested",
+  "state": "merge_ready",
   "owner_run_id": "RUN-20260815T190132000000Z-daily-research-operator-8f4a91c2e7b6053d102a",
   "source_commit": "5151a227ce89b4d600d452aa0904342a76f7efbf",
-  "head_commit": "0303ce87e8aff3dae95da78c391bb595dea8fac5",
-  "updated_at": "2026-08-15T19:18:00Z",
+  "head_commit": "e7fb08f89adabf243701fe045a906fac895837be",
+  "updated_at": "2026-08-15T19:21:00Z",
   "next_review_after": "2026-08-16T16:51:14Z",
   "supersedes": [],
-  "reason": "Review identified that the accepted package conductance is an eclipse-leakage budget and cannot be reused as an illuminated rejection path. The experiment, output, and focused test now use exact outer-sphere radiation only; this flips the declared grid to FALSIFIED_ON_DECLARED_GRID. Hosted checks and thread resolution remain required."
+  "reason": "The P1 thermal-path review was corrected by separating exact illuminated outer-sphere radiation from eclipse-only package leakage, which truthfully flips the declared grid to FALSIFIED_ON_DECLARED_GRID. On head e7fb08f89adabf243701fe045a906fac895837be, tests run 31903270145, baseline-artifacts run 31903270131, and automation-transaction run 31903270120 all passed, including semantic validation; both review threads are resolved."
 }
