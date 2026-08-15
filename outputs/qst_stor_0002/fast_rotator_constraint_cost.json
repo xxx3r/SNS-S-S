@@ -1,0 +1,213 @@
+{
+  "schema": "sns.qst-stor-0002.fast-rotator-constraint-cost.v1",
+  "quest_id": "QST-STOR-0002",
+  "measurement_only": true,
+  "rotation_constraint": {
+    "maximum_rotation_period_h": 0.5,
+    "inherited_maximum_shadow_h": 0.25
+  },
+  "target_availability_screen": {
+    "discovery_confidence": 0.95,
+    "max_screened_targets": 100,
+    "cases": [
+      {
+        "synthetic_target_availability_probability": 0.001,
+        "screened_targets_required": 2995,
+        "status": "EXCEEDS_SCREENING_BUDGET"
+      },
+      {
+        "synthetic_target_availability_probability": 0.01,
+        "screened_targets_required": 299,
+        "status": "EXCEEDS_SCREENING_BUDGET"
+      },
+      {
+        "synthetic_target_availability_probability": 0.05,
+        "screened_targets_required": 59,
+        "status": "WITHIN_SCREENING_BUDGET"
+      },
+      {
+        "synthetic_target_availability_probability": 0.1,
+        "screened_targets_required": 29,
+        "status": "WITHIN_SCREENING_BUDGET"
+      }
+    ]
+  },
+  "thermal_screen": {
+    "thermal_reference_K": 283.15,
+    "environment_temperature_K": 3,
+    "cases": [
+      {
+        "effective_emissivity": 0.1,
+        "inherited_shadow_duration_h": 0.25,
+        "shadow_status": "PASS",
+        "minimum_shadow_temperature_K": 271.33050231136576,
+        "shadow_electrical_margin_Wh": 0.1402874041604584,
+        "radiative_conductance_W_K": 0.0001402532369035298,
+        "conservative_package_conductance_W_K": 0.000169575,
+        "total_conductance_W_K": 0.0003098282369035298,
+        "illuminated_rejection_budget_at_reference_W": 0.08679838056852386,
+        "illuminated_load_cases": [
+          {
+            "synthetic_absorbed_heat_load_W": 0.02,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "PASS"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.04,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "PASS"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.06,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "PASS"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.08,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "PASS"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.1,
+            "status_at_thermal_reference": "FAIL",
+            "dual_shadow_and_illuminated_status": "FAIL"
+          }
+        ],
+        "dual_pass_count": 4
+      },
+      {
+        "effective_emissivity": 0.15,
+        "inherited_shadow_duration_h": 0.25,
+        "shadow_status": "PASS",
+        "minimum_shadow_temperature_K": 234.09324720202466,
+        "shadow_electrical_margin_Wh": 0.08903472222222224,
+        "radiative_conductance_W_K": 0.00021037985535529466,
+        "conservative_package_conductance_W_K": 0.000169575,
+        "total_conductance_W_K": 0.0003799548553552947,
+        "illuminated_rejection_budget_at_reference_W": 0.1064443527277858,
+        "illuminated_load_cases": [
+          {
+            "synthetic_absorbed_heat_load_W": 0.02,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "PASS"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.04,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "PASS"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.06,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "PASS"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.08,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "PASS"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.1,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "PASS"
+          }
+        ],
+        "dual_pass_count": 5
+      },
+      {
+        "effective_emissivity": 0.2,
+        "inherited_shadow_duration_h": 0.25,
+        "shadow_status": "FAIL",
+        "minimum_shadow_temperature_K": 204.09366124902118,
+        "shadow_electrical_margin_Wh": 0.0883402777777778,
+        "radiative_conductance_W_K": 0.0002805064738070596,
+        "conservative_package_conductance_W_K": 0.000169575,
+        "total_conductance_W_K": 0.0004500814738070596,
+        "illuminated_rejection_budget_at_reference_W": 0.12609032488704772,
+        "illuminated_load_cases": [
+          {
+            "synthetic_absorbed_heat_load_W": 0.02,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "FAIL"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.04,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "FAIL"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.06,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "FAIL"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.08,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "FAIL"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.1,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "FAIL"
+          }
+        ],
+        "dual_pass_count": 0
+      },
+      {
+        "effective_emissivity": 0.25,
+        "inherited_shadow_duration_h": 0.25,
+        "shadow_status": "FAIL",
+        "minimum_shadow_temperature_K": 177.26113647452706,
+        "shadow_electrical_margin_Wh": 0.0878402777777778,
+        "radiative_conductance_W_K": 0.0003506330922588245,
+        "conservative_package_conductance_W_K": 0.000169575,
+        "total_conductance_W_K": 0.0005202080922588245,
+        "illuminated_rejection_budget_at_reference_W": 0.14573629704630967,
+        "illuminated_load_cases": [
+          {
+            "synthetic_absorbed_heat_load_W": 0.02,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "FAIL"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.04,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "FAIL"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.06,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "FAIL"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.08,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "FAIL"
+          },
+          {
+            "synthetic_absorbed_heat_load_W": 0.1,
+            "status_at_thermal_reference": "PASS",
+            "dual_shadow_and_illuminated_status": "FAIL"
+          }
+        ],
+        "dual_pass_count": 0
+      }
+    ]
+  },
+  "falsifier": {
+    "triggered": false,
+    "status": "CONDITIONAL_SCREENING_SURVIVOR",
+    "rule": "The fast-rotator surface escape is falsified on this declared grid if no target-availability case reaches 95% discovery confidence within 100 screened targets or no emissivity/load case simultaneously passes the inherited 15-minute shadow model and the illuminated rejection reference."
+  },
+  "uncertainty": [
+    "synthetic sensitivity grid; not an asteroid population estimate",
+    "screening grid; not a measured optical or package load",
+    "The illuminated rejection calculation is a lumped reference-budget screen, not transient package qualification.",
+    "Rotation period alone omits irregular shape, terrain, latitude, tumbling, and seasonal Sun geometry."
+  ],
+  "nonclaims": [
+    "No target-population frequency is inferred.",
+    "No surface or hosted architecture is selected or recommended.",
+    "No optical absorptivity, material qualification, or external mission evidence is introduced."
+  ]
+}
