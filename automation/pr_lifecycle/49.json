@@ -3,12 +3,12 @@
   "pr_number": 49,
   "quest_id": "QST-STOR-0002",
   "acceptance_slice": "Quantify the hidden cost of the <=30-minute fast-rotator surface constraint and illuminated heat rejection using explicit synthetic screening assumptions, uncertainty, and a falsifier, without selecting between surface and hosted architectures.",
-  "state": "merge_ready",
+  "state": "changes_requested",
   "owner_run_id": "RUN-20260815T190132000000Z-daily-research-operator-8f4a91c2e7b6053d102a",
   "source_commit": "5151a227ce89b4d600d452aa0904342a76f7efbf",
-  "head_commit": "a4f887dba90dffaa777312dedb7f315dcf0dc565",
-  "updated_at": "2026-08-15T19:15:00Z",
+  "head_commit": "0303ce87e8aff3dae95da78c391bb595dea8fac5",
+  "updated_at": "2026-08-15T19:18:00Z",
   "next_review_after": "2026-08-16T16:51:14Z",
   "supersedes": [],
-  "reason": "PR #49 remains the unique owner of the authorized slice. On receipt-bearing head a4f887dba90dffaa777312dedb7f315dcf0dc565, GitHub Actions automation-transaction run 31903123418, baseline-artifacts run 31903123447, and tests run 31903123452 all passed; semantic validation passed within automation-transaction, the PR is mergeable and non-draft, and no review threads are present."
+  "reason": "Review identified that the accepted package conductance is an eclipse-leakage budget and cannot be reused as an illuminated rejection path. The experiment, output, and focused test now use exact outer-sphere radiation only; this flips the declared grid to FALSIFIED_ON_DECLARED_GRID. Hosted checks and thread resolution remain required."
 }
