@@ -45,27 +45,29 @@
         "radiative_conductance_W_K": 0.0001402532369035298,
         "conservative_package_conductance_W_K": 0.000169575,
         "total_conductance_W_K": 0.0003098282369035298,
-        "illuminated_rejection_budget_at_reference_W": 0.08679838056852386,
+        "illuminated_model": "exact outer-sphere radiation only; package conductance is eclipse-only",
+        "illuminated_radiating_area_m2": 0.0003141592653589793,
+        "illuminated_radiative_rejection_budget_at_reference_W": 0.011450590081828837,
         "illuminated_load_cases": [
           {
             "synthetic_absorbed_heat_load_W": 0.02,
-            "status_at_thermal_reference": "PASS",
-            "dual_shadow_and_illuminated_status": "PASS"
+            "status_at_thermal_reference": "FAIL",
+            "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.04,
-            "status_at_thermal_reference": "PASS",
-            "dual_shadow_and_illuminated_status": "PASS"
+            "status_at_thermal_reference": "FAIL",
+            "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.06,
-            "status_at_thermal_reference": "PASS",
-            "dual_shadow_and_illuminated_status": "PASS"
+            "status_at_thermal_reference": "FAIL",
+            "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.08,
-            "status_at_thermal_reference": "PASS",
-            "dual_shadow_and_illuminated_status": "PASS"
+            "status_at_thermal_reference": "FAIL",
+            "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.1,
@@ -73,7 +75,7 @@
             "dual_shadow_and_illuminated_status": "FAIL"
           }
         ],
-        "dual_pass_count": 4
+        "dual_pass_count": 0
       },
       {
         "effective_emissivity": 0.15,
@@ -84,35 +86,37 @@
         "radiative_conductance_W_K": 0.00021037985535529466,
         "conservative_package_conductance_W_K": 0.000169575,
         "total_conductance_W_K": 0.0003799548553552947,
-        "illuminated_rejection_budget_at_reference_W": 0.1064443527277858,
+        "illuminated_model": "exact outer-sphere radiation only; package conductance is eclipse-only",
+        "illuminated_radiating_area_m2": 0.0003141592653589793,
+        "illuminated_radiative_rejection_budget_at_reference_W": 0.01717588512274325,
         "illuminated_load_cases": [
           {
             "synthetic_absorbed_heat_load_W": 0.02,
-            "status_at_thermal_reference": "PASS",
-            "dual_shadow_and_illuminated_status": "PASS"
+            "status_at_thermal_reference": "FAIL",
+            "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.04,
-            "status_at_thermal_reference": "PASS",
-            "dual_shadow_and_illuminated_status": "PASS"
+            "status_at_thermal_reference": "FAIL",
+            "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.06,
-            "status_at_thermal_reference": "PASS",
-            "dual_shadow_and_illuminated_status": "PASS"
+            "status_at_thermal_reference": "FAIL",
+            "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.08,
-            "status_at_thermal_reference": "PASS",
-            "dual_shadow_and_illuminated_status": "PASS"
+            "status_at_thermal_reference": "FAIL",
+            "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.1,
-            "status_at_thermal_reference": "PASS",
-            "dual_shadow_and_illuminated_status": "PASS"
+            "status_at_thermal_reference": "FAIL",
+            "dual_shadow_and_illuminated_status": "FAIL"
           }
         ],
-        "dual_pass_count": 5
+        "dual_pass_count": 0
       },
       {
         "effective_emissivity": 0.2,
@@ -123,7 +127,9 @@
         "radiative_conductance_W_K": 0.0002805064738070596,
         "conservative_package_conductance_W_K": 0.000169575,
         "total_conductance_W_K": 0.0004500814738070596,
-        "illuminated_rejection_budget_at_reference_W": 0.12609032488704772,
+        "illuminated_model": "exact outer-sphere radiation only; package conductance is eclipse-only",
+        "illuminated_radiating_area_m2": 0.0003141592653589793,
+        "illuminated_radiative_rejection_budget_at_reference_W": 0.022901180163657674,
         "illuminated_load_cases": [
           {
             "synthetic_absorbed_heat_load_W": 0.02,
@@ -132,22 +138,22 @@
           },
           {
             "synthetic_absorbed_heat_load_W": 0.04,
-            "status_at_thermal_reference": "PASS",
+            "status_at_thermal_reference": "FAIL",
             "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.06,
-            "status_at_thermal_reference": "PASS",
+            "status_at_thermal_reference": "FAIL",
             "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.08,
-            "status_at_thermal_reference": "PASS",
+            "status_at_thermal_reference": "FAIL",
             "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.1,
-            "status_at_thermal_reference": "PASS",
+            "status_at_thermal_reference": "FAIL",
             "dual_shadow_and_illuminated_status": "FAIL"
           }
         ],
@@ -162,7 +168,9 @@
         "radiative_conductance_W_K": 0.0003506330922588245,
         "conservative_package_conductance_W_K": 0.000169575,
         "total_conductance_W_K": 0.0005202080922588245,
-        "illuminated_rejection_budget_at_reference_W": 0.14573629704630967,
+        "illuminated_model": "exact outer-sphere radiation only; package conductance is eclipse-only",
+        "illuminated_radiating_area_m2": 0.0003141592653589793,
+        "illuminated_radiative_rejection_budget_at_reference_W": 0.02862647520457209,
         "illuminated_load_cases": [
           {
             "synthetic_absorbed_heat_load_W": 0.02,
@@ -171,22 +179,22 @@
           },
           {
             "synthetic_absorbed_heat_load_W": 0.04,
-            "status_at_thermal_reference": "PASS",
+            "status_at_thermal_reference": "FAIL",
             "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.06,
-            "status_at_thermal_reference": "PASS",
+            "status_at_thermal_reference": "FAIL",
             "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.08,
-            "status_at_thermal_reference": "PASS",
+            "status_at_thermal_reference": "FAIL",
             "dual_shadow_and_illuminated_status": "FAIL"
           },
           {
             "synthetic_absorbed_heat_load_W": 0.1,
-            "status_at_thermal_reference": "PASS",
+            "status_at_thermal_reference": "FAIL",
             "dual_shadow_and_illuminated_status": "FAIL"
           }
         ],
@@ -195,14 +203,14 @@
     ]
   },
   "falsifier": {
-    "triggered": false,
-    "status": "CONDITIONAL_SCREENING_SURVIVOR",
+    "triggered": true,
+    "status": "FALSIFIED_ON_DECLARED_GRID",
     "rule": "The fast-rotator surface escape is falsified on this declared grid if no target-availability case reaches 95% discovery confidence within 100 screened targets or no emissivity/load case simultaneously passes the inherited 15-minute shadow model and the illuminated rejection reference."
   },
   "uncertainty": [
     "synthetic sensitivity grid; not an asteroid population estimate",
     "screening grid; not a measured optical or package load",
-    "The illuminated rejection calculation is a lumped reference-budget screen, not transient package qualification.",
+    "Illuminated rejection uses exact outer-sphere radiation at the declared reference temperature; the accepted package conductance remains confined to eclipse leakage.",
     "Rotation period alone omits irregular shape, terrain, latitude, tumbling, and seasonal Sun geometry."
   ],
   "nonclaims": [
