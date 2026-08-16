@@ -5,26 +5,11 @@
   "claim": "The accepted QST-STOR-0002 fast-rotator constraint-cost experiment triggers its declared falsifier because no declared emissivity/load case simultaneously passes inherited 15-minute shadow survival and illuminated rejection at the reference temperature.",
   "source_uri": "https://github.com/xxx3r/SNS-S-S/blob/36740d55a6de2dc1465336a653e2c74a6a74d44b/outputs/qst_stor_0002/fast_rotator_constraint_cost.json",
   "source_kind": "experiment",
-  "source_fingerprint": "sha256:2921efd108a8560e1a190fa6ebcb6f79cd3e8bbb2921efd108a8560e1a190fa",
+  "source_fingerprint": "sha256:84f1f774ef31ca499832b6f1c39afb8844548527b8b218e2c20611a0137cee4e",
   "observed_at": "2026-08-16T15:02:16Z",
   "independence": "independent",
   "polarity": "falsifies",
   "confidence": 0.93,
-  "provenance": {
-    "source_title": "QST-STOR-0002 fast-rotator constraint-cost accepted artifact",
-    "publication_date": "2026-08-15",
-    "primary_or_secondary": "primary_repository_artifact",
-    "environment": "deterministic synthetic screening grid",
-    "demonstrated_scale": "10 mm SNS screening model",
-    "subsystems": ["STOR", "THERMAL", "MISSION"],
-    "evidence_tier": "A-repository",
-    "directness": 0.98,
-    "novelty": 0.91,
-    "limitations": ["Target-availability probabilities are synthetic, not measured population frequencies.", "Absorbed thermal loads are a synthetic screening grid, not measured optical/package loads.", "Rotation period alone omits irregular shape, terrain, latitude, tumbling, and seasonal geometry."],
-    "fact_summary": "The accepted artifact records FALSIFIED_ON_DECLARED_GRID with zero simultaneous shadow-and-illuminated passes across the declared thermal grid.",
-    "inference_summary": "The measured-fast-rotator surface escape cannot remain a default viable route under the currently declared screening assumptions.",
-    "speculation_summary": "Hosted operation, larger geometry, or revised physical assumptions may reopen feasibility, but none is established by this event.",
-    "created_by_run_id": "RUN-20260816T150216000000Z-weekly-evidence-synthesis-6d3a91c4b8e2057f1020"
-  },
+  "provenance": {"source_title": "QST-STOR-0002 fast-rotator constraint-cost accepted artifact", "publication_date": "2026-08-15", "primary_or_secondary": "primary_repository_artifact", "environment": "deterministic synthetic screening grid", "demonstrated_scale": "10 mm SNS screening model", "subsystems": ["STOR", "THERMAL", "MISSION"], "evidence_tier": "A-repository", "directness": 0.98, "novelty": 0.91, "limitations": ["Target-availability probabilities are synthetic, not measured population frequencies.", "Absorbed thermal loads are a synthetic screening grid, not measured optical/package loads.", "Rotation period alone omits irregular shape, terrain, latitude, tumbling, and seasonal geometry."], "fact_summary": "The accepted artifact records FALSIFIED_ON_DECLARED_GRID with zero simultaneous shadow-and-illuminated passes across the declared thermal grid.", "inference_summary": "The measured-fast-rotator surface escape cannot remain a default viable route under the currently declared screening assumptions.", "speculation_summary": "Hosted operation, larger geometry, or revised physical assumptions may reopen feasibility, but none is established by this event.", "created_by_run_id": "RUN-20260816T150216000000Z-weekly-evidence-synthesis-6d3a91c4b8e2057f1020"},
   "artifacts": ["calendar/roundups/2026-08-16.md"]
 }
