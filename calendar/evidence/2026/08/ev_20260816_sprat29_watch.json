@@ -1,0 +1,15 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260816T150216000000Z-sprat29-watch-a17c4e6f9b2308d71007",
+  "claim_cluster_id": "CLM-20260816T150216000000Z-space-pv-watch-b28d5f7a0c3419e81008",
+  "claim": "NASA Glenn's SPRAT 29 conference is scheduled for August 18-20, 2026 and has not yet occurred as of this August 16 synthesis, so it remains a near-term watchpoint rather than new QST-PV-0001 technical evidence.",
+  "source_uri": "https://www.nasa.gov/glenn/sprat/",
+  "source_kind": "official_statement",
+  "source_fingerprint": "sha256:2556cb94ff3f911b92c183de9255185e43cf41aba87dd8d5c84cac4f3d8aa27d",
+  "observed_at": "2026-08-16T15:02:16Z",
+  "independence": "shared_origin",
+  "polarity": "context_only",
+  "confidence": 0.97,
+  "provenance": {"source_title": "SPRAT: Space Photovoltaic Research and Technology Conference", "publication_date": "2026-07-20", "primary_or_secondary": "primary_official", "environment": "space photovoltaics", "demonstrated_scale": "conference program", "subsystems": ["PV", "MAT"], "evidence_tier": "B-context", "directness": 0.62, "novelty": 0.15, "limitations": ["Conference scheduling is not a qualification result.", "No SPRAT 29 technical presentation result exists yet because the conference begins August 18."], "fact_summary": "NASA lists SPRAT 29 for August 18-20 and includes perovskites, tandem PV, qualification, environmental interactions, missions, and power-system design among 2026 topics.", "inference_summary": "QST-PV-0001 should wait for post-conference primary technical outputs before changing belief posture.", "speculation_summary": "Selected SPRAT outputs may provide test-condition-aware evidence relevant to the coupled degradation parameter sheet.", "created_by_run_id": "RUN-20260816T150216000000Z-weekly-evidence-synthesis-6d3a91c4b8e2057f1020"},
+  "artifacts": ["calendar/roundups/2026-08-16.md"]
+}
