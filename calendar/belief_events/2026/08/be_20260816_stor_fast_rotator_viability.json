@@ -1,0 +1,11 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "BEL-20260816T150216000000Z-stor-fast-rotator-viability-c39e6a8b1d4520f91009",
+  "belief_key": "STOR.fast_rotator_surface_viability",
+  "evidence_ids": ["EVID-20260816T150216000000Z-stor-fast-rotator-falsifier-a51c7e9d3b8064f21001"],
+  "magnitude": -0.28,
+  "confidence": 0.93,
+  "effect": "weaken",
+  "rationale": "The accepted review-corrected constraint-cost experiment triggers its declared falsifier: no declared thermal case simultaneously survives the inherited 15-minute shadow model and meets illuminated rejection at the reference temperature. This weakens only viability under the declared synthetic grid; it does not establish hosted operation or larger geometry.",
+  "recorded_at": "2026-08-16T15:02:16Z"
+}
