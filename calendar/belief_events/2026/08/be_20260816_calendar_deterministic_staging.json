@@ -1,0 +1,11 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "BEL-20260816T150216000000Z-calendar-staging-e5b08c1d3f6742b11011",
+  "belief_key": "CALENDAR.deterministic_staging",
+  "evidence_ids": ["EVID-20260816T150216000000Z-calendar-staging-e95a2b4d7f0186c51005"],
+  "magnitude": 0.08,
+  "confidence": 0.94,
+  "effect": "strengthen",
+  "rationale": "The proposal-only roundup staging boundary and deterministic serialization/output support are now accepted with hosted automation tests and semantic validation, reducing clerical ambiguity without widening governance authority.",
+  "recorded_at": "2026-08-16T15:02:16Z"
+}
