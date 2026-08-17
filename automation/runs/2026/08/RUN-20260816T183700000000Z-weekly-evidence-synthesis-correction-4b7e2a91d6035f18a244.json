@@ -1,0 +1,58 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260816T183700000000Z-weekly-evidence-synthesis-correction-4b7e2a91d6035f18a244",
+  "loop_id": "weekly-evidence-synthesis",
+  "contract_version": "1.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-08-16T18:37:00-06:00",
+  "source_commit": "4d33f6ee2cccf810065f08028fda75e5d2191572",
+  "quest_context": {
+    "quest_id": "QST-STOR-0002",
+    "related_quest_ids": ["QST-PV-0001"],
+    "question": "Repair the August 16 weekly synthesis after semantic validation rejected a duplicate SPRAT 29 source fingerprint without changing the scientific or governance conclusions.",
+    "success_criteria": [
+      "Preserve the failed scheduled weekly receipt as immutable historical evidence.",
+      "Remove only the duplicate August 16 SPRAT evidence event whose source fingerprint is already owned by the accepted August 9 evidence event.",
+      "Retain the roundup statement that SPRAT 29 is still only a watchpoint.",
+      "Re-run hosted validation on the corrected PR head while preserving NEEDS_GOVERNANCE_REVIEW."
+    ],
+    "assumptions_changed": [],
+    "limitations": [
+      "This correction changes evidence normalization only; it does not alter the QST-STOR-0002 falsification, belief proposals, quest proposals, or architecture disposition.",
+      "The accepted August 9 event EVID-20260809T150000000000Z-sprat29-watch-e53df60718293a4b5c6d remains the canonical SPRAT watch evidence."
+    ]
+  },
+  "pr_context": {
+    "pr_number": 50,
+    "lifecycle_state": "draft_governance_review",
+    "working_branch": "aurora/weekly-roundup-2026-08-16"
+  },
+  "consumed_ids": [
+    "RUN-20260816T150216000000Z-weekly-evidence-synthesis-6d3a91c4b8e2057f1020",
+    "EVID-20260809T150000000000Z-sprat29-watch-e53df60718293a4b5c6d"
+  ],
+  "artifacts": [
+    "calendar/roundups/2026-08-16.md"
+  ],
+  "checks": [
+    {
+      "name": "failure diagnosis",
+      "status": "passed",
+      "evidence": "GitHub Actions run 31954677524 failed repository semantic validation with duplicate source fingerprint sha256:2556cb94ff3f911b92c183de9255185e43cf41aba87dd8d5c84cac4f3d8aa27d; accepted August 9 evidence already owns that fingerprint."
+    },
+    {
+      "name": "correction",
+      "status": "passed",
+      "evidence": "Deleted only calendar/evidence/2026/08/ev_20260816_sprat29_watch.json from PR #50; preserved the accepted August 9 event and the August 16 roundup watchpoint statement."
+    },
+    {
+      "name": "hosted validation",
+      "status": "not_run",
+      "evidence": "GitHub Actions on the correction-bearing head are the validation surface."
+    }
+  ],
+  "belief_effects": [],
+  "terminal_state": "NEEDS_GOVERNANCE_REVIEW",
+  "next_action": "Confirm receipt-bearing GitHub Actions and semantic repository validation are green; keep PR #50 draft for monthly governance disposition of the QST-STOR-0002 falsification.",
+  "created_at": "2026-08-16T18:37:00-06:00"
+}
