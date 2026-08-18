@@ -1,0 +1,110 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260818T164604000000Z-daily-governance-triage-a6c4e91b2d805f73c102",
+  "loop_id": "daily-governance-triage",
+  "contract_version": "1.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-18T16:46:04Z",
+  "source_commit": "f6658db65135b9ccaf969d6a21706d5b2b4f3146",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "primary_quest_id": "QST-STOR-0002",
+    "accepted_main": "f6658db65135b9ccaf969d6a21706d5b2b4f3146",
+    "delegation_id": "DELEG-20260807-HUMAN-FAST-TRIAGE-V1",
+    "candidate_dispositions": [
+      {
+        "candidate": "PR #50 Weekly correction receipt missing state_hash",
+        "level": "L0",
+        "disposition": "OWNER_REPAIR_REQUIRED",
+        "reason": "Live GitHub Actions still show automation tests passing and semantic validation failing because the still-unmerged Weekly correction receipt lacks schema-required state_hash. The correction belongs to PR #50's Weekly owner; triage does not edit Weekly artifacts."
+      },
+      {
+        "candidate": "Accepted QST-STOR-0002 fast-rotator surface falsification and emergency architecture disposition proposed by PR #50",
+        "level": "L2",
+        "disposition": "DEFER_MONTHLY",
+        "reason": "The accepted bounded screen triggered its declared falsifier. Choosing whether to retire the route, redirect toward hosted or larger geometry, or authorize assumption-changing science is a major architecture and canonical-direction decision owned by Monthly Governance."
+      },
+      {
+        "candidate": "Fresh research authorization on another active delegated quest while the P0 STOR disposition remains unresolved",
+        "level": "L2",
+        "disposition": "NO_AUTHORIZATION",
+        "reason": "Opening another substantive lane now would implicitly reprioritize the active queue, which fast governance may not do."
+      },
+      {
+        "candidate": "Local implementation details inside a future lawful bounded slice",
+        "level": "L0",
+        "disposition": "DAILY_OWNED",
+        "reason": "Reversible implementation detail remains Daily-owned once fresh bounded authority exists."
+      },
+      {
+        "candidate": "Protected physical assumptions, external/public actions, or strategic architecture commitment",
+        "level": "L3",
+        "disposition": "DEFER_HUMAN_IF_ENCOUNTERED",
+        "reason": "These remain reserved human authority."
+      }
+    ],
+    "issue_38_guard": "Issue #38 remains open. PRs #35-#37 are completed accepted history and were not repeated, reopened, or reauthorized.",
+    "memory_status": "memory/mem_log_short.md still names the already-completed matched mission-dependency ledger as the next move; canonical memory remains stale and Monthly-owned.",
+    "drive_status": "No pending classification depended on a clearly relevant SNS Drive artifact; no Drive read was needed."
+  },
+  "pr_context": {
+    "open_prs_at_preflight": [50],
+    "open_prs_at_recheck": [50],
+    "lifecycle_synchronizations": [],
+    "pr_50": {
+      "state": "open_draft",
+      "head": "7fbc3a4ddff03f4b5cc78702e2428704f5cb0ca9",
+      "mergeable": true,
+      "review_threads": 0,
+      "tests": "passed",
+      "baseline_artifacts": "passed",
+      "automation_transaction": "failed_semantic_validation"
+    }
+  },
+  "consumed_ids": [],
+  "artifacts": [],
+  "checks": [
+    {
+      "name": "GitHub connector preflight",
+      "status": "passed",
+      "evidence": "Connected GitHub repository metadata returned admin, maintain, push, triage, and pull authority before any environment claim."
+    },
+    {
+      "name": "accepted main freeze and publication recheck",
+      "status": "passed",
+      "evidence": "Accepted main was f6658db65135b9ccaf969d6a21706d5b2b4f3146 at freeze and remained exact immediately before publication."
+    },
+    {
+      "name": "delegation validity",
+      "status": "passed",
+      "evidence": "DELEG-20260807-HUMAN-FAST-TRIAGE-V1 remains valid through 2026-09-01T14:00:00Z, but does not grant queue reprioritization, architecture selection, belief, or canonical-memory authority."
+    },
+    {
+      "name": "authorization lineage",
+      "status": "passed",
+      "evidence": "Existing August authorizations are historical; the latest STOR authorization was consumed by its Daily receipt and no fresh unconsumed authorization owns a new executable slice."
+    },
+    {
+      "name": "PR #50 live checks",
+      "status": "failed",
+      "evidence": "On head 7fbc3a4ddff03f4b5cc78702e2428704f5cb0ca9, tests and baseline-artifacts pass, but automation-transaction run 31982585540 fails at repository semantic validation because the Weekly correction receipt is missing state_hash; downstream missing owner-run errors are cascading consequences of receipt loading failure."
+    },
+    {
+      "name": "Issue #38 duplicate-work guard",
+      "status": "passed",
+      "evidence": "Issue #38 remains open and no completed PR #35-#37 mission-ledger slice was duplicated."
+    },
+    {
+      "name": "Google Drive relevance check",
+      "status": "passed",
+      "evidence": "No pending decision explicitly depended on a clearly relevant SNS Drive artifact, so no Drive read was needed."
+    }
+  ],
+  "belief_effects": [
+    "No scientific belief, quest priority, queue membership, canonical memory, architecture selection, protected assumption, or external claim changed.",
+    "No research authorization was issued because the open Weekly owner still has a local schema defect and the accepted STOR falsification requires Monthly Governance disposition."
+  ],
+  "terminal_state": "NEEDS_GOVERNANCE_REVIEW",
+  "next_action": "Weekly must add the schema-required state_hash to PR #50's still-unmerged correction receipt and obtain green semantic validation; Monthly Governance must then disposition the accepted QST-STOR-0002 falsification before Pre-Game issues a fresh substantive Daily authorization.",
+  "created_at": "2026-08-18T16:46:04Z"
+}
