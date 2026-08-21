@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260816T150216000000Z-block-qst-stor-0002-f6c19d2e4a7853c21012",
+  "action_type": "block",
+  "quest_id": "QST-STOR-0002",
+  "target_quest_ids": [],
+  "proposed_by_loop": "weekly-evidence-synthesis",
+  "authority": "emergency_escalation",
+  "rationale": "Accepted evidence now triggers the fast-rotator surface escape's declared FALSIFIED_ON_DECLARED_GRID condition. Monthly governance should decide whether to retire that route as currently parameterized, redirect QST-STOR-0002 toward hosted/larger-geometry comparison, or authorize a new bounded assumption-changing experiment. Weekly does not enact an architecture choice.",
+  "recorded_at": "2026-08-16T15:02:16Z"
+}

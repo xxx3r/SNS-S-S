@@ -1,0 +1,15 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260816T150216000000Z-sim-stale-coverage-c73e9a2b5d8064f31003",
+  "claim_cluster_id": "CLM-20260816T150216000000Z-sim-measurement-d84f1a3c6e9075b41004",
+  "claim": "QST-SIM-0002 now has an accepted finite-time stale-coverage measurement primitive and an accepted two-constant-rotation-regime measurement under an identical body-fixed synthetic observation schedule, without a demonstrated policy advantage.",
+  "source_uri": "https://github.com/xxx3r/SNS-S-S/pull/48",
+  "source_kind": "simulation",
+  "source_fingerprint": "sha256:6ce276e83eeba932e5efa2426adc11adfc78f96248af7941882fd116572fb81a",
+  "observed_at": "2026-08-16T15:02:16Z",
+  "independence": "independent",
+  "polarity": "supports",
+  "confidence": 0.88,
+  "provenance": {"source_title": "Measure stale coverage under two constant rotation regimes", "publication_date": "2026-08-14", "primary_or_secondary": "primary_repository_artifact", "environment": "AsteroidWorld deterministic synthetic measurement", "demonstrated_scale": "two constant rotation regimes", "subsystems": ["SIM", "MISSION"], "evidence_tier": "A-repository", "directness": 0.94, "novelty": 0.72, "limitations": ["Identical body-fixed observations yielded equal traces and do not establish a policy or architecture advantage.", "Irregular/tumbling rotation and new shadow physics remain outside scope."], "fact_summary": "The stale-coverage metric was repaired to reject non-finite time inputs; the later two-regime artifact was reproducible and ultimately merged after governance receipt correction.", "inference_summary": "SNS has a stronger policy-neutral measurement boundary for future surveying experiments.", "speculation_summary": "A higher-information observation geometry may reveal rotation-regime effects if authorized without embedding a survey-policy preference.", "created_by_run_id": "RUN-20260816T150216000000Z-weekly-evidence-synthesis-6d3a91c4b8e2057f1020"},
+  "artifacts": ["calendar/roundups/2026-08-16.md"]
+}

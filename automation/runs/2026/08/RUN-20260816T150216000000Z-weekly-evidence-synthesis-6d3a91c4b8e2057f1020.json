@@ -1,0 +1,26 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260816T150216000000Z-weekly-evidence-synthesis-6d3a91c4b8e2057f1020",
+  "loop_id": "weekly-evidence-synthesis",
+  "contract_version": "1.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-16T15:02:16Z",
+  "source_commit": "36740d55a6de2dc1465336a653e2c74a6a74d44b",
+  "state_hash": "sha256:2f130f8721e139aefe22c2fdf1be8c56b44e9bf0b86186e59d71451b9a86db78",
+  "quest_context": {
+    "quest_id": "QST-STOR-0002",
+    "related_quest_ids": ["QST-SIM-0002", "QST-CALENDAR-0001", "QST-PV-0001"],
+    "question": "What accepted work and current primary evidence since the August 9 synthesis changes SNS beliefs or requires bounded governance proposals?",
+    "success_criteria": ["Consume every accepted Daily Research Operator receipt since the August 9 weekly receipt.", "Preserve failed/corrected transaction lineage as negative evidence rather than silently treating it as success.", "Create one dated roundup plus normalized evidence, belief, and quest-action proposals.", "Escalate material active-quest falsification without enacting monthly-owned architecture or queue state."],
+    "assumptions_changed": ["The measured-fast-rotator surface escape is falsified on the accepted declared synthetic thermal grid and cannot remain a default viable route under those assumptions.", "QST-SIM-0002 now has an accepted policy-neutral stale-coverage measurement boundary.", "QST-CALENDAR-0001 staging and deterministic serialization refinements proposed on August 9 have been implemented."],
+    "limitations": ["The STOR target-frequency and absorbed-load values are synthetic screening assumptions, not measured population or package data.", "No accepted August monthly synthesis exists under calendar/monthly; monthly-owned state is not inferred from absence.", "Targeted Google Drive search returned no relevant SNS artifact; no broader absence claim is made.", "SPRAT 29 begins August 18, so no conference technical result exists yet for this synthesis.", "No local shell execution is claimed; GitHub Actions is the validation surface."]
+  },
+  "pr_context": {"pr_number": 50, "lifecycle_state": "draft_governance_review", "working_branch": "aurora/weekly-roundup-2026-08-16"},
+  "consumed_ids": ["RUN-20260809T150000000000Z-weekly-evidence-synthesis-9f0e1d2c3b4a59687786", "RUN-20260810T200300000000Z-daily-research-operator-4c91e7a2b605d83f19aa", "RUN-20260811T200200000000Z-daily-research-operator-5a7c1e9d3b8064f2a011", "RUN-20260812T195600000000Z-daily-research-operator-6b2d8f1a4c905e73d211", "RUN-20260813T220901285600Z-daily-research-operator-789bc1cd6d7140f01a9b", "RUN-20260814T195200000000Z-daily-research-operator-4f9a7c21e6b8053d102a", "RUN-20260815T190132000000Z-daily-research-operator-8f4a91c2e7b6053d102a"],
+  "artifacts": ["calendar/roundups/2026-08-16.md", "calendar/evidence/2026/08/ev_20260816_stor_fast_rotator_falsifier.json", "calendar/evidence/2026/08/ev_20260816_sim_stale_coverage.json", "calendar/evidence/2026/08/ev_20260816_calendar_staging.json", "calendar/evidence/2026/08/ev_20260816_sprat29_watch.json", "calendar/belief_events/2026/08/be_20260816_stor_fast_rotator_viability.json", "calendar/belief_events/2026/08/be_20260816_sim_measurement_boundary.json", "calendar/belief_events/2026/08/be_20260816_calendar_deterministic_staging.json", "quests/actions/2026/08/qa_20260816_qst_stor_0002_emergency_review.json", "quests/actions/2026/08/qa_20260816_qst_sim_0002_next_measurement.json"],
+  "checks": [{"name": "connector and source review", "status": "passed", "evidence": "GitHub connector successfully read accepted main, contract, receipts, PRs, active quests, and accepted artifacts; targeted Google Drive search completed with zero relevant results."}, {"name": "repository semantic validation", "status": "not_run", "evidence": "GitHub Actions will execute semantic validation on the receipt-bearing PR head."}, {"name": "GitHub Actions", "status": "not_run", "evidence": "No local shell execution is claimed; hosted workflow checks are the execution surface after this receipt commit."}],
+  "belief_effects": ["BEL-20260816T150216000000Z-stor-fast-rotator-viability-c39e6a8b1d4520f91009", "BEL-20260816T150216000000Z-sim-measurement-boundary-d4af7b9c2e5631a01010", "BEL-20260816T150216000000Z-calendar-staging-e5b08c1d3f6742b11011"],
+  "terminal_state": "NEEDS_GOVERNANCE_REVIEW",
+  "next_action": "Monthly governance must disposition the accepted QST-STOR-0002 fast-rotator falsification before Weekly or Daily selects a replacement architecture; PR #50 remains proposal-only and draft pending that constitutional decision.",
+  "created_at": "2026-08-16T15:02:16Z"
+}

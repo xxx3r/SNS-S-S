@@ -1,0 +1,11 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "BEL-20260816T150216000000Z-sim-measurement-boundary-d4af7b9c2e5631a01010",
+  "belief_key": "SIM.measurement_boundary",
+  "evidence_ids": ["EVID-20260816T150216000000Z-sim-stale-coverage-c73e9a2b5d8064f31003"],
+  "magnitude": 0.10,
+  "confidence": 0.88,
+  "effect": "strengthen",
+  "rationale": "Finite-time stale coverage is now an accepted reproducible measurement primitive, and the two-constant-rotation-regime artifact demonstrates the measurement boundary without claiming a survey-policy advantage.",
+  "recorded_at": "2026-08-16T15:02:16Z"
+}

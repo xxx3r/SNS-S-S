@@ -1,0 +1,15 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260816T150216000000Z-calendar-staging-e95a2b4d7f0186c51005",
+  "claim_cluster_id": "CLM-20260816T150216000000Z-calendar-pipeline-f06b3c5e8a1297d61006",
+  "claim": "QST-CALENDAR-0001 now has an accepted proposal-only staging boundary plus deterministic serialization/output support, both validated by hosted automation tests and repository semantic validation.",
+  "source_uri": "https://github.com/xxx3r/SNS-S-S/pull/46",
+  "source_kind": "experiment",
+  "source_fingerprint": "sha256:9aefba6d9670aecd00f533846ef07dab497df5b39a7f8e21b283448a5f1266c3",
+  "observed_at": "2026-08-16T15:02:16Z",
+  "independence": "independent",
+  "polarity": "supports",
+  "confidence": 0.94,
+  "provenance": {"source_title": "Serialize staged roundups deterministically", "publication_date": "2026-08-11", "primary_or_secondary": "primary_repository_artifact", "environment": "SNS automation transaction layer", "demonstrated_scale": "repository staging and serialization boundary", "subsystems": ["CALENDAR", "AUTOMATION"], "evidence_tier": "A-repository", "directness": 0.98, "novelty": 0.70, "limitations": ["No real weekly evidence was processed by the Daily slice.", "The implementation does not grant authority to enact belief or quest proposals."], "fact_summary": "PRs #45 and #46 accepted proposal-only staging and deterministic output support with hosted checks green.", "inference_summary": "The weekly proposal pipeline now has a stronger deterministic pre-publication boundary.", "speculation_summary": "Further pipeline work should be justified by observed failure modes rather than infrastructure expansion for its own sake.", "created_by_run_id": "RUN-20260816T150216000000Z-weekly-evidence-synthesis-6d3a91c4b8e2057f1020"},
+  "artifacts": ["calendar/roundups/2026-08-16.md"]
+}

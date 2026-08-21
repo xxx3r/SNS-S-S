@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260816T150216000000Z-refine-qst-sim-0002-a7d20e3f5b8964d31013",
+  "action_type": "refine_existing",
+  "quest_id": "QST-SIM-0002",
+  "target_quest_ids": [],
+  "proposed_by_loop": "weekly-evidence-synthesis",
+  "authority": "proposal",
+  "rationale": "The accepted two-regime measurement produced equal stale-coverage traces under an identical body-fixed schedule. If governance continues QST-SIM-0002, prefer a higher-information policy-neutral observation geometry that can test whether constant rotation rate changes the measurement without introducing survey-policy comparison, irregular rotation, or new shadow physics.",
+  "recorded_at": "2026-08-16T15:02:16Z"
+}
