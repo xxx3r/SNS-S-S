@@ -1,0 +1,34 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260823T145740000000Z-meta-wide-angle-steering-08bbe2b51c9d38ffdf9a",
+  "claim_cluster_id": "CLM-20260823T145740000000Z-meta-steering-08bbe2b51c9d38ffdf9a",
+  "claim": "A 2026 primary preprint reports full-wave simulated wide-angle 3D steering from a 250 GHz hemispherical graphene/gold transmitarray with 121 tunable sectors and simulated antenna efficiency of roughly 71-80 percent across investigated directions.",
+  "source_uri": "https://arxiv.org/abs/2608.08991",
+  "source_kind": "primary_paper",
+  "source_fingerprint": "sha256:a8f093726ecab98cbfbf6601fe92b0f82e685ff3a126cec81d877e60810b6683",
+  "observed_at": "2026-08-23T14:57:40Z",
+  "independence": "independent",
+  "polarity": "supports",
+  "confidence": 0.68,
+  "provenance": {
+    "source_title": "Active Hemispherical Metasurface Transmitarray Antenna for Wide-Angle 3D Beam Steering and Target Tracking",
+    "publication_date": "2026-08-10",
+    "primary_or_secondary": "primary_preprint",
+    "environment": "full-wave CST numerical antenna simulation",
+    "demonstrated_scale": "250 GHz hemispherical transmitarray with 121 independently tunable sectors",
+    "subsystems": ["META", "BEAM", "CONTROL"],
+    "evidence_tier": "B-primary-preprint",
+    "directness": 0.64,
+    "novelty": 0.67,
+    "limitations": [
+      "Numerical simulation rather than a reported physical or flight demonstration.",
+      "The antenna geometry, frequency, control implementation, mass, and power scale are not SNS-specific.",
+      "Antenna efficiency is not end-to-end energy-transfer efficiency."
+    ],
+    "fact_summary": "The paper reports -78 to +78 degree elevation steering, full 360 degree azimuthal coverage, 11.38-14.72 dBi directivity, and simulated antenna efficiency from 71 to 80 percent across investigated steering directions.",
+    "inference_summary": "Wide-angle programmable steering is sufficiently concrete to justify explicit angle/error/efficiency terms in QST-META-0001's abstraction.",
+    "speculation_summary": "Whether a future SNS-scale surface can preserve useful steering while satisfying mass, power, thermal, fabrication, and space-environment constraints remains unknown.",
+    "created_by_run_id": "RUN-20260823T145740000000Z-weekly-evidence-synthesis-6375ac8eb1cac4d6670b"
+  },
+  "artifacts": ["calendar/roundups/2026-08-23.md"]
+}
