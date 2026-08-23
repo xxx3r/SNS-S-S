@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260823T145740000000Z-qst-arci-work-conserving-fallback-f0a2cf6c3b1c5a13c14d",
+  "action_type": "refine_existing",
+  "quest_id": "QST-ARCI-0001",
+  "target_quest_ids": ["QST-ARCI-0001"],
+  "proposed_by_loop": "weekly-evidence-synthesis",
+  "authority": "proposal",
+  "rationale": "The accepted interval shows five consecutive Pre-Game deferrals after QST-STOR-0002 reached an L2 architecture boundary, producing no new Daily research artifact. If Monthly keeps STOR blocked for decision, it should consider a bounded work-conserving authorization for QST-ARCI-0001's already-defined P0 synthetic-target and weight/confidence-sensitivity slice. This proposal does not enact reprioritization or queue mutation.",
+  "recorded_at": "2026-08-23T14:57:40Z"
+}
