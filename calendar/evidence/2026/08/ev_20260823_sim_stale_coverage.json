@@ -1,0 +1,34 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260823T145740000000Z-sim-stale-coverage-d948bc819cf8e214a483",
+  "claim_cluster_id": "CLM-20260823T145740000000Z-sim-measurement-d948bc819cf8e214a483",
+  "claim": "QST-SIM-0002 now has an accepted finite-time stale-coverage measurement primitive and an accepted two-constant-rotation-regime measurement under one identical body-fixed observation schedule, with equal traces and no demonstrated policy advantage.",
+  "source_uri": "https://github.com/xxx3r/SNS-S-S/blob/b081c0c295da1e8453fb5130474f3100925b4d6c/outputs/qst_sim_0002/two_rotation_regime_stale_coverage.json",
+  "source_kind": "simulation",
+  "source_fingerprint": "sha256:6ce276e83eeba932e5efa2426adc11adfc78f96248af7941882fd116572fb81a",
+  "observed_at": "2026-08-23T14:57:40Z",
+  "independence": "independent",
+  "polarity": "supports",
+  "confidence": 0.88,
+  "provenance": {
+    "source_title": "Measure stale coverage under two constant rotation regimes",
+    "publication_date": "2026-08-14",
+    "primary_or_secondary": "primary_repository_artifact",
+    "environment": "AsteroidWorld deterministic synthetic measurement",
+    "demonstrated_scale": "two constant rotation regimes",
+    "subsystems": ["SIM", "MISSION"],
+    "evidence_tier": "A-repository",
+    "directness": 0.94,
+    "novelty": 0.72,
+    "limitations": [
+      "Identical body-fixed observations yielded equal stale-coverage traces and do not establish a policy or architecture advantage.",
+      "Irregular or tumbling rotation, alternative observation geometry, and new shadow physics remain outside scope."
+    ],
+    "fact_summary": "The accepted artifact records stale-coverage fractions [0.5, 1.0] for both 2-hour and 12-hour constant-rotation regimes under the same synthetic observation schedule.",
+    "negative_lineage": "The August 12 candidate failed semantic validation before the finite-time repair, and the August 14 candidate later exposed a malformed governance receipt before revalidation and merge. Both failures remain preserved in accepted receipts.",
+    "inference_summary": "SNS has a stronger policy-neutral measurement boundary, while the current observation schedule is not informative about rotation-regime effects.",
+    "speculation_summary": "A future observation geometry that couples observations to rotation may reveal a regime effect without embedding a survey-policy preference.",
+    "created_by_run_id": "RUN-20260823T145740000000Z-weekly-evidence-synthesis-6375ac8eb1cac4d6670b"
+  },
+  "artifacts": ["calendar/roundups/2026-08-23.md"]
+}
