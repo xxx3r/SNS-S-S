@@ -1,0 +1,107 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260823T145740000000Z-weekly-evidence-synthesis-6375ac8eb1cac4d6670b",
+  "loop_id": "weekly-evidence-synthesis",
+  "contract_version": "1.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-23T14:57:40Z",
+  "source_commit": "b081c0c295da1e8453fb5130474f3100925b4d6c",
+  "state_hash": "sha256:acef06a6c2e2a5fae05e94634f82e65a393921e74fd3da78be86cee22d70529a",
+  "quest_context": {
+    "primary_quest_id": "QST-STOR-0002",
+    "related_quest_ids": ["QST-SIM-0002", "QST-CALENDAR-0001", "QST-META-0001", "QST-ARCI-0001", "QST-PV-0001"],
+    "question": "What accepted Daily work and current primary evidence since the last accepted August 9 Weekly synthesis changes SNS beliefs, exposes negative evidence, or requires bounded governance proposals?",
+    "success_criteria": [
+      "Consume every accepted Daily Research Operator receipt after the accepted August 9 Weekly receipt.",
+      "Preserve the August 12 and August 14 failed/corrected transaction lineage as negative evidence.",
+      "Treat the final accepted PR #49 artifact and review correction as authoritative over its earlier candidate receipt interpretation without rewriting history.",
+      "Deduplicate the already-accepted SPRAT 29 source rather than minting a second event for the same underlying conference page.",
+      "Create one current dated roundup plus normalized evidence, belief proposals, and semantic quest-action proposals without enacting Monthly-owned state.",
+      "Escalate the accepted STOR falsifier without selecting a replacement architecture."
+    ],
+    "assumptions_changed": [
+      "The measured-fast-rotator surface escape is falsified on the accepted corrected synthetic thermal grid and cannot remain a default viable route under those assumptions.",
+      "QST-SIM-0002 now has an accepted finite-time stale-coverage measurement boundary, while the identical body-fixed schedule is not informative about rotation-regime effects.",
+      "QST-CALENDAR-0001 proposal staging and deterministic serialization are accepted.",
+      "A current wide-angle metasurface steering preprint is useful as modeling context but not as an SNS hardware or power-transfer claim."
+    ],
+    "operational_negative_evidence": "After the STOR falsifier reached an L2 architecture boundary, the August 17 Daily produced no research artifact and August 18-22 Pre-Game triage repeatedly issued no authorization. Governance authority was preserved, but five consecutive workdays produced no new Daily research artifact. Weekly proposes that Monthly explicitly decide whether an L2-blocked P0 quest should freeze independent work or permit a bounded work-conserving fallback lane.",
+    "monthly_state": "No accepted August monthly synthesis is present under calendar/monthly on the source commit. The current explicit-human August delegation remains valid, but Weekly does not infer Monthly decisions from the absence of a synthesis.",
+    "limitations": [
+      "The STOR target-frequency and absorbed-load values are synthetic screening assumptions, not measured population or package data.",
+      "The metasurface source is a numerical preprint at a non-SNS scale and is not space qualification or end-to-end power-transfer evidence.",
+      "The selected public NASA SPRAT material exposes conference scope and agenda but no technical result promoted in this synthesis.",
+      "Targeted Google Drive search returned no relevant SNS artifact; no broader absence claim is made.",
+      "No local shell execution is claimed; GitHub Actions is the repository validation surface."
+    ]
+  },
+  "pr_context": {
+    "pr_number": 51,
+    "lifecycle_state": "draft_governance_review",
+    "working_branch": "aurora/weekly-roundup-2026-08-23",
+    "base_branch": "main",
+    "base_commit": "b081c0c295da1e8453fb5130474f3100925b4d6c",
+    "stale_prior_weekly_pr": 50,
+    "stale_prior_weekly_disposition": "unaccepted_open_draft_with_failed_semantic_validation; not consumed as accepted state"
+  },
+  "consumed_ids": [
+    "RUN-20260809T150000000000Z-weekly-evidence-synthesis-9f0e1d2c3b4a59687786",
+    "RUN-20260810T200300000000Z-daily-research-operator-4c91e7a2b605d83f19aa",
+    "RUN-20260811T200200000000Z-daily-research-operator-5a7c1e9d3b8064f2a011",
+    "RUN-20260812T195600000000Z-daily-research-operator-6b2d8f1a4c905e73d211",
+    "RUN-20260813T220901285600Z-daily-research-operator-789bc1cd6d7140f01a9b",
+    "RUN-20260814T195200000000Z-daily-research-operator-4f9a7c21e6b8053d102a",
+    "RUN-20260815T190132000000Z-daily-research-operator-8f4a91c2e7b6053d102a",
+    "RUN-20260817T185752000000Z-daily-research-operator-5d8a1c7e2b9f6043a210"
+  ],
+  "artifacts": [
+    "calendar/roundups/2026-08-23.md",
+    "calendar/evidence/2026/08/ev_20260823_stor_fast_rotator_falsifier.json",
+    "calendar/evidence/2026/08/ev_20260823_sim_stale_coverage.json",
+    "calendar/evidence/2026/08/ev_20260823_calendar_staging.json",
+    "calendar/evidence/2026/08/ev_20260823_meta_wide_angle_steering.json",
+    "calendar/belief_events/2026/08/be_20260823_stor_fast_rotator_viability.json",
+    "calendar/belief_events/2026/08/be_20260823_sim_measurement_boundary.json",
+    "calendar/belief_events/2026/08/be_20260823_calendar_deterministic_staging.json",
+    "calendar/belief_events/2026/08/be_20260823_meta_steering_abstraction.json",
+    "quests/actions/2026/08/qa_20260823_qst_stor_0002_emergency_review.json",
+    "quests/actions/2026/08/qa_20260823_qst_arci_0001_work_conserving_fallback.json",
+    "quests/actions/2026/08/qa_20260823_qst_sim_0002_next_measurement.json"
+  ],
+  "checks": [
+    {
+      "name": "GitHub connector and accepted-state review",
+      "status": "passed",
+      "evidence": "Connected GitHub reads established current main b081c0c295da1e8453fb5130474f3100925b4d6c, the accepted August 9 Weekly boundary, all seven accepted Daily Research Operator receipts in the interval, active quests, current delegation, open PR #50, accepted artifacts, and executable schemas."
+    },
+    {
+      "name": "Google Drive bounded relevance search",
+      "status": "passed",
+      "evidence": "Connected Drive search for SNS SPRAT 29 PV degradation August 2026 returned zero relevant results; no Drive artifact was consumed."
+    },
+    {
+      "name": "current primary web evidence review",
+      "status": "passed",
+      "evidence": "Reviewed current NASA SPRAT 29 public material and current primary preprint arXiv:2608.08991. SPRAT produced no selected public technical result for promotion; the metasurface paper was normalized with explicit simulation and scale limitations."
+    },
+    {
+      "name": "repository semantic validation",
+      "status": "not_run",
+      "evidence": "GitHub Actions will execute python -m automation.cli validate-repository on the receipt-bearing PR head; no local shell validation is claimed."
+    },
+    {
+      "name": "GitHub Actions",
+      "status": "not_run",
+      "evidence": "Receipt-bearing tests, baseline-artifacts, and automation-transaction conclusions were not available before this immutable receipt was published."
+    }
+  ],
+  "belief_effects": [
+    "BEL-20260823T145740000000Z-stor-fast-rotator-viability-6a15e6ec0027af2ee0af",
+    "BEL-20260823T145740000000Z-sim-measurement-boundary-c1ef9d566879de5cb2ff",
+    "BEL-20260823T145740000000Z-calendar-deterministic-staging-faf4474efd6f1c59e3b8",
+    "BEL-20260823T145740000000Z-meta-steering-abstraction-59a814d7a223c81a088b"
+  ],
+  "terminal_state": "NEEDS_GOVERNANCE_REVIEW",
+  "next_action": "Monthly Governance must disposition the accepted QST-STOR-0002 fast-rotator falsification, decide whether an L2-blocked P0 quest freezes independent Daily research or permits a bounded QST-ARCI-0001 fallback, and reconcile stale PR #50 plus canonical short memory. PR #51 remains proposal-only and draft even if all hosted checks become green.",
+  "created_at": "2026-08-23T14:57:40Z"
+}
