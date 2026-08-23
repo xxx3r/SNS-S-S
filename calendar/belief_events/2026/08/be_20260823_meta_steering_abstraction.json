@@ -1,0 +1,11 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "BEL-20260823T145740000000Z-meta-steering-abstraction-59a814d7a223c81a088b",
+  "belief_key": "META.wide_angle_steering_abstraction",
+  "evidence_ids": ["EVID-20260823T145740000000Z-meta-wide-angle-steering-08bbe2b51c9d38ffdf9a"],
+  "magnitude": 0.05,
+  "confidence": 0.68,
+  "effect": "strengthen",
+  "rationale": "A current primary preprint reports wide-angle electronically tunable metasurface steering with substantial simulated antenna efficiency, supporting explicit steering-angle and loss terms in the QST-META abstraction. The result is numerical, not SNS-scale or space-qualified, so the update is deliberately small.",
+  "recorded_at": "2026-08-23T14:57:40Z"
+}
