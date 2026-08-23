@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260823T145740000000Z-qst-stor-emergency-review-d2998b20868a76afaea7",
+  "action_type": "block",
+  "quest_id": "QST-STOR-0002",
+  "target_quest_ids": ["QST-STOR-0002"],
+  "proposed_by_loop": "weekly-evidence-synthesis",
+  "authority": "emergency_escalation",
+  "rationale": "Accepted review-corrected evidence triggers the declared fast-rotator surface falsifier on the complete synthetic thermal grid. Weekly must not select hosted operation, larger geometry, or a replacement physical assumption. Monthly Governance must explicitly disposition the route while preserving the falsifier as accepted history.",
+  "recorded_at": "2026-08-23T14:57:40Z"
+}
