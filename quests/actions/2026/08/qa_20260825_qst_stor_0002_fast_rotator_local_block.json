@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260825T142300000000Z-qst-stor-fast-rotator-local-block-3c8e71a4b905d62f10aa",
+  "action_type": "block",
+  "quest_id": "QST-STOR-0002",
+  "target_quest_ids": ["QST-STOR-0002"],
+  "proposed_by_loop": "monthly-governance",
+  "authority": "enacted",
+  "rationale": "Enact the accepted Weekly emergency escalation only at the falsified route boundary: QST-STOR-0002 remains an active P0 quest, while the currently parameterized <=30-minute fast-rotator surface escape is locally blocked after FALSIFIED_ON_DECLARED_GRID. This action does not select hosted operation, larger geometry, revised emissivity, or another replacement architecture, and it does not impose a program-wide research freeze.",
+  "recorded_at": "2026-08-25T14:23:00Z"
+}

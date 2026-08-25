@@ -1,0 +1,41 @@
+{
+  "schema": "sns.consolidated-beliefs.v1",
+  "period": "2026-08",
+  "generated_by": "monthly-governance",
+  "generated_at": "2026-08-25T14:23:00Z",
+  "source_commit": "d7445829eff9037c0965b547aea6ce822c284f92",
+  "note": "Generated governance view of accepted immutable belief events. Raw belief events and evidence remain canonical provenance.",
+  "beliefs": {
+    "CALENDAR.deterministic_staging": {
+      "magnitude": 0.08,
+      "confidence": 0.94,
+      "belief_event_ids": ["BEL-20260823T145740000000Z-calendar-deterministic-staging-faf4474efd6f1c59e3b8"]
+    },
+    "CALENDAR.fail_closed_validation": {
+      "magnitude": 0.10,
+      "confidence": 0.91,
+      "belief_event_ids": ["BEL-20260809T150000000000Z-calendar-fail-closed-3a824b5c6d7e8f901234"]
+    },
+    "META.wide_angle_steering_abstraction": {
+      "magnitude": 0.05,
+      "confidence": 0.68,
+      "belief_event_ids": ["BEL-20260823T145740000000Z-meta-steering-abstraction-59a814d7a223c81a088b"]
+    },
+    "SIM.measurement_boundary": {
+      "magnitude": 0.10,
+      "confidence": 0.88,
+      "belief_event_ids": ["BEL-20260823T145740000000Z-sim-measurement-boundary-c1ef9d566879de5cb2ff"]
+    },
+    "STOR.constraint_accounting": {
+      "magnitude": 0.12,
+      "confidence": 0.86,
+      "belief_event_ids": ["BEL-20260809T150000000000Z-stor-constraint-accounting-29713a4b5c6d7e8f9012"]
+    },
+    "STOR.fast_rotator_surface_viability": {
+      "magnitude": -0.28,
+      "confidence": 0.93,
+      "belief_event_ids": ["BEL-20260823T145740000000Z-stor-fast-rotator-viability-6a15e6ec0027af2ee0af"],
+      "boundary": "FALSIFIED_ON_DECLARED_GRID; local to the accepted fast-rotator surface screening assumptions"
+    }
+  }
+}

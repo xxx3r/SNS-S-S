@@ -1,0 +1,87 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260825T142300000000Z-monthly-governance-a5f82d7c1e9b6043d210",
+  "loop_id": "monthly-governance",
+  "contract_version": "1.1.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-08-25T14:23:00Z",
+  "source_commit": "d7445829eff9037c0965b547aea6ce822c284f92",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "primary_quest_id": "QST-STOR-0002",
+    "work_conserving_quest_id": "QST-ARCI-0001",
+    "decision": "Keep QST-STOR-0002 active at P0 while locally blocking only the falsified fast-rotator surface route; enact QST-ARCI-0001 as the current executable P0 slot without changing queue membership or priority.",
+    "routing_boundary": "Local route stop is not program-wide freeze; global, shared-dependency, protected-human, ownership-conflict, or failed-validation blockers still stop routing.",
+    "delegation_id": "DELEG-20260807-HUMAN-FAST-TRIAGE-V1",
+    "delegation_disposition": "carried_forward_unchanged_through_existing_expiry"
+  },
+  "pr_context": {
+    "accepted_weekly_pr": 51,
+    "accepted_weekly_merge": "d7445829eff9037c0965b547aea6ce822c284f92",
+    "stale_weekly_pr": 50,
+    "stale_weekly_disposition": "closed_unmerged_superseded_history_preserved"
+  },
+  "consumed_ids": [
+    "RUN-20260823T145740000000Z-weekly-evidence-synthesis-6375ac8eb1cac4d6670b",
+    "RUN-20260824T161554000000Z-daily-governance-triage-f1b92d6a4c807e35a214",
+    "QA-20260823T145740000000Z-qst-stor-emergency-review-d2998b20868a76afaea7",
+    "QA-20260823T145740000000Z-qst-arci-work-conserving-fallback-f0a2cf6c3b1c5a13c14d",
+    "DELEG-20260807-HUMAN-FAST-TRIAGE-V1"
+  ],
+  "artifacts": [
+    "calendar/monthly/2026-08.md",
+    "calendar/consolidated_beliefs.json",
+    "quests/actions/2026/08/qa_20260825_qst_stor_0002_fast_rotator_local_block.json",
+    "quests/actions/2026/08/qa_20260825_qst_arci_0001_work_conserving_slot.json",
+    "memory/mem_log_short.md",
+    "quests/active/README.md"
+  ],
+  "checks": [
+    {
+      "name": "GitHub connector preflight and source freeze",
+      "status": "passed",
+      "evidence": "GitHub reads froze canonical main at d7445829eff9037c0965b547aea6ce822c284f92 after accepted PR #51 and confirmed the active August delegation and eight-quest queue."
+    },
+    {
+      "name": "PR #51 acceptance and canonical-main backstop",
+      "status": "passed",
+      "evidence": "PR #51 merged from exact head f8c9c169c540bb0a809c7da7ad75b31fabafdd09; main push runs tests #32858708772, automation-transaction #32858708757, and baseline-artifacts #32858708760 all completed successfully."
+    },
+    {
+      "name": "stale PR #50 reconciliation",
+      "status": "passed",
+      "evidence": "PR #50 was closed unmerged as superseded by accepted PR #51 after a durable Monthly disposition comment; its failed duplicate-source and missing-state_hash lineage was preserved."
+    },
+    {
+      "name": "Google Drive bounded mirror search",
+      "status": "passed",
+      "evidence": "Targeted connected-Drive searches for SNS-S-S governance and Solar Nano Sphere material returned no relevant current artifact; no competing Drive authority was consumed or mutated."
+    },
+    {
+      "name": "Wolfram routing sanity check",
+      "status": "passed",
+      "evidence": "Wolfram was used only for independent control-flow sanity around deterministic priority selection and local-versus-global abort propagation; it supplied no scientific evidence or policy selection."
+    },
+    {
+      "name": "repository semantic validation",
+      "status": "not_run",
+      "evidence": "The receipt-bearing Monthly PR head will run python -m automation.cli validate-repository in GitHub Actions."
+    },
+    {
+      "name": "receipt-bearing hosted validation",
+      "status": "not_run",
+      "evidence": "Tests, baseline-artifacts, and automation-transaction on the Monthly PR head will be the acceptance surface after publication of this immutable receipt."
+    }
+  ],
+  "belief_effects": [
+    "BEL-20260809T150000000000Z-calendar-fail-closed-3a824b5c6d7e8f901234",
+    "BEL-20260809T150000000000Z-stor-constraint-accounting-29713a4b5c6d7e8f9012",
+    "BEL-20260823T145740000000Z-calendar-deterministic-staging-faf4474efd6f1c59e3b8",
+    "BEL-20260823T145740000000Z-meta-steering-abstraction-59a814d7a223c81a088b",
+    "BEL-20260823T145740000000Z-sim-measurement-boundary-c1ef9d566879de5cb2ff",
+    "BEL-20260823T145740000000Z-stor-fast-rotator-viability-6a15e6ec0027af2ee0af"
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "After this Monthly transaction passes receipt-bearing hosted validation and merges, Pre-Game should issue one bounded QST-ARCI-0001 authorization under the unchanged August delegation, while a separate reviewed Graph Routing v1.1 contract PR encodes local-stop alternate routing for future runs.",
+  "created_at": "2026-08-25T14:23:00Z"
+}
