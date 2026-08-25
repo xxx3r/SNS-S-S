@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260825T142300000000Z-qst-arci-work-conserving-slot-5d8a1c7e2b9f6043a210",
+  "action_type": "refine_existing",
+  "quest_id": "QST-ARCI-0001",
+  "target_quest_ids": ["QST-ARCI-0001"],
+  "proposed_by_loop": "monthly-governance",
+  "authority": "enacted",
+  "rationale": "QST-ARCI-0001 remains an active P0 quest already inside DELEG-20260807-HUMAN-FAST-TRIAGE-V1. While the QST-STOR-0002 fast-rotator route is locally blocked, enact ARCI as the current executable research slot for its already-defined synthetic-target, evidence-type, missing-data, and weight/confidence-sensitivity refinement. This is work-conserving slot routing only; it does not change active-queue membership, priority labels, or canonical scientific truth.",
+  "recorded_at": "2026-08-25T14:23:00Z"
+}

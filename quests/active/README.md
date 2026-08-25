@@ -22,4 +22,8 @@ Keep 3–8 active quests. Each quest must produce an inspectable artifact and st
 
 ## Selection rule
 
-Prefer the quest that removes the most uncertainty per unit effort. Current default spawn: `QST-STOR-0002`.
+Prefer the executable active quest that removes the most uncertainty per unit effort while preserving accepted monthly priority, one-owner law, delegation bounds, and local stop conditions.
+
+Queue membership and declared priority are unchanged: both `QST-STOR-0002` and `QST-ARCI-0001` remain P0. The currently parameterized fast-rotator surface route inside `QST-STOR-0002` is locally blocked after accepted `FALSIFIED_ON_DECLARED_GRID` evidence. Therefore the current executable spawn is `QST-ARCI-0001` for its already-defined bounded synthetic-target sensitivity slice.
+
+Selecting an executable slot is not queue reprioritization. A quest-local stop removes only that blocked route from the current execution candidates. A demonstrated program-global blocker, shared dependency blocker, protected-human boundary, live-owner conflict, or failed validation still stops routing and escalates.
