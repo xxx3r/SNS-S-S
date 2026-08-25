@@ -1,0 +1,11 @@
+{
+  "schema": "sns.quest-action.v1",
+  "quest_action_id": "QA-20260823T145740000000Z-qst-sim-next-measurement-c46a452333333b7b9a3d",
+  "action_type": "refine_existing",
+  "quest_id": "QST-SIM-0002",
+  "target_quest_ids": ["QST-SIM-0002"],
+  "proposed_by_loop": "weekly-evidence-synthesis",
+  "authority": "proposal",
+  "rationale": "The accepted two-rotation-regime artifact records equal stale-coverage traces because both arms use an identical body-fixed observation schedule. A future bounded refinement should first use a policy-neutral observation geometry in which rotation causally changes visibility or observation timing; only then should independent versus coordinated survey policies be compared.",
+  "recorded_at": "2026-08-23T14:57:40Z"
+}

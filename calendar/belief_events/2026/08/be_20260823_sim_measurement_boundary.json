@@ -1,0 +1,11 @@
+{
+  "schema": "sns.belief-event.v1",
+  "belief_event_id": "BEL-20260823T145740000000Z-sim-measurement-boundary-c1ef9d566879de5cb2ff",
+  "belief_key": "SIM.measurement_boundary",
+  "evidence_ids": ["EVID-20260823T145740000000Z-sim-stale-coverage-d948bc819cf8e214a483"],
+  "magnitude": 0.10,
+  "confidence": 0.88,
+  "effect": "strengthen",
+  "rationale": "Finite-time stale coverage is now an accepted reproducible measurement primitive, and the two-constant-rotation-regime artifact demonstrates the measurement boundary without claiming a survey-policy advantage. Equal traces also expose that the current body-fixed schedule is not informative about rotation-regime effects.",
+  "recorded_at": "2026-08-23T14:57:40Z"
+}

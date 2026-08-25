@@ -1,0 +1,35 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260823T145740000000Z-stor-fast-rotator-falsifier-a9e13484396417d85050",
+  "claim_cluster_id": "CLM-20260823T145740000000Z-stor-escape-viability-a9e13484396417d85050",
+  "claim": "The accepted review-corrected QST-STOR-0002 fast-rotator constraint-cost artifact triggers its declared falsifier because no declared emissivity/load case simultaneously passes inherited 15-minute shadow survival and illuminated rejection at the reference temperature.",
+  "source_uri": "https://github.com/xxx3r/SNS-S-S/blob/b081c0c295da1e8453fb5130474f3100925b4d6c/outputs/qst_stor_0002/fast_rotator_constraint_cost.json",
+  "source_kind": "experiment",
+  "source_fingerprint": "sha256:84f1f774ef31ca499832b6f1c39afb8844548527b8b218e2c20611a0137cee4e",
+  "observed_at": "2026-08-23T14:57:40Z",
+  "independence": "independent",
+  "polarity": "falsifies",
+  "confidence": 0.93,
+  "provenance": {
+    "source_title": "QST-STOR-0002 fast-rotator constraint-cost accepted artifact",
+    "publication_date": "2026-08-15",
+    "primary_or_secondary": "primary_repository_artifact",
+    "environment": "deterministic synthetic screening grid",
+    "demonstrated_scale": "10 mm SNS screening model",
+    "subsystems": ["STOR", "THERMAL", "MISSION"],
+    "evidence_tier": "A-repository",
+    "directness": 0.98,
+    "novelty": 0.91,
+    "limitations": [
+      "Target-availability probabilities are synthetic, not measured population frequencies.",
+      "Absorbed thermal loads are a synthetic screening grid, not measured optical/package loads.",
+      "Rotation period alone omits irregular shape, terrain, latitude, tumbling, and seasonal geometry."
+    ],
+    "fact_summary": "The final accepted artifact records FALSIFIED_ON_DECLARED_GRID with zero simultaneous shadow-and-illuminated passes across four emissivities and five absorbed-load cases.",
+    "negative_lineage": "The immutable August 15 Daily receipt was written before PR review and described conditional survivors. Codex review identified misuse of eclipse-only package conductance in the illuminated path; the accepted corrected artifact supersedes that candidate interpretation without rewriting the receipt.",
+    "inference_summary": "The measured-fast-rotator surface escape cannot remain a default viable route under the currently declared screening assumptions.",
+    "speculation_summary": "Hosted operation, larger geometry, or revised physical assumptions may reopen feasibility, but none is established by this event.",
+    "created_by_run_id": "RUN-20260823T145740000000Z-weekly-evidence-synthesis-6375ac8eb1cac4d6670b"
+  },
+  "artifacts": ["calendar/roundups/2026-08-23.md"]
+}
