@@ -3,12 +3,12 @@
   "pr_number": 54,
   "quest_id": "QST-ARCI-0001",
   "acceptance_slice": "Produce one reproducible QST-ARCI-0001 synthetic-target assessment using the accepted ARCI v0.1 model: attach explicit evidence types and missing-data flags, keep score and confidence separate, run bounded weight and confidence sensitivity, and identify the next measurement without unsupported dollar valuation or queue/belief changes.",
-  "state": "ready_for_review",
+  "state": "merge_ready",
   "owner_run_id": "RUN-20260826T191200000000Z-daily-research-operator-7c1e4a92b6d8053f102a",
   "source_commit": "0a67b00e36606554bb8a42a81bdcc57a45e033c4",
-  "head_commit": "086039e5df1d0b7884d6eaf12aa663ee316017fa",
-  "updated_at": "2026-08-26T19:16:00Z",
+  "head_commit": "bb933a8ae3851342d16e835d85d904fb40bae685",
+  "updated_at": "2026-08-26T19:17:00Z",
   "next_review_after": "2026-08-27T16:26:59Z",
   "supersedes": [],
-  "reason": "PR #54 uniquely owns the authorized ARCI synthetic-target sensitivity slice. Receipt-bearing tests and baseline artifacts passed; automation tests passed 42/42, and this mechanical lifecycle-state correction is required before semantic validation can complete."
+  "reason": "PR #54 is current, mergeable, and uniquely owned. Tests 33004118207, baseline artifacts 33004118338, and automation transaction 33004118358 passed on head bb933a8ae3851342d16e835d85d904fb40bae685; all three substantive review threads were addressed and resolved."
 }
