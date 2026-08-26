@@ -1,12 +1,69 @@
 {
+  "schema": "sns.arci-synthetic-target.v1",
   "target": "SYNTHETIC-2026-A",
+  "synthetic": true,
+  "provenance": "Declared synthetic fixture; no observational or external source data.",
+  "missing_data_convention": "missing_data=true lowers evidence confidence but does not alter the declared synthetic dimension score.",
+  "sensitivity": {
+    "weight_relative_perturbation": 0.1,
+    "confidence_absolute_perturbation": 0.1
+  },
   "dimensions": {
-    "composition": {"score": 0.78, "confidence": 0.55, "rationale": "Synthetic metallic indicators with incomplete subsurface evidence."},
-    "accessibility": {"score": 0.84, "confidence": 0.80, "rationale": "Synthetic low-delta-v mission case."},
-    "recoverability": {"score": 0.52, "confidence": 0.35, "rationale": "Anchoring and processing remain poorly constrained."},
-    "energy_environment": {"score": 0.81, "confidence": 0.70, "rationale": "Favorable synthetic illumination profile."},
-    "surface_operations": {"score": 0.48, "confidence": 0.30, "rationale": "Unknown regolith cohesion and dust behavior."},
-    "communications": {"score": 0.76, "confidence": 0.65, "rationale": "Mostly favorable line-of-sight geometry."},
-    "market_mission_value": {"score": 0.64, "confidence": 0.40, "rationale": "Mission value is scenario-dependent and not a commodity-price claim."}
+    "composition": {
+      "score": 0.78,
+      "confidence": 0.55,
+      "rationale": "Synthetic metallic indicators with incomplete subsurface evidence.",
+      "evidence_type": "synthetic_remote_spectral_proxy",
+      "missing_data": true,
+      "next_measurement": "Acquire a resolved synthetic subsurface-composition proxy."
+    },
+    "accessibility": {
+      "score": 0.84,
+      "confidence": 0.8,
+      "rationale": "Synthetic low-delta-v mission case.",
+      "evidence_type": "synthetic_trajectory_solution",
+      "missing_data": false,
+      "next_measurement": "Refine the synthetic launch-window dispersion."
+    },
+    "recoverability": {
+      "score": 0.52,
+      "confidence": 0.35,
+      "rationale": "Anchoring and processing remain poorly constrained.",
+      "evidence_type": "synthetic_process_analogue",
+      "missing_data": true,
+      "next_measurement": "Measure synthetic anchoring and feedstock-handling response."
+    },
+    "energy_environment": {
+      "score": 0.81,
+      "confidence": 0.7,
+      "rationale": "Favorable synthetic illumination profile.",
+      "evidence_type": "synthetic_illumination_model",
+      "missing_data": false,
+      "next_measurement": "Resolve synthetic seasonal illumination variance."
+    },
+    "surface_operations": {
+      "score": 0.48,
+      "confidence": 0.3,
+      "rationale": "Unknown regolith cohesion and dust behavior.",
+      "evidence_type": "missing_surface_mechanics",
+      "missing_data": true,
+      "next_measurement": "Measure synthetic regolith cohesion and dust response."
+    },
+    "communications": {
+      "score": 0.76,
+      "confidence": 0.65,
+      "rationale": "Mostly favorable line-of-sight geometry.",
+      "evidence_type": "synthetic_link_geometry",
+      "missing_data": false,
+      "next_measurement": "Resolve synthetic occultation-duration uncertainty."
+    },
+    "market_mission_value": {
+      "score": 0.64,
+      "confidence": 0.4,
+      "rationale": "Mission value is scenario-dependent and not a commodity-price claim.",
+      "evidence_type": "synthetic_mission_utility_scenario",
+      "missing_data": true,
+      "next_measurement": "Clarify the synthetic mission-demand scenario without assigning dollar value."
+    }
   }
 }
