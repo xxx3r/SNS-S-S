@@ -6,30 +6,37 @@
   "evidence": {
     "composition": {
       "evidence_type": "synthetic_remote_spectral_proxy",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": true
     },
     "accessibility": {
       "evidence_type": "synthetic_trajectory_solution",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": false
     },
     "recoverability": {
       "evidence_type": "synthetic_process_analogue",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": true
     },
     "energy_environment": {
       "evidence_type": "synthetic_illumination_model",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": false
     },
     "surface_operations": {
       "evidence_type": "missing_surface_mechanics",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": true
     },
     "communications": {
       "evidence_type": "synthetic_link_geometry",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": false
     },
     "market_mission_value": {
       "evidence_type": "synthetic_mission_utility_scenario",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": true
     }
   },
@@ -46,13 +53,17 @@
     "lower_bound": 0.3579125,
     "upper_bound": 0.8354125,
     "grade": "research-only",
+    "evidence_ladder_rung": "none_synthetic",
     "recommendation": "reduce_uncertainty_before_commitment"
   },
   "sensitivity": {
     "weight_relative_perturbation": 0.1,
     "confidence_absolute_perturbation": 0.1,
     "scenario_count": 28,
-    "observed_grades": [
+    "weight_observed_grades": [
+      "research-only"
+    ],
+    "confidence_observed_grades": [
       "research-only"
     ],
     "confidence_adjusted_score_range": [
@@ -60,7 +71,7 @@
       0.3716125
     ],
     "major_grade_reversal": false,
-    "falsifier_status": "NOT_TRIGGERED_ON_BOUNDED_PERTURBATIONS",
+    "falsifier_status": "NOT_TRIGGERED_ON_BOUNDED_WEIGHT_PERTURBATIONS",
     "scenarios": [
       {
         "kind": "weight",
@@ -73,6 +84,7 @@
           "lower_bound": 0.356516139109,
           "upper_bound": 0.834577363599,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -87,6 +99,7 @@
           "lower_bound": 0.35925615148,
           "upper_bound": 0.836216935794,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -101,6 +114,7 @@
           "lower_bound": 0.3442125,
           "upper_bound": 0.8417125,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -115,6 +129,7 @@
           "lower_bound": 0.3716125,
           "upper_bound": 0.8291125,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -129,6 +144,7 @@
           "lower_bound": 0.353794429127,
           "upper_bound": 0.835520317452,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -143,6 +159,7 @@
           "lower_bound": 0.361927928365,
           "upper_bound": 0.835326943143,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -157,6 +174,7 @@
           "lower_bound": 0.3476375,
           "upper_bound": 0.8401375,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -171,6 +189,7 @@
           "lower_bound": 0.3681875,
           "upper_bound": 0.8306875,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -185,6 +204,7 @@
           "lower_bound": 0.36103141024,
           "upper_bound": 0.835904506687,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -199,6 +219,7 @@
           "lower_bound": 0.354898395981,
           "upper_bound": 0.834947657065,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -213,6 +234,7 @@
           "lower_bound": 0.3476375,
           "upper_bound": 0.8401375,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -227,6 +249,7 @@
           "lower_bound": 0.3681875,
           "upper_bound": 0.8306875,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -241,6 +264,7 @@
           "lower_bound": 0.356026885012,
           "upper_bound": 0.835319814305,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -255,6 +279,7 @@
           "lower_bound": 0.359765170081,
           "upper_bound": 0.835507744339,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -269,6 +294,7 @@
           "lower_bound": 0.3510625,
           "upper_bound": 0.8385625,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -283,6 +309,7 @@
           "lower_bound": 0.3647625,
           "upper_bound": 0.8322625,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -297,6 +324,7 @@
           "lower_bound": 0.361875235126,
           "upper_bound": 0.835986910253,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -311,6 +339,7 @@
           "lower_bound": 0.354087116892,
           "upper_bound": 0.834875294232,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -325,6 +354,7 @@
           "lower_bound": 0.3476375,
           "upper_bound": 0.8401375,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -339,6 +369,7 @@
           "lower_bound": 0.3681875,
           "upper_bound": 0.8306875,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -353,6 +384,7 @@
           "lower_bound": 0.356635445363,
           "upper_bound": 0.835423324151,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -367,6 +399,7 @@
           "lower_bound": 0.35916616018,
           "upper_bound": 0.835403783943,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -381,6 +414,7 @@
           "lower_bound": 0.3510625,
           "upper_bound": 0.8385625,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -395,6 +429,7 @@
           "lower_bound": 0.3647625,
           "upper_bound": 0.8322625,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -409,6 +444,7 @@
           "lower_bound": 0.359549692082,
           "upper_bound": 0.835184209848,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -423,6 +459,7 @@
           "lower_bound": 0.356326142348,
           "upper_bound": 0.835636487175,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -437,6 +474,7 @@
           "lower_bound": 0.3476375,
           "upper_bound": 0.8401375,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       },
@@ -451,6 +489,7 @@
           "lower_bound": 0.3681875,
           "upper_bound": 0.8306875,
           "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
           "recommendation": "reduce_uncertainty_before_commitment"
         }
       }
