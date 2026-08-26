@@ -19,7 +19,8 @@ def test_synthetic_arci_sensitivity_reproduces_versioned_artifact():
     assert expected["synthetic"] is True
     assert expected["sensitivity"]["scenario_count"] == 28
     assert expected["sensitivity"]["major_grade_reversal"] is False
-    assert expected["sensitivity"]["weight_observed_grades"] == ["research-only"]\n    assert expected["sensitivity"]["confidence_observed_grades"] == ["research-only"]
+    assert expected["sensitivity"]["weight_observed_grades"] == ["research-only"]
+    assert expected["sensitivity"]["confidence_observed_grades"] == ["research-only"]
     assert expected["next_measurement"]["dimension"] == "surface_operations"
 
 
