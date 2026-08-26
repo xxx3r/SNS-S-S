@@ -14,6 +14,7 @@
       "confidence": 0.55,
       "rationale": "Synthetic metallic indicators with incomplete subsurface evidence.",
       "evidence_type": "synthetic_remote_spectral_proxy",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": true,
       "next_measurement": "Acquire a resolved synthetic subsurface-composition proxy."
     },
@@ -22,6 +23,7 @@
       "confidence": 0.8,
       "rationale": "Synthetic low-delta-v mission case.",
       "evidence_type": "synthetic_trajectory_solution",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": false,
       "next_measurement": "Refine the synthetic launch-window dispersion."
     },
@@ -30,6 +32,7 @@
       "confidence": 0.35,
       "rationale": "Anchoring and processing remain poorly constrained.",
       "evidence_type": "synthetic_process_analogue",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": true,
       "next_measurement": "Measure synthetic anchoring and feedstock-handling response."
     },
@@ -38,6 +41,7 @@
       "confidence": 0.7,
       "rationale": "Favorable synthetic illumination profile.",
       "evidence_type": "synthetic_illumination_model",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": false,
       "next_measurement": "Resolve synthetic seasonal illumination variance."
     },
@@ -46,6 +50,7 @@
       "confidence": 0.3,
       "rationale": "Unknown regolith cohesion and dust behavior.",
       "evidence_type": "missing_surface_mechanics",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": true,
       "next_measurement": "Measure synthetic regolith cohesion and dust response."
     },
@@ -54,6 +59,7 @@
       "confidence": 0.65,
       "rationale": "Mostly favorable line-of-sight geometry.",
       "evidence_type": "synthetic_link_geometry",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": false,
       "next_measurement": "Resolve synthetic occultation-duration uncertainty."
     },
@@ -62,6 +68,7 @@
       "confidence": 0.4,
       "rationale": "Mission value is scenario-dependent and not a commodity-price claim.",
       "evidence_type": "synthetic_mission_utility_scenario",
+      "evidence_ladder_rung": "none_synthetic",
       "missing_data": true,
       "next_measurement": "Clarify the synthetic mission-demand scenario without assigning dollar value."
     }
