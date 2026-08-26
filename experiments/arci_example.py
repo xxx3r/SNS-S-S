@@ -33,14 +33,31 @@ def _assessment(
     return ArciAssessment(dimensions=dimensions, weights=weights or data.get("weights"))
 
 
+def _serialized_grade(value: float) -> str:
+    """Classify the same rounded value that is written to the artifact."""
+    if value >= 0.80:
+        return "A"
+    if value >= 0.70:
+        return "B+"
+    if value >= 0.60:
+        return "B"
+    if value >= 0.50:
+        return "C+"
+    if value >= 0.40:
+        return "C"
+    return "research-only"
+
+
 def _compact(result) -> dict:
+    adjusted = round(result.confidence_adjusted_score, 12)
     return {
         "score": round(result.score, 12),
         "confidence": round(result.confidence, 12),
-        "confidence_adjusted_score": round(result.confidence_adjusted_score, 12),
+        "confidence_adjusted_score": adjusted,
         "lower_bound": round(result.lower_bound, 12),
         "upper_bound": round(result.upper_bound, 12),
-        "grade": result.grade,
+        "grade": _serialized_grade(adjusted),
+        "evidence_ladder_rung": "none_synthetic",
         "recommendation": result.recommendation,
     }
 
@@ -84,8 +101,24 @@ def build_payload(data: Mapping) -> dict:
                 }
             )
 
-    grades = sorted({scenario["result"]["grade"] for scenario in scenarios})
-    major_grade_reversal = any(grade != baseline.grade for grade in grades)
+    baseline_result = _compact(baseline)
+    weight_grades = sorted(
+        {
+            scenario["result"]["grade"]
+            for scenario in scenarios
+            if scenario["kind"] == "weight"
+        }
+    )
+    confidence_grades = sorted(
+        {
+            scenario["result"]["grade"]
+            for scenario in scenarios
+            if scenario["kind"] == "confidence"
+        }
+    )
+    major_grade_reversal = any(
+        grade != baseline_result["grade"] for grade in weight_grades
+    )
     missing = [
         name for name, values in data["dimensions"].items() if values["missing_data"]
     ]
@@ -107,26 +140,28 @@ def build_payload(data: Mapping) -> dict:
         "evidence": {
             name: {
                 "evidence_type": values["evidence_type"],
+                "evidence_ladder_rung": values["evidence_ladder_rung"],
                 "missing_data": values["missing_data"],
             }
             for name, values in data["dimensions"].items()
         },
         "missing_dimensions": missing,
-        "baseline": _compact(baseline),
+        "baseline": baseline_result,
         "sensitivity": {
             "weight_relative_perturbation": relative,
             "confidence_absolute_perturbation": confidence_delta,
             "scenario_count": len(scenarios),
-            "observed_grades": grades,
+            "weight_observed_grades": weight_grades,
+            "confidence_observed_grades": confidence_grades,
             "confidence_adjusted_score_range": [
                 round(min(adjusted_values), 12),
                 round(max(adjusted_values), 12),
             ],
             "major_grade_reversal": major_grade_reversal,
             "falsifier_status": (
-                "TRIGGERED_GRADE_REVERSAL"
+                "TRIGGERED_WEIGHT_GRADE_REVERSAL"
                 if major_grade_reversal
-                else "NOT_TRIGGERED_ON_BOUNDED_PERTURBATIONS"
+                else "NOT_TRIGGERED_ON_BOUNDED_WEIGHT_PERTURBATIONS"
             ),
             "scenarios": scenarios,
         },
