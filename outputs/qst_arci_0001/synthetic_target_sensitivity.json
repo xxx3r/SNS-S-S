@@ -1,0 +1,508 @@
+{
+  "schema": "sns.arci-synthetic-sensitivity.v1",
+  "target": "SYNTHETIC-2026-A",
+  "synthetic": true,
+  "provenance": "Declared synthetic fixture; no observational or external source data.",
+  "evidence": {
+    "composition": {
+      "evidence_type": "synthetic_remote_spectral_proxy",
+      "evidence_ladder_rung": "none_synthetic",
+      "missing_data": true
+    },
+    "accessibility": {
+      "evidence_type": "synthetic_trajectory_solution",
+      "evidence_ladder_rung": "none_synthetic",
+      "missing_data": false
+    },
+    "recoverability": {
+      "evidence_type": "synthetic_process_analogue",
+      "evidence_ladder_rung": "none_synthetic",
+      "missing_data": true
+    },
+    "energy_environment": {
+      "evidence_type": "synthetic_illumination_model",
+      "evidence_ladder_rung": "none_synthetic",
+      "missing_data": false
+    },
+    "surface_operations": {
+      "evidence_type": "missing_surface_mechanics",
+      "evidence_ladder_rung": "none_synthetic",
+      "missing_data": true
+    },
+    "communications": {
+      "evidence_type": "synthetic_link_geometry",
+      "evidence_ladder_rung": "none_synthetic",
+      "missing_data": false
+    },
+    "market_mission_value": {
+      "evidence_type": "synthetic_mission_utility_scenario",
+      "evidence_ladder_rung": "none_synthetic",
+      "missing_data": true
+    }
+  },
+  "missing_dimensions": [
+    "composition",
+    "recoverability",
+    "surface_operations",
+    "market_mission_value"
+  ],
+  "baseline": {
+    "score": 0.685,
+    "confidence": 0.5225,
+    "confidence_adjusted_score": 0.3579125,
+    "lower_bound": 0.3579125,
+    "upper_bound": 0.8354125,
+    "grade": "research-only",
+    "evidence_ladder_rung": "none_synthetic",
+    "recommendation": "reduce_uncertainty_before_commitment"
+  },
+  "sensitivity": {
+    "weight_relative_perturbation": 0.1,
+    "confidence_absolute_perturbation": 0.1,
+    "scenario_count": 28,
+    "weight_observed_grades": [
+      "research-only"
+    ],
+    "confidence_observed_grades": [
+      "research-only"
+    ],
+    "confidence_adjusted_score_range": [
+      0.3442125,
+      0.3716125
+    ],
+    "major_grade_reversal": false,
+    "falsifier_status": "NOT_TRIGGERED_ON_BOUNDED_WEIGHT_PERTURBATIONS",
+    "scenarios": [
+      {
+        "kind": "weight",
+        "dimension": "composition",
+        "direction": "down",
+        "result": {
+          "score": 0.68306122449,
+          "confidence": 0.52193877551,
+          "confidence_adjusted_score": 0.356516139109,
+          "lower_bound": 0.356516139109,
+          "upper_bound": 0.834577363599,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "weight",
+        "dimension": "composition",
+        "direction": "up",
+        "result": {
+          "score": 0.686862745098,
+          "confidence": 0.523039215686,
+          "confidence_adjusted_score": 0.35925615148,
+          "lower_bound": 0.35925615148,
+          "upper_bound": 0.836216935794,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "composition",
+        "direction": "down",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5025,
+          "confidence_adjusted_score": 0.3442125,
+          "lower_bound": 0.3442125,
+          "upper_bound": 0.8417125,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "composition",
+        "direction": "up",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5425,
+          "confidence_adjusted_score": 0.3716125,
+          "lower_bound": 0.3716125,
+          "upper_bound": 0.8291125,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "weight",
+        "dimension": "accessibility",
+        "direction": "down",
+        "result": {
+          "score": 0.682639593909,
+          "confidence": 0.518274111675,
+          "confidence_adjusted_score": 0.353794429127,
+          "lower_bound": 0.353794429127,
+          "upper_bound": 0.835520317452,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "weight",
+        "dimension": "accessibility",
+        "direction": "up",
+        "result": {
+          "score": 0.687290640394,
+          "confidence": 0.526600985222,
+          "confidence_adjusted_score": 0.361927928365,
+          "lower_bound": 0.361927928365,
+          "upper_bound": 0.835326943143,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "accessibility",
+        "direction": "down",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5075,
+          "confidence_adjusted_score": 0.3476375,
+          "lower_bound": 0.3476375,
+          "upper_bound": 0.8401375,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "accessibility",
+        "direction": "up",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5375,
+          "confidence_adjusted_score": 0.3681875,
+          "lower_bound": 0.3681875,
+          "upper_bound": 0.8306875,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "weight",
+        "dimension": "recoverability",
+        "direction": "down",
+        "result": {
+          "score": 0.687512690355,
+          "confidence": 0.525126903553,
+          "confidence_adjusted_score": 0.36103141024,
+          "lower_bound": 0.36103141024,
+          "upper_bound": 0.835904506687,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "weight",
+        "dimension": "recoverability",
+        "direction": "up",
+        "result": {
+          "score": 0.682561576355,
+          "confidence": 0.519950738916,
+          "confidence_adjusted_score": 0.354898395981,
+          "lower_bound": 0.354898395981,
+          "upper_bound": 0.834947657065,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "recoverability",
+        "direction": "down",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5075,
+          "confidence_adjusted_score": 0.3476375,
+          "lower_bound": 0.3476375,
+          "upper_bound": 0.8401375,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "recoverability",
+        "direction": "up",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5375,
+          "confidence_adjusted_score": 0.3681875,
+          "lower_bound": 0.3681875,
+          "upper_bound": 0.8306875,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "weight",
+        "dimension": "energy_environment",
+        "direction": "down",
+        "result": {
+          "score": 0.683737373737,
+          "confidence": 0.520707070707,
+          "confidence_adjusted_score": 0.356026885012,
+          "lower_bound": 0.356026885012,
+          "upper_bound": 0.835319814305,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "weight",
+        "dimension": "energy_environment",
+        "direction": "up",
+        "result": {
+          "score": 0.686237623762,
+          "confidence": 0.524257425743,
+          "confidence_adjusted_score": 0.359765170081,
+          "lower_bound": 0.359765170081,
+          "upper_bound": 0.835507744339,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "energy_environment",
+        "direction": "down",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5125,
+          "confidence_adjusted_score": 0.3510625,
+          "lower_bound": 0.3510625,
+          "upper_bound": 0.8385625,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "energy_environment",
+        "direction": "up",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5325,
+          "confidence_adjusted_score": 0.3647625,
+          "lower_bound": 0.3647625,
+          "upper_bound": 0.8322625,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "weight",
+        "dimension": "surface_operations",
+        "direction": "down",
+        "result": {
+          "score": 0.688121827411,
+          "confidence": 0.525888324873,
+          "confidence_adjusted_score": 0.361875235126,
+          "lower_bound": 0.361875235126,
+          "upper_bound": 0.835986910253,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "weight",
+        "dimension": "surface_operations",
+        "direction": "up",
+        "result": {
+          "score": 0.68197044335,
+          "confidence": 0.51921182266,
+          "confidence_adjusted_score": 0.354087116892,
+          "lower_bound": 0.354087116892,
+          "upper_bound": 0.834875294232,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "surface_operations",
+        "direction": "down",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5075,
+          "confidence_adjusted_score": 0.3476375,
+          "lower_bound": 0.3476375,
+          "upper_bound": 0.8401375,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "surface_operations",
+        "direction": "up",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5375,
+          "confidence_adjusted_score": 0.3681875,
+          "lower_bound": 0.3681875,
+          "upper_bound": 0.8306875,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "weight",
+        "dimension": "communications",
+        "direction": "down",
+        "result": {
+          "score": 0.684242424242,
+          "confidence": 0.521212121212,
+          "confidence_adjusted_score": 0.356635445363,
+          "lower_bound": 0.356635445363,
+          "upper_bound": 0.835423324151,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "weight",
+        "dimension": "communications",
+        "direction": "up",
+        "result": {
+          "score": 0.685742574257,
+          "confidence": 0.523762376238,
+          "confidence_adjusted_score": 0.35916616018,
+          "lower_bound": 0.35916616018,
+          "upper_bound": 0.835403783943,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "communications",
+        "direction": "down",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5125,
+          "confidence_adjusted_score": 0.3510625,
+          "lower_bound": 0.3510625,
+          "upper_bound": 0.8385625,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "communications",
+        "direction": "up",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5325,
+          "confidence_adjusted_score": 0.3647625,
+          "lower_bound": 0.3647625,
+          "upper_bound": 0.8322625,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "weight",
+        "dimension": "market_mission_value",
+        "direction": "down",
+        "result": {
+          "score": 0.685685279188,
+          "confidence": 0.524365482234,
+          "confidence_adjusted_score": 0.359549692082,
+          "lower_bound": 0.359549692082,
+          "upper_bound": 0.835184209848,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "weight",
+        "dimension": "market_mission_value",
+        "direction": "up",
+        "result": {
+          "score": 0.684334975369,
+          "confidence": 0.520689655172,
+          "confidence_adjusted_score": 0.356326142348,
+          "lower_bound": 0.356326142348,
+          "upper_bound": 0.835636487175,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "market_mission_value",
+        "direction": "down",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5075,
+          "confidence_adjusted_score": 0.3476375,
+          "lower_bound": 0.3476375,
+          "upper_bound": 0.8401375,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      },
+      {
+        "kind": "confidence",
+        "dimension": "market_mission_value",
+        "direction": "up",
+        "result": {
+          "score": 0.685,
+          "confidence": 0.5375,
+          "confidence_adjusted_score": 0.3681875,
+          "lower_bound": 0.3681875,
+          "upper_bound": 0.8306875,
+          "grade": "research-only",
+          "evidence_ladder_rung": "none_synthetic",
+          "recommendation": "reduce_uncertainty_before_commitment"
+        }
+      }
+    ]
+  },
+  "next_measurement": {
+    "dimension": "surface_operations",
+    "priority_basis": "default_weight_times_one_minus_confidence",
+    "recommendation": "Measure synthetic regolith cohesion and dust response."
+  },
+  "limitations": [
+    "This is one declared synthetic target, not a real asteroid assessment.",
+    "No external observations or unsupported dollar valuations are used.",
+    "Sensitivity exercises the accepted ARCI v0.1 model and does not qualify its ontology."
+  ]
+}
