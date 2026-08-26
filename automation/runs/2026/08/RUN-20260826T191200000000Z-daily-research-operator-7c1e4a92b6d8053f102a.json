@@ -1,0 +1,91 @@
+{
+  "schema": "sns.loop-run.v1",
+  "run_id": "RUN-20260826T191200000000Z-daily-research-operator-7c1e4a92b6d8053f102a",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.1.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-26T19:02:13Z",
+  "source_commit": "0a67b00e36606554bb8a42a81bdcc57a45e033c4",
+  "state_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "quest_context": {
+    "quest_id": "QST-ARCI-0001",
+    "acceptance_slice": "Produce one reproducible QST-ARCI-0001 synthetic-target assessment using the accepted ARCI v0.1 model: attach explicit evidence types and missing-data flags, keep score and confidence separate, run bounded weight and confidence sensitivity, and identify the next measurement without unsupported dollar valuation or queue/belief changes.",
+    "authorization_id": "AUTH-20260826T162659000000Z-arci-synthetic-sensitivity-8e4b71c2d9a6053f102a",
+    "measurement_only": true
+  },
+  "pr_context": {
+    "pull_request": 54,
+    "branch": "automation/qst-arci-0001-synthetic-sensitivity",
+    "implementation_head_before_receipt": "febe5f4b184c54f5b35e27c5e1d1c7899d4888ec",
+    "source_main_commit": "0a67b00e36606554bb8a42a81bdcc57a45e033c4",
+    "lifecycle_record_path": "automation/pr_lifecycle/54.json",
+    "lifecycle_state_at_receipt": "pending_publication"
+  },
+  "consumed_ids": [
+    "DELEG-20260807-HUMAN-FAST-TRIAGE-V1",
+    "AUTH-20260826T162659000000Z-arci-synthetic-sensitivity-8e4b71c2d9a6053f102a",
+    "RUN-20260826T162659000000Z-daily-governance-triage-9f5c82d3eab71640b321"
+  ],
+  "artifacts": [
+    {
+      "path": "configs/arci_synthetic_target.json",
+      "kind": "declared synthetic target with evidence types and missing-data flags"
+    },
+    {
+      "path": "experiments/arci_example.py",
+      "kind": "deterministic bounded ARCI weight and confidence sensitivity runner"
+    },
+    {
+      "path": "outputs/qst_arci_0001/synthetic_target_sensitivity.json",
+      "kind": "versioned synthetic assessment, sensitivity trace, and next measurement"
+    },
+    {
+      "path": "tests/test_arci_synthetic_target.py",
+      "kind": "focused reproduction, separation, and fail-closed tests"
+    }
+  ],
+  "checks": [
+    {
+      "name": "GitHub connector preflight and ownership",
+      "status": "passed",
+      "evidence": "Connected GitHub reads selected active Daily contract v1.1.0, froze accepted main at 0a67b00e36606554bb8a42a81bdcc57a45e033c4, inspected the August authorization inventory, current delegation, latest Pre-Game and Monthly receipts, active QST-ARCI-0001, canonical memory, Issue #38, PR lifecycle state, and confirmed no competing open PR."
+    },
+    {
+      "name": "authorization validation",
+      "status": "passed",
+      "evidence": "AUTH-20260826T162659000000Z-arci-synthetic-sensitivity-8e4b71c2d9a6053f102a is unexpired through 2026-08-27T16:26:59Z, source-compatible with accepted Graph Routing v1.1 and Monthly ARCI routing, uniquely owns this slice, and permits exactly one config, experiment, test, output, PR, and receipt."
+    },
+    {
+      "name": "Google Drive relevance check",
+      "status": "passed",
+      "evidence": "A connected Drive search for SNS ARCI synthetic-target sensitivity evidence returned no results. No Drive artifact or external evidence was consumed, preserving the zero-external-source budget."
+    },
+    {
+      "name": "implementation tests",
+      "status": "passed",
+      "evidence": "GitHub Actions tests run 33003451755 completed successfully on implementation head 79bbab37604815d37303b209269115af69e12a06, including exact artifact reproduction and fail-closed fixture checks."
+    },
+    {
+      "name": "baseline artifacts",
+      "status": "passed",
+      "evidence": "GitHub Actions baseline-artifacts run 33003451738 completed successfully on implementation head 79bbab37604815d37303b209269115af69e12a06."
+    },
+    {
+      "name": "automation tests",
+      "status": "not_run",
+      "evidence": "The receipt-bearing head will trigger automation-transaction; its conclusion was not available before this immutable receipt was published."
+    },
+    {
+      "name": "repository semantic validation",
+      "status": "not_run",
+      "evidence": "The receipt-bearing head will run python -m automation.cli validate-repository; its conclusion was not available before this immutable receipt was published."
+    }
+  ],
+  "belief_effects": [
+    "No consolidated belief, quest priority, queue membership, canonical memory, protected assumption, real-target claim, dollar valuation, or ARCI ontology changed.",
+    "For the declared synthetic fixture only, baseline score 0.685 remains separate from confidence 0.5225; all 28 bounded sensitivity cases remain research-only, and surface-operations evidence has the largest default-weighted confidence gap."
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Require receipt-bearing tests, baseline artifacts, automation tests, semantic validation, current-main compatibility, and review clearance on PR #54; then merge this bounded synthetic measurement without enacting a real-target assessment or quest-state change.",
+  "created_at": "2026-08-26T19:12:00Z"
+}
