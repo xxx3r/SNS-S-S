@@ -19,7 +19,7 @@ def test_synthetic_arci_sensitivity_reproduces_versioned_artifact():
     assert expected["synthetic"] is True
     assert expected["sensitivity"]["scenario_count"] == 28
     assert expected["sensitivity"]["major_grade_reversal"] is False
-    assert expected["sensitivity"]["observed_grades"] == ["research-only"]
+    assert expected["sensitivity"]["weight_observed_grades"] == ["research-only"]\n    assert expected["sensitivity"]["confidence_observed_grades"] == ["research-only"]
     assert expected["next_measurement"]["dimension"] == "surface_operations"
 
 
@@ -34,7 +34,7 @@ def test_synthetic_arci_keeps_evidence_missingness_and_score_confidence_separate
         "market_mission_value",
     ]
     assert all(
-        {"evidence_type", "missing_data"} == set(evidence)
+        {"evidence_type", "evidence_ladder_rung", "missing_data"} == set(evidence)
         for evidence in payload["evidence"].values()
     )
 
@@ -57,3 +57,39 @@ def test_synthetic_arci_rejects_unbounded_or_non_synthetic_fixture():
         assert "weight perturbation" in str(exc)
     else:
         raise AssertionError("unbounded perturbation was accepted")
+
+
+def test_weight_falsifier_excludes_confidence_only_grade_change():
+    config = json.loads(CONFIG.read_text(encoding="utf-8"))
+    for dimension in config["dimensions"].values():
+        dimension["score"] = 0.8
+        dimension["confidence"] = 0.755
+
+    payload = build_payload(config)
+
+    assert payload["baseline"]["grade"] == "B"
+    assert payload["sensitivity"]["weight_observed_grades"] == ["B"]
+    assert payload["sensitivity"]["confidence_observed_grades"] == ["B", "C+"]
+    assert payload["sensitivity"]["major_grade_reversal"] is False
+
+
+def test_grade_threshold_uses_serialized_precision_consistently():
+    config = json.loads(CONFIG.read_text(encoding="utf-8"))
+    for dimension in config["dimensions"].values():
+        dimension["score"] = 0.8
+        dimension["confidence"] = 0.75
+
+    payload = build_payload(config)
+
+    assert payload["baseline"]["confidence_adjusted_score"] == 0.6
+    assert payload["baseline"]["grade"] == "B"
+    assert payload["sensitivity"]["weight_observed_grades"] == ["B"]
+    assert all(
+        scenario["result"]["grade"] == "B"
+        for scenario in payload["sensitivity"]["scenarios"]
+        if scenario["kind"] == "weight"
+    )
+    assert all(
+        scenario["result"]["evidence_ladder_rung"] == "none_synthetic"
+        for scenario in payload["sensitivity"]["scenarios"]
+    )
