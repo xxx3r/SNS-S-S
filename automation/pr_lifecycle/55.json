@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 55,
+  "quest_id": "QST-META-0001",
+  "acceptance_slice": "Implement one bounded pure-Python QST-META-0001 beam-link loss abstraction over steering angle and pointing error using explicit synthetic parameters, emit one deterministic sweep artifact, and add focused tests while preserving the boundary between a data-link abstraction and any physical power-beam claim.",
+  "state": "merge_ready",
+  "owner_run_id": "RUN-20260827T191500000000Z-daily-research-operator-6d2f8a41c9e7053b1024",
+  "source_commit": "c522634ce1ea0ff6f49b69231060c3ea2210b01c",
+  "head_commit": "4129026ec17990f564252e6d9409310ec467ec00",
+  "updated_at": "2026-08-29T14:34:30Z",
+  "next_review_after": "2026-08-29T14:34:30Z",
+  "supersedes": [],
+  "reason": "Research Organization v2 is accepted on main; the original immutable receipt is preserved and repaired by an append-only v2 provenance correction. PR #55 is ready for review, all review threads are resolved, and exact-head hosted tests #608, baseline-artifacts #291, and automation-transaction #183 are green. The final P2 steering-endpoint defect was repaired on the same bounded owner branch with a focused regression and no change to the declared default sweep result."
+}

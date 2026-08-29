@@ -1,0 +1,188 @@
+{
+  "schema": "sns.qst-meta-beam-link-sweep.v1",
+  "quest_id": "QST-META-0001",
+  "synthetic": true,
+  "model": {
+    "steering_penalty": "max(cos(steering_angle), 0) ** steering_exponent",
+    "pointing_penalty": "exp(-0.5 * (pointing_error / pointing_sigma) ** 2)",
+    "net_energy": "input * aperture * conversion * coupling * steering * pointing - control"
+  },
+  "parameters": {
+    "input_energy_Wh": 1,
+    "aperture_efficiency": 0.8,
+    "transmitter_conversion_efficiency": 0.72,
+    "receiver_coupling": 0.75,
+    "steering_exponent": 2,
+    "pointing_sigma_deg": 2,
+    "control_base_Wh": 0.04,
+    "control_per_degree_Wh": 0.0005,
+    "minimum_useful_fraction": 0.25
+  },
+  "sweep": {
+    "steering_angles_deg": [
+      0,
+      20,
+      40,
+      60
+    ],
+    "pointing_errors_deg": [
+      0,
+      1,
+      3
+    ],
+    "points": [
+      {
+        "steering_angle_deg": 0,
+        "pointing_error_deg": 0,
+        "steering_penalty": 1,
+        "pointing_penalty": 1,
+        "gross_delivered_energy_Wh": 0.432,
+        "control_energy_Wh": 0.04,
+        "net_delivered_energy_Wh": 0.392,
+        "net_delivered_fraction": 0.392,
+        "useful_on_declared_synthetic_boundary": true
+      },
+      {
+        "steering_angle_deg": 0,
+        "pointing_error_deg": 1,
+        "steering_penalty": 1,
+        "pointing_penalty": 0.882496902585,
+        "gross_delivered_energy_Wh": 0.381238661917,
+        "control_energy_Wh": 0.04,
+        "net_delivered_energy_Wh": 0.341238661917,
+        "net_delivered_fraction": 0.341238661917,
+        "useful_on_declared_synthetic_boundary": true
+      },
+      {
+        "steering_angle_deg": 0,
+        "pointing_error_deg": 3,
+        "steering_penalty": 1,
+        "pointing_penalty": 0.324652467358,
+        "gross_delivered_energy_Wh": 0.140249865899,
+        "control_energy_Wh": 0.04,
+        "net_delivered_energy_Wh": 0.100249865899,
+        "net_delivered_fraction": 0.100249865899,
+        "useful_on_declared_synthetic_boundary": false
+      },
+      {
+        "steering_angle_deg": 20,
+        "pointing_error_deg": 0,
+        "steering_penalty": 0.883022221559,
+        "pointing_penalty": 1,
+        "gross_delivered_energy_Wh": 0.381465599714,
+        "control_energy_Wh": 0.05,
+        "net_delivered_energy_Wh": 0.331465599714,
+        "net_delivered_fraction": 0.331465599714,
+        "useful_on_declared_synthetic_boundary": true
+      },
+      {
+        "steering_angle_deg": 20,
+        "pointing_error_deg": 1,
+        "steering_penalty": 0.883022221559,
+        "pointing_penalty": 0.882496902585,
+        "gross_delivered_energy_Wh": 0.33664221019,
+        "control_energy_Wh": 0.05,
+        "net_delivered_energy_Wh": 0.28664221019,
+        "net_delivered_fraction": 0.28664221019,
+        "useful_on_declared_synthetic_boundary": true
+      },
+      {
+        "steering_angle_deg": 20,
+        "pointing_error_deg": 3,
+        "steering_penalty": 0.883022221559,
+        "pointing_penalty": 0.324652467358,
+        "gross_delivered_energy_Wh": 0.123843748159,
+        "control_energy_Wh": 0.05,
+        "net_delivered_energy_Wh": 0.073843748159,
+        "net_delivered_fraction": 0.073843748159,
+        "useful_on_declared_synthetic_boundary": false
+      },
+      {
+        "steering_angle_deg": 40,
+        "pointing_error_deg": 0,
+        "steering_penalty": 0.586824088833,
+        "pointing_penalty": 1,
+        "gross_delivered_energy_Wh": 0.253508006376,
+        "control_energy_Wh": 0.06,
+        "net_delivered_energy_Wh": 0.193508006376,
+        "net_delivered_fraction": 0.193508006376,
+        "useful_on_declared_synthetic_boundary": false
+      },
+      {
+        "steering_angle_deg": 40,
+        "pointing_error_deg": 1,
+        "steering_penalty": 0.586824088833,
+        "pointing_penalty": 0.882496902585,
+        "gross_delivered_energy_Wh": 0.223720030407,
+        "control_energy_Wh": 0.06,
+        "net_delivered_energy_Wh": 0.163720030407,
+        "net_delivered_fraction": 0.163720030407,
+        "useful_on_declared_synthetic_boundary": false
+      },
+      {
+        "steering_angle_deg": 40,
+        "pointing_error_deg": 3,
+        "steering_penalty": 0.586824088833,
+        "pointing_penalty": 0.324652467358,
+        "gross_delivered_energy_Wh": 0.082301999765,
+        "control_energy_Wh": 0.06,
+        "net_delivered_energy_Wh": 0.022301999765,
+        "net_delivered_fraction": 0.022301999765,
+        "useful_on_declared_synthetic_boundary": false
+      },
+      {
+        "steering_angle_deg": 60,
+        "pointing_error_deg": 0,
+        "steering_penalty": 0.25,
+        "pointing_penalty": 1,
+        "gross_delivered_energy_Wh": 0.108,
+        "control_energy_Wh": 0.07,
+        "net_delivered_energy_Wh": 0.038,
+        "net_delivered_fraction": 0.038,
+        "useful_on_declared_synthetic_boundary": false
+      },
+      {
+        "steering_angle_deg": 60,
+        "pointing_error_deg": 1,
+        "steering_penalty": 0.25,
+        "pointing_penalty": 0.882496902585,
+        "gross_delivered_energy_Wh": 0.095309665479,
+        "control_energy_Wh": 0.07,
+        "net_delivered_energy_Wh": 0.025309665479,
+        "net_delivered_fraction": 0.025309665479,
+        "useful_on_declared_synthetic_boundary": false
+      },
+      {
+        "steering_angle_deg": 60,
+        "pointing_error_deg": 3,
+        "steering_penalty": 0.25,
+        "pointing_penalty": 0.324652467358,
+        "gross_delivered_energy_Wh": 0.035062466475,
+        "control_energy_Wh": 0.07,
+        "net_delivered_energy_Wh": -0.034937533525,
+        "net_delivered_fraction": -0.034937533525,
+        "useful_on_declared_synthetic_boundary": false
+      }
+    ]
+  },
+  "summary": {
+    "point_count": 12,
+    "useful_point_count": 4,
+    "limited_point_count": 8,
+    "minimum_net_delivered_fraction": -0.034937533525,
+    "maximum_net_delivered_fraction": 0.392,
+    "relay_losses_erase_modeled_benefit_on_declared_grid": false,
+    "outcome": "BOUNDED_BENEFIT_WITH_LOSS_LIMITS"
+  },
+  "limitations": [
+    "All parameters and sweep points are synthetic and uncalibrated.",
+    "The usefulness threshold is a declared model boundary, not a hardware requirement.",
+    "The abstraction excludes diffraction, range, thermal limits, materials, dynamics, and receiver architecture.",
+    "Negative net energy is retained rather than clipped so control-cost failures remain visible."
+  ],
+  "nonclaims": [
+    "No physical power-beam performance is established.",
+    "No metasurface architecture or receiver technology is selected.",
+    "No hardware readiness or space qualification is implied."
+  ]
+}
