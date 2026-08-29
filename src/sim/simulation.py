@@ -41,6 +41,8 @@ class Simulation:
                 coverage_bin_count=self.config.coverage_bin_count,
                 sun_temperature_K=float(env.get("sun_temperature_K", 315.0)),
                 eclipse_temperature_K=float(env.get("eclipse_temperature_K", 230.0)),
+                receiver_phase_center_rad=float(env.get("receiver_phase_center_rad", 0.0)),
+                receiver_visibility_fraction=float(env.get("receiver_visibility_fraction", 1.0)),
             )
         return AsteroidWorld(
             rotation_rate=self.config.rotation_rate,
