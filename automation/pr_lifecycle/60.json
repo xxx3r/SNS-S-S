@@ -3,12 +3,12 @@
   "pr_number": 60,
   "quest_id": "QST-SIM-0003",
   "acceptance_slice": "Add one bounded deterministic receiver/line-of-sight orbital-phase window to the existing GEORingWorld, preserve always-visible behavior by default, expose the boolean through EnvironmentSample.line_of_sight_to_host, add focused synthetic tests, and emit one deterministic phase-sweep output.",
-  "state": "blocked",
+  "state": "merged",
   "owner_run_id": "RUN-20260829T190729000000Z-daily-research-operator-b6e4a91c2d805f73a214",
   "source_commit": "f89b369c14166891acf49474152b72f65cae4ae9",
-  "head_commit": "543d31c44d8fbba2a272a9c2c6f373527c1659a8",
-  "updated_at": "2026-08-29T19:07:29Z",
-  "next_review_after": "2026-08-29T19:07:29Z",
+  "head_commit": "dac4d1752b24f757409af9445ad80a2bd641c447",
+  "updated_at": "2026-08-29T19:11:25Z",
+  "next_review_after": "2026-08-29T19:11:25Z",
   "supersedes": [],
-  "reason": "Bounded implementation-only tests and baseline artifacts are green. Merge remains blocked until the receipt-bearing head passes automation tests, semantic repository validation, full qualification, and review inspection."
+  "reason": "PR #60 merged from exact head dac4d1752b24f757409af9445ad80a2bd641c447 as squash commit a06eed59663e6f0ed96ae8380d0958e76fd7c070 after tests run 33270164992, baseline-artifacts run 33270165006, and automation-transaction run 33270164991 all passed. The transaction explicitly passed automation tests, semantic repository validation, and full pytest. The P1 configuration-path review finding was repaired, replied to, and resolved. The result remains one bounded synthetic visibility primitive with no belief or quest-state mutation."
 }
