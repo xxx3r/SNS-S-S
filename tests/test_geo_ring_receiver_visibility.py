@@ -8,6 +8,8 @@ from pathlib import Path
 
 import pytest
 
+from src.sim.config import SimulationConfig
+from src.sim.simulation import Simulation
 from src.world.geo_ring_world import GEORingWorld
 
 
@@ -28,6 +30,27 @@ def test_configured_receiver_window_wraps_around_zero_phase() -> None:
     assert [
         world.sample(theta=phase, t=0.0).line_of_sight_to_host for phase in phases
     ] == [True, True, False, False, False, True]
+
+
+def test_simulation_configuration_forwards_receiver_window() -> None:
+    config = SimulationConfig.from_dict(
+        {
+            "scenario": "geo_ring",
+            "duration": 60.0,
+            "dt": 60.0,
+            "num_agents": 1,
+            "environment": {
+                "receiver_phase_center_rad": math.pi,
+                "receiver_visibility_fraction": 0.25,
+            },
+        }
+    )
+
+    world = Simulation(config).world
+
+    assert isinstance(world, GEORingWorld)
+    assert world.sample(theta=math.pi, t=0.0).line_of_sight_to_host is True
+    assert world.sample(theta=0.0, t=0.0).line_of_sight_to_host is False
 
 
 def test_phase_sweep_output_is_reproducible() -> None:
