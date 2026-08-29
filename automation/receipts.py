@@ -11,6 +11,7 @@ from typing import Iterable, Mapping
 from .contracts import ContractRegistry
 from .ids import validate_identifier
 from .models import LoopTerminalState
+from .provenance import RUN_RECEIPT_SCHEMA, validate_state_snapshot
 
 _SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 _SEMVER_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
@@ -21,6 +22,7 @@ _ALLOWED_LOOPS = {
     "monthly-governance",
     "system-audit",
 }
+_LEGACY_RECEIPT_SCHEMA = "sns.loop-run.v1"
 
 
 def _parse_utc_timestamp(value: str, field: str) -> datetime:
@@ -39,7 +41,7 @@ def validate_run_receipt(
     contracts: ContractRegistry | None = None,
     allow_retired_contract: bool = False,
 ) -> None:
-    required = {
+    common_required = {
         "schema",
         "run_id",
         "loop_id",
@@ -47,7 +49,6 @@ def validate_run_receipt(
         "trigger",
         "trigger_time",
         "source_commit",
-        "state_hash",
         "quest_context",
         "pr_context",
         "consumed_ids",
@@ -58,10 +59,19 @@ def validate_run_receipt(
         "next_action",
         "created_at",
     }
-    missing = required - set(receipt)
+    missing = common_required - set(receipt)
     if missing:
         raise ValueError(f"run receipt missing fields: {', '.join(sorted(missing))}")
-    if receipt["schema"] != "sns.loop-run.v1":
+
+    schema = str(receipt["schema"])
+    if schema == _LEGACY_RECEIPT_SCHEMA:
+        if "state_hash" not in receipt:
+            raise ValueError("legacy run receipt missing state_hash")
+    elif schema == RUN_RECEIPT_SCHEMA:
+        v2_missing = {"state_snapshot", "receipt_kind"} - set(receipt)
+        if v2_missing:
+            raise ValueError(f"v2 run receipt missing fields: {', '.join(sorted(v2_missing))}")
+    else:
         raise ValueError("unsupported run receipt schema")
 
     run_id = str(receipt["run_id"])
@@ -77,10 +87,23 @@ def validate_run_receipt(
         if str(receipt["trigger"]) not in contract.allowed_triggers:
             raise ValueError("receipt trigger is not allowed by its contract")
 
-    if not _SHA_RE.fullmatch(str(receipt["source_commit"])):
+    source_commit = str(receipt["source_commit"])
+    if not _SHA_RE.fullmatch(source_commit):
         raise ValueError("source_commit must be a lowercase 40-character Git SHA")
-    if not re.fullmatch(r"sha256:[0-9a-f]{64}", str(receipt["state_hash"])):
-        raise ValueError("state_hash must be sha256:<64 lowercase hex>")
+
+    if schema == _LEGACY_RECEIPT_SCHEMA:
+        if not re.fullmatch(r"sha256:[0-9a-f]{64}", str(receipt["state_hash"])):
+            raise ValueError("state_hash must be sha256:<64 lowercase hex>")
+    else:
+        state_snapshot = receipt["state_snapshot"]
+        if not isinstance(state_snapshot, dict):
+            raise ValueError("state_snapshot must be an object")
+        validate_state_snapshot(state_snapshot)
+        if str(state_snapshot["source_commit"]) != source_commit:
+            raise ValueError("state_snapshot source_commit must equal receipt source_commit")
+        receipt_kind = str(receipt["receipt_kind"])
+        if receipt_kind not in {"run", "correction"}:
+            raise ValueError("receipt_kind must be run or correction")
 
     trigger_time = _parse_utc_timestamp(str(receipt["trigger_time"]), "trigger_time")
     created_at = _parse_utc_timestamp(str(receipt["created_at"]), "created_at")
@@ -119,6 +142,13 @@ def validate_run_receipt(
         validate_identifier(str(correction_of), prefix="RUN")
         if correction_of == run_id:
             raise ValueError("a receipt cannot correct itself")
+
+    if schema == RUN_RECEIPT_SCHEMA:
+        receipt_kind = str(receipt["receipt_kind"])
+        if receipt_kind == "correction" and correction_of is None:
+            raise ValueError("correction receipt requires correction_of")
+        if receipt_kind == "run" and correction_of is not None:
+            raise ValueError("ordinary v2 run receipt cannot set correction_of")
 
 
 def receipt_relative_path(receipt: Mapping[str, object]) -> Path:

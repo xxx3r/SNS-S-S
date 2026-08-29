@@ -1,6 +1,6 @@
 {
   "schema": "sns.state-ownership.v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "surfaces": [
     {
       "path": "automation/contracts/**",
@@ -13,6 +13,36 @@
       "reconciliation": "Contract changes require a dedicated reviewed PR; no running loop edits its own active contract."
     },
     {
+      "path": "automation/schemas/**",
+      "authority": "human",
+      "triage": "read",
+      "daily": "read",
+      "weekly": "read",
+      "monthly": "read",
+      "audit": "observe",
+      "reconciliation": "Schema changes require a dedicated reviewed automation transaction and must preserve accepted historical replay."
+    },
+    {
+      "path": "automation/prompts/**",
+      "authority": "human",
+      "triage": "read",
+      "daily": "read",
+      "weekly": "read",
+      "monthly": "read",
+      "audit": "observe",
+      "reconciliation": "The repository bootloader surface is human-owned research-organization code; running loops may not rewrite the prompt that instantiates them."
+    },
+    {
+      "path": "automation/runtime_manifest.json",
+      "authority": "human",
+      "triage": "read",
+      "daily": "read",
+      "weekly": "read",
+      "monthly": "propose",
+      "audit": "observe",
+      "reconciliation": "The manifest declares desired external scheduler state. Audit reports drift and Monthly may propose changes, but changing the external research organization requires explicit human authority."
+    },
+    {
       "path": "automation/runs/**",
       "authority": "human",
       "triage": "write",
@@ -20,7 +50,7 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "write",
-      "reconciliation": "Each loop creates a unique immutable file with exclusive-create semantics; corrections are new linked receipts."
+      "reconciliation": "Each loop creates a unique immutable file with exclusive-create semantics; corrections are new linked receipts. V2 provenance-only corrections do not grant a second scientific implementation attempt."
     },
     {
       "path": "automation/delegations/**",
@@ -121,6 +151,16 @@
       "monthly": "write",
       "audit": "observe",
       "reconciliation": "One accepted monthly synthesis governs queue-wide decisions for its period. Triage reads but never rewrites constitutional state."
+    },
+    {
+      "path": "quests/research_graph.json",
+      "authority": "monthly-governance",
+      "triage": "read",
+      "daily": "read",
+      "weekly": "propose",
+      "monthly": "write",
+      "audit": "observe",
+      "reconciliation": "Monthly governance owns accepted graph topology. Weekly may propose typed dependency/lineage edges; triage may only derive the ready frontier and route within already-active delegated quests. Explicit human transactions may bootstrap graph law."
     },
     {
       "path": "quests/actions/**",

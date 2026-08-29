@@ -20,17 +20,25 @@ No lower layer silently overrides a higher layer. For automation record identity
 
 ## Loop routing
 
-Select exactly one contract before acting:
+The platform prompt supplies a `loop_id`, not a contract version. After reading this stable law, resolve exactly one contract whose front matter has that `loop_id` and `status: active`. Never select a retired/proposed contract because a scheduler prompt, old receipt, memory file, or historical plan names it.
 
-- pre-game bounded governance: `automation/contracts/daily-governance-triage.v1.md`;
-- daily implementation: active `daily-research-operator` contract, currently v1.1.0;
-- weekly evidence: `automation/contracts/weekly-evidence-synthesis.v1.md`;
-- monthly constitutional governance: active `monthly-governance` contract, currently v1.1.0;
-- system audit: `automation/contracts/system-audit.v1.md`.
+The research-loop IDs are:
 
-The ordinary operating sequence is **pre-game triage -> daily execution -> weekly evidence -> monthly constitutional direction**, with audit observing the system rather than governing it.
+- `daily-governance-triage`;
+- `daily-research-operator`;
+- `weekly-evidence-synthesis`;
+- `monthly-governance`;
+- `system-audit`.
+
+The ordinary operating sequence is **pre-game triage -> daily execution -> weekly evidence -> monthly constitutional direction**, with audit observing the system rather than governing it. The desired external instantiation/cadence is declared separately in `automation/runtime_manifest.json`; repository contracts define lifetime behavior, not scheduler state.
 
 Every trigger ends with one immutable receipt under `automation/runs/**` and one explicit terminal state. Triage may disposition multiple independent administrative candidates in one run; the Daily Research Operator still produces one smallest coherent implementation slice.
+
+## Prompt bootloader law
+
+`automation/prompts/bootstrap.v1.md` is the canonical external prompt surface. External schedulers may substitute the requested `loop_id`, but evolving institutional law belongs here, in active contracts, schemas, the research graph, and the runtime manifest.
+
+A scheduler prompt must not hard-code contract versions, month-specific PR/issue lore, routing algorithms, schema field lists, scientific thresholds, or queue state. If the platform prompt conflicts with accepted repository law, fail closed and report the exact conflict rather than executing stale copied instructions.
 
 ## Work-conserving law
 
@@ -38,16 +46,32 @@ Every trigger ends with one immutable receipt under `automation/runs/**` and one
 2. Acknowledgement is not an artifact. A Daily Research Operator with a valid bounded authorization must attempt the authorized slice rather than spend a run restating approval.
 3. Approved work begins immediately when bounded. The daily receipt records the consumed authorization ID.
 4. Triage may authorize but may not implement science. It cannot widen its own delegation.
-5. One implementation acceptance slice still has one current owner, at most one implementation PR, exactly one implementation receipt, and one terminal disposition.
+5. One implementation acceptance slice still has one current owner, at most one implementation PR, exactly one **budget-consuming implementation receipt**, and one terminal disposition. A provenance-only append-only correction does not grant or consume a second scientific implementation attempt.
 6. Queue membership, priority, consolidated beliefs, canonical memory, major architecture choices, contracts, schemas, and external/public actions remain outside fast-governance authority.
 
 ## Instrument discovery
 
 When a selected acceptance slice may benefit from reusable simulation, generation, validation, or analysis machinery, inspect the relevant entry in `docs/system/research_instrument_registry.md`. Registry entries advertise available tools but never activate a quest, change queue priority, grant evidence authority, or permit model writes. Read only entries relevant to the bounded acceptance slice.
 
-## Record-shape law
+## Record-shape and provenance law
 
 Create immutable IDs only through the repository's canonical ID helpers when the record family has one. New run, evidence, claim-cluster, belief, and quest-action IDs use the canonical uppercase prefixes `RUN-`, `EVID-`, `CLM-`, `BEL-`, and `QA-`. Fast-governance authorization IDs use the schema-defined `AUTH-` format and delegation envelopes use `DELEG-` IDs.
+
+Historical `sns.loop-run.v1` receipts remain immutable replay evidence. **New run receipts use `sns.loop-run.v2`.** v2 removes the agent-invented opaque `state_hash` as a concurrency claim and replaces it with `sns.state-snapshot.v1`: an inspectable list of canonical repository roles/paths and their exact Git blob SHAs, plus the observed open-PR ownership rows. The snapshot object itself is authority; its SHA-256 fingerprint is derivative convenience metadata.
+
+Every v2 state snapshot must include at least:
+
+- `AGENTS.md` as `stable_law`;
+- the selected active contract as `active_contract`;
+- `automation/state_ownership.json` as `state_ownership`;
+- `quests/active/README.md` as `active_quest_index`;
+- `quests/research_graph.json` as `research_graph`;
+- `automation/runtime_manifest.json` as `runtime_manifest`;
+- `memory/mem_log_short.md` as `canonical_memory`.
+
+Add current delegation, authorization, monthly state, or other owned records when the selected contract depends on them. Connector-authored runs may use the Git blob SHA returned by each GitHub file read; missing local shell access never justifies an empty or placeholder digest. `automation.provenance` and `python -m automation.cli snapshot-state` define the deterministic reference implementation.
+
+A receipt correction is a new immutable `sns.loop-run.v2` record with `receipt_kind: correction` and `correction_of`. It may repair provenance or record shape but may not smuggle a second scientific implementation, new result, new quest mutation, or weakened evaluator into the lineage. Correction receipts do not count against `max_run_receipts` implementation budgets; the original artifact remains visible.
 
 Before publication, validate new records against the executable repository:
 
@@ -57,6 +81,23 @@ python -m automation.cli validate-repository
 ```
 
 Do not copy lower-case `run_*`, `ev_*`, `be_*`, or `qa_*` examples from historical plans. Do not claim schema validation from manual comparison with prose. If executable validation fails, stop with an honest terminal state or correct only the still-unmerged records.
+
+## Research graph law
+
+`quests/research_graph.json` is the machine-readable topology of accepted research state. Quest Markdown remains the rich scientific record; the graph stores only the minimum routing semantics needed to expose structure.
+
+- Typed nodes distinguish research quests, research infrastructure, public synthesis, routes, experiments, artifacts, and evidence.
+- `requires` is the only hard execution-dependency edge. Its subgraph must remain acyclic and is used to derive the ready frontier.
+- `contains`, `informs`, `unlocks`, `falsifies`, `competes_with`, `supports`, `supersedes`, and `revisit_after` preserve research lineage and may form cycles. This is how the program may spiral back to old questions without creating scheduler deadlocks.
+- Priority is not dependency. First derive the graph-ready frontier, then apply accepted priority, stable active-index order, blocker scope, delegation, and one-owner law.
+- Do not infer new scientific dependencies merely to make the graph visually connected. An absent edge means no accepted machine-enforced dependency has been established yet.
+- Queue membership and priority remain monthly-owned. Graph routing selects among already-active lawful candidates; it does not activate or reprioritize quests.
+
+## Orchestration law
+
+`automation/runtime_manifest.json` is the desired research-runtime configuration. It records which loop instances should be scheduler-managed, their titles, cadence, timing mode, ordering, desired enabled state, and canonical bootloader surface. The external scheduler remains the execution platform, but its state is no longer invisible institutional state.
+
+`automation.orchestration.compare_runtime_manifest()` compares a normalized live task snapshot against the manifest. System Audit must report drift rather than silently accepting a different organization. Runtime drift is not automatically a scientific blocker: classify its scope and effect. A missing/disabled Daily operator, stale hard-coded prompt, or inverted Pre-Game/Daily order is an orchestration defect even when repository contracts are healthy.
 
 ## Scientific and engineering invariants
 
@@ -75,7 +116,7 @@ Do not copy lower-case `run_*`, `ev_*`, `be_*`, or `qa_*` examples from historic
 
 `automation/state_ownership.json` is normative.
 
-- Pre-game triage reads the current delegation, compact lineage, quest proposals, live PR state, and accepted governance. It may create immutable bounded authorizations and mechanically synchronize unambiguous PR lifecycle facts, but it cannot mutate the queue, beliefs, canonical memory, or scientific implementation surfaces.
+- Pre-game triage reads the current delegation, compact lineage, quest proposals, live PR state, accepted governance, and graph-ready frontier. It may create immutable bounded authorizations and mechanically synchronize unambiguous PR lifecycle facts, but it cannot mutate the queue, beliefs, canonical memory, or scientific implementation surfaces.
 - Daily loops execute within accepted quest scope and may consume one valid triage authorization directly.
 - Weekly loops normalize evidence and propose changes.
 - Monthly governance owns queue-wide decisions, consolidated beliefs, stale/ambiguous work resolution, canonical memory, and the delegation envelope.
@@ -94,7 +135,7 @@ Escalation is based on authority and evidence, not on calendar latency. Monthly 
 
 ## Concurrency and PR law
 
-Record source commit and state hashes before work. Recheck governance, delegation, authorization, owned state, and PR ownership immediately before publication. One PR owns one quest acceptance slice. Continue the valid owner, split expanding work, and classify stale or superseded branches explicitly. Automatic merge remains conservative.
+Capture the v2 inspectable state snapshot before work. Recheck its canonical record identities, current governance/delegation/authorization, graph readiness, accepted source, and live PR ownership immediately before publication. One PR owns one quest acceptance slice. Continue the valid owner, split expanding work, and classify stale or superseded branches explicitly. Automatic merge remains conservative.
 
 ## Terminal states
 
@@ -109,4 +150,4 @@ A precise blocker is a valid outcome. Do not continue merely to avoid reporting 
 
 ## Definition of done
 
-An implementation acceptance slice is complete only when its artifact exists, checks are evidenced, assumptions and limitations are explicit, ownership is current, semantic repository validation passes, the receipt is immutable, any consumed authorization is current and scope-valid, and the next action is one concrete transition.
+An implementation acceptance slice is complete only when its artifact exists, checks are evidenced, assumptions and limitations are explicit, ownership is current, semantic repository validation passes, the receipt is immutable, any consumed authorization is current and scope-valid, graph readiness is satisfied, provenance is inspectable, and the next action is one concrete transition.

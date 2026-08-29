@@ -5,6 +5,8 @@ from __future__ import annotations
 import re
 from typing import Mapping, Sequence
 
+from .research_graph import ready_frontier, validate_research_graph
+
 _PRIORITY_RE = re.compile(r"^P([0-9]+)$")
 _BLOCKER_SCOPES = {"none", "local", "shared", "global", "protected"}
 
@@ -48,9 +50,10 @@ def route_daily_slot(
     """Return one deterministic routing decision without mutating queue priority.
 
     ``eligible`` means the caller has already established that the quest is active,
-    inside the current delegation, source-current, owner-compatible, and bounded to
-    allowed write/check budgets. ``executable`` means a concrete acceptance slice
-    exists now. Blocker scope is orthogonal to the decision level that discovered it.
+    inside the current delegation, source-current, owner-compatible, graph-ready,
+    and bounded to allowed write/check budgets. ``executable`` means a concrete
+    acceptance slice exists now. Blocker scope is orthogonal to the decision level
+    that discovered it.
     """
 
     rows = [dict(candidate) for candidate in candidates]
@@ -129,3 +132,35 @@ def route_daily_slot(
         "escalated_quest_ids": list(escalated),
         "reason": "no executable eligible route remains",
     }
+
+
+def route_daily_slot_from_graph(
+    candidates: Sequence[Mapping[str, object]],
+    *,
+    research_graph: Mapping[str, object],
+    active_quest_ids: Sequence[str],
+    live_owner_quest_id: str | None = None,
+) -> dict[str, object]:
+    """Derive graph readiness first, then apply the existing priority router.
+
+    This preserves the v1.1 routing law while preventing list order from being
+    mistaken for dependency topology.  A valid live owner still wins, but only if
+    its quest is on the hard-dependency ready frontier.
+    """
+
+    validate_research_graph(research_graph)
+    frontier = set(ready_frontier(research_graph, active_ids=active_quest_ids))
+    rows: list[dict[str, object]] = []
+    for candidate in candidates:
+        row = dict(candidate)
+        _validate_candidate(row)
+        if str(row["quest_id"]) not in frontier:
+            row["eligible"] = False
+            row["executable"] = False
+        rows.append(row)
+
+    if live_owner_quest_id is not None and live_owner_quest_id not in frontier:
+        live_owner_quest_id = None
+    result = route_daily_slot(rows, live_owner_quest_id=live_owner_quest_id)
+    result["graph_ready_frontier"] = sorted(frontier)
+    return result

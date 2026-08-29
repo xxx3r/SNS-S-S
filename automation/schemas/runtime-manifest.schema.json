@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sns-s-s.local/schemas/runtime-manifest.schema.json",
+  "title": "SNS desired research runtime manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "timezone", "bootstrap_prompt", "loops"],
+  "properties": {
+    "schema": {"const": "sns.runtime-manifest.v1"},
+    "timezone": {"type": "string", "minLength": 1},
+    "bootstrap_prompt": {"const": "automation/prompts/bootstrap.v1.md"},
+    "loops": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["loop_id", "automation_title", "scheduler_managed", "desired_enabled", "timing_mode", "schedule", "order"],
+        "properties": {
+          "loop_id": {"enum": ["daily-governance-triage", "daily-research-operator", "weekly-evidence-synthesis", "monthly-governance", "system-audit"]},
+          "automation_title": {"type": "string", "minLength": 1},
+          "scheduler_managed": {"type": "boolean"},
+          "desired_enabled": {"type": "boolean"},
+          "timing_mode": {"enum": ["exact_schedule", "flexible_schedule", "condition_watch", "explicit_only"]},
+          "schedule": {"type": ["string", "null"]},
+          "order": {"type": "integer", "minimum": 0}
+        }
+      }
+    }
+  }
+}

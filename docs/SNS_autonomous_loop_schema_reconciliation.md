@@ -1,28 +1,28 @@
 # SNS Autonomous Loop Schema Reconciliation
 
 **Status:** Canonical compatibility authority  
-**Date:** 2026-07-20  
-**Scope:** Automation record identity and field vocabulary only
+**Originally established:** 2026-07-20  
+**Current receipt boundary:** 2026-08-29  
+**Scope:** Automation record identity, field vocabulary, and receipt-provenance compatibility only
 
-## Decision
+## Authority
 
 The executable transaction layer is the canonical authority for automation record shape.
 
-For run receipts, evidence events, belief events, quest actions, and PR lifecycle records, use this order:
+Use this order:
 
 1. `automation/schemas/*.schema.json` for machine-readable structure;
 2. the matching validator in `automation/` for semantic invariants;
-3. the active loop contract in `automation/contracts/` for authority and behavior;
-4. this reconciliation note and `automation/README.md` for copyable guidance;
-5. older planning examples only as historical design context.
-
-The examples in `docs/SNS_autonomous_loop_transaction_plan.md` that use lower-case identifiers such as `run_*`, `ev_*`, `be_*`, or `qa_*`, or use superseded field names, are non-normative. They describe the design intent that preceded the accepted implementation in PR #26. They must not be copied into new records.
+3. `AGENTS.md` stable law;
+4. the selected active loop contract for role authority and behavior;
+5. this reconciliation note and `automation/README.md` for compatibility guidance;
+6. older plans/examples only as historical design context.
 
 This reconciliation changes no scientific conclusion, quest priority, ARCI weight, active queue, or hardware-readiness boundary.
 
 ## Canonical identity
 
-All immutable automation IDs are generated through `automation.ids.new_event_id` or `automation.ids.new_run_id`.
+Immutable automation IDs use the repository helpers in `automation.ids` and the accepted uppercase dialect:
 
 ```text
 RUN-YYYYMMDDTHHMMSSffffffZ-namespace-20hex
@@ -30,123 +30,88 @@ EVID-YYYYMMDDTHHMMSSffffffZ-namespace-20hex
 CLM-YYYYMMDDTHHMMSSffffffZ-namespace-20hex
 BEL-YYYYMMDDTHHMMSSffffffZ-namespace-20hex
 QA-YYYYMMDDTHHMMSSffffffZ-namespace-20hex
+AUTH-...
+DELEG-...
 ```
 
-Do not invent sequential IDs, lower-case aliases, or shortened suffixes.
+Lower-case historical examples such as `run_*`, `ev_*`, `be_*`, and `qa_*` are non-normative.
 
-## Canonical weekly evidence records
+## Run-receipt compatibility boundary
 
-### Evidence event
+### Accepted history: `sns.loop-run.v1`
+
+All already-published v1 receipts remain immutable replay evidence. v1 required an opaque `state_hash` field. Historical v1 records are not rewritten merely because later governance discovered that many connector-authored runs used SHA-256(empty) as a placeholder rather than a captured state snapshot.
+
+The August 2026 PR #55 review demonstrated why this was insufficient: a schema-valid placeholder digest did not prove which governance, delegation, quest, contract, memory, or PR-ownership state the run had actually observed. That is a control-plane provenance defect, not a change to the underlying scientific result.
+
+### New records: `sns.loop-run.v2`
+
+New loop receipts use `sns.loop-run.v2` and replace opaque state-hash claims with an inspectable `sns.state-snapshot.v1` object.
+
+A v2 receipt contains the ordinary run fields plus:
 
 ```json
 {
-  "schema": "sns.evidence-event.v1",
-  "evidence_id": "EVID-20260719T145804000000Z-space-weather-margin-a1111111111111111111",
-  "claim_cluster_id": "CLM-20260719T145804000000Z-space-weather-margin-b2222222222222222222",
-  "claim": "Extreme solar-wind forcing may require wider environmental uncertainty margins.",
-  "source_uri": "https://science.nasa.gov/example",
-  "source_kind": "official_statement",
-  "source_fingerprint": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-  "observed_at": "2026-07-19T14:58:04Z",
-  "independence": "independent",
-  "polarity": "context_only",
-  "confidence": 0.62,
-  "provenance": {
-    "retrieved_by": "weekly-evidence-synthesis",
-    "publication_date": "2026-07-15",
-    "environment": "near-Earth-space",
-    "limitations": ["Not a component degradation measurement."]
-  },
-  "artifacts": ["calendar/roundups/2026-07-19.md"]
+  "schema": "sns.loop-run.v2",
+  "receipt_kind": "run",
+  "state_snapshot": {
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "<40-hex accepted-main SHA>",
+    "records": [
+      {"role": "stable_law", "path": "AGENTS.md", "git_blob_sha": "<40-hex blob SHA>"},
+      {"role": "active_contract", "path": "automation/contracts/<selected-active-contract>.md", "git_blob_sha": "<40-hex blob SHA>"},
+      {"role": "state_ownership", "path": "automation/state_ownership.json", "git_blob_sha": "<40-hex blob SHA>"},
+      {"role": "active_quest_index", "path": "quests/active/README.md", "git_blob_sha": "<40-hex blob SHA>"},
+      {"role": "research_graph", "path": "quests/research_graph.json", "git_blob_sha": "<40-hex blob SHA>"},
+      {"role": "runtime_manifest", "path": "automation/runtime_manifest.json", "git_blob_sha": "<40-hex blob SHA>"},
+      {"role": "canonical_memory", "path": "memory/mem_log_short.md", "git_blob_sha": "<40-hex blob SHA>"}
+    ],
+    "open_prs": [
+      {"number": 55, "head_sha": "<40-hex head SHA>", "draft": true, "state": "open"}
+    ],
+    "fingerprint": "sha256:<derivative digest of the canonical snapshot object>"
+  }
 }
 ```
 
-Source title, publication date, directness, novelty, environment match, fact/inference/speculation separation, and limitations remain valuable. Store them inside `provenance` unless and until a versioned schema explicitly promotes them to top-level fields.
+The exact record list is inspectable and connector-friendly. A GitHub file read returns the blob SHA directly, so a scheduled agent does not need a local clone or shell to invent or compute a state digest. The fingerprint is a convenience integrity check over the explicit snapshot object; it is not a substitute for the component identities.
 
-### Belief event
+`automation.provenance.snapshot_from_connector_records()` defines the connector representation. `build_state_snapshot()` defines the equivalent local-checkout reference implementation. Both converge on the same state-snapshot schema.
+
+## Append-only correction law
+
+Published receipts are never edited. A provenance or record-shape repair is a new v2 receipt:
 
 ```json
 {
-  "schema": "sns.belief-event.v1",
-  "belief_event_id": "BEL-20260719T145804000000Z-environmental-margin-c3333333333333333333",
-  "belief_key": "STOR.environmental_margin",
-  "evidence_ids": [
-    "EVID-20260719T145804000000Z-space-weather-margin-a1111111111111111111"
-  ],
-  "magnitude": 0.2,
-  "confidence": 0.62,
-  "effect": "uncertainty_increase",
-  "rationale": "The source increases uncertainty about assuming a hard upper bound on environmental forcing.",
-  "recorded_at": "2026-07-19T15:10:00Z"
+  "schema": "sns.loop-run.v2",
+  "receipt_kind": "correction",
+  "correction_of": "RUN-..."
 }
 ```
 
-Magnitude and confidence remain separate. Weekly evidence proposes immutable raw events; monthly governance owns consolidation.
+A correction may repair provenance, missing required metadata, or another control-plane defect. It may not introduce a new scientific experiment, result, belief effect, queue mutation, or weakened evaluator under cover of correction.
 
-### Quest action
+A correction receipt is non-consuming with respect to an authorization's scientific implementation-receipt budget. `automation.provenance.implementation_receipts_for_authorization()` counts the original implementation run but excludes v2 `receipt_kind: correction` records. This resolves the previous conflict between immutable history and authorizations that permit exactly one scientific implementation receipt.
 
-```json
-{
-  "schema": "sns.quest-action.v1",
-  "quest_action_id": "QA-20260719T145804000000Z-refine-qst-stor-0002-d4444444444444444444",
-  "action_type": "refine_existing",
-  "quest_id": "QST-STOR-0002",
-  "target_quest_ids": [],
-  "proposed_by_loop": "weekly-evidence-synthesis",
-  "authority": "proposal",
-  "rationale": "Add vacuum, radiation, contamination, and thermal-cycling margins to the planned material/interface evidence checklist.",
-  "recorded_at": "2026-07-19T15:12:00Z"
-}
-```
+## Weekly evidence records
 
-Artifact targets, dependencies, success metrics, evidence links, and proposed priority effects belong in `rationale` or a separate human-readable roundup until a versioned quest-action schema adds explicit fields.
+The existing evidence/belief/quest-action dialect remains current:
 
-### Run receipt
+- `sns.evidence-event.v1` for immutable evidence events;
+- `sns.belief-event.v1` for raw belief proposals/events;
+- `sns.quest-action.v1` for semantic quest-action proposals.
 
-```json
-{
-  "schema": "sns.loop-run.v1",
-  "run_id": "RUN-20260719T145804000000Z-weekly-evidence-synthesis-e5555555555555555555",
-  "loop_id": "weekly-evidence-synthesis",
-  "contract_version": "1.0.0",
-  "trigger": "scheduled",
-  "trigger_time": "2026-07-19T14:58:04Z",
-  "source_commit": "25318716f1778f10a405273b4bd13c1d0b4dc419",
-  "state_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-  "quest_context": {
-    "quest_id": "QST-STOR-0002",
-    "related_quest_ids": ["QST-SIM-0002", "QST-SIM-0003"],
-    "question": "What recent evidence creates bounded refinements without displacing QST-STOR-0002?"
-  },
-  "pr_context": {
-    "pr_number": 28,
-    "lifecycle_state": "ready_for_review"
-  },
-  "consumed_ids": [],
-  "artifacts": [
-    "calendar/roundups/2026-07-19.md",
-    "calendar/evidence/2026/07/EVID-20260719T145804000000Z-space-weather-margin-a1111111111111111111.json"
-  ],
-  "checks": [
-    {
-      "name": "repository semantic validation",
-      "status": "passed",
-      "evidence": "python -m automation.cli validate-repository"
-    },
-    {
-      "name": "GitHub Actions",
-      "status": "not_run",
-      "evidence": ""
-    }
-  ],
-  "belief_effects": [
-    "BEL-20260719T145804000000Z-environmental-margin-c3333333333333333333"
-  ],
-  "terminal_state": "DONE_WITH_LIMITATIONS",
-  "next_action": "Continue QST-STOR-0002 with the material/interface evidence checklist after human review.",
-  "created_at": "2026-07-19T15:19:00Z"
-}
-```
+Source title, publication date, directness, novelty, environment match, fact/inference/speculation separation, and limitations belong in evidence provenance unless a future versioned schema promotes them. Belief magnitude and confidence remain separate. Weekly may propose governance effects; Monthly owns consolidated governance state.
+
+## Graph and orchestration records
+
+Two new machine-readable organization records are part of the executable control plane:
+
+- `quests/research_graph.json` uses `sns.research-graph.v1`. Only `requires` edges impose hard execution dependencies; that subgraph must be acyclic. Other lineage edges may cycle.
+- `automation/runtime_manifest.json` uses `sns.runtime-manifest.v1` and declares desired scheduler state. `automation.orchestration.compare_runtime_manifest()` reports drift against a normalized live task snapshot.
+
+Neither record changes scientific truth merely by existing. Queue membership/priority remain monthly-owned, and live external scheduler state remains a platform fact that must be observed rather than invented.
 
 ## Publication gate
 
@@ -157,12 +122,14 @@ python -m pytest -q tests/test_automation_*.py
 python -m automation.cli validate-repository
 ```
 
-A weekly run must not describe manual comparison with an obsolete planning example as schema validation. It must validate against the executable repository contracts.
+A run must not describe manual comparison with a prose example as schema validation. Hosted or local execution must validate against the executable repository.
 
-If validation fails, publish only as `VERIFICATION_FAILED` or keep the branch unpublished while correcting the new, still-unmerged records. Never rewrite a record that has already merged; use a linked correction event instead.
+If validation fails, fail closed or correct only still-unmerged records. Never rewrite an accepted immutable record; publish a linked correction under the law above.
 
-## July 19 diagnosis
+## Historical diagnosis preserved
 
-The July 19 weekly agent followed the lower-case examples in the planning document. The accepted implementation expected the executable dialect above. The transaction workflow therefore failed closed during repository validation while ordinary tests and baseline artifacts remained green.
+The July 19 weekly failure was a record-dialect compatibility defect: the agent followed lower-case examples from an older planning document while the executable repository expected the uppercase accepted schema. The August 27–28 PR #55 provenance failure was the next-generation version of the same lesson: a field can be syntactically valid while semantically empty.
 
-That failure is treated as a control-plane compatibility defect, not a scientific failure. The July 19 draft records should be converted before merge, and the regression suite must preserve this exact boundary for future weekly runs.
+The durable rule is therefore:
+
+> Prompts choose a loop. Repository code defines the record. Inspectable provenance proves the state. Hosted validation decides whether the transaction is admissible.
