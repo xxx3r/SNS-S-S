@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 60,
+  "quest_id": "QST-SIM-0003",
+  "acceptance_slice": "Add one bounded deterministic receiver/line-of-sight orbital-phase window to the existing GEORingWorld, preserve always-visible behavior by default, expose the boolean through EnvironmentSample.line_of_sight_to_host, add focused synthetic tests, and emit one deterministic phase-sweep output.",
+  "state": "blocked",
+  "owner_run_id": "RUN-20260829T190729000000Z-daily-research-operator-b6e4a91c2d805f73a214",
+  "source_commit": "f89b369c14166891acf49474152b72f65cae4ae9",
+  "head_commit": "543d31c44d8fbba2a272a9c2c6f373527c1659a8",
+  "updated_at": "2026-08-29T19:07:29Z",
+  "next_review_after": "2026-08-29T19:07:29Z",
+  "supersedes": [],
+  "reason": "Bounded implementation-only tests and baseline artifacts are green. Merge remains blocked until the receipt-bearing head passes automation tests, semantic repository validation, full qualification, and review inspection."
+}
