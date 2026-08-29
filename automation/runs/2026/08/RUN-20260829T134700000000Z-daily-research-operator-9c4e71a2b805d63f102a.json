@@ -1,0 +1,130 @@
+{
+  "schema": "sns.loop-run.v2",
+  "run_id": "RUN-20260829T134700000000Z-daily-research-operator-9c4e71a2b805d63f102a",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.1.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-08-29T13:47:00Z",
+  "source_commit": "c522634ce1ea0ff6f49b69231060c3ea2210b01c",
+  "receipt_kind": "correction",
+  "correction_of": "RUN-20260827T191500000000Z-daily-research-operator-6d2f8a41c9e7053b1024",
+  "state_snapshot": {
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "c522634ce1ea0ff6f49b69231060c3ea2210b01c",
+    "records": [
+      {
+        "role": "active_contract",
+        "path": "automation/contracts/daily-research-operator.v1.1.md",
+        "git_blob_sha": "186c91420165400a0decf2d9bee0e3c2cff34a2a"
+      },
+      {
+        "role": "active_quest_index",
+        "path": "quests/active/README.md",
+        "git_blob_sha": "fc73126967f48d4429a36f9c78e6fd8863a6f100"
+      },
+      {
+        "role": "canonical_memory",
+        "path": "memory/mem_log_short.md",
+        "git_blob_sha": "52ef15cdfcb51c7055207d9b70175b0cdfa92587"
+      },
+      {
+        "role": "current_authorization",
+        "path": "automation/authorizations/2026/08/AUTH-20260827T163736000000Z-meta-beam-loss-4a7c91e2b805d63f102a.json",
+        "git_blob_sha": "1af7e5dd9951fe52bb8bf073ff933a89c9016641"
+      },
+      {
+        "role": "current_delegation",
+        "path": "automation/delegations/2026-08.json",
+        "git_blob_sha": "ccc2cdcf54e1e258326731dda8722167d2c555ad"
+      },
+      {
+        "role": "monthly_state",
+        "path": "calendar/monthly/2026-08.md",
+        "git_blob_sha": "bc430e8428bcf9548bff4ed7a94647cefee1b9af"
+      },
+      {
+        "role": "research_graph",
+        "path": "quests/research_graph.json",
+        "git_blob_sha": "ab0b0a380a735cde3b365341ea70e73e7864ec83"
+      },
+      {
+        "role": "runtime_manifest",
+        "path": "automation/runtime_manifest.json",
+        "git_blob_sha": "56935c9d9a89b80a2b2a11aadc9b41522d42e3c2"
+      },
+      {
+        "role": "stable_law",
+        "path": "AGENTS.md",
+        "git_blob_sha": "e96689268600d88db95a8022342b5f0526041382"
+      },
+      {
+        "role": "state_ownership",
+        "path": "automation/state_ownership.json",
+        "git_blob_sha": "6d17c3253cf336de2c62ef90133523295c984c36"
+      }
+    ],
+    "open_prs": [
+      {
+        "number": 55,
+        "head_sha": "c8a5c5a50eb1f10d42e2c3567dd9fa7204bb954f",
+        "draft": true,
+        "state": "open"
+      }
+    ],
+    "fingerprint": "sha256:1fc4c0b79afe02ab36be32c6d0610aa62eb2819afae70c70873c31edae262a58"
+  },
+  "quest_context": {
+    "quest_id": "QST-META-0001",
+    "acceptance_slice": "Append-only provenance correction for the already-completed bounded synthetic beam-link measurement in PR #55; no scientific implementation or result changes are authorized.",
+    "authorization_id": "AUTH-20260827T163736000000Z-meta-beam-loss-4a7c91e2b805d63f102a",
+    "correction_scope": "PROVENANCE_ONLY",
+    "preserved_result": "BOUNDED_BENEFIT_WITH_LOSS_LIMITS",
+    "preserved_grid_summary": "Four of twelve synthetic angle/error points meet the declared 0.25 net-delivered-fraction boundary; eight do not, including one negative-net point."
+  },
+  "pr_context": {
+    "pull_request": 55,
+    "branch": "daily/qst-meta-0001-beam-loss",
+    "head_before_correction": "c8a5c5a50eb1f10d42e2c3567dd9fa7204bb954f",
+    "science_head": "afab24c164060f6ce9924691862fc5a028a24ac2",
+    "original_receipt_path": "automation/runs/2026/08/RUN-20260827T191500000000Z-daily-research-operator-6d2f8a41c9e7053b1024.json",
+    "foundation_main": "c522634ce1ea0ff6f49b69231060c3ea2210b01c",
+    "lifecycle_record_path": "automation/pr_lifecycle/55.json"
+  },
+  "consumed_ids": [
+    "DELEG-20260807-HUMAN-FAST-TRIAGE-V1",
+    "AUTH-20260827T163736000000Z-meta-beam-loss-4a7c91e2b805d63f102a",
+    "RUN-20260827T191500000000Z-daily-research-operator-6d2f8a41c9e7053b1024"
+  ],
+  "artifacts": [
+    {
+      "path": "automation/runs/2026/08/RUN-20260827T191500000000Z-daily-research-operator-6d2f8a41c9e7053b1024.json",
+      "kind": "immutable corrected-lineage target; retained unchanged"
+    }
+  ],
+  "checks": [
+    {
+      "name": "GitHub connector preflight and live ownership",
+      "status": "passed",
+      "evidence": "GitHub reads confirmed accepted main c522634ce1ea0ff6f49b69231060c3ea2210b01c, PR #55 as the sole open scientific owner, and the unresolved provenance-only review thread before publication."
+    },
+    {
+      "name": "inspectable state snapshot",
+      "status": "passed",
+      "evidence": "The snapshot records exact Git blob SHAs for stable law, active Daily contract, state ownership, active quest index, research graph, runtime manifest, canonical memory, current delegation, original authorization, and accepted August Monthly state, plus the live PR #55 ownership row."
+    },
+    {
+      "name": "Research Organization v2 canonical-main backstop",
+      "status": "passed",
+      "evidence": "On main c522634ce1ea0ff6f49b69231060c3ea2210b01c, independent push checks pytest, baseline artifacts, and transaction-layer all completed successfully after PR #58 merge."
+    },
+    {
+      "name": "PR #55 receipt-bearing hosted qualification",
+      "status": "not_run",
+      "evidence": "This append-only correction commit must trigger a fresh PR #55 merge-ref qualification before the review thread can be resolved or the scientific slice merged."
+    }
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Run PR #55 against current main with the original five scientific/control artifacts unchanged plus this append-only v2 provenance correction; if all hosted checks and semantic validation pass and review finds no new defect, resolve the provenance thread, mark the PR ready, and merge with an expected-head guard.",
+  "created_at": "2026-08-29T13:47:30Z"
+}
