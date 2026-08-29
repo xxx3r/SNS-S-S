@@ -13,7 +13,9 @@ from typing import Iterable, Mapping
 from .authorizations import validate_governance_authorization
 from .contracts import ContractRegistry
 from .governance import validate_delegation_envelope
+from .orchestration import validate_runtime_manifest
 from .receipts import ReceiptStore
+from .research_graph import graph_counts, ready_frontier, validate_research_graph
 from .semantics import cluster_evidence_events, consolidate_belief_events, validate_pr_lifecycle, validate_quest_action
 
 _QUEST_RE = re.compile(r"(QST-[A-Z0-9]+-[0-9]{4})")
@@ -154,6 +156,28 @@ def validate_repository_state(root: str | Path, *, strict: bool = True) -> dict[
     if not 1 <= len(queues["active"]) <= 8:
         errors.append(f"active quest queue must contain 1-8 quests, found {len(queues['active'])}")
 
+    try:
+        research_graph = json.loads((repo / "quests/research_graph.json").read_text(encoding="utf-8"))
+        validate_research_graph(research_graph)
+        graph_metrics = graph_counts(research_graph)
+        counts["research_graph_nodes"] = graph_metrics["nodes"]
+        counts["research_graph_edges"] = graph_metrics["edges"]
+        counts["research_graph_hard_dependencies"] = graph_metrics["hard_dependencies"]
+        frontier = ready_frontier(research_graph, active_ids=queues["active"])
+        counts["research_graph_ready_frontier"] = len(frontier)
+    except Exception as exc:
+        errors.append(f"research_graph: {exc}")
+        frontier = []
+
+    try:
+        runtime_manifest = json.loads((repo / "automation/runtime_manifest.json").read_text(encoding="utf-8"))
+        validate_runtime_manifest(runtime_manifest)
+        counts["runtime_manifest_loops"] = len(runtime_manifest["loops"])
+        if not (repo / str(runtime_manifest["bootstrap_prompt"])).is_file():
+            raise ValueError("runtime manifest bootstrap prompt path is missing")
+    except Exception as exc:
+        errors.append(f"runtime_manifest: {exc}")
+
     delegation_records = _load_json_files(repo / "automation/delegations")
     counts["governance_delegations"] = len(delegation_records)
     delegations: dict[str, dict[str, object]] = {}
@@ -245,6 +269,7 @@ def validate_repository_state(root: str | Path, *, strict: bool = True) -> dict[
         "counts": counts,
         "claim_clusters": len(clusters),
         "consolidated_beliefs": len(consolidated),
+        "ready_frontier": frontier,
     }
     if errors and strict:
         raise ValueError("repository semantic validation failed:\n- " + "\n- ".join(errors))
