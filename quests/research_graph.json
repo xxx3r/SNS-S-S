@@ -1,0 +1,27 @@
+{
+  "schema": "sns.research-graph.v1",
+  "description": "Initial typed topology for the eight accepted Summer 2026 active quests. Hard dependencies are explicit only when accepted evidence requires them; priority order is not treated as dependency structure.",
+  "nodes": [
+    {"id": "QST-STOR-0002", "type": "research_quest", "status": "active", "priority": "P0"},
+    {"id": "QST-ARCI-0001", "type": "research_quest", "status": "active", "priority": "P0"},
+    {"id": "QST-SIM-0002", "type": "research_quest", "status": "active", "priority": "P1"},
+    {"id": "QST-SIM-0003", "type": "research_quest", "status": "active", "priority": "P1"},
+    {"id": "QST-PV-0001", "type": "research_quest", "status": "active", "priority": "P1"},
+    {"id": "QST-META-0001", "type": "research_quest", "status": "active", "priority": "P1"},
+    {"id": "QST-CALENDAR-0001", "type": "research_infrastructure", "status": "active", "priority": "P1"},
+    {"id": "QST-FUND-0001", "type": "public_synthesis", "status": "active", "priority": "P1"},
+
+    {"id": "ROUTE-STOR-10MM-PACKAGED", "type": "route", "status": "falsified"},
+    {"id": "ROUTE-STOR-FAST-ROTATOR-SURFACE", "type": "route", "status": "falsified"},
+    {"id": "ROUTE-STOR-LARGER-GEOMETRY", "type": "route", "status": "proposed"},
+    {"id": "ROUTE-STOR-SHORT-NO-ECLIPSE", "type": "route", "status": "proposed"},
+    {"id": "ROUTE-STOR-HOST-ASSISTED", "type": "route", "status": "proposed"}
+  ],
+  "edges": [
+    {"source": "QST-STOR-0002", "target": "ROUTE-STOR-10MM-PACKAGED", "type": "contains", "note": "Accepted packaged 10 mm baseline branch; falsifier triggered."},
+    {"source": "QST-STOR-0002", "target": "ROUTE-STOR-FAST-ROTATOR-SURFACE", "type": "contains", "note": "Accepted fast-rotator surface branch; falsified on declared grid."},
+    {"source": "QST-STOR-0002", "target": "ROUTE-STOR-LARGER-GEOMETRY", "type": "contains", "note": "Smallest bounded architectural escape route: increased seed diameter."},
+    {"source": "QST-STOR-0002", "target": "ROUTE-STOR-SHORT-NO-ECLIPSE", "type": "contains", "note": "Smallest bounded architectural escape route: shorter or no-eclipse mission duty."},
+    {"source": "QST-STOR-0002", "target": "ROUTE-STOR-HOST-ASSISTED", "type": "contains", "note": "Smallest bounded architectural escape route: host-assisted thermal/storage responsibility."}
+  ]
+}
