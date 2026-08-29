@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sns-s-s.local/schemas/loop-run-v2.schema.json",
+  "title": "SNS immutable loop run receipt v2",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema", "run_id", "loop_id", "contract_version", "trigger",
+    "trigger_time", "source_commit", "state_snapshot", "receipt_kind",
+    "quest_context", "pr_context", "consumed_ids", "artifacts", "checks",
+    "belief_effects", "terminal_state", "next_action", "created_at"
+  ],
+  "properties": {
+    "schema": {"const": "sns.loop-run.v2"},
+    "run_id": {"type": "string", "pattern": "^RUN-[0-9]{8}T[0-9]{12}Z-[a-z0-9-]+-[0-9a-f]{20}$"},
+    "loop_id": {"enum": ["daily-governance-triage", "daily-research-operator", "weekly-evidence-synthesis", "monthly-governance", "system-audit"]},
+    "contract_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "trigger": {"enum": ["scheduled", "explicit-human", "replay"]},
+    "trigger_time": {"type": "string", "format": "date-time"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "receipt_kind": {"enum": ["run", "correction"]},
+    "state_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "source_commit", "records", "open_prs", "fingerprint"],
+      "properties": {
+        "schema": {"const": "sns.state-snapshot.v1"},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "records": {
+          "type": "array",
+          "minItems": 7,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["role", "path", "git_blob_sha"],
+            "properties": {
+              "role": {"type": "string", "minLength": 1},
+              "path": {"type": "string", "minLength": 1},
+              "git_blob_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+            }
+          }
+        },
+        "open_prs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["number", "head_sha", "draft", "state"],
+            "properties": {
+              "number": {"type": "integer", "minimum": 1},
+              "head_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+              "draft": {"type": "boolean"},
+              "state": {"const": "open"}
+            }
+          }
+        },
+        "fingerprint": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+      }
+    },
+    "quest_context": {"type": "object"},
+    "pr_context": {"type": "object"},
+    "consumed_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "artifacts": {"type": "array", "items": {"type": ["string", "object"]}},
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "status", "evidence"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "status": {"enum": ["passed", "failed", "not_run"]},
+          "evidence": {"type": "string"}
+        }
+      }
+    },
+    "belief_effects": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "terminal_state": {
+      "enum": [
+        "DONE", "DONE_WITH_LIMITATIONS", "BLOCKED_ENVIRONMENT",
+        "BLOCKED_MISSING_EVIDENCE", "BLOCKED_CONFLICT", "VERIFICATION_FAILED",
+        "NEEDS_SCIENTIFIC_DECISION", "NEEDS_GOVERNANCE_REVIEW", "NEEDS_APPROVAL"
+      ]
+    },
+    "next_action": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "correction_of": {"type": "string", "pattern": "^RUN-"},
+    "platform_prompt_revision": {"type": "string"}
+  }
+}
