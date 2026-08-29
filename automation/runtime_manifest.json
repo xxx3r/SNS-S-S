@@ -1,0 +1,52 @@
+{
+  "schema": "sns.runtime-manifest.v1",
+  "timezone": "America/Denver",
+  "bootstrap_prompt": "automation/prompts/bootstrap.v1.md",
+  "loops": [
+    {
+      "loop_id": "daily-governance-triage",
+      "automation_title": "SNS Pre-Game Triage",
+      "scheduler_managed": true,
+      "desired_enabled": true,
+      "timing_mode": "flexible_schedule",
+      "schedule": "BEGIN:VEVENT\nDTSTART:20260808T100000\nRRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR,SA;BYHOUR=10;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+      "order": 10
+    },
+    {
+      "loop_id": "daily-research-operator",
+      "automation_title": "SNS Daily Research Operator",
+      "scheduler_managed": true,
+      "desired_enabled": true,
+      "timing_mode": "exact_schedule",
+      "schedule": "BEGIN:VEVENT\nDTSTART:20260711T130000\nRRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR,SA;BYHOUR=13;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+      "order": 20
+    },
+    {
+      "loop_id": "weekly-evidence-synthesis",
+      "automation_title": "SNS Weekly Evidence Synthesis",
+      "scheduler_managed": true,
+      "desired_enabled": true,
+      "timing_mode": "exact_schedule",
+      "schedule": "BEGIN:VEVENT\nDTSTART:20260712T090000\nRRULE:FREQ=WEEKLY;BYDAY=SU;BYHOUR=9;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+      "order": 30
+    },
+    {
+      "loop_id": "monthly-governance",
+      "automation_title": "SNS Monthly Governance",
+      "scheduler_managed": true,
+      "desired_enabled": true,
+      "timing_mode": "flexible_schedule",
+      "schedule": "BEGIN:VEVENT\nDTSTART:20260802T110000\nRRULE:FREQ=MONTHLY;BYDAY=SU;BYSETPOS=1;BYHOUR=11;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+      "order": 40
+    },
+    {
+      "loop_id": "system-audit",
+      "automation_title": "SNS System Audit",
+      "scheduler_managed": false,
+      "desired_enabled": false,
+      "timing_mode": "explicit_only",
+      "schedule": null,
+      "order": 50
+    }
+  ]
+}
