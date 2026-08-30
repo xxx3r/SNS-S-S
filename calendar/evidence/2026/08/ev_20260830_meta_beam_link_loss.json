@@ -1,0 +1,30 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260830T150210000000Z-meta-beam-link-loss-73e5133d78e524c93234",
+  "claim_cluster_id": "CLM-20260830T150210000000Z-meta-loss-boundedness-a763ab72ac799aa3e076",
+  "claim": "The accepted QST-META-0001 synthetic beam-link sweep retains modeled benefit at four of twelve declared steering/error points while eight are loss-limited and one is net-negative, so relay usefulness is bounded by explicit steering, pointing, conversion, coupling, and control costs.",
+  "source_uri": "https://github.com/xxx3r/SNS-S-S/blob/9c72a0d6dd5e35785498781b70bd176a57e5e89f/outputs/qst_meta_0001/beam_link_sweep.json",
+  "source_kind": "simulation",
+  "source_fingerprint": "sha256:f42091d110af3391860ecb327afff7488a3ae32edf649901dcd063959d0d5412",
+  "observed_at": "2026-08-30T15:02:10Z",
+  "independence": "independent",
+  "polarity": "supports",
+  "confidence": 0.88,
+  "provenance": {
+    "source_title": "QST-META-0001 bounded synthetic beam-link loss sweep",
+    "publication_date": "2026-08-29",
+    "primary_or_secondary": "primary_repository_artifact",
+    "environment": "pure-Python synthetic loss abstraction",
+    "demonstrated_scale": "twelve steering-angle / pointing-error cases",
+    "subsystems": ["META", "BEAM", "CONTROL"],
+    "evidence_tier": "A-repository",
+    "directness": 0.96,
+    "novelty": 0.86,
+    "fact_summary": "Four of twelve points meet the declared 0.25 useful-fraction boundary; eight do not; the range is -0.034937533525 to 0.392 net delivered fraction.",
+    "inference_summary": "Loss and control-cost terms are necessary to prevent the abstraction from overstating relay value on the declared synthetic grid.",
+    "speculation_summary": "Robustness sweeps over the loss parameters could identify whether the four-point useful region is structurally stable or an artifact of one parameter set.",
+    "limitations": ["All parameters are synthetic and uncalibrated.", "No diffraction, range, thermal, material, dynamics, or receiver-architecture fidelity.", "No physical power-beam performance or hardware readiness claim."],
+    "created_by_run_id": "RUN-20260830T150210000000Z-weekly-evidence-synthesis-b1773e6c28e0faf764f7"
+  },
+  "artifacts": ["calendar/roundups/2026-08-30.md"]
+}
