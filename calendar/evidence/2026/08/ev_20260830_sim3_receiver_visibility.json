@@ -1,0 +1,30 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260830T150210000000Z-sim3-receiver-visibility-dc87b20daea9e5eb139f",
+  "claim_cluster_id": "CLM-20260830T150210000000Z-sim3-visibility-boundary-fcae6b4ba2c4d669d5b6",
+  "claim": "The accepted QST-SIM-0003 synthetic receiver-centered phase window makes line-of-sight an explicit gate while preserving the previous always-visible default; three of six declared sample phases are visible at the 0.25 visibility-fraction setting.",
+  "source_uri": "https://github.com/xxx3r/SNS-S-S/blob/9c72a0d6dd5e35785498781b70bd176a57e5e89f/outputs/qst_sim_0003/receiver_visibility_phase_sweep.json",
+  "source_kind": "simulation",
+  "source_fingerprint": "sha256:adb19e1f768ea3883bf94c47bddbae6f63dc3196817ad22b161260a4cc4cdb54",
+  "observed_at": "2026-08-30T15:02:10Z",
+  "independence": "independent",
+  "polarity": "supports",
+  "confidence": 0.90,
+  "provenance": {
+    "source_title": "QST-SIM-0003 receiver visibility phase sweep",
+    "publication_date": "2026-08-29",
+    "primary_or_secondary": "primary_repository_artifact",
+    "environment": "deterministic synthetic GEO-ring visibility primitive",
+    "demonstrated_scale": "one receiver-centered window and six orbital-phase samples",
+    "subsystems": ["SIM", "GEO", "POWER"],
+    "evidence_tier": "A-repository",
+    "directness": 0.96,
+    "novelty": 0.82,
+    "fact_summary": "A 0.25 receiver visibility fraction marks three of six declared phases visible while default always-visible behavior remains available.",
+    "inference_summary": "Receiver visibility can now gate future power-chain comparisons without silently assuming continuous host access.",
+    "speculation_summary": "Coupling this gate to storage, eclipse, role mix, and relay-efficiency accounting may reveal when intermittent visibility changes coordinated-swarm value.",
+    "limitations": ["One synthetic parameter set only.", "No real GEO ephemerides, Earth occlusion, antennas, storage, beam efficiency, or relay-performance claim."],
+    "created_by_run_id": "RUN-20260830T150210000000Z-weekly-evidence-synthesis-b1773e6c28e0faf764f7"
+  },
+  "artifacts": ["calendar/roundups/2026-08-30.md"]
+}
