@@ -1,0 +1,30 @@
+{
+  "schema": "sns.evidence-event.v1",
+  "evidence_id": "EVID-20260830T150210000000Z-arci-synthetic-sensitivity-3d57084618dd0aac98c7",
+  "claim_cluster_id": "CLM-20260830T150210000000Z-arci-score-confidence-4f07b21125565d248d8c",
+  "claim": "The accepted QST-ARCI-0001 synthetic-target assessment keeps score and evidence confidence separate across 28 bounded sensitivity cases, with every case remaining research-only and no major grade reversal on the declared perturbations.",
+  "source_uri": "https://github.com/xxx3r/SNS-S-S/blob/9c72a0d6dd5e35785498781b70bd176a57e5e89f/outputs/qst_arci_0001/synthetic_target_sensitivity.json",
+  "source_kind": "simulation",
+  "source_fingerprint": "sha256:fae15ed9b45c7f388b08c86041750da2be3910e352c087decf32144f93c39ff9",
+  "observed_at": "2026-08-30T15:02:10Z",
+  "independence": "independent",
+  "polarity": "supports",
+  "confidence": 0.91,
+  "provenance": {
+    "source_title": "QST-ARCI-0001 synthetic target sensitivity",
+    "publication_date": "2026-08-26",
+    "primary_or_secondary": "primary_repository_artifact",
+    "environment": "deterministic synthetic ARCI assessment",
+    "demonstrated_scale": "one synthetic target; seven dimensions; 28 bounded perturbations",
+    "subsystems": ["ARCI", "ASTEROID", "UNCERTAINTY"],
+    "evidence_tier": "A-repository",
+    "directness": 0.97,
+    "novelty": 0.88,
+    "fact_summary": "Baseline score is 0.685, confidence 0.5225, confidence-adjusted score 0.3579125; four dimensions are missing data and all bounded sensitivity scenarios remain research-only.",
+    "inference_summary": "Score/confidence separation survives this declared synthetic sensitivity test and remains useful as a transparent method boundary.",
+    "speculation_summary": "Replacing one missing synthetic dimension with traceable benchmark evidence may be more informative than further arbitrary weight tuning.",
+    "limitations": ["Synthetic target and evidence only.", "No calibrated real-target grade or resource-value claim.", "The falsifier is tested only over the declared bounded perturbations."],
+    "created_by_run_id": "RUN-20260830T150210000000Z-weekly-evidence-synthesis-b1773e6c28e0faf764f7"
+  },
+  "artifacts": ["calendar/roundups/2026-08-30.md"]
+}
