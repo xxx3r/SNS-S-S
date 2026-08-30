@@ -1,0 +1,87 @@
+{
+  "schema": "sns.loop-run.v2",
+  "run_id": "RUN-20260830T150210000000Z-weekly-evidence-synthesis-b1773e6c28e0faf764f7",
+  "loop_id": "weekly-evidence-synthesis",
+  "contract_version": "1.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-30T15:02:10Z",
+  "source_commit": "9c72a0d6dd5e35785498781b70bd176a57e5e89f",
+  "state_snapshot": {
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "9c72a0d6dd5e35785498781b70bd176a57e5e89f",
+    "records": [
+      {"role":"active_contract","path":"automation/contracts/weekly-evidence-synthesis.v1.md","git_blob_sha":"8ef39f6e1daaa9464e320cf33a5563c740951471"},
+      {"role":"active_quest_index","path":"quests/active/README.md","git_blob_sha":"fc73126967f48d4429a36f9c78e6fd8863a6f100"},
+      {"role":"canonical_memory","path":"memory/mem_log_short.md","git_blob_sha":"52ef15cdfcb51c7055207d9b70175b0cdfa92587"},
+      {"role":"consolidated_beliefs","path":"calendar/consolidated_beliefs.json","git_blob_sha":"8e1af93817e23b30ab9e4b162e40f394c3e2825b"},
+      {"role":"current_delegation","path":"automation/delegations/2026-08.json","git_blob_sha":"ccc2cdcf54e1e258326731dda8722167d2c555ad"},
+      {"role":"monthly_state","path":"calendar/monthly/2026-08.md","git_blob_sha":"bc430e8428bcf9548bff4ed7a94647cefee1b9af"},
+      {"role":"previous_weekly_receipt","path":"automation/runs/2026/08/RUN-20260823T145740000000Z-weekly-evidence-synthesis-6375ac8eb1cac4d6670b.json","git_blob_sha":"243187d8b998093df5d1caaef729e5c9c0e28109"},
+      {"role":"research_graph","path":"quests/research_graph.json","git_blob_sha":"ab0b0a380a735cde3b365341ea70e73e7864ec83"},
+      {"role":"runtime_manifest","path":"automation/runtime_manifest.json","git_blob_sha":"56935c9d9a89b80a2b2a11aadc9b41522d42e3c2"},
+      {"role":"stable_law","path":"AGENTS.md","git_blob_sha":"e96689268600d88db95a8022342b5f0526041382"},
+      {"role":"state_ownership","path":"automation/state_ownership.json","git_blob_sha":"6d17c3253cf336de2c62ef90133523295c984c36"}
+    ],
+    "open_prs": [{"number":61,"head_sha":"d8e06b1adbf1475b8dfd149979b9a8d7a064ebf7","draft":false,"state":"open"}],
+    "fingerprint": "sha256:40eae7e9aaf9cd3e8a7772b97042eb7c1780bc03fa5ec3ff1a71360398aa9488"
+  },
+  "receipt_kind": "run",
+  "quest_context": {
+    "primary_quest_id": "QST-ARCI-0001",
+    "related_quest_ids": ["QST-META-0001", "QST-SIM-0003", "QST-STOR-0002"],
+    "question": "What accepted research since the August 23 Weekly synthesis changes SNS beliefs or warrants bounded quest proposals without reopening the settled STOR governance boundary?",
+    "accepted_interval_summary": "Accepted August 25 Monthly governance plus accepted Daily outcomes for ARCI synthetic sensitivity, META beam-link loss bounds, the META provenance-only v2 correction, and SIM3 receiver visibility.",
+    "limitations": [
+      "All three newly normalized scientific artifacts are synthetic and do not establish real-target, hardware, or mission performance.",
+      "The narrow current-primary web scan found no new source direct enough to promote; the previously normalized August metasurface preprint was not duplicated.",
+      "Google Drive was not queried because neither the active contract nor a concrete pending decision required a Drive artifact.",
+      "The August delegation remains valid through 2026-09-01T14:00:00Z but is triage authority, not Weekly publication authority.",
+      "Historical v1 receipts are consumed as accepted history; new publication uses the v2 inspectable snapshot law."
+    ]
+  },
+  "pr_context": {
+    "pull_request": 61,
+    "branch": "aurora/weekly-roundup-2026-08-30",
+    "base_commit": "9c72a0d6dd5e35785498781b70bd176a57e5e89f",
+    "pre_receipt_head": "d8e06b1adbf1475b8dfd149979b9a8d7a064ebf7",
+    "lifecycle_state": "ready_for_receipt_qualification"
+  },
+  "consumed_ids": [
+    "RUN-20260823T145740000000Z-weekly-evidence-synthesis-6375ac8eb1cac4d6670b",
+    "RUN-20260825T142300000000Z-monthly-governance-a5f82d7c1e9b6043d210",
+    "RUN-20260826T191200000000Z-daily-research-operator-7c1e4a92b6d8053f102a",
+    "RUN-20260827T191500000000Z-daily-research-operator-6d2f8a41c9e7053b1024",
+    "RUN-20260829T134700000000Z-daily-research-operator-9c4e71a2b805d63f102a",
+    "RUN-20260829T190729000000Z-daily-research-operator-b6e4a91c2d805f73a214"
+  ],
+  "artifacts": [
+    "calendar/roundups/2026-08-30.md",
+    "calendar/evidence/2026/08/ev_20260830_arci_synthetic_sensitivity.json",
+    "calendar/evidence/2026/08/ev_20260830_meta_beam_link_loss.json",
+    "calendar/evidence/2026/08/ev_20260830_sim3_receiver_visibility.json",
+    "calendar/belief_events/2026/08/be_20260830_arci_score_confidence_separation.json",
+    "calendar/belief_events/2026/08/be_20260830_meta_loss_bounded_relay_value.json",
+    "calendar/belief_events/2026/08/be_20260830_sim_receiver_visibility_boundary.json",
+    "quests/actions/2026/08/qa_20260830_qst_arci_0001_disposition.json",
+    "quests/actions/2026/08/qa_20260830_qst_meta_0001_next_calibration.json",
+    "quests/actions/2026/08/qa_20260830_qst_sim_0003_power_chain_coupling.json"
+  ],
+  "checks": [
+    {"name":"GitHub connector and dynamic contract resolution","status":"passed","evidence":"Connected GitHub established accepted main 9c72a0d6dd5e35785498781b70bd176a57e5e89f and exactly one active weekly-evidence-synthesis contract, version 1.0.0."},
+    {"name":"source, governance, graph, delegation, and ownership recheck","status":"passed","evidence":"Immediately before receipt publication, main remained unchanged; August Monthly state and delegation blobs matched the source snapshot; research graph reported all eight active quests graph-ready with STOR's fast-rotator route locally falsified; PR #61 was the sole open owner at pre-receipt head d8e06b1adbf1475b8dfd149979b9a8d7a064ebf7."},
+    {"name":"inspectable state snapshot","status":"passed","evidence":"sns.state-snapshot.v1 records exact Git blob identities for stable law, selected contract, state ownership, active quest index, research graph, runtime manifest, canonical memory, Monthly state, current delegation, consolidated beliefs, prior Weekly receipt, and live PR #61 ownership."},
+    {"name":"pre-receipt automation and semantic validation","status":"passed","evidence":"GitHub Actions automation-transaction run 33319120089 succeeded after a first mutable-proposal run correctly caught and then cleared the no_action quest_id semantic error."},
+    {"name":"pre-receipt tests","status":"passed","evidence":"GitHub Actions tests run 33319120099 completed successfully on pre-receipt head d8e06b1adbf1475b8dfd149979b9a8d7a064ebf7."},
+    {"name":"pre-receipt baseline artifacts","status":"passed","evidence":"GitHub Actions baseline-artifacts run 33319120093 completed successfully on pre-receipt head d8e06b1adbf1475b8dfd149979b9a8d7a064ebf7."},
+    {"name":"receipt-bearing hosted qualification","status":"not_run","evidence":"Publishing this immutable v2 receipt triggers the final tests, baseline-artifacts, automation-transaction, and semantic-validation surface."},
+    {"name":"Google Drive dependency","status":"not_run","evidence":"Neither the active Weekly contract nor a concrete pending decision required a relevant Drive artifact."}
+  ],
+  "belief_effects": [
+    "BEL-20260830T150210000000Z-arci-score-confidence-separation-8db9aac67bf24abe799e",
+    "BEL-20260830T150210000000Z-meta-loss-boundedness-c620c4e560e3d321fc4b",
+    "BEL-20260830T150210000000Z-sim3-visibility-boundary-9c18969e2ca31e36f39d"
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "After PR #61 passes receipt-bearing hosted qualification, accept this proposal-only Weekly synthesis; Monthly Governance should then decide whether QST-ARCI-0001 is complete at v0.1 or should hand off exactly one evidence-ladder calibration slice to a successor without reopening the blocked STOR route.",
+  "created_at": "2026-08-30T15:02:10Z"
+}
