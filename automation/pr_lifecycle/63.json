@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 63,
+  "quest_id": "QST-SIM-0003",
+  "acceptance_slice": "Compare exactly two declared synthetic role mixes under one identical deterministic GEO-ring fixture using the accepted receiver-visibility primitive: an all-independent baseline and one fixed coordinated mix with a declared 20% storage-node fraction.",
+  "state": "blocked",
+  "owner_run_id": "RUN-20260831T191708809243Z-daily-research-operator-9b8acc613b9b9560f003",
+  "source_commit": "88ea908c6beb84d0154afb38edab13ceb9ec435d",
+  "head_commit": "72a063b3c7cc642b95c517c5f03f022e70b76a70",
+  "updated_at": "2026-08-31T19:17:08Z",
+  "next_review_after": "2026-08-31T19:17:08Z",
+  "supersedes": [],
+  "reason": "Implementation-only tests run 33429583608 and baseline-artifacts run 33429583670 passed on exact head 72a063b3c7cc642b95c517c5f03f022e70b76a70 with no review threads. Merge remains blocked until the receipt-bearing head passes automation tests, semantic repository validation, full pytest, and final review/source-drift checks."
+}

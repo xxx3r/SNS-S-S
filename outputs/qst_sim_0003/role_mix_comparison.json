@@ -1,0 +1,143 @@
+{
+  "arms": [
+    {
+      "agent_roles": [
+        "scout",
+        "scout",
+        "scout",
+        "scout",
+        "scout",
+        "scout",
+        "scout",
+        "scout",
+        "scout",
+        "scout"
+      ],
+      "arm_id": "all_independent",
+      "metrics": {
+        "E_host": 0.0,
+        "E_max": 0.1,
+        "E_mean": 0.1,
+        "E_min": 0.1,
+        "coverage_fraction": 1.0,
+        "curtailed_total_Wh": 9689.300128807,
+        "dead_agent_count": 0,
+        "delivered_total_Wh": 0.0,
+        "harvested_total_Wh": 9690.0,
+        "health_counts": {
+          "nominal": 10
+        },
+        "load_total_Wh": 0.1143,
+        "mean_temperature_K": 312.801404406,
+        "mode_counts": {
+          "HARVEST": 10
+        },
+        "role_counts": {
+          "scout": 10
+        }
+      },
+      "policy": "baseline",
+      "storage_node_fraction": 0.0
+    },
+    {
+      "agent_roles": [
+        "scout",
+        "scout",
+        "sensor",
+        "relay",
+        "storage",
+        "scout",
+        "scout",
+        "sensor",
+        "relay",
+        "storage"
+      ],
+      "arm_id": "fixed_coordinated_storage_mix",
+      "metrics": {
+        "E_host": 0.2775,
+        "E_max": 0.1,
+        "E_mean": 0.09987037,
+        "E_min": 0.098703704,
+        "coverage_fraction": 1.0,
+        "curtailed_total_Wh": 9475.752817593,
+        "dead_agent_count": 0,
+        "delivered_total_Wh": 0.2775,
+        "harvested_total_Wh": 9477.5,
+        "health_counts": {
+          "nominal": 10
+        },
+        "load_total_Wh": 0.673175,
+        "mean_temperature_K": 311.909949275,
+        "mode_counts": {
+          "COMM_BEAM": 1,
+          "HARVEST": 3,
+          "SCOUT": 6
+        },
+        "role_counts": {
+          "relay": 2,
+          "scout": 4,
+          "sensor": 2,
+          "storage": 2
+        }
+      },
+      "policy": "coordinated",
+      "storage_node_fraction": 0.2
+    }
+  ],
+  "deltas_coordinated_minus_independent": {
+    "E_host": 0.2775,
+    "E_mean": -0.00012963,
+    "coverage_fraction": 0.0,
+    "curtailed_total_Wh": -213.547311214,
+    "dead_agent_count": 0,
+    "delivered_total_Wh": 0.2775
+  },
+  "fixture": {
+    "agent_parameters": {
+      "beam_efficiency": 0.6,
+      "beam_rate": 0.05,
+      "capacitor_max": 0.003,
+      "charge_efficiency": 0.9,
+      "discharge_efficiency": 0.9,
+      "energy_max": 0.1,
+      "high_threshold": 0.08,
+      "initial_capacitor": 0.0,
+      "initial_energy": 0.05,
+      "initial_temperature_K": 290.0,
+      "low_threshold": 0.02,
+      "max_battery_charge_power": 0.1,
+      "max_capacitor_charge_power": 1.0,
+      "max_operating_temperature_K": 350.0,
+      "min_operating_temperature_K": 240.0,
+      "move_rate": 0.0005,
+      "orientation_factor": 1.0,
+      "power_comm": 0.05,
+      "power_idle": 0.002,
+      "power_idle_low": 0.0001,
+      "power_move": 0.02,
+      "power_scout": 0.005,
+      "pv_area": 0.5,
+      "pv_efficiency": 0.25,
+      "thermal_time_constant_s": 1800.0
+    },
+    "coverage_bin_count": 36,
+    "dt": 300.0,
+    "duration": 21600.0,
+    "environment": {
+      "eclipse_fraction": 0.05,
+      "orbital_period_s": 86164.0,
+      "receiver_phase_center_rad": 0.0,
+      "receiver_visibility_fraction": 0.25
+    },
+    "host_demand_rate": 0.2,
+    "mission": "geo_ring_power_chain",
+    "num_agents": 10,
+    "scenario": "geo_ring",
+    "solar_flux": 1360.0
+  },
+  "interpretation_boundary": "One synthetic fixture only; this is not architecture selection, storage-fraction optimization, relay-efficiency evidence, or a hardware-readiness claim.",
+  "observation": "COORDINATED_HOST_DELIVERY_OBSERVED_ON_DECLARED_FIXTURE",
+  "quest_id": "QST-SIM-0003",
+  "schema": "sns.qst-sim-0003.role-mix-comparison.v1",
+  "synthetic": true
+}

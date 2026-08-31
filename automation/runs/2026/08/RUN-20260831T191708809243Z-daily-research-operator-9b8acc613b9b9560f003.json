@@ -1,0 +1,75 @@
+{
+  "schema": "sns.loop-run.v2",
+  "run_id": "RUN-20260831T191708809243Z-daily-research-operator-9b8acc613b9b9560f003",
+  "loop_id": "daily-research-operator",
+  "contract_version": "1.1.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-08-31T19:05:02Z",
+  "source_commit": "88ea908c6beb84d0154afb38edab13ceb9ec435d",
+  "state_snapshot": {
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "88ea908c6beb84d0154afb38edab13ceb9ec435d",
+    "records": [
+      {"role":"active_contract","path":"automation/contracts/daily-research-operator.v1.1.md","git_blob_sha":"186c91420165400a0decf2d9bee0e3c2cff34a2a"},
+      {"role":"active_quest_index","path":"quests/active/README.md","git_blob_sha":"fc73126967f48d4429a36f9c78e6fd8863a6f100"},
+      {"role":"canonical_memory","path":"memory/mem_log_short.md","git_blob_sha":"52ef15cdfcb51c7055207d9b70175b0cdfa92587"},
+      {"role":"current_authorization","path":"automation/authorizations/2026/08/AUTH-20260831T163436000000Z-sim3-role-mix-63dfa448abd5cc06acbd.json","git_blob_sha":"43d793aa37e81192df2a27bd8d3dca17460d4f63"},
+      {"role":"current_delegation","path":"automation/delegations/2026-08.json","git_blob_sha":"ccc2cdcf54e1e258326731dda8722167d2c555ad"},
+      {"role":"latest_daily_receipt","path":"automation/runs/2026/08/RUN-20260829T190729000000Z-daily-research-operator-b6e4a91c2d805f73a214.json","git_blob_sha":"26f62993cd5d3fea47eabdeea25423138c7eb836"},
+      {"role":"latest_triage_receipt","path":"automation/runs/2026/08/RUN-20260831T163436000000Z-daily-governance-triage-d8d6fa8899c160b52955.json","git_blob_sha":"9dd2d58c80973cff096961fecb3d062d55608f57"},
+      {"role":"monthly_state","path":"calendar/monthly/2026-08.md","git_blob_sha":"bc430e8428bcf9548bff4ed7a94647cefee1b9af"},
+      {"role":"research_graph","path":"quests/research_graph.json","git_blob_sha":"ab0b0a380a735cde3b365341ea70e73e7864ec83"},
+      {"role":"runtime_manifest","path":"automation/runtime_manifest.json","git_blob_sha":"56935c9d9a89b80a2b2a11aadc9b41522d42e3c2"},
+      {"role":"selected_quest","path":"quests/active/QST-SIM-0003-geo-ring-power-chain.md","git_blob_sha":"594775bdbc10e1c4c3f3514484eaa87415047ea1"},
+      {"role":"stable_law","path":"AGENTS.md","git_blob_sha":"e96689268600d88db95a8022342b5f0526041382"},
+      {"role":"state_ownership","path":"automation/state_ownership.json","git_blob_sha":"6d17c3253cf336de2c62ef90133523295c984c36"}
+    ],
+    "open_prs": [
+      {"number":61,"head_sha":"63c7fdfad8fc739214b5b46a5eb81678b8a21f6e","draft":false,"state":"open"},
+      {"number":63,"head_sha":"72a063b3c7cc642b95c517c5f03f022e70b76a70","draft":false,"state":"open"}
+    ],
+    "fingerprint": "sha256:af4d9ae05b7a5346d86bb950650dd5969da7df942df7b4f7184e79c704a929c0"
+  },
+  "receipt_kind": "run",
+  "quest_context": {
+    "quest_id": "QST-SIM-0003",
+    "acceptance_slice": "Compare exactly two declared synthetic role mixes under one identical deterministic GEO-ring fixture using the accepted receiver-visibility primitive: an all-independent baseline and one fixed coordinated mix with a declared 20% storage-node fraction.",
+    "authorization_id": "AUTH-20260831T163436000000Z-sim3-role-mix-63dfa448abd5cc06acbd",
+    "result": "COORDINATED_HOST_DELIVERY_OBSERVED_ON_DECLARED_FIXTURE",
+    "result_summary": "On the single declared six-hour synthetic fixture, the all-independent arm delivered 0 Wh to the host and the fixed coordinated arm delivered 0.2775 Wh; both retained full coverage and zero dead agents. The coordinated arm curtailed 213.547311214 Wh less energy while mean agent energy was lower by 0.00012963 Wh.",
+    "claim_boundary": "One synthetic fixture only; no architecture selection, storage-fraction optimization, beam-efficiency or eclipsing sweep, external evidence, relay-performance generalization, or hardware-readiness claim."
+  },
+  "pr_context": {
+    "pull_request": 63,
+    "branch": "daily/qst-sim-0003-role-mix",
+    "implementation_head": "72a063b3c7cc642b95c517c5f03f022e70b76a70",
+    "base_commit": "88ea908c6beb84d0154afb38edab13ceb9ec435d",
+    "lifecycle_record_path": "automation/pr_lifecycle/63.json",
+    "other_open_owner_disposition": "PR #61 is Weekly-owned evidence synthesis and remains isolated from this Daily scientific implementation owner."
+  },
+  "consumed_ids": [
+    "DELEG-20260807-HUMAN-FAST-TRIAGE-V1",
+    "AUTH-20260831T163436000000Z-sim3-role-mix-63dfa448abd5cc06acbd"
+  ],
+  "artifacts": [
+    {"path":"configs/qst_sim_0003_role_mix.json","kind":"one fixed synthetic two-arm fixture"},
+    {"path":"experiments/sim3_role_mix_comparison.py","kind":"bounded deterministic comparison"},
+    {"path":"tests/test_sim3_role_mix_comparison.py","kind":"focused reproduction and budget tests"},
+    {"path":"outputs/qst_sim_0003/role_mix_comparison.json","kind":"one deterministic comparison output"}
+  ],
+  "checks": [
+    {"name":"GitHub connector preflight","status":"passed","evidence":"Connected GitHub repository reads and writes succeeded for xxx3r/SNS-S-S."},
+    {"name":"dynamic active-contract resolution","status":"passed","evidence":"Exactly one active contract matched daily-research-operator on accepted main: version 1.1.0."},
+    {"name":"source, governance, delegation, graph readiness, authorization, and live ownership recheck","status":"passed","evidence":"Immediately before publication, accepted main remained 88ea908c6beb84d0154afb38edab13ceb9ec435d; the delegation, authorization, graph, Monthly state, and selected quest blobs matched the inspectable snapshot; AUTH remained unique and unexpired; PR #63 was the sole Daily implementation owner at exact head 72a063b3c7cc642b95c517c5f03f022e70b76a70, while PR #61 remained Weekly-owned."},
+    {"name":"inspectable state snapshot","status":"passed","evidence":"sns.state-snapshot.v1 records exact Git blob identities for all mandatory roles plus current delegation, authorization, Monthly state, latest Daily and Pre-Game lineage, selected quest, and live PR rows #61 and #63; its fingerprint uses automation.provenance canonical JSON rules."},
+    {"name":"implementation-only hosted tests","status":"passed","evidence":"GitHub Actions tests run 33429583608 completed successfully on implementation head 72a063b3c7cc642b95c517c5f03f022e70b76a70."},
+    {"name":"implementation-only baseline artifacts","status":"passed","evidence":"GitHub Actions baseline-artifacts run 33429583670 completed successfully on implementation head 72a063b3c7cc642b95c517c5f03f022e70b76a70."},
+    {"name":"implementation-only review gate","status":"passed","evidence":"PR #63 had no review submissions or inline review threads before receipt publication."},
+    {"name":"receipt-bearing semantic and full qualification","status":"not_run","evidence":"This receipt and lifecycle publication must trigger the mandatory automation transaction and exact-head replay before merge."},
+    {"name":"Google Drive dependency","status":"not_run","evidence":"Neither the active contract nor this bounded synthetic slice requires a Drive artifact."}
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Qualify PR #63's receipt-bearing head with tests, baseline artifacts, automation tests, semantic repository validation, and full pytest; if exact-head checks are green and review-clear, merge with an expected-head guard and synchronize lifecycle state on accepted main.",
+  "created_at": "2026-08-31T19:17:08Z"
+}
