@@ -20,7 +20,7 @@
         "E_mean": 0.1,
         "E_min": 0.1,
         "coverage_fraction": 1.0,
-        "curtailed_total_Wh": 9689.300128806584,
+        "curtailed_total_Wh": 9689.300128807,
         "dead_agent_count": 0,
         "delivered_total_Wh": 0.0,
         "harvested_total_Wh": 9690.0,
@@ -28,7 +28,7 @@
           "nominal": 10
         },
         "load_total_Wh": 0.1143,
-        "mean_temperature_K": 312.801404406082,
+        "mean_temperature_K": 312.801404406,
         "mode_counts": {
           "HARVEST": 10
         },
@@ -56,18 +56,18 @@
       "metrics": {
         "E_host": 0.2775,
         "E_max": 0.1,
-        "E_mean": 0.09987037037,
-        "E_min": 0.098703703704,
+        "E_mean": 0.09987037,
+        "E_min": 0.098703704,
         "coverage_fraction": 1.0,
-        "curtailed_total_Wh": 9475.752817592595,
+        "curtailed_total_Wh": 9475.752817593,
         "dead_agent_count": 0,
         "delivered_total_Wh": 0.2775,
-        "harvested_total_Wh": 9477.499999999995,
+        "harvested_total_Wh": 9477.5,
         "health_counts": {
           "nominal": 10
         },
         "load_total_Wh": 0.673175,
-        "mean_temperature_K": 311.909949275196,
+        "mean_temperature_K": 311.909949275,
         "mode_counts": {
           "COMM_BEAM": 1,
           "HARVEST": 3,
@@ -86,9 +86,9 @@
   ],
   "deltas_coordinated_minus_independent": {
     "E_host": 0.2775,
-    "E_mean": -0.00012962963,
+    "E_mean": -0.00012963,
     "coverage_fraction": 0.0,
-    "curtailed_total_Wh": -213.54731121399,
+    "curtailed_total_Wh": -213.547311214,
     "dead_agent_count": 0,
     "delivered_total_Wh": 0.2775
   },
@@ -141,4 +141,3 @@
   "schema": "sns.qst-sim-0003.role-mix-comparison.v1",
   "synthetic": true
 }
-
