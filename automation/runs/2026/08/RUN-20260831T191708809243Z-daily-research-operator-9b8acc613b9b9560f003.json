@@ -28,7 +28,7 @@
       {"number":61,"head_sha":"63c7fdfad8fc739214b5b46a5eb81678b8a21f6e","draft":false,"state":"open"},
       {"number":63,"head_sha":"72a063b3c7cc642b95c517c5f03f022e70b76a70","draft":false,"state":"open"}
     ],
-    "fingerprint": "sha256:5d74f2e60bfec092d1b33b742f785fd12d18b1ebe798579ea68eff8a27557ca8"
+    "fingerprint": "sha256:af4d9ae05b7a5346d86bb950650dd5969da7df942df7b4f7184e79c704a929c0"
   },
   "receipt_kind": "run",
   "quest_context": {
