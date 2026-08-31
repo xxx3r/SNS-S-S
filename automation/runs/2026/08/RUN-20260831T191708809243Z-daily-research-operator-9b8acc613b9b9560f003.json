@@ -36,7 +36,7 @@
     "acceptance_slice": "Compare exactly two declared synthetic role mixes under one identical deterministic GEO-ring fixture using the accepted receiver-visibility primitive: an all-independent baseline and one fixed coordinated mix with a declared 20% storage-node fraction.",
     "authorization_id": "AUTH-20260831T163436000000Z-sim3-role-mix-63dfa448abd5cc06acbd",
     "result": "COORDINATED_HOST_DELIVERY_OBSERVED_ON_DECLARED_FIXTURE",
-    "result_summary": "On the single declared six-hour synthetic fixture, the all-independent arm delivered 0 Wh to the host and the fixed coordinated arm delivered 0.2775 Wh; both retained full coverage and zero dead agents. The coordinated arm curtailed 213.54731121399 Wh less energy while mean agent energy was lower by 0.00012962963 Wh.",
+    "result_summary": "On the single declared six-hour synthetic fixture, the all-independent arm delivered 0 Wh to the host and the fixed coordinated arm delivered 0.2775 Wh; both retained full coverage and zero dead agents. The coordinated arm curtailed 213.547311214 Wh less energy while mean agent energy was lower by 0.00012963 Wh.",
     "claim_boundary": "One synthetic fixture only; no architecture selection, storage-fraction optimization, beam-efficiency or eclipsing sweep, external evidence, relay-performance generalization, or hardware-readiness claim."
   },
   "pr_context": {
