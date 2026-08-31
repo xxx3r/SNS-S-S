@@ -5,7 +5,7 @@
   "claim": "The accepted QST-META-0001 synthetic beam-link sweep retains modeled benefit at four of twelve declared steering/error points while eight are loss-limited and one is net-negative, so relay usefulness is bounded by explicit steering, pointing, conversion, coupling, and control costs.",
   "source_uri": "https://github.com/xxx3r/SNS-S-S/blob/9c72a0d6dd5e35785498781b70bd176a57e5e89f/outputs/qst_meta_0001/beam_link_sweep.json",
   "source_kind": "simulation",
-  "source_fingerprint": "sha256:f42091d110af3391860ecb327afff7488a3ae32edf649901dcd063959d0d5412",
+  "source_fingerprint": "sha256:ac7f807a3cf7bc0f0882956932de62f04751d17925af829edf3701e82cedbd91",
   "observed_at": "2026-08-30T15:02:10Z",
   "independence": "independent",
   "polarity": "supports",
