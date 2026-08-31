@@ -31,7 +31,7 @@ METRIC_KEYS = (
 
 def _round_floats(value: Any) -> Any:
     if isinstance(value, float):
-        return round(value, 12)
+        return round(value, 9)
     if isinstance(value, dict):
         return {key: _round_floats(item) for key, item in value.items()}
     if isinstance(value, list):
