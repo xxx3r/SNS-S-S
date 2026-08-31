@@ -5,7 +5,7 @@
   "claim": "The accepted QST-ARCI-0001 synthetic-target assessment keeps score and evidence confidence separate across 28 bounded sensitivity cases, with every case remaining research-only and no major grade reversal on the declared perturbations.",
   "source_uri": "https://github.com/xxx3r/SNS-S-S/blob/9c72a0d6dd5e35785498781b70bd176a57e5e89f/outputs/qst_arci_0001/synthetic_target_sensitivity.json",
   "source_kind": "simulation",
-  "source_fingerprint": "sha256:fae15ed9b45c7f388b08c86041750da2be3910e352c087decf32144f93c39ff9",
+  "source_fingerprint": "sha256:f34a68e6779bcd01e659b51f6e45c41b9df206eb0b9d4fb9854d1115e52514da",
   "observed_at": "2026-08-30T15:02:10Z",
   "independence": "independent",
   "polarity": "supports",
