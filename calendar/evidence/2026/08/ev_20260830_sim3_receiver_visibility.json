@@ -5,7 +5,7 @@
   "claim": "The accepted QST-SIM-0003 synthetic receiver-centered phase window makes line-of-sight an explicit gate while preserving the previous always-visible default; three of six declared sample phases are visible at the 0.25 visibility-fraction setting.",
   "source_uri": "https://github.com/xxx3r/SNS-S-S/blob/9c72a0d6dd5e35785498781b70bd176a57e5e89f/outputs/qst_sim_0003/receiver_visibility_phase_sweep.json",
   "source_kind": "simulation",
-  "source_fingerprint": "sha256:adb19e1f768ea3883bf94c47bddbae6f63dc3196817ad22b161260a4cc4cdb54",
+  "source_fingerprint": "sha256:a9a35516ec533539a229718d5d779a6744515f10dc60cc2896f47c1faffb0dc5",
   "observed_at": "2026-08-30T15:02:10Z",
   "independence": "independent",
   "polarity": "supports",
