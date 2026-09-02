@@ -1,0 +1,121 @@
+{
+  "schema": "sns.loop-run.v2",
+  "run_id": "RUN-20260902T172535628524Z-system-audit-issue38-receipt-reconciliation-8c6e1a4b2d7f9053e2b1",
+  "loop_id": "system-audit",
+  "contract_version": "1.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-09-02T17:25:35.628524Z",
+  "source_commit": "6bfa77db2db85b4465b7dc62a59ee692b5a7a5e4",
+  "state_snapshot": {
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "6bfa77db2db85b4465b7dc62a59ee692b5a7a5e4",
+    "records": [
+      {
+        "role": "active_contract",
+        "path": "automation/contracts/system-audit.v1.md",
+        "git_blob_sha": "b0884f997e5108fdbefd5a1ae9c634b466068e8f"
+      },
+      {
+        "role": "active_quest_index",
+        "path": "quests/active/README.md",
+        "git_blob_sha": "fc73126967f48d4429a36f9c78e6fd8863a6f100"
+      },
+      {
+        "role": "canonical_memory",
+        "path": "memory/mem_log_short.md",
+        "git_blob_sha": "52ef15cdfcb51c7055207d9b70175b0cdfa92587"
+      },
+      {
+        "role": "research_graph",
+        "path": "quests/research_graph.json",
+        "git_blob_sha": "ab0b0a380a735cde3b365341ea70e73e7864ec83"
+      },
+      {
+        "role": "runtime_manifest",
+        "path": "automation/runtime_manifest.json",
+        "git_blob_sha": "56935c9d9a89b80a2b2a11aadc9b41522d42e3c2"
+      },
+      {
+        "role": "stable_law",
+        "path": "AGENTS.md",
+        "git_blob_sha": "e96689268600d88db95a8022342b5f0526041382"
+      },
+      {
+        "role": "state_ownership",
+        "path": "automation/state_ownership.json",
+        "git_blob_sha": "6d17c3253cf336de2c62ef90133523295c984c36"
+      }
+    ],
+    "open_prs": [
+      {
+        "number": 61,
+        "head_sha": "61602ff9d8ecf9a92ec50d8931e778b264ec5945",
+        "draft": false,
+        "state": "open"
+      }
+    ],
+    "fingerprint": "sha256:8899d7ca607b7e0ac889ddb9f5617a6d014ad67f36a035157340d31b5a3de30f"
+  },
+  "receipt_kind": "run",
+  "quest_context": {
+    "authority_issue": 38,
+    "transaction": 6,
+    "decision_level": "L2",
+    "scope": "Validate recent immutable receipt IDs, schema conformance, correction linkage, and referenced artifact existence; stop the accepted cleanup campaign before governance decisions.",
+    "explicit_authority": "Current human instruction authorizes completion of Issue #38.",
+    "decision_effect": "Validated six September receipts, one linked provenance correction, six existing artifact references, and zero duplicate IDs without rewriting any immutable evidence."
+  },
+  "pr_context": {
+    "live_open_prs": [
+      61
+    ],
+    "disposition": "PR #61 remains evidence-only and unchanged."
+  },
+  "consumed_ids": [
+    "RUN-20260902T172102902433Z-system-audit-issue38-queue-invariants-7b5d2e9a1c6f8043e2b1"
+  ],
+  "artifacts": [
+    "automation/reports/2026-09-02-issue38-receipt-reconciliation.md"
+  ],
+  "checks": [
+    {
+      "name": "GitHub connector preflight",
+      "status": "passed",
+      "evidence": "Current main ref, September receipt directory, all six receipt files, and all six referenced artifacts were read successfully at source main 6bfa77db2db85b4465b7dc62a59ee692b5a7a5e4."
+    },
+    {
+      "name": "receipt ID uniqueness",
+      "status": "passed",
+      "evidence": "Six September receipt filenames and embedded run_id values are pairwise unique; no duplicate immutable ID was observed."
+    },
+    {
+      "name": "schema conformance",
+      "status": "passed",
+      "evidence": "All six recent receipts use sns.loop-run.v2 with valid run/correction kinds and the required provenance envelope; prior exact-head repository validation also returned valid true."
+    },
+    {
+      "name": "correction linkage",
+      "status": "passed",
+      "evidence": "The single correction receipt cites the existing original audit receipt and does not create a second ordinary run budget."
+    },
+    {
+      "name": "referenced artifact existence",
+      "status": "passed",
+      "evidence": "All six artifact references resolve on current main, including the preserved docs/audits historical report, the relocated automation/reports report, both lifecycle records, and both Issue #38 audit views."
+    },
+    {
+      "name": "immutable preservation boundary",
+      "status": "passed",
+      "evidence": "No existing receipt was overwritten; this transaction adds one dated report and one new receipt only, while PR #61 and all scientific/queue/memory/belief/scheduler state remain unchanged."
+    },
+    {
+      "name": "receipt-bearing hosted validation",
+      "status": "not_run",
+      "evidence": "The exact report-and-receipt head must execute tests, baseline-artifacts, automation-transaction, and semantic repository validation before acceptance."
+    }
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Qualify the exact reconciliation report-and-receipt head, re-read canonical main, then close Issue #38 as completed; leave campaign transactions 7–8 and PR #61 untouched.",
+  "created_at": "2026-09-02T17:25:35.628524Z"
+}
