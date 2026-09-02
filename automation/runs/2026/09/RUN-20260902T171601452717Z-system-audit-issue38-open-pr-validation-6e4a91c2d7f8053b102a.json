@@ -1,0 +1,119 @@
+{
+  "schema": "sns.loop-run.v2",
+  "run_id": "RUN-20260902T171601452717Z-system-audit-issue38-open-pr-validation-6e4a91c2d7f8053b102a",
+  "loop_id": "system-audit",
+  "contract_version": "1.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-09-02T17:16:01.452717Z",
+  "source_commit": "9c9276c300739ef641c5634d788052ec1555b684",
+  "state_snapshot": {
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "9c9276c300739ef641c5634d788052ec1555b684",
+    "records": [
+      {
+        "role": "active_contract",
+        "path": "automation/contracts/monthly-governance.v1.1.md",
+        "git_blob_sha": "cf2b4af96f67909e0a1c3555b5b1c5c6ab13fd25"
+      },
+      {
+        "role": "active_quest_index",
+        "path": "quests/active/README.md",
+        "git_blob_sha": "fc73126967f48d4429a36f9c78e6fd8863a6f100"
+      },
+      {
+        "role": "canonical_memory",
+        "path": "memory/mem_log_short.md",
+        "git_blob_sha": "52ef15cdfcb51c7055207d9b70175b0cdfa92587"
+      },
+      {
+        "role": "research_graph",
+        "path": "quests/research_graph.json",
+        "git_blob_sha": "ab0b0a380a735cde3b365341ea70e73e7864ec83"
+      },
+      {
+        "role": "runtime_manifest",
+        "path": "automation/runtime_manifest.json",
+        "git_blob_sha": "56935c9d9a89b80a2b2a11aadc9b41522d42e3c2"
+      },
+      {
+        "role": "stable_law",
+        "path": "AGENTS.md",
+        "git_blob_sha": "e96689268600d88db95a8022342b5f0526041382"
+      },
+      {
+        "role": "state_ownership",
+        "path": "automation/state_ownership.json",
+        "git_blob_sha": "6d17c3253cf336de2c62ef90133523295c984c36"
+      }
+    ],
+    "open_prs": [
+      {
+        "number": 61,
+        "head_sha": "61602ff9d8ecf9a92ec50d8931e778b264ec5945",
+        "draft": false,
+        "state": "open"
+      }
+    ],
+    "fingerprint": "sha256:b28179babf4727b9b3e726746fec02e4054a9fce05f67bffb4f2efce2964caa3"
+  },
+  "receipt_kind": "run",
+  "quest_context": {
+    "authority_issue": 38,
+    "transaction": 4,
+    "decision_level": "L2",
+    "scope": "Produce a current open-PR and branch-ownership validation view without rewriting the historical July/August baseline; preserve PR #61 as evidence-only.",
+    "explicit_authority": "Current human instruction authorizes completion of Issue #38.",
+    "decision_effect": "Validated the live open-PR owner set and recorded the bounded evidence-only disposition for PR #61; no queue or scientific state changed."
+  },
+  "pr_context": {
+    "pr_number": 61,
+    "live_state": "open/evidence-only",
+    "head_branch": "aurora/weekly-roundup-2026-08-30",
+    "head_commit": "61602ff9d8ecf9a92ec50d8931e778b264ec5945",
+    "base_commit": "9c72a0d6dd5e35785498781b70bd176a57e5e89f",
+    "lifecycle_record": "absent-by-design-evidence-only"
+  },
+  "consumed_ids": [
+    "RUN-20260902T165909021808Z-monthly-governance-pr22-reconciliation-3a7c91d5e2b6f8041a20",
+    "RUN-20260902T170939821662Z-monthly-governance-pr23-supersession-4b8e2c6f1a7d9053e2c1"
+  ],
+  "artifacts": [
+    "automation/reports/2026-09-02-issue38-open-pr-branch-validation.md"
+  ],
+  "checks": [
+    {
+      "name": "GitHub connector preflight",
+      "status": "passed",
+      "evidence": "Live default-branch ref, open PR list, PR #61 identity, lifecycle inventory, and relevant reconciliation records were read at source main 9c9276c300739ef641c5634d788052ec1555b684."
+    },
+    {
+      "name": "current open-PR inventory",
+      "status": "passed",
+      "evidence": "Exactly one open PR was observed: #61 at head 61602ff9d8ecf9a92ec50d8931e778b264ec5945."
+    },
+    {
+      "name": "branch-ownership uniqueness",
+      "status": "passed",
+      "evidence": "The open-PR set contains exactly one head branch, aurora/weekly-roundup-2026-08-30; zero duplicate open head branches and zero competing cleanup owners were observed."
+    },
+    {
+      "name": "historical baseline preservation",
+      "status": "passed",
+      "evidence": "The August campaign baseline remains represented by its original accepted documentation and is not rewritten; this transaction adds a dated current view only."
+    },
+    {
+      "name": "PR #61 evidence-only disposition",
+      "status": "passed",
+      "evidence": "PR #61 remains open, stale-base, and untouched; no merge, rebase, close, or reconstruction was performed."
+    },
+    {
+      "name": "receipt-bearing hosted validation",
+      "status": "not_run",
+      "evidence": "The exact report-and-receipt head must execute tests, baseline-artifacts, automation-transaction, and semantic repository validation before acceptance."
+    }
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Qualify the exact report-and-receipt head, then validate active queue IDs and cross-queue uniqueness as Issue #38 transaction 5.",
+  "created_at": "2026-09-02T17:16:01.452717Z"
+}
