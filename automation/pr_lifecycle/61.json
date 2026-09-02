@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 61,
+  "quest_id": "",
+  "acceptance_slice": "Weekly SNS roundup 2026-08-30 proposal-only evidence slice; preserve its repaired contents and GitHub review history, then close the stale acceptance surface as superseded historical Weekly evidence after the September Monthly transition.",
+  "state": "superseded",
+  "owner_run_id": "RUN-20260902T185807761521Z-monthly-governance-september-transition-c4d8e2a6f1b9073c5e2a",
+  "source_commit": "9c72a0d6dd5e35785498781b70bd176a57e5e89f",
+  "head_commit": "61602ff9d8ecf9a92ec50d8931e778b264ec5945",
+  "updated_at": "2026-09-02T18:58:07.761521Z",
+  "next_review_after": "2026-09-02T18:58:07.761521Z",
+  "supersedes": [],
+  "reason": "Monthly v1.2 disposition under explicit Issue #65 authority. PR #61 remains unmerged and unreconstructed: its stale August 30 branch contents and review history are preserved as historical Weekly evidence, while the stale acceptance surface is superseded for September ancestry. Close the GitHub PR after this accepted Monthly transition; do not merge, rebase, transplant, or reconstruct its head."
+}

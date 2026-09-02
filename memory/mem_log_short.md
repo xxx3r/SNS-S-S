@@ -34,3 +34,19 @@ Aurora Score: A = 1.0 ∠ -20° | w_ext = 0.0
 Next Move (one shot):
 
 - Pre-Game should issue one bounded `refine_existing` authorization for QST-ARCI-0001 under the existing August delegation, provided source, ownership, write surfaces, and checks remain clean. Daily then produces the smallest reproducible synthetic-target sensitivity artifact. Keep the STOR architecture decision on its separate governance boundary.
+
+## Accepted September constitutional transition — 2026-09-02
+
+Canonical source: main 595b9b828513b8511d57d6e9946424251e93d71c, after Organization v2.x PR #74. The September Monthly transition accepts the organizational observability surface and performs one governed stale-memory reconciliation.
+
+PR #61 is superseded historical Weekly evidence. Its branch contents and GitHub review history remain preserved; its stale acceptance surface is closed without merge, rebase, transplant, or reconstruction.
+
+No active scientific quest is terminalized. The eight active quest IDs and priorities remain unchanged. QST-STOR-0002 remains locally falsified on its declared fast-rotator grid, and QST-ARCI-0001 remains the current executable spawn. No scientific implementation, consolidated belief, queue, priority, or research-graph mutation is made here.
+
+Delegation DELEG-20260902-HUMAN-SEPTEMBER-TRIAGE-V1 is the sole September triage envelope: QST-ARCI-0001 only; refine_existing only; one authorization per run; one implementation PR and one run receipt per authorization; configs/**, experiments/**, tests/**, and outputs/** only; expiry 2026-09-30T23:59:59Z.
+
+Scheduler wake order: Monthly first; Pre-Game only after accepted Monthly disposition; Daily only after an accepted Pre-Game result. Weekly remains enabled. Observatory projection remains paused until the accepted September state is unambiguous.
+
+### Current next move (one shot)
+
+After this Monthly state is accepted, enable and qualify Pre-Game for the bounded ARCI lane. Do not enable Daily until Pre-Game produces an accepted result. Daily may then consume one valid authorization and produce one smallest reproducible synthetic-target artifact. Keep the STOR architecture decision behind its separate scientific/governance boundary.
