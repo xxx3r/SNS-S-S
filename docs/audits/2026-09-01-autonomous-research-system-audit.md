@@ -10,6 +10,10 @@ Primary evidence is accepted repository state: immutable loop receipts, PR/lifec
 
 Metrics below are labeled **exact**, **reconstructible**, or **lower-bound**. Exact means directly enumerable from accepted repository state. Reconstructible means derived from timestamped accepted GitHub objects. Lower-bound means connector-visible evidence proves at least that amount but the full corpus was not re-executed locally during this audit.
 
+## Observed runtime drift
+
+The canonical runtime manifest desires Pre-Game, Daily, Weekly, and Monthly enabled, with System Audit explicit-only. At audit execution, temporary human-authorized audit-day orchestration had paused Pre-Game and Daily, Monthly was disabled, Weekly remained enabled, and the explicit September Audit was temporarily instantiated. These are orchestration-state differences, not July–August scientific defects, and are excluded from frozen-period rates.
+
 ## Quantitative scorecard
 
 | Measure | July–August result | Audit reading |
@@ -27,7 +31,7 @@ Metrics below are labeled **exact**, **reconstructible**, or **lower-bound**. Ex
 | Known abandoned/superseded/reconstruction PRs | **4** (#20, #23, #50, #57) | None was silently laundered into canonical history. |
 | Duplicate/branch-ghost incidence | **4/39 = 10.3%** known | Mostly recovery/supersession, not duplicate scientific execution. |
 | Post-transaction-layer accepted PR turnaround | **usually minutes; long-tail hours–days** | Median is single-digit minutes for compact accepted slices; review/governance exceptions dominate tail. |
-| Fast-governance authorizations issued in August | **11** | Calendar 3, SIM2 4 incl. repair, STOR 1, ARCI 1, META 1, SIM3 2. |
+| Fast-governance authorizations issued in August | **11** | Calendar 3, SIM2 3 incl. repair, STOR 1, ARCI 1, META 1, SIM3 2. |
 | Authorizations eventually consumed | **11** | No accepted evidence of conflicting double-consumption. |
 | Rejected/conflicting authorizations | **0 observed** | Fail-closed behavior appeared as no-authorization rather than conflicting authority. |
 | Unconsumed expiry | **0 proven** | Some consumed records later became time-expired naturally; one SIM repair required fresh authority after the original window. |
@@ -135,9 +139,13 @@ Recommendation: preserve Pre-Game, but measure it by **authorization-to-artifact
 
 The repository moved from narrative inheritance to explicit transactional inheritance. Weekly Aug 23 reconstructed its synthesis from accepted Daily receipts rather than importing stale PR #50 ancestry. Monthly Aug 25 explicitly consumed the accepted Weekly receipt, a prior Triage receipt, quest-action IDs, and the active delegation. Later Daily receipts consumed exact `AUTH-*` IDs.
 
-The repository’s `automation.audit.information_inheritance_rate()` uses a strict definition: a prior run counts only when a later receipt explicitly cites its run ID in `consumed_ids`. This audit did not locally re-execute the full receipt corpus, so an exact global percentage is not certified here. The connector-visible lower bound proves repeated inheritance across Daily → Weekly → Monthly → Triage → Daily chains, but also shows that much scientific inheritance still occurs through artifact/quest references rather than prior `RUN-*` IDs. That is useful lineage but scores conservatively under the current metric.
+The active System Audit contract counts a prior run as inherited when a later receipt explicitly cites its run, evidence, belief, artifact, or quest-action ID and records the decision effect. `automation.audit.information_inheritance_rate()` currently recognizes only prior `run_id` values in `consumed_ids`; the generated metric therefore under-implements the active contract. The connector-visible lower bound still proves repeated inheritance across Daily → Weekly → Monthly → Triage → Daily chains, but much scientific inheritance occurs through artifact/quest references rather than prior `RUN-*` IDs. That is useful lineage, but the run-only value must remain a diagnostic submetric rather than the complete definition. The September instrumentation transaction must preserve typed `RUN` / `EVID` / `BEL` / `QA` / `artifact` inheritance and the recorded decision effect.
 
-**Recommendation:** keep the strict metric, and add a second typed inheritance matrix separating `RUN`, `AUTH`, `EVID`, `BEL`, `QA`, artifact path, and graph-edge inheritance. Do not weaken the strict run-ID metric merely to make the percentage prettier.
+**Recommendation:** add contract-complete typed inheritance measurements while retaining the run-only metric as a diagnostic submetric. Do not weaken the run-only value merely to make the percentage prettier.
+
+## Commit-ancestry boundary debt
+
+`eligible_receipts(..., cutoff_commit=...)` accepts `cutoff_commit` but does not use it; current filtering is temporal only, and the existing test proves time cutoff, not commit ancestry. The manual exact-main freeze keeps this audit usable because the audit explicitly records and uses the accepted source commit as its evidence boundary, even though generated eligibility is not ancestry-aware. Generated metrics should not become first-class until a real commit-ancestry boundary is implemented.
 
 ## Scientific plausibility and quest quality
 
