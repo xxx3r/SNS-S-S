@@ -3,12 +3,13 @@
   "pr_number": 22,
   "quest_id": "QST-STOR-0002",
   "acceptance_slice": "thermal-derated shadow survival and geometry-derived parameter sweep",
-  "state": "draft_active",
-  "owner_run_id": "RUN-20260715T025557598419Z-monthly-governance-00c6d834a923ef8c40f5",
+  "state": "merged",
+  "owner_run_id": "RUN-20260902T165909021808Z-monthly-governance-pr22-reconciliation-3a7c91d5e2b6f8041a20",
   "source_commit": "e8afc90f6c72d0a63f68ba7519f05b0f4bc77ea6",
-  "head_commit": "453e8247127d1affbe07de49487f3077f0a013d9",
-  "updated_at": "2026-07-15T02:55:57Z",
-  "next_review_after": "2026-07-16T14:00:00Z",
+  "head_commit": "25e7627e4cea9a3b1509df696e38f18046e9a5ca",
+  "updated_at": "2026-09-02T16:59:09.021808Z",
+  "next_review_after": "2026-09-02T16:59:09.021808Z",
   "supersedes": [],
-  "reason": "Sole active implementation owner for the current QST-STOR-0002 acceptance slice."
+  "merge_commit": "d98ee2a15dd74e0211a1ab5ef07dc60928736061",
+  "reason": "Explicit-human mechanical reconciliation under Issue #38: live GitHub PR #22 is closed and merged at merge commit d98ee2a15dd74e0211a1ab5ef07dc60928736061 from head 25e7627e4cea9a3b1509df696e38f18046e9a5ca. This record corrects stale draft_active lifecycle state only; it does not reinterpret the scientific result, change quest state, or rewrite history."
 }
