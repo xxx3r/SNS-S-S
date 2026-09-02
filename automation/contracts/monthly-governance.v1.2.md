@@ -1,8 +1,8 @@
 ---
 schema: sns.loop-contract.v1
 loop_id: monthly-governance
-contract_version: 1.1.0
-status: retired
+contract_version: 1.2.0
+status: active
 owner: SNS-S-S
 allowed_triggers:
   - scheduled
@@ -39,7 +39,7 @@ terminal_states:
   - NEEDS_APPROVAL
 retry_budget: 1
 ---
-# Monthly Governance v1.1
+# Monthly Governance v1.2
 
 ## Goal
 
@@ -83,3 +83,21 @@ Monthly governance may not delegate its own constitutional powers over quest mem
 ## Completion
 
 A monthly transaction is complete only when queue state, belief consolidation, PR disposition, canonical next move, and delegation state are mutually consistent and traceable to accepted evidence. The scheduled monthly cadence is the regular constitutional review, not a rule that low-risk delegated decisions must wait until the next calendar month; explicit-human triggers remain lawful when a non-delegable decision genuinely requires earlier governance.
+
+
+## September Organization v2.x duties
+
+The v1.2 contract is the active constitutional surface for the September transition.
+
+Every accepted v1.2 Monthly transaction must:
+
+1. record the exact accepted source snapshot and typed inheritance references;
+2. record a non-empty decision effect;
+3. review every open automation PR and classify it as active, merge-ready, blocked, split-required, superseded, or abandoned;
+4. perform an explicit quest-terminalization review without inventing a scientific conclusion or changing quest state outside accepted Monthly authority;
+5. reconcile canonical memory once, append-only in meaning, by recording the accepted next move and preserving the prior transition as history;
+6. publish or carry forward exactly one bounded triage delegation envelope;
+7. expose unresolved lineage, proposal/authorization timing, and administrative-cost measurements;
+8. recheck source, delegation, ownership, and artifact references before publication.
+
+A stale or interchangeable-agent handoff is a machine-visible lineage gap when typed inheritance or an explicit independent-continuity declaration is absent. PR closure is a lifecycle disposition: it preserves the branch contents and review history and does not merge or reconstruct superseded work.

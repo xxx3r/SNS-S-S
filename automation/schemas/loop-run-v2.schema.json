@@ -5,38 +5,109 @@
   "type": "object",
   "additionalProperties": true,
   "required": [
-    "schema", "run_id", "loop_id", "contract_version", "trigger",
-    "trigger_time", "source_commit", "state_snapshot", "receipt_kind",
-    "quest_context", "pr_context", "consumed_ids", "artifacts", "checks",
-    "belief_effects", "terminal_state", "next_action", "created_at"
+    "schema",
+    "run_id",
+    "loop_id",
+    "contract_version",
+    "trigger",
+    "trigger_time",
+    "source_commit",
+    "state_snapshot",
+    "receipt_kind",
+    "quest_context",
+    "pr_context",
+    "consumed_ids",
+    "artifacts",
+    "checks",
+    "belief_effects",
+    "terminal_state",
+    "next_action",
+    "created_at"
   ],
   "properties": {
-    "schema": {"const": "sns.loop-run.v2"},
-    "run_id": {"type": "string", "pattern": "^RUN-[0-9]{8}T[0-9]{12}Z-[a-z0-9-]+-[0-9a-f]{20}$"},
-    "loop_id": {"enum": ["daily-governance-triage", "daily-research-operator", "weekly-evidence-synthesis", "monthly-governance", "system-audit"]},
-    "contract_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
-    "trigger": {"enum": ["scheduled", "explicit-human", "replay"]},
-    "trigger_time": {"type": "string", "format": "date-time"},
-    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
-    "receipt_kind": {"enum": ["run", "correction"]},
+    "schema": {
+      "const": "sns.loop-run.v2"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^RUN-[0-9]{8}T[0-9]{12}Z-[a-z0-9-]+-[0-9a-f]{20}$"
+    },
+    "loop_id": {
+      "enum": [
+        "daily-governance-triage",
+        "daily-research-operator",
+        "weekly-evidence-synthesis",
+        "monthly-governance",
+        "system-audit"
+      ]
+    },
+    "contract_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "trigger": {
+      "enum": [
+        "scheduled",
+        "explicit-human",
+        "replay"
+      ]
+    },
+    "trigger_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "receipt_kind": {
+      "enum": [
+        "run",
+        "correction"
+      ]
+    },
     "state_snapshot": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["schema", "source_commit", "records", "open_prs", "fingerprint"],
+      "required": [
+        "schema",
+        "source_commit",
+        "records",
+        "open_prs",
+        "fingerprint"
+      ],
       "properties": {
-        "schema": {"const": "sns.state-snapshot.v1"},
-        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "schema": {
+          "const": "sns.state-snapshot.v1"
+        },
+        "source_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
         "records": {
           "type": "array",
           "minItems": 7,
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["role", "path", "git_blob_sha"],
+            "required": [
+              "role",
+              "path",
+              "git_blob_sha"
+            ],
             "properties": {
-              "role": {"type": "string", "minLength": 1},
-              "path": {"type": "string", "minLength": 1},
-              "git_blob_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+              "role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "git_blob_sha": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{40}$"
+              }
             }
           }
         },
@@ -45,46 +116,204 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["number", "head_sha", "draft", "state"],
+            "required": [
+              "number",
+              "head_sha",
+              "draft",
+              "state"
+            ],
             "properties": {
-              "number": {"type": "integer", "minimum": 1},
-              "head_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
-              "draft": {"type": "boolean"},
-              "state": {"const": "open"}
+              "number": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "head_sha": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{40}$"
+              },
+              "draft": {
+                "type": "boolean"
+              },
+              "state": {
+                "const": "open"
+              }
             }
           }
         },
-        "fingerprint": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+        "fingerprint": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
       }
     },
-    "quest_context": {"type": "object"},
-    "pr_context": {"type": "object"},
-    "consumed_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
-    "artifacts": {"type": "array", "items": {"type": ["string", "object"]}},
+    "quest_context": {
+      "type": "object"
+    },
+    "pr_context": {
+      "type": "object"
+    },
+    "consumed_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": [
+          "string",
+          "object"
+        ]
+      }
+    },
     "checks": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["name", "status", "evidence"],
+        "required": [
+          "name",
+          "status",
+          "evidence"
+        ],
         "properties": {
-          "name": {"type": "string", "minLength": 1},
-          "status": {"enum": ["passed", "failed", "not_run"]},
-          "evidence": {"type": "string"}
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "passed",
+              "failed",
+              "not_run"
+            ]
+          },
+          "evidence": {
+            "type": "string"
+          }
         }
       }
     },
-    "belief_effects": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "belief_effects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
     "terminal_state": {
       "enum": [
-        "DONE", "DONE_WITH_LIMITATIONS", "BLOCKED_ENVIRONMENT",
-        "BLOCKED_MISSING_EVIDENCE", "BLOCKED_CONFLICT", "VERIFICATION_FAILED",
-        "NEEDS_SCIENTIFIC_DECISION", "NEEDS_GOVERNANCE_REVIEW", "NEEDS_APPROVAL"
+        "DONE",
+        "DONE_WITH_LIMITATIONS",
+        "BLOCKED_ENVIRONMENT",
+        "BLOCKED_MISSING_EVIDENCE",
+        "BLOCKED_CONFLICT",
+        "VERIFICATION_FAILED",
+        "NEEDS_SCIENTIFIC_DECISION",
+        "NEEDS_GOVERNANCE_REVIEW",
+        "NEEDS_APPROVAL"
       ]
     },
-    "next_action": {"type": "string", "minLength": 1},
-    "created_at": {"type": "string", "format": "date-time"},
-    "correction_of": {"type": "string", "pattern": "^RUN-"},
-    "platform_prompt_revision": {"type": "string"}
+    "next_action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "correction_of": {
+      "type": "string",
+      "pattern": "^RUN-"
+    },
+    "platform_prompt_revision": {
+      "type": "string"
+    },
+    "inheritance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "ref"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "RUN",
+              "EVID",
+              "BEL",
+              "QA",
+              "artifact"
+            ]
+          },
+          "ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "decision_effect": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "inherited_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "decision_effect": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observability": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "proposal_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "authorization_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "first_artifact_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "administrative_transactions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "scientific_artifacts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "continuity": {
+          "enum": [
+            "inherited",
+            "independent",
+            "handoff"
+          ]
+        }
+      }
+    }
   }
 }

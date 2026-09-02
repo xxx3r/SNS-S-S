@@ -11,6 +11,7 @@ from typing import Iterable, Mapping
 from .contracts import ContractRegistry
 from .ids import validate_identifier
 from .models import LoopTerminalState
+from .organization import has_lineage_declaration, recorded_decision_effect, validate_receipt_observability
 from .provenance import RUN_RECEIPT_SCHEMA, validate_state_snapshot
 
 _SHA_RE = re.compile(r"^[0-9a-f]{40}$")
@@ -136,6 +137,13 @@ def validate_run_receipt(
             raise ValueError("check status must be passed, failed, or not_run")
         if check["status"] != "not_run" and not str(check["evidence"]).strip():
             raise ValueError("executed checks require result evidence")
+
+    validate_receipt_observability(receipt)
+    if schema == RUN_RECEIPT_SCHEMA and contract_version == "1.2.0":
+        if not recorded_decision_effect(receipt):
+            raise ValueError("v2.1 receipt requires decision_effect")
+        if not has_lineage_declaration(receipt):
+            raise ValueError("v2.1 receipt requires typed inheritance or explicit independent continuity")
 
     correction_of = receipt.get("correction_of")
     if correction_of is not None:
