@@ -1,5 +1,7 @@
 # SNS-S-S Autonomous Research System Audit — 2026-09-01
 
+**Report artifact:** `automation/reports/2026-09-01-autonomous-research-system-audit.md`
+
 **Verdict: `TUNE_LIGHTLY`**
 
 ## Frozen evidence boundary
@@ -44,6 +46,29 @@ The canonical runtime manifest desires Pre-Game, Daily, Weekly, and Monthly enab
 | False environment blockers | **1** | Aug 6 connector-not-attempted incident; cost one Daily opportunity + human recovery. |
 | Negative/falsifying results preserved | **≥4 clear cases** | STOR packaged failure, STOR fast-rotator falsifier, SIM2 neutral equal trace, META loss-limited/net-negative points. |
 | Runtime desired loops | **4 scheduled + audit explicit-only** | Pre-Game, Daily, Weekly, Monthly enabled by manifest; audit deliberately not scheduler-managed. |
+
+
+## Active System Audit contract metric surface
+
+The active contract requires this explicit metric surface. The generated values below are reconstructed from the immutable records visible at the audited source commit using `automation.audit.build_audit_report()`; the additional rows make the contract's duplicate-proposal, governance-conflict, claim-reversal, and typed-inheritance dimensions explicit. Values are labeled **exact**, **reconstructible**, or **lower-bound** and do not rewrite historical receipts.
+
+| Required contract metric | Value | Qualification and evidence |
+| --- | ---: | --- |
+| Triggered runs | **54 total; 53 included; 1 excluded** | **Exact generated.** The excluded record is `RUN-20260901T211900000000Z-system-audit-4c7e91a2b805d63f102a`, created after the cutoff. |
+| Terminal states | **DONE 6; DONE_WITH_LIMITATIONS 34; NEEDS_GOVERNANCE_REVIEW 11; VERIFICATION_FAILED 2** | **Exact generated** over the 53 included completed receipts. |
+| Artifact and prose-only rates | **43/53 = 81.1% concrete; 10/53 = 18.9% prose-only** | **Exact generated.** Concrete means the receipt has a non-empty `artifacts` list. |
+| Verification | **229/246 = 93.1% pass rate** | **Exact generated** over executed checks; 284 checks total, 38 `not_run`, and 17 failed. |
+| Quest actions | **13 total: 10 refine_existing, 1 propose_new, 2 block** | **Exact enumeration** of `quests/actions/**`. |
+| Duplicate proposals | **0 duplicate action IDs; 1 repeated target/action-family group** | **Exact/reconstructible.** All 13 action IDs are unique. Three distinct STOR `refine_existing` proposals share a target/action family but have distinct rationales and remain separate proposals. |
+| Duplicate evidence clusters | **2 risk clusters among 20 clusters and 20 evidence events** | **Exact generated** by `cluster_evidence_events()` as `source_count > independent_source_count`; both are `independence: unknown`, not duplicate IDs. Duplicate source fingerprints: **0**. |
+| PR continuation and stale states | **12 lifecycle rows: 9 merged, 2 draft_active, 1 superseded; stale/superseded: 1** | **Exact generated** from `automation/pr_lifecycle/**`. Live PR #61 remains open on a stale base; live PR #64 is tracked separately as the current audit transaction. |
+| Governance conflicts | **0 explicit conflicts; 11 governance-review boundary stops** | **Reconstructible.** No included receipt is `BLOCKED_CONFLICT`; the two recorded `one_owner_conflict` fields are both false; no conflicting authorization is evidenced. `NEEDS_GOVERNANCE_REVIEW` is reported separately and is not relabeled as conflict. |
+| Information inheritance | **Run-only diagnostic: 34/52 = 65.4%; typed-citation lower bound: 44 later receipt rows citing 77 prior IDs** | **Exact diagnostic plus lower-bound reconstruction.** The typed citations are 39 RUN, 10 BEL, 4 QA, and 24 artifact-path references; later receipts carry terminal state and next action. Creator/decision-effect fields are not yet first-class, so this is not presented as a certified contract-complete rate. |
+| Claim reversals | **0 full same-key polarity reversals; 1 explicit weaken event; 0 falsify belief events** | **Reconstructible.** The single weaken event is the STOR fast-rotator viability update. The report separately preserves at least four negative/falsifying scientific result cases rather than collapsing weakening into reversal. |
+| Work excluded by cutoff | **1 receipt, 2026-09-01T21:19:00Z** | **Exact generated.** Later PR review/repair activity and open in-flight work remain visible as lineage but do not enter frozen completed-period rates. |
+| Commit-ancestry certification | **Not certified by current helper** | **Exact limitation.** `cutoff_commit` is recorded, but `eligible_receipts()` currently filters by timestamp only; the exact-main freeze is retained as the manual evidence boundary. |
+
+This surface is observational only. It does not activate quests, change queue priority, enact beliefs, edit canonical memory, alter scheduler state, create delegation, or introduce a new scientific result.
 
 ### Administrative transactions per scientific artifact
 
@@ -263,5 +288,8 @@ The July–August organism is worth continuing. It produced real constraint accu
 - Historical incident issue: `#38`
 - Pre-Game intervention: merged `#41`
 - August 30 Weekly synthesis at cutoff: `#61`, open/unaccepted
-- Hosted validation: pending audit-PR checks at initial publication
-- Principal limitations: no local execution of the entire historical receipt corpus; some latency/inheritance counts are reconstructible/lower-bound rather than validator-certified exact metrics; runtime manifest is repository-desired state and does not by itself prove live external scheduler state; no Google Drive artifact was required for any audit conclusion; no Wolfram result was used as scientific evidence.
+- Report artifact: `automation/reports/2026-09-01-autonomous-research-system-audit.md`
+- Original receipt: `automation/runs/2026/09/RUN-20260901T211900000000Z-system-audit-4c7e91a2b805d63f102a.json` (preserved byte-identically)
+- Provenance-only correction receipt: `automation/runs/2026/09/RUN-20260902T154611564000Z-system-audit-correction-65c0e3a91b2d7f8044aa.json`
+- Hosted validation: exact-head requalification required before merge; hosted results are not part of frozen scientific evidence
+- Principal limitations: commit ancestry and typed creator/decision-effect inheritance are not yet executable metrics; runtime manifest is repository-desired state and does not by itself prove live external scheduler state; Drive is a post-acceptance mirror only; Wolfram was used only for a formal snapshot-fingerprint sanity check, not as scientific evidence.
