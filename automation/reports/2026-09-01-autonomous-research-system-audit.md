@@ -54,7 +54,7 @@ The active contract requires this explicit metric surface. The generated values 
 
 | Required contract metric | Value | Qualification and evidence |
 | --- | ---: | --- |
-| Triggered runs | **54 total; 53 included; 1 excluded** | **Exact generated.** The excluded record is `RUN-20260901T211900000000Z-system-audit-4c7e91a2b805d63f102a`, created after the cutoff. |
+| Triggered runs | **55 total; 53 included; 2 excluded** | **Exact generated at accepted main.** The two excluded records are `RUN-20260901T211900000000Z-system-audit-4c7e91a2b805d63f102a` and the provenance-only correction `RUN-20260902T154611564000Z-system-audit-correction-65c0e3a91b2d7f8044aa`, both created after the cutoff. |
 | Terminal states | **DONE 6; DONE_WITH_LIMITATIONS 34; NEEDS_GOVERNANCE_REVIEW 11; VERIFICATION_FAILED 2** | **Exact generated** over the 53 included completed receipts. |
 | Artifact and prose-only rates | **43/53 = 81.1% concrete; 10/53 = 18.9% prose-only** | **Exact generated.** Concrete means the receipt has a non-empty `artifacts` list. |
 | Verification | **229/246 = 93.1% pass rate** | **Exact generated** over executed checks; 284 checks total, 38 `not_run`, and 17 failed. |
@@ -65,7 +65,7 @@ The active contract requires this explicit metric surface. The generated values 
 | Governance conflicts | **0 explicit conflicts; 11 governance-review boundary stops** | **Reconstructible.** No included receipt is `BLOCKED_CONFLICT`; the two recorded `one_owner_conflict` fields are both false; no conflicting authorization is evidenced. `NEEDS_GOVERNANCE_REVIEW` is reported separately and is not relabeled as conflict. |
 | Information inheritance | **Run-only diagnostic: 34/52 = 65.4%; typed-citation lower bound: 44 later receipt rows citing 77 prior IDs** | **Exact diagnostic plus lower-bound reconstruction.** The typed citations are 39 RUN, 10 BEL, 4 QA, and 24 artifact-path references; later receipts carry terminal state and next action. Creator/decision-effect fields are not yet first-class, so this is not presented as a certified contract-complete rate. |
 | Claim reversals | **0 full same-key polarity reversals; 1 explicit weaken event; 0 falsify belief events** | **Reconstructible.** The single weaken event is the STOR fast-rotator viability update. The report separately preserves at least four negative/falsifying scientific result cases rather than collapsing weakening into reversal. |
-| Work excluded by cutoff | **1 receipt, 2026-09-01T21:19:00Z** | **Exact generated.** Later PR review/repair activity and open in-flight work remain visible as lineage but do not enter frozen completed-period rates. |
+| Work excluded by cutoff | **2 receipts, 2026-09-01T21:19:00Z and 2026-09-02T15:46:11.564000Z** | **Exact generated from receipt `created_at`.** The original audit receipt and its provenance-only correction remain visible as lineage but do not enter frozen completed-period rates. |
 | Commit-ancestry certification | **Not certified by current helper** | **Exact limitation.** `cutoff_commit` is recorded, but `eligible_receipts()` currently filters by timestamp only; the exact-main freeze is retained as the manual evidence boundary. |
 
 This surface is observational only. It does not activate quests, change queue priority, enact beliefs, edit canonical memory, alter scheduler state, create delegation, or introduce a new scientific result.
