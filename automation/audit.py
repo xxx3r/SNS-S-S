@@ -6,6 +6,12 @@ from collections import Counter
 from datetime import datetime
 from typing import Iterable, Mapping
 
+from .organization import (
+    communication_observability,
+    cutoff_ancestry_set,
+    information_inheritance_rate,
+)
+
 
 def _timestamp(value: str) -> datetime:
     parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
@@ -19,34 +25,22 @@ def eligible_receipts(
     *,
     cutoff_time: str,
     cutoff_commit: str,
+    cutoff_ancestors: Iterable[str] | None = None,
 ) -> tuple[list[Mapping[str, object]], list[Mapping[str, object]]]:
-    """Split completed receipts from in-flight or post-cutoff work."""
+    """Split completed receipts using both time and commit ancestry."""
 
     cutoff = _timestamp(cutoff_time)
+    ancestor_set = cutoff_ancestry_set(cutoff_commit, cutoff_ancestors)
     included: list[Mapping[str, object]] = []
     excluded: list[Mapping[str, object]] = []
     for receipt in receipts:
         completed = _timestamp(str(receipt["created_at"]))
-        if completed < cutoff:
+        source_commit = str(receipt["source_commit"])
+        if completed < cutoff and source_commit in ancestor_set:
             included.append(receipt)
         else:
             excluded.append(receipt)
     return included, excluded
-
-
-def information_inheritance_rate(receipts: Iterable[Mapping[str, object]]) -> dict[str, object]:
-    ordered = sorted(receipts, key=lambda item: str(item["created_at"]))
-    eligible_ids = {str(item["run_id"]) for item in ordered[:-1]}
-    consumed: set[str] = set()
-    for receipt in ordered:
-        consumed.update(str(value) for value in receipt.get("consumed_ids", []) if str(value) in eligible_ids)
-    denominator = len(eligible_ids)
-    return {
-        "inherited_run_count": len(consumed),
-        "eligible_run_count": denominator,
-        "rate": len(consumed) / denominator if denominator else 0.0,
-        "inherited_run_ids": sorted(consumed),
-    }
 
 
 def build_audit_report(
@@ -54,12 +48,19 @@ def build_audit_report(
     *,
     cutoff_time: str,
     cutoff_commit: str,
+    cutoff_ancestors: Iterable[str] | None = None,
     quest_actions: Iterable[Mapping[str, object]] = (),
     evidence_clusters: Mapping[str, Mapping[str, object]] | None = None,
     pr_lifecycle: Iterable[Mapping[str, object]] = (),
 ) -> dict[str, object]:
     receipt_list = list(receipts)
-    included, excluded = eligible_receipts(receipt_list, cutoff_time=cutoff_time, cutoff_commit=cutoff_commit)
+    ancestor_set = cutoff_ancestry_set(cutoff_commit, cutoff_ancestors)
+    included, excluded = eligible_receipts(
+        receipt_list,
+        cutoff_time=cutoff_time,
+        cutoff_commit=cutoff_commit,
+        cutoff_ancestors=ancestor_set,
+    )
     terminal_counts = Counter(str(receipt["terminal_state"]) for receipt in included)
     concrete = sum(bool(receipt.get("artifacts")) for receipt in included)
     checks = [check for receipt in included for check in receipt.get("checks", [])]
@@ -70,14 +71,28 @@ def build_audit_report(
     lifecycle = list(pr_lifecycle)
     lifecycle_counts = Counter(str(record.get("state")) for record in lifecycle)
     inheritance = information_inheritance_rate(included)
+    communication = communication_observability(included)
+
+    excluded_reasons = Counter()
+    cutoff = _timestamp(cutoff_time)
+    for receipt in excluded:
+        completed = _timestamp(str(receipt["created_at"]))
+        if completed >= cutoff:
+            excluded_reasons["post_cutoff_time"] += 1
+        elif str(receipt["source_commit"]) not in ancestor_set:
+            excluded_reasons["outside_cutoff_ancestry"] += 1
+        else:
+            excluded_reasons["excluded_unknown"] += 1
 
     return {
         "schema": "sns.system-audit.v1",
         "cutoff_time": cutoff_time,
         "cutoff_commit": cutoff_commit,
+        "cutoff_ancestry_size": len(ancestor_set),
         "triggered_run_count": len(receipt_list),
         "included_completed_run_count": len(included),
         "excluded_or_in_flight_run_count": len(excluded),
+        "excluded_reason_counts": dict(sorted(excluded_reasons.items())),
         "terminal_state_counts": dict(sorted(terminal_counts.items())),
         "concrete_artifact_rate": concrete / len(included) if included else 0.0,
         "prose_only_rate": (len(included) - concrete) / len(included) if included else 0.0,
@@ -92,6 +107,7 @@ def build_audit_report(
             state in {"superseded", "closed_abandoned"} for state in lifecycle_counts.elements()
         ),
         "information_inheritance": inheritance,
+        "communication_observability": communication,
         "included_run_ids": [str(receipt["run_id"]) for receipt in included],
         "excluded_run_ids": [str(receipt["run_id"]) for receipt in excluded],
     }
@@ -99,34 +115,41 @@ def build_audit_report(
 
 def render_audit_markdown(report: Mapping[str, object]) -> str:
     inheritance = dict(report["information_inheritance"])
+    typed = dict(inheritance["contract_complete"])
+    communication = dict(report["communication_observability"])
     return f"""# SNS Autonomous-System Audit
 
-- Frozen cutoff: `{report['cutoff_time']}`
-- Cutoff commit: `{report['cutoff_commit']}`
+- Frozen cutoff: {report['cutoff_time']}
+- Cutoff commit: {report['cutoff_commit']}
+- Cutoff ancestry evidence: **{report['cutoff_ancestry_size']}** commits
 - Included completed runs: **{report['included_completed_run_count']}**
 - Excluded or in-flight runs: **{report['excluded_or_in_flight_run_count']}**
 - Concrete-artifact rate: **{float(report['concrete_artifact_rate']):.1%}**
 - Prose-only rate: **{float(report['prose_only_rate']):.1%}**
 - Verification pass rate: **{float(report['verification_pass_rate']):.1%}**
-- Information inheritance: **{float(inheritance['rate']):.1%}** ({inheritance['inherited_run_count']}/{inheritance['eligible_run_count']})
+- Contract-complete inheritance: **{float(typed['rate']):.1%}** ({typed['inherited_receipt_count']}/{typed['eligible_receipt_count']})
+- Machine-visible lineage gaps: **{typed['lineage_gap_count']}**
+- Proposal-to-authorization latency samples: **{communication['proposal_to_authorization_latency_seconds']['count']}**
+- Authorization-to-first-artifact latency samples: **{communication['authorization_to_first_artifact_latency_seconds']['count']}**
+- Administrative transactions per scientific artifact: **{communication['administrative_transactions_per_scientific_artifact']}**
 
 ## Terminal states
 
-```json
+~~~json
 {report['terminal_state_counts']}
-```
+~~~
 
 ## Quest actions
 
-```json
+~~~json
 {report['quest_action_counts']}
-```
+~~~
 
 ## PR lifecycle
 
-```json
+~~~json
 {report['pr_lifecycle_counts']}
-```
+~~~
 
 This report is generated from immutable records. In-flight work is visible but excluded from completed-period rates.
 """

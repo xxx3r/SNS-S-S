@@ -30,6 +30,6 @@ def test_frozen_cutoff_excludes_overlapping_in_flight_work() -> None:
         receipt("run-before", "2026-09-01T13:59:59Z", []),
         receipt("run-after", "2026-09-01T14:00:01Z", []),
     ]
-    report = build_audit_report(receipts, cutoff_time="2026-09-01T14:00:00Z", cutoff_commit="f" * 40)
+    report = build_audit_report(receipts, cutoff_time="2026-09-01T14:00:00Z", cutoff_commit="f" * 40, cutoff_ancestors={"a" * 40, "f" * 40})
     assert report["included_run_ids"] == ["run-before"]
     assert report["excluded_run_ids"] == ["run-after"]

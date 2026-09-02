@@ -58,6 +58,7 @@ def cmd_audit(args: argparse.Namespace) -> int:
         receipts,
         cutoff_time=args.cutoff_time,
         cutoff_commit=args.cutoff_commit,
+        cutoff_ancestors=args.cutoff_ancestor,
         quest_actions=_json_records(root / "quests/actions"),
         evidence_clusters=clusters,
         pr_lifecycle=_json_records(root / "automation/pr_lifecycle"),
@@ -152,6 +153,7 @@ def build_parser() -> argparse.ArgumentParser:
     audit = subparsers.add_parser("audit")
     audit.add_argument("--cutoff-time", required=True)
     audit.add_argument("--cutoff-commit", required=True)
+    audit.add_argument("--cutoff-ancestor", action="append", required=True, help="reachable commit in the frozen cutoff ancestry; repeat")
     audit.add_argument("--json-output", default="automation/reports/metrics/system_audit.json")
     audit.add_argument("--markdown-output", default="automation/reports/system_audit.md")
     audit.set_defaults(func=cmd_audit)
