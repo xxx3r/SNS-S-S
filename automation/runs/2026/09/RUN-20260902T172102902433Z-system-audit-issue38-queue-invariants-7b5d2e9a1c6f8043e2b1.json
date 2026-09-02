@@ -1,0 +1,116 @@
+{
+  "schema": "sns.loop-run.v2",
+  "run_id": "RUN-20260902T172102902433Z-system-audit-issue38-queue-invariants-7b5d2e9a1c6f8043e2b1",
+  "loop_id": "system-audit",
+  "contract_version": "1.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-09-02T17:21:02.902433Z",
+  "source_commit": "15e540d91fad65fa084471e5f428223edd9ad5e1",
+  "state_snapshot": {
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "15e540d91fad65fa084471e5f428223edd9ad5e1",
+    "records": [
+      {
+        "role": "active_contract",
+        "path": "automation/contracts/system-audit.v1.md",
+        "git_blob_sha": "b0884f997e5108fdbefd5a1ae9c634b466068e8f"
+      },
+      {
+        "role": "active_quest_index",
+        "path": "quests/active/README.md",
+        "git_blob_sha": "fc73126967f48d4429a36f9c78e6fd8863a6f100"
+      },
+      {
+        "role": "canonical_memory",
+        "path": "memory/mem_log_short.md",
+        "git_blob_sha": "52ef15cdfcb51c7055207d9b70175b0cdfa92587"
+      },
+      {
+        "role": "research_graph",
+        "path": "quests/research_graph.json",
+        "git_blob_sha": "ab0b0a380a735cde3b365341ea70e73e7864ec83"
+      },
+      {
+        "role": "runtime_manifest",
+        "path": "automation/runtime_manifest.json",
+        "git_blob_sha": "56935c9d9a89b80a2b2a11aadc9b41522d42e3c2"
+      },
+      {
+        "role": "stable_law",
+        "path": "AGENTS.md",
+        "git_blob_sha": "e96689268600d88db95a8022342b5f0526041382"
+      },
+      {
+        "role": "state_ownership",
+        "path": "automation/state_ownership.json",
+        "git_blob_sha": "6d17c3253cf336de2c62ef90133523295c984c36"
+      }
+    ],
+    "open_prs": [
+      {
+        "number": 61,
+        "head_sha": "61602ff9d8ecf9a92ec50d8931e778b264ec5945",
+        "draft": false,
+        "state": "open"
+      }
+    ],
+    "fingerprint": "sha256:db52a0cfba7428fcb70670dc9f5b3801ea34d1218ef9e41586e26f27112a244f"
+  },
+  "receipt_kind": "run",
+  "quest_context": {
+    "authority_issue": 38,
+    "transaction": 5,
+    "decision_level": "L2",
+    "scope": "Validate active queue IDs, README membership, cross-queue uniqueness, and no-duplicate-branch invariants without changing queue or scientific state.",
+    "explicit_authority": "Current human instruction authorizes completion of Issue #38.",
+    "decision_effect": "Validated eight canonical active IDs, matching active files, disjoint historical queues, and zero duplicate live open head branches; no queue mutation occurred."
+  },
+  "pr_context": {
+    "live_open_prs": [
+      61
+    ],
+    "disposition": "PR #61 remains evidence-only and unchanged."
+  },
+  "consumed_ids": [
+    "RUN-20260902T171601452717Z-system-audit-issue38-open-pr-validation-6e4a91c2d7f8053b102a"
+  ],
+  "artifacts": [
+    "automation/reports/2026-09-02-issue38-queue-invariant-validation.md"
+  ],
+  "checks": [
+    {
+      "name": "GitHub connector preflight",
+      "status": "passed",
+      "evidence": "Exact source main, active/completed/proposed/blocked queue surfaces, and live open-PR ownership were read at source main 15e540d91fad65fa084471e5f428223edd9ad5e1."
+    },
+    {
+      "name": "active ID and README membership",
+      "status": "passed",
+      "evidence": "The active README contains eight distinct canonical IDs, each with a matching active quest file; three QST-STOR-0002 evidence slices share one parent ID and do not add queue membership."
+    },
+    {
+      "name": "cross-queue uniqueness",
+      "status": "passed",
+      "evidence": "The active set has zero intersection with five completed IDs, zero proposed IDs, and zero blocked IDs; no duplicate canonical ID was observed within the queue indexes."
+    },
+    {
+      "name": "duplicate-branch invariant",
+      "status": "passed",
+      "evidence": "The live open-PR set contains only PR #61 and one open head branch, with zero duplicate open head branches."
+    },
+    {
+      "name": "queue/science mutation boundary",
+      "status": "passed",
+      "evidence": "This transaction adds only the dated audit view and receipt; no queue, quest, belief, memory, delegation, scheduler, or scientific surface is changed."
+    },
+    {
+      "name": "receipt-bearing hosted validation",
+      "status": "not_run",
+      "evidence": "The exact report-and-receipt head must execute tests, baseline-artifacts, automation-transaction, and semantic repository validation before acceptance."
+    }
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Qualify the exact queue-validation report-and-receipt head, then validate recent receipt IDs, schemas, and artifact references as Issue #38 transaction 6.",
+  "created_at": "2026-09-02T17:21:02.902433Z"
+}
