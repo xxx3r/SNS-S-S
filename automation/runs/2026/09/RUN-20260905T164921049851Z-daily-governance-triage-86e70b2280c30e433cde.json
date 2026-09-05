@@ -1,0 +1,92 @@
+{
+  "schema":"sns.loop-run.v2",
+  "run_id":"RUN-20260905T164921049851Z-daily-governance-triage-86e70b2280c30e433cde",
+  "loop_id":"daily-governance-triage",
+  "contract_version":"1.1.0",
+  "trigger":"scheduled",
+  "trigger_time":"2026-09-05T16:47:09Z",
+  "source_commit":"f975633cd95d0253e43bf0d8163b62cdd5f6a91d",
+  "state_snapshot":{
+    "schema":"sns.state-snapshot.v1",
+    "source_commit":"f975633cd95d0253e43bf0d8163b62cdd5f6a91d",
+    "records":[
+      {"role":"accepted_arci_artifact","path":"outputs/qst_arci_0001/synthetic_target_sensitivity.json","git_blob_sha":"dc282597b27796a06a7a36ac0c7a1eef60089b33"},
+      {"role":"accepted_arci_lifecycle","path":"automation/pr_lifecycle/54.json","git_blob_sha":"f9e3c7b63629faec1d2f5d3c54ab236b570c0d60"},
+      {"role":"accepted_arci_receipt","path":"automation/runs/2026/08/RUN-20260826T191200000000Z-daily-research-operator-7c1e4a92b6d8053f102a.json","git_blob_sha":"d6af159c8e4924001fff3cc6a3420aa60f0b66bf"},
+      {"role":"active_contract","path":"automation/contracts/daily-governance-triage.v1.1.md","git_blob_sha":"c65f6310808f9f3c9bc5536be890a33283e1bf8c"},
+      {"role":"active_quest_index","path":"quests/active/README.md","git_blob_sha":"fc73126967f48d4429a36f9c78e6fd8863a6f100"},
+      {"role":"canonical_memory","path":"memory/mem_log_short.md","git_blob_sha":"618b24b4e799ad6fb7c44c3580b772e1ab38db6a"},
+      {"role":"current_authorization","path":"automation/authorizations/2026/09/AUTH-20260902T190916629850Z-arci-september-refine-b1c2d3e4f5a60718293a.json","git_blob_sha":"d30edd0945565ab8637a95acb53547a8f42248bf"},
+      {"role":"current_delegation","path":"automation/delegations/2026-09.json","git_blob_sha":"de7e143328e61d124ea5e9c7a3d484f466e4767d"},
+      {"role":"latest_daily_receipt","path":"automation/runs/2026/08/RUN-20260831T191708809243Z-daily-research-operator-9b8acc613b9b9560f003.json","git_blob_sha":"a88ac2208ab5b490909f48b8b639fe318fe5434b"},
+      {"role":"latest_monthly_receipt","path":"automation/runs/2026/09/RUN-20260902T185807761521Z-monthly-governance-september-transition-c4d8e2a6f1b9073c5e2a.json","git_blob_sha":"f2f213bb0943d0318254cb307a704ad4a67df1fd"},
+      {"role":"latest_triage_receipt","path":"automation/runs/2026/09/RUN-20260902T190916629850Z-daily-governance-triage-september-arci-a1b2c3d4e5f60718293a.json","git_blob_sha":"a1cff70501ec1e34ddc0589b84e8d36465138807"},
+      {"role":"monthly_state","path":"calendar/monthly/2026-09.md","git_blob_sha":"05e08eccca0f3091fbdd289c12469de599bab948"},
+      {"role":"research_graph","path":"quests/research_graph.json","git_blob_sha":"ab0b0a380a735cde3b365341ea70e73e7864ec83"},
+      {"role":"runtime_manifest","path":"automation/runtime_manifest.json","git_blob_sha":"56935c9d9a89b80a2b2a11aadc9b41522d42e3c2"},
+      {"role":"selected_quest","path":"quests/active/QST-ARCI-0001-arci-v0-1.md","git_blob_sha":"8fc1ec7dbbc9886b62daebb41dc336731336fc2f"},
+      {"role":"stable_law","path":"AGENTS.md","git_blob_sha":"e96689268600d88db95a8022342b5f0526041382"},
+      {"role":"state_ownership","path":"automation/state_ownership.json","git_blob_sha":"6d17c3253cf336de2c62ef90133523295c984c36"}
+    ],
+    "open_prs":[],
+    "fingerprint":"sha256:77424616c55d5594babbcef350a3075992c38b04a1cd042dc51be450489d1a8e"
+  },
+  "receipt_kind":"run",
+  "inheritance":[
+    {"kind":"RUN","ref":"RUN-20260902T185807761521Z-monthly-governance-september-transition-c4d8e2a6f1b9073c5e2a","decision_effect":"Inherited the accepted September Monthly transition and its sole narrow ARCI delegation."},
+    {"kind":"RUN","ref":"RUN-20260902T190916629850Z-daily-governance-triage-september-arci-a1b2c3d4e5f60718293a","decision_effect":"Inspected the September authorization lineage and found its implementation authority expired unconsumed on 2026-09-03."},
+    {"kind":"RUN","ref":"RUN-20260826T191200000000Z-daily-research-operator-7c1e4a92b6d8053f102a","decision_effect":"Inherited the accepted budget-consuming implementation receipt proving the same ARCI synthetic-target sensitivity slice was already executed."},
+    {"kind":"artifact","ref":"outputs/qst_arci_0001/synthetic_target_sensitivity.json","decision_effect":"Used the accepted reproducible artifact to reject a duplicate September authorization for the already-complete method."}
+  ],
+  "inherited_ids":[
+    "RUN-20260902T185807761521Z-monthly-governance-september-transition-c4d8e2a6f1b9073c5e2a",
+    "RUN-20260902T190916629850Z-daily-governance-triage-september-arci-a1b2c3d4e5f60718293a",
+    "RUN-20260826T191200000000Z-daily-research-operator-7c1e4a92b6d8053f102a"
+  ],
+  "decision_effect":"Issued no authorization. The sole September authorization is expired and its acceptance slice duplicates the accepted PR #54 ARCI artifact; the current delegation exposes no distinct unfinished candidate, so the canonical route returns to Monthly Governance.",
+  "observability":{
+    "proposal_at":null,
+    "authorization_at":null,
+    "first_artifact_at":"2026-09-05T16:49:21Z",
+    "administrative_transactions":1,
+    "scientific_artifacts":0,
+    "continuity":"inherited"
+  },
+  "quest_context":{
+    "selected_quest_id":"QST-ARCI-0001",
+    "decision_level":"L2",
+    "blocker_scope":"local",
+    "route":"QST-STOR-0002 remains locally falsified. QST-ARCI-0001 is the only delegated candidate, but its declared synthetic-target, evidence/missingness, sensitivity, and next-measurement method was completed by merged PR #54 on 2026-08-26.",
+    "expired_authorization_id":"AUTH-20260902T190916629850Z-arci-september-refine-b1c2d3e4f5a60718293a",
+    "expired_at":"2026-09-03T19:09:16.629850Z",
+    "completion_evidence":"PR #54 lifecycle is merged; its immutable Daily receipt consumes the August authorization for the same acceptance slice; the accepted output records all 28 sensitivity cases and the next measurement.",
+    "authorization_disposition":"NO_AUTHORIZATION_DUPLICATE_SLICE",
+    "governance_gap":"Monthly-owned active quest text, canonical memory, and September delegation still direct Pre-Game toward a method already complete on accepted main. Defining a distinct successor slice or terminalizing/reframing the quest is L2."
+  },
+  "pr_context":{
+    "live_open_prs":[],
+    "implementation_owner":null,
+    "lifecycle_synchronizations":[],
+    "note":"No owner conflict exists, but absence of an owner does not permit repeating an accepted implementation slice."
+  },
+  "consumed_ids":["RUN-20260902T185807761521Z-monthly-governance-september-transition-c4d8e2a6f1b9073c5e2a"],
+  "artifacts":[
+    {"path":"automation/authorizations/2026/09/AUTH-20260902T190916629850Z-arci-september-refine-b1c2d3e4f5a60718293a.json","kind":"expired unconsumed authorization inspected, not renewed"},
+    {"path":"outputs/qst_arci_0001/synthetic_target_sensitivity.json","kind":"accepted prior completion evidence"},
+    {"path":"automation/pr_lifecycle/54.json","kind":"accepted merged lifecycle evidence"}
+  ],
+  "checks":[
+    {"name":"GitHub connector preflight","status":"passed","evidence":"Connected repository search, file, commit, PR, and permission reads succeeded for xxx3r/SNS-S-S."},
+    {"name":"dynamic active-contract resolution","status":"passed","evidence":"Exactly one active contract matched loop_id daily-governance-triage on accepted main: version 1.1.0; v1.0.0 remains retired."},
+    {"name":"delegation and authorization validation","status":"failed","evidence":"The September delegation is current through 2026-09-30, but its only issued authorization expired 2026-09-03 and its acceptance slice duplicates the accepted August PR #54 result. Reissue would violate one-slice/one-receipt law."},
+    {"name":"graph readiness and deterministic routing","status":"passed","evidence":"QST-STOR-0002's stop remains local. Routing continued to the only delegated P0 candidate, QST-ARCI-0001, then stopped because its declared method is already complete and no other quest is inside the September envelope."},
+    {"name":"source, governance, and live ownership freeze","status":"passed","evidence":"Accepted main was f975633cd95d0253e43bf0d8163b62cdd5f6a91d; Monthly state, delegation, graph, memory, quest, prior completion receipt/artifact/lifecycle, and zero open PR rows were captured by exact Git blob identity."},
+    {"name":"repository-hosted receipt qualification","status":"not_run","evidence":"The receipt-bearing governance PR must run automation tests, semantic repository validation, baseline artifacts, and full pytest before merge."},
+    {"name":"Google Drive and Calendar dependency","status":"not_run","evidence":"Neither the active contract nor the concrete duplicate-slice disposition requires a Drive artifact or external calendar mutation; GitHub accepted state is authoritative."
+    }
+  ],
+  "belief_effects":[],
+  "terminal_state":"NEEDS_GOVERNANCE_REVIEW",
+  "next_action":"Monthly Governance must reconcile QST-ARCI-0001's accepted completion: either terminalize/reframe it or publish a distinct unfinished acceptance slice and matching delegation. Pre-Game must not renew AUTH-20260902T190916629850Z-arci-september-refine-b1c2d3e4f5a60718293a or repeat PR #54's synthetic assessment.",
+  "created_at":"2026-09-05T16:49:21Z"
+}
