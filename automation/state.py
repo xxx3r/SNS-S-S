@@ -129,6 +129,37 @@ def _quest_ids(directory: Path) -> set[str]:
     return ids
 
 
+def validate_active_membership(root: str | Path, graph: Mapping[str, object]) -> set[str]:
+    """Cross-check independent index, quest files, and graph membership.
+
+    Membership does not imply readiness: an active quest may have an unfinished
+    hard prerequisite. Historical mentions outside numbered index links do not
+    activate quests.
+    """
+    repo = Path(root)
+    index = (repo / "quests/active/README.md").read_text(encoding="utf-8")
+    entries = re.findall(r"^\s*\d+\.\s+\[(QST-[A-Z0-9]+-[0-9]{4}):[^\n]*\]\(([^)]+)\)", index, re.MULTILINE)
+    ids = [quest_id for quest_id, _ in entries]
+    if not 1 <= len(ids) <= 8 or len(set(ids)) != len(ids):
+        raise ValueError("active index requires 1-8 unique quest entries")
+    active = set(ids)
+    if active != _quest_ids(repo / "quests/active"):
+        raise ValueError("active index and quest files disagree")
+    for quest_id, target in entries:
+        path = repo / "quests/active" / target
+        if path.parent != repo / "quests/active" or not path.is_file() or quest_id not in path.name:
+            raise ValueError("active index has an invalid quest link")
+    validate_research_graph(graph)
+    graph_ids = {
+        str(node["id"]) for node in graph["nodes"]
+        if node["type"] in {"research_quest", "research_infrastructure", "public_synthesis"}
+        and node["status"] in {"active", "ready"}
+    }
+    if active != graph_ids:
+        raise ValueError("active index and graph membership disagree")
+    return active
+
+
 def validate_repository_state(root: str | Path, *, strict: bool = True) -> dict[str, object]:
     repo = Path(root)
     errors: list[str] = []
@@ -159,6 +190,7 @@ def validate_repository_state(root: str | Path, *, strict: bool = True) -> dict[
     try:
         research_graph = json.loads((repo / "quests/research_graph.json").read_text(encoding="utf-8"))
         validate_research_graph(research_graph)
+        validate_active_membership(repo, research_graph)
         graph_metrics = graph_counts(research_graph)
         counts["research_graph_nodes"] = graph_metrics["nodes"]
         counts["research_graph_edges"] = graph_metrics["edges"]
