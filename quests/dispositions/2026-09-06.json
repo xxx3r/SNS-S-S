@@ -1,0 +1,130 @@
+{
+  "schema": "sns.backlog-disposition.v1",
+  "authority": "explicit-human Issue #79",
+  "source_commit": "00068f3718e62d6da25055de263d135a4301ba01",
+  "recorded_at": "2026-09-06T22:50:00Z",
+  "quest_actions": [
+    {
+      "quest_action_id": "QA-20260731T025500000000Z-refine-qst-meta-0001-ff001122334455667788",
+      "source_path": "quests/actions/2026/07/qa_20260712_qst_meta_0001_steering_abstraction.json",
+      "status": "accept",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-13",
+      "condition": "Choose one bounded acceptance slice under standing scope after checking existing accepted artifacts and ownership."
+    },
+    {
+      "quest_action_id": "QA-20260731T025500000000Z-refine-qst-sim-0002-eeff0011223344556677",
+      "source_path": "quests/actions/2026/07/qa_20260712_qst_sim_0002_resource_collapse.json",
+      "status": "defer",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-13",
+      "condition": "Review after policy-neutral rotation/visibility geometry is qualified; preserve as a distinct resource accounting follow-up."
+    },
+    {
+      "quest_action_id": "QA-20260731T025500000000Z-refine-qst-stor-0002-ddeeff00112233445566",
+      "source_path": "quests/actions/2026/07/qa_20260712_qst_stor_0002_auxiliary_safe_mode.json",
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-09-13",
+      "condition": "Review against accepted STOR falsifier and choose an explicit unchanged-model evidence task or a separately approved architecture assumption. Do not revive the old PR #22 dependency."
+    },
+    {
+      "quest_action_id": "QA-20260719T145804000000Z-refine-qst-stor-0002-d25dbac053534a7819eb",
+      "source_path": "quests/actions/2026/07/qa_20260719_qst_stor_0002_environmental_margins.json",
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-09-13",
+      "condition": "Review against accepted STOR falsifier and choose an explicit unchanged-model evidence task or a separately approved architecture assumption. Do not revive the old PR #22 dependency."
+    },
+    {
+      "quest_action_id": "QA-20260723T011500000000Z-propose-qst-synth-0001-a8b4c7d2e1905f63b1aa",
+      "source_path": "quests/actions/2026/07/qa_20260723_synthetic_worlds_capability.json",
+      "status": "accept",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-13",
+      "condition": "Issue #79 activates the quest; execute R0 protocol preparation, then qualify before generation."
+    },
+    {
+      "quest_action_id": "QA-20260726T145840000000Z-refine-qst-pv-0001-4b5c6d7e8f901a2b3c4d",
+      "source_path": "quests/actions/2026/07/qa_20260726_qst_pv_0001_coupled_failures.json",
+      "status": "accept",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-13",
+      "condition": "Choose one bounded acceptance slice under standing scope after checking existing accepted artifacts and ownership."
+    },
+    {
+      "quest_action_id": "QA-20260809T150000000000Z-refine-qst-calendar-0001-5ca46d7e8f9012345678",
+      "source_path": "quests/actions/2026/08/qa_20260809_qst_calendar_0001_staging.json",
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-13",
+      "condition": "Review accepted src/research/roundup_staging.py and its tests for quest-level completion; adapt literature intake to Monthly without inventing another parser implementation."
+    },
+    {
+      "quest_action_id": "QA-20260809T150000000000Z-refine-qst-stor-0002-4b935c6d7e8f90123456",
+      "source_path": "quests/actions/2026/08/qa_20260809_qst_stor_0002_constraint_cost.json",
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-13",
+      "condition": "Review existing outputs/qst_stor_0002/fast_rotator_constraint_cost.json and accepted lineage for closure; do not regenerate the completed grid merely to satisfy this proposal."
+    },
+    {
+      "quest_action_id": "QA-20260823T145740000000Z-qst-arci-work-conserving-fallback-f0a2cf6c3b1c5a13c14d",
+      "source_path": "quests/actions/2026/08/qa_20260823_qst_arci_0001_work_conserving_fallback.json",
+      "status": "closed_completed",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-13",
+      "condition": "ARCI completion accepted by PR #78; do not reissue or repeat this slice."
+    },
+    {
+      "quest_action_id": "QA-20260823T145740000000Z-qst-sim-next-measurement-c46a452333333b7b9a3d",
+      "source_path": "quests/actions/2026/08/qa_20260823_qst_sim_0002_next_measurement.json",
+      "status": "accept",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-13",
+      "condition": "Choose one bounded acceptance slice under standing scope after checking existing accepted artifacts and ownership."
+    },
+    {
+      "quest_action_id": "QA-20260823T145740000000Z-qst-stor-emergency-review-d2998b20868a76afaea7",
+      "source_path": "quests/actions/2026/08/qa_20260823_qst_stor_0002_emergency_review.json",
+      "status": "accepted_historical",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-13",
+      "condition": "August Monthly already enacted the local fast-rotator block; preserve it without a global freeze or architecture selection."
+    },
+    {
+      "quest_action_id": "QA-20260825T142300000000Z-qst-arci-work-conserving-slot-5d8a1c7e2b9f6043a210",
+      "source_path": "quests/actions/2026/08/qa_20260825_qst_arci_0001_work_conserving_slot.json",
+      "status": "closed_completed",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-13",
+      "condition": "ARCI completion accepted by PR #78; do not reissue or repeat this slice."
+    },
+    {
+      "quest_action_id": "QA-20260825T142300000000Z-qst-stor-fast-rotator-local-block-3c8e71a4b905d62f10aa",
+      "source_path": "quests/actions/2026/08/qa_20260825_qst_stor_0002_fast_rotator_local_block.json",
+      "status": "accepted_historical",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-13",
+      "condition": "August Monthly already enacted the local fast-rotator block; preserve it without a global freeze or architecture selection."
+    }
+  ],
+  "open_issues": [
+    {
+      "number": 30,
+      "status": "accept",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-13",
+      "condition": "Core import complete; thermal quest activated for R0. Issue remains open until campaign terminal disposition."
+    },
+    {
+      "number": 79,
+      "status": "continue",
+      "owner": "explicit-human implementation agent",
+      "next_review": "2026-09-07",
+      "condition": "Finish qualified repository changes and verified scheduler/mirror setup; then close setup issue."
+    }
+  ],
+  "open_prs_at_source": [],
+  "note": "Raw proposals remain unchanged. This ledger records decisions, not generated scientific evidence. Future Weekly/Monthly runs must obtain fresh live issue/PR lists and include new proposals."
+}

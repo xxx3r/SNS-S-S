@@ -1,0 +1,111 @@
+{
+  "schema": "sns.standing-authority.v1",
+  "policy_id": "STAND-20260906-SEPTEMBER-ACTION-V1",
+  "authority": "explicit-human",
+  "recorded_at": "2026-09-06T21:18:43Z",
+  "review_at": "2026-09-20T21:18:43Z",
+  "expires_at": "2026-10-01T06:00:00Z",
+  "research_scopes": {
+    "thermal-storage": "Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.",
+    "swarm-power": "Existing illumination, coverage, GEO delivery and beam-control models.",
+    "materials": "PV degradation and metasurface abstraction within declared material assumptions.",
+    "resource-intelligence": "ARCI score/confidence and synthetic target measurement.",
+    "research-tooling": "Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.",
+    "public-synthesis": "Prepare research explanations; external publication belongs to Observatory."
+  },
+  "roles": {
+    "daily-governance-triage": {
+      "actions": [
+        "maintenance",
+        "merge",
+        "route"
+      ],
+      "max_transactions": 2,
+      "write_surfaces": [
+        "automation/runs/**",
+        "automation/pr_lifecycle/**",
+        "src/**",
+        "experiments/**",
+        "configs/**",
+        "tests/**",
+        "outputs/**",
+        "docs/**",
+        "scripts/**"
+      ]
+    },
+    "daily-research-operator": {
+      "actions": [
+        "implement",
+        "merge"
+      ],
+      "max_transactions": 1,
+      "write_surfaces": [
+        "automation/runs/**",
+        "automation/pr_lifecycle/**",
+        "src/**",
+        "experiments/**",
+        "configs/**",
+        "tests/**",
+        "outputs/**",
+        "docs/**"
+      ]
+    },
+    "weekly-evidence-synthesis": {
+      "actions": [
+        "implement",
+        "maintenance",
+        "merge",
+        "activate",
+        "terminalize",
+        "route"
+      ],
+      "max_transactions": 4,
+      "write_surfaces": [
+        "automation/runs/**",
+        "automation/pr_lifecycle/**",
+        "src/**",
+        "experiments/**",
+        "configs/**",
+        "tests/**",
+        "outputs/**",
+        "docs/**",
+        "quests/**",
+        "memory/mem_log_short.md",
+        "scripts/**",
+        "calendar/evidence/**",
+        "calendar/belief_events/**",
+        "calendar/roundups/**",
+        "automation/quest_history/**"
+      ]
+    },
+    "monthly-governance": {
+      "actions": [
+        "govern",
+        "literature",
+        "merge"
+      ],
+      "max_transactions": 1,
+      "write_surfaces": [
+        "automation/runs/**",
+        "automation/pr_lifecycle/**",
+        "quests/**",
+        "memory/mem_log_short.md",
+        "calendar/**",
+        "automation/standing/**",
+        "automation/delegations/**"
+      ]
+    }
+  },
+  "budget_caps": {
+    "worlds": 64,
+    "records": 100000,
+    "runtime_s": 600,
+    "disk_mb": 100
+  },
+  "required_checks": [
+    "python -m pytest -q",
+    "python -m automation.cli validate-repository",
+    "baseline-artifacts"
+  ],
+  "rationale": "M approved complete bounded research cycles in Issue #79. These are per acceptance-slice ceilings, not default generation targets. Tests and dependency installation are not scientific runtime consumption. Frozen experiments may impose smaller budgets. No spending, model training, private export, evaluator/holdout changes after freeze, or new hardware-readiness claims."
+}

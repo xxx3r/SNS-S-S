@@ -133,3 +133,9 @@ The July 19 weekly failure was a record-dialect compatibility defect: the agent 
 The durable rule is therefore:
 
 > Prompts choose a loop. Repository code defines the record. Inspectable provenance proves the state. Hosted validation decides whether the transaction is admissible.
+
+## September action contracts v2
+
+Stable loop IDs remain unchanged. Active contract version 2.0.0 uses the existing sns.loop-run.v2 receipt envelope plus `standing_execution`: exact `policy_json` source bytes and concrete validated `requests`. The snapshot binds those bytes under role `standing_authority`. automation.standing and automation.receipts enforce role, action/path, expiry, transaction and budget structure. This is structural authority validation, not evidence certification. Raw sns.quest-action.v1 proposals stay immutable and retain their original proposal semantics; Weekly enactment is recorded by the standing execution receipt and quests/dispositions ledger.
+
+`automation/quest_history` binds pre-transition queue context and historical QA/AUTH records to a reachable accepted Git commit. Referenced delegation bytes must match that source too. Full Git history is required for this validation; a shallow checkout must fetch the recorded objects rather than skip the check. Current request/execution authority is evaluated separately from historical replay.

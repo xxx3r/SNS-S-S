@@ -1,6 +1,6 @@
 {
   "schema": "sns.state-ownership.v1",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "surfaces": [
     {
       "path": "automation/contracts/**",
@@ -77,20 +77,20 @@
       "authority": "monthly-governance",
       "triage": "write",
       "daily": "write",
-      "weekly": "read",
+      "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Daily may update its owned PR record. Triage may perform only mechanically verifiable lifecycle synchronization from live GitHub state. Monthly resolves cross-PR conflicts, stale work, splits, supersession, abandonment, and ambiguous ownership."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
     },
     {
       "path": "memory/mem_log_short.md",
       "authority": "monthly-governance",
       "triage": "read",
       "daily": "propose",
-      "weekly": "propose",
+      "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Monthly governance publishes the canonical move; triage may not rewrite it. Explicit human instructions may override it."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
     },
     {
       "path": "memory/mem_log_long_0000_0999.md",
@@ -108,9 +108,9 @@
       "triage": "read",
       "daily": "read",
       "weekly": "write",
-      "monthly": "read",
+      "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Evidence events are immutable and cluster by underlying claim; source corrections create new events."
+      "reconciliation": "Monthly owns external literature and appraisal; Weekly records internal experimental synthesis. Raw events are immutable; beliefs remain proposals until Monthly consolidation."
     },
     {
       "path": "calendar/belief_events/**",
@@ -118,9 +118,9 @@
       "triage": "read",
       "daily": "read",
       "weekly": "write",
-      "monthly": "read",
+      "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Raw belief events are immutable proposals with normalized scales and evidence provenance."
+      "reconciliation": "Monthly owns external literature and appraisal; Weekly records internal experimental synthesis. Raw events are immutable; beliefs remain proposals until Monthly consolidation."
     },
     {
       "path": "calendar/consolidated_beliefs.json",
@@ -138,9 +138,9 @@
       "triage": "read",
       "daily": "read",
       "weekly": "write",
-      "monthly": "read",
+      "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Roundups are dated human-readable views; raw event files are canonical for machine reconciliation."
+      "reconciliation": "Monthly owns external literature and appraisal; Weekly records internal experimental synthesis. Raw events are immutable; beliefs remain proposals until Monthly consolidation."
     },
     {
       "path": "calendar/monthly/**",
@@ -157,70 +157,90 @@
       "authority": "monthly-governance",
       "triage": "read",
       "daily": "read",
-      "weekly": "propose",
+      "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Monthly governance owns accepted graph topology. Weekly may propose typed dependency/lineage edges; triage may only derive the ready frontier and route within already-active delegated quests. Explicit human transactions may bootstrap graph law."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
     },
     {
       "path": "quests/actions/**",
       "authority": "monthly-governance",
       "triage": "read",
       "daily": "propose",
-      "weekly": "propose",
+      "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Weekly and daily emit proposals; triage may classify proposals but does not rewrite quest-action history. Monthly records queue-wide acceptance, rejection, or deferral."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
     },
     {
       "path": "quests/active/**",
       "authority": "monthly-governance",
       "triage": "read",
       "daily": "read",
-      "weekly": "propose",
+      "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Monthly governance owns queue membership and ordering. Triage may authorize only bounded refinements inside IDs already active and delegated."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
     },
     {
       "path": "quests/completed/**",
       "authority": "monthly-governance",
       "triage": "read",
       "daily": "propose",
-      "weekly": "read",
+      "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Completion requires accepted evidence and cross-queue ID validation. Triage cannot move a quest between queues."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
     },
     {
       "path": "quests/proposed/**",
       "authority": "monthly-governance",
       "triage": "read",
       "daily": "propose",
-      "weekly": "propose",
+      "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Proposed quests cannot reuse IDs from any queue and do not become active without monthly governance. Triage has no activation authority."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
     },
     {
       "path": "quests/blocked/**",
       "authority": "monthly-governance",
       "triage": "read",
       "daily": "propose",
-      "weekly": "propose",
+      "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Blocked status preserves artifacts, blocker evidence, and a reactivation condition. Triage may not block or reactivate queue membership."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
     },
     {
       "path": "src/**|experiments/**|configs/**|tests/**|outputs/**",
       "authority": "daily-research-operator",
-      "triage": "read",
+      "triage": "write",
       "daily": "write",
-      "weekly": "read",
+      "weekly": "write",
       "monthly": "read",
       "audit": "observe",
-      "reconciliation": "Only the Daily Research Operator inside an active quest acceptance slice may mutate scientific implementation surfaces. Triage may authorize scope but never write the science itself."
+      "reconciliation": "Daily and Weekly implement within standing accepted quest scope. Triage may merge qualified work and repair non-authority tests/docs/scripts; it cannot implement scientific source behavior. Action-specific validation narrows this union."
+    },
+    {
+      "path": "automation/standing/**",
+      "authority": "monthly-governance",
+      "triage": "read",
+      "daily": "read",
+      "weekly": "read",
+      "monthly": "write",
+      "audit": "observe",
+      "reconciliation": "Monthly may publish a new immutable policy inside stable-law ceilings and move the current pointer. Other roles cannot widen authority. Human owns validator/schema changes."
+    },
+    {
+      "path": "automation/quest_history/**",
+      "authority": "monthly-governance",
+      "triage": "read",
+      "daily": "read",
+      "weekly": "write",
+      "monthly": "write",
+      "audit": "observe",
+      "reconciliation": "Append exact source-qualified record contexts before lifecycle transitions; never alter an archived record, context, or receipt to bypass live execution authority."
     }
   ]
 }

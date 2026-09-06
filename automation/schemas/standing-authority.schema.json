@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sns-s-s.local/schemas/standing-authority.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "policy_id",
+    "authority",
+    "recorded_at",
+    "expires_at",
+    "review_at",
+    "research_scopes",
+    "roles",
+    "budget_caps",
+    "required_checks"
+  ],
+  "properties": {
+    "schema": {
+      "const": "sns.standing-authority.v1"
+    },
+    "policy_id": {
+      "type": "string",
+      "pattern": "^STAND-"
+    },
+    "authority": {
+      "enum": [
+        "explicit-human",
+        "monthly-governance"
+      ]
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "review_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "research_scopes": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "roles": {
+      "type": "object"
+    },
+    "budget_caps": {
+      "type": "object"
+    },
+    "required_checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "description": "Executable automation.standing enforces fixed role action sets, transaction ceilings, path boundaries, timestamps and budget ceilings. Policy authority never certifies evidence truth."
+}

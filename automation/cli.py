@@ -14,6 +14,7 @@ from .receipts import ReceiptStore, generate_long_log, validate_run_receipt
 from .research_graph import ready_frontier
 from .semantics import cluster_evidence_events
 from .state import validate_repository_state
+from .standing import validate_standing_request
 
 
 def _json_records(path: Path) -> list[dict[str, object]]:
@@ -138,6 +139,16 @@ def cmd_runtime_drift(args: argparse.Namespace) -> int:
     return 1 if drift else 0
 
 
+def cmd_standing(args: argparse.Namespace) -> int:
+    root = Path(args.root)
+    pointer = json.loads((root / "automation/standing/current.json").read_text())
+    policy = json.loads((root / pointer["path"]).read_text())
+    request = json.loads(Path(args.request).read_text())
+    validate_standing_request(policy, request, now=args.now)
+    print(json.dumps({"valid": True, "policy_id": policy["policy_id"]}))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", default=".", help="repository root")
@@ -182,6 +193,10 @@ def build_parser() -> argparse.ArgumentParser:
     runtime.add_argument("--manifest", default="automation/runtime_manifest.json")
     runtime.add_argument("--observed", required=True, help="JSON list from the external scheduler snapshot")
     runtime.set_defaults(func=cmd_runtime_drift)
+    standing = subparsers.add_parser("validate-standing-request")
+    standing.add_argument("--request", required=True)
+    standing.add_argument("--now", required=True)
+    standing.set_defaults(func=cmd_standing)
     return parser
 
 

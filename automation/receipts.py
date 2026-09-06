@@ -12,7 +12,8 @@ from .contracts import ContractRegistry
 from .ids import validate_identifier
 from .models import LoopTerminalState
 from .organization import has_lineage_declaration, recorded_decision_effect, validate_receipt_observability
-from .provenance import RUN_RECEIPT_SCHEMA, validate_state_snapshot
+from .provenance import RUN_RECEIPT_SCHEMA, validate_state_snapshot, git_blob_sha
+from .standing import validate_standing_request
 
 _SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 _SEMVER_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
@@ -144,6 +145,45 @@ def validate_run_receipt(
             raise ValueError("v2.1 receipt requires decision_effect")
         if not has_lineage_declaration(receipt):
             raise ValueError("v2.1 receipt requires typed inheritance or explicit independent continuity")
+
+    if int(contract_version.split(".")[0]) >= 2 and loop_id != "system-audit":
+        execution = receipt.get("standing_execution")
+        if not isinstance(execution, dict) or set(execution) != {"policy_json", "requests"}:
+            raise ValueError("action contracts require standing_execution")
+        policy_json = execution["policy_json"]
+        if not isinstance(policy_json, str):
+            raise ValueError("standing policy must preserve exact source bytes")
+        policy = json.loads(policy_json)
+        snapshot_rows = receipt["state_snapshot"]["records"]
+        identities = [row["git_blob_sha"] for row in snapshot_rows if row["role"] == "standing_authority"]
+        if identities != [git_blob_sha(policy_json.encode("utf-8"))]:
+            raise ValueError("standing authority bytes do not match source snapshot")
+        requests = execution["requests"]
+        if not isinstance(requests, list):
+            raise ValueError("standing requests must be a list")
+        slices = {}
+        indices = {}
+        for request in requests:
+            slice_id = request.get("acceptance_slice")
+            index = request.get("transaction_count")
+            if index in indices and indices[index] != slice_id:
+                raise ValueError("distinct slices cannot reuse a transaction index")
+            if slice_id in slices and slices[slice_id]["index"] != index:
+                raise ValueError("one slice cannot consume multiple transaction indices")
+            indices[index] = slice_id
+            entry = slices.setdefault(slice_id, {"index": index, "budgets": {}})
+            for key, value in request.get("budgets", {}).items():
+                if type(value) is not int:
+                    raise ValueError("budget amounts must be integers")
+                entry["budgets"][key] = max(value, entry["budgets"].get(key, 0))
+            if request.get("loop_id") != loop_id:
+                raise ValueError("standing request role differs from receipt")
+            validate_standing_request(policy, request, now=str(receipt["created_at"]))
+        for key, cap in policy["budget_caps"].items():
+            if sum(entry["budgets"].get(key, 0) for entry in slices.values()) > cap:
+                raise ValueError("combined execution exceeds standing budget")
+        if not recorded_decision_effect(receipt) or not has_lineage_declaration(receipt):
+            raise ValueError("action receipt requires decision effect and continuity")
 
     correction_of = receipt.get("correction_of")
     if correction_of is not None:
