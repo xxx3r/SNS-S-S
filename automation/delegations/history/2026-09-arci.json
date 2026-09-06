@@ -1,6 +1,6 @@
 {
   "schema": "sns.governance-delegation.v1",
-  "delegation_id": "DELEG-20260906-MONTHLY-SIM3-SWEEP-V2",
+  "delegation_id": "DELEG-20260902-HUMAN-SEPTEMBER-TRIAGE-V1",
   "period": "2026-09",
   "authority": "monthly-governance",
   "authorized_loop": "daily-governance-triage",
@@ -8,7 +8,7 @@
     "refine_existing"
   ],
   "allowed_quest_ids": [
-    "QST-SIM-0003"
+    "QST-ARCI-0001"
   ],
   "authorized_implementation_surfaces": [
     "configs/**",
@@ -29,7 +29,6 @@
     "quests/proposed/**",
     "quests/blocked/**",
     ".github/**",
-    "docs/public/**",
     "src/**"
   ],
   "max_authorizations_per_run": 1,
@@ -39,7 +38,7 @@
     "python -m pytest -q tests/test_automation_*.py",
     "python -m automation.cli validate-repository"
   ],
-  "recorded_at": "2026-09-06T17:26:57.357376Z",
+  "recorded_at": "2026-09-02T18:58:07.761521Z",
   "expires_at": "2026-09-30T23:59:59Z",
-  "rationale": "Supersedes DELEG-20260902-HUMAN-SEPTEMBER-TRIAGE-V1 after accepted PR #54 evidence completed QST-ARCI-0001. Delegates only one already-declared QST-SIM-0003 refinement: Run one fixed 2 x 2 synthetic QST-SIM-0003 sweep over exactly two declared eclipse fractions and two declared beam efficiencies using the accepted coordinated 20% storage-node role mix and one identical deterministic GEO-ring fixture; report delivered energy, curtailment, survival, and coverage without optimization or architecture claims. Stop before parameter optimization, a third grid value, role-mix changes, real ephemerides, external evidence, architecture selection, belief changes, or hardware-readiness claims."
+  "rationale": "Published by the accepted September Monthly constitutional transition under explicit human approval recorded in Issue #65 comment 5514504198. One bounded refine_existing lane is available only for the already-active QST-ARCI-0001 synthetic-target sensitivity slice. The envelope grants no queue, quest membership, belief, memory, contract, schema, scientific-architecture, scheduler, or external/public authority."
 }

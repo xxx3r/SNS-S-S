@@ -1,0 +1,114 @@
+{
+  "artifacts": [
+    "automation/history.py",
+    "automation/quest_history/2026-09-06-pre-retirement.json",
+    "automation/delegations/history/2026-09-arci.json",
+    "calendar/monthly/2026-09.md",
+    "tests/test_automation_quest_history.py"
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "Full pytest and semantic repository validation passed before receipt creation; receipt-bearing tree revalidated before publication.",
+      "name": "local qualification",
+      "status": "passed"
+    },
+    {
+      "evidence": "Exact-head hosted checks and review required before merge; tracked on the PR.",
+      "name": "hosted qualification",
+      "status": "not_run"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "1.2.0",
+  "created_at": "2026-09-06T22:43:20.291415+00:00",
+  "decision_effect": "Continue PR #78 from repaired main under Issue #79; preserve historical quest context and delegation before ARCI retirement.",
+  "loop_id": "monthly-governance",
+  "next_action": "Qualify and merge this reconstructed Monthly transaction, then enact September standing authority.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "independent",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "open_prs": [
+      {
+        "draft": false,
+        "head_sha": "cdc775b40a9d070ca46cfcc34ff8f44917915c57",
+        "number": 78,
+        "state": "open"
+      }
+    ]
+  },
+  "quest_context": {
+    "authority": "Explicit human implementation authorization recorded in Issue #79",
+    "scope": "Continue PR #78 from repaired main under Issue #79; preserve historical quest context and delegation before ARCI retirement."
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20260906T224320291415Z-monthly-governance-6d83e3e4e58ff1def59f",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "e45187f846850c6e50b0d9db87fffa1085b7096a",
+  "state_snapshot": {
+    "fingerprint": "sha256:82acebe6d45a3f3a24959008e90f751ecacbefd944a016d467a352c254a61740",
+    "open_prs": [
+      {
+        "draft": false,
+        "head_sha": "cdc775b40a9d070ca46cfcc34ff8f44917915c57",
+        "number": 78,
+        "state": "open"
+      }
+    ],
+    "records": [
+      {
+        "git_blob_sha": "881e2c34d785eb2fafa834abdc3e060f7610bb1e",
+        "path": "automation/contracts/monthly-governance.v1.2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "fc73126967f48d4429a36f9c78e6fd8863a6f100",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "618b24b4e799ad6fb7c44c3580b772e1ab38db6a",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "de7e143328e61d124ea5e9c7a3d484f466e4767d",
+        "path": "automation/delegations/2026-09.json",
+        "role": "current_delegation"
+      },
+      {
+        "git_blob_sha": "05e08eccca0f3091fbdd289c12469de599bab948",
+        "path": "calendar/monthly/2026-09.md",
+        "role": "monthly_state"
+      },
+      {
+        "git_blob_sha": "ab0b0a380a735cde3b365341ea70e73e7864ec83",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "56935c9d9a89b80a2b2a11aadc9b41522d42e3c2",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "e96689268600d88db95a8022342b5f0526041382",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "6d17c3253cf336de2c62ef90133523295c984c36",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "e45187f846850c6e50b0d9db87fffa1085b7096a"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-09-06T22:43:20.291415+00:00"
+}

@@ -50,3 +50,17 @@ Scheduler wake order: Monthly first; Pre-Game only after accepted Monthly dispos
 ### Current next move (one shot)
 
 After this Monthly state is accepted, enable and qualify Pre-Game for the bounded ARCI lane. Do not enable Daily until Pre-Game produces an accepted result. Daily may then consume one valid authorization and produce one smallest reproducible synthetic-target artifact. Keep the STOR architecture decision behind its separate scientific/governance boundary.
+
+## Accepted ARCI completion transition — 2026-09-06
+
+Canonical source before this transaction: 94818f80c865dd5db83aa07c3f0003da5a464e2a.
+
+QST-ARCI-0001 is completed. Accepted PR #54 produced the quest's full declared synthetic target, evidence/missingness map, separate score and confidence, 28-case bounded sensitivity, and next-measurement recommendation. The synthetic result remains research-only and does not establish a real asteroid grade. Surface-operations evidence is preserved as a distinct future question.
+
+The active queue now contains seven quests. QST-STOR-0002 remains P0 with its fast-rotator surface route locally falsified. QST-SIM-0003 remains P1 and is the current work-conserving executable spawn for one fixed, already-declared eclipse-fraction/beam-efficiency sweep. No priority promotion or architecture selection is implied.
+
+DELEG-20260906-MONTHLY-SIM3-SWEEP-V2 supersedes the stale ARCI-only September envelope. It allows Pre-Game to issue at most one bounded QST-SIM-0003 `refine_existing` authorization across `configs/**`, `experiments/**`, `tests/**`, and `outputs/**`, expiring 2026-09-30T23:59:59Z.
+
+### Current next move (one shot)
+
+Pre-Game verifies clean source and zero competing owner, then authorizes exactly one fixed 2 x 2 synthetic SIM3 sweep over two declared eclipse fractions and two declared beam efficiencies using the accepted coordinated 20% storage-node role mix and one identical fixture. Daily reports delivered energy, curtailment, survival, and coverage, and stops before optimization, a third grid value, role-mix changes, real ephemerides, external evidence, architecture claims, or belief changes.

@@ -1,0 +1,126 @@
+{
+  "schema": "sns.quest-record-history.v1",
+  "source_commit": "e45187f846850c6e50b0d9db87fffa1085b7096a",
+  "qualification": "PR #80 main backstop: 157 passed, semantic validation valid; frozen before ARCI retirement. Historical validation context, never current execution authority.",
+  "queues": {
+    "active": [
+      "QST-ARCI-0001",
+      "QST-CALENDAR-0001",
+      "QST-FUND-0001",
+      "QST-META-0001",
+      "QST-PV-0001",
+      "QST-SIM-0002",
+      "QST-SIM-0003",
+      "QST-STOR-0002"
+    ],
+    "completed": [
+      "QST-META-0005",
+      "QST-SIM-0001",
+      "QST-STOR-0001"
+    ],
+    "proposed": [],
+    "blocked": []
+  },
+  "records": [
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260808T161025000000Z-calendar-duplicate-id-4a8f91c2d7e603b5a124.json",
+      "git_blob_sha": "3372430f78ff731074e9f810917d5f4c7b0dcb05"
+    },
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260810T160955000000Z-calendar-staging-7d3a91c4b8e2056f1a2c.json",
+      "git_blob_sha": "84d475761dc8d18bfebbc2900219f6f6dfdf70de"
+    },
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260811T160132000000Z-calendar-staging-output-6e2f4a91c8b7053d1f20.json",
+      "git_blob_sha": "bb0926ce1e17930c29494f45b36a2fb2a11742a8"
+    },
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260812T162018000000Z-sim-stale-coverage-5c8e2a91d7b4063f1a20.json",
+      "git_blob_sha": "e38b6b8adbdadbb37e73c84df0be45b6702a3d35"
+    },
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260813T220641125272Z-sim-stale-coverage-repair-97975babf28a7d090875.json",
+      "git_blob_sha": "7acd60c193c4fcfc7f9064a39f9976742fd8d3a0"
+    },
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260814T162718000000Z-sim-two-rotation-regimes-6c9a2e41b705d83f102a.json",
+      "git_blob_sha": "b448b2cc4f9ff02bb6f46417e62500edfb585512"
+    },
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260815T165114000000Z-stor-fast-rotator-constraint-cost-7b3e91c4d8a6052f1c20.json",
+      "git_blob_sha": "7cb697d09a111e8862fc886a4c3fc31226ca89c4"
+    },
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260826T162659000000Z-arci-synthetic-sensitivity-8e4b71c2d9a6053f102a.json",
+      "git_blob_sha": "c309ea945868ccb0839ca56f735e55dbc1776745"
+    },
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260827T163736000000Z-meta-beam-loss-4a7c91e2b805d63f102a.json",
+      "git_blob_sha": "1af7e5dd9951fe52bb8bf073ff933a89c9016641"
+    },
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260829T161812000000Z-sim3-receiver-los-7d3a91c4b8e2056f1a2c.json",
+      "git_blob_sha": "d1168e1de159f29e86ee632502f7321914f8f3cb"
+    },
+    {
+      "path": "automation/authorizations/2026/08/AUTH-20260831T163436000000Z-sim3-role-mix-63dfa448abd5cc06acbd.json",
+      "git_blob_sha": "43d793aa37e81192df2a27bd8d3dca17460d4f63"
+    },
+    {
+      "path": "automation/authorizations/2026/09/AUTH-20260902T190916629850Z-arci-september-refine-b1c2d3e4f5a60718293a.json",
+      "git_blob_sha": "d30edd0945565ab8637a95acb53547a8f42248bf"
+    },
+    {
+      "path": "quests/actions/2026/07/qa_20260712_qst_meta_0001_steering_abstraction.json",
+      "git_blob_sha": "3160390a31a4323c305809bf8943b5319a2765f2"
+    },
+    {
+      "path": "quests/actions/2026/07/qa_20260712_qst_sim_0002_resource_collapse.json",
+      "git_blob_sha": "0756af44e9614bca3c591c0633acd5bcdcf39489"
+    },
+    {
+      "path": "quests/actions/2026/07/qa_20260712_qst_stor_0002_auxiliary_safe_mode.json",
+      "git_blob_sha": "352183f988b686bdbb17d297430a6ea3bdcf104d"
+    },
+    {
+      "path": "quests/actions/2026/07/qa_20260719_qst_stor_0002_environmental_margins.json",
+      "git_blob_sha": "a04bf2da71f1227b24853e60c3a8be073c02795e"
+    },
+    {
+      "path": "quests/actions/2026/07/qa_20260723_synthetic_worlds_capability.json",
+      "git_blob_sha": "1f0ddd5c0aa4d7825a0faeac260e270e1e6f0e88"
+    },
+    {
+      "path": "quests/actions/2026/07/qa_20260726_qst_pv_0001_coupled_failures.json",
+      "git_blob_sha": "b1cdebc8a2366c55748f97039804415570924ce7"
+    },
+    {
+      "path": "quests/actions/2026/08/qa_20260809_qst_calendar_0001_staging.json",
+      "git_blob_sha": "c8cc1cf61bc53d68b9a47a29b4bc1238b0d53ff9"
+    },
+    {
+      "path": "quests/actions/2026/08/qa_20260809_qst_stor_0002_constraint_cost.json",
+      "git_blob_sha": "4c16d16058548b4858af3a76fe0f8995b4d5884a"
+    },
+    {
+      "path": "quests/actions/2026/08/qa_20260823_qst_arci_0001_work_conserving_fallback.json",
+      "git_blob_sha": "2c2f5c173ae3b01abb444c837aae6cd731636998"
+    },
+    {
+      "path": "quests/actions/2026/08/qa_20260823_qst_sim_0002_next_measurement.json",
+      "git_blob_sha": "7338cbfd2f97c732b002d38852fbe8739937d8f9"
+    },
+    {
+      "path": "quests/actions/2026/08/qa_20260823_qst_stor_0002_emergency_review.json",
+      "git_blob_sha": "39b2bf42518725d655a389a8e8484870cfac5bc2"
+    },
+    {
+      "path": "quests/actions/2026/08/qa_20260825_qst_arci_0001_work_conserving_slot.json",
+      "git_blob_sha": "4cdbefb6436d84511e528ae1c0c199837196d4db"
+    },
+    {
+      "path": "quests/actions/2026/08/qa_20260825_qst_stor_0002_fast_rotator_local_block.json",
+      "git_blob_sha": "c6f24c1b07c4e7f9f2a6a06f37d3e27132091e68"
+    }
+  ]
+}
