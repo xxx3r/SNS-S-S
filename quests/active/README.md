@@ -11,12 +11,12 @@ Keep 3–8 active quests. Each quest must produce an inspectable artifact and st
 3. [QST-SIM-0003: GEO Ring Power-Chain Model](QST-SIM-0003-geo-ring-power-chain.md)
 4. [QST-PV-0001: PV Degradation Parameter Sheet](QST-PV-0001-pv-degradation-parameters.md)
 5. [QST-META-0001: Metasurface Beam-Steering Abstraction](QST-META-0001-metasurface-beam-abstraction.md)
-6. [QST-ARCI-0001: ARCI v0.1 Draft + Synthetic Target](QST-ARCI-0001-arci-v0-1.md)
-7. [QST-CALENDAR-0001: Weekly Roundup → Quest Pipeline](QST-CALENDAR-0001-roundup-parser.md)
-8. [QST-FUND-0001: Summer 2026 Public Artifact](QST-FUND-0001-public-artifact-outline.md)
+6. [QST-CALENDAR-0001: Weekly Roundup → Quest Pipeline](QST-CALENDAR-0001-roundup-parser.md)
+7. [QST-FUND-0001: Summer 2026 Public Artifact](QST-FUND-0001-public-artifact-outline.md)
 
 ## Recently completed
 
+- `QST-ARCI-0001`: ARCI v0.1 synthetic-target sensitivity assessment
 - `QST-STOR-0001`: storage geometry audit
 - `QST-SIM-0001`: role-aware SNS agent and explicit power-state baseline
 
@@ -24,6 +24,8 @@ Keep 3–8 active quests. Each quest must produce an inspectable artifact and st
 
 Prefer the executable active quest that removes the most uncertainty per unit effort while preserving accepted monthly priority, one-owner law, delegation bounds, and local stop conditions.
 
-Queue membership and declared priority are unchanged: both `QST-STOR-0002` and `QST-ARCI-0001` remain P0. The currently parameterized fast-rotator surface route inside `QST-STOR-0002` is locally blocked after accepted `FALSIFIED_ON_DECLARED_GRID` evidence. Therefore the current executable spawn is `QST-ARCI-0001` for its already-defined bounded synthetic-target sensitivity slice.
+QST-STOR-0002 remains active at P0, but its currently parameterized fast-rotator surface route remains locally blocked after accepted falsifying evidence. QST-ARCI-0001 is completed: PR #54 satisfies its full declared synthetic-target method and success criteria, while its recommended surface-operations measurement is a distinct future scientific question rather than unfinished ARCI v0.1 work.
 
-Selecting an executable slot is not queue reprioritization. A quest-local stop removes only that blocked route from the current execution candidates. A demonstrated program-global blocker, shared dependency blocker, protected-human boundary, live-owner conflict, or failed validation still stops routing and escalates.
+The current executable spawn is QST-SIM-0003 for one already-declared fixed eclipse-fraction and beam-efficiency sweep using the accepted coordinated role mix. This selection does not promote SIM3 above its accepted P1 priority or authorize optimization, architecture selection, real ephemerides, or hardware-readiness claims.
+
+A demonstrated program-global blocker, shared dependency blocker, protected-human boundary, live-owner conflict, or failed validation still stops routing and escalates.

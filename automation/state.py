@@ -15,6 +15,7 @@ from .contracts import ContractRegistry
 from .governance import validate_delegation_envelope
 from .orchestration import validate_runtime_manifest
 from .receipts import ReceiptStore
+from .history import load_quest_record_history
 from .research_graph import graph_counts, ready_frontier, validate_research_graph
 from .semantics import cluster_evidence_events, consolidate_belief_events, validate_pr_lifecycle, validate_quest_action
 
@@ -223,6 +224,13 @@ def validate_repository_state(root: str | Path, *, strict: bool = True) -> dict[
         except Exception as exc:
             errors.append(f"delegation {envelope.get('delegation_id', '<unknown>')}: {exc}")
 
+    try:
+        historical_context = load_quest_record_history(repo)
+    except Exception as exc:
+        errors.append(f"quest record history: {exc}")
+        historical_context = {}
+    authorization_paths = {json.loads(p.read_text())["authorization_id"]: p.relative_to(repo).as_posix() for p in (repo / "automation/authorizations").glob("**/*.json")}
+    action_paths = {json.loads(p.read_text())["quest_action_id"]: p.relative_to(repo).as_posix() for p in (repo / "quests/actions").glob("**/*.json")}
     authorization_records = _load_json_files(repo / "automation/authorizations")
     counts["governance_authorizations"] = len(authorization_records)
     seen_authorizations: set[str] = set()
@@ -231,7 +239,7 @@ def validate_repository_state(root: str | Path, *, strict: bool = True) -> dict[
             validate_governance_authorization(
                 authorization,
                 delegations=delegations,
-                active_ids=queues["active"],
+                active_ids=historical_context.get(authorization_paths.get(authorization.get("authorization_id")), queues)["active"],
             )
             authorization_id = str(authorization["authorization_id"])
             if authorization_id in seen_authorizations:
@@ -244,7 +252,8 @@ def validate_repository_state(root: str | Path, *, strict: bool = True) -> dict[
     counts["quest_actions"] = len(actions)
     for action in actions:
         try:
-            validate_quest_action(action, active_ids=queues["active"], completed_ids=queues["completed"], proposed_ids=queues["proposed"], blocked_ids=queues["blocked"])
+            context = historical_context.get(action_paths.get(action.get("quest_action_id")), queues)
+            validate_quest_action(action, active_ids=context["active"], completed_ids=context["completed"], proposed_ids=context["proposed"], blocked_ids=context["blocked"])
         except Exception as exc:
             errors.append(f"quest action {action.get('quest_action_id', '<unknown>')}: {exc}")
 

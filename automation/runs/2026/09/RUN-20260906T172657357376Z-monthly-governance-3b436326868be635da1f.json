@@ -1,0 +1,222 @@
+{
+  "schema": "sns.loop-run.v2",
+  "run_id": "RUN-20260906T172657357376Z-monthly-governance-3b436326868be635da1f",
+  "loop_id": "monthly-governance",
+  "contract_version": "1.2.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-09-06T17:26:57.357376Z",
+  "source_commit": "94818f80c865dd5db83aa07c3f0003da5a464e2a",
+  "state_snapshot": {
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "94818f80c865dd5db83aa07c3f0003da5a464e2a",
+    "records": [
+      {
+        "role": "accepted_arci_artifact",
+        "path": "outputs/qst_arci_0001/synthetic_target_sensitivity.json",
+        "git_blob_sha": "dc282597b27796a06a7a36ac0c7a1eef60089b33"
+      },
+      {
+        "role": "accepted_arci_lifecycle",
+        "path": "automation/pr_lifecycle/54.json",
+        "git_blob_sha": "f9e3c7b63629faec1d2f5d3c54ab236b570c0d60"
+      },
+      {
+        "role": "accepted_arci_receipt",
+        "path": "automation/runs/2026/08/RUN-20260826T191200000000Z-daily-research-operator-7c1e4a92b6d8053f102a.json",
+        "git_blob_sha": "d6af159c8e4924001fff3cc6a3420aa60f0b66bf"
+      },
+      {
+        "role": "active_contract",
+        "path": "automation/contracts/monthly-governance.v1.2.md",
+        "git_blob_sha": "881e2c34d785eb2fafa834abdc3e060f7610bb1e"
+      },
+      {
+        "role": "active_quest_index",
+        "path": "quests/active/README.md",
+        "git_blob_sha": "fc73126967f48d4429a36f9c78e6fd8863a6f100"
+      },
+      {
+        "role": "canonical_memory",
+        "path": "memory/mem_log_short.md",
+        "git_blob_sha": "618b24b4e799ad6fb7c44c3580b772e1ab38db6a"
+      },
+      {
+        "role": "consolidated_beliefs",
+        "path": "calendar/consolidated_beliefs.json",
+        "git_blob_sha": "8e1af93817e23b30ab9e4b162e40f394c3e2825b"
+      },
+      {
+        "role": "current_authorization",
+        "path": "automation/authorizations/2026/09/AUTH-20260902T190916629850Z-arci-september-refine-b1c2d3e4f5a60718293a.json",
+        "git_blob_sha": "d30edd0945565ab8637a95acb53547a8f42248bf"
+      },
+      {
+        "role": "current_delegation",
+        "path": "automation/delegations/2026-09.json",
+        "git_blob_sha": "de7e143328e61d124ea5e9c7a3d484f466e4767d"
+      },
+      {
+        "role": "latest_monthly_receipt",
+        "path": "automation/runs/2026/09/RUN-20260902T185807761521Z-monthly-governance-september-transition-c4d8e2a6f1b9073c5e2a.json",
+        "git_blob_sha": "f2f213bb0943d0318254cb307a704ad4a67df1fd"
+      },
+      {
+        "role": "latest_triage_receipt",
+        "path": "automation/runs/2026/09/RUN-20260905T164921049851Z-daily-governance-triage-86e70b2280c30e433cde.json",
+        "git_blob_sha": "3e6fcb26d2b71949000cd86a78a9cc9d1ffadc8a"
+      },
+      {
+        "role": "monthly_state",
+        "path": "calendar/monthly/2026-09.md",
+        "git_blob_sha": "05e08eccca0f3091fbdd289c12469de599bab948"
+      },
+      {
+        "role": "research_graph",
+        "path": "quests/research_graph.json",
+        "git_blob_sha": "ab0b0a380a735cde3b365341ea70e73e7864ec83"
+      },
+      {
+        "role": "runtime_manifest",
+        "path": "automation/runtime_manifest.json",
+        "git_blob_sha": "56935c9d9a89b80a2b2a11aadc9b41522d42e3c2"
+      },
+      {
+        "role": "selected_next_quest",
+        "path": "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+        "git_blob_sha": "594775bdbc10e1c4c3f3514484eaa87415047ea1"
+      },
+      {
+        "role": "selected_terminal_quest",
+        "path": "quests/active/QST-ARCI-0001-arci-v0-1.md",
+        "git_blob_sha": "8fc1ec7dbbc9886b62daebb41dc336731336fc2f"
+      },
+      {
+        "role": "stable_law",
+        "path": "AGENTS.md",
+        "git_blob_sha": "e96689268600d88db95a8022342b5f0526041382"
+      },
+      {
+        "role": "state_ownership",
+        "path": "automation/state_ownership.json",
+        "git_blob_sha": "6d17c3253cf336de2c62ef90133523295c984c36"
+      }
+    ],
+    "open_prs": [],
+    "fingerprint": "sha256:c5e788bb4c13885ef8ddbb1cd08f718d50ade851e3a5186ca6d12364d648909a"
+  },
+  "receipt_kind": "run",
+  "inheritance": [
+    {
+      "kind": "RUN",
+      "ref": "RUN-20260902T185807761521Z-monthly-governance-september-transition-c4d8e2a6f1b9073c5e2a",
+      "decision_effect": "Inherited the accepted September constitutional transition, queue, and ARCI-only delegation."
+    },
+    {
+      "kind": "RUN",
+      "ref": "RUN-20260905T164921049851Z-daily-governance-triage-86e70b2280c30e433cde",
+      "decision_effect": "Accepted the fresh L2 finding that the September ARCI lane duplicates an already-complete acceptance slice."
+    },
+    {
+      "kind": "RUN",
+      "ref": "RUN-20260826T191200000000Z-daily-research-operator-7c1e4a92b6d8053f102a",
+      "decision_effect": "Used the accepted budget-consuming ARCI implementation receipt as completion evidence."
+    },
+    {
+      "kind": "artifact",
+      "ref": "outputs/qst_arci_0001/synthetic_target_sensitivity.json",
+      "decision_effect": "Verified the declared method, success criteria, bounded falsifier result, and distinct next-measurement recommendation."
+    },
+    {
+      "kind": "artifact",
+      "ref": "automation/pr_lifecycle/54.json",
+      "decision_effect": "Verified the sole ARCI implementation owner is terminally merged."
+    }
+  ],
+  "inherited_ids": [
+    "RUN-20260902T185807761521Z-monthly-governance-september-transition-c4d8e2a6f1b9073c5e2a",
+    "RUN-20260905T164921049851Z-daily-governance-triage-86e70b2280c30e433cde",
+    "RUN-20260826T191200000000Z-daily-research-operator-7c1e4a92b6d8053f102a"
+  ],
+  "decision_effect": "Terminalized QST-ARCI-0001 as completed on accepted evidence, reduced the active queue from eight to seven without changing priority, replaced the stale ARCI-only September delegation with DELEG-20260906-MONTHLY-SIM3-SWEEP-V2, and published QST-SIM-0003's fixed 2 x 2 eclipse/beam-efficiency sweep as the canonical next move.",
+  "observability": {
+    "proposal_at": "2026-09-05T16:49:21Z",
+    "authorization_at": null,
+    "first_artifact_at": "2026-09-06T17:26:57.357376Z",
+    "administrative_transactions": 3,
+    "scientific_artifacts": 0,
+    "continuity": "inherited"
+  },
+  "quest_context": {
+    "decision_level": "L2",
+    "terminalized_quest_id": "QST-ARCI-0001",
+    "completion_basis": "Merged PR #54 satisfies all declared ARCI v0.1 remaining-method bullets and success criteria; its 28 bounded cases do not trigger the grade-reversal falsifier.",
+    "preserved_boundary": "The recommended surface-operations measurement is a distinct successor question, not unfinished ARCI v0.1 work.",
+    "active_queue_count": 7,
+    "selected_next_quest_id": "QST-SIM-0003",
+    "selected_acceptance_slice": "Run one fixed 2 x 2 synthetic QST-SIM-0003 sweep over exactly two declared eclipse fractions and two declared beam efficiencies using the accepted coordinated 20% storage-node role mix and one identical deterministic GEO-ring fixture; report delivered energy, curtailment, survival, and coverage without optimization or architecture claims.",
+    "delegation_id": "DELEG-20260906-MONTHLY-SIM3-SWEEP-V2",
+    "queue_review": "Seven active IDs remain unique. STOR's falsified route stays local; SIM2's assumption/policy work stays protected; SIM3's declared sweep is the first clean delegated slice. No priority changes."
+  },
+  "pr_context": {
+    "live_open_prs": [],
+    "classifications": [],
+    "implementation_owner": null,
+    "note": "No automation PR was open at source freeze; no stale acceptance surface or lifecycle synchronization was required."
+  },
+  "consumed_ids": [
+    "RUN-20260902T185807761521Z-monthly-governance-september-transition-c4d8e2a6f1b9073c5e2a",
+    "RUN-20260905T164921049851Z-daily-governance-triage-86e70b2280c30e433cde"
+  ],
+  "artifacts": [
+    "quests/completed/QST-ARCI-0001-arci-v0-1.md",
+    "quests/completed/README.md",
+    "quests/active/README.md",
+    "quests/research_graph.json",
+    "automation/delegations/2026-09.json",
+    "calendar/monthly/2026-09.md",
+    "memory/mem_log_short.md"
+  ],
+  "checks": [
+    {
+      "name": "GitHub connector and dynamic contract resolution",
+      "status": "passed",
+      "evidence": "Repository access succeeded; exactly one active monthly-governance contract resolved on accepted main: v1.2.0."
+    },
+    {
+      "name": "ARCI quest-terminalization review",
+      "status": "passed",
+      "evidence": "Accepted PR #54 lifecycle, receipt, and output satisfy every declared QST-ARCI-0001 method and success criterion without inventing a scientific conclusion."
+    },
+    {
+      "name": "queue, graph, delegation, and memory consistency",
+      "status": "passed",
+      "evidence": "The proposed transaction preserves seven active quests, marks ARCI completed, selects the already-declared SIM3 sweep, replaces the delegation with DELEG-20260906-MONTHLY-SIM3-SWEEP-V2, and changes no belief or priority."
+    },
+    {
+      "name": "open automation PR classification",
+      "status": "passed",
+      "evidence": "No open PR existed at source freeze; the classification set is empty."
+    },
+    {
+      "name": "inspectable state snapshot",
+      "status": "passed",
+      "evidence": "The receipt records 18 exact Git blob identities plus zero live open-PR rows; fingerprint sha256:c5e788bb4c13885ef8ddbb1cd08f718d50ade851e3a5186ca6d12364d648909a."
+    },
+    {
+      "name": "repository-hosted qualification",
+      "status": "not_run",
+      "evidence": "The receipt-bearing Monthly PR must execute tests, baseline artifacts, automation tests, semantic repository validation, and full pytest before merge."
+    },
+    {
+      "name": "Drive and external calendar dependency",
+      "status": "not_run",
+      "evidence": "Neither the active contract nor this accepted-evidence reconciliation requires a Drive artifact or external calendar mutation; GitHub remains canonical."
+    }
+  ],
+  "belief_effects": [
+    "No consolidated belief changes. The ARCI result remains one synthetic research-only fixture; terminalization records method completion, not real-target validity."
+  ],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Pre-Game must start from the accepted Monthly head, validate DELEG-20260906-MONTHLY-SIM3-SWEEP-V2, and issue at most one authorization for the exact fixed 2 x 2 QST-SIM-0003 sweep; Daily must stop before optimization, role-mix changes, external evidence, architecture selection, or belief change.",
+  "created_at": "2026-09-06T17:26:57.357376Z"
+}
