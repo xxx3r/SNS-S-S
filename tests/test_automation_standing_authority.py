@@ -78,6 +78,7 @@ def action_receipt(tmp_path):
         (target/name).write_bytes(Path('automation/standing',name).read_bytes())
     git('add','.');git('commit','-qm','Accepted policy fixture')
     receipt=json.loads(next(Path('automation/runs/2026/09').glob('*system-audit*.json')).read_text())
+    receipt['observability']={'continuity':'independent'}
     receipt['loop_id']='daily-research-operator';receipt['contract_version']='2.0.0'
     receipt['created_at']='2026-09-07T12:00:00Z';receipt['trigger_time']='2026-09-07T11:00:00Z'
     receipt['source_commit']=git('rev-parse','HEAD')
