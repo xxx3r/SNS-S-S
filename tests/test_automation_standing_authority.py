@@ -21,7 +21,7 @@ def test_daily_can_work_without_triage_authorization():
 
 
 @pytest.mark.parametrize('change', [
-    {'paths':['../AGENTS.md']}, {'paths':['AGENTS.md']},
+    {'paths':[]}, {'paths':['../AGENTS.md']}, {'paths':['AGENTS.md']},
     {'paths':['automation/contracts/daily.v2.md']},
     {'paths':['tests/test_automation_standing_authority.py']},
     {'paths':['quests/active/README.md']}, {'scope':'unapproved architecture'},
@@ -79,6 +79,10 @@ def action_receipt(tmp_path):
     git('add','.');git('commit','-qm','Accepted policy fixture')
     receipt=json.loads(next(Path('automation/runs/2026/09').glob('*system-audit*.json')).read_text())
     receipt['observability']={'continuity':'independent'}
+    receipt['decision_effect']='Fixture implementation only'
+    receipt['receipt_kind']='run';receipt.pop('correction_of',None)
+    receipt['consumed_ids']=[];receipt['belief_effects']=[];receipt['artifacts']=['experiments/thermal.py']
+    receipt['checks']=[{'name':name,'status':'passed','evidence':'Fixture qualification result'} for name in policy()['required_checks']]
     receipt['loop_id']='daily-research-operator';receipt['contract_version']='2.0.0'
     receipt['created_at']='2026-09-07T12:00:00Z';receipt['trigger_time']='2026-09-07T11:00:00Z'
     receipt['source_commit']=git('rev-parse','HEAD')
@@ -149,3 +153,25 @@ def test_weekly_budget_cannot_be_split_across_receipts(action_receipt):
     req['budgets']['worlds']=25;path.write_text(json.dumps(other))
     with pytest.raises(ValueError,match='aggregate standing budget'):
         store.load_all()
+
+
+def test_standing_receipt_and_runtime_match_normative_schemas(action_receipt):
+    from jsonschema import Draft202012Validator
+    r,_=action_receipt
+    for data,schema_path in [(r,'automation/schemas/loop-run-v2.schema.json'), (json.loads(Path('automation/runtime_manifest.json').read_text()),'automation/schemas/runtime-manifest.schema.json')]:
+        schema=json.loads(Path(schema_path).read_text())
+        Draft202012Validator.check_schema(schema)
+        Draft202012Validator(schema).validate(data)
+
+
+def test_standing_effects_require_policy_checks(action_receipt):
+    from automation.receipts import validate_run_receipt
+    r,root=action_receipt;r['checks']=[]
+    with pytest.raises(ValueError,match='all required checks'):
+        validate_run_receipt(r,source_root=root)
+    r['checks']=[{'name':name,'status':'not_run','evidence':'Not executed'} for name in policy()['required_checks']]
+    r['terminal_state']='DONE'
+    with pytest.raises(ValueError,match='passed policy checks'):
+        validate_run_receipt(r,source_root=root)
+    r['terminal_state']='VERIFICATION_FAILED'
+    validate_run_receipt(r,source_root=root)

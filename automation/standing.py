@@ -98,8 +98,8 @@ def validate_standing_request(policy: Mapping[str, object], request: Mapping[str
     count = request['transaction_count']
     if type(count) is not int or not 1 <= count <= rules['max_transactions']:
         raise ValueError('transaction budget exceeded')
-    if not isinstance(request['paths'], list):
-        raise ValueError('paths must be a list')
+    if not isinstance(request['paths'], list) or not request['paths']:
+        raise ValueError('effectful action requires a non-empty concrete paths list')
     for item in request['paths']:
         path = safe_path(item)
         if any(fnmatchcase(path, pattern) for pattern in PROTECTED):

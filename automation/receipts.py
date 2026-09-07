@@ -191,6 +191,15 @@ def validate_run_receipt(
             raise ValueError("standing requests must be a list")
         if not requests and (receipt['artifacts'] or receipt['belief_effects'] or receipt['consumed_ids'] or receipt.get('decision_effect') != 'NO_ACTION'):
             raise ValueError('empty standing requests require NO_ACTION and no effects')
+        if requests:
+            required_checks = policy['required_checks']
+            named_checks = {item['name']: item for item in checks}
+            if any(name not in named_checks for name in required_checks):
+                raise ValueError('standing action receipt must include all required checks')
+            completed = receipt['terminal_state'] in {'DONE', 'DONE_WITH_LIMITATIONS'}
+            merged = any(req.get('action') == 'merge' for req in requests if isinstance(req, dict))
+            if (completed or merged) and any(named_checks[name]['status'] != 'passed' for name in required_checks):
+                raise ValueError('completed standing actions require passed policy checks')
         slices = {}
         indices = {}
         for request in requests:
