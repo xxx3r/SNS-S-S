@@ -314,6 +314,30 @@
           ]
         }
       }
+    },
+    "standing_execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_json",
+        "requests",
+        "trigger_id"
+      ],
+      "properties": {
+        "policy_json": {
+          "type": "string"
+        },
+        "requests": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "trigger_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   }
 }

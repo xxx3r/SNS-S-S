@@ -1,0 +1,114 @@
+{
+  "artifacts": [],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "Exact Git blob resolved from original accepted source e45187f846850c6e50b0d9db87fffa1085b7096a.",
+      "name": "authorization identity",
+      "status": "passed"
+    },
+    {
+      "evidence": "Qualified with the September action revision before merge.",
+      "name": "receipt-bearing qualification",
+      "status": "not_run"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "1.0.0",
+  "correction_of": "RUN-20260906T224320291415Z-monthly-governance-6d83e3e4e58ff1def59f",
+  "created_at": "2026-09-06T22:55:29.811671+00:00",
+  "decision_effect": "Append-only provenance correction for the Monthly continuation: bind the observed ARCI authorization identity; preserve original receipt and scientific state.",
+  "loop_id": "system-audit",
+  "next_action": "Use the corrected source snapshot alongside the preserved Monthly receipt; no implementation authority is granted.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "independent",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "open_prs": [
+      {
+        "draft": false,
+        "head_sha": "cdc775b40a9d070ca46cfcc34ff8f44917915c57",
+        "number": 78,
+        "state": "open"
+      }
+    ]
+  },
+  "quest_context": {
+    "authority": "Explicit human Issue #79",
+    "scope": "Provenance correction only; no scientific/queue mutation or second implementation attempt."
+  },
+  "receipt_kind": "correction",
+  "run_id": "RUN-20260906T225529811671Z-system-audit-df50e5366208e8770603",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "e45187f846850c6e50b0d9db87fffa1085b7096a",
+  "state_snapshot": {
+    "fingerprint": "sha256:d5ac42f7545dc43f2f990dd6d2f2b5c1862de3c340b3605748ebdd2b6c3c4225",
+    "open_prs": [
+      {
+        "draft": false,
+        "head_sha": "cdc775b40a9d070ca46cfcc34ff8f44917915c57",
+        "number": 78,
+        "state": "open"
+      }
+    ],
+    "records": [
+      {
+        "git_blob_sha": "b0884f997e5108fdbefd5a1ae9c634b466068e8f",
+        "path": "automation/contracts/system-audit.v1.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "fc73126967f48d4429a36f9c78e6fd8863a6f100",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "618b24b4e799ad6fb7c44c3580b772e1ab38db6a",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "d30edd0945565ab8637a95acb53547a8f42248bf",
+        "path": "automation/authorizations/2026/09/AUTH-20260902T190916629850Z-arci-september-refine-b1c2d3e4f5a60718293a.json",
+        "role": "current_authorization"
+      },
+      {
+        "git_blob_sha": "de7e143328e61d124ea5e9c7a3d484f466e4767d",
+        "path": "automation/delegations/2026-09.json",
+        "role": "current_delegation"
+      },
+      {
+        "git_blob_sha": "05e08eccca0f3091fbdd289c12469de599bab948",
+        "path": "calendar/monthly/2026-09.md",
+        "role": "monthly_state"
+      },
+      {
+        "git_blob_sha": "ab0b0a380a735cde3b365341ea70e73e7864ec83",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "56935c9d9a89b80a2b2a11aadc9b41522d42e3c2",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "e96689268600d88db95a8022342b5f0526041382",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "6d17c3253cf336de2c62ef90133523295c984c36",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "e45187f846850c6e50b0d9db87fffa1085b7096a"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-09-06T22:55:29.811671+00:00"
+}

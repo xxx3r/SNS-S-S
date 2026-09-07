@@ -23,7 +23,7 @@
     },
     {
       "loop_id": "weekly-evidence-synthesis",
-      "automation_title": "SNS Weekly Evidence Synthesis",
+      "automation_title": "SNS Weekly Research Delivery",
       "scheduler_managed": true,
       "desired_enabled": true,
       "timing_mode": "exact_schedule",
@@ -34,7 +34,7 @@
       "loop_id": "monthly-governance",
       "automation_title": "SNS Monthly Governance",
       "scheduler_managed": true,
-      "desired_enabled": true,
+      "desired_enabled": false,
       "timing_mode": "flexible_schedule",
       "schedule": "BEGIN:VEVENT\nDTSTART:20260802T110000\nRRULE:FREQ=MONTHLY;BYDAY=SU;BYSETPOS=1;BYHOUR=11;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
       "order": 40
@@ -47,6 +47,22 @@
       "timing_mode": "explicit_only",
       "schedule": null,
       "order": 50
+    },
+    {
+      "loop_id": "observatory-projection",
+      "automation_title": "SNS Daily Observatory Refresh",
+      "scheduler_managed": true,
+      "desired_enabled": true,
+      "timing_mode": "flexible_schedule",
+      "schedule": "BEGIN:VEVENT\nDTSTART:20260731T150000\nRRULE:FREQ=DAILY;BYHOUR=15;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+      "order": 60
     }
-  ]
+  ],
+  "slot_policy": {
+    "active_task_limit": 5,
+    "external_reserved_task": "Aurora Daily Vector",
+    "monthly_normal_state": "paused",
+    "monthly_review_swap": "Before the next Monthly review, pause Observatory and enable Monthly; after accepted Monthly disposition, pause Monthly and resume Observatory. Human-authorized scheduler reconciliation only; Calendar reminder does not itself perform the swap.",
+    "review_gate": "2026-09-20: assess expanded authority; 2026-09-30: renew or deliberately stop expiring standing policy before further research."
+  }
 }

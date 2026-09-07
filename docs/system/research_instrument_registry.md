@@ -9,7 +9,7 @@ An instrument entry never activates a quest, changes queue priority, grants evid
 Status: Available on `main`  
 Public owner: SNS-S-S  
 Import terminal state: `SNS_SYNTHETIC_WORLD_CORE_IMPORTED`  
-Campaign state: `NEEDS_GOVERNANCE_REVIEW`
+Campaign state: `QST-SYNTH-0001` active for protocol preparation under Issue #79; execution awaits accepted freeze
 
 ### Capability
 
@@ -66,4 +66,4 @@ It grants no authority to:
 
 ### Governance reminder
 
-`QST-SYNTH-0001` remains inactive while the active queue is full. A pending quest-action proposal asks monthly governance to activate it when a lawful slot exists, attach a bounded experiment to a suitable active quest, or explicitly defer it.
+Issue #79 accepted the July 23 proposal and activated `QST-SYNTH-0001` in the slot released by ARCI. The active quest records the first executable protocol gate. Generation/holdout/evaluator discipline above remains mandatory.

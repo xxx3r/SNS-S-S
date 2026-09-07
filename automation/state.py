@@ -16,6 +16,7 @@ from .governance import validate_delegation_envelope
 from .orchestration import validate_runtime_manifest
 from .receipts import ReceiptStore
 from .history import load_quest_record_history
+from .standing import validate_standing_policy
 from .research_graph import graph_counts, ready_frontier, validate_research_graph
 from .semantics import cluster_evidence_events, consolidate_belief_events, validate_pr_lifecycle, validate_quest_action
 
@@ -210,6 +211,19 @@ def validate_repository_state(root: str | Path, *, strict: bool = True) -> dict[
             raise ValueError("runtime manifest bootstrap prompt path is missing")
     except Exception as exc:
         errors.append(f"runtime_manifest: {exc}")
+
+    standing_pointer = repo / "automation/standing/current.json"
+    if contracts is not None and contracts.active("daily-research-operator").contract_version.startswith("2.") and not standing_pointer.exists():
+        errors.append("standing authority: current policy pointer missing")
+    if standing_pointer.exists():
+        try:
+            pointer = json.loads(standing_pointer.read_text(encoding="utf-8"))
+            path = str(pointer["path"])
+            if not path.startswith("automation/standing/") or ".." in Path(path).parts:
+                raise ValueError("invalid standing policy path")
+            validate_standing_policy(json.loads((repo / path).read_text(encoding="utf-8")))
+        except Exception as exc:
+            errors.append(f"standing authority: {exc}")
 
     delegation_records = _load_json_files(repo / "automation/delegations")
     counts["governance_delegations"] = len(delegation_records)

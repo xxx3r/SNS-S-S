@@ -64,3 +64,7 @@ DELEG-20260906-MONTHLY-SIM3-SWEEP-V2 supersedes the stale ARCI-only September en
 ### Current next move (one shot)
 
 Pre-Game verifies clean source and zero competing owner, then authorizes exactly one fixed 2 x 2 synthetic SIM3 sweep over two declared eclipse fractions and two declared beam efficiencies using the accepted coordinated 20% storage-node role mix and one identical fixture. Daily reports delivered energy, curtailment, survival, and coverage, and stops before optimization, a third grid value, role-mix changes, real ephemerides, external evidence, architecture claims, or belief changes.
+
+## September action authority — Issue #79
+
+The accepted ARCI completion is preserved. Current next move: QST-SYNTH-0001 R0, a reviewed tiny three-arm thermal protocol and non-generating validation harness using the existing imported instrument. Generation waits for accepted protocol/holdout freeze. Daily and Weekly use current standing authority without another per-slice AUTH hop. Weekly owns delegated lifecycle and next-week direction; Monthly owns external literature, strategy and consolidated beliefs. SIM3's fixed sweep remains a bounded fallback. Earlier single-lane September moves above are historical.

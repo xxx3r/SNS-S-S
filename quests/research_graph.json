@@ -1,6 +1,6 @@
 {
   "schema": "sns.research-graph.v1",
-  "description": "Typed topology for the seven active Summer 2026 quests plus completed and falsified lineage. Hard dependencies remain explicit only when accepted evidence requires them; priority order is not dependency structure.",
+  "description": "Accepted research topology; membership is distinct from readiness, and informational lineage is distinct from hard prerequisites.",
   "nodes": [
     {
       "id": "QST-STOR-0002",
@@ -74,6 +74,12 @@
       "id": "ROUTE-STOR-HOST-ASSISTED",
       "type": "route",
       "status": "proposed"
+    },
+    {
+      "id": "QST-SYNTH-0001",
+      "type": "research_quest",
+      "status": "active",
+      "priority": "P1"
     }
   ],
   "edges": [
@@ -106,6 +112,12 @@
       "target": "ROUTE-STOR-HOST-ASSISTED",
       "type": "contains",
       "note": "Smallest bounded architectural escape route: host-assisted thermal/storage responsibility."
+    },
+    {
+      "source": "QST-SYNTH-0001",
+      "target": "QST-STOR-0002",
+      "type": "informs",
+      "note": "Thermal stress-world evidence may inform storage questions; the locally falsified STOR route is not a prerequisite for protocol preparation."
     }
   ]
 }

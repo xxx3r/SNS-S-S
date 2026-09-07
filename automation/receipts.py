@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable, Mapping
@@ -12,7 +13,8 @@ from .contracts import ContractRegistry
 from .ids import validate_identifier
 from .models import LoopTerminalState
 from .organization import has_lineage_declaration, recorded_decision_effect, validate_receipt_observability
-from .provenance import RUN_RECEIPT_SCHEMA, validate_state_snapshot
+from .provenance import RUN_RECEIPT_SCHEMA, validate_state_snapshot, git_blob_sha
+from .standing import validate_standing_request, validate_standing_policy, safe_path
 
 _SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 _SEMVER_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
@@ -41,6 +43,7 @@ def validate_run_receipt(
     *,
     contracts: ContractRegistry | None = None,
     allow_retired_contract: bool = False,
+    source_root: str | Path = ".",
 ) -> None:
     common_required = {
         "schema",
@@ -145,6 +148,84 @@ def validate_run_receipt(
         if not has_lineage_declaration(receipt):
             raise ValueError("v2.1 receipt requires typed inheritance or explicit independent continuity")
 
+    if int(contract_version.split(".")[0]) >= 2 and loop_id != "system-audit":
+        execution = receipt.get("standing_execution")
+        if not isinstance(execution, dict) or set(execution) != {"policy_json", "requests", "trigger_id"}:
+            raise ValueError("action contracts require standing_execution")
+        policy_json = execution["policy_json"]
+        if not isinstance(policy_json, str):
+            raise ValueError("standing policy must preserve exact source bytes")
+        policy = json.loads(policy_json)
+        snapshot_rows = receipt["state_snapshot"]["records"]
+        identities = [row["git_blob_sha"] for row in snapshot_rows if row["role"] == "standing_authority"]
+        if identities != [git_blob_sha(policy_json.encode("utf-8"))]:
+            raise ValueError("standing authority bytes do not match source snapshot")
+        # A receipt cannot certify its own authority: resolve the accepted source.
+        def source_bytes(path):
+            try:
+                subprocess.check_output(['git', '-C', str(source_root), 'merge-base', '--is-ancestor', source_commit, 'HEAD'], stderr=subprocess.DEVNULL)
+                return subprocess.check_output(['git', '-C', str(source_root), 'show', f'{source_commit}:{path}'], stderr=subprocess.DEVNULL)
+            except subprocess.CalledProcessError as exc:
+                raise ValueError('standing authority requires an available ancestor source') from exc
+        pointer_path = 'automation/standing/current.json'
+        pointer_bytes = source_bytes(pointer_path)
+        policy_path = safe_path(json.loads(pointer_bytes)['path'])
+        if not policy_path.startswith('automation/standing/'):
+            raise ValueError('standing pointer escapes policy directory')
+        authoritative_bytes = source_bytes(policy_path)
+        expected_rows = {
+            'standing_pointer': (pointer_path, git_blob_sha(pointer_bytes)),
+            'standing_authority': (policy_path, git_blob_sha(authoritative_bytes)),
+        }
+        for role, identity in expected_rows.items():
+            if [(row['path'], row['git_blob_sha']) for row in snapshot_rows if row['role'] == role] != [identity]:
+                raise ValueError('standing identity differs from accepted source')
+        if policy_json.encode('utf-8') != authoritative_bytes:
+            raise ValueError('standing policy differs from accepted source')
+        validate_standing_policy(policy)
+        expected_trigger = f'{loop_id}:{trigger_time.isoformat()}'
+        if execution['trigger_id'] != expected_trigger:
+            raise ValueError('standing trigger_id must bind role and original UTC trigger_time')
+        requests = execution["requests"]
+        if not isinstance(requests, list):
+            raise ValueError("standing requests must be a list")
+        if not requests and (receipt['artifacts'] or receipt['belief_effects'] or receipt['consumed_ids'] or receipt.get('decision_effect') != 'NO_ACTION'):
+            raise ValueError('empty standing requests require NO_ACTION and no effects')
+        if requests:
+            required_checks = policy['required_checks']
+            named_checks = {item['name']: item for item in checks}
+            if any(name not in named_checks for name in required_checks):
+                raise ValueError('standing action receipt must include all required checks')
+            completed = receipt['terminal_state'] in {'DONE', 'DONE_WITH_LIMITATIONS'}
+            merged = any(req.get('action') == 'merge' for req in requests if isinstance(req, dict))
+            if (completed or merged) and any(named_checks[name]['status'] != 'passed' for name in required_checks):
+                raise ValueError('completed standing actions require passed policy checks')
+        slices = {}
+        indices = {}
+        for request in requests:
+            if not isinstance(request, dict):
+                raise ValueError("standing request must be an object")
+            slice_id = request.get("acceptance_slice")
+            index = request.get("transaction_count")
+            if index in indices and indices[index] != slice_id:
+                raise ValueError("distinct slices cannot reuse a transaction index")
+            if slice_id in slices and slices[slice_id]["index"] != index:
+                raise ValueError("one slice cannot consume multiple transaction indices")
+            indices[index] = slice_id
+            entry = slices.setdefault(slice_id, {"index": index, "budgets": {}})
+            for key, value in request.get("budgets", {}).items():
+                if type(value) is not int:
+                    raise ValueError("budget amounts must be integers")
+                entry["budgets"][key] = max(value, entry["budgets"].get(key, 0))
+            if request.get("loop_id") != loop_id:
+                raise ValueError("standing request role differs from receipt")
+            validate_standing_request(policy, request, now=str(receipt["created_at"]))
+        for key, cap in policy["budget_caps"].items():
+            if sum(entry["budgets"].get(key, 0) for entry in slices.values()) > cap:
+                raise ValueError("combined execution exceeds standing budget")
+        if not recorded_decision_effect(receipt) or not has_lineage_declaration(receipt):
+            raise ValueError("action receipt requires decision effect and continuity")
+
     correction_of = receipt.get("correction_of")
     if correction_of is not None:
         validate_identifier(str(correction_of), prefix="RUN")
@@ -159,6 +240,40 @@ def validate_run_receipt(
             raise ValueError("ordinary v2 run receipt cannot set correction_of")
 
 
+
+def validate_standing_triggers(receipts):
+    """Account for all receipt files from one original invocation, across merges."""
+    groups = {}
+    for receipt in receipts:
+        execution = receipt.get('standing_execution')
+        if not execution:
+            continue
+        key = execution['trigger_id']
+        group = groups.setdefault(key, {'policy': execution['policy_json'], 'slices': {}, 'indices': {}})
+        if execution['policy_json'] != group['policy']:
+            raise ValueError('one trigger cannot replace its standing policy')
+        local = {}
+        for request in execution['requests']:
+            slice_id = request['acceptance_slice']
+            entry = local.setdefault(slice_id, {'index': request['transaction_count'], 'budgets': {}})
+            for name, value in request['budgets'].items():
+                entry['budgets'][name] = max(value, entry['budgets'].get(name, 0))
+        for slice_id, entry in local.items():
+            if slice_id in group['slices']:
+                raise ValueError('a slice must have exactly one standing action receipt per trigger')
+            if entry['index'] in group['indices']:
+                raise ValueError('trigger receipts cannot reuse transaction indices')
+            group['slices'][slice_id] = entry
+            group['indices'][entry['index']] = slice_id
+        policy = json.loads(group['policy'])
+        cap = policy['roles'][receipt['loop_id']]['max_transactions']
+        if len(group['slices']) > cap:
+            raise ValueError('trigger transaction budget exceeded')
+        for name, cap in policy['budget_caps'].items():
+            if sum(entry['budgets'].get(name, 0) for entry in group['slices'].values()) > cap:
+                raise ValueError('trigger aggregate standing budget exceeded')
+
+
 def receipt_relative_path(receipt: Mapping[str, object]) -> Path:
     created = _parse_utc_timestamp(str(receipt["created_at"]), "created_at")
     return Path(f"{created.year:04d}") / f"{created.month:02d}" / f"{receipt['run_id']}.json"
@@ -170,11 +285,14 @@ class ReceiptStore:
     def __init__(self, root: str | Path, contracts: ContractRegistry | None = None):
         self.root = Path(root)
         self.contracts = contracts
+        self.source_root = self.root.parent.parent if self.root.name == "runs" else Path.cwd()
 
     def write(self, receipt: Mapping[str, object]) -> Path:
         # New receipts must resolve against a currently active contract. Historical
         # receipts are handled separately by load_all() with explicit replay mode.
-        validate_run_receipt(receipt, contracts=self.contracts)
+        validate_run_receipt(receipt, contracts=self.contracts, source_root=self.source_root)
+        if receipt.get("standing_execution"):
+            validate_standing_triggers([*self.load_all(), receipt])
         path = self.root / receipt_relative_path(receipt)
         path.parent.mkdir(parents=True, exist_ok=True)
         payload = json.dumps(receipt, indent=2, sort_keys=True) + "\n"
@@ -195,7 +313,7 @@ class ReceiptStore:
             run_id = str(receipt.get("run_id", "<unknown>"))
             try:
                 # Accepted history remains valid after a contract version is retired.
-                validate_run_receipt(receipt, contracts=self.contracts, allow_retired_contract=True)
+                validate_run_receipt(receipt, contracts=self.contracts, allow_retired_contract=True, source_root=self.source_root)
             except Exception as exc:
                 # A malformed historical receipt may remain immutable when a valid
                 # append-only correction names it. Keep the original file untouched
@@ -234,6 +352,7 @@ class ReceiptStore:
             correction_of = receipt.get("correction_of")
             if correction_of and correction_of not in receipt_ids and correction_of not in invalid:
                 raise ValueError(f"correction cites missing receipt: {correction_of}")
+        validate_standing_triggers(receipts)
         return receipts
 
 

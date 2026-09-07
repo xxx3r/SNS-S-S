@@ -10,6 +10,7 @@ _REQUIRED_LOOP_IDS = {
     "weekly-evidence-synthesis",
     "monthly-governance",
     "system-audit",
+    "observatory-projection",
 }
 _TIMING_MODES = {"exact_schedule", "flexible_schedule", "condition_watch", "explicit_only"}
 
@@ -17,16 +18,15 @@ _TIMING_MODES = {"exact_schedule", "flexible_schedule", "condition_watch", "expl
 def render_bootstrap_prompt(loop_id: str) -> str:
     if loop_id not in _REQUIRED_LOOP_IDS:
         raise ValueError(f"unknown SNS loop_id: {loop_id}")
-    return (
-        f"Operate `xxx3r/SNS-S-S` as loop `{loop_id}`. "
-        "First invoke the connected GitHub repository tool; never infer an environment blocker from missing local shell access. "
-        "Read accepted `main` and `AGENTS.md`, then resolve the one currently active repository contract whose front matter matches this loop_id; do not hard-code a contract path or version from this platform prompt. "
-        "Read only the compact state authorized by stable law and that active contract, including current executable schemas and the canonical runtime/research-graph records when relevant. "
-        "Execute one bounded transaction, preserving one-owner and authority boundaries. New run records must use the current repository receipt schema and canonical inspectable state-snapshot law; never substitute a placeholder digest. "
-        "Before publication, recheck accepted source, governance/delegation, graph readiness, and live PR ownership, then use repository-hosted validation as the evaluator when local execution is unavailable. "
-        "Use Google Drive only when the active contract or a concrete pending decision explicitly requires a relevant SNS artifact. "
-        "End by reporting attempted connector operations, created or consumed artifacts/authority, receipt ID, terminal state, limitations, and one exact handoff."
-    )
+    if loop_id == "observatory-projection":
+        return ("Use @GitHub and @Sites to operate the SNS Observatory projection. "
+                "Read accepted main in xxx3r/SNS-S-S, AGENTS.md, and automation/prompts/observatory.md; follow those repository instructions. "
+                "Use @Google Drive and @Google Calendar only when relevant; @Wolfram is optional. Report the accepted source, publication result and limitations.")
+    return (f"Use @GitHub to operate xxx3r/SNS-S-S as loop `{loop_id}`. "
+            "Read accepted main and AGENTS.md, then resolve the one currently active repository contract for this loop ID and follow its instructions. "
+            "Use connected @Google Drive and @Google Calendar when relevant; @Wolfram is optional. "
+            "The repository owns scope, execution, validation and handoff; report the actual outcome and limitations.")
+
 
 
 def validate_runtime_manifest(manifest: Mapping[str, object]) -> None:
