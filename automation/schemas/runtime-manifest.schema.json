@@ -24,7 +24,7 @@
     "loops": {
       "type": "array",
       "minItems": 5,
-      "maxItems": 5,
+      "maxItems": 6,
       "items": {
         "type": "object",
         "additionalProperties": false,

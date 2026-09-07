@@ -66,17 +66,85 @@ def test_policy_cannot_raise_constitutional_budget_ceiling():
         validate_standing_policy(p)
 
 
-def test_action_receipt_binds_exact_policy_bytes():
-    from automation.receipts import validate_run_receipt
-    from automation.provenance import snapshot_fingerprint,git_blob_sha
+@pytest.fixture
+def action_receipt(tmp_path):
+    import subprocess
+    from automation.provenance import snapshot_fingerprint, git_blob_sha
+    def git(*args):
+        return subprocess.check_output(['git','-C',str(tmp_path),*args],text=True).strip()
+    git('init','-q');git('config','user.name','Fixture');git('config','user.email','fixture@example.invalid')
+    target=tmp_path/'automation/standing';target.mkdir(parents=True)
+    for name in ['current.json','2026-09.v1.json']:
+        (target/name).write_bytes(Path('automation/standing',name).read_bytes())
+    git('add','.');git('commit','-qm','Accepted policy fixture')
     receipt=json.loads(next(Path('automation/runs/2026/09').glob('*system-audit*.json')).read_text())
     receipt['loop_id']='daily-research-operator';receipt['contract_version']='2.0.0'
-    receipt['created_at']='2026-09-07T12:00:00Z'
-    ptext=Path('automation/standing/2026-09.v1.json').read_text()
-    receipt['state_snapshot']['records'].append({'role':'standing_authority','path':'automation/standing/2026-09.v1.json','git_blob_sha':git_blob_sha(ptext.encode())})
+    receipt['created_at']='2026-09-07T12:00:00Z';receipt['trigger_time']='2026-09-07T11:00:00Z'
+    receipt['source_commit']=git('rev-parse','HEAD')
+    receipt['state_snapshot']['source_commit']=receipt['source_commit']
+    receipt['state_snapshot']['records'] += [{'role':role,'path':f'automation/standing/{name}','git_blob_sha':git_blob_sha((target/name).read_bytes())} for role,name in [('standing_pointer','current.json'),('standing_authority','2026-09.v1.json')]]
     receipt['state_snapshot']['fingerprint']=snapshot_fingerprint(receipt['state_snapshot'])
-    receipt['standing_execution']={'policy_json':ptext,'requests':[request()]}
-    validate_run_receipt(receipt)
-    receipt['standing_execution']['policy_json']=ptext+'\n'
+    receipt['standing_execution']={'policy_json':(target/'2026-09.v1.json').read_text(),'requests':[request()], 'trigger_id':'daily-research-operator:2026-09-07T11:00:00+00:00'}
+    return receipt,tmp_path
+
+
+def test_action_receipt_binds_exact_policy_bytes(action_receipt):
+    from automation.receipts import validate_run_receipt
+    from automation.provenance import snapshot_fingerprint,git_blob_sha
+    receipt,root=action_receipt
+    validate_run_receipt(receipt,source_root=root)
+    receipt['standing_execution']['policy_json']+='\n'
     with pytest.raises(ValueError,match='do not match source snapshot'):
-        validate_run_receipt(receipt)
+        validate_run_receipt(receipt,source_root=root)
+    # Updating the self-declared identity too must still fail against Git source.
+    receipt['state_snapshot']['records'][-1]['git_blob_sha']=git_blob_sha(receipt['standing_execution']['policy_json'].encode())
+    receipt['state_snapshot']['fingerprint']=snapshot_fingerprint(receipt['state_snapshot'])
+    with pytest.raises(ValueError,match='differs from accepted source'):
+        validate_run_receipt(receipt,source_root=root)
+
+
+def test_empty_requests_require_no_effects(action_receipt):
+    from automation.receipts import validate_run_receipt
+    r,root=action_receipt;r['standing_execution']['requests']=[]
+    with pytest.raises(ValueError,match='empty standing requests'):
+        validate_run_receipt(r,source_root=root)
+    r.update(artifacts=[],belief_effects=[],consumed_ids=[],decision_effect='NO_ACTION')
+    validate_run_receipt(r,source_root=root)
+
+
+def test_trigger_id_cannot_be_reset_in_receipt(action_receipt):
+    from automation.receipts import validate_run_receipt
+    r,root=action_receipt;r['standing_execution']['trigger_id']='reset'
+    with pytest.raises(ValueError,match='trigger_id'):
+        validate_run_receipt(r,source_root=root)
+
+
+def test_trigger_accounting_across_receipt_files(action_receipt):
+    from automation.receipts import ReceiptStore
+    r,root=action_receipt
+    store=ReceiptStore(root/'automation/runs');store.write(r)
+    other=copy.deepcopy(r)
+    from automation.ids import new_run_id
+    other['run_id']=new_run_id('daily-research-operator')
+    other['standing_execution']['requests'][0]['acceptance_slice']='Another slice'
+    with pytest.raises(ValueError,match='reuse transaction indices'):
+        store.write(other)
+
+
+def test_weekly_budget_cannot_be_split_across_receipts(action_receipt):
+    from automation.receipts import ReceiptStore
+    from automation.ids import new_run_id
+    r,root=action_receipt;r['loop_id']='weekly-evidence-synthesis'
+    r['standing_execution']['trigger_id']='weekly-evidence-synthesis:2026-09-07T11:00:00+00:00'
+    req=r['standing_execution']['requests'][0];req['loop_id']=r['loop_id'];req['budgets']['worlds']=40
+    store=ReceiptStore(root/'automation/runs');store.write(r)
+    other=copy.deepcopy(r);other['run_id']=new_run_id(r['loop_id'])
+    req=other['standing_execution']['requests'][0];req['acceptance_slice']='Second slice';req['transaction_count']=2
+    with pytest.raises(ValueError,match='aggregate standing budget'):
+        store.write(other)
+    req['budgets']['worlds']=24;store.write(other)
+    # Loading externally deposited files enforces the same aggregate rule.
+    path=next(p for p in (root/'automation/runs').glob('**/*.json') if other['run_id'] in p.name)
+    req['budgets']['worlds']=25;path.write_text(json.dumps(other))
+    with pytest.raises(ValueError,match='aggregate standing budget'):
+        store.load_all()

@@ -8,7 +8,7 @@ Human approved September's expansion from individually authorized refinements to
 - Daily: one coherent research slice under standing authority, through qualification and permitted merge.
 - Observatory: accepted-source site projection under its separate repository instructions.
 
-The action validator constrains declared role/scope/path/budget/expiry; semantic review certifies neither scientific truth nor authority by itself. Retain exact-head qualification, one owner, negative results, fixed evaluator/holdout discipline, historical replay and explicit human boundaries. Full Git history is used to independently bind replay contexts and delegated authority bytes to accepted source commits.
+The action validator constrains declared role/scope/path/budget/expiry; semantic review certifies neither scientific truth nor authority by itself. Retain exact-head qualification, one owner, negative results, fixed evaluator/holdout discipline, historical replay and explicit human boundaries. Standing receipts resolve the policy and pointer independently from accepted Git source. No-action receipts cannot carry effects, and original trigger identity binds all receipt files for aggregate accounting. Full Git history is used to independently bind replay contexts and delegated authority bytes to accepted source commits.
 
 ## September research entry
 
