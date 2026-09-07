@@ -1,0 +1,157 @@
+{
+  "artifacts": [
+    "automation/runs/2026/09/RUN-20260907T161024123382Z-daily-governance-triage-f286cc3297c5f0075c46.json"
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "181 tests passed on exact accepted source in a full-history clean checkout.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Repository semantic validation returned valid=true with eight graph-ready quests.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "scripts/check_baseline_artifacts.sh passed on exact accepted source.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-09-07T16:13:18.336550+00:00",
+  "decision_effect": "Selected the graph-ready QST-SYNTH-0001 R0 protocol-preparation slice under current standing authority; no legacy AUTH, scientific result, quest-state change, belief change, or generation.",
+  "inheritance": [
+    {
+      "decision_effect": "Selected its first executable R0 slice without widening scope.",
+      "kind": "artifact",
+      "ref": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md"
+    },
+    {
+      "decision_effect": "Inherited the accepted public-import, freeze, holdout, and failure-preservation boundaries.",
+      "kind": "artifact",
+      "ref": "https://github.com/xxx3r/SNS-S-S/issues/30"
+    }
+  ],
+  "loop_id": "daily-governance-triage",
+  "next_action": "Daily Research Operator executes only QST-SYNTH-0001 R0: inspect actual interfaces, freeze the tiny three-arm protocol, and add a non-generating validation harness; stop before generating development or holdout results.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "handoff",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "open_prs": []
+  },
+  "quest_context": {
+    "generation_permitted": false,
+    "issue": 30,
+    "quest_id": "QST-SYNTH-0001",
+    "scope": "thermal-storage",
+    "selection": "R0 non-generating three-arm protocol freeze and validation harness"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20260907T161024123382Z-daily-governance-triage-f286cc3297c5f0075c46",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "6e7107863c066ce072445fcbb3bf74f273e2d141",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20260906-SEPTEMBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-09-06T21:18:43Z\",\n  \"review_at\": \"2026-09-20T21:18:43Z\",\n  \"expires_at\": \"2026-10-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved complete bounded research cycles in Issue #79. These are per acceptance-slice ceilings, not default generation targets. Tests and dependency installation are not scientific runtime consumption. Frozen experiments may impose smaller budgets. No spending, model training, private export, evaluator/holdout changes after freeze, or new hardware-readiness claims.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "QST-SYNTH-0001 R0 non-generating protocol freeze handoff",
+        "action": "route",
+        "budgets": {
+          "disk_mb": 0,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+          "https://github.com/xxx3r/SNS-S-S/issues/30"
+        ],
+        "loop_id": "daily-governance-triage",
+        "paths": [
+          "automation/runs/2026/09/RUN-20260907T161024123382Z-daily-governance-triage-f286cc3297c5f0075c46.json"
+        ],
+        "scope": "thermal-storage",
+        "transaction_count": 1
+      }
+    ],
+    "trigger_id": "daily-governance-triage:2026-09-07T16:06:06+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:d91a1043e2733cf02940a86105c3c2bdcb70038e09324aa9410d6b51eda44516",
+    "open_prs": [],
+    "records": [
+      {
+        "git_blob_sha": "96bac7f735e2b4d9a0da07f54babace6093f263e",
+        "path": "automation/contracts/daily-governance-triage.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "7bd1a464725f0c669c2c36963a93765676b06d65",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "7d32064c8638aa2f886d5b943e6db8eb4fb5a21b",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "7c283b1f9678e4f59b08c9660729cf672cda0aee",
+        "path": "calendar/monthly/2026-09.md",
+        "role": "monthly_state"
+      },
+      {
+        "git_blob_sha": "85547e8efb1ab2b1cd31e6f0cdfe37b4b3b1031d",
+        "path": "quests/dispositions/2026-09-06.json",
+        "role": "proposal_dispositions"
+      },
+      {
+        "git_blob_sha": "c3db48f5a88005b4b1e8782aedc070ec001332af",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "f7821ac88b3157241c060d9b5c6fb4e918b7e645",
+        "path": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+        "role": "selected_quest"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "e0d774e3334debf514446f89196e79bd7f71eaed",
+        "path": "automation/standing/2026-09.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "9d806867b3dbac0f1b11ab9d45819fc097002d30",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "6e7107863c066ce072445fcbb3bf74f273e2d141"
+  },
+  "terminal_state": "DONE",
+  "trigger": "scheduled",
+  "trigger_time": "2026-09-07T16:06:06+00:00"
+}
