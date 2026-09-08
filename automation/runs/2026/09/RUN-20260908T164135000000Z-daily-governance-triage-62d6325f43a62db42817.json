@@ -8,19 +8,19 @@
   "belief_effects": [],
   "checks": [
     {
-      "evidence": "The receipt-bearing administrative PR must pass the full hosted test suite before merge.",
+      "evidence": "Hosted tests run 34253418663 passed on preliminary receipt head df96afa9371355461a763120c4e7bfc43174e907.",
       "name": "python -m pytest -q",
-      "status": "not_run"
+      "status": "passed"
     },
     {
-      "evidence": "The receipt-bearing administrative PR must pass hosted semantic validation before merge.",
+      "evidence": "Hosted automation-transaction run 34253418618 passed semantic repository validation and full pytest on preliminary receipt head df96afa9371355461a763120c4e7bfc43174e907.",
       "name": "python -m automation.cli validate-repository",
-      "status": "not_run"
+      "status": "passed"
     },
     {
-      "evidence": "The receipt-bearing administrative PR must pass hosted baseline-artifacts qualification before merge.",
+      "evidence": "Hosted baseline-artifacts run 34253418630 passed on preliminary receipt head df96afa9371355461a763120c4e7bfc43174e907.",
       "name": "baseline-artifacts",
-      "status": "not_run"
+      "status": "passed"
     },
     {
       "evidence": "Accepted main remained 217508c94bfcf0c31bd65bb467745d0961ee1091; PR #83 was the sole open owner at exact head c9c44039e27d6e7792412b313f41dd7d00f7bbde.",
@@ -115,12 +115,18 @@
     "trigger_id": "daily-governance-triage:2026-09-08T16:41:35+00:00"
   },
   "state_snapshot": {
-    "fingerprint": "sha256:0449b1161dd7e59f3339802e1e0a0afee2b118420f05559e87fddef69a816e5a",
+    "fingerprint": "sha256:bdd61a51333e9ee740c6308d01fd05c1425502260925f594a000e2f1eadcfcaa",
     "open_prs": [
       {
         "draft": false,
         "head_sha": "c9c44039e27d6e7792412b313f41dd7d00f7bbde",
         "number": 83,
+        "state": "open"
+      },
+      {
+        "draft": true,
+        "head_sha": "df96afa9371355461a763120c4e7bfc43174e907",
+        "number": 84,
         "state": "open"
       }
     ],
@@ -194,7 +200,7 @@
     "schema": "sns.state-snapshot.v1",
     "source_commit": "217508c94bfcf0c31bd65bb467745d0961ee1091"
   },
-  "terminal_state": "NEEDS_SCIENTIFIC_DECISION",
+  "terminal_state": "DONE_WITH_LIMITATIONS",
   "trigger": "scheduled",
   "trigger_time": "2026-09-08T16:41:35Z"
 }
