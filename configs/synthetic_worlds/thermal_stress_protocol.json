@@ -1,0 +1,270 @@
+{
+  "schema": "sns.synthetic-thermal-campaign-protocol.v1",
+  "quest_id": "QST-SYNTH-0001",
+  "phase": "R0",
+  "campaign_state": "FROZEN_NO_GENERATION",
+  "frozen_at_source": "25ebe088e85167061618140b5ccdd177ccc11941",
+  "interfaces": {
+    "generator": {
+      "path": "src/sim/synthetic_worlds/recipe.py",
+      "sha256": "194b288c18122889e10c0e5afb6daca3ee4fce14a5e49578236cc7b5bad66ab0",
+      "symbols": ["validate_recipe", "generate_records", "Budget"]
+    },
+    "thermal_evaluator": {
+      "path": "src/sim/thermal_storage.py",
+      "sha256": "582c2360eb7ba55aa27a4e73b73edbfeb702374d98a80533dda65c1653ab1268",
+      "symbols": ["ThermalShadowScenario", "simulate_thermal_shadow", "ThermalShadowResult"]
+    },
+    "public_import_manifest": {
+      "path": "src/sim/SYNTHETIC_WORLDS_IMPORT_MANIFEST.json",
+      "sha256": "67c88aa46e87128c1f71688ca235e3bf0a791469e92a4ec06ce57a080335b9ed",
+      "symbols": ["SNS_SYNTHETIC_WORLD_CORE_IMPORTED"]
+    }
+  },
+  "arms": [
+    {
+      "id": "fixed_handwritten",
+      "procedure_id": "literal_development_scenarios",
+      "source": "predeclared scenarios only",
+      "freeze_rule": "All scenario bytes are fixed before any development evaluation."
+    },
+    {
+      "id": "random_bounded",
+      "procedure_id": "deterministic_uniform_development",
+      "source": "DeterministicRandom samples within scenario_ranges",
+      "freeze_rule": "Recipe and split seeds are fixed before generation."
+    },
+    {
+      "id": "agent_curriculum",
+      "procedure_id": "deterministic_maximin_development",
+      "source": "agent proposal constrained to the identical scenario_ranges",
+      "freeze_rule": "The agent-authored maximin recipe is deterministic, uses no evaluator outcomes, and is sealed before any generation."
+    }
+  ],
+  "generation_procedures": {
+    "literal_development_scenarios": {
+      "method": "literal_scenarios",
+      "source": "fixed_handwritten_scenarios.development",
+      "selection_order": "array_order",
+      "holdout_access": "forbidden"
+    },
+    "deterministic_uniform_development": {
+      "method": "deterministic_uniform",
+      "rng": "src.sim.synthetic_worlds.recipe.DeterministicRandom.uniform",
+      "seed_source": "splits.development.seeds",
+      "parameter_order": "lexicographic",
+      "draws_per_parameter": 1,
+      "round_decimal_places": 12,
+      "holdout_access": "forbidden"
+    },
+    "deterministic_maximin_development": {
+      "method": "deterministic_maximin_from_bounded_pool",
+      "rng": "src.sim.synthetic_worlds.recipe.DeterministicRandom.uniform",
+      "seed_source": "splits.development.seeds",
+      "candidate_pool_per_world": 3,
+      "parameter_order": "lexicographic",
+      "normalization": "scenario_ranges_min_max_constant_dimensions_zero",
+      "reference_set": "fixed_handwritten_scenarios.development",
+      "selection": "greedy_maximize_minimum_l1_distance",
+      "tie_break": "canonical_json_lexicographic",
+      "outcome_feedback": false,
+      "round_decimal_places": 12,
+      "holdout_access": "forbidden"
+    },
+    "shared_holdout": {
+      "method": "literal_scenarios",
+      "source": "fixed_handwritten_scenarios.holdout",
+      "selection_order": "array_order",
+      "shared_identical_world_bytes": true,
+      "visibility": "sealed_until_R2"
+    }
+  },
+  "fixed_handwritten_scenarios": {
+    "development": [
+      {
+        "name": "dev_nominal_no_pcm",
+        "parameters": {
+          "eclipse_duration_h": 2.0, "time_step_s": 60.0, "initial_temperature_K": 283.15,
+          "environment_temperature_K": 220.0, "thermal_capacity_J_K": 50.0,
+          "thermal_conductance_W_K": 0.005, "heater_threshold_K": 263.15,
+          "heater_power_W": 0.08, "base_load_W": 0.01, "nominal_battery_Wh": 0.5,
+          "pcm_mass_kg": 0.0, "pcm_latent_heat_J_kg": 180000.0,
+          "pcm_transition_temperature_K": 273.15
+        }
+      },
+      {
+        "name": "dev_nominal_2g_pcm",
+        "parameters": {
+          "eclipse_duration_h": 2.0, "time_step_s": 60.0, "initial_temperature_K": 283.15,
+          "environment_temperature_K": 220.0, "thermal_capacity_J_K": 50.0,
+          "thermal_conductance_W_K": 0.005, "heater_threshold_K": 263.15,
+          "heater_power_W": 0.08, "base_load_W": 0.01, "nominal_battery_Wh": 0.5,
+          "pcm_mass_kg": 0.002, "pcm_latent_heat_J_kg": 180000.0,
+          "pcm_transition_temperature_K": 273.15
+        }
+      },
+      {
+        "name": "dev_low_battery_10g_pcm",
+        "parameters": {
+          "eclipse_duration_h": 2.0, "time_step_s": 60.0, "initial_temperature_K": 283.15,
+          "environment_temperature_K": 220.0, "thermal_capacity_J_K": 50.0,
+          "thermal_conductance_W_K": 0.005, "heater_threshold_K": 263.15,
+          "heater_power_W": 0.08, "base_load_W": 0.01, "nominal_battery_Wh": 0.015,
+          "pcm_mass_kg": 0.01, "pcm_latent_heat_J_kg": 180000.0,
+          "pcm_transition_temperature_K": 273.15
+        }
+      }
+    ],
+    "holdout": [
+      {
+        "name": "holdout_low_battery_no_pcm",
+        "parameters": {
+          "eclipse_duration_h": 2.0, "time_step_s": 60.0, "initial_temperature_K": 283.15,
+          "environment_temperature_K": 220.0, "thermal_capacity_J_K": 50.0,
+          "thermal_conductance_W_K": 0.005, "heater_threshold_K": 263.15,
+          "heater_power_W": 0.08, "base_load_W": 0.01, "nominal_battery_Wh": 0.015,
+          "pcm_mass_kg": 0.0, "pcm_latent_heat_J_kg": 180000.0,
+          "pcm_transition_temperature_K": 273.15
+        }
+      },
+      {
+        "name": "holdout_mid_battery_2g_pcm",
+        "parameters": {
+          "eclipse_duration_h": 2.0, "time_step_s": 60.0, "initial_temperature_K": 283.15,
+          "environment_temperature_K": 220.0, "thermal_capacity_J_K": 50.0,
+          "thermal_conductance_W_K": 0.005, "heater_threshold_K": 263.15,
+          "heater_power_W": 0.08, "base_load_W": 0.01, "nominal_battery_Wh": 0.2575,
+          "pcm_mass_kg": 0.002, "pcm_latent_heat_J_kg": 180000.0,
+          "pcm_transition_temperature_K": 273.15
+        }
+      },
+      {
+        "name": "holdout_mid_battery_10g_pcm",
+        "parameters": {
+          "eclipse_duration_h": 2.0, "time_step_s": 60.0, "initial_temperature_K": 283.15,
+          "environment_temperature_K": 220.0, "thermal_capacity_J_K": 50.0,
+          "thermal_conductance_W_K": 0.005, "heater_threshold_K": 263.15,
+          "heater_power_W": 0.08, "base_load_W": 0.01, "nominal_battery_Wh": 0.2575,
+          "pcm_mass_kg": 0.01, "pcm_latent_heat_J_kg": 180000.0,
+          "pcm_transition_temperature_K": 273.15
+        }
+      }
+    ]
+  },
+  "splits": {
+    "development": {
+      "worlds_per_arm": 3,
+      "seeds": ["synth-r0-dev-001", "synth-r0-dev-002", "synth-r0-dev-003"],
+      "replacement": false
+    },
+    "holdout": {
+      "shared_worlds": 3,
+      "seeds": ["synth-r0-holdout-101", "synth-r0-holdout-102", "synth-r0-holdout-103"],
+      "shared_identical_world_bytes": true,
+      "replacement": false
+    }
+  },
+  "policy_family": {
+    "id": "thermal-shadow-fixed-thermostat-v1",
+    "description": "Existing fixed base load and threshold heater behavior; no adaptive shutdown or post-result policy change.",
+    "state": "EVALUATOR_PRESENT_POLICY_ADAPTER_MISSING"
+  },
+  "scenario_ranges": {
+    "eclipse_duration_h": {"minimum": 2.0, "maximum": 2.0, "unit": "h", "basis": "configs/thermal_shadow_survival.json accepted cases"},
+    "time_step_s": {"minimum": 60.0, "maximum": 60.0, "unit": "s", "basis": "configs/thermal_shadow_survival.json accepted cases"},
+    "initial_temperature_K": {"minimum": 283.15, "maximum": 283.15, "unit": "K", "basis": "configs/thermal_shadow_survival.json accepted cases"},
+    "environment_temperature_K": {"minimum": 220.0, "maximum": 220.0, "unit": "K", "basis": "configs/thermal_shadow_survival.json accepted cases"},
+    "thermal_capacity_J_K": {"minimum": 50.0, "maximum": 50.0, "unit": "J/K", "basis": "configs/thermal_shadow_survival.json accepted cases"},
+    "thermal_conductance_W_K": {"minimum": 0.005, "maximum": 0.005, "unit": "W/K", "basis": "configs/thermal_shadow_survival.json accepted cases"},
+    "heater_threshold_K": {"minimum": 263.15, "maximum": 263.15, "unit": "K", "basis": "configs/thermal_shadow_survival.json accepted cases"},
+    "heater_power_W": {"minimum": 0.08, "maximum": 0.08, "unit": "W", "basis": "configs/thermal_shadow_survival.json accepted cases"},
+    "base_load_W": {"minimum": 0.01, "maximum": 0.01, "unit": "W", "basis": "configs/thermal_shadow_survival.json accepted cases"},
+    "nominal_battery_Wh": {"minimum": 0.015, "maximum": 0.5, "unit": "Wh", "basis": "range of configs/thermal_shadow_survival.json accepted cases"},
+    "pcm_mass_kg": {"minimum": 0.0, "maximum": 0.01, "unit": "kg", "basis": "range of configs/thermal_shadow_survival.json accepted cases"},
+    "pcm_latent_heat_J_kg": {"minimum": 180000.0, "maximum": 180000.0, "unit": "J/kg", "basis": "configs/thermal_shadow_survival.json accepted cases"},
+    "pcm_transition_temperature_K": {"minimum": 273.15, "maximum": 273.15, "unit": "K", "basis": "configs/thermal_shadow_survival.json accepted cases"}
+  },
+  "anomaly_types": [
+    {"id": "battery_capacity_shortfall", "state": "SUPPORTED_BY_nominal_battery_Wh"},
+    {"id": "thermal_buffer_variation", "state": "SUPPORTED_BY_pcm_mass_kg"},
+    {"id": "eclipse_duration_variation", "state": "EXCLUDED_PENDING_ACCEPTED_RANGE"},
+    {"id": "degradation_trajectory", "state": "MISSING_EVALUATOR_INTERFACE"},
+    {"id": "sensor_failure", "state": "MISSING_EVALUATOR_INTERFACE"}
+  ],
+  "exclusions": [
+    "No campaign generation or evaluator execution in R0.",
+    "No real ephemerides, flight-readiness inference, architecture selection, or protected physical assumption.",
+    "No degradation trajectory or sensor-failure world until an accepted evaluator interface and range exist.",
+    "No post-result seed, range, policy, metric, tolerance, exclusion, retry, or holdout replacement change."
+  ],
+  "budgets": {
+    "worlds": 12,
+    "records": 12,
+    "runtime_s": 30,
+    "disk_mb": 1,
+    "development_worlds_per_arm": 3,
+    "shared_holdout_worlds": 3
+  },
+  "metrics": {
+    "supported": [
+      "status",
+      "temperature_status",
+      "electrical_status",
+      "minimum_temperature_K",
+      "consumed_energy_Wh",
+      "heater_energy_Wh",
+      "electrical_margin_Wh",
+      "pcm_latent_energy_used_J"
+    ],
+    "missing": [
+      "useful_host_delivery_Wh",
+      "coverage_fraction",
+      "degradation_state",
+      "sensor_failure_state",
+      "policy_action_trace"
+    ]
+  },
+  "criteria": {
+    "survival": "A world survives only when ThermalShadowResult.status is PASS; report counts and fractions with all failures retained.",
+    "curriculum_observation": "R0/R1 may compare only development-world risk coverage and evaluator response under the one fixed policy; no policy benefit is demonstrated. A future policy-benefit comparison requires three arm-specific policy outputs evaluated on the same shared holdout world bytes.",
+    "delivery_tolerance": "Maximum allowed useful_host_delivery loss is 0 Wh and 0 relative fraction because the current evaluator has no delivery uncertainty model; campaign execution is blocked until the missing metric is implemented.",
+    "nontriviality": "base_load_W remains 0.01 W and the fixed thermostat family cannot permanently idle or shut down to manufacture survival.",
+    "coverage": "Every arm receives three development worlds with identical budgets, supported ranges, and required anomaly coverage; the three holdout worlds are one shared sealed set, not arm-authored substitutes. Missing anomaly interfaces fail closed rather than being imputed."
+  },
+  "inference": {
+    "claim_level": "EXPLORATORY_WORLD_GENERATION_QUALITY_ONLY",
+    "survival_interval": "wilson_score_two_sided",
+    "confidence_level": 0.95,
+    "minimum_confirmatory_holdout_worlds": 30,
+    "policy_benefit_claim_allowed": false,
+    "small_sample_rule": "Report raw counts, fractions, and Wilson intervals; no ordering from three worlds is confirmatory or statistically demonstrated."
+  },
+  "failure_accounting": [
+    "Retain and count every failed, invalid, excluded, budget-rejected, and runtime-failed world by arm and split.",
+    "Do not retry or replace a world for scientific outcome; deterministic code repair is separately recorded.",
+    "A missing required metric makes the comparison not evaluable rather than neutral or passing."
+  ],
+  "adapter": {
+    "state": "REQUIRED_BEFORE_R1",
+    "missing_interfaces": [
+      "Map a validated synthetic-world record to ThermalShadowScenario without adding undeclared defaults.",
+      "Expose useful_host_delivery_Wh and a policy_action_trace, or obtain a separate scientific decision that removes those requirements.",
+      "Define accepted degradation and sensor-failure semantics/ranges before those anomaly types enter a world.",
+      "Define and freeze an arm-specific policy-derivation interface before any policy-benefit claim; every resulting policy must be evaluated on the identical shared holdout bytes."
+    ],
+    "next_stage": "R1 may implement and qualify only the minimal adapter and development-only fixture after this protocol is accepted."
+  },
+  "reproduction": {
+    "command": "python -m src.sim.synthetic_worlds.thermal_campaign_protocol validate configs/synthetic_worlds/thermal_stress_protocol.json --root .",
+    "generates_worlds": false,
+    "expected_status": "PROTOCOL_VALID_ADAPTER_REQUIRED"
+  },
+  "falsifiers": [
+    "Reject any R0/R1 policy-benefit claim because this tiny protocol produces no arm-specific policy outputs.",
+    "Reject any future policy comparison that does not evaluate every arm-derived policy on the identical shared holdout world bytes.",
+    "Reject any confirmatory claim inferred from the three-world exploratory holdout allocation.",
+    "Reject the curriculum hypothesis if useful delivery loses more than the frozen zero-loss tolerance.",
+    "Reject a survival claim produced by permanent idle/shutdown or by omitted declared risks.",
+    "Invalidate the comparison if generator, evaluator, ranges, seeds, holdout, policy family, criteria, or failure accounting change after freeze."
+  ]
+}
