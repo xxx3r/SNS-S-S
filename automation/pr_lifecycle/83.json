@@ -1,0 +1,14 @@
+{
+  "acceptance_slice": "QST-SYNTH-0001 R0 machine-readable non-generating three-arm protocol freeze and validation harness",
+  "head_commit": "e4151f2722a323856ed4e095f86d35940b3c0dd0",
+  "next_review_after": "2026-09-08T18:58:07+00:00",
+  "owner_run_id": "RUN-20260907T192055335345Z-daily-research-operator-7451e48728e11712959c",
+  "pr_number": 83,
+  "quest_id": "QST-SYNTH-0001",
+  "reason": "All four late exact-head review findings were repaired without campaign generation: shared holdout semantics, deterministic arm recipes, exploratory-only inference, and within-split seed uniqueness. Full local qualification passed; repaired receipt-bearing hosted qualification and review remain required before merge.",
+  "schema": "sns.pr-lifecycle.v1",
+  "source_commit": "25ebe088e85167061618140b5ccdd177ccc11941",
+  "state": "ready_for_review",
+  "supersedes": [],
+  "updated_at": "2026-09-08T18:58:07+00:00"
+}
