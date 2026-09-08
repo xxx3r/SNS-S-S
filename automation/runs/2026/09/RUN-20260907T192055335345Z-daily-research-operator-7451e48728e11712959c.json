@@ -1,0 +1,251 @@
+{
+  "artifacts": [
+    {
+      "kind": "machine-readable frozen R0 protocol",
+      "path": "configs/synthetic_worlds/thermal_stress_protocol.json"
+    },
+    {
+      "kind": "non-generating fail-closed validator",
+      "path": "src/sim/synthetic_worlds/thermal_campaign_protocol.py"
+    },
+    {
+      "kind": "focused protocol and no-generation boundary tests",
+      "path": "tests/test_thermal_campaign_protocol.py"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "Full local suite passed after all four exact-head review repairs and reconstruction from accepted main: 189 tests.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Local semantic validation returned valid=true with QST-SYNTH-0001 on the ready frontier.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "Local baseline-artifacts qualification passed; hosted implementation-head run 34155000541 also passed.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Accepted main was rechecked at 25ebe088e85167061618140b5ccdd177ccc11941; PR #83 remained the sole open owner at reconstructed implementation head e4151f2722a323856ed4e095f86d35940b3c0dd0.",
+      "name": "GitHub connector and ownership",
+      "status": "passed"
+    },
+    {
+      "evidence": "Prior GitHub Actions tests run 34155637104 passed before the late review; fresh hosted qualification is required on the repaired receipt-bearing head.",
+      "name": "implementation-head hosted tests",
+      "status": "passed"
+    },
+    {
+      "evidence": "Validation returned PROTOCOL_VALID_ADAPTER_REQUIRED with generation_performed=false and an exact 12-unique-world ceiling: nine arm-specific development worlds plus one shared three-world holdout.",
+      "name": "protocol validation",
+      "status": "passed"
+    },
+    {
+      "evidence": "The receipt-bearing head must execute hosted tests, baseline artifacts, automation tests, semantic repository validation, and full pytest before merge.",
+      "name": "receipt-bearing qualification",
+      "status": "not_run"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-09-07T19:20:55.335345+00:00",
+  "decision_effect": "Frozen and validated the non-generating QST-SYNTH-0001 R0 protocol; exposed required adapter and metric gaps without producing or inspecting campaign worlds.",
+  "inheritance": [
+    {
+      "decision_effect": "Inherited the accepted R0 protocol/interface qualification slice and generation stop.",
+      "kind": "artifact",
+      "ref": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md"
+    },
+    {
+      "decision_effect": "Inherited the clean-source, zero-owner route to QST-SYNTH-0001 R0.",
+      "kind": "RUN",
+      "ref": "RUN-20260907T161024123382Z-daily-governance-triage-f286cc3297c5f0075c46"
+    },
+    {
+      "decision_effect": "Inherited explicit September standing action authority and thermal campaign activation.",
+      "kind": "artifact",
+      "ref": "https://github.com/xxx3r/SNS-S-S/issues/79"
+    },
+    {
+      "decision_effect": "Inherited the exact-head review disposition and bounded repair handoff while preserving PR #83 as sole owner.",
+      "kind": "RUN",
+      "ref": "RUN-20260908T164135000000Z-daily-governance-triage-62d6325f43a62db42817"
+    }
+  ],
+  "loop_id": "daily-research-operator",
+  "next_action": "After this exact protocol is accepted, Weekly should route R1 only to implement the record-to-scenario adapter and the missing delivery/policy-derivation interfaces; all future arm-derived policies must use the identical shared holdout bytes, and no development or holdout worlds may be generated before that gate.",
+  "observability": {
+    "administrative_transactions": 0,
+    "continuity": "handoff",
+    "scientific_artifacts": 1
+  },
+  "pr_context": {
+    "base_commit": "25ebe088e85167061618140b5ccdd177ccc11941",
+    "branch": "daily/synth-r0-protocol-20260907",
+    "implementation_head": "e4151f2722a323856ed4e095f86d35940b3c0dd0",
+    "lifecycle_record_path": "automation/pr_lifecycle/83.json",
+    "pull_request": 83
+  },
+  "quest_context": {
+    "acceptance_slice": "QST-SYNTH-0001 R0 machine-readable non-generating three-arm protocol freeze and validation harness",
+    "claim_boundary": "Protocol/interface evidence only. No campaign result, world generation, holdout inspection, policy comparison, scientific benefit claim, architecture choice, or hardware-readiness inference.",
+    "phase": "R0",
+    "quest_id": "QST-SYNTH-0001",
+    "result": "PROTOCOL_VALID_ADAPTER_REQUIRED",
+    "result_summary": "The three-arm protocol now freezes machine-readable deterministic arm procedures, unique disjoint seeds, nine arm-specific development worlds, one shared sealed three-world holdout, exploratory-only inference, accepted model ranges, failure accounting and falsifiers. Validation generated zero worlds and found that the generator and evaluator still require bounded adapter and policy-derivation interfaces.",
+    "scope": "thermal-storage"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20260907T192055335345Z-daily-research-operator-7451e48728e11712959c",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "25ebe088e85167061618140b5ccdd177ccc11941",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20260906-SEPTEMBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-09-06T21:18:43Z\",\n  \"review_at\": \"2026-09-20T21:18:43Z\",\n  \"expires_at\": \"2026-10-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved complete bounded research cycles in Issue #79. These are per acceptance-slice ceilings, not default generation targets. Tests and dependency installation are not scientific runtime consumption. Frozen experiments may impose smaller budgets. No spending, model training, private export, evaluator/holdout changes after freeze, or new hardware-readiness claims.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "QST-SYNTH-0001 R0 machine-readable non-generating three-arm protocol freeze and validation harness",
+        "action": "implement",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+          "RUN-20260907T161024123382Z-daily-governance-triage-f286cc3297c5f0075c46",
+          "https://github.com/xxx3r/SNS-S-S/issues/79"
+        ],
+        "loop_id": "daily-research-operator",
+        "paths": [
+          "configs/synthetic_worlds/thermal_stress_protocol.json",
+          "src/sim/synthetic_worlds/thermal_campaign_protocol.py",
+          "tests/test_thermal_campaign_protocol.py",
+          "automation/runs/2026/09/RUN-20260907T192055335345Z-daily-research-operator-7451e48728e11712959c.json",
+          "automation/pr_lifecycle/83.json"
+        ],
+        "scope": "thermal-storage",
+        "transaction_count": 1
+      },
+      {
+        "acceptance_slice": "QST-SYNTH-0001 R0 machine-readable non-generating three-arm protocol freeze and validation harness",
+        "action": "merge",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+          "RUN-20260907T161024123382Z-daily-governance-triage-f286cc3297c5f0075c46",
+          "https://github.com/xxx3r/SNS-S-S/issues/79"
+        ],
+        "loop_id": "daily-research-operator",
+        "paths": [
+          "configs/synthetic_worlds/thermal_stress_protocol.json",
+          "src/sim/synthetic_worlds/thermal_campaign_protocol.py",
+          "tests/test_thermal_campaign_protocol.py",
+          "automation/runs/2026/09/RUN-20260907T192055335345Z-daily-research-operator-7451e48728e11712959c.json",
+          "automation/pr_lifecycle/83.json"
+        ],
+        "scope": "thermal-storage",
+        "transaction_count": 1
+      }
+    ],
+    "trigger_id": "daily-research-operator:2026-09-07T18:57:21+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:478c4ca0b9931064b072ab1d4ed05bdcdfc9a97f0c7e05cae33df6d03cbdac20",
+    "open_prs": [
+      {
+        "draft": false,
+        "head_sha": "e4151f2722a323856ed4e095f86d35940b3c0dd0",
+        "number": 83,
+        "state": "open"
+      }
+    ],
+    "records": [
+      {
+        "git_blob_sha": "a3fe2e7692177aaf8867bbc2a8db2fe3a7d97a26",
+        "path": "automation/contracts/daily-research-operator.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "f7821ac88b3157241c060d9b5c6fb4e918b7e645",
+        "path": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+        "role": "active_quest"
+      },
+      {
+        "git_blob_sha": "7bd1a464725f0c669c2c36963a93765676b06d65",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "7d32064c8638aa2f886d5b943e6db8eb4fb5a21b",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "289f70838c0bee9b6ce89e2ce92eed4483d6204a",
+        "path": "automation/schemas/loop-run-v2.schema.json",
+        "role": "current_receipt_schema"
+      },
+      {
+        "git_blob_sha": "7c283b1f9678e4f59b08c9660729cf672cda0aee",
+        "path": "calendar/monthly/2026-09.md",
+        "role": "monthly_state"
+      },
+      {
+        "git_blob_sha": "b92a3ed64899bb6101b1441c39215ce599d3c891",
+        "path": "automation/runs/2026/09/RUN-20260907T161024123382Z-daily-governance-triage-f286cc3297c5f0075c46.json",
+        "role": "pre_game_handoff"
+      },
+      {
+        "git_blob_sha": "57508c2807875b6be5b7c9ebe3be17da0676754e",
+        "path": "automation/runs/2026/09/RUN-20260908T164135000000Z-daily-governance-triage-62d6325f43a62db42817.json",
+        "role": "pre_game_review_handoff"
+      },
+      {
+        "git_blob_sha": "c3db48f5a88005b4b1e8782aedc070ec001332af",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "e0d774e3334debf514446f89196e79bd7f71eaed",
+        "path": "automation/standing/2026-09.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "9d806867b3dbac0f1b11ab9d45819fc097002d30",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "25ebe088e85167061618140b5ccdd177ccc11941"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-09-07T18:57:21Z"
+}
