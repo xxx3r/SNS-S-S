@@ -1,0 +1,200 @@
+{
+  "artifacts": [
+    {
+      "kind": "immutable Pre-Game R1 routing receipt",
+      "path": "automation/runs/2026/09/RUN-20260909T161427695134Z-daily-governance-triage-ab2c8f284258f7945e25.json"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "189 tests passed locally on repaired accepted main before publication.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Semantic repository validation returned valid=true with QST-SYNTH-0001 on the ready frontier.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "scripts/check_baseline_artifacts.sh passed locally before publication.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Accepted main was 54ea45b59b0264336646a0a6b74602e2ae2bab77 with no open PR owners after transaction one.",
+      "name": "accepted-source and ownership recheck",
+      "status": "passed"
+    },
+    {
+      "evidence": "In-run review confirmed the route inherits the accepted R0 freeze, stays within standing thermal-storage scope, spends zero scientific budget, and leaves unsupported anomaly semantics behind explicit scientific-decision stops; independent hosted review remains pending.",
+      "name": "exact-head semantic review",
+      "status": "passed"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-09-09T16:14:27+00:00",
+  "decision_effect": "Selected QST-SYNTH-0001 R1 as the highest-priority graph-ready executable slice after accepted R0, routing only minimal adapter and development-only fixture qualification with zero campaign generation and no separate AUTH token.",
+  "inheritance": [
+    {
+      "decision_effect": "Inherited the repaired and qualified PR #83 lifecycle state from transaction one of this trigger.",
+      "kind": "RUN",
+      "ref": "RUN-20260909T160724554280Z-daily-governance-triage-9d4980e00ddc53a205f2"
+    },
+    {
+      "decision_effect": "Inherited accepted R0 protocol, validation harness, adapter gaps, and the zero-generation boundary.",
+      "kind": "RUN",
+      "ref": "RUN-20260907T192055335345Z-daily-research-operator-7451e48728e11712959c"
+    }
+  ],
+  "loop_id": "daily-governance-triage",
+  "next_action": "Daily executes exactly one QST-SYNTH-0001 R1 implementation slice: map validated records to ThermalShadowScenario without undeclared defaults, expose only already-model-supported useful delivery and policy-action traces, define the arm-policy derivation interface, add a development-only fixture and focused tests, and stop without generating development or holdout worlds; any degradation or sensor-failure semantics requiring new assumptions must return NEEDS_SCIENTIFIC_DECISION.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "handoff",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "base_commit": "54ea45b59b0264336646a0a6b74602e2ae2bab77",
+    "branch": "pregame/synth-r1-route-20260909",
+    "implementation_head": "pending",
+    "owner_run_id": "RUN-20260909T161427695134Z-daily-governance-triage-ab2c8f284258f7945e25",
+    "pull_request": null,
+    "review_state": "local semantic review complete; hosted exact-head review pending"
+  },
+  "quest_context": {
+    "acceptance_slice": "QST-SYNTH-0001 R1 minimal adapter and development-only fixture qualification handoff",
+    "claim_boundary": "Administrative route only. Daily may implement and qualify existing-interface adapters and a development-only fixture; no development or holdout world generation, holdout inspection, evaluator changes, anomaly semantics, policy-benefit claim, scientific interpretation, belief change, or quest-state change.",
+    "phase": "R1",
+    "quest_id": "QST-SYNTH-0001",
+    "result": "R1_ROUTED_ZERO_GENERATION",
+    "result_summary": "Accepted R0 exposes a bounded R1 engineering gate: map validated records to ThermalShadowScenario without undeclared defaults, expose model-supported useful delivery and policy traces, freeze an arm-policy derivation interface, and preserve unsupported degradation/sensor semantics as explicit stops.",
+    "scope": "thermal-storage"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20260909T161427695134Z-daily-governance-triage-ab2c8f284258f7945e25",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "54ea45b59b0264336646a0a6b74602e2ae2bab77",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20260906-SEPTEMBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-09-06T21:18:43Z\",\n  \"review_at\": \"2026-09-20T21:18:43Z\",\n  \"expires_at\": \"2026-10-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved complete bounded research cycles in Issue #79. These are per acceptance-slice ceilings, not default generation targets. Tests and dependency installation are not scientific runtime consumption. Frozen experiments may impose smaller budgets. No spending, model training, private export, evaluator/holdout changes after freeze, or new hardware-readiness claims.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "QST-SYNTH-0001 R1 minimal adapter and development-only fixture qualification handoff",
+        "action": "route",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+          "configs/synthetic_worlds/thermal_stress_protocol.json",
+          "automation/pr_lifecycle/83.json",
+          "RUN-20260907T192055335345Z-daily-research-operator-7451e48728e11712959c",
+          "RUN-20260909T160724554280Z-daily-governance-triage-9d4980e00ddc53a205f2"
+        ],
+        "loop_id": "daily-governance-triage",
+        "paths": [
+          "automation/runs/2026/09/RUN-20260909T161427695134Z-daily-governance-triage-ab2c8f284258f7945e25.json"
+        ],
+        "scope": "thermal-storage",
+        "transaction_count": 2
+      }
+    ],
+    "trigger_id": "daily-governance-triage:2026-09-09T16:03:29+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:0e8758f0e864e77165f384300a41668c6fd63ec5469c0ca6056d7711e7940807",
+    "open_prs": [],
+    "records": [
+      {
+        "git_blob_sha": "96bac7f735e2b4d9a0da07f54babace6093f263e",
+        "path": "automation/contracts/daily-governance-triage.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "f7821ac88b3157241c060d9b5c6fb4e918b7e645",
+        "path": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+        "role": "active_quest"
+      },
+      {
+        "git_blob_sha": "7bd1a464725f0c669c2c36963a93765676b06d65",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "7d32064c8638aa2f886d5b943e6db8eb4fb5a21b",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "289f70838c0bee9b6ce89e2ce92eed4483d6204a",
+        "path": "automation/schemas/loop-run-v2.schema.json",
+        "role": "current_receipt_schema"
+      },
+      {
+        "git_blob_sha": "ca1da774b133da7d64d992e4feb888fd8f1420b1",
+        "path": "automation/runs/2026/09/RUN-20260907T192055335345Z-daily-research-operator-7451e48728e11712959c.json",
+        "role": "daily_lineage"
+      },
+      {
+        "git_blob_sha": "d579dc975cb897df57d5145ec9cf26a62d87e00d",
+        "path": "configs/synthetic_worlds/thermal_stress_protocol.json",
+        "role": "frozen_protocol"
+      },
+      {
+        "git_blob_sha": "7c283b1f9678e4f59b08c9660729cf672cda0aee",
+        "path": "calendar/monthly/2026-09.md",
+        "role": "monthly_state"
+      },
+      {
+        "git_blob_sha": "b7824c8cd8240bae3d7b7c92743742e3ed60b0a1",
+        "path": "automation/runs/2026/09/RUN-20260909T160724554280Z-daily-governance-triage-9d4980e00ddc53a205f2.json",
+        "role": "pre_game_lineage"
+      },
+      {
+        "git_blob_sha": "f0b9b1250b0e7d777abfe3cda38ed1a5e1b40cdb",
+        "path": "automation/pr_lifecycle/83.json",
+        "role": "prior_lifecycle"
+      },
+      {
+        "git_blob_sha": "c3db48f5a88005b4b1e8782aedc070ec001332af",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "e0d774e3334debf514446f89196e79bd7f71eaed",
+        "path": "automation/standing/2026-09.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "9d806867b3dbac0f1b11ab9d45819fc097002d30",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "54ea45b59b0264336646a0a6b74602e2ae2bab77"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-09-09T16:03:29Z"
+}
