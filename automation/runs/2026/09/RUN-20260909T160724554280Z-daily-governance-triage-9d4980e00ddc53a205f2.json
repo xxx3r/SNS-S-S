@@ -1,0 +1,203 @@
+{
+  "artifacts": [
+    {
+      "kind": "repaired PR lifecycle record",
+      "path": "automation/pr_lifecycle/83.json"
+    },
+    {
+      "kind": "immutable Pre-Game maintenance receipt",
+      "path": "automation/runs/2026/09/RUN-20260909T160724554280Z-daily-governance-triage-9d4980e00ddc53a205f2.json"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "189 tests passed locally after the lifecycle repair.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Semantic repository validation returned valid=true with no errors after the lifecycle repair.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "scripts/check_baseline_artifacts.sh passed locally after the lifecycle repair.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Accepted main was f1c5ca162467890befcdac2a45e96c9d53fbb67e with no open PR owner before publication.",
+      "name": "accepted-source and ownership recheck",
+      "status": "passed"
+    },
+    {
+      "evidence": "In-run semantic review confirmed the patch changes only next_review_after from invalid null to the original terminal synchronization timestamp and records the repair rationale; independent hosted review remains pending.",
+      "name": "exact-head semantic review",
+      "status": "passed"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-09-09T16:07:24+00:00",
+  "decision_effect": "Repaired PR #83 terminal lifecycle next_review_after from invalid null to the original synchronization timestamp, restoring strict historical replay and full repository qualification without changing scientific state.",
+  "inheritance": [
+    {
+      "decision_effect": "Inherited the exact R0 review-routing lineage.",
+      "kind": "RUN",
+      "ref": "RUN-20260908T164135000000Z-daily-governance-triage-62d6325f43a62db42817"
+    },
+    {
+      "decision_effect": "Inherited accepted R0 completion and PR #83 terminal lifecycle.",
+      "kind": "RUN",
+      "ref": "RUN-20260907T192055335345Z-daily-research-operator-7451e48728e11712959c"
+    }
+  ],
+  "loop_id": "daily-governance-triage",
+  "next_action": "After this maintenance slice is accepted, Pre-Game must refresh source and ownership, then use transaction two to route QST-SYNTH-0001 R1 only to minimal adapter and development-only fixture qualification with zero campaign generation.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "inherited",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "base_commit": "f1c5ca162467890befcdac2a45e96c9d53fbb67e",
+    "branch": "pregame/lifecycle-83-timestamp-20260909",
+    "implementation_head": "pending",
+    "owner_run_id": "RUN-20260909T160724554280Z-daily-governance-triage-9d4980e00ddc53a205f2",
+    "pull_request": null,
+    "review_state": "local semantic review complete; hosted exact-head review pending"
+  },
+  "quest_context": {
+    "acceptance_slice": "Repair invalid PR #83 terminal lifecycle review timestamp",
+    "claim_boundary": "Mechanical lifecycle repair only; no scientific source, protocol, world generation, evidence, belief, quest, queue, or authority change.",
+    "phase": "R0 terminal synchronization",
+    "quest_id": "QST-SYNTH-0001",
+    "result": "LIFECYCLE_REPLAY_RESTORED",
+    "result_summary": "The terminal lifecycle now carries its original synchronization time as a valid date-time string, allowing strict repository replay and tests to pass.",
+    "scope": "thermal-storage"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20260909T160724554280Z-daily-governance-triage-9d4980e00ddc53a205f2",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "f1c5ca162467890befcdac2a45e96c9d53fbb67e",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20260906-SEPTEMBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-09-06T21:18:43Z\",\n  \"review_at\": \"2026-09-20T21:18:43Z\",\n  \"expires_at\": \"2026-10-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved complete bounded research cycles in Issue #79. These are per acceptance-slice ceilings, not default generation targets. Tests and dependency installation are not scientific runtime consumption. Frozen experiments may impose smaller budgets. No spending, model training, private export, evaluator/holdout changes after freeze, or new hardware-readiness claims.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "Repair invalid PR #83 terminal lifecycle review timestamp",
+        "action": "maintenance",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "automation/pr_lifecycle/83.json",
+          "automation/schemas/pr-lifecycle.schema.json",
+          "RUN-20260907T192055335345Z-daily-research-operator-7451e48728e11712959c"
+        ],
+        "loop_id": "daily-governance-triage",
+        "paths": [
+          "automation/pr_lifecycle/83.json",
+          "automation/runs/2026/09/RUN-20260909T160724554280Z-daily-governance-triage-9d4980e00ddc53a205f2.json"
+        ],
+        "scope": "thermal-storage",
+        "transaction_count": 1
+      }
+    ],
+    "trigger_id": "daily-governance-triage:2026-09-09T16:03:29+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:efd64c6b5cbea8323b695e0c097c16cd4d88913679fa1005b774b7058b7dd64e",
+    "open_prs": [],
+    "records": [
+      {
+        "git_blob_sha": "96bac7f735e2b4d9a0da07f54babace6093f263e",
+        "path": "automation/contracts/daily-governance-triage.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "f7821ac88b3157241c060d9b5c6fb4e918b7e645",
+        "path": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+        "role": "active_quest"
+      },
+      {
+        "git_blob_sha": "7bd1a464725f0c669c2c36963a93765676b06d65",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "7d32064c8638aa2f886d5b943e6db8eb4fb5a21b",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "289f70838c0bee9b6ce89e2ce92eed4483d6204a",
+        "path": "automation/schemas/loop-run-v2.schema.json",
+        "role": "current_receipt_schema"
+      },
+      {
+        "git_blob_sha": "ca1da774b133da7d64d992e4feb888fd8f1420b1",
+        "path": "automation/runs/2026/09/RUN-20260907T192055335345Z-daily-research-operator-7451e48728e11712959c.json",
+        "role": "daily_lineage"
+      },
+      {
+        "git_blob_sha": "d579dc975cb897df57d5145ec9cf26a62d87e00d",
+        "path": "configs/synthetic_worlds/thermal_stress_protocol.json",
+        "role": "frozen_protocol"
+      },
+      {
+        "git_blob_sha": "7c283b1f9678e4f59b08c9660729cf672cda0aee",
+        "path": "calendar/monthly/2026-09.md",
+        "role": "monthly_state"
+      },
+      {
+        "git_blob_sha": "57508c2807875b6be5b7c9ebe3be17da0676754e",
+        "path": "automation/runs/2026/09/RUN-20260908T164135000000Z-daily-governance-triage-62d6325f43a62db42817.json",
+        "role": "pre_game_lineage"
+      },
+      {
+        "git_blob_sha": "bc88fc0889dabe561650f9fc5b93a9491fba09ac",
+        "path": "automation/pr_lifecycle/83.json",
+        "role": "prior_lifecycle"
+      },
+      {
+        "git_blob_sha": "c3db48f5a88005b4b1e8782aedc070ec001332af",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "e0d774e3334debf514446f89196e79bd7f71eaed",
+        "path": "automation/standing/2026-09.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "9d806867b3dbac0f1b11ab9d45819fc097002d30",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "f1c5ca162467890befcdac2a45e96c9d53fbb67e"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-09-09T16:03:29Z"
+}

@@ -1,11 +1,11 @@
 {
   "acceptance_slice": "QST-SYNTH-0001 R0 machine-readable non-generating three-arm protocol freeze and validation harness",
   "head_commit": "192e16023c29faedcb850634ae7d74f6fffc5c7f",
-  "next_review_after": null,
+  "next_review_after": "2026-09-08T19:24:00+00:00",
   "owner_run_id": "RUN-20260907T192055335345Z-daily-research-operator-7451e48728e11712959c",
   "pr_number": 83,
   "quest_id": "QST-SYNTH-0001",
-  "reason": "PR #83 was squash-merged as 24a06cd0b8bcf43c87adb37acd7fde63ef47ef54 after all four review findings were repaired and resolved. Exact-head tests 34267562686, baseline-artifacts 34267562690, and automation-transaction 34267562687 passed; semantic repository validation and full pytest passed. R0 remained non-generating and made no policy-benefit claim.",
+  "reason": "PR #83 was squash-merged as 24a06cd0b8bcf43c87adb37acd7fde63ef47ef54 after all four review findings were repaired and resolved. Exact-head tests 34267562686, baseline-artifacts 34267562690, and automation-transaction 34267562687 passed; semantic repository validation and full pytest passed. R0 remained non-generating and made no policy-benefit claim. Pre-Game repaired the terminal review timestamp from null to the original synchronization time after strict replay exposed the invalid record shape.",
   "schema": "sns.pr-lifecycle.v1",
   "source_commit": "25ebe088e85167061618140b5ccdd177ccc11941",
   "state": "merged",
