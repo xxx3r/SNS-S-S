@@ -1,0 +1,248 @@
+{
+  "artifacts": [
+    {
+      "kind": "R1 adapter specification",
+      "path": "configs/synthetic_worlds/thermal_adapter_r1.json"
+    },
+    {
+      "kind": "manually authored non-generated development fixture",
+      "path": "configs/synthetic_worlds/thermal_adapter_development_fixture.json"
+    },
+    {
+      "kind": "record adapter, metric boundary, aggregate action trace, and policy interface",
+      "path": "src/sim/synthetic_worlds/thermal_adapter.py"
+    },
+    {
+      "kind": "focused fail-closed tests",
+      "path": "tests/test_thermal_adapter.py"
+    },
+    {
+      "kind": "immutable standing-action receipt",
+      "path": "automation/runs/2026/09/RUN-20260909T185951000000Z-daily-research-operator-420e5ded0583870737f8.json"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "Both implement and merge requests passed validate-standing-request against STAND-20260906-SEPTEMBER-ACTION-V1 at the trigger time.",
+      "name": "standing request validation",
+      "status": "passed"
+    },
+    {
+      "evidence": "15 focused tests passed locally without generating development or holdout worlds.",
+      "name": "focused adapter/protocol tests",
+      "status": "passed"
+    },
+    {
+      "evidence": "196 tests passed locally on the exact four-artifact implementation tree before receipt publication.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Semantic repository validation returned valid=true with QST-SYNTH-0001 on the ready frontier.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "scripts/check_baseline_artifacts.sh passed locally; no existing baseline output changed.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "PR #87 must pass tests, baseline-artifacts, automation transaction, semantic validation, full pytest, and exact-head review after this receipt and lifecycle record are published.",
+      "name": "receipt-bearing hosted qualification",
+      "status": "not_run"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-09-09T19:15:00+00:00",
+  "decision_effect": "Qualified the bounded SYNTH R1 engineering gate without generating or evaluating a campaign: explicit scenario mapping, honest delivery uncertainty, aggregate action evidence, and outcome-free arm-policy derivation are now inspectable.",
+  "inheritance": [
+    {
+      "decision_effect": "Inherited the active R1 adapter gate and the R2 holdout discipline.",
+      "kind": "artifact",
+      "ref": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md"
+    },
+    {
+      "decision_effect": "Preserved the accepted generator, evaluator, ranges, seeds, holdout, policy family, budgets, criteria, and falsifiers byte-for-byte.",
+      "kind": "artifact",
+      "ref": "configs/synthetic_worlds/thermal_stress_protocol.json"
+    },
+    {
+      "decision_effect": "Inherited the exact minimal adapter/development-fixture handoff with zero generation.",
+      "kind": "RUN",
+      "ref": "RUN-20260909T161427695134Z-daily-governance-triage-ab2c8f284258f7945e25"
+    },
+    {
+      "decision_effect": "Inherited explicit September standing action authority without creating or consuming a legacy AUTH token.",
+      "kind": "artifact",
+      "ref": "https://github.com/xxx3r/SNS-S-S/issues/79"
+    }
+  ],
+  "loop_id": "daily-research-operator",
+  "next_action": "After PR #87 is accepted, Weekly reviews the R1 adapter boundary and routes at most one frozen R2 matched 12-world campaign; Daily must use the sealed shared holdout unchanged, retain every failure, and stop on any unsupported degradation or sensor-failure semantics.",
+  "observability": {
+    "administrative_transactions": 0,
+    "continuity": "handoff",
+    "scientific_artifacts": 1
+  },
+  "pr_context": {
+    "base_commit": "10826785a264cee3f56295c18b6c9d85e57f59e3",
+    "branch": "daily/synth-r1-adapter-20260909",
+    "implementation_head": "f3050aed1309bba07342057872e8ec9126eb2396",
+    "implementation_head_scope": "exact pre-receipt commit containing the four R1 implementation artifacts",
+    "lifecycle_record_path": "automation/pr_lifecycle/87.json",
+    "pull_request": 87,
+    "qualification_binding": "receipt-bearing and final exact heads are recorded in PR #87 checks and the mutable terminal lifecycle record"
+  },
+  "quest_context": {
+    "acceptance_slice": "minimal record-to-scenario adapter and development-only fixture qualification",
+    "claim_boundary": "Development fixture interface qualification only. No development or holdout world generation, campaign comparison, policy-benefit claim, scientific belief change, protected assumption, or hardware-readiness inference.",
+    "phase": "R1",
+    "quest_id": "QST-SYNTH-0001",
+    "result": "ADAPTER_QUALIFIED_NO_GENERATION",
+    "result_summary": "The adapter maps hash-bound, range-checked records to ThermalShadowScenario with all model inputs explicit; freezes an outcome-free three-arm policy interface; exposes aggregate model-supported action evidence; and leaves useful delivery unresolved on electrical failure.",
+    "scope": "thermal-storage"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20260909T185951000000Z-daily-research-operator-420e5ded0583870737f8",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "10826785a264cee3f56295c18b6c9d85e57f59e3",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20260906-SEPTEMBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-09-06T21:18:43Z\",\n  \"review_at\": \"2026-09-20T21:18:43Z\",\n  \"expires_at\": \"2026-10-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved complete bounded research cycles in Issue #79. These are per acceptance-slice ceilings, not default generation targets. Tests and dependency installation are not scientific runtime consumption. Frozen experiments may impose smaller budgets. No spending, model training, private export, evaluator/holdout changes after freeze, or new hardware-readiness claims.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "QST-SYNTH-0001 R1 minimal record-to-scenario adapter and development-only fixture qualification",
+        "action": "implement",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+          "configs/synthetic_worlds/thermal_stress_protocol.json",
+          "RUN-20260909T161427695134Z-daily-governance-triage-ab2c8f284258f7945e25",
+          "https://github.com/xxx3r/SNS-S-S/issues/79"
+        ],
+        "loop_id": "daily-research-operator",
+        "paths": [
+          "configs/synthetic_worlds/thermal_adapter_r1.json",
+          "configs/synthetic_worlds/thermal_adapter_development_fixture.json",
+          "src/sim/synthetic_worlds/thermal_adapter.py",
+          "tests/test_thermal_adapter.py",
+          "automation/runs/2026/09/RUN-20260909T185951000000Z-daily-research-operator-420e5ded0583870737f8.json",
+          "automation/pr_lifecycle/87.json"
+        ],
+        "scope": "thermal-storage",
+        "transaction_count": 1
+      },
+      {
+        "acceptance_slice": "QST-SYNTH-0001 R1 minimal record-to-scenario adapter and development-only fixture qualification",
+        "action": "merge",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+          "configs/synthetic_worlds/thermal_stress_protocol.json",
+          "RUN-20260909T161427695134Z-daily-governance-triage-ab2c8f284258f7945e25",
+          "https://github.com/xxx3r/SNS-S-S/pull/87"
+        ],
+        "loop_id": "daily-research-operator",
+        "paths": [
+          "configs/synthetic_worlds/thermal_adapter_r1.json",
+          "configs/synthetic_worlds/thermal_adapter_development_fixture.json",
+          "src/sim/synthetic_worlds/thermal_adapter.py",
+          "tests/test_thermal_adapter.py",
+          "automation/runs/2026/09/RUN-20260909T185951000000Z-daily-research-operator-420e5ded0583870737f8.json",
+          "automation/pr_lifecycle/87.json"
+        ],
+        "scope": "thermal-storage",
+        "transaction_count": 1
+      }
+    ],
+    "trigger_id": "daily-research-operator:2026-09-09T18:59:51+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:2a01d82895dab79a670dae312ed1608019f5debe3388f9c13e8ca450d43acd7a",
+    "open_prs": [],
+    "records": [
+      {
+        "git_blob_sha": "d579dc975cb897df57d5145ec9cf26a62d87e00d",
+        "path": "configs/synthetic_worlds/thermal_stress_protocol.json",
+        "role": "accepted_protocol"
+      },
+      {
+        "git_blob_sha": "a3fe2e7692177aaf8867bbc2a8db2fe3a7d97a26",
+        "path": "automation/contracts/daily-research-operator.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "f7821ac88b3157241c060d9b5c6fb4e918b7e645",
+        "path": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+        "role": "active_quest"
+      },
+      {
+        "git_blob_sha": "7bd1a464725f0c669c2c36963a93765676b06d65",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "7d32064c8638aa2f886d5b943e6db8eb4fb5a21b",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "289f70838c0bee9b6ce89e2ce92eed4483d6204a",
+        "path": "automation/schemas/loop-run-v2.schema.json",
+        "role": "receipt_schema"
+      },
+      {
+        "git_blob_sha": "c3db48f5a88005b4b1e8782aedc070ec001332af",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "2376e4124d57fea3d97a226532904b4b889eb673",
+        "path": "automation/runs/2026/09/RUN-20260909T161427695134Z-daily-governance-triage-ab2c8f284258f7945e25.json",
+        "role": "routing_receipt"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "e0d774e3334debf514446f89196e79bd7f71eaed",
+        "path": "automation/standing/2026-09.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "9d806867b3dbac0f1b11ab9d45819fc097002d30",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "10826785a264cee3f56295c18b6c9d85e57f59e3"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-09-09T18:59:51+00:00"
+}
