@@ -1,0 +1,75 @@
+{
+  "schema": "sns.synthetic-thermal-adapter.v1",
+  "quest_id": "QST-SYNTH-0001",
+  "phase": "R1",
+  "state": "QUALIFIED_NO_GENERATION",
+  "frozen_at_source": "10826785a264cee3f56295c18b6c9d85e57f59e3",
+  "protocol": {
+    "path": "configs/synthetic_worlds/thermal_stress_protocol.json",
+    "sha256": "8b6fac7ee8c77403be2cce5f7146965df4c9c779faad1d442373b1d3a8e0e679"
+  },
+  "record_parameter_fields": [
+    "base_load_W",
+    "eclipse_duration_h",
+    "environment_temperature_K",
+    "heater_power_W",
+    "heater_threshold_K",
+    "initial_temperature_K",
+    "nominal_battery_Wh",
+    "pcm_latent_heat_J_kg",
+    "pcm_mass_kg",
+    "pcm_transition_temperature_K",
+    "thermal_capacity_J_K",
+    "thermal_conductance_W_K",
+    "time_step_s"
+  ],
+  "record_parameter_ranges": {
+    "base_load_W": {"minimum": 0.01, "maximum": 0.01},
+    "eclipse_duration_h": {"minimum": 2.0, "maximum": 2.0},
+    "environment_temperature_K": {"minimum": 220.0, "maximum": 220.0},
+    "heater_power_W": {"minimum": 0.08, "maximum": 0.08},
+    "heater_threshold_K": {"minimum": 263.15, "maximum": 263.15},
+    "initial_temperature_K": {"minimum": 283.15, "maximum": 283.15},
+    "nominal_battery_Wh": {"minimum": 0.015, "maximum": 0.5},
+    "pcm_latent_heat_J_kg": {"minimum": 180000.0, "maximum": 180000.0},
+    "pcm_mass_kg": {"minimum": 0.0, "maximum": 0.01},
+    "pcm_transition_temperature_K": {"minimum": 273.15, "maximum": 273.15},
+    "thermal_capacity_J_K": {"minimum": 50.0, "maximum": 50.0},
+    "thermal_conductance_W_K": {"minimum": 0.005, "maximum": 0.005},
+    "time_step_s": {"minimum": 60.0, "maximum": 60.0}
+  },
+  "declared_model_defaults": {
+    "discharge_efficiency": 0.9,
+    "reserve_fraction": 0.2,
+    "derating_reference_K": 293.15,
+    "derating_floor_K": 243.15,
+    "minimum_capacity_fraction": 0.5,
+    "minimum_operating_temperature_K": 233.15
+  },
+  "policy_derivation": {
+    "interface": "derive_arm_policy_v1",
+    "arms": ["fixed_handwritten", "random_bounded", "agent_curriculum"],
+    "family_id": "thermal-shadow-fixed-thermostat-v1",
+    "parameter_fields": ["base_load_W", "heater_threshold_K", "heater_power_W"],
+    "outcome_feedback": false,
+    "claim_boundary": "NO_POLICY_BENEFIT_IN_R1"
+  },
+  "useful_delivery": {
+    "metric": "useful_host_delivery_Wh",
+    "pass_rule": "base_load_W_times_eclipse_duration_h",
+    "failure_value": null,
+    "failure_state": "NOT_RESOLVED_BY_ACCEPTED_EVALUATOR"
+  },
+  "action_trace": {
+    "schema": "sns.thermal-policy-action-trace.v1",
+    "resolution": "AGGREGATE_MODEL_SUPPORTED",
+    "actions": ["constant_host_load", "threshold_heater"],
+    "step_timestamps_available": false
+  },
+  "development_fixture": {
+    "path": "configs/synthetic_worlds/thermal_adapter_development_fixture.json",
+    "sha256": "e15b3e4ad8f34cc551725d0349613b300bda7bae97358831841a26d7df7accd5",
+    "split": "development",
+    "generated_worlds": 0
+  }
+}

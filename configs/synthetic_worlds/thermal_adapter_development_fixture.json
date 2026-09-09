@@ -1,0 +1,33 @@
+{
+  "schema": "sns.synthetic-thermal-development-fixture.v1",
+  "quest_id": "QST-SYNTH-0001",
+  "split": "development",
+  "arm_id": "fixed_handwritten",
+  "generated_worlds": 0,
+  "record": {
+    "schema_version": "synthetic-worlds.record.v1",
+    "record_id": 0,
+    "parameters": {
+      "base_load_W": 0.01,
+      "eclipse_duration_h": 2.0,
+      "environment_temperature_K": 220.0,
+      "heater_power_W": 0.08,
+      "heater_threshold_K": 263.15,
+      "initial_temperature_K": 283.15,
+      "nominal_battery_Wh": 0.5,
+      "pcm_latent_heat_J_kg": 180000.0,
+      "pcm_mass_kg": 0.002,
+      "pcm_transition_temperature_K": 273.15,
+      "thermal_capacity_J_K": 50.0,
+      "thermal_conductance_W_K": 0.005,
+      "time_step_s": 60.0
+    },
+    "samples": {},
+    "rng": {
+      "seed": "manually-authored-r1-development-fixture",
+      "state_hash": "not-generated",
+      "version": 0
+    },
+    "record_hash": "7ef5b5cb11ec8fedd31654ea3bdf2db29a672e7e02345bedc9f16facf61a9aea"
+  }
+}

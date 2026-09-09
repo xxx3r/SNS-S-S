@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 87,
+  "quest_id": "QST-SYNTH-0001",
+  "acceptance_slice": "QST-SYNTH-0001 R1 minimal record-to-scenario adapter and development-only fixture qualification",
+  "state": "merge_ready",
+  "owner_run_id": "RUN-20260909T185951000000Z-daily-research-operator-420e5ded0583870737f8",
+  "source_commit": "10826785a264cee3f56295c18b6c9d85e57f59e3",
+  "head_commit": "8b296db5837cd64110b8618a905a1575789f6ee8",
+  "updated_at": "2026-09-09T19:17:00+00:00",
+  "next_review_after": "2026-09-20T21:18:43+00:00",
+  "supersedes": [],
+  "reason": "PR #87 is the sole R1 owner. Local standing validation, 196 tests, semantic repository validation, baseline artifacts, and 15 focused adapter/protocol tests passed. Receipt-bearing head 8b296db5837cd64110b8618a905a1575789f6ee8 passed hosted tests 34394107078, baseline-artifacts 34394107106, and automation-transaction 34394106977, including semantic repository validation and full pytest. In-run exact-head semantic review found no substantive defect; no independent approval is claimed."
+}
