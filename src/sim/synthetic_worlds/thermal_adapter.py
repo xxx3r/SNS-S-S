@@ -9,6 +9,7 @@ or inspect the sealed holdout.
 from __future__ import annotations
 
 import hashlib
+import inspect
 import json
 import math
 from dataclasses import asdict, fields
@@ -25,6 +26,8 @@ FIXTURE_SCHEMA = "sns.synthetic-thermal-development-fixture.v1"
 ARM_IDS = ("fixed_handwritten", "random_bounded", "agent_curriculum")
 POLICY_FIELDS = ("base_load_W", "heater_threshold_K", "heater_power_W")
 RECORD_KEYS = {"schema_version", "record_id", "parameters", "samples", "rng", "record_hash"}
+ACCEPTED_ADAPTER_SPEC_PATH = "configs/synthetic_worlds/thermal_adapter_r1.json"
+ACCEPTED_ADAPTER_SPEC_SHA256 = "597740b533a5add471b7e8aa400d0b87104c6d81b1fed6b418f19d1046ff931c"
 
 
 def _object(value: Any, label: str) -> Mapping[str, Any]:
@@ -45,6 +48,17 @@ def load_adapter_spec(path: str | Path) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise ValidationError("thermal adapter specification must be an object")
     return value
+
+
+def load_accepted_adapter_spec(root: str | Path) -> dict[str, Any]:
+    """Load the independently pinned R1 adapter specification."""
+
+    path = Path(root) / ACCEPTED_ADAPTER_SPEC_PATH
+    if not path.is_file() or _file_sha256(path) != ACCEPTED_ADAPTER_SPEC_SHA256:
+        raise ValidationError("accepted R1 adapter specification identity mismatch")
+    spec = load_adapter_spec(path)
+    validate_adapter_spec(spec, root)
+    return spec
 
 
 def validate_adapter_spec(spec: Mapping[str, Any], root: str | Path) -> None:
@@ -91,6 +105,11 @@ def validate_adapter_spec(spec: Mapping[str, Any], root: str | Path) -> None:
         validate_protocol(protocol_value, root)
     except ProtocolError as exc:
         raise ValidationError(f"accepted R0 protocol binding is invalid: {exc}") from exc
+    expected_evaluator_sha = protocol_value["interfaces"]["thermal_evaluator"]["sha256"]
+    for symbol in (ThermalShadowScenario, simulate_thermal_shadow):
+        runtime_source = inspect.getsourcefile(symbol)
+        if runtime_source is None or _file_sha256(Path(runtime_source)) != expected_evaluator_sha:
+            raise ValidationError("imported thermal evaluator identity mismatch")
 
     record_fields = spec["record_parameter_fields"]
     expected_record_fields = sorted(protocol_value["scenario_ranges"])
@@ -219,7 +238,6 @@ def derive_arm_policy(
 
 def evaluate_development_record(
     development_fixture: Mapping[str, Any],
-    spec: Mapping[str, Any],
     root: str | Path,
 ) -> dict[str, Any]:
     """Evaluate the one pinned R1 development fixture.
@@ -230,7 +248,7 @@ def evaluate_development_record(
     development data before the R2 campaign interface is accepted.
     """
 
-    validate_adapter_spec(spec, root)
+    spec = load_accepted_adapter_spec(root)
     fixture_binding = _object(spec["development_fixture"], "development_fixture")
     fixture_path = Path(root) / str(fixture_binding["path"])
     pinned_fixture = load_development_fixture(fixture_path)
@@ -241,8 +259,9 @@ def evaluate_development_record(
     scenario = record_to_scenario(record, spec)
     policy = derive_arm_policy(arm_id, [scenario], spec)
     result = simulate_thermal_shadow(scenario)
-    host_demand_Wh = scenario.base_load_W * scenario.eclipse_duration_h
-    useful_delivery_Wh = host_demand_Wh if result.electrical_status == "PASS" else None
+    host_demand_Wh, useful_delivery_Wh, useful_delivery_state = _supported_delivery(
+        scenario, result.electrical_status, spec
+    )
     heater_on_time_s = 0.0
     if scenario.heater_power_W > 0.0:
         heater_on_time_s = result.heater_energy_Wh * 3600.0 / scenario.heater_power_W
@@ -253,11 +272,7 @@ def evaluate_development_record(
         "arm_policy": policy,
         "result": asdict(result),
         "useful_host_delivery_Wh": useful_delivery_Wh,
-        "useful_delivery_state": (
-            "FULL_DEMAND_SUPPORTED"
-            if useful_delivery_Wh is not None
-            else spec["useful_delivery"]["failure_state"]
-        ),
+        "useful_delivery_state": useful_delivery_state,
         "policy_action_trace": {
             "schema": spec["action_trace"]["schema"],
             "resolution": spec["action_trace"]["resolution"],
@@ -279,6 +294,17 @@ def evaluate_development_record(
         },
         "claim_boundary": "DEVELOPMENT_FIXTURE_INTERFACE_QUALIFICATION_ONLY",
     }
+
+
+def _supported_delivery(
+    scenario: ThermalShadowScenario,
+    electrical_status: str,
+    spec: Mapping[str, Any],
+) -> tuple[float, float | None, str]:
+    host_demand_Wh = scenario.base_load_W * scenario.eclipse_duration_h
+    if electrical_status == "PASS":
+        return host_demand_Wh, host_demand_Wh, "FULL_DEMAND_SUPPORTED"
+    return host_demand_Wh, None, str(spec["useful_delivery"]["failure_state"])
 
 
 def load_development_fixture(path: str | Path) -> dict[str, Any]:
