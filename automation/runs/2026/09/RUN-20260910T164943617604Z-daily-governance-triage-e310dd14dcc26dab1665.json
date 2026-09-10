@@ -1,0 +1,212 @@
+{
+  "artifacts": [
+    {
+      "kind": "immutable Pre-Game R1 late-review routing receipt",
+      "path": "automation/runs/2026/09/RUN-20260910T164943617604Z-daily-governance-triage-e310dd14dcc26dab1665.json"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "196 tests passed locally on accepted main before publication.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Semantic repository validation returned valid=true with QST-SYNTH-0001 on the ready frontier.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "scripts/check_baseline_artifacts.sh passed locally before publication.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Accepted main was 5b11cf6712d0298db125315cc0c1b492ca2f762b with no open PR owners before publication.",
+      "name": "accepted-source and ownership recheck",
+      "status": "passed"
+    },
+    {
+      "evidence": "Two unresolved P1 threads on merged PR #87 were retrieved: the adapter does not validate the accepted protocol's pinned evaluator identity, and evaluate_development_record does not require split-bound development provenance.",
+      "name": "late exact-head semantic review",
+      "status": "failed"
+    },
+    {
+      "evidence": "Pre-Game classified both findings as scientific-source behavior and routed them to Daily without changing the evaluator, adapter, protocol, holdout, or generated evidence.",
+      "name": "role-boundary disposition",
+      "status": "passed"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-09-10T16:49:43+00:00",
+  "decision_effect": "Withheld SYNTH R2 routing and selected a bounded Daily R1 repair gate because two late P1 findings invalidate evaluator-freeze enforcement and development/holdout separation at the accepted adapter boundary.",
+  "inheritance": [
+    {
+      "decision_effect": "Inherited accepted R1 adapter implementation, zero-generation boundary, and merged lifecycle.",
+      "kind": "RUN",
+      "ref": "RUN-20260909T185951000000Z-daily-research-operator-420e5ded0583870737f8"
+    },
+    {
+      "decision_effect": "Inherited the accepted R0 protocol, including its pinned evaluator and sealed shared holdout.",
+      "kind": "RUN",
+      "ref": "RUN-20260907T192055335345Z-daily-research-operator-7451e48728e11712959c"
+    }
+  ],
+  "loop_id": "daily-governance-triage",
+  "next_action": "Daily performs exactly one deterministic R1 repair slice on accepted main: make adapter qualification fail when the pinned thermal evaluator source identity changes, require validated split-bound development provenance before evaluate_development_record can simulate a record, add focused fail-closed tests, preserve the frozen protocol and sealed holdout, generate and evaluate zero campaign worlds, resolve both PR #87 threads with repair evidence, and qualify/merge under expected-head control before Weekly may route R2.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "handoff",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "base_commit": "5b11cf6712d0298db125315cc0c1b492ca2f762b",
+    "branch": "daily/synth-r1-late-review-repair",
+    "implementation_head": "139e6866366cd419f422649bb7cd308f3ce93e0f",
+    "owner_run_id": "RUN-20260909T185951000000Z-daily-research-operator-420e5ded0583870737f8",
+    "pull_request": 87,
+    "review_state": "two unresolved late P1 findings; accepted adapter repair required before R2"
+  },
+  "quest_context": {
+    "acceptance_slice": "QST-SYNTH-0001 R1 late-review repair gate before R2",
+    "claim_boundary": "Administrative route only. No evaluator, adapter, protocol, holdout, generator, world, campaign record, result, belief, quest state, or scientific conclusion changes in this transaction.",
+    "phase": "R1",
+    "quest_id": "QST-SYNTH-0001",
+    "result": "R2_WITHHELD_R1_REPAIR_ROUTED",
+    "result_summary": "Accepted R1 is not yet a trustworthy campaign gate: evaluator-source drift can pass adapter validation, and holdout-shaped records can enter the development-only evaluator without split provenance. Both must fail closed before any R2 generation or holdout access.",
+    "scope": "thermal-storage"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20260910T164943617604Z-daily-governance-triage-e310dd14dcc26dab1665",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "5b11cf6712d0298db125315cc0c1b492ca2f762b",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20260906-SEPTEMBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-09-06T21:18:43Z\",\n  \"review_at\": \"2026-09-20T21:18:43Z\",\n  \"expires_at\": \"2026-10-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved complete bounded research cycles in Issue #79. These are per acceptance-slice ceilings, not default generation targets. Tests and dependency installation are not scientific runtime consumption. Frozen experiments may impose smaller budgets. No spending, model training, private export, evaluator/holdout changes after freeze, or new hardware-readiness claims.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "QST-SYNTH-0001 R1 late-review repair gate before R2",
+        "action": "route",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "https://github.com/xxx3r/SNS-S-S/pull/87#discussion_r3972200187",
+          "https://github.com/xxx3r/SNS-S-S/pull/87#discussion_r3972200197",
+          "src/sim/synthetic_worlds/thermal_adapter.py",
+          "src/sim/synthetic_worlds/thermal_campaign_protocol.py",
+          "configs/synthetic_worlds/thermal_stress_protocol.json",
+          "automation/pr_lifecycle/87.json",
+          "RUN-20260909T185951000000Z-daily-research-operator-420e5ded0583870737f8"
+        ],
+        "loop_id": "daily-governance-triage",
+        "paths": [
+          "automation/runs/2026/09/RUN-20260910T164943617604Z-daily-governance-triage-e310dd14dcc26dab1665.json"
+        ],
+        "scope": "thermal-storage",
+        "transaction_count": 1
+      }
+    ],
+    "trigger_id": "daily-governance-triage:2026-09-10T16:45:33+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:4e6dad49bcc180f39a15d47b98e3ae7fd4b3876a3e0e96f09e68e31b5c885b9a",
+    "open_prs": [],
+    "records": [
+      {
+        "git_blob_sha": "002957aa19f068a578a31c9410d4d03cec9cd9f7",
+        "path": "src/sim/synthetic_worlds/thermal_adapter.py",
+        "role": "accepted_adapter_source"
+      },
+      {
+        "git_blob_sha": "c61c2d3956b659e36eb4d68621e1cbc30cb6efee",
+        "path": "configs/synthetic_worlds/thermal_adapter_r1.json",
+        "role": "accepted_adapter_spec"
+      },
+      {
+        "git_blob_sha": "eeee7f2b9b8bca3ed6661da33e3a672db66bb301",
+        "path": "automation/pr_lifecycle/87.json",
+        "role": "accepted_lifecycle"
+      },
+      {
+        "git_blob_sha": "96bac7f735e2b4d9a0da07f54babace6093f263e",
+        "path": "automation/contracts/daily-governance-triage.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "f7821ac88b3157241c060d9b5c6fb4e918b7e645",
+        "path": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+        "role": "active_quest"
+      },
+      {
+        "git_blob_sha": "7bd1a464725f0c669c2c36963a93765676b06d65",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "7d32064c8638aa2f886d5b943e6db8eb4fb5a21b",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "289f70838c0bee9b6ce89e2ce92eed4483d6204a",
+        "path": "automation/schemas/loop-run-v2.schema.json",
+        "role": "current_receipt_schema"
+      },
+      {
+        "git_blob_sha": "cdca69de4c4a563ccc9ba1397592b587060543b2",
+        "path": "automation/runs/2026/09/RUN-20260909T185951000000Z-daily-research-operator-420e5ded0583870737f8.json",
+        "role": "daily_lineage"
+      },
+      {
+        "git_blob_sha": "d579dc975cb897df57d5145ec9cf26a62d87e00d",
+        "path": "configs/synthetic_worlds/thermal_stress_protocol.json",
+        "role": "frozen_protocol"
+      },
+      {
+        "git_blob_sha": "7c283b1f9678e4f59b08c9660729cf672cda0aee",
+        "path": "calendar/monthly/2026-09.md",
+        "role": "monthly_state"
+      },
+      {
+        "git_blob_sha": "c3db48f5a88005b4b1e8782aedc070ec001332af",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "e0d774e3334debf514446f89196e79bd7f71eaed",
+        "path": "automation/standing/2026-09.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "9d806867b3dbac0f1b11ab9d45819fc097002d30",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "5b11cf6712d0298db125315cc0c1b492ca2f762b"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-09-10T16:45:33Z"
+}
