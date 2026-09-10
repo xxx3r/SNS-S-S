@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 89,
+  "quest_id": "QST-SYNTH-0001",
+  "acceptance_slice": "QST-SYNTH-0001 R1 late-review repair gate before R2",
+  "state": "ready_for_review",
+  "owner_run_id": "RUN-20260910T190329171964Z-daily-research-operator-5f7ddcf120e0f108c177",
+  "source_commit": "44d11da141febaae863d60942178d4c12c7ada60",
+  "head_commit": "1675f03d01d725e38b162480ded142339ccdd61c",
+  "updated_at": "2026-09-10T19:04:25+00:00",
+  "next_review_after": "2026-09-20T21:18:43+00:00",
+  "supersedes": [],
+  "reason": "PR #89 repairs the two late P1 findings on accepted R1. Adapter qualification now validates the frozen R0 protocol and pinned thermal evaluator bytes; development evaluation accepts only the complete fixture bound by the accepted R1 spec. Nine focused tests and 198 full tests passed locally with zero campaign generation. Hosted exact-head qualification and review remain required before merge."
+}
