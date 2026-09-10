@@ -6,9 +6,9 @@
   "state": "ready_for_review",
   "owner_run_id": "RUN-20260910T190329171964Z-daily-research-operator-5f7ddcf120e0f108c177",
   "source_commit": "44d11da141febaae863d60942178d4c12c7ada60",
-  "head_commit": "1675f03d01d725e38b162480ded142339ccdd61c",
-  "updated_at": "2026-09-10T19:04:25+00:00",
+  "head_commit": "c14fcea02a11922d023f49890f8417a7b755b614",
+  "updated_at": "2026-09-10T19:10:00+00:00",
   "next_review_after": "2026-09-20T21:18:43+00:00",
   "supersedes": [],
-  "reason": "PR #89 repairs the two late P1 findings on accepted R1. Adapter qualification now validates the frozen R0 protocol and pinned thermal evaluator bytes; development evaluation accepts only the complete fixture bound by the accepted R1 spec. Nine focused tests and 198 full tests passed locally with zero campaign generation. Hosted exact-head qualification and review remain required before merge."
+  "reason": "PR #89 repairs the two original and two follow-up P1 findings on accepted R1. Adapter qualification validates both the frozen R0 protocol and the source backing the imported evaluator; development evaluation loads an independently hash-pinned canonical adapter spec and accepts only its exact bound fixture. Eleven focused tests and 200 full tests passed locally with zero campaign generation. Hosted exact-head qualification and review remain required before merge."
 }
