@@ -18,6 +18,7 @@ from typing import Any, Mapping, Sequence
 from src.sim.thermal_storage import ThermalShadowScenario, simulate_thermal_shadow
 
 from .common import RECORD_SCHEMA, ValidationError, stable_hash
+from .thermal_campaign_protocol import ProtocolError, validate_protocol
 
 ADAPTER_SCHEMA = "sns.synthetic-thermal-adapter.v1"
 FIXTURE_SCHEMA = "sns.synthetic-thermal-development-fixture.v1"
@@ -86,6 +87,10 @@ def validate_adapter_spec(spec: Mapping[str, Any], root: str | Path) -> None:
         protocol_value = json.loads(protocol_path.read_text(encoding="utf-8"))
     except (UnicodeError, json.JSONDecodeError) as exc:
         raise ValidationError(f"invalid accepted R0 protocol: {exc}") from exc
+    try:
+        validate_protocol(protocol_value, root)
+    except ProtocolError as exc:
+        raise ValidationError(f"accepted R0 protocol binding is invalid: {exc}") from exc
 
     record_fields = spec["record_parameter_fields"]
     expected_record_fields = sorted(protocol_value["scenario_ranges"])
@@ -213,12 +218,26 @@ def derive_arm_policy(
 
 
 def evaluate_development_record(
-    record: Mapping[str, Any],
-    arm_id: str,
+    development_fixture: Mapping[str, Any],
     spec: Mapping[str, Any],
+    root: str | Path,
 ) -> dict[str, Any]:
-    """Evaluate one development fixture and expose only supported aggregates."""
+    """Evaluate the one pinned R1 development fixture.
 
+    R1 deliberately does not accept a free-floating record.  Requiring the
+    complete fixture and matching it to the path and digest frozen in the
+    adapter specification prevents a holdout record from being relabeled as
+    development data before the R2 campaign interface is accepted.
+    """
+
+    validate_adapter_spec(spec, root)
+    fixture_binding = _object(spec["development_fixture"], "development_fixture")
+    fixture_path = Path(root) / str(fixture_binding["path"])
+    pinned_fixture = load_development_fixture(fixture_path)
+    if dict(development_fixture) != pinned_fixture:
+        raise ValidationError("development evaluation requires the pinned R1 fixture")
+    record = _object(development_fixture["record"], "development_fixture.record")
+    arm_id = str(development_fixture["arm_id"])
     scenario = record_to_scenario(record, spec)
     policy = derive_arm_policy(arm_id, [scenario], spec)
     result = simulate_thermal_shadow(scenario)
