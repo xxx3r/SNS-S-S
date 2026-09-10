@@ -3,12 +3,12 @@
   "pr_number": 89,
   "quest_id": "QST-SYNTH-0001",
   "acceptance_slice": "QST-SYNTH-0001 R1 late-review repair gate before R2",
-  "state": "ready_for_review",
+  "state": "merged",
   "owner_run_id": "RUN-20260910T190329171964Z-daily-research-operator-5f7ddcf120e0f108c177",
   "source_commit": "44d11da141febaae863d60942178d4c12c7ada60",
-  "head_commit": "c14fcea02a11922d023f49890f8417a7b755b614",
-  "updated_at": "2026-09-10T19:10:00+00:00",
+  "head_commit": "deb8592bb57f155469b2c0832500c32576db0ddf",
+  "updated_at": "2026-09-10T19:14:00+00:00",
   "next_review_after": "2026-09-20T21:18:43+00:00",
   "supersedes": [],
-  "reason": "PR #89 repairs the two original and two follow-up P1 findings on accepted R1. Adapter qualification validates both the frozen R0 protocol and the source backing the imported evaluator; development evaluation loads an independently hash-pinned canonical adapter spec and accepts only its exact bound fixture. Eleven focused tests and 200 full tests passed locally with zero campaign generation. Hosted exact-head qualification and review remain required before merge."
+  "reason": "PR #89 was squash-merged as deb8592bb57f155469b2c0832500c32576db0ddf from exact head bfbbbc2af54a36886d50a297f09487804135dfb6 after tests 34518813001, baseline-artifacts 34518813082, and automation-transaction 34518813030 passed, including semantic repository validation and full pytest. Adapter qualification validates both the frozen R0 protocol and the source backing the imported evaluator; development evaluation loads an independently hash-pinned canonical adapter spec and accepts only its exact bound fixture. Eleven focused tests and 200 full tests passed locally with zero campaign generation. Both follow-up P1 threads were repaired, answered, and resolved."
 }
