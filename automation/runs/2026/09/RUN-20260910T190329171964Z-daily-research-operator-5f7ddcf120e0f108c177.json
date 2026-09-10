@@ -25,12 +25,12 @@
       "status": "passed"
     },
     {
-      "evidence": "Nine focused adapter tests passed, including evaluator-source drift and unbound/relabelled/holdout-shaped record rejection.",
+      "evidence": "Eleven focused adapter tests passed, including accepted-spec substitution, validated-root drift, runtime-callable drift, and unbound/relabelled/holdout-shaped record rejection.",
       "name": "focused R1 repair tests",
       "status": "passed"
     },
     {
-      "evidence": "198 tests passed locally on the exact two-file implementation tree before receipt publication.",
+      "evidence": "200 tests passed locally on the final two-file implementation tree before receipt republication.",
       "name": "python -m pytest -q",
       "status": "passed"
     },
@@ -76,7 +76,7 @@
   "pr_context": {
     "base_commit": "44d11da141febaae863d60942178d4c12c7ada60",
     "branch": "daily/synth-r1-late-review-repair-20260910",
-    "implementation_head": "1675f03d01d725e38b162480ded142339ccdd61c",
+    "implementation_head": "c14fcea02a11922d023f49890f8417a7b755b614",
     "implementation_head_scope": "exact pre-receipt commit containing the two R1 repair artifacts",
     "lifecycle_record_path": "automation/pr_lifecycle/89.json",
     "pull_request": 89,
