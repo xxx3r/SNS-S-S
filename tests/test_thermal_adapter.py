@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import copy
-import hashlib
 import json
 import shutil
 from dataclasses import asdict
@@ -11,8 +10,10 @@ import pytest
 
 from src.sim.synthetic_worlds.common import ValidationError, stable_hash
 from src.sim.synthetic_worlds.thermal_adapter import (
+    _supported_delivery,
     derive_arm_policy,
     evaluate_development_record,
+    load_accepted_adapter_spec,
     load_adapter_spec,
     load_development_fixture,
     record_to_scenario,
@@ -41,6 +42,7 @@ def copy_validation_tree(tmp_path: Path) -> Path:
     sandbox = tmp_path / "repo"
     required = [
         "configs/synthetic_worlds/thermal_stress_protocol.json",
+        "configs/synthetic_worlds/thermal_adapter_r1.json",
         "configs/synthetic_worlds/thermal_adapter_development_fixture.json",
         "src/sim/synthetic_worlds/recipe.py",
         "src/sim/thermal_storage.py",
@@ -128,7 +130,7 @@ def test_policy_derivation_is_arm_bound_and_outcome_free() -> None:
 def test_development_evaluation_exposes_only_supported_delivery_and_actions() -> None:
     frozen = spec()
     development = fixture()
-    evaluated = evaluate_development_record(development, frozen, ROOT)
+    evaluated = evaluate_development_record(development, ROOT)
 
     assert evaluated["claim_boundary"] == "DEVELOPMENT_FIXTURE_INTERFACE_QUALIFICATION_ONLY"
     assert evaluated["useful_host_delivery_Wh"] == pytest.approx(0.02)
@@ -142,22 +144,14 @@ def test_development_evaluation_exposes_only_supported_delivery_and_actions() ->
     ]
 
 
-def test_electrical_failure_does_not_invent_useful_delivery(tmp_path: Path) -> None:
+def test_electrical_failure_does_not_invent_useful_delivery() -> None:
     frozen = spec()
-    failed = copy.deepcopy(fixture())
-    failed["record"]["parameters"]["nominal_battery_Wh"] = 0.015
-    rehash(failed["record"])
-    sandbox = copy_validation_tree(tmp_path)
-    fixture_path = sandbox / frozen["development_fixture"]["path"]
-    payload = json.dumps(failed, indent=2) + "\n"
-    fixture_path.write_text(payload, encoding="utf-8")
-    frozen["development_fixture"]["sha256"] = hashlib.sha256(payload.encode()).hexdigest()
+    scenario = record_to_scenario(fixture()["record"], frozen)
+    requested, delivered, state = _supported_delivery(scenario, "FAIL", frozen)
 
-    evaluated = evaluate_development_record(failed, frozen, sandbox)
-
-    assert evaluated["result"]["electrical_status"] == "FAIL"
-    assert evaluated["useful_host_delivery_Wh"] is None
-    assert evaluated["useful_delivery_state"] == "NOT_RESOLVED_BY_ACCEPTED_EVALUATOR"
+    assert requested == pytest.approx(0.02)
+    assert delivered is None
+    assert state == "NOT_RESOLVED_BY_ACCEPTED_EVALUATOR"
 
 
 def test_adapter_spec_rejects_hidden_defaults_and_holdout_fixture() -> None:
@@ -183,21 +177,39 @@ def test_adapter_spec_rejects_pinned_evaluator_source_drift(tmp_path: Path) -> N
         validate_adapter_spec(frozen, sandbox)
 
 
+def test_adapter_spec_rejects_runtime_evaluator_drift(monkeypatch: pytest.MonkeyPatch) -> None:
+    def substituted_evaluator(_scenario: object) -> None:
+        return None
+
+    monkeypatch.setattr("src.sim.synthetic_worlds.thermal_adapter.simulate_thermal_shadow", substituted_evaluator)
+    with pytest.raises(ValidationError, match="imported thermal evaluator identity mismatch"):
+        validate_adapter_spec(spec(), ROOT)
+
+
+def test_development_evaluation_anchors_the_accepted_spec(tmp_path: Path) -> None:
+    sandbox = copy_validation_tree(tmp_path)
+    adapter_spec = sandbox / "configs/synthetic_worlds/thermal_adapter_r1.json"
+    adapter_spec.write_text(adapter_spec.read_text(encoding="utf-8") + "\n", encoding="utf-8")
+
+    with pytest.raises(ValidationError, match="accepted R1 adapter specification identity mismatch"):
+        evaluate_development_record(fixture(), sandbox)
+
+
 def test_development_evaluation_rejects_unbound_or_relabelled_records() -> None:
     frozen = spec()
     development = fixture()
 
     with pytest.raises(ValidationError, match="pinned R1 fixture"):
-        evaluate_development_record(development["record"], frozen, ROOT)
+        evaluate_development_record(development["record"], ROOT)
 
     relabelled = copy.deepcopy(development)
     relabelled["split"] = "holdout"
     with pytest.raises(ValidationError, match="pinned R1 fixture"):
-        evaluate_development_record(relabelled, frozen, ROOT)
+        evaluate_development_record(relabelled, ROOT)
 
     protocol = json.loads((ROOT / "configs/synthetic_worlds/thermal_stress_protocol.json").read_text())
     disguised = copy.deepcopy(development)
     disguised["record"]["parameters"] = protocol["fixed_handwritten_scenarios"]["holdout"][0]["parameters"]
     rehash(disguised["record"])
     with pytest.raises(ValidationError, match="pinned R1 fixture"):
-        evaluate_development_record(disguised, frozen, ROOT)
+        evaluate_development_record(disguised, ROOT)
