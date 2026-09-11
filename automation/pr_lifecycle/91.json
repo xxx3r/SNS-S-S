@@ -3,12 +3,12 @@
   "pr_number": 91,
   "quest_id": "QST-SIM-0003",
   "acceptance_slice": "QST-SIM-0003 fixed 2 x 2 eclipse-fraction and beam-efficiency sweep",
-  "state": "ready_for_review",
+  "state": "merged",
   "owner_run_id": "RUN-20260911T190610296234Z-daily-research-operator-0f2b901042bcba59394f",
   "source_commit": "c1809d0819412c136bc0784da20a35932a846d59",
-  "head_commit": "6770d30a76c14562d2dece2995ad986d45c685cf",
-  "updated_at": "2026-09-11T19:11:00+00:00",
+  "head_commit": "be1836488822a4baf1202ee2073cb3b8ccfefaa7",
+  "updated_at": "2026-09-11T19:14:30+00:00",
   "next_review_after": "2026-09-20T21:18:43+00:00",
   "supersedes": [],
-  "reason": "PR #91 contains exactly four synthetic cases on the accepted coordinated 20% storage-node role mix and identical six-hour fixture. The fixed grid is eclipse_fraction=[0.05,0.10] by beam_efficiency=[0.60,0.80]. Local qualification passed with 206 tests, semantic repository validation, baseline artifacts, and focused reproduction/boundary tests. A pre-merge review repair additionally binds the complete fixture and role-mix semantics to a fixed SHA-256 and rejects substitution without rerunning the artifact. Hosted exact-head qualification and review remain required before merge."
+  "reason": "PR #91 was squash-merged as be1836488822a4baf1202ee2073cb3b8ccfefaa7 from exact head d2558c69c873284865828c1e5416a06b46ef5ae1 after tests 34637569597, baseline-artifacts 34637569691, and automation-transaction 34637569680 passed, including semantic repository validation and full pytest. The fixed four-case artifact uses the accepted coordinated 20% storage-node role mix and identical six-hour fixture; the complete fixture/arm semantics are hash-bound and substitution fails closed. Exact-head semantic review found no unresolved substantive finding and honestly records that it was performed in-run rather than independently."
 }
