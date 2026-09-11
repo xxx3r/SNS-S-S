@@ -1,0 +1,59 @@
+{
+  "schema": "sns.qst-sim-0003.eclipse-beam-sweep-fixture.v1",
+  "quest_id": "QST-SIM-0003",
+  "synthetic": true,
+  "route_receipt": "RUN-20260911T162139636291Z-daily-governance-triage-ad4e6f73d7bcb14a1a59",
+  "grid": {
+    "eclipse_fraction": [0.05, 0.1],
+    "beam_efficiency": [0.6, 0.8]
+  },
+  "fixture": {
+    "duration": 21600.0,
+    "dt": 300.0,
+    "scenario": "geo_ring",
+    "mission": "geo_ring_power_chain",
+    "solar_flux": 1360.0,
+    "num_agents": 10,
+    "host_demand_rate": 0.2,
+    "coverage_bin_count": 36,
+    "environment": {
+      "orbital_period_s": 86164.0,
+      "eclipse_fraction": 0.05,
+      "receiver_phase_center_rad": 0.0,
+      "receiver_visibility_fraction": 0.25
+    },
+    "agent_parameters": {
+      "pv_area": 0.5,
+      "pv_efficiency": 0.25,
+      "energy_max": 0.1,
+      "initial_energy": 0.05,
+      "capacitor_max": 0.003,
+      "initial_capacitor": 0.0,
+      "max_battery_charge_power": 0.1,
+      "max_capacitor_charge_power": 1.0,
+      "charge_efficiency": 0.9,
+      "discharge_efficiency": 0.9,
+      "power_idle": 0.002,
+      "power_idle_low": 0.0001,
+      "power_scout": 0.005,
+      "power_comm": 0.05,
+      "power_move": 0.02,
+      "low_threshold": 0.02,
+      "high_threshold": 0.08,
+      "beam_efficiency": 0.6,
+      "beam_rate": 0.05,
+      "move_rate": 0.0005,
+      "orientation_factor": 1.0,
+      "thermal_time_constant_s": 1800.0,
+      "initial_temperature_K": 290.0,
+      "min_operating_temperature_K": 240.0,
+      "max_operating_temperature_K": 350.0
+    }
+  },
+  "arm": {
+    "arm_id": "fixed_coordinated_storage_mix",
+    "policy": "coordinated",
+    "agent_roles": ["scout", "scout", "sensor", "relay", "storage", "scout", "scout", "sensor", "relay", "storage"]
+  },
+  "claim_boundary": "Four synthetic cases on one fixed fixture; no optimization, preferred architecture, real-ephemeris, relay-performance, or hardware-readiness claim."
+}
