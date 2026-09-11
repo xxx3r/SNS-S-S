@@ -89,5 +89,13 @@ def test_sweep_rejects_role_mix_changes() -> None:
     spec = _spec()
     spec["arm"]["agent_roles"][4] = "scout"
 
-    with pytest.raises(ValueError, match="20% storage-node"):
+    with pytest.raises(ValueError, match="accepted binding"):
+        run_sweep(spec)
+
+
+def test_sweep_rejects_non_grid_fixture_changes() -> None:
+    spec = _spec()
+    spec["fixture"]["host_demand_rate"] = 0.1
+
+    with pytest.raises(ValueError, match="accepted binding"):
         run_sweep(spec)
