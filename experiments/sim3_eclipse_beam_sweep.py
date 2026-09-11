@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import itertools
 import json
 from collections import Counter
@@ -14,6 +15,9 @@ from src.sim.simulation import Simulation
 
 ECLIPSE_GRID = (0.05, 0.1)
 BEAM_EFFICIENCY_GRID = (0.6, 0.8)
+ACCEPTED_FIXTURE_BINDING_SHA256 = (
+    "373e87129677c839b23de2a3d8b3ec74da05bd066536346859577be52ea3797a"
+)
 METRIC_KEYS = (
     "E_host",
     "E_mean",
@@ -51,6 +55,14 @@ def _validate_spec(spec: dict) -> None:
 
     fixture = spec["fixture"]
     arm = spec["arm"]
+    fixture_binding = json.dumps(
+        {"fixture": fixture, "arm": arm}, sort_keys=True, separators=(",", ":")
+    ).encode("utf-8")
+    if hashlib.sha256(fixture_binding).hexdigest() != ACCEPTED_FIXTURE_BINDING_SHA256:
+        raise ValueError(
+            "fixture and role mix must remain byte-semantically identical "
+            "to the accepted binding"
+        )
     roles = list(arm["agent_roles"])
     role_counts = Counter(roles)
     if (
@@ -151,6 +163,7 @@ def run_sweep(spec: dict) -> dict:
         "case_count": len(cases),
         "fixture": spec["fixture"],
         "arm": spec["arm"],
+        "accepted_fixture_binding_sha256": ACCEPTED_FIXTURE_BINDING_SHA256,
         "cases": cases,
         "observed_differences": observed_differences,
         "observation": "FIXED_FOUR_CASE_SYNTHETIC_SWEEP_COMPLETE",
