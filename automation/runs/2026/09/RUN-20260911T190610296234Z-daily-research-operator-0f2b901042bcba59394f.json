@@ -1,0 +1,288 @@
+{
+  "artifacts": [
+    {
+      "kind": "frozen SIM3 sweep configuration",
+      "path": "configs/qst_sim_0003_eclipse_beam_sweep.json"
+    },
+    {
+      "kind": "deterministic SIM3 sweep implementation",
+      "path": "experiments/sim3_eclipse_beam_sweep.py"
+    },
+    {
+      "kind": "focused reproduction and boundary tests",
+      "path": "tests/test_sim3_eclipse_beam_sweep.py"
+    },
+    {
+      "kind": "four-case synthetic result",
+      "path": "outputs/qst_sim_0003/eclipse_beam_sweep.json"
+    },
+    {
+      "kind": "immutable Daily run receipt",
+      "path": "automation/runs/2026/09/RUN-20260911T190610296234Z-daily-research-operator-0f2b901042bcba59394f.json"
+    },
+    {
+      "kind": "PR lifecycle owner",
+      "path": "automation/pr_lifecycle/91.json"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "One implement request for the four-case swarm-power slice validated under STAND-20260906-SEPTEMBER-ACTION-V1 at 2026-09-11T19:01:36+00:00.",
+      "name": "validate-standing-request",
+      "status": "passed"
+    },
+    {
+      "evidence": "Six focused tests reproduced the committed artifact, enforced the exact Cartesian grid and 20% storage role mix, checked required metrics, and rejected grid or role substitution.",
+      "name": "focused reproduction and boundary tests",
+      "status": "passed"
+    },
+    {
+      "evidence": "206 tests passed locally after the four-case artifact was generated once.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Semantic repository validation returned valid=true with QST-SIM-0003 on the ready frontier.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "scripts/check_baseline_artifacts.sh passed locally before publication; generated latest-output side effects were discarded.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Accepted main was c1809d0819412c136bc0784da20a35932a846d59 and PR #91 was the sole open owner at preliminary implementation head 43db2cb6f3c3b102d7d7211eee59037e1fea1cc4.",
+      "name": "source and ownership freeze",
+      "status": "passed"
+    },
+    {
+      "name": "fixture-binding review repair",
+      "status": "passed",
+      "evidence": "Before final qualification, in-run review found that the coordinate grid was pinned but arbitrary non-grid fixture substitution was not rejected. The existing artifact was not rerun; source and tests now bind the complete accepted fixture/role-mix semantics to sha256:373e87129677c839b23de2a3d8b3ec74da05bd066536346859577be52ea3797a and fail closed on drift."
+    },
+    {
+      "evidence": "Required after receipt and lifecycle publication on the final exact PR head.",
+      "name": "receipt-bearing hosted qualification",
+      "status": "not_run"
+    },
+    {
+      "evidence": "Required after receipt and lifecycle publication; no independent approval is claimed.",
+      "name": "exact-head semantic review",
+      "status": "not_run"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-09-11T19:06:10+00:00",
+  "decision_effect": "Executed the accepted fixed QST-SIM-0003 two-by-two synthetic sweep exactly once. Beam efficiency 0.80 delivered 0.0925 Wh more than 0.60 at both eclipse settings. Eclipse fraction 0.10 changed delivery, survival, and coverage by zero relative to 0.05 while reducing curtailment by 708.319947017 Wh on the identical six-hour fixture.",
+  "inheritance": [
+    {
+      "decision_effect": "Inherited the exact four-coordinate route and all stop conditions.",
+      "kind": "RUN",
+      "ref": "RUN-20260911T162139636291Z-daily-governance-triage-ad4e6f73d7bcb14a1a59"
+    },
+    {
+      "decision_effect": "Inherited the accepted coordinated 20% storage-node role mix and six-hour fixture without changing either.",
+      "kind": "artifact",
+      "ref": "outputs/qst_sim_0003/role_mix_comparison.json"
+    },
+    {
+      "decision_effect": "Inherited the active quest method, metrics, falsifier, and synthetic-model boundary.",
+      "kind": "artifact",
+      "ref": "quests/active/QST-SIM-0003-geo-ring-power-chain.md"
+    }
+  ],
+  "loop_id": "daily-research-operator",
+  "next_action": "Weekly reviews the accepted four-case SIM3 artifact against the quest criteria and decides its evidence-backed disposition. Do not repeat, optimize, add a third grid value, alter the role mix, or treat the fixture as real-ephemeris, relay-performance, preferred-architecture, or hardware-readiness evidence.",
+  "observability": {
+    "administrative_transactions": 0,
+    "continuity": "inherited",
+    "scientific_artifacts": 1
+  },
+  "pr_context": {
+    "base_commit": "c1809d0819412c136bc0784da20a35932a846d59",
+    "branch": "daily/sim3-fixed-2x2-sweep-20260911",
+    "implementation_head": "6770d30a76c14562d2dece2995ad986d45c685cf",
+    "owner_run_id": "RUN-20260911T190610296234Z-daily-research-operator-0f2b901042bcba59394f",
+    "pull_request": 91,
+    "review_state": "local semantic review complete; receipt-bearing hosted qualification and exact-head review pending"
+  },
+  "quest_context": {
+    "acceptance_slice": "QST-SIM-0003 fixed 2 x 2 eclipse-fraction and beam-efficiency sweep",
+    "claim_boundary": "Four cases on one synthetic six-hour fixture. No optimization, third value, role-mix change, real ephemeris, external evidence, architecture selection, relay-performance generalization, belief change, quest-state change, or hardware-readiness claim.",
+    "phase": "refine_existing",
+    "quest_id": "QST-SIM-0003",
+    "result": "FIXED_FOUR_CASE_SYNTHETIC_SWEEP_COMPLETE",
+    "result_summary": "All four cases retained full coverage and zero dead agents. Increasing beam efficiency from 0.60 to 0.80 raised delivered energy from 0.2775 Wh to 0.3700 Wh at either eclipse setting. Increasing eclipse fraction from 0.05 to 0.10 left delivery unchanged and reduced curtailment from 9475.752817593 Wh to 8767.432870576 Wh.",
+    "scope": "swarm-power"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20260911T190610296234Z-daily-research-operator-0f2b901042bcba59394f",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "c1809d0819412c136bc0784da20a35932a846d59",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20260906-SEPTEMBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-09-06T21:18:43Z\",\n  \"review_at\": \"2026-09-20T21:18:43Z\",\n  \"expires_at\": \"2026-10-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved complete bounded research cycles in Issue #79. These are per acceptance-slice ceilings, not default generation targets. Tests and dependency installation are not scientific runtime consumption. Frozen experiments may impose smaller budgets. No spending, model training, private export, evaluator/holdout changes after freeze, or new hardware-readiness claims.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "QST-SIM-0003 fixed 2 x 2 eclipse-fraction and beam-efficiency sweep",
+        "action": "implement",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 4,
+          "runtime_s": 1,
+          "worlds": 4
+        },
+        "evidence_refs": [
+          "RUN-20260911T162139636291Z-daily-governance-triage-ad4e6f73d7bcb14a1a59",
+          "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+          "configs/qst_sim_0003_role_mix.json",
+          "outputs/qst_sim_0003/role_mix_comparison.json"
+        ],
+        "loop_id": "daily-research-operator",
+        "paths": [
+          "configs/qst_sim_0003_eclipse_beam_sweep.json",
+          "experiments/sim3_eclipse_beam_sweep.py",
+          "tests/test_sim3_eclipse_beam_sweep.py",
+          "outputs/qst_sim_0003/eclipse_beam_sweep.json",
+          "automation/runs/2026/09/RUN-20260911T190610296234Z-daily-research-operator-0f2b901042bcba59394f.json",
+          "automation/pr_lifecycle/91.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 1
+      },
+      {
+        "acceptance_slice": "QST-SIM-0003 fixed 2 x 2 eclipse-fraction and beam-efficiency sweep",
+        "action": "merge",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 4,
+          "runtime_s": 1,
+          "worlds": 4
+        },
+        "evidence_refs": [
+          "RUN-20260911T162139636291Z-daily-governance-triage-ad4e6f73d7bcb14a1a59",
+          "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+          "configs/qst_sim_0003_role_mix.json",
+          "outputs/qst_sim_0003/role_mix_comparison.json"
+        ],
+        "loop_id": "daily-research-operator",
+        "paths": [
+          "configs/qst_sim_0003_eclipse_beam_sweep.json",
+          "experiments/sim3_eclipse_beam_sweep.py",
+          "tests/test_sim3_eclipse_beam_sweep.py",
+          "outputs/qst_sim_0003/eclipse_beam_sweep.json",
+          "automation/runs/2026/09/RUN-20260911T190610296234Z-daily-research-operator-0f2b901042bcba59394f.json",
+          "automation/pr_lifecycle/91.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 1
+      }
+    ],
+    "trigger_id": "daily-research-operator:2026-09-11T19:01:36+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:4c7e0bc3c07e84962fc3cdda80cfd06c92653e1aeecf51f32a8286685a707b27",
+    "open_prs": [
+      {
+        "draft": false,
+        "head_sha": "6770d30a76c14562d2dece2995ad986d45c685cf",
+        "number": 91,
+        "state": "open"
+      }
+    ],
+    "records": [
+      {
+        "git_blob_sha": "ced056775819dad409c9413b0675672718a42a73",
+        "path": "configs/qst_sim_0003_role_mix.json",
+        "role": "accepted_fixture"
+      },
+      {
+        "git_blob_sha": "5c0fe3de56664d603b5041ab41b2b0a47ba42825",
+        "path": "outputs/qst_sim_0003/role_mix_comparison.json",
+        "role": "accepted_role_mix_evidence"
+      },
+      {
+        "git_blob_sha": "a3fe2e7692177aaf8867bbc2a8db2fe3a7d97a26",
+        "path": "automation/contracts/daily-research-operator.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "594775bdbc10e1c4c3f3514484eaa87415047ea1",
+        "path": "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+        "role": "active_quest"
+      },
+      {
+        "git_blob_sha": "7bd1a464725f0c669c2c36963a93765676b06d65",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "7d32064c8638aa2f886d5b943e6db8eb4fb5a21b",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "289f70838c0bee9b6ce89e2ce92eed4483d6204a",
+        "path": "automation/schemas/loop-run-v2.schema.json",
+        "role": "current_receipt_schema"
+      },
+      {
+        "git_blob_sha": "7c283b1f9678e4f59b08c9660729cf672cda0aee",
+        "path": "calendar/monthly/2026-09.md",
+        "role": "monthly_state"
+      },
+      {
+        "git_blob_sha": "7cab2fe354116ffe0703454d57dfd90f539b0cda",
+        "path": "automation/runs/2026/09/RUN-20260911T162139636291Z-daily-governance-triage-ad4e6f73d7bcb14a1a59.json",
+        "role": "pre_game_route"
+      },
+      {
+        "git_blob_sha": "579b11eb7820db52f5b5097ade95e323a75934fe",
+        "path": "automation/runs/2026/09/RUN-20260910T190329171964Z-daily-research-operator-5f7ddcf120e0f108c177.json",
+        "role": "prior_daily_lineage"
+      },
+      {
+        "git_blob_sha": "c3db48f5a88005b4b1e8782aedc070ec001332af",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "6f194112d367a9e1b7eb777f83f95c5870062d2a",
+        "path": "automation/delegations/2026-09.json",
+        "role": "september_delegation"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "e0d774e3334debf514446f89196e79bd7f71eaed",
+        "path": "automation/standing/2026-09.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "9d806867b3dbac0f1b11ab9d45819fc097002d30",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "c1809d0819412c136bc0784da20a35932a846d59"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-09-11T19:01:36Z"
+}
