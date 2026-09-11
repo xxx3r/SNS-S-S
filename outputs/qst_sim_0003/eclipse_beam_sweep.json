@@ -26,7 +26,7 @@
         "E_max": 0.1,
         "E_mean": 0.09987037,
         "E_min": 0.098703704,
-        "coverage_fraction": 1.0,
+        "coverage_fraction": 1,
         "curtailed_total_Wh": 9475.752817593,
         "dead_agent_count": 0,
         "delivered_total_Wh": 0.2775,
@@ -59,7 +59,7 @@
         "E_max": 0.1,
         "E_mean": 0.09987037,
         "E_min": 0.098703704,
-        "coverage_fraction": 1.0,
+        "coverage_fraction": 1,
         "curtailed_total_Wh": 9475.752817593,
         "dead_agent_count": 0,
         "delivered_total_Wh": 0.37,
@@ -92,7 +92,7 @@
         "E_max": 0.1,
         "E_mean": 0.09987037,
         "E_min": 0.098703704,
-        "coverage_fraction": 1.0,
+        "coverage_fraction": 1,
         "curtailed_total_Wh": 8767.432870576,
         "dead_agent_count": 0,
         "delivered_total_Wh": 0.2775,
@@ -127,7 +127,7 @@
         "E_max": 0.1,
         "E_mean": 0.09987037,
         "E_min": 0.098703704,
-        "coverage_fraction": 1.0,
+        "coverage_fraction": 1,
         "curtailed_total_Wh": 8767.432870576,
         "dead_agent_count": 0,
         "delivered_total_Wh": 0.37,
@@ -163,16 +163,16 @@
       "discharge_efficiency": 0.9,
       "energy_max": 0.1,
       "high_threshold": 0.08,
-      "initial_capacitor": 0.0,
+      "initial_capacitor": 0,
       "initial_energy": 0.05,
-      "initial_temperature_K": 290.0,
+      "initial_temperature_K": 290,
       "low_threshold": 0.02,
       "max_battery_charge_power": 0.1,
-      "max_capacitor_charge_power": 1.0,
-      "max_operating_temperature_K": 350.0,
-      "min_operating_temperature_K": 240.0,
+      "max_capacitor_charge_power": 1,
+      "max_operating_temperature_K": 350,
+      "min_operating_temperature_K": 240,
       "move_rate": 0.0005,
-      "orientation_factor": 1.0,
+      "orientation_factor": 1,
       "power_comm": 0.05,
       "power_idle": 0.002,
       "power_idle_low": 0.0001,
@@ -180,22 +180,22 @@
       "power_scout": 0.005,
       "pv_area": 0.5,
       "pv_efficiency": 0.25,
-      "thermal_time_constant_s": 1800.0
+      "thermal_time_constant_s": 1800
     },
     "coverage_bin_count": 36,
-    "dt": 300.0,
-    "duration": 21600.0,
+    "dt": 300,
+    "duration": 21600,
     "environment": {
       "eclipse_fraction": 0.05,
-      "orbital_period_s": 86164.0,
-      "receiver_phase_center_rad": 0.0,
+      "orbital_period_s": 86164,
+      "receiver_phase_center_rad": 0,
       "receiver_visibility_fraction": 0.25
     },
     "host_demand_rate": 0.2,
     "mission": "geo_ring_power_chain",
     "num_agents": 10,
     "scenario": "geo_ring",
-    "solar_flux": 1360.0
+    "solar_flux": 1360
   },
   "grid": {
     "beam_efficiency": [
@@ -214,8 +214,8 @@
       {
         "eclipse_fraction": 0.05,
         "metric_deltas": {
-          "coverage_fraction": 0.0,
-          "curtailed_total_Wh": 0.0,
+          "coverage_fraction": 0,
+          "curtailed_total_Wh": 0,
           "dead_agent_count": 0,
           "delivered_total_Wh": 0.0925
         }
@@ -223,8 +223,8 @@
       {
         "eclipse_fraction": 0.1,
         "metric_deltas": {
-          "coverage_fraction": 0.0,
-          "curtailed_total_Wh": 0.0,
+          "coverage_fraction": 0,
+          "curtailed_total_Wh": 0,
           "dead_agent_count": 0,
           "delivered_total_Wh": 0.0925
         }
@@ -234,19 +234,19 @@
       {
         "beam_efficiency": 0.6,
         "metric_deltas": {
-          "coverage_fraction": 0.0,
+          "coverage_fraction": 0,
           "curtailed_total_Wh": -708.319947017,
           "dead_agent_count": 0,
-          "delivered_total_Wh": 0.0
+          "delivered_total_Wh": 0
         }
       },
       {
         "beam_efficiency": 0.8,
         "metric_deltas": {
-          "coverage_fraction": 0.0,
+          "coverage_fraction": 0,
           "curtailed_total_Wh": -708.319947017,
           "dead_agent_count": 0,
-          "delivered_total_Wh": 0.0
+          "delivered_total_Wh": 0
         }
       }
     ]
@@ -254,5 +254,6 @@
   "quest_id": "QST-SIM-0003",
   "route_receipt": "RUN-20260911T162139636291Z-daily-governance-triage-ad4e6f73d7bcb14a1a59",
   "schema": "sns.qst-sim-0003.eclipse-beam-sweep.v1",
-  "synthetic": true
+  "synthetic": true,
+  "accepted_fixture_binding_sha256": "373e87129677c839b23de2a3d8b3ec74da05bd066536346859577be52ea3797a"
 }
