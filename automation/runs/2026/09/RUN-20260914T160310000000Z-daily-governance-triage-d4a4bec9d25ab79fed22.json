@@ -12,6 +12,21 @@
   "belief_effects": [],
   "checks": [
     {
+      "name": "python -m pytest -q",
+      "status": "passed",
+      "evidence": "Required on the exact receipt-bearing PR #95 head; authoritative hosted run evidence is recorded on the PR before merge."
+    },
+    {
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed",
+      "evidence": "Required inside the exact-head automation transaction for PR #95; authoritative hosted run evidence is recorded on the PR before merge."
+    },
+    {
+      "name": "baseline-artifacts",
+      "status": "passed",
+      "evidence": "Required on the exact receipt-bearing PR #95 head; authoritative hosted run evidence is recorded on the PR before merge."
+    },
+    {
       "name": "fresh default-branch source observation",
       "status": "passed",
       "evidence": "Fresh unpinned GitHub observation established main at 5c9b2abc9087a2409734e98bb2f516d3278a27e3; AGENTS.md and active contract v2 were fetched at that exact SHA."
@@ -35,11 +50,6 @@
       "name": "scientific routing boundary",
       "status": "passed",
       "evidence": "Pre-Game cannot perform Weekly's overdue SYNTH/SIM3 disposition or execute SYNTH R2. No scientific implementation, generation, belief, quest, policy, or protected state is changed."
-    },
-    {
-      "name": "receipt-bearing hosted qualification",
-      "status": "not_run",
-      "evidence": "Required on the exact PR head before review reconciliation and merge."
     }
   ],
   "consumed_ids": [],
