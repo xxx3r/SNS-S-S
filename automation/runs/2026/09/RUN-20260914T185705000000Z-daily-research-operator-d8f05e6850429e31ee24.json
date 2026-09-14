@@ -63,7 +63,7 @@
   "next_action": "Weekly independently dispositions accepted SYNTH R1 and SIM3 evidence, resolves useful-delivery semantics, reconciles the stale R0 selection note, and routes at most one bounded successor. System Audit receipt corrections proceed in parallel and do not block Weekly.",
   "observability": {
     "administrative_transactions": 1,
-    "continuity": "no_action",
+    "continuity": "handoff",
     "scientific_artifacts": 0
   },
   "pr_context": {
