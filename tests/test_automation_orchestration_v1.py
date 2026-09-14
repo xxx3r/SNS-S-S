@@ -21,6 +21,15 @@ def test_runtime_manifest_is_valid_and_binds_bootloader() -> None:
     assert "August" not in prompt
 
 
+def test_bootstrap_prompt_requires_source_freshness() -> None:
+    for loop_id in ("daily-governance-triage", "daily-research-operator", "weekly-evidence-synthesis", "monthly-governance", "observatory-projection"):
+        prompt = render_bootstrap_prompt(loop_id)
+        assert "fresh unpinned GitHub read" in prompt
+        assert "CURRENT_MAIN_SHA" in prompt
+        assert "default-branch HEAD" in prompt
+        assert "source-observation blocker" in prompt
+
+
 def test_matching_observed_runtime_has_no_drift() -> None:
     manifest = _manifest()
     observed = []
