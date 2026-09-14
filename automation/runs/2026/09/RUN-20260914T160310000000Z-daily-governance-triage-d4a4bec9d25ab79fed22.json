@@ -3,10 +3,6 @@
     {
       "kind": "immutable Pre-Game maintenance receipt",
       "path": "automation/runs/2026/09/RUN-20260914T160310000000Z-daily-governance-triage-d4a4bec9d25ab79fed22.json"
-    },
-    {
-      "kind": "mechanical review reconciliation",
-      "path": "https://github.com/xxx3r/SNS-S-S/pull/94#discussion_r4001542165"
     }
   ],
   "belief_effects": [],
