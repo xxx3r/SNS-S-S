@@ -14,19 +14,34 @@ _REQUIRED_LOOP_IDS = {
 }
 _TIMING_MODES = {"exact_schedule", "flexible_schedule", "condition_watch", "explicit_only"}
 
+_FRESH_SOURCE_HANDSHAKE = (
+    "Start every trigger by discarding repository SHA, active-contract selection, queue state, and next-action state inherited from prior runs; "
+    "prior scheduled-run context is history, never current repository authority. "
+    "Make a fresh unpinned GitHub read of the xxx3r/SNS-S-S default branch main, record CURRENT_MAIN_SHA, and fetch AGENTS.md plus the current repository instructions at that exact SHA. "
+    "Never adopt a source SHA solely from prior task or conversation context. "
+    "Immediately before any publication or merge, re-read default-branch HEAD; if it moved, refresh decision state from the new head. "
+    "If a fresh default-branch observation cannot be made, stop as a source-observation blocker. "
+)
+
 
 def render_bootstrap_prompt(loop_id: str) -> str:
     if loop_id not in _REQUIRED_LOOP_IDS:
         raise ValueError(f"unknown SNS loop_id: {loop_id}")
     if loop_id == "observatory-projection":
-        return ("Use @GitHub and @Sites to operate the SNS Observatory projection. "
-                "Read accepted main in xxx3r/SNS-S-S, AGENTS.md, and automation/prompts/observatory.md; follow those repository instructions. "
-                "Use @Google Drive and @Google Calendar only when relevant; @Wolfram is optional. Report the accepted source, publication result and limitations.")
-    return (f"Use @GitHub to operate xxx3r/SNS-S-S as loop `{loop_id}`. "
-            "Read accepted main and AGENTS.md, then resolve the one currently active repository contract for this loop ID and follow its instructions. "
-            "Use connected @Google Drive and @Google Calendar when relevant; @Wolfram is optional. "
-            "The repository owns scope, execution, validation and handoff; report the actual outcome and limitations.")
-
+        return (
+            "Use @GitHub and @Sites to operate the SNS Observatory projection. "
+            + _FRESH_SOURCE_HANDSHAKE
+            + "Read automation/prompts/observatory.md at CURRENT_MAIN_SHA and follow those repository instructions. "
+            "Use @Google Drive and @Google Calendar only when relevant; @Wolfram is optional. "
+            "Report the accepted source, publication result and limitations."
+        )
+    return (
+        f"Use @GitHub to operate xxx3r/SNS-S-S as loop `{loop_id}`. "
+        + _FRESH_SOURCE_HANDSHAKE
+        + "Resolve the one currently active repository contract for this loop ID at CURRENT_MAIN_SHA and follow its instructions. "
+        "Use connected @Google Drive and @Google Calendar when relevant; @Wolfram is optional. "
+        "The repository owns scope, execution, validation and handoff; report the actual outcome and limitations."
+    )
 
 
 def validate_runtime_manifest(manifest: Mapping[str, object]) -> None:
@@ -44,7 +59,7 @@ def validate_runtime_manifest(manifest: Mapping[str, object]) -> None:
     scheduled_order: dict[str, int] = {}
     for row in loops:
         if not isinstance(row, dict):
-            raise ValueError("runtime manifest loop rows must be objects")
+            raise ValueError("runtime loop rows must be objects")
         required = {
             "loop_id",
             "automation_title",
