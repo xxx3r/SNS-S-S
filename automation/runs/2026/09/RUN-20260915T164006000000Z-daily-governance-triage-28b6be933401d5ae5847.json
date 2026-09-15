@@ -1,0 +1,199 @@
+{
+  "artifacts": [
+    {
+      "kind": "immutable Pre-Game maintenance receipt",
+      "path": "automation/runs/2026/09/RUN-20260915T164006000000Z-daily-governance-triage-28b6be933401d5ae5847.json"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "name": "python -m pytest -q",
+      "status": "passed",
+      "evidence": "Required on the exact receipt-bearing PR head; authoritative hosted evidence is recorded on the PR before merge."
+    },
+    {
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed",
+      "evidence": "Required inside the exact-head automation transaction; authoritative hosted evidence is recorded on the PR before merge."
+    },
+    {
+      "name": "baseline-artifacts",
+      "status": "passed",
+      "evidence": "Required on the exact receipt-bearing PR head; authoritative hosted evidence is recorded on the PR before merge."
+    },
+    {
+      "name": "fresh default-branch source observation",
+      "status": "passed",
+      "evidence": "Fresh unpinned GitHub observation established main at df0db9af338e78d2621e4e312e940b87de21a6e9; AGENTS.md and the sole active Pre-Game v2 contract were fetched at that exact SHA."
+    },
+    {
+      "name": "PR #96 accepted-head repair verification",
+      "status": "passed",
+      "evidence": "Accepted PR #96 final head f1cce5873104086b28767b893d38a3968425ebb0 uses observability.continuity=handoff and passed tests 34884270533, baseline-artifacts 34884270534, and automation-transaction 34884270589 including semantic validation and full pytest."
+    },
+    {
+      "name": "live ownership and scientific routing scan",
+      "status": "passed",
+      "evidence": "No open PR owner exists. Issue #30 remains Weekly-owned. SYNTH R2 still awaits Weekly useful-delivery disposition; the completed SIM3 grid cannot be repeated or widened."
+    },
+    {
+      "name": "exact-head semantic review",
+      "status": "not_run",
+      "evidence": "Required on the final receipt-bearing PR head before merge; no independent approval is claimed."
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-09-15T16:40:06Z",
+  "decision_effect": "Mechanically reconcile PR #96's late P1 after verifying the accepted final head repaired the schema defect, while preserving Weekly ownership of the unresolved scientific disposition.",
+  "inheritance": [
+    {
+      "kind": "RUN",
+      "ref": "RUN-20260914T185705000000Z-daily-research-operator-d8f05e6850429e31ee24",
+      "decision_effect": "Inherited the accepted no-action scientific boundary and verified its repaired final-head bytes and qualification."
+    },
+    {
+      "kind": "artifact",
+      "ref": "quests/dispositions/2026-09-06.json",
+      "decision_effect": "Preserved Weekly ownership of Issue #30 and the overdue evidence-backed review condition."
+    }
+  ],
+  "loop_id": "daily-governance-triage",
+  "next_action": "Daily remains without an executable scientific slice. Weekly independently dispositions accepted SYNTH R1 and SIM3 evidence, resolves useful-delivery semantics, reconciles the stale R0 selection note, and routes at most one bounded successor; System Audit corrections remain parallel.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "handoff",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "base_commit": "df0db9af338e78d2621e4e312e940b87de21a6e9",
+    "implementation_head_scope": "not applicable: mechanical review-state reconciliation and routing handoff only",
+    "qualification_binding": "the final receipt-bearing publication head and hosted checks are recorded on its PR"
+  },
+  "quest_context": {
+    "acceptance_slice": "PR #96 accepted-head review reconciliation plus current Daily handoff",
+    "claim_boundary": "Administrative maintenance only; no scientific behavior, experiment, protocol, evaluator, holdout, evidence, belief, quest, memory, policy, or scheduler state changes.",
+    "phase": "maintenance_and_handoff",
+    "quest_id": "QST-SYNTH-0001|QST-SIM-0003",
+    "result": "REPAIRED_REVIEW_RECONCILED_SCIENCE_STILL_WEEKLY",
+    "result_summary": "PR #96's schema-valid final head satisfies its late P1. No new Daily experiment is executable; Weekly retains scientific disposition.",
+    "scope": "research-tooling"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20260915T164006000000Z-daily-governance-triage-28b6be933401d5ae5847",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "df0db9af338e78d2621e4e312e940b87de21a6e9",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20260906-SEPTEMBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-09-06T21:18:43Z\",\n  \"review_at\": \"2026-09-20T21:18:43Z\",\n  \"expires_at\": \"2026-10-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved complete bounded research cycles in Issue #79. These are per acceptance-slice ceilings, not default generation targets. Tests and dependency installation are not scientific runtime consumption. Frozen experiments may impose smaller budgets. No spending, model training, private export, evaluator/holdout changes after freeze, or new hardware-readiness claims.\"\n}\n",
+    "requests": [
+      {
+        "loop_id": "daily-governance-triage",
+        "action": "maintenance",
+        "scope": "research-tooling",
+        "acceptance_slice": "PR #96 accepted-head review reconciliation plus current Daily handoff",
+        "paths": [
+          "automation/runs/2026/09/RUN-20260915T164006000000Z-daily-governance-triage-28b6be933401d5ae5847.json"
+        ],
+        "budgets": {
+          "worlds": 0,
+          "records": 0,
+          "runtime_s": 0,
+          "disk_mb": 1
+        },
+        "transaction_count": 1,
+        "evidence_refs": [
+          "https://github.com/xxx3r/SNS-S-S/pull/96#discussion_r4008552055",
+          "quests/dispositions/2026-09-06.json"
+        ]
+      }
+    ],
+    "trigger_id": "daily-governance-triage:2026-09-15T16:40:06+00:00"
+  },
+  "state_snapshot": {
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "df0db9af338e78d2621e4e312e940b87de21a6e9",
+    "records": [
+      {
+        "role": "active_contract",
+        "path": "automation/contracts/daily-governance-triage.v2.md",
+        "git_blob_sha": "96bac7f735e2b4d9a0da07f54babace6093f263e"
+      },
+      {
+        "role": "active_quest_index",
+        "path": "quests/active/README.md",
+        "git_blob_sha": "7bd1a464725f0c669c2c36963a93765676b06d65"
+      },
+      {
+        "role": "backlog_disposition",
+        "path": "quests/dispositions/2026-09-06.json",
+        "git_blob_sha": "85547e8efb1ab2b1cd31e6f0cdfe37b4b3b1031d"
+      },
+      {
+        "role": "canonical_memory",
+        "path": "memory/mem_log_short.md",
+        "git_blob_sha": "7d32064c8638aa2f886d5b943e6db8eb4fb5a21b"
+      },
+      {
+        "role": "monthly_state",
+        "path": "calendar/monthly/2026-09.md",
+        "git_blob_sha": "7c283b1f9678e4f59b08c9660729cf672cda0aee"
+      },
+      {
+        "role": "prior_daily_lineage",
+        "path": "automation/runs/2026/09/RUN-20260914T185705000000Z-daily-research-operator-d8f05e6850429e31ee24.json",
+        "git_blob_sha": "12dc686dfb110433d3a820d0c89e249495fdeb59"
+      },
+      {
+        "role": "prior_pre_game_lineage",
+        "path": "automation/runs/2026/09/RUN-20260914T160310000000Z-daily-governance-triage-d4a4bec9d25ab79fed22.json",
+        "git_blob_sha": "416cb671c91c1bdabb59011ee03b3a53838d985f"
+      },
+      {
+        "role": "research_graph",
+        "path": "quests/research_graph.json",
+        "git_blob_sha": "c3db48f5a88005b4b1e8782aedc070ec001332af"
+      },
+      {
+        "role": "runtime_manifest",
+        "path": "automation/runtime_manifest.json",
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896"
+      },
+      {
+        "role": "sim3_quest",
+        "path": "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+        "git_blob_sha": "594775bdbc10e1c4c3f3514484eaa87415047ea1"
+      },
+      {
+        "role": "stable_law",
+        "path": "AGENTS.md",
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894"
+      },
+      {
+        "role": "standing_authority",
+        "path": "automation/standing/2026-09.v1.json",
+        "git_blob_sha": "e0d774e3334debf514446f89196e79bd7f71eaed"
+      },
+      {
+        "role": "standing_pointer",
+        "path": "automation/standing/current.json",
+        "git_blob_sha": "9d806867b3dbac0f1b11ab9d45819fc097002d30"
+      },
+      {
+        "role": "state_ownership",
+        "path": "automation/state_ownership.json",
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6"
+      },
+      {
+        "role": "synth_quest",
+        "path": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+        "git_blob_sha": "f7821ac88b3157241c060d9b5c6fb4e918b7e645"
+      }
+    ],
+    "open_prs": [],
+    "fingerprint": "sha256:e06c627d23857c88edad9aba3d575be52fc258764dcdcfee45d8d7c239d224b3"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-09-15T16:40:06Z"
+}
