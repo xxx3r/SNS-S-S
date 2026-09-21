@@ -1,14 +1,14 @@
 {
   "acceptance_slice": "QST-SIM-0003 two-case receiver-availability diagnostic",
-  "head_commit": "96c96882ed4f66b3d22ca1d2a281e590bbe03b7f",
+  "head_commit": "a896c31e6d98d05c4c3b6826462b110391c1e732",
   "next_review_after": "2026-09-27T00:00:00+00:00",
   "owner_run_id": "RUN-20260921T185751000000Z-daily-research-operator-d3e98205ff68a87b2608",
   "pr_number": 105,
   "quest_id": "QST-SIM-0003",
-  "reason": "PR #105 is the sole owner of the accepted two-case SIM3 receiver-availability diagnostic. It generates only visibility=1.0 cases and loads the exact-hash 0.25 baseline without rerunning it.",
+  "reason": "PR #105 was squash-merged as a896c31e6d98d05c4c3b6826462b110391c1e732 from exact head 8caa9dacc70f5dc8fb9fcd685ac193a2f41e9773 after tests 35643552997, baseline-artifacts 35643553003, and automation-transaction 35643552986 passed. The diagnostic generated only the two accepted visibility=1.0 cases, loaded rather than reran the hash-bound visibility=0.25 baseline, and retained quantitative-only synthetic claim boundaries. Exact-head semantic review found no substantive issue and was performed in-run rather than independently.",
   "schema": "sns.pr-lifecycle.v1",
   "source_commit": "e78e0ef4097f99dab4b801d30074255454681900",
-  "state": "ready_for_review",
+  "state": "merged",
   "supersedes": [],
-  "updated_at": "2026-09-21T19:09:59+00:00"
+  "updated_at": "2026-09-21T19:17:00+00:00"
 }
