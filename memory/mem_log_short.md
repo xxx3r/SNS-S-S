@@ -68,3 +68,18 @@ Pre-Game verifies clean source and zero competing owner, then authorizes exactly
 ## September action authority — Issue #79
 
 The accepted ARCI completion is preserved. Current next move: QST-SYNTH-0001 R0, a reviewed tiny three-arm thermal protocol and non-generating validation harness using the existing imported instrument. Generation waits for accepted protocol/holdout freeze. Daily and Weekly use current standing authority without another per-slice AUTH hop. Weekly owns delegated lifecycle and next-week direction; Monthly owns external literature, strategy and consolidated beliefs. SIM3's fixed sweep remains a bounded fallback. Earlier single-lane September moves above are historical.
+
+
+## September 20 Solar Sunday recovery
+
+The scheduled Weekly task triggered but published no canonical artifact. The operator attributes this to exhausted Codex credits; repository evidence proves only the missing publication, not the account-level cause. Human intervention recovered the scientific disposition without impersonating a completed scheduled run.
+
+QST-SYNTH-0001 R0/R1 remain accepted. R2 is now explicitly `NEEDS_SCIENTIFIC_DECISION`: the accepted thermal evaluator does not model depletion time, load shedding, or partial useful host delivery on electrical failure, so failed-world delivery must remain unresolved rather than being assigned an invented number. The sealed holdout remains untouched.
+
+QST-SIM-0003's fixed eclipse/beam sweep is accepted as bounded evidence and must not be repeated. The next executable move is a two-new-case receiver-availability diagnostic: same accepted coordinated 20% storage-node fixture, beam efficiency 0.80, eclipse fractions 0.05 and 0.10, but legacy/default receiver visibility 1.0. Compare against existing immutable 0.25-visibility cases; do not rerun them.
+
+Issue #103 opens the Q4 2026 long-horizon inheritance experiment: measure whether accepted knowledge changes later decisions, not how many summaries or receipts exist.
+
+### Current next move (one shot)
+
+Pre-Game on September 21 should refresh main and ownership. If clean, route exactly the two-case QST-SIM-0003 receiver-availability comparison above to Daily under existing swarm-power standing scope. SYNTH generates no worlds until its scientific-decision boundary is resolved. The explicit-only System Audit correction remains a separate human-approval surface.
