@@ -1,0 +1,266 @@
+{
+  "artifacts": [
+    {
+      "kind": "frozen receiver-availability configuration",
+      "path": "configs/qst_sim_0003_receiver_availability.json"
+    },
+    {
+      "kind": "two-case diagnostic implementation",
+      "path": "experiments/sim3_receiver_availability.py"
+    },
+    {
+      "kind": "focused reproduction and fail-closed tests",
+      "path": "tests/test_sim3_receiver_availability.py"
+    },
+    {
+      "kind": "two-case synthetic result",
+      "path": "outputs/qst_sim_0003/receiver_availability.json"
+    },
+    {
+      "kind": "immutable Daily run receipt",
+      "path": "automation/runs/2026/09/RUN-20260921T185751000000Z-daily-research-operator-d3e98205ff68a87b2608.json"
+    },
+    {
+      "kind": "PR lifecycle owner",
+      "path": "automation/pr_lifecycle/105.json"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "Implement request for two new swarm-power cases validated under STAND-20260906-SEPTEMBER-ACTION-V1 at 2026-09-21T18:57:51+00:00.",
+      "name": "validate-standing-request",
+      "status": "passed"
+    },
+    {
+      "evidence": "Exactly two new visibility=1.0 cases were generated once; direct rerun reproduced the committed JSON and the immutable baseline bytes were unchanged.",
+      "name": "two-case generation and deterministic reproduction",
+      "status": "passed"
+    },
+    {
+      "evidence": "New runner and focused test module compiled successfully.",
+      "name": "python compileall",
+      "status": "passed"
+    },
+    {
+      "evidence": "GitHub Actions tests run 35643071189 passed on implementation head 96c96882ed4f66b3d22ca1d2a281e590bbe03b7f; job 106476835147 installed the dev dependencies and completed python -m pytest -q successfully.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Semantic repository validation returned valid=true with QST-SIM-0003 on the ready frontier.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "scripts/check_baseline_artifacts.sh passed locally with generated outputs/latest side effects discarded, and GitHub Actions baseline-artifacts run 35643071195 passed on implementation head 96c96882ed4f66b3d22ca1d2a281e590bbe03b7f.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Fresh unpinned main remained e78e0ef4097f99dab4b801d30074255454681900 immediately before publication; PR #105 became the sole open implementation owner at head 96c96882ed4f66b3d22ca1d2a281e590bbe03b7f.",
+      "name": "source and ownership freeze",
+      "status": "passed"
+    },
+    {
+      "evidence": "Required on the final exact PR head after receipt and lifecycle publication.",
+      "name": "receipt-bearing hosted qualification",
+      "status": "not_run"
+    },
+    {
+      "evidence": "Required after receipt and lifecycle publication; no independent approval is claimed.",
+      "name": "exact-head semantic review",
+      "status": "not_run"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-09-21T19:09:59+00:00",
+  "decision_effect": "Two new synthetic cases show that widening receiver visibility from 0.25 to 1.0 raises delivered energy by 0.45 Wh at eclipse fraction 0.05 and 0.36 Wh at 0.10 while preserving full coverage and zero deaths. The accepted route supplied no materiality threshold, so classification remains for Weekly.",
+  "inheritance": [
+    {
+      "decision_effect": "Inherited the two-case receiver-availability route and every stop condition.",
+      "kind": "artifact",
+      "ref": "calendar/roundups/2026-09-20.md"
+    },
+    {
+      "decision_effect": "Loaded the accepted 0.25-visibility cases by exact SHA-256 without rerunning them.",
+      "kind": "artifact",
+      "ref": "outputs/qst_sim_0003/eclipse_beam_sweep.json"
+    },
+    {
+      "decision_effect": "Inherited quest metrics, synthetic boundary, and falsifier.",
+      "kind": "artifact",
+      "ref": "quests/active/QST-SIM-0003-geo-ring-power-chain.md"
+    }
+  ],
+  "loop_id": "daily-research-operator",
+  "next_action": "Weekly assesses the exact receiver-availability deltas against QST-SIM-0003 and decides whether receiver availability is the next model bottleneck to characterize. Do not rerun either accepted grid, add visibility values, optimize, or make architecture claims.",
+  "observability": {
+    "administrative_transactions": 0,
+    "continuity": "inherited",
+    "scientific_artifacts": 1
+  },
+  "pr_context": {
+    "base_commit": "e78e0ef4097f99dab4b801d30074255454681900",
+    "branch": "daily/sim3-receiver-availability-20260921",
+    "implementation_head": "96c96882ed4f66b3d22ca1d2a281e590bbe03b7f",
+    "owner_run_id": "RUN-20260921T185751000000Z-daily-research-operator-d3e98205ff68a87b2608",
+    "pull_request": 105,
+    "review_state": "preliminary implementation published; receipt-bearing hosted qualification and exact-head semantic review pending"
+  },
+  "quest_context": {
+    "acceptance_slice": "QST-SIM-0003 two-case receiver-availability diagnostic",
+    "claim_boundary": "Two new synthetic cases on the accepted six-hour fixture. Baseline cases were loaded by exact hash and not rerun. No unaccepted materiality threshold, additional visibility value, role-mix change, host-demand change, optimization, real ephemeris, architecture selection, relay-performance generalization, belief change, quest-state change, or hardware-readiness claim.",
+    "phase": "refine_existing",
+    "quest_id": "QST-SIM-0003",
+    "result": "RECEIVER_AVAILABILITY_INCREASED_SYNTHETIC_DELIVERY",
+    "result_summary": "At receiver visibility 1.0, delivered energy increased from the immutable 0.25-visibility baseline of 0.37 Wh to 0.82 Wh at eclipse fraction 0.05 and 0.73 Wh at 0.10. Curtailment fell by 1.137202881 Wh and 0.878482613 Wh respectively; both cases retained coverage 1.0 and zero dead agents.",
+    "scope": "swarm-power"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20260921T185751000000Z-daily-research-operator-d3e98205ff68a87b2608",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "e78e0ef4097f99dab4b801d30074255454681900",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20260906-SEPTEMBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-09-06T21:18:43Z\",\n  \"review_at\": \"2026-09-20T21:18:43Z\",\n  \"expires_at\": \"2026-10-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved complete bounded research cycles in Issue #79. These are per acceptance-slice ceilings, not default generation targets. Tests and dependency installation are not scientific runtime consumption. Frozen experiments may impose smaller budgets. No spending, model training, private export, evaluator/holdout changes after freeze, or new hardware-readiness claims.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "QST-SIM-0003 two-case receiver-availability diagnostic",
+        "action": "implement",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 2,
+          "runtime_s": 5,
+          "worlds": 2
+        },
+        "evidence_refs": [
+          "calendar/roundups/2026-09-20.md",
+          "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+          "outputs/qst_sim_0003/eclipse_beam_sweep.json"
+        ],
+        "loop_id": "daily-research-operator",
+        "paths": [
+          "configs/qst_sim_0003_receiver_availability.json",
+          "experiments/sim3_receiver_availability.py",
+          "tests/test_sim3_receiver_availability.py",
+          "outputs/qst_sim_0003/receiver_availability.json",
+          "automation/runs/2026/09/RUN-20260921T185751000000Z-daily-research-operator-d3e98205ff68a87b2608.json",
+          "automation/pr_lifecycle/105.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 1
+      },
+      {
+        "acceptance_slice": "QST-SIM-0003 two-case receiver-availability diagnostic",
+        "action": "merge",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 2,
+          "runtime_s": 5,
+          "worlds": 2
+        },
+        "evidence_refs": [
+          "calendar/roundups/2026-09-20.md",
+          "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+          "outputs/qst_sim_0003/eclipse_beam_sweep.json"
+        ],
+        "loop_id": "daily-research-operator",
+        "paths": [
+          "configs/qst_sim_0003_receiver_availability.json",
+          "experiments/sim3_receiver_availability.py",
+          "tests/test_sim3_receiver_availability.py",
+          "outputs/qst_sim_0003/receiver_availability.json",
+          "automation/runs/2026/09/RUN-20260921T185751000000Z-daily-research-operator-d3e98205ff68a87b2608.json",
+          "automation/pr_lifecycle/105.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 1
+      }
+    ],
+    "trigger_id": "daily-research-operator:2026-09-21T18:57:51+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:954f638ec544b89228354604af338b89c8539f12294b82b6c7709bcaf4cc8115",
+    "open_prs": [
+      {
+        "draft": false,
+        "head_sha": "96c96882ed4f66b3d22ca1d2a281e590bbe03b7f",
+        "number": 105,
+        "state": "open"
+      }
+    ],
+    "records": [
+      {
+        "git_blob_sha": "0944dadd1011748cc1de24846fdd3cc45b7d4470",
+        "path": "outputs/qst_sim_0003/eclipse_beam_sweep.json",
+        "role": "accepted_baseline_evidence"
+      },
+      {
+        "git_blob_sha": "54a3f7e97bd5aa1c9eed59bea5233c958a5aab81",
+        "path": "configs/qst_sim_0003_eclipse_beam_sweep.json",
+        "role": "accepted_fixture"
+      },
+      {
+        "git_blob_sha": "a3fe2e7692177aaf8867bbc2a8db2fe3a7d97a26",
+        "path": "automation/contracts/daily-research-operator.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "ad1e738477cc17a5daab3c336f9e32e20d613ea6",
+        "path": "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+        "role": "active_quest"
+      },
+      {
+        "git_blob_sha": "7bd1a464725f0c669c2c36963a93765676b06d65",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "3daefe7398d0857445337fcf766168e9127e7a81",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "c3db48f5a88005b4b1e8782aedc070ec001332af",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "e0d774e3334debf514446f89196e79bd7f71eaed",
+        "path": "automation/standing/2026-09.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "9d806867b3dbac0f1b11ab9d45819fc097002d30",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      },
+      {
+        "git_blob_sha": "f6af0bd115bdcf0cb2a3f4399f54bfa4fbca0529",
+        "path": "calendar/roundups/2026-09-20.md",
+        "role": "weekly_disposition"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "e78e0ef4097f99dab4b801d30074255454681900"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-09-21T18:57:51+00:00"
+}

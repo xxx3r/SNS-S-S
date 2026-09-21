@@ -1,0 +1,78 @@
+{
+  "accepted_fixture_binding_sha256": "373e87129677c839b23de2a3d8b3ec74da05bd066536346859577be52ea3797a",
+  "baseline_artifact": "outputs/qst_sim_0003/eclipse_beam_sweep.json",
+  "baseline_artifact_sha256": "b94e88b06c4bdd92eb04a291cda2eb967108c4eced744b89e3945157b2f63565",
+  "baseline_worlds_rerun": 0,
+  "case_count": 2,
+  "cases": [
+    {
+      "baseline_metrics": {
+        "coverage_fraction": 1,
+        "curtailed_total_Wh": 9475.752817593,
+        "dead_agent_count": 0,
+        "delivered_total_Wh": 0.37
+      },
+      "baseline_receiver_visibility_fraction": 0.25,
+      "beam_efficiency": 0.8,
+      "case_id": "eclipse-0.05_beam-0.80_visibility-1.00",
+      "delivery_relative_increase": 1.216216216,
+      "diagnostic_metrics": {
+        "coverage_fraction": 1.0,
+        "curtailed_total_Wh": 9474.615614712,
+        "dead_agent_count": 0,
+        "delivered_total_Wh": 0.82
+      },
+      "diagnostic_receiver_visibility_fraction": 1.0,
+      "eclipse_fraction": 0.05,
+      "metric_deltas": {
+        "coverage_fraction": 0.0,
+        "curtailed_total_Wh": -1.137202881,
+        "dead_agent_count": 0,
+        "delivered_total_Wh": 0.45
+      }
+    },
+    {
+      "baseline_metrics": {
+        "coverage_fraction": 1,
+        "curtailed_total_Wh": 8767.432870576,
+        "dead_agent_count": 0,
+        "delivered_total_Wh": 0.37
+      },
+      "baseline_receiver_visibility_fraction": 0.25,
+      "beam_efficiency": 0.8,
+      "case_id": "eclipse-0.10_beam-0.80_visibility-1.00",
+      "delivery_relative_increase": 0.972972973,
+      "diagnostic_metrics": {
+        "coverage_fraction": 1.0,
+        "curtailed_total_Wh": 8766.554387963,
+        "dead_agent_count": 0,
+        "delivered_total_Wh": 0.73
+      },
+      "diagnostic_receiver_visibility_fraction": 1.0,
+      "eclipse_fraction": 0.1,
+      "metric_deltas": {
+        "coverage_fraction": 0.0,
+        "curtailed_total_Wh": -0.878482613,
+        "dead_agent_count": 0,
+        "delivered_total_Wh": 0.36
+      }
+    }
+  ],
+  "grid": {
+    "baseline_receiver_visibility_fraction": 0.25,
+    "beam_efficiency": 0.8,
+    "diagnostic_receiver_visibility_fraction": 1.0,
+    "eclipse_fraction": [
+      0.05,
+      0.1
+    ]
+  },
+  "interpretation_boundary": "Two new synthetic receiver-visibility=1.0 cases compared with immutable receiver-visibility=0.25 evidence on one fixed fixture. The route did not freeze a materiality threshold, so the artifact reports exact changes without classifying them. No rerun of baseline cases, additional visibility value, optimization, real-ephemeris, architecture, relay-performance, or hardware-readiness claim.",
+  "materiality_classification": "NOT_DEFINED_BY_ACCEPTED_ROUTE",
+  "new_world_count": 2,
+  "observation": "RECEIVER_AVAILABILITY_INCREASED_SYNTHETIC_DELIVERY",
+  "quest_id": "QST-SIM-0003",
+  "schema": "sns.qst-sim-0003.receiver-availability.v1",
+  "synthetic": true,
+  "weekly_disposition": "calendar/roundups/2026-09-20.md"
+}
