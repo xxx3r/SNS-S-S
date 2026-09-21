@@ -1,6 +1,6 @@
 # QST-SYNTH-0001: Agent-Authored Thermal Stress Worlds
 
-Status: Active — protocol preparation only; generation awaits accepted freeze
+Status: Active — R0/R1 accepted; R2 generation stopped at useful-delivery scientific-decision boundary
 Priority: P1
 Authority: M's September action authorization in Issue #79; original campaign Issue #30
 Research scope: thermal-storage
@@ -40,3 +40,21 @@ Reject the curriculum hypothesis if benefit disappears on independent holdouts, 
 ## Capacity and lineage
 
 This occupies the slot released by completed QST-ARCI-0001; active capacity remains eight. It accepts the July 23 QA proposal's activation option. Prior STOR fast-rotator falsification remains local and unchanged. The fixed SIM3 sweep remains an independent fallback; it is not the three-arm thermal campaign.
+
+
+## September 20 Weekly recovery disposition
+
+R1 is accepted as a qualified, non-generating interface result. Its refusal to invent `useful_host_delivery_Wh` for electrical-failure cases is now an explicit campaign boundary rather than an adapter TODO.
+
+The accepted thermal evaluator integrates the full requested base/heater loads through the eclipse and reports total consumed energy, derated available energy, final electrical margin, and PASS/FAIL. It does not model depletion time, load shedding, partial host service, or a cutoff trajectory. Therefore a numeric partial-delivery value on electrical failure is not recoverable from current accepted semantics without adding a new service/depletion model.
+
+**R2 status: `NEEDS_SCIENTIFIC_DECISION`.**
+
+Do not:
+
+- map electrical failure to zero useful delivery merely to unblock the campaign;
+- derive a favorable partial-delivery value from final negative margin;
+- drop failed worlds from accounting;
+- touch the sealed holdout while this boundary is unresolved.
+
+The next lawful SYNTH action is a separate scientific decision: either authorize a bounded evaluator extension that models partial service/depletion, or explicitly revise the frozen useful-delivery comparison requirement. Until then, other independent quests remain executable.

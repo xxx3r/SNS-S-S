@@ -1,0 +1,130 @@
+{
+  "schema": "sns.backlog-disposition.v1",
+  "authority": "explicit-human Solar Sunday recovery; Weekly scientific function manually restored",
+  "source_commit": "8804a4a7796e243e08153f5d5ef2d1a7ef5f648e",
+  "recorded_at": "2026-09-21T01:08:07Z",
+  "quest_actions": [
+    {
+      "quest_action_id": "QA-20260731T025500000000Z-refine-qst-meta-0001-ff001122334455667788",
+      "source_path": "quests/actions/2026/07/qa_20260712_qst_meta_0001_steering_abstraction.json",
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-27",
+      "condition": "Valid bounded META work remains available, but do not start a competing owner while the single SIM3 receiver-availability successor is routed."
+    },
+    {
+      "quest_action_id": "QA-20260731T025500000000Z-refine-qst-sim-0002-eeff0011223344556677",
+      "source_path": "quests/actions/2026/07/qa_20260712_qst_sim_0002_resource_collapse.json",
+      "status": "defer",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-27",
+      "condition": "Preserve distinct resource-accounting follow-up; no duplicate implementation while SIM3 is the selected executable successor."
+    },
+    {
+      "quest_action_id": "QA-20260731T025500000000Z-refine-qst-stor-0002-ddeeff00112233445566",
+      "source_path": "quests/actions/2026/07/qa_20260712_qst_stor_0002_auxiliary_safe_mode.json",
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-10-04",
+      "condition": "Architecture-changing STOR alternative remains Monthly-owned after the accepted local fast-rotator falsifier."
+    },
+    {
+      "quest_action_id": "QA-20260719T145804000000Z-refine-qst-stor-0002-d25dbac053534a7819eb",
+      "source_path": "quests/actions/2026/07/qa_20260719_qst_stor_0002_environmental_margins.json",
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-10-04",
+      "condition": "Review with the next Monthly strategy pass; do not revive the falsified baseline by parameter optimism."
+    },
+    {
+      "quest_action_id": "QA-20260723T011500000000Z-propose-qst-synth-0001-a8b4c7d2e1905f63b1aa",
+      "source_path": "quests/actions/2026/07/qa_20260723_synthetic_worlds_capability.json",
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-27",
+      "condition": "R0/R1 accepted. R2 generation is stopped at NEEDS_SCIENTIFIC_DECISION because electrical-failure partial useful delivery is not represented by the accepted evaluator."
+    },
+    {
+      "quest_action_id": "QA-20260726T145840000000Z-refine-qst-pv-0001-4b5c6d7e8f901a2b3c4d",
+      "source_path": "quests/actions/2026/07/qa_20260726_qst_pv_0001_coupled_failures.json",
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-27",
+      "condition": "Retain as valid P1 follow-up; no competing acceptance slice this week."
+    },
+    {
+      "quest_action_id": "QA-20260809T150000000000Z-refine-qst-calendar-0001-5ca46d7e8f9012345678",
+      "source_path": "quests/actions/2026/08/qa_20260809_qst_calendar_0001_staging.json",
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-27",
+      "condition": "Accepted staging implementation remains useful. Issue #103 adds a Q4 inheritance observation to ordinary Weekly delivery without inventing another parser."
+    },
+    {
+      "quest_action_id": "QA-20260809T150000000000Z-refine-qst-stor-0002-4b935c6d7e8f90123456",
+      "source_path": "quests/actions/2026/08/qa_20260809_qst_stor_0002_constraint_cost.json",
+      "status": "closed_completed",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-12-31",
+      "condition": "Accepted fast-rotator constraint-cost artifact already satisfies this action; preserve and do not regenerate the completed grid."
+    },
+    {
+      "quest_action_id": "QA-20260823T145740000000Z-qst-arci-work-conserving-fallback-f0a2cf6c3b1c5a13c14d",
+      "source_path": "quests/actions/2026/08/qa_20260823_qst_arci_0001_work_conserving_fallback.json",
+      "status": "closed_completed",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-12-31",
+      "condition": "ARCI completion remains accepted; do not reissue."
+    },
+    {
+      "quest_action_id": "QA-20260823T145740000000Z-qst-sim-next-measurement-c46a452333333b7b9a3d",
+      "source_path": "quests/actions/2026/08/qa_20260823_qst_sim_0002_next_measurement.json",
+      "status": "accept",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-27",
+      "condition": "Remains a valid SIM2 follow-up, but the selected immediate executable owner is SIM3 receiver availability."
+    },
+    {
+      "quest_action_id": "QA-20260823T145740000000Z-qst-stor-emergency-review-d2998b20868a76afaea7",
+      "source_path": "quests/actions/2026/08/qa_20260823_qst_stor_0002_emergency_review.json",
+      "status": "accepted_historical",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-12-31",
+      "condition": "Preserve the August local fast-rotator block without promoting it to a global STOR falsification."
+    },
+    {
+      "quest_action_id": "QA-20260825T142300000000Z-qst-arci-work-conserving-slot-5d8a1c7e2b9f6043a210",
+      "source_path": "quests/actions/2026/08/qa_20260825_qst_arci_0001_work_conserving_slot.json",
+      "status": "closed_completed",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-12-31",
+      "condition": "ARCI completion remains accepted; do not reissue."
+    },
+    {
+      "quest_action_id": "QA-20260825T142300000000Z-qst-stor-fast-rotator-local-block-3c8e71a4b905d62f10aa",
+      "source_path": "quests/actions/2026/08/qa_20260825_qst_stor_0002_fast_rotator_local_block.json",
+      "status": "accepted_historical",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-12-31",
+      "condition": "Preserve the local falsifier and its lineage; architecture replacement remains a separate decision."
+    }
+  ],
+  "open_issues": [
+    {
+      "number": 30,
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-27",
+      "condition": "R1 accepted. Do not execute R2 until useful-delivery semantics on electrical failure receive a separate scientific decision."
+    },
+    {
+      "number": 103,
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-09-27",
+      "condition": "Keep open through 2026-12-31 and record one evidence-backed information-inheritance observation in each normal Weekly delivery."
+    }
+  ],
+  "open_prs_at_source": [],
+  "note": "Human recovery of the missed September 20 Weekly scientific disposition. No active-quest priority labels or consolidated beliefs are changed. System Audit correction remains separately NEEDS_APPROVAL."
+}
