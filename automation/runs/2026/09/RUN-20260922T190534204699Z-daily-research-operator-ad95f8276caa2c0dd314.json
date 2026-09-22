@@ -28,7 +28,7 @@
       "status": "passed"
     },
     {
-      "evidence": "PR #106 has a new unresolved P2 stating that PR #101 should remain unresolved until the authorized structured correction binds its evidence. Daily preserves this finding without claiming maintenance or System Audit authority; PR #99 and PR #100 also remain unresolved.",
+      "evidence": "PR #106 thread PRRT_kwDOQlQHts6k0ZCa / discussion_r4073970660 has a new unresolved P2 stating that PR #101 should remain unresolved until the authorized structured correction binds its evidence. Daily preserves this finding without claiming maintenance or System Audit authority; PR #99 and PR #100 also remain unresolved.",
       "name": "late review authority boundary",
       "status": "passed"
     },
