@@ -1,0 +1,14 @@
+{
+  "acceptance_slice": "QST-FUND-0001 measurement-philosophy outline",
+  "head_commit": "bf15be6c441d4b394166983e48bb994eac60aab2",
+  "next_review_after": "2026-09-27T00:00:00+00:00",
+  "owner_run_id": "RUN-20260922T191623158094Z-daily-research-operator-9ce4550ebe5e4c0da4f8",
+  "pr_number": 108,
+  "quest_id": "QST-FUND-0001",
+  "reason": "PR #108 was squash-merged as bf15be6c441d4b394166983e48bb994eac60aab2 from exact head 562e2c74e1c921880bc282a2ba3925342117e50d after tests 35773858569, baseline-artifacts 35773858597, and automation-transaction 35773858660 passed. The accepted slice adds only the repository outline and immutable receipt, labels claim maturity, preserves external-publication and hardware-readiness boundaries, and generated no worlds or records. Exact-head semantic review found no substantive issue and was performed in-run rather than independently.",
+  "schema": "sns.pr-lifecycle.v1",
+  "source_commit": "ef365d2165e7e1168c1705a900db70a30c16fc01",
+  "state": "merged",
+  "supersedes": [],
+  "updated_at": "2026-09-22T19:29:00+00:00"
+}
