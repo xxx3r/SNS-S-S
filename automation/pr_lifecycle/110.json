@@ -1,0 +1,14 @@
+{
+  "acceptance_slice": "QST-FUND-0001 documented renderer command correction",
+  "head_commit": "6218f78984796bf14c9babf296dba71aeecde9f2",
+  "next_review_after": "2026-09-27T00:00:00+00:00",
+  "owner_run_id": "RUN-20260923T170800000000Z-daily-governance-triage-7c31e1d29486a0bf5d22",
+  "pr_number": 110,
+  "quest_id": "QST-FUND-0001",
+  "reason": "PR #110 was squash-merged as 6218f78984796bf14c9babf296dba71aeecde9f2 from exact head eb66c92ce48ae28ef1cdd7982038e5a5c94e73fd after tests 35893475574, baseline-artifacts 35893475598, and automation-transaction 35893475696 passed. The accepted slice makes the documented ARCI renderer command directly executable. No scientific output or state changed. Exact-head semantic review was performed in-run rather than independently. PR #109's immutable receipt inheritance defect remains unresolved pending explicit human authorization for System Audit.",
+  "schema": "sns.pr-lifecycle.v1",
+  "source_commit": "aef414093ddb4fdd148c8c5f013e75c9dbfafaa5",
+  "state": "merged",
+  "supersedes": [],
+  "updated_at": "2026-09-23T17:08:45+00:00"
+}
