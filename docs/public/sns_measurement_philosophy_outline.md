@@ -42,8 +42,9 @@ Explain the current physical archetype:
 Claim ledger:
 
 - **ASSUMED:** the seed/kite split is the working system definition.
-- **MODELED:** harvested energy is resolved into direct use, pulse buffer, survival battery, host delivery, controlled reflection, or curtailment.
-- **DEMONSTRATED:** repository simulations expose those channels and retain curtailed energy rather than silently treating collection as useful delivery.
+- **MODELED:** harvested energy is resolved into direct use, pulse buffer, survival battery, host delivery, or curtailment.
+- **DEMONSTRATED:** repository simulations expose direct-load, storage, host-delivery, and curtailment channels and retain curtailed energy rather than silently treating collection as useful delivery.
+- **SPECULATIVE:** controlled reflection is an architectural mode; the accepted simulations do not select it or expose reflected-energy accounting.
 - **SPECULATIVE:** literal 10 mm flight seeds, programmable kite surfaces, manufacturing yield, deployment survival, and beam safety remain open engineering gates.
 
 The central correction is architectural: a seed battery is a survival buffer, not a reservoir for all kite output. Wh-scale storage belongs in larger or host-supported roles unless evidence shows otherwise.
@@ -106,17 +107,17 @@ The public lesson is procedural: uncertainty is not a disclaimer added after a r
 
 ## 7. Why a better orbiter may outperform a swarm
 
-State the countercase directly. A conventional orbiter may win when one platform can provide the required spatial coverage, calibration stability, bandwidth, thermal control, pointing accuracy, and instrument quality with less deployment and coordination risk.
+- **SPECULATIVE:** a conventional orbiter may win when one platform can provide the required spatial coverage, calibration stability, bandwidth, thermal control, pointing accuracy, and instrument quality with less deployment and coordination risk.
 
-Potential orbiter advantages:
+Countercase hypotheses to test:
 
-- one calibrated instrument chain instead of cross-node calibration;
-- simpler navigation, communications, command, and failure analysis;
-- higher power, aperture, thermal mass, and data-return capability per instrument;
-- no swarm deployment-yield or partial-connectivity penalty;
-- lower operational complexity when simultaneous distributed sampling adds little information.
+- **SPECULATIVE:** one calibrated instrument chain may be easier to qualify than cross-node calibration.
+- **SPECULATIVE:** navigation, communications, command, and failure analysis may be simpler for one platform.
+- **SPECULATIVE:** an orbiter may provide more power, aperture, thermal mass, and data-return capability per instrument.
+- **SPECULATIVE:** an orbiter avoids swarm deployment-yield and partial-connectivity penalties.
+- **SPECULATIVE:** operational complexity may be lower when simultaneous distributed sampling adds little information.
 
-Potential swarm advantages remain hypotheses: graceful degradation, simultaneous local measurements, geometry diversity, and coverage under occlusion. They are earned only when a matched comparison shows useful information or mission output after coordination, relay, calibration, and loss costs.
+- **SPECULATIVE:** potential swarm advantages include graceful degradation, simultaneous local measurements, geometry diversity, and coverage under occlusion. They are earned only when a matched comparison shows useful information or mission output after coordination, relay, calibration, and loss costs.
 
 - **DEMONSTRATED:** the repository has not yet established general swarm superiority.
 - **MODELED:** some bounded coordinated cases improve selected synthetic metrics.
@@ -147,7 +148,17 @@ python experiments/arci_example.py \
   --out outputs/qst_arci_0001
 ```
 
-Primary generated data: `outputs/qst_arci_0001/synthetic_target_sensitivity.json`. The final article should render a compact table with baseline score, confidence, adjusted score, perturbation range, grade stability, and next-measurement dimension.
+Primary generated data: `outputs/qst_arci_0001/synthetic_target_sensitivity.json`.
+
+Render the committed Markdown table deterministically:
+
+```bash
+python scripts/render_arci_public_table.py \\
+  outputs/qst_arci_0001/synthetic_target_sensitivity.json \\
+  --output docs/public/generated/arci_sensitivity_table.md
+```
+
+Generated table: `docs/public/generated/arci_sensitivity_table.md`. The focused regression test verifies byte-for-byte reproduction from the accepted JSON.
 
 Expected accepted anchors: score `0.685`; confidence `0.5225`; adjusted score `0.3579125`; 28 sensitivity cases; adjusted-score range `0.3442125–0.3716125`; next measurement `surface_operations`.
 
@@ -184,3 +195,4 @@ Critique should be converted into a bounded test, corrected assumption, or expli
 The framing fails if it cannot name a near-term user or testable claim without depending on nano-scale hardware. This outline meets that gate only at the software-research level: it gives mission designers and researchers reproducible ways to audit storage claims, energy accounting, and measurement uncertainty.
 
 This file is a repository outline. External publication, new factual claims, economic conclusions, and hardware-readiness language require their own review and authority.
+
