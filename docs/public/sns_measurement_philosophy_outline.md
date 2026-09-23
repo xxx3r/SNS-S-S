@@ -153,9 +153,7 @@ Primary generated data: `outputs/qst_arci_0001/synthetic_target_sensitivity.json
 Render the committed Markdown table deterministically:
 
 ```bash
-python scripts/render_arci_public_table.py \\
-  outputs/qst_arci_0001/synthetic_target_sensitivity.json \\
-  --output docs/public/generated/arci_sensitivity_table.md
+python scripts/render_arci_public_table.py outputs/qst_arci_0001/synthetic_target_sensitivity.json --output docs/public/generated/arci_sensitivity_table.md
 ```
 
 Generated table: `docs/public/generated/arci_sensitivity_table.md`. The focused regression test verifies byte-for-byte reproduction from the accepted JSON.
@@ -195,4 +193,3 @@ Critique should be converted into a bounded test, corrected assumption, or expli
 The framing fails if it cannot name a near-term user or testable claim without depending on nano-scale hardware. This outline meets that gate only at the software-research level: it gives mission designers and researchers reproducible ways to audit storage claims, energy accounting, and measurement uncertainty.
 
 This file is a repository outline. External publication, new factual claims, economic conclusions, and hardware-readiness language require their own review and authority.
-
