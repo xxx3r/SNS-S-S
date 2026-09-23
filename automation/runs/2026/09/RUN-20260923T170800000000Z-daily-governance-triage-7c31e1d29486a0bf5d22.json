@@ -1,0 +1,242 @@
+{
+  "artifacts": [
+    {
+      "kind": "corrected public synthesis outline",
+      "path": "docs/public/sns_measurement_philosophy_outline.md"
+    },
+    {
+      "kind": "immutable Pre-Game follow-up receipt",
+      "path": "automation/runs/2026/09/RUN-20260923T170800000000Z-daily-governance-triage-7c31e1d29486a0bf5d22.json"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "Canonical PR #109 main completed 221 tests; the one-line command correction is documentation-only and exact-head hosted qualification remains required before merge.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Canonical PR #109 main returned valid=true with no errors; exact-head hosted qualification remains required before merge.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "Canonical PR #109 main passed scripts/check_baseline_artifacts.sh; exact-head hosted qualification remains required before merge.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Fresh GitHub observation established canonical main at aef414093ddb4fdd148c8c5f013e75c9dbfafaa5 and the active Pre-Game v2 contract and standing authority remained unchanged.",
+      "name": "fresh default-branch source observation",
+      "status": "passed"
+    },
+    {
+      "evidence": "The second bounded public-synthesis transaction validated under STAND-20260906-SEPTEMBER-ACTION-V1 at 2026-09-23T17:08:00Z with zero scientific budget.",
+      "name": "standing request validation",
+      "status": "passed"
+    },
+    {
+      "evidence": "Thread PRRT_kwDOQlQHts6lQNhf identified an executable doubled-backslash shell-command defect and is repaired here. Thread PRRT_kwDOQlQHts6lQNhi also identified an immutable receipt inheritance defect; the quest path was fixed before merge, while the pipe-joined SIM3 reference remains unresolved and System Audit-owned.",
+      "name": "PR #109 late-review triage",
+      "status": "passed"
+    },
+    {
+      "evidence": "Required on the final receipt-bearing PR head before merge; no independent approval is claimed.",
+      "name": "exact-head semantic review",
+      "status": "not_run"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-09-23T17:08:00Z",
+  "decision_effect": "Corrected the documented ARCI renderer command to be directly executable in Bash. Preserved the accepted PR #109 receipt inheritance defect for append-only System Audit correction under explicit human authorization.",
+  "inheritance": [
+    {
+      "decision_effect": "Inherited the accepted PR #109 maintenance result and its late review findings.",
+      "kind": "RUN",
+      "ref": "RUN-20260923T164942282588Z-daily-governance-triage-81183fb2215f453e2ecd"
+    },
+    {
+      "decision_effect": "Preserved Weekly ownership and the public-synthesis claim boundary.",
+      "kind": "artifact",
+      "ref": "quests/active/QST-FUND-0001-public-artifact-outline.md"
+    },
+    {
+      "decision_effect": "Preserved the first accepted SIM3 dependency as an independently resolvable reference.",
+      "kind": "artifact",
+      "ref": "outputs/qst_sim_0003/eclipse_beam_sweep.json"
+    },
+    {
+      "decision_effect": "Preserved the second accepted SIM3 dependency as an independently resolvable reference.",
+      "kind": "artifact",
+      "ref": "outputs/qst_sim_0003/receiver_availability.json"
+    }
+  ],
+  "loop_id": "daily-governance-triage",
+  "next_action": "Weekly appraises the repaired QST-FUND-0001 outline and accepted SIM3 evidence; independently, a human may authorize System Audit to append the required correction for the PR #109 and earlier immutable receipt provenance defects.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "inherited",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "base_commit": "aef414093ddb4fdd148c8c5f013e75c9dbfafaa5",
+    "implementation_head_scope": "one-line documented command correction, immutable receipt, and lifecycle record only; exact head is recorded on the PR and guarded at merge",
+    "qualification_binding": "policy checks are truthfully not_run at publication; the final receipt-bearing PR head must pass retrievable hosted checks before merge"
+  },
+  "quest_context": {
+    "acceptance_slice": "correct the documented ARCI renderer command after PR #109 late review",
+    "claim_boundary": "Documentation, deterministic rendering, and tests only. No experiment, world, scientific output, evaluator, protocol, belief, quest lifecycle, authority, memory, policy, or scheduler change.",
+    "phase": "QST-FUND-0001 Weekly appraisal handoff with separate audit approval boundary",
+    "quest_id": "QST-FUND-0001",
+    "result": "DOCUMENTED_COMMAND_REPAIRED",
+    "result_summary": "The documented Table B renderer command is directly executable. The accepted PR #109 receipt inheritance defect remains unresolved and approval-bound.",
+    "scope": "public-synthesis"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20260923T170800000000Z-daily-governance-triage-7c31e1d29486a0bf5d22",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "aef414093ddb4fdd148c8c5f013e75c9dbfafaa5",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20260906-SEPTEMBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-09-06T21:18:43Z\",\n  \"review_at\": \"2026-09-20T21:18:43Z\",\n  \"expires_at\": \"2026-10-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved complete bounded research cycles in Issue #79. These are per acceptance-slice ceilings, not default generation targets. Tests and dependency installation are not scientific runtime consumption. Frozen experiments may impose smaller budgets. No spending, model training, private export, evaluator/holdout changes after freeze, or new hardware-readiness claims.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "QST-FUND-0001 documented renderer command correction",
+        "action": "maintenance",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "PR #109 thread PRRT_kwDOQlQHts6lQNhf",
+          "docs/public/sns_measurement_philosophy_outline.md"
+        ],
+        "loop_id": "daily-governance-triage",
+        "paths": [
+          "docs/public/sns_measurement_philosophy_outline.md",
+          "automation/runs/2026/09/RUN-20260923T170800000000Z-daily-governance-triage-7c31e1d29486a0bf5d22.json",
+          "automation/pr_lifecycle/110.json"
+        ],
+        "scope": "public-synthesis",
+        "transaction_count": 2
+      },
+      {
+        "acceptance_slice": "QST-FUND-0001 documented renderer command correction",
+        "action": "merge",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "PR #109 thread PRRT_kwDOQlQHts6lQNhf",
+          "docs/public/sns_measurement_philosophy_outline.md"
+        ],
+        "loop_id": "daily-governance-triage",
+        "paths": [
+          "docs/public/sns_measurement_philosophy_outline.md",
+          "automation/runs/2026/09/RUN-20260923T170800000000Z-daily-governance-triage-7c31e1d29486a0bf5d22.json",
+          "automation/pr_lifecycle/110.json"
+        ],
+        "scope": "public-synthesis",
+        "transaction_count": 2
+      }
+    ],
+    "trigger_id": "daily-governance-triage:2026-09-23T16:43:43+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:10114ee0f0bbba45ab282558ac56fa6834c3f9d04c4a849d650f34da9ce7b735",
+    "open_prs": [],
+    "records": [
+      {
+        "git_blob_sha": "96bac7f735e2b4d9a0da07f54babace6093f263e",
+        "path": "automation/contracts/daily-governance-triage.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "7bd1a464725f0c669c2c36963a93765676b06d65",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "1ab11947aec9b3fb20fe9aae5e79b8b7d875f907",
+        "path": "quests/dispositions/2026-09-20.json",
+        "role": "backlog_disposition"
+      },
+      {
+        "git_blob_sha": "3daefe7398d0857445337fcf766168e9127e7a81",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "49c602ce29ae2cc3c6d4e302097ac1d1a1b754a4",
+        "path": "automation/pr_lifecycle/109.json",
+        "role": "fund_lifecycle"
+      },
+      {
+        "git_blob_sha": "6718758ae3c9b01e150b09d47a384e151427a4b8",
+        "path": "docs/public/sns_measurement_philosophy_outline.md",
+        "role": "fund_outline"
+      },
+      {
+        "git_blob_sha": "ddf138d03e272e1257c1166b031d8d0f762b56e1",
+        "path": "quests/active/QST-FUND-0001-public-artifact-outline.md",
+        "role": "fund_quest"
+      },
+      {
+        "git_blob_sha": "bd1c6280db2b708c172c4d349d8905f2dced7862",
+        "path": "automation/runs/2026/09/RUN-20260923T164942282588Z-daily-governance-triage-81183fb2215f453e2ecd.json",
+        "role": "pre109_receipt"
+      },
+      {
+        "git_blob_sha": "c3db48f5a88005b4b1e8782aedc070ec001332af",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "0944dadd1011748cc1de24846fdd3cc45b7d4470",
+        "path": "outputs/qst_sim_0003/eclipse_beam_sweep.json",
+        "role": "sim3_grid"
+      },
+      {
+        "git_blob_sha": "577490db05a659e50bee4b107e531579b7b2fe4d",
+        "path": "outputs/qst_sim_0003/receiver_availability.json",
+        "role": "sim3_receiver_diagnostic"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "e0d774e3334debf514446f89196e79bd7f71eaed",
+        "path": "automation/standing/2026-09.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "9d806867b3dbac0f1b11ab9d45819fc097002d30",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "aef414093ddb4fdd148c8c5f013e75c9dbfafaa5"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-09-23T16:43:43Z"
+}
