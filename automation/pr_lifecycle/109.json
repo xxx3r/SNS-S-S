@@ -1,0 +1,14 @@
+{
+  "acceptance_slice": "QST-FUND-0001 late-review documentation and table reproducibility repair",
+  "head_commit": "76f4ed5cfadbfbe630cc5648e9a43763b48af7e0",
+  "next_review_after": "2026-09-27T00:00:00+00:00",
+  "owner_run_id": "RUN-20260923T164942282588Z-daily-governance-triage-81183fb2215f453e2ecd",
+  "pr_number": 109,
+  "quest_id": "QST-FUND-0001",
+  "reason": "PR #109 was squash-merged as 76f4ed5cfadbfbe630cc5648e9a43763b48af7e0 from exact head 2f647223e8087c1a606f5af265007652c8f7784b after tests 35892667990, baseline-artifacts 35892668097, and automation-transaction 35892667841 passed. The accepted slice corrects controlled-reflection and conventional-orbiter claim labels and adds a deterministic ARCI Markdown table renderer with byte-for-byte tests. No scientific output or state changed. Exact-head semantic review was performed in-run rather than independently. PR #108's immutable-receipt evidence-binding finding remains unresolved pending explicit human authorization for System Audit.",
+  "schema": "sns.pr-lifecycle.v1",
+  "source_commit": "e124ca483e6b1f01c4f54def0abd9f3ad364f60e",
+  "state": "merged",
+  "supersedes": [],
+  "updated_at": "2026-09-23T17:02:10+00:00"
+}
