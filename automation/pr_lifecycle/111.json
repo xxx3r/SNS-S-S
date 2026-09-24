@@ -1,0 +1,14 @@
+{
+  "acceptance_slice": "repair PR #111 late-review authority and no-action accounting defects",
+  "head_commit": "88d6bd5acf9d115dee62e4373a709a898d933c2f",
+  "next_review_after": "2026-09-27T00:00:00+00:00",
+  "owner_run_id": "RUN-20260924T160512000000Z-daily-governance-triage-6f2a435094b16c611787",
+  "pr_number": 111,
+  "quest_id": "QST-SYNTH-0001",
+  "reason": "PR #111 was squash-merged as 88d6bd5acf9d115dee62e4373a709a898d933c2f from repaired exact head f154325bc7644ecb39fd9bf93d9a13b1ce25462e after tests 36025413517, baseline-artifacts 36025413555, and automation-transaction 36025413547 passed. The accepted receipt records a truthful NO_ACTION Daily result and routes the reserved SYNTH scientific decision to Monthly or human authority. No scientific evidence or state changed. Exact-head semantic review was performed in-run rather than independently. Outstanding immutable-receipt provenance defects remain System Audit-owned and approval-bound.",
+  "schema": "sns.pr-lifecycle.v1",
+  "source_commit": "bf036fc7157ea384e57c7dbb06a62e90ed62212d",
+  "state": "merged",
+  "supersedes": [],
+  "updated_at": "2026-09-24T16:12:00+00:00"
+}
