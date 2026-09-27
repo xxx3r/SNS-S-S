@@ -13,16 +13,18 @@ Keep 1–8 active quests. Each quest must produce an inspectable artifact and st
 5. [QST-PV-0001: PV Degradation Parameter Sheet](QST-PV-0001-pv-degradation-parameters.md)
 6. [QST-META-0001: Metasurface Beam-Steering Abstraction](QST-META-0001-metasurface-beam-abstraction.md)
 7. [QST-CALENDAR-0001: Weekly Roundup → Quest Pipeline](QST-CALENDAR-0001-roundup-parser.md)
-8. [QST-FUND-0001: Summer 2026 Public Artifact](QST-FUND-0001-public-artifact-outline.md)
 
 ## Recently completed
 
 - `QST-ARCI-0001`: ARCI v0.1 synthetic-target sensitivity assessment
 - `QST-STOR-0001`: storage geometry audit
 - `QST-SIM-0001`: role-aware SNS agent and explicit power-state baseline
+- `QST-FUND-0001`: measurement-philosophy public-artifact outline
 
 ## Selection rule
 
-September's first executable move is QST-SYNTH-0001 R0: prepare and qualify the tiny three-arm thermal protocol without generating campaign results before acceptance. This is the explicit Issue #79 direction. Continue an existing valid owner first.
+The September standing policy remains valid through 2026-10-01T06:00:00Z, pending the human renewal checkpoint on September 30.
 
-STOR remains P0 with its declared fast-rotator route locally falsified; no architecture alternative is selected here. SIM3's fixed 2 x 2 sweep remains an independent fallback. Weekly may update bounded operational direction within accepted objectives and standing scope. Strategic priority labels and consolidated beliefs remain Monthly-owned.
+QST-SYNTH-0001 R2 remains `NEEDS_SCIENTIFIC_DECISION`: electrical-failure useful delivery is unresolved in the accepted evaluator, so the sealed holdout stays untouched. QST-STOR-0002 remains P0 with only its declared fast-rotator route locally falsified.
+
+QST-SIM-0003 is the current executable direction. Its accepted receiver diagnostic increased modeled host delivery from 0.37 Wh to 0.82 Wh and 0.73 Wh when receiver visibility widened from 0.25 to 1.0 on the fixed fixture, while curtailment remained approximately 8.8–9.5 kWh. The next slice changes phase placement, not visibility fraction: retain receiver visibility 0.25, beam efficiency 0.80, eclipse fractions 0.05 and 0.10, and the accepted coordinated 20% storage-node fixture; generate exactly two new cases at receiver phase center π and compare them to immutable phase-center-0 baselines without rerunning those baselines. Stop before additional phase centers, optimization, role-mix changes, real ephemerides, or architecture claims.

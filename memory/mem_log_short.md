@@ -2,11 +2,11 @@
 
 Current Program: SNS-S-S as formal research instrument
 
-Current Executable Quest: QST-ARCI-0001
+Current Executable Quest: QST-SIM-0003
 
-Queue Note: QST-STOR-0002 remains active at P0. Its currently parameterized <=30-minute fast-rotator surface route is locally blocked after the accepted `FALSIFIED_ON_DECLARED_GRID` result. Routing today's executable slot to ARCI does not change queue membership or priority.
+Queue Note: QST-FUND-0001 is completed on its accepted repository outline. QST-SYNTH-0001 R2 remains at a reserved scientific-decision boundary; QST-STOR-0002 remains active at P0 with only its fast-rotator surface route locally falsified.
 
-Current Step: Run the already-defined bounded ARCI v0.1 synthetic-target assessment: attach evidence types and missing-data flags, expose score and confidence separately, test weight/confidence sensitivity, and identify the next measurement without unsupported dollar valuation.
+Current Step: Run exactly two new QST-SIM-0003 phase-position cases at receiver phase center π, holding the accepted 20% storage-node fixture, receiver visibility 0.25, beam efficiency 0.80, and eclipse fractions 0.05 and 0.10 fixed; compare against immutable phase-center-0 baselines without rerunning them.
 
 Last Evidence:
 
@@ -33,7 +33,7 @@ Aurora Score: A = 1.0 ∠ -20° | w_ext = 0.0
 
 Next Move (one shot):
 
-- Pre-Game should issue one bounded `refine_existing` authorization for QST-ARCI-0001 under the existing August delegation, provided source, ownership, write surfaces, and checks remain clean. Daily then produces the smallest reproducible synthetic-target sensitivity artifact. Keep the STOR architecture decision on its separate governance boundary.
+- Execute the two-case QST-SIM-0003 antipodal receiver-phase diagnostic. Stop before extra phase centers, grid expansion, optimization, real ephemerides, or architecture claims. Keep SYNTH R2 and the STOR architecture decision on their separate Monthly/human boundaries.
 
 ## Accepted September constitutional transition — 2026-09-02
 
@@ -83,3 +83,12 @@ Issue #103 opens the Q4 2026 long-horizon inheritance experiment: measure whethe
 ### Current next move (one shot)
 
 Pre-Game on September 21 should refresh main and ownership. If clean, route exactly the two-case QST-SIM-0003 receiver-availability comparison above to Daily under existing swarm-power standing scope. SYNTH generates no worlds until its scientific-decision boundary is resolved. The explicit-only System Audit correction remains a separate human-approval surface.
+
+
+## September 27 Weekly delivery
+
+Accepted evidence from September 21 changed the next experiment without being regenerated. The immutable SIM3 phase-center-0 baseline and the two-case visibility diagnostic show that widening synthetic visibility from 0.25 to 1.0 nearly doubles delivered energy on the fixed fixture, while absolute delivery remains tiny beside curtailment. The next discriminating slice therefore holds visibility fixed and moves the receiver window antipodally.
+
+QST-FUND-0001 is completed on `docs/public/sns_measurement_philosophy_outline.md`. The outline meets its declared structure, labeling, reproducibility, orbiter-countercase, and near-term-test gates. External publication remains separately governed.
+
+Issue #103 inheritance observation: accepted SIM3 baselines prevented duplicate execution; the unresolved SYNTH failed-world delivery quantity survived as UNKNOWN rather than becoming zero or inferred partial service; a late review recovered the executable FUND outline after an initial no-action receipt overlooked it. The main propagation failure remains one-week Weekly latency after the September 20 scheduled delivery did not publish, requiring human recovery.
