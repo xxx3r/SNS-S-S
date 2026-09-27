@@ -17,8 +17,8 @@
       "source_path": "quests/actions/2026/07/qa_20260712_qst_sim_0002_resource_collapse.json",
       "status": "defer",
       "owner": "weekly-evidence-synthesis",
-      "next_review": "2026-09-27",
-      "condition": "Preserve distinct resource-accounting follow-up; no duplicate implementation while SIM3 is the selected executable successor."
+      "next_review": "2026-10-04",
+      "condition": "Preserve the distinct SIM2 resource-accounting follow-up; do not create a competing owner while SIM3 has the selected phase-position slice."
     },
     {
       "quest_action_id": "QA-20260731T025500000000Z-refine-qst-stor-0002-ddeeff00112233445566",
