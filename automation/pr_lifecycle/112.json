@@ -1,7 +1,7 @@
 {
   "schema": "sns.pr-lifecycle.v1",
   "pr_number": 112,
-  "quest_id": "QST-FUND-0001|QST-SIM-0003",
+  "quest_id": "QST-FUND-0001",
   "acceptance_slice": "complete FUND outline and route SIM3 antipodal receiver-phase diagnostic",
   "state": "ready_for_review",
   "owner_run_id": "RUN-20260927T150000000000Z-weekly-evidence-synthesis-636c633bb82c07328a21",
@@ -10,5 +10,5 @@
   "updated_at": "2026-09-27T15:10:00+00:00",
   "next_review_after": "2026-09-27T15:30:00+00:00",
   "supersedes": [],
-  "reason": "PR #112 owns the bounded Weekly lifecycle/direction transaction. FUND completion is evidence-backed; SIM3 routing creates no new scientific evidence and preserves all protected decisions."
+  "reason": "PR #112 owns the bounded QST-FUND-0001 lifecycle transaction and records a linked SIM3 routing decision in canonical memory. FUND completion is evidence-backed; SIM3 routing creates no new scientific evidence and preserves all protected decisions."
 }

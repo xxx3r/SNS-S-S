@@ -192,8 +192,8 @@
     }
   ],
   "belief_effects": [],
-  "terminal_state": "DONE_WITH_LIMITATIONS",
-  "next_action": "Qualify and merge PR #112 if its exact receipt-bearing head is fully green and review-clear; then Pre-Game or Daily may execute exactly the two-case QST-SIM-0003 antipodal receiver-phase diagnostic. Monthly or human authority separately resolves SYNTH failed-world useful-delivery semantics and renews or stops standing authority before 2026-10-01T06:00:00Z.",
+  "terminal_state": "NEEDS_APPROVAL",
+  "next_action": "Run exact-head pytest, semantic repository validation, baseline-artifacts, and review on PR #112. Only after they pass may the still-unaccepted receipt record completion/merge authority and the PR merge.",
   "created_at": "2026-09-27T15:10:00Z",
   "inheritance": [
     {
@@ -257,33 +257,6 @@
       },
       {
         "loop_id": "weekly-evidence-synthesis",
-        "action": "merge",
-        "scope": "public-synthesis",
-        "acceptance_slice": "terminalize completed QST-FUND-0001 and reconcile queue, graph, disposition, and memory",
-        "paths": [
-          "quests/active/README.md",
-          "quests/active/QST-FUND-0001-public-artifact-outline.md",
-          "quests/completed/QST-FUND-0001-public-artifact-outline.md",
-          "quests/research_graph.json",
-          "quests/dispositions/2026-09-27.json",
-          "memory/mem_log_short.md",
-          "automation/runs/2026/09/RUN-20260927T150000000000Z-weekly-evidence-synthesis-636c633bb82c07328a21.json",
-          "automation/pr_lifecycle/112.json"
-        ],
-        "budgets": {
-          "worlds": 0,
-          "records": 0,
-          "runtime_s": 0,
-          "disk_mb": 1
-        },
-        "transaction_count": 1,
-        "evidence_refs": [
-          "PR #112 exact receipt-bearing head and required hosted checks",
-          "docs/public/sns_measurement_philosophy_outline.md"
-        ]
-      },
-      {
-        "loop_id": "weekly-evidence-synthesis",
         "action": "route",
         "scope": "swarm-power",
         "acceptance_slice": "route one two-case QST-SIM-0003 antipodal receiver-phase diagnostic",
@@ -303,28 +276,6 @@
           "outputs/qst_sim_0003/receiver_availability.json",
           "outputs/qst_sim_0003/eclipse_beam_sweep.json",
           "quests/active/QST-SIM-0003-geo-ring-power-chain.md"
-        ]
-      },
-      {
-        "loop_id": "weekly-evidence-synthesis",
-        "action": "merge",
-        "scope": "swarm-power",
-        "acceptance_slice": "route one two-case QST-SIM-0003 antipodal receiver-phase diagnostic",
-        "paths": [
-          "memory/mem_log_short.md",
-          "automation/runs/2026/09/RUN-20260927T150000000000Z-weekly-evidence-synthesis-636c633bb82c07328a21.json",
-          "automation/pr_lifecycle/112.json"
-        ],
-        "budgets": {
-          "worlds": 0,
-          "records": 0,
-          "runtime_s": 0,
-          "disk_mb": 1
-        },
-        "transaction_count": 2,
-        "evidence_refs": [
-          "PR #112 exact receipt-bearing head and required hosted checks",
-          "outputs/qst_sim_0003/receiver_availability.json"
         ]
       }
     ]
