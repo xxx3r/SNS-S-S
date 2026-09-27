@@ -112,7 +112,7 @@
     "acceptance_slice": "complete the accepted FUND outline and route one bounded SIM3 phase-position successor",
     "phase": "weekly_delivery_and_lifecycle",
     "result": "FUND_COMPLETED_SIM3_PHASE_DIAGNOSTIC_ROUTED",
-    "result_summary": "QST-FUND-0001 meets its declared repository-outline criteria and is completed. Accepted SIM3 evidence identifies receiver-window geometry as material on one fixed synthetic fixture; the next slice changes only receiver phase center to π in two cases.",
+    "result_summary": "QST-FUND-0001 meets its declared repository-outline criteria and is completed. Accepted SIM3 evidence reports exact receiver-window sensitivity on one fixed synthetic fixture without a frozen materiality classification; the next slice changes only receiver phase center to π in two cases.",
     "claim_boundary": "Lifecycle and direction only. No new worlds or records, no rerun of accepted SIM3 baselines, no external publication, no SYNTH R2 generation, no STOR architecture selection, no strategic-priority or consolidated-belief change, and no real-ephemeris, relay-performance, hardware-readiness, mission, or economic claim.",
     "scope": "public-synthesis|swarm-power"
   },
@@ -168,7 +168,7 @@
     {
       "name": "evidence-backed lifecycle appraisal",
       "status": "passed",
-      "evidence": "The accepted FUND outline satisfies every declared success criterion and does not fire its falsifier. The accepted SIM3 diagnostic reports exact 0.25-to-1.0 visibility deltas without a baseline rerun or architecture claim."
+      "evidence": "The accepted FUND outline satisfies every declared success criterion and does not fire its falsifier. The accepted SIM3 diagnostic reports exact 0.25-to-1.0 visibility deltas while explicitly leaving materiality unclassified; neither baseline was rerun."
     },
     {
       "name": "python -m pytest -q",
@@ -209,7 +209,7 @@
     {
       "kind": "artifact",
       "ref": "outputs/qst_sim_0003/receiver_availability.json",
-      "decision_effect": "Exact deltas identify receiver-window geometry as the next synthetic bottleneck while preserving the large-curtailment limitation."
+      "decision_effect": "Exact unclassified deltas motivate one bounded phase-placement discrimination while preserving the large-curtailment limitation and the absence of a frozen materiality threshold."
     },
     {
       "kind": "artifact",
@@ -217,7 +217,7 @@
       "decision_effect": "The unresolved useful-delivery quantity remains UNKNOWN and blocks R2 rather than being silently imputed."
     }
   ],
-  "decision_effect": "Completed QST-FUND-0001 on its accepted repository outline and routed one two-case SIM3 phase-position diagnostic while preserving SYNTH and STOR reserved decisions.",
+  "decision_effect": "Completed QST-FUND-0001 on its accepted repository outline and routed one two-case SIM3 phase-position diagnostic from exact unclassified deltas while preserving SYNTH and STOR reserved decisions.",
   "observability": {
     "administrative_transactions": 2,
     "scientific_artifacts": 0,
