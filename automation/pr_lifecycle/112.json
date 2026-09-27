@@ -3,12 +3,12 @@
   "pr_number": 112,
   "quest_id": "QST-FUND-0001",
   "acceptance_slice": "complete FUND outline and route SIM3 antipodal receiver-phase diagnostic",
-  "state": "merge_ready",
+  "state": "merged",
   "owner_run_id": "RUN-20260927T150000000000Z-weekly-evidence-synthesis-636c633bb82c07328a21",
   "source_commit": "99fb981419f779138f1f78c9dd517facbd57a90f",
-  "head_commit": "a3804cc42935ffd9550b29af01c73bba58bd5649",
-  "updated_at": "2026-09-27T15:18:00+00:00",
+  "head_commit": "5813ee578b9cf04341098e6738120d85c79b0304",
+  "updated_at": "2026-09-27T15:17:00+00:00",
   "next_review_after": "2026-10-04T15:00:00+00:00",
   "supersedes": [],
-  "reason": "PR #112 is merge-ready after head 11288b6229c8eeb04f501077f073b0bda05cdfa9 passed tests 36328785453, baseline-artifacts 36328785448, and automation-transaction 36328785449, and both review threads were resolved. The final receipt/lifecycle metadata head must repeat all hosted gates before expected-head merge."
+  "reason": "PR #112 exact head 24cc596eccbeac4143cfc7e3177503a17cf59a16 passed tests 36328854511, baseline-artifacts 36328854514, and automation-transaction 36328854509 with all review threads resolved, then squash-merged as 5813ee578b9cf04341098e6738120d85c79b0304. Independent push backstops tests 36328906894, baseline-artifacts 36328906842, automation-transaction 36328906846, and provenance-snapshot 36328906874 all succeeded."
 }
