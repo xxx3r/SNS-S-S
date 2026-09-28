@@ -3,12 +3,12 @@
   "pr_number": 113,
   "quest_id": "QST-SIM-0003",
   "acceptance_slice": "execute exactly two receiver-phase-center=pi cases on the accepted fixed fixture",
-  "state": "merge_ready",
+  "state": "merged",
   "owner_run_id": "RUN-20260928T185929000000Z-daily-research-operator-6941f9a8f8671683e69c",
   "source_commit": "1066e5838565ddf28b87eb16e3cb138b52e2cdab",
-  "head_commit": "0e0ff4be07a923b9f73fc92c6e062076112d8d66",
-  "updated_at": "2026-09-28T19:16:00+00:00",
+  "head_commit": "55dddcd15a95db7805ec6570439eae905cf7caa7",
+  "updated_at": "2026-09-28T19:18:30+00:00",
   "next_review_after": "2026-10-05T19:00:00+00:00",
   "supersedes": [],
-  "reason": "PR #113 receipt-bearing head 0e0ff4be07a923b9f73fc92c6e062076112d8d66 passed tests 36470895671, baseline artifacts 36470895808, and automation transaction 36470895553. The sole Codex finding was repaired, answered, and resolved. The final metadata-only head must repeat all hosted gates before merge."
+  "reason": "PR #113 exact head ea3f70bf4806c2108933e5f47a7be7e58f142542 passed tests 36471127761, baseline artifacts 36471127771, and automation transaction 36471127814 with its only review finding repaired and resolved, then squash-merged as 55dddcd15a95db7805ec6570439eae905cf7caa7."
 }
