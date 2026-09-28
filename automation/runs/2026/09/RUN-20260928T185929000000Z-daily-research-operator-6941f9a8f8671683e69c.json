@@ -48,24 +48,24 @@
       "status": "passed"
     },
     {
-      "evidence": "233 tests passed locally after fetching the complete repository object graph; exact PR-head hosted qualification remains required before merge.",
+      "evidence": "Hosted tests run 36470895671 succeeded on receipt-bearing head 0e0ff4be07a923b9f73fc92c6e062076112d8d66; the final metadata-only head must repeat the same gate before merge.",
       "name": "python -m pytest -q",
       "status": "passed"
     },
     {
-      "evidence": "Fresh local semantic validation returned valid=true with no errors; exact PR-head hosted qualification remains required before merge.",
+      "evidence": "Hosted automation-transaction run 36470895553 passed semantic validation, focused automation tests, and full pytest on receipt-bearing head 0e0ff4be07a923b9f73fc92c6e062076112d8d66; the final metadata-only head must repeat the same gate before merge.",
       "name": "python -m automation.cli validate-repository",
       "status": "passed"
     },
     {
-      "evidence": "The baseline artifact check passed locally; exact PR-head hosted qualification remains required before merge.",
+      "evidence": "Hosted baseline-artifacts run 36470895808 succeeded on receipt-bearing head 0e0ff4be07a923b9f73fc92c6e062076112d8d66; the final metadata-only head must repeat the same gate before merge.",
       "name": "baseline-artifacts",
       "status": "passed"
     },
     {
-      "evidence": "Required on the final receipt-bearing PR head before merge; no independent approval is claimed.",
+      "evidence": "Codex review identified the missing execution receipt on the implementation-only head. The receipt and lifecycle record were added, the finding was answered with exact check evidence and resolved, and no unresolved review threads remained. No independent approval is claimed.",
       "name": "exact-head semantic review",
-      "status": "not_run"
+      "status": "passed"
     }
   ],
   "consumed_ids": [],
@@ -248,4 +248,3 @@
   "trigger": "scheduled",
   "trigger_time": "2026-09-28T18:59:29Z"
 }
-
