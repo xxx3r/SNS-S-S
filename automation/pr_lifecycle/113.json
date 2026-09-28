@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 113,
+  "quest_id": "QST-SIM-0003",
+  "acceptance_slice": "execute exactly two receiver-phase-center=pi cases on the accepted fixed fixture",
+  "state": "ready_for_review",
+  "owner_run_id": "RUN-20260928T185929000000Z-daily-research-operator-6941f9a8f8671683e69c",
+  "source_commit": "1066e5838565ddf28b87eb16e3cb138b52e2cdab",
+  "head_commit": "3e6c7b12bd905791d5d5bb517c7fd709fb415833",
+  "updated_at": "2026-09-28T19:15:00+00:00",
+  "next_review_after": "2026-10-05T19:00:00+00:00",
+  "supersedes": [],
+  "reason": "PR #113 contains the bounded two-world receiver phase-position diagnostic and its local qualification. Exact receipt-bearing head checks and semantic review remain required before merge."
+}
