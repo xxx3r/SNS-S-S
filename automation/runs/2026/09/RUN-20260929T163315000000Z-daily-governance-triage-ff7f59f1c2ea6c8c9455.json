@@ -3,6 +3,10 @@
     {
       "kind": "immutable Pre-Game routing receipt",
       "path": "automation/runs/2026/09/RUN-20260929T163315000000Z-daily-governance-triage-ff7f59f1c2ea6c8c9455.json"
+    },
+    {
+      "kind": "PR #114 routing lifecycle record",
+      "path": "automation/pr_lifecycle/114.json"
     }
   ],
   "belief_effects": [],
@@ -38,9 +42,9 @@
       "status": "passed"
     },
     {
-      "evidence": "Required after the routing receipt is published.",
+      "evidence": "PR #114 receipt-bearing head 2520b6248247fa93e22bb085e1ab301d3876d014 was reviewed in-run: it preserves Weekly ownership, binds the route to the accepted META quest/action/output, changes no scientific state, and has no unresolved review thread. No independent approval is claimed; the final metadata-only head must repeat hosted qualification.",
       "name": "exact-head semantic review",
-      "status": "not_run"
+      "status": "passed"
     }
   ],
   "consumed_ids": [],
@@ -110,7 +114,8 @@
         ],
         "loop_id": "daily-governance-triage",
         "paths": [
-          "automation/runs/2026/09/RUN-20260929T163315000000Z-daily-governance-triage-ff7f59f1c2ea6c8c9455.json"
+          "automation/runs/2026/09/RUN-20260929T163315000000Z-daily-governance-triage-ff7f59f1c2ea6c8c9455.json",
+          "automation/pr_lifecycle/114.json"
         ],
         "scope": "swarm-power",
         "transaction_count": 1
