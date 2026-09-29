@@ -1,14 +1,14 @@
 {
   "acceptance_slice": "route the accepted QST-META-0001 assumptions-boundary artifact after the selected SIM3 phase-position slice completed",
-  "head_commit": "2520b6248247fa93e22bb085e1ab301d3876d014",
+  "head_commit": "cc19441823003f7ac97b80ed977d3f0b5bd81e8f",
   "next_review_after": "2026-10-04T00:00:00+00:00",
   "owner_run_id": "RUN-20260929T163315000000Z-daily-governance-triage-ff7f59f1c2ea6c8c9455",
   "pr_number": 114,
   "quest_id": "QST-META-0001",
-  "reason": "PR #114 routes the accepted META independent fallback to its existing Weekly owner after the selected SIM3 phase-position slice completed. Receipt-bearing head 2520b6248247fa93e22bb085e1ab301d3876d014 passed tests 36599602064, baseline-artifacts 36599601931, and automation-transaction 36599601977. No scientific implementation or state changed; final metadata-only exact-head qualification and review clearance remain required before merge.",
+  "reason": "PR #114 exact head c0dcf0543ae3b10e7768b8c0ce432ed64a40d891 passed tests 36599919948, baseline-artifacts 36599919874, and automation-transaction 36599920056 with no unresolved review thread, then squash-merged as cc19441823003f7ac97b80ed977d3f0b5bd81e8f. The accepted route preserves Weekly ownership and changes no scientific state. Limitation: the immutable receipt records the route request but omits the separate merge action that the active contract requires; correcting that forensic defect is System Audit-owned and requires explicit human authorization.",
   "schema": "sns.pr-lifecycle.v1",
   "source_commit": "8e448d022a05c6669015260cd5ebbca647972ad5",
-  "state": "ready_for_review",
+  "state": "merged",
   "supersedes": [],
-  "updated_at": "2026-09-29T16:41:48+00:00"
+  "updated_at": "2026-09-29T16:45:25+00:00"
 }
