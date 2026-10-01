@@ -1,0 +1,219 @@
+{
+  "run_id": "RUN-20261001T194616595386Z-weekly-evidence-synthesis-967ba4b47b5e3bfedfae",
+  "loop_id": "weekly-evidence-synthesis",
+  "contract_version": "2.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-10-01T19:37:09Z",
+  "created_at": "2026-10-01T19:50:14+00:00",
+  "source_commit": "2c34d1835223d1c7f44a1fb6f001bf5f6c8d7ec0",
+  "quest_context": {
+    "quest_id": "QST-META-0001",
+    "acceptance_slice": "QST-META-0001 accepted-output assumptions boundary and byte-bound tests",
+    "open_issue_dispositions": {
+      "30": "Defer: SYNTH R2 NEEDS_SCIENTIFIC_DECISION; holdout untouched.",
+      "103": "Continue through December 31; this slice inherits the accepted META sweep and avoids regeneration. Stochastic pointing and physical calibration remain unresolved."
+    },
+    "proposal_dispositions": "All 13 proposals preserved and explicitly dispositioned in accepted quests/dispositions/2026-10-01.json; no activation or terminalization in this slice.",
+    "q4_inheritance": {
+      "survived": "Accepted 12-point META output, negative control-cost point, independent-fields proposal and Weekly ownership.",
+      "decision_changed": "Fill the missing assumptions artifact instead of rerunning the accepted sweep.",
+      "not_repeated": "No META sweep or completed SIM3 phase diagnostic regenerated.",
+      "uncertainty_preserved": "Physical plausibility, stochastic pointing, actuation/fabrication/environment and SYNTH useful delivery on failure remain unresolved.",
+      "stale_information": "Prior queue still routed a completed SIM3 diagnostic until the human-owned October renewal; canonical META selection is not quest closure."
+    }
+  },
+  "pr_context": {
+    "branch": "october/2026-meta-boundary"
+  },
+  "consumed_ids": [],
+  "artifacts": [
+    "docs/system/beam_link_assumptions.md",
+    "tests/test_beam_link_assumptions.py"
+  ],
+  "checks": [
+    {
+      "name": "python -m pytest -q",
+      "status": "passed",
+      "evidence": "236 passed locally, including three new byte-bound documentation tests; existing regression tests run as qualification, not new scientific generation."
+    },
+    {
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed",
+      "evidence": "Repository valid with no errors before receipt; receipt-bearing qualification follows."
+    },
+    {
+      "name": "baseline-artifacts",
+      "status": "passed",
+      "evidence": "Isolated 50-step baseline regression artifacts passed; tracked META output and formulas unchanged."
+    },
+    {
+      "name": "standing request",
+      "status": "passed",
+      "evidence": "Concrete implementation request validated against accepted October policy. Initial overbroad request rejected before any edits, narrowed to document, tests and receipt."
+    },
+    {
+      "name": "hosted qualification",
+      "status": "not_run",
+      "evidence": "Pending PR publication; retrieve exact-head CI logs and accepted-main backstop before claiming merge."
+    }
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Qualify and expected-head merge this existing Weekly META slice; after acceptance, Weekly appraises accepted SIM3 phase evidence without rerun or retroactive materiality classification. Retain SYNTH R2 pause.",
+  "decision_effect": "Accepted META artifact and PR114 ownership changed behavior: document the existing boundary, retain negative net energy and unresolved physical assumptions, and do not generate a replacement sweep.",
+  "inheritance": [
+    {
+      "kind": "RUN",
+      "ref": "RUN-20260929T163315000000Z-daily-governance-triage-ff7f59f1c2ea6c8c9455",
+      "decision_effect": "Continue existing Weekly META owner and missing-document route; no repeated SIM3 diagnostic."
+    },
+    {
+      "kind": "QA",
+      "ref": "QA-20260731T025500000000Z-refine-qst-meta-0001-ff001122334455667788",
+      "decision_effect": "Keep six assumption fields independent; exclude aqueous magnetic locomotion from space baseline."
+    },
+    {
+      "kind": "artifact",
+      "ref": "outputs/qst_meta_0001/beam_link_sweep.json",
+      "decision_effect": "Bind document to exact accepted bytes and retain all 12 points, including negative energy, without generating a sweep."
+    }
+  ],
+  "observability": {
+    "administrative_transactions": 0,
+    "scientific_artifacts": 1,
+    "continuity": "inherited"
+  },
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20261001-OCTOBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-10-01T14:13:38Z\",\n  \"review_at\": \"2026-10-18T17:00:00Z\",\n  \"expires_at\": \"2026-11-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved on 2026-10-01: renew bounded authority, execute the existing META route first, and keep SYNTH R2 paused pending a separate scientific decision. This policy preserves September scopes, role actions, surfaces, checks and ceilings. It becomes execution authority only after qualified acceptance on main, never retroactively. No standing grant for SYNTH R2 generation, evaluator/holdout changes, forensic receipt corrections, protected control-plane changes, new hardware claims, spending or private exports. First work is the PR114 META assumptions document and byte-bound tests only; prior accepted baselines remain immutable.\"\n}\n",
+    "trigger_id": "weekly-evidence-synthesis:2026-10-01T19:37:09+00:00",
+    "requests": [
+      {
+        "loop_id": "weekly-evidence-synthesis",
+        "action": "implement",
+        "scope": "materials",
+        "acceptance_slice": "QST-META-0001 accepted-output assumptions boundary and byte-bound tests",
+        "paths": [
+          "docs/system/beam_link_assumptions.md",
+          "tests/test_beam_link_assumptions.py",
+          "automation/runs/2026/10/RUN-20261001T194616595386Z-weekly-evidence-synthesis-967ba4b47b5e3bfedfae.json"
+        ],
+        "budgets": {
+          "worlds": 0,
+          "records": 0,
+          "runtime_s": 0,
+          "disk_mb": 1
+        },
+        "transaction_count": 1,
+        "evidence_refs": [
+          "PR #114 existing Weekly route",
+          "outputs/qst_meta_0001/beam_link_sweep.json",
+          "QA-20260731T025500000000Z-refine-qst-meta-0001-ff001122334455667788"
+        ]
+      },
+      {
+        "loop_id": "weekly-evidence-synthesis",
+        "action": "merge",
+        "scope": "materials",
+        "acceptance_slice": "QST-META-0001 accepted-output assumptions boundary and byte-bound tests",
+        "paths": [
+          "docs/system/beam_link_assumptions.md",
+          "tests/test_beam_link_assumptions.py",
+          "automation/runs/2026/10/RUN-20261001T194616595386Z-weekly-evidence-synthesis-967ba4b47b5e3bfedfae.json"
+        ],
+        "budgets": {
+          "worlds": 0,
+          "records": 0,
+          "runtime_s": 0,
+          "disk_mb": 1
+        },
+        "transaction_count": 1,
+        "evidence_refs": [
+          "PR #114 existing Weekly route",
+          "outputs/qst_meta_0001/beam_link_sweep.json",
+          "QA-20260731T025500000000Z-refine-qst-meta-0001-ff001122334455667788",
+          "Exact-head local and hosted qualification, separate semantic review and no unresolved substantive findings required before merge."
+        ]
+      }
+    ]
+  },
+  "schema": "sns.loop-run.v2",
+  "state_snapshot": {
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "2c34d1835223d1c7f44a1fb6f001bf5f6c8d7ec0",
+    "records": [
+      {
+        "role": "active_contract",
+        "path": "automation/contracts/weekly-evidence-synthesis.v2.md",
+        "git_blob_sha": "7a201194228a6595074e282bf758b5c0d26dab9d"
+      },
+      {
+        "role": "active_quest_index",
+        "path": "quests/active/README.md",
+        "git_blob_sha": "5a37790d3c5eb166035c8d55a803fa8da3f4ce01"
+      },
+      {
+        "role": "canonical_memory",
+        "path": "memory/mem_log_short.md",
+        "git_blob_sha": "19c90e048039b29633dcdd0e9851381781e9bc0a"
+      },
+      {
+        "role": "meta_artifact",
+        "path": "outputs/qst_meta_0001/beam_link_sweep.json",
+        "git_blob_sha": "d522d63e86d09e6e66bbf5f3d3d122a350a21a7a"
+      },
+      {
+        "role": "meta_proposal",
+        "path": "quests/actions/2026/07/qa_20260712_qst_meta_0001_steering_abstraction.json",
+        "git_blob_sha": "3160390a31a4323c305809bf8943b5319a2765f2"
+      },
+      {
+        "role": "meta_quest",
+        "path": "quests/active/QST-META-0001-metasurface-beam-abstraction.md",
+        "git_blob_sha": "9d1610844cc58b74c151e423c455ece51c4b99de"
+      },
+      {
+        "role": "monthly_state",
+        "path": "calendar/monthly/2026-10.md",
+        "git_blob_sha": "72f4cd0a80fe246aacd3396199acce2ae4167180"
+      },
+      {
+        "role": "research_graph",
+        "path": "quests/research_graph.json",
+        "git_blob_sha": "114185b3ef8690ea70841c85435142e8953b9532"
+      },
+      {
+        "role": "route_receipt",
+        "path": "automation/runs/2026/09/RUN-20260929T163315000000Z-daily-governance-triage-ff7f59f1c2ea6c8c9455.json",
+        "git_blob_sha": "8bbafdc13e3ab55ecfe1594cd26666add1045db1"
+      },
+      {
+        "role": "runtime_manifest",
+        "path": "automation/runtime_manifest.json",
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896"
+      },
+      {
+        "role": "stable_law",
+        "path": "AGENTS.md",
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894"
+      },
+      {
+        "role": "standing_authority",
+        "path": "automation/standing/2026-10.v1.json",
+        "git_blob_sha": "5a278b2ad0d4382f0d3cac96b03fe83e0be1a7ff"
+      },
+      {
+        "role": "standing_pointer",
+        "path": "automation/standing/current.json",
+        "git_blob_sha": "65406a1143d99eb5f900666c49c2acc6132d1d01"
+      },
+      {
+        "role": "state_ownership",
+        "path": "automation/state_ownership.json",
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6"
+      }
+    ],
+    "open_prs": [],
+    "fingerprint": "sha256:fb950075062f590061a88318bf6f3e04b5d3748c9bd7d4a47b68828d2f00d276"
+  },
+  "receipt_kind": "run"
+}
