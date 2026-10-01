@@ -2,11 +2,11 @@
 
 Current Program: SNS-S-S as formal research instrument
 
-Current Executable Quest: QST-SIM-0003
+Current Executable Quest: QST-META-0001
 
 Queue Note: QST-FUND-0001 is completed on its accepted repository outline. QST-SYNTH-0001 R2 remains at a reserved scientific-decision boundary; QST-STOR-0002 remains active at P0 with only its fast-rotator surface route locally falsified.
 
-Current Step: Run exactly two new QST-SIM-0003 phase-position cases at receiver phase center π, holding the accepted 20% storage-node fixture, receiver visibility 0.25, beam efficiency 0.80, and eclipse fractions 0.05 and 0.10 fixed; compare against immutable phase-center-0 baselines without rerunning them.
+Current Step: Under the human-approved October policy after qualified acceptance, the existing Weekly owner adds the META assumptions-boundary document and byte-bound tests against the accepted 12-point output. Preserve formulas and artifact bytes; generate no new sweep. The prior two-case SIM3 direction below is historical and completed by PR #113.
 
 Last Evidence:
 
@@ -33,7 +33,7 @@ Aurora Score: A = 1.0 ∠ -20° | w_ext = 0.0
 
 Next Move (one shot):
 
-- Execute the two-case QST-SIM-0003 antipodal receiver-phase diagnostic. Stop before extra phase centers, grid expansion, optimization, real ephemerides, or architecture claims. Keep SYNTH R2 and the STOR architecture decision on their separate Monthly/human boundaries.
+- Execute the PR #114 Weekly-owned META assumptions document and byte-bound tests only. Keep SYNTH R2 and STOR architecture changes paused at their separate scientific boundaries. After acceptance, refresh ownership and appraise accepted SIM3 phase evidence without rerun or retroactive materiality classification.
 
 ## Accepted September constitutional transition — 2026-09-02
 
