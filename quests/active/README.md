@@ -23,8 +23,8 @@ Keep 1–8 active quests. Each quest must produce an inspectable artifact and st
 
 ## Selection rule
 
-The September standing policy remains valid through 2026-10-01T06:00:00Z, pending the human renewal checkpoint on September 30.
+The human-approved October standing policy applies only after qualified acceptance on main and expires at 2026-11-01T06:00:00Z. The September policy remains expired historical authority.
 
 QST-SYNTH-0001 R2 remains `NEEDS_SCIENTIFIC_DECISION`: electrical-failure useful delivery is unresolved in the accepted evaluator, so the sealed holdout stays untouched. QST-STOR-0002 remains P0 with only its declared fast-rotator route locally falsified.
 
-QST-SIM-0003 is the current executable direction. Its accepted receiver diagnostic increased modeled host delivery from 0.37 Wh to 0.82 Wh and 0.73 Wh when receiver visibility widened from 0.25 to 1.0 on the fixed fixture, while curtailment remained approximately 8.8–9.5 kWh. The next slice changes phase placement, not visibility fraction: retain receiver visibility 0.25, beam efficiency 0.80, eclipse fractions 0.05 and 0.10, and the accepted coordinated 20% storage-node fixture; generate exactly two new cases at receiver phase center π and compare them to immutable phase-center-0 baselines without rerunning those baselines. Stop before additional phase centers, optimization, role-mix changes, real ephemerides, or architecture claims.
+QST-META-0001 is the current executable direction under the existing Weekly owner. The previously selected SIM3 phase diagnostic is accepted in PR #113; do not repeat it. PR #114 routes only the missing `docs/system/beam_link_assumptions.md` artifact and byte-bound tests against the accepted 12-point META sweep. Preserve output bytes and formulas; no sweep generation, expansion, materiality reclassification, architecture claim or quest closure is included. After acceptance, Weekly separately appraises the completed SIM3 phase evidence and records the next bounded direction or an explicit deferral. See `calendar/monthly/2026-10.md` and `quests/dispositions/2026-10-01.json`.

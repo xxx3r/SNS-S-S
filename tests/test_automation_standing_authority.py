@@ -74,8 +74,9 @@ def action_receipt(tmp_path):
         return subprocess.check_output(['git','-C',str(tmp_path),*args],text=True).strip()
     git('init','-q');git('config','user.name','Fixture');git('config','user.email','fixture@example.invalid')
     target=tmp_path/'automation/standing';target.mkdir(parents=True)
-    for name in ['current.json','2026-09.v1.json']:
-        (target/name).write_bytes(Path('automation/standing',name).read_bytes())
+    # Historical September receipts must not inherit the live month's pointer.
+    (target/'2026-09.v1.json').write_bytes(Path('automation/standing/2026-09.v1.json').read_bytes())
+    (target/'current.json').write_text(json.dumps({'path':'automation/standing/2026-09.v1.json'})+'\n')
     git('add','.');git('commit','-qm','Accepted policy fixture')
     receipt=json.loads(next(Path('automation/runs/2026/09').glob('*system-audit*.json')).read_text())
     receipt['observability']={'continuity':'independent'}
