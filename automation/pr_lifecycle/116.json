@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 116,
+  "quest_id": "QST-META-0001",
+  "acceptance_slice": "document the accepted META assumptions boundary with byte-bound tests without rerunning the sweep",
+  "state": "merged",
+  "owner_run_id": "RUN-20261001T194616595386Z-weekly-evidence-synthesis-967ba4b47b5e3bfedfae",
+  "source_commit": "2c34d1835223d1c7f44a1fb6f001bf5f6c8d7ec0",
+  "head_commit": "f8aa561e3b2e740242fe24baadcae33e9e78622e",
+  "updated_at": "2026-10-01T19:51:37+00:00",
+  "next_review_after": "2026-10-04T15:00:00+00:00",
+  "supersedes": [],
+  "reason": "PR #116 exact head 03a138c4b99f09e01d2ad921e44fabd6a059568a passed tests 36917233652, automation transaction 36917233676, and baseline artifacts 36917233792 after a separate same-executor semantic review found no substantive issue, then squash-merged as f8aa561e3b2e740242fe24baadcae33e9e78622e. Accepted-main backstops passed: tests 36917389227, automation transaction 36917389218, baseline artifacts 36917389286, and provenance snapshot 36917389213. The META artifact bytes and formulas remained unchanged; zero scientific worlds or records were generated."
+}
