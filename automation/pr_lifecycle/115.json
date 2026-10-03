@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 115,
+  "quest_id": "",
+  "acceptance_slice": "renew bounded October authority and bind historical standing-authority tests explicitly to September",
+  "state": "merged",
+  "owner_run_id": "RUN-20261001T194242457414Z-system-audit-f7e000e21fc622e8cd0e",
+  "source_commit": "04fc952f2047c875dedcc5dd527cedfb9f51de68",
+  "head_commit": "2c34d1835223d1c7f44a1fb6f001bf5f6c8d7ec0",
+  "updated_at": "2026-10-01T19:45:10+00:00",
+  "next_review_after": "2026-10-18T17:00:00+00:00",
+  "supersedes": [],
+  "reason": "PR #115 exact head 18427d57adb791ccdb7d0cade7583a350ab7f026 passed tests 36916424660, automation transaction 36916424661, and baseline artifacts 36916424565 after a separate same-executor semantic review found no substantive issue, then squash-merged as 2c34d1835223d1c7f44a1fb6f001bf5f6c8d7ec0. Accepted-main backstops passed: tests 36916593510, automation transaction 36916593531, baseline artifacts 36916593485, and provenance snapshot 36916593486. No scheduler or scientific state changed."
+}
