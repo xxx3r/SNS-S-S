@@ -1,6 +1,6 @@
 # QST-SIM-0003: GEO Ring Power-Chain Model
 
-Status: Active — fixed eclipse/beam sweep accepted; receiver-availability diagnostic next  
+Status: Active — receiver geometry appraised; host-service accounting next  
 Priority: P1  
 Tags: [SIM, GEO, SBSP, POWER]
 
@@ -55,3 +55,22 @@ Generate exactly two new cases with the already-supported legacy/default `receiv
 Do not rerun the 0.25 cases. Do not add another visibility value, role mix, storage fraction, host-demand value, optimization loop, real ephemerides, or architecture claim.
 
 Report only delivered energy, curtailment, survival, and coverage. If wider accepted synthetic visibility materially increases useful delivery, receiver availability becomes the next model bottleneck to characterize. If it does not, preserve that negative result and move the bottleneck search elsewhere.
+
+## October 4 Weekly appraisal
+
+The accepted phase-center diagnostic was appraised without rerunning a simulation world. On the frozen six-hour fixture, phase centers `0` and `π` each provide exactly 115 receiver-visible relay/storage agent-steps. At phase `0`, all 115 are sunlit for both eclipse settings. At phase `π`, the sunlit subset falls to 87 for `eclipse_fraction = 0.05` and 58 for `0.10`; the remaining 28 and 57 visible opportunities occur in eclipse. Accepted delivery falls from `0.37 Wh` at phase `0` to `0.283333333 Wh` and `0.193333333 Wh` at phase `π`.
+
+Artifact: `outputs/qst_sim_0003/receiver_overlap_appraisal.json`.
+
+This is a model-internal overlap diagnostic, not a post-hoc materiality classification or proof that overlap alone causes the energy result. Storage state, policy state, timestep ordering, and the synthetic fixture remain mediators.
+
+### Next executable slice
+
+Before generating another phase, visibility, role-mix, efficiency, or ephemeris case, make these quantities first-class deterministic telemetry:
+
+- cumulative host demand;
+- unmet host demand;
+- host service fraction;
+- role-conditioned receiver-visible sunlit and eclipse opportunities.
+
+Add accounting-identity tests and preserve legacy summaries. This instrumentation slice generates no worlds and sets no mission adequacy threshold. A later experiment must freeze any threshold prospectively.

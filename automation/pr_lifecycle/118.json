@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 118,
+  "quest_id": "QST-SIM-0003",
+  "acceptance_slice": "zero-world SIM3 overlap appraisal, META completion, and SIM3 measurement-accounting route",
+  "state": "merge_ready",
+  "owner_run_id": "RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d",
+  "source_commit": "f8aa561e3b2e740242fe24baadcae33e9e78622e",
+  "head_commit": "e49fee48cc7226fc23e38542d9f23d034ae834c2",
+  "updated_at": "2026-10-04T15:24:00+00:00",
+  "next_review_after": "2026-10-11T15:00:00+00:00",
+  "supersedes": [],
+  "reason": "PR #118 receipt-bearing head e49fee48cc7226fc23e38542d9f23d034ae834c2 passed tests run 37212682215, baseline-artifacts run 37212682222, and automation-transaction run 37212682221. Exact-head semantic review found no unresolved review threads or substantive defects; no independent approval is claimed. Main remained f8aa561e3b2e740242fe24baadcae33e9e78622e. This metadata-only lifecycle transition must repeat the hosted gates before expected-head merge."
+}
