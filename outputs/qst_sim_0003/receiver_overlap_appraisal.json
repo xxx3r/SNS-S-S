@@ -1,0 +1,115 @@
+{
+  "accepted_always_visible_service": [
+    {
+      "accepted_delivered_total_Wh": 0.82,
+      "accepted_host_service_fraction": 0.683333333,
+      "case_id": "eclipse-0.05_beam-0.80_visibility-1.00",
+      "eclipse_fraction": 0.05,
+      "host_demand_Wh": 1.2,
+      "receiver_visibility_fraction": 1.0
+    },
+    {
+      "accepted_delivered_total_Wh": 0.73,
+      "accepted_host_service_fraction": 0.608333333,
+      "case_id": "eclipse-0.10_beam-0.80_visibility-1.00",
+      "eclipse_fraction": 0.1,
+      "host_demand_Wh": 1.2,
+      "receiver_visibility_fraction": 1.0
+    }
+  ],
+  "cases": [
+    {
+      "accepted_delivered_total_Wh": 0.37,
+      "accepted_host_service_fraction": 0.308333333,
+      "case_id": "eclipse-0.05_phase-baseline",
+      "eclipse_fraction": 0.05,
+      "eligible_agent_step_count": 288,
+      "host_demand_Wh": 1.2,
+      "receiver_phase_center_rad": 0.0,
+      "receiver_visible_agent_step_count": 115,
+      "receiver_visible_by_role": {
+        "relay": 50,
+        "storage": 65
+      },
+      "receiver_visible_eclipse_agent_step_count": 0,
+      "receiver_visible_sunlit_agent_step_count": 115
+    },
+    {
+      "accepted_delivered_total_Wh": 0.283333333,
+      "accepted_host_service_fraction": 0.236111111,
+      "case_id": "eclipse-0.05_phase-antipodal",
+      "eclipse_fraction": 0.05,
+      "eligible_agent_step_count": 288,
+      "host_demand_Wh": 1.2,
+      "receiver_phase_center_rad": 3.141592654,
+      "receiver_visible_agent_step_count": 115,
+      "receiver_visible_by_role": {
+        "relay": 50,
+        "storage": 65
+      },
+      "receiver_visible_eclipse_agent_step_count": 28,
+      "receiver_visible_sunlit_agent_step_count": 87
+    },
+    {
+      "accepted_delivered_total_Wh": 0.37,
+      "accepted_host_service_fraction": 0.308333333,
+      "case_id": "eclipse-0.10_phase-baseline",
+      "eclipse_fraction": 0.1,
+      "eligible_agent_step_count": 288,
+      "host_demand_Wh": 1.2,
+      "receiver_phase_center_rad": 0.0,
+      "receiver_visible_agent_step_count": 115,
+      "receiver_visible_by_role": {
+        "relay": 50,
+        "storage": 65
+      },
+      "receiver_visible_eclipse_agent_step_count": 0,
+      "receiver_visible_sunlit_agent_step_count": 115
+    },
+    {
+      "accepted_delivered_total_Wh": 0.193333333,
+      "accepted_host_service_fraction": 0.161111111,
+      "case_id": "eclipse-0.10_phase-antipodal",
+      "eclipse_fraction": 0.1,
+      "eligible_agent_step_count": 288,
+      "host_demand_Wh": 1.2,
+      "receiver_phase_center_rad": 3.141592654,
+      "receiver_visible_agent_step_count": 115,
+      "receiver_visible_by_role": {
+        "relay": 50,
+        "storage": 65
+      },
+      "receiver_visible_eclipse_agent_step_count": 57,
+      "receiver_visible_sunlit_agent_step_count": 58
+    }
+  ],
+  "claim_boundary": "Derived only from hash-bound accepted artifacts and deterministic GEORingWorld geometry. No simulation world, baseline, sweep, phase point, visibility point, role mix, or holdout was generated or rerun. No post-hoc materiality threshold, preferred architecture, real ephemeris, relay-performance, mission, or hardware claim is made.",
+  "interpretation": "The two phase centers have the same 115 receiver-visible relay/storage agent-steps. At phase zero all 115 are sunlit for both eclipse settings; at phase pi the sunlit subset falls to 87 and 58 while 28 and 57 visible opportunities occur in eclipse. Accepted delivery falls in the same direction. This is a model-internal overlap diagnostic, not proof that overlap alone causes the energy result; policy state, storage, timestep ordering, and the synthetic fixture remain mediators.",
+  "materiality_classification": "NOT_DEFINED_BY_ACCEPTED_ROUTE",
+  "new_world_count": 0,
+  "next_measurement": "Before any additional phase or visibility worlds, make host demand, unmet demand, service fraction, and role-conditioned receiver-visible sunlit/eclipse opportunities first-class deterministic telemetry with accounting-identity tests.",
+  "observation": "RECEIVER_ECLIPSE_OVERLAP_COVARIES_WITH_SYNTHETIC_DELIVERY",
+  "quest_id": "QST-SIM-0003",
+  "schedule_step_records_evaluated": 288,
+  "schema": "sns.qst-sim-0003.receiver-overlap-appraisal.v1",
+  "simulation_worlds_rerun": 0,
+  "source_files": {
+    "availability": {
+      "path": "outputs/qst_sim_0003/receiver_availability.json",
+      "sha256": "63770ec6a7dd551de010af54474d0c61e70e41e16f27bb7519231183bf81ae0d"
+    },
+    "config": {
+      "path": "configs/qst_sim_0003_receiver_phase_position.json",
+      "sha256": "466ab2cd208ce4d319568e3ebebe566fa45b9c93bed486b99438cea643fc979f"
+    },
+    "phase": {
+      "path": "outputs/qst_sim_0003/receiver_phase_position.json",
+      "sha256": "b0ef8cf034d0d8c7d59731acfe0688e9d7b854fa9852ce6041c15562c9e037fa"
+    },
+    "sweep": {
+      "path": "outputs/qst_sim_0003/eclipse_beam_sweep.json",
+      "sha256": "b94e88b06c4bdd92eb04a291cda2eb967108c4eced744b89e3945157b2f63565"
+    }
+  },
+  "synthetic": true
+}

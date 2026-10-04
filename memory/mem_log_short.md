@@ -2,11 +2,11 @@
 
 Current Program: SNS-S-S as formal research instrument
 
-Current Executable Quest: QST-META-0001
+Current Executable Quest: QST-SIM-0003
 
-Queue Note: QST-FUND-0001 is completed on its accepted repository outline. QST-SYNTH-0001 R2 remains at a reserved scientific-decision boundary; QST-STOR-0002 remains active at P0 with only its fast-rotator surface route locally falsified.
+Queue Note: QST-FUND-0001 and QST-META-0001 are completed at their accepted bounded scopes. QST-SYNTH-0001 R2 remains at a reserved scientific-decision boundary; QST-STOR-0002 remains active at P0 with only its fast-rotator surface route locally falsified.
 
-Current Step: Under the human-approved October policy after qualified acceptance, the existing Weekly owner adds the META assumptions-boundary document and byte-bound tests against the accepted 12-point output. Preserve formulas and artifact bytes; generate no new sweep. The prior two-case SIM3 direction below is historical and completed by PR #113.
+Current Step: Under the accepted October policy, implement first-class QST-SIM-0003 host demand, unmet demand, service fraction, and role-conditioned receiver-visible sunlit/eclipse opportunity telemetry with accounting-identity tests. Generate no worlds and do not add phase, visibility, role-mix, efficiency, or ephemeris cases in this instrumentation slice.
 
 Last Evidence:
 
@@ -20,6 +20,8 @@ Last Evidence:
 - QST-SIM-0002 now has reproducible finite-time stale coverage, but the identical body-fixed two-rotation schedule was non-informative about rotation-regime effects.
 - QST-CALENDAR-0001 has accepted fail-closed validation and deterministic proposal staging.
 - QST-META-0001 has mild numerical support for explicitly modeling steering angle and losses, not an SNS hardware or power-transfer claim.
+- QST-META-0001 is completed at its bounded abstraction scope after accepted PR #116 supplied the assumptions boundary and byte-bound tests.
+- The non-generating SIM3 overlap appraisal found 115 receiver-visible relay/storage opportunities at both accepted phase centers. Phase `π` moves 28 and 57 of those opportunities into eclipse at eclipse fractions 0.05 and 0.10, while accepted delivery falls to 0.283333333 Wh and 0.193333333 Wh. Materiality remains prospectively undefined.
 
 Blockers / Known Limits:
 
@@ -33,7 +35,7 @@ Aurora Score: A = 1.0 ∠ -20° | w_ext = 0.0
 
 Next Move (one shot):
 
-- Execute the PR #114 Weekly-owned META assumptions document and byte-bound tests only. Keep SYNTH R2 and STOR architecture changes paused at their separate scientific boundaries. After acceptance, refresh ownership and appraise accepted SIM3 phase evidence without rerun or retroactive materiality classification.
+- Add the bounded SIM3 host-service and receiver-opportunity telemetry with accounting-identity tests before generating any new receiver geometry cases. Keep SYNTH R2 and STOR architecture changes paused at their separate scientific boundaries.
 
 ## Accepted September constitutional transition — 2026-09-02
 
@@ -92,3 +94,16 @@ Accepted evidence from September 21 changed the next experiment without being re
 QST-FUND-0001 is completed on `docs/public/sns_measurement_philosophy_outline.md`. The outline meets its declared structure, labeling, reproducibility, orbiter-countercase, and near-term-test gates. External publication remains separately governed.
 
 Issue #103 inheritance observation: accepted SIM3 baselines prevented duplicate execution; the unresolved SYNTH failed-world delivery quantity survived as UNKNOWN rather than becoming zero or inferred partial service; a late review recovered the executable FUND outline after an initial no-action receipt overlooked it. The main propagation failure remains one-week Weekly latency after the September 20 scheduled delivery did not publish, requiring human recovery.
+
+
+## October 4 Weekly delivery
+
+Accepted META code, sweep, tests, and the PR #116 assumptions boundary satisfy QST-META-0001's declared bounded success criteria. The quest is completed without widening its synthetic abstraction into a physical power-beam or hardware claim.
+
+The accepted SIM3 phase evidence was appraised without rerunning a world. Equal total receiver visibility at phase centers `0` and `π` concealed a role-conditioned eclipse-overlap change: phase `π` shifts 28 of 115 eligible visible opportunities into eclipse at the 0.05 case and 57 of 115 at the 0.10 case. Accepted delivery falls in the same direction, but the repository still has no prospectively frozen mission materiality threshold and does not infer one afterward.
+
+Issue #103 inheritance observation: the phase appraisal reused the immutable sweep, availability, and phase artifacts; no accepted world was repeated. The accepted SYNTH failed-world useful-delivery quantity remains UNKNOWN, the STOR route falsifier remains local, and META's unresolved physical assumptions survive as named successor questions rather than keeping a finished bounded quest open. The stale state repaired this week was the active index and short memory still routing already-accepted META work after PR #116.
+
+### Current next move (one shot)
+
+Instrument cumulative host demand, unmet host demand, host service fraction, and role-conditioned receiver-visible sunlit/eclipse opportunities with accounting-identity tests. Preserve existing summaries and generate no worlds. Any mission adequacy threshold must be frozen prospectively before later SIM3 comparison.
