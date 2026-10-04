@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 118,
+  "quest_id": "QST-SIM-0003",
+  "acceptance_slice": "zero-world SIM3 overlap appraisal, META completion, and SIM3 measurement-accounting route",
+  "state": "draft_active",
+  "owner_run_id": "RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d",
+  "source_commit": "f8aa561e3b2e740242fe24baadcae33e9e78622e",
+  "head_commit": "33d328802040b0ebcbf9cdee817fa72db81c11d9",
+  "updated_at": "2026-10-04T15:17:43+00:00",
+  "next_review_after": "2026-10-11T15:00:00+00:00",
+  "supersedes": [],
+  "reason": "Draft PR #118 contains the accepted-output SIM3 overlap appraisal, META completion reconciliation, and the next measurement-accounting route. Exact-head hosted checks, semantic review, a fresh main observation, and expected-head merge remain required."
+}

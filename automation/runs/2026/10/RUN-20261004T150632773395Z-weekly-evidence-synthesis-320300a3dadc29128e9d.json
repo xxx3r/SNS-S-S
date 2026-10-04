@@ -1,0 +1,393 @@
+{
+  "schema": "sns.loop-run.v2",
+  "run_id": "RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d",
+  "loop_id": "weekly-evidence-synthesis",
+  "contract_version": "2.0.0",
+  "trigger": "scheduled",
+  "trigger_time": "2026-10-04T15:01:23Z",
+  "source_commit": "f8aa561e3b2e740242fe24baadcae33e9e78622e",
+  "state_snapshot": {
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "f8aa561e3b2e740242fe24baadcae33e9e78622e",
+    "records": [
+      {
+        "role": "active_contract",
+        "path": "automation/contracts/weekly-evidence-synthesis.v2.md",
+        "git_blob_sha": "7a201194228a6595074e282bf758b5c0d26dab9d"
+      },
+      {
+        "role": "active_quest_index",
+        "path": "quests/active/README.md",
+        "git_blob_sha": "5a37790d3c5eb166035c8d55a803fa8da3f4ce01"
+      },
+      {
+        "role": "backlog_disposition",
+        "path": "quests/dispositions/2026-10-01.json",
+        "git_blob_sha": "4fa9155444e1a73e63df0a773ca8e2f3f260f5f0"
+      },
+      {
+        "role": "canonical_memory",
+        "path": "memory/mem_log_short.md",
+        "git_blob_sha": "19c90e048039b29633dcdd0e9851381781e9bc0a"
+      },
+      {
+        "role": "latest_weekly_receipt",
+        "path": "automation/runs/2026/10/RUN-20261001T194616595386Z-weekly-evidence-synthesis-967ba4b47b5e3bfedfae.json",
+        "git_blob_sha": "038204077cc7c48d86fc37683c37dc4b68e51a92"
+      },
+      {
+        "role": "meta_output",
+        "path": "outputs/qst_meta_0001/beam_link_sweep.json",
+        "git_blob_sha": "d522d63e86d09e6e66bbf5f3d3d122a350a21a7a"
+      },
+      {
+        "role": "meta_quest",
+        "path": "quests/active/QST-META-0001-metasurface-beam-abstraction.md",
+        "git_blob_sha": "9d1610844cc58b74c151e423c455ece51c4b99de"
+      },
+      {
+        "role": "monthly_state",
+        "path": "calendar/monthly/2026-10.md",
+        "git_blob_sha": "72f4cd0a80fe246aacd3396199acce2ae4167180"
+      },
+      {
+        "role": "research_graph",
+        "path": "quests/research_graph.json",
+        "git_blob_sha": "114185b3ef8690ea70841c85435142e8953b9532"
+      },
+      {
+        "role": "runtime_manifest",
+        "path": "automation/runtime_manifest.json",
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896"
+      },
+      {
+        "role": "sim3_availability_result",
+        "path": "outputs/qst_sim_0003/receiver_availability.json",
+        "git_blob_sha": "577490db05a659e50bee4b107e531579b7b2fe4d"
+      },
+      {
+        "role": "sim3_phase_result",
+        "path": "outputs/qst_sim_0003/receiver_phase_position.json",
+        "git_blob_sha": "ceca03c2d84f5d425108a04f66e730fcf677e981"
+      },
+      {
+        "role": "sim3_quest",
+        "path": "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+        "git_blob_sha": "ad1e738477cc17a5daab3c336f9e32e20d613ea6"
+      },
+      {
+        "role": "stable_law",
+        "path": "AGENTS.md",
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894"
+      },
+      {
+        "role": "standing_authority",
+        "path": "automation/standing/2026-10.v1.json",
+        "git_blob_sha": "5a278b2ad0d4382f0d3cac96b03fe83e0be1a7ff"
+      },
+      {
+        "role": "standing_pointer",
+        "path": "automation/standing/current.json",
+        "git_blob_sha": "65406a1143d99eb5f900666c49c2acc6132d1d01"
+      },
+      {
+        "role": "state_ownership",
+        "path": "automation/state_ownership.json",
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6"
+      }
+    ],
+    "open_prs": [
+      {
+        "number": 118,
+        "head_sha": "33d328802040b0ebcbf9cdee817fa72db81c11d9",
+        "draft": true,
+        "state": "open"
+      }
+    ],
+    "fingerprint": "sha256:cab0da64594bc9f43e350a5fd4cf4dadba081716c8e8666df8910046505f00b6"
+  },
+  "receipt_kind": "run",
+  "quest_context": {
+    "quest_id": "QST-SIM-0003|QST-META-0001",
+    "acceptance_slice": "zero-world SIM3 receiver-overlap appraisal, META completion, and SIM3 measurement-accounting route",
+    "phase": "weekly_delivery_and_lifecycle",
+    "result": "SIM3_OVERLAP_APPRAISED_META_COMPLETED_ACCOUNTING_ROUTED",
+    "result_summary": "Accepted SIM3 cases share 115 receiver-visible relay/storage agent-step opportunities, but the baseline phase center keeps all 115 sunlit while the antipodal phase center shifts 28 or 57 into eclipse as eclipse fraction rises from 0.05 to 0.10. Accepted delivered energy moves in the same direction. QST-META-0001 meets its bounded repository criteria and is completed.",
+    "claim_boundary": "Model-internal geometry and lifecycle only. No simulation world was rerun or generated; no retroactive materiality threshold, causal sufficiency, real ephemeris, relay-performance, hardware-readiness, mission-adequacy, or economic claim is made. Storage, policy, timestep, and fixture choices still mediate delivered energy.",
+    "scope": "swarm-power|materials"
+  },
+  "pr_context": {
+    "pull_request": 118,
+    "branch": "aurora/weekly-delivery-2026-10-04",
+    "implementation_head": "33d328802040b0ebcbf9cdee817fa72db81c11d9",
+    "base_commit": "f8aa561e3b2e740242fe24baadcae33e9e78622e",
+    "lifecycle_record_path": "automation/pr_lifecycle/118.json"
+  },
+  "consumed_ids": [],
+  "artifacts": [
+    {
+      "path": "experiments/sim3_receiver_overlap_appraisal.py",
+      "kind": "deterministic accepted-output appraisal tool"
+    },
+    {
+      "path": "outputs/qst_sim_0003/receiver_overlap_appraisal.json",
+      "kind": "zero-world SIM3 overlap appraisal"
+    },
+    {
+      "path": "tests/test_sim3_receiver_overlap_appraisal.py",
+      "kind": "geometry and accounting regression tests"
+    },
+    {
+      "path": "quests/completed/QST-META-0001-metasurface-beam-abstraction.md",
+      "kind": "completed META quest record"
+    },
+    {
+      "path": "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+      "kind": "accepted appraisal and next measurement-accounting gate"
+    },
+    {
+      "path": "quests/dispositions/2026-10-04.json",
+      "kind": "complete quest and issue disposition"
+    },
+    {
+      "path": "memory/mem_log_short.md",
+      "kind": "canonical next move and Q4 inheritance observation"
+    },
+    {
+      "path": "automation/runs/2026/10/RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d.json",
+      "kind": "immutable Weekly run receipt"
+    },
+    {
+      "path": "automation/pr_lifecycle/118.json",
+      "kind": "PR ownership record"
+    }
+  ],
+  "checks": [
+    {
+      "name": "fresh default-branch source observation",
+      "status": "passed",
+      "evidence": "Unpinned GitHub reads established main at f8aa561e3b2e740242fe24baadcae33e9e78622e; AGENTS.md and the sole active Weekly v2 contract were read at that exact SHA, and main was re-read unchanged immediately before first publication."
+    },
+    {
+      "name": "standing request validation",
+      "status": "passed",
+      "evidence": "The three bounded transactions—zero-world SIM3 appraisal, META terminalization, and SIM3 accounting route—satisfy the exact automation.standing action, scope, path, budget, timestamp, and cumulative-count conditions under STAND-20261001-OCTOBER-ACTION-V1."
+    },
+    {
+      "name": "evidence-backed lifecycle appraisal",
+      "status": "passed",
+      "evidence": "Accepted SIM3 output and deterministic fixture geometry support a covariance appraisal without rerun or retrospective thresholding. The accepted META sweep, assumptions boundary, and byte-bound tests satisfy every declared repository criterion; its falsifier is not globally fired because four of twelve accepted points remain above the internal useful boundary."
+    },
+    {
+      "name": "python -m pytest -q",
+      "status": "passed",
+      "evidence": "240 tests passed locally on the complete receipt-candidate tree; hosted exact-head qualification remains separately pending."
+    },
+    {
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed",
+      "evidence": "Semantic repository validation passed locally on the complete receipt-candidate tree with six active and six completed quests; hosted exact-head qualification remains separately pending."
+    },
+    {
+      "name": "baseline-artifacts",
+      "status": "passed",
+      "evidence": "scripts/check_baseline_artifacts.sh passed locally without changing accepted tracked evidence; hosted exact-head qualification remains separately pending."
+    },
+    {
+      "name": "exact-head semantic review",
+      "status": "not_run",
+      "evidence": "Pending receipt-bearing PR publication, review-thread inspection, and exact-head hosted qualification. No independent approval is claimed."
+    }
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "After the receipt-bearing PR #118 head passes all hosted checks, remains review-clear, and main is freshly observed unchanged, merge with an expected-head guard. Before any new SIM3 world, add cumulative host demand, unmet demand, host service fraction, and role-conditioned receiver-visible sunlit/eclipse opportunities with accounting-identity tests; preserve legacy summaries and set no mission-adequacy threshold. Keep SYNTH R2 paused and STOR architecture reserved.",
+  "created_at": "2026-10-04T15:17:43Z",
+  "inheritance": [
+    {
+      "kind": "RUN",
+      "ref": "RUN-20261001T194616595386Z-weekly-evidence-synthesis-967ba4b47b5e3bfedfae",
+      "decision_effect": "Its accepted META assumptions boundary and tests complete the missing artifact without rerunning the accepted sweep."
+    },
+    {
+      "kind": "artifact",
+      "ref": "outputs/qst_sim_0003/receiver_phase_position.json",
+      "decision_effect": "Its four accepted phase-position cases anchor the zero-world overlap appraisal."
+    },
+    {
+      "kind": "artifact",
+      "ref": "outputs/qst_sim_0003/receiver_availability.json",
+      "decision_effect": "Its always-visible controls preserve the distinction between receiver opportunity and phase-position covariance."
+    },
+    {
+      "kind": "artifact",
+      "ref": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+      "decision_effect": "The unresolved failed-world useful-delivery quantity remains UNKNOWN and keeps SYNTH R2 paused."
+    }
+  ],
+  "decision_effect": "Completed META within its accepted abstraction boundary, quantified model-internal phase/eclipse opportunity covariance for SIM3 without new worlds, and routed explicit host-service and opportunity accounting before further generation.",
+  "observability": {
+    "administrative_transactions": 2,
+    "scientific_artifacts": 1,
+    "continuity": "inherited"
+  },
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20261001-OCTOBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-10-01T14:13:38Z\",\n  \"review_at\": \"2026-10-18T17:00:00Z\",\n  \"expires_at\": \"2026-11-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved on 2026-10-01: renew bounded authority, execute the existing META route first, and keep SYNTH R2 paused pending a separate scientific decision. This policy preserves September scopes, role actions, surfaces, checks and ceilings. It becomes execution authority only after qualified acceptance on main, never retroactively. No standing grant for SYNTH R2 generation, evaluator/holdout changes, forensic receipt corrections, protected control-plane changes, new hardware claims, spending or private exports. First work is the PR114 META assumptions document and byte-bound tests only; prior accepted baselines remain immutable.\"\n}\n",
+    "trigger_id": "weekly-evidence-synthesis:2026-10-04T15:01:23+00:00",
+    "requests": [
+      {
+        "loop_id": "weekly-evidence-synthesis",
+        "action": "implement",
+        "scope": "swarm-power",
+        "acceptance_slice": "appraise accepted SIM3 phase evidence with zero new worlds and deterministic receiver-overlap geometry",
+        "paths": [
+          "experiments/sim3_receiver_overlap_appraisal.py",
+          "outputs/qst_sim_0003/receiver_overlap_appraisal.json",
+          "tests/test_sim3_receiver_overlap_appraisal.py",
+          "automation/runs/2026/10/RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d.json",
+          "automation/pr_lifecycle/118.json"
+        ],
+        "budgets": {
+          "worlds": 0,
+          "records": 288,
+          "runtime_s": 1,
+          "disk_mb": 1
+        },
+        "transaction_count": 1,
+        "evidence_refs": [
+          "outputs/qst_sim_0003/receiver_phase_position.json",
+          "outputs/qst_sim_0003/receiver_availability.json",
+          "quests/active/QST-SIM-0003-geo-ring-power-chain.md"
+        ]
+      },
+      {
+        "loop_id": "weekly-evidence-synthesis",
+        "action": "merge",
+        "scope": "swarm-power",
+        "acceptance_slice": "appraise accepted SIM3 phase evidence with zero new worlds and deterministic receiver-overlap geometry",
+        "paths": [
+          "experiments/sim3_receiver_overlap_appraisal.py",
+          "outputs/qst_sim_0003/receiver_overlap_appraisal.json",
+          "tests/test_sim3_receiver_overlap_appraisal.py",
+          "automation/runs/2026/10/RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d.json",
+          "automation/pr_lifecycle/118.json"
+        ],
+        "budgets": {
+          "worlds": 0,
+          "records": 288,
+          "runtime_s": 1,
+          "disk_mb": 1
+        },
+        "transaction_count": 1,
+        "evidence_refs": [
+          "PR #118 final exact head and required hosted checks",
+          "outputs/qst_sim_0003/receiver_overlap_appraisal.json"
+        ]
+      },
+      {
+        "loop_id": "weekly-evidence-synthesis",
+        "action": "terminalize",
+        "scope": "materials",
+        "acceptance_slice": "complete QST-META-0001 from its accepted sweep, assumptions boundary, and byte-bound tests",
+        "paths": [
+          "quests/active/QST-META-0001-metasurface-beam-abstraction.md",
+          "quests/completed/QST-META-0001-metasurface-beam-abstraction.md",
+          "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+          "quests/active/README.md",
+          "quests/research_graph.json",
+          "quests/dispositions/2026-10-04.json",
+          "memory/mem_log_short.md",
+          "automation/runs/2026/10/RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d.json",
+          "automation/pr_lifecycle/118.json"
+        ],
+        "budgets": {
+          "worlds": 0,
+          "records": 0,
+          "runtime_s": 0,
+          "disk_mb": 1
+        },
+        "transaction_count": 2,
+        "evidence_refs": [
+          "outputs/qst_meta_0001/beam_link_sweep.json",
+          "docs/system/beam_link_assumptions.md",
+          "PR #116 accepted on main"
+        ]
+      },
+      {
+        "loop_id": "weekly-evidence-synthesis",
+        "action": "merge",
+        "scope": "materials",
+        "acceptance_slice": "complete QST-META-0001 from its accepted sweep, assumptions boundary, and byte-bound tests",
+        "paths": [
+          "quests/active/QST-META-0001-metasurface-beam-abstraction.md",
+          "quests/completed/QST-META-0001-metasurface-beam-abstraction.md",
+          "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+          "quests/active/README.md",
+          "quests/research_graph.json",
+          "quests/dispositions/2026-10-04.json",
+          "memory/mem_log_short.md",
+          "automation/runs/2026/10/RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d.json",
+          "automation/pr_lifecycle/118.json"
+        ],
+        "budgets": {
+          "worlds": 0,
+          "records": 0,
+          "runtime_s": 0,
+          "disk_mb": 1
+        },
+        "transaction_count": 2,
+        "evidence_refs": [
+          "PR #118 final exact head and required hosted checks",
+          "outputs/qst_meta_0001/beam_link_sweep.json",
+          "docs/system/beam_link_assumptions.md"
+        ]
+      },
+      {
+        "loop_id": "weekly-evidence-synthesis",
+        "action": "route",
+        "scope": "swarm-power",
+        "acceptance_slice": "route deterministic host-service and role-conditioned receiver-opportunity accounting before any new SIM3 world",
+        "paths": [
+          "memory/mem_log_short.md",
+          "automation/runs/2026/10/RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d.json",
+          "automation/pr_lifecycle/118.json"
+        ],
+        "budgets": {
+          "worlds": 0,
+          "records": 0,
+          "runtime_s": 0,
+          "disk_mb": 1
+        },
+        "transaction_count": 3,
+        "evidence_refs": [
+          "outputs/qst_sim_0003/receiver_overlap_appraisal.json",
+          "outputs/qst_sim_0003/receiver_phase_position.json",
+          "quests/active/QST-SIM-0003-geo-ring-power-chain.md"
+        ]
+      },
+      {
+        "loop_id": "weekly-evidence-synthesis",
+        "action": "merge",
+        "scope": "swarm-power",
+        "acceptance_slice": "route deterministic host-service and role-conditioned receiver-opportunity accounting before any new SIM3 world",
+        "paths": [
+          "memory/mem_log_short.md",
+          "automation/runs/2026/10/RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d.json",
+          "automation/pr_lifecycle/118.json"
+        ],
+        "budgets": {
+          "worlds": 0,
+          "records": 0,
+          "runtime_s": 0,
+          "disk_mb": 1
+        },
+        "transaction_count": 3,
+        "evidence_refs": [
+          "PR #118 final exact head and required hosted checks",
+          "outputs/qst_sim_0003/receiver_overlap_appraisal.json"
+        ]
+      }
+    ]
+  }
+}
+
