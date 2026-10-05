@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from collections import Counter
 from dataclasses import asdict, dataclass, field
-from typing import Iterable, List, Sequence
+from typing import Iterable, List, Mapping, Sequence
 
 from src.agents.sns_agent import AgentStepResult
 
@@ -32,6 +32,12 @@ class MetricsRecorder:
     delivered_total_Wh: List[float] = field(default_factory=list)
     curtailed_total_Wh: List[float] = field(default_factory=list)
     load_total_Wh: List[float] = field(default_factory=list)
+    host_demand_total_Wh: List[float] = field(default_factory=list)
+    unmet_host_demand_Wh: List[float] = field(default_factory=list)
+    host_service_fraction: List[float] = field(default_factory=list)
+    receiver_visible_opportunities_by_role: List[dict[str, dict[str, int]]] = field(
+        default_factory=list
+    )
     coverage_fraction: List[float] = field(default_factory=list)
     mean_temperature_K: List[float] = field(default_factory=list)
     mode_counts: List[dict[str, int]] = field(default_factory=list)
@@ -41,6 +47,9 @@ class MetricsRecorder:
     _delivered_cumulative: float = 0.0
     _curtailed_cumulative: float = 0.0
     _load_cumulative: float = 0.0
+    _receiver_visible_opportunities_by_role: dict[str, dict[str, int]] = field(
+        default_factory=dict
+    )
 
     def record(
         self,
@@ -52,6 +61,8 @@ class MetricsRecorder:
         step_results: Sequence[AgentStepResult] | None = None,
         coverage_fraction: float = 0.0,
         roles: Sequence[str] | None = None,
+        host_demand_Wh: float = 0.0,
+        receiver_visible_opportunities_by_role: Mapping[str, Mapping[str, int]] | None = None,
     ) -> None:
         """Append one auditable timestep.
 
@@ -74,6 +85,24 @@ class MetricsRecorder:
         self.delivered_total_Wh.append(self._delivered_cumulative)
         self.curtailed_total_Wh.append(self._curtailed_cumulative)
         self.load_total_Wh.append(self._load_cumulative)
+        demand = max(0.0, float(host_demand_Wh))
+        unmet = max(0.0, demand - host_energy)
+        service_fraction = 1.0 if demand == 0.0 else max(0.0, min(1.0, 1.0 - unmet / demand))
+        self.host_demand_total_Wh.append(demand)
+        self.unmet_host_demand_Wh.append(unmet)
+        self.host_service_fraction.append(service_fraction)
+        for role, counts in (receiver_visible_opportunities_by_role or {}).items():
+            cumulative = self._receiver_visible_opportunities_by_role.setdefault(
+                role, {"sunlit": 0, "eclipse": 0}
+            )
+            cumulative["sunlit"] += int(counts.get("sunlit", 0))
+            cumulative["eclipse"] += int(counts.get("eclipse", 0))
+        self.receiver_visible_opportunities_by_role.append(
+            {
+                role: dict(counts)
+                for role, counts in sorted(self._receiver_visible_opportunities_by_role.items())
+            }
+        )
         self.coverage_fraction.append(max(0.0, min(1.0, coverage_fraction)))
         self.mean_temperature_K.append(_mean(result.core_temperature_K for result in results))
         self.mode_counts.append(dict(Counter(result.mode for result in results)))
@@ -91,6 +120,10 @@ class MetricsRecorder:
                 "harvested_total_Wh": 0.0,
                 "delivered_total_Wh": 0.0,
                 "curtailed_total_Wh": 0.0,
+                "host_demand_total_Wh": 0.0,
+                "unmet_host_demand_Wh": 0.0,
+                "host_service_fraction": 1.0,
+                "receiver_visible_opportunities_by_role": {},
                 "coverage_fraction": 0.0,
             }
         return {
@@ -104,6 +137,10 @@ class MetricsRecorder:
             "delivered_total_Wh": self.delivered_total_Wh[-1],
             "curtailed_total_Wh": self.curtailed_total_Wh[-1],
             "load_total_Wh": self.load_total_Wh[-1],
+            "host_demand_total_Wh": self.host_demand_total_Wh[-1],
+            "unmet_host_demand_Wh": self.unmet_host_demand_Wh[-1],
+            "host_service_fraction": self.host_service_fraction[-1],
+            "receiver_visible_opportunities_by_role": self.receiver_visible_opportunities_by_role[-1],
             "coverage_fraction": self.coverage_fraction[-1],
             "mean_temperature_K": self.mean_temperature_K[-1],
             "mode_counts": self.mode_counts[-1],
@@ -127,6 +164,9 @@ class MetricsRecorder:
                     "delivered_total_Wh": self.delivered_total_Wh[index],
                     "curtailed_total_Wh": self.curtailed_total_Wh[index],
                     "load_total_Wh": self.load_total_Wh[index],
+                    "host_demand_total_Wh": self.host_demand_total_Wh[index],
+                    "unmet_host_demand_Wh": self.unmet_host_demand_Wh[index],
+                    "host_service_fraction": self.host_service_fraction[index],
                     "coverage_fraction": self.coverage_fraction[index],
                     "mean_temperature_K": self.mean_temperature_K[index],
                 }

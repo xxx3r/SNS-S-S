@@ -96,8 +96,18 @@ class Simulation:
             t = step_index * self.config.dt
             target_agent_id, target_theta = self._largest_gap_target()
             step_results = []
+            receiver_opportunities = {
+                "relay": {"sunlit": 0, "eclipse": 0},
+                "storage": {"sunlit": 0, "eclipse": 0},
+            }
             for agent in self.agents:
                 sample = self.world.sample(agent.theta, t)
+                if (
+                    agent.role in {AgentRole.RELAY, AgentRole.STORAGE}
+                    and sample.line_of_sight_to_host
+                ):
+                    condition = "sunlit" if sample.sunlit else "eclipse"
+                    receiver_opportunities[agent.role.value][condition] += 1
                 host_deficit = self.host.get_deficit(t + self.config.dt)
                 context = PolicyContext(
                     sunlit=sample.sunlit,
@@ -118,5 +128,7 @@ class Simulation:
                 step_results=step_results,
                 coverage_fraction=coverage,
                 roles=[agent.role.value for agent in self.agents],
+                host_demand_Wh=self.host.cumulative_demand(t + self.config.dt),
+                receiver_visible_opportunities_by_role=receiver_opportunities,
             )
         return self.metrics
