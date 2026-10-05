@@ -3,12 +3,12 @@
   "pr_number": 118,
   "quest_id": "QST-SIM-0003",
   "acceptance_slice": "zero-world SIM3 overlap appraisal, META completion, and SIM3 measurement-accounting route",
-  "state": "merge_ready",
-  "owner_run_id": "RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d",
-  "source_commit": "f8aa561e3b2e740242fe24baadcae33e9e78622e",
-  "head_commit": "e49fee48cc7226fc23e38542d9f23d034ae834c2",
-  "updated_at": "2026-10-04T15:24:00+00:00",
+  "state": "merged",
+  "owner_run_id": "RUN-20261005T162015672599Z-daily-governance-triage-c9aaab36c8017e8a61d6",
+  "source_commit": "d841a6a56c8065672be6086f2783acc25a016684",
+  "head_commit": "d841a6a56c8065672be6086f2783acc25a016684",
+  "updated_at": "2026-10-05T16:21:59.754441+00:00",
   "next_review_after": "2026-10-11T15:00:00+00:00",
   "supersedes": [],
-  "reason": "PR #118 receipt-bearing head e49fee48cc7226fc23e38542d9f23d034ae834c2 passed tests run 37212682215, baseline-artifacts run 37212682222, and automation-transaction run 37212682221. Exact-head semantic review found no unresolved review threads or substantive defects; no independent approval is claimed. Main remained f8aa561e3b2e740242fe24baadcae33e9e78622e. This metadata-only lifecycle transition must repeat the hosted gates before expected-head merge."
+  "reason": "PR #118 final head 3bfb51a3923da9df40500d4d187036b846cf8e46 passed tests run 37212799177, baseline-artifacts run 37212799118, and automation-transaction run 37212799171 with no unresolved review thread, then squash-merged as d841a6a56c8065672be6086f2783acc25a016684. This mechanical reconciliation changes lifecycle metadata only; it preserves the accepted SIM3/META result and Daily telemetry route. Canonical main exposed no post-merge workflow or commit-status object, so clean-checkout local qualification is recorded separately."
 }
