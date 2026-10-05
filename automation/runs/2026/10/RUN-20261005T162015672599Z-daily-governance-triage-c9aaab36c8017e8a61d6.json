@@ -31,9 +31,9 @@
       "status": "passed"
     },
     {
-      "evidence": "Pending publication of the receipt-bearing reconciliation head and review-thread inspection; no independent approval is claimed.",
+      "evidence": "In-run semantic review of PR #119 head 6914b8ae657ae0c67fbecd93a3496fe664198e59 found no substantive defect, comment, review, or review thread. The diff is limited to PR #118 lifecycle truth and this receipt; no independent approval is claimed.",
       "name": "exact-head semantic review",
-      "status": "not_run"
+      "status": "passed"
     }
   ],
   "consumed_ids": [],
