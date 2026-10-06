@@ -1,0 +1,199 @@
+{
+  "artifacts": [
+    "automation/pr_lifecycle/120.json",
+    "automation/runs/2026/10/RUN-20261006T162852474249Z-daily-governance-triage-2d41cf8d3ad818b17418.json"
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "243 tests passed locally on the existing scientific head before governance publication.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Repository semantic validation passed locally on the existing scientific head before governance publication.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "scripts/check_baseline_artifacts.sh passed locally; generated baseline files were restored to accepted bytes.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "An unpinned GitHub read established main at 4130bec5642f6f28df27029e6257ac178e5aecc9; AGENTS.md and the sole active Pre-Game v2 contract were read at that exact SHA.",
+      "name": "fresh default-branch source observation",
+      "status": "passed"
+    },
+    {
+      "evidence": "PR #120 head 3365b91df0ce148a038fd1c18d01c98163f19953 passed hosted tests run 37361370770 and baseline-artifacts run 37361370934; the automation workflow was not path-triggered before governance metadata existed.",
+      "name": "existing Daily scientific-head qualification",
+      "status": "passed"
+    },
+    {
+      "evidence": "In-run semantic review found the changes bounded to cumulative host demand, unmet host demand, service fraction, and role-conditioned receiver-visible opportunity accounting with compatibility tests; no comment, submitted review, or review thread existed. No independent approval is claimed.",
+      "name": "exact-head semantic review",
+      "status": "passed"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-10-06T16:28:52Z",
+  "decision_effect": "Provenance-completes and requests merge of the existing Daily-owned PR #120 slice; no scientific implementation, experiment, authority, belief, quest, policy, memory, or scheduler state changes are attributed to Pre-Game.",
+  "inheritance": [
+    {
+      "decision_effect": "Weekly selected the zero-world SIM3 measurement-accounting slice and delegated its implementation to Daily.",
+      "kind": "RUN",
+      "ref": "RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d"
+    },
+    {
+      "decision_effect": "Daily supplied the existing bounded implementation that Pre-Game independently qualified and provenance-completes for merge.",
+      "kind": "artifact",
+      "ref": "https://github.com/xxx3r/SNS-S-S/pull/120"
+    }
+  ],
+  "loop_id": "daily-governance-triage",
+  "next_action": "Weekly appraises the accepted SIM3 accounting evidence and routes at most one bounded successor without repeating the completed grids.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "inherited",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "lifecycle_path": "automation/pr_lifecycle/120.json",
+    "live_state_at_receipt": "open/draft",
+    "publication_branch": "aurora/daily-sim3-accounting-2026-10-05",
+    "pull_request": 120,
+    "reviewed_scientific_head": "3365b91df0ce148a038fd1c18d01c98163f19953"
+  },
+  "quest_context": {
+    "acceptance_slice": "qualify and provenance-complete the existing Daily-owned zero-world SIM3 measurement-accounting slice on PR #120",
+    "claim_boundary": "Pre-Game reviewed and merges an existing Daily implementation; it did not change scientific source behavior, generate a world, choose architecture, or alter quest or belief state.",
+    "quest_id": "QST-SIM-0003",
+    "result": "PR_120_MERGE_READY",
+    "scope": "swarm-power"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20261006T162852474249Z-daily-governance-triage-2d41cf8d3ad818b17418",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "4130bec5642f6f28df27029e6257ac178e5aecc9",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20261001-OCTOBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-10-01T14:13:38Z\",\n  \"review_at\": \"2026-10-18T17:00:00Z\",\n  \"expires_at\": \"2026-11-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved on 2026-10-01: renew bounded authority, execute the existing META route first, and keep SYNTH R2 paused pending a separate scientific decision. This policy preserves September scopes, role actions, surfaces, checks and ceilings. It becomes execution authority only after qualified acceptance on main, never retroactively. No standing grant for SYNTH R2 generation, evaluator/holdout changes, forensic receipt corrections, protected control-plane changes, new hardware claims, spending or private exports. First work is the PR114 META assumptions document and byte-bound tests only; prior accepted baselines remain immutable.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "qualify and provenance-complete the existing Daily-owned zero-world SIM3 measurement-accounting slice on PR #120",
+        "action": "maintenance",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "https://github.com/xxx3r/SNS-S-S/pull/120",
+          "automation/runs/2026/10/RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d.json"
+        ],
+        "loop_id": "daily-governance-triage",
+        "paths": [
+          "automation/pr_lifecycle/120.json",
+          "automation/runs/2026/10/RUN-20261006T162852474249Z-daily-governance-triage-2d41cf8d3ad818b17418.json"
+        ],
+        "scope": "research-tooling",
+        "transaction_count": 1
+      },
+      {
+        "acceptance_slice": "qualify and provenance-complete the existing Daily-owned zero-world SIM3 measurement-accounting slice on PR #120",
+        "action": "merge",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "https://github.com/xxx3r/SNS-S-S/pull/120",
+          "automation/runs/2026/10/RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d.json"
+        ],
+        "loop_id": "daily-governance-triage",
+        "paths": [
+          "src/sim/metrics.py",
+          "src/sim/simulation.py",
+          "tests/test_sim3_measurement_accounting.py",
+          "automation/pr_lifecycle/120.json",
+          "automation/runs/2026/10/RUN-20261006T162852474249Z-daily-governance-triage-2d41cf8d3ad818b17418.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 1
+      }
+    ],
+    "trigger_id": "daily-governance-triage:2026-10-06T16:25:10+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:909293d4c1fbe7da47e1b28a34ed22ec2232eb2f4309e9b06160b2a541b4d0c3",
+    "open_prs": [
+      {
+        "draft": true,
+        "head_sha": "3365b91df0ce148a038fd1c18d01c98163f19953",
+        "number": 120,
+        "state": "open"
+      }
+    ],
+    "records": [
+      {
+        "git_blob_sha": "96bac7f735e2b4d9a0da07f54babace6093f263e",
+        "path": "automation/contracts/daily-governance-triage.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "ba2c2594f46025ceb7e0b9e97ae59716623a019f",
+        "path": "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+        "role": "active_quest"
+      },
+      {
+        "git_blob_sha": "4f4beb045fad50da4bad201c6fe8850a7dda9fa8",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "5c5466ab891b487c680d374bce590112faa26519",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "2ffd3a06afff302111d42c17c9393ef0ae44d6d8",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "5a278b2ad0d4382f0d3cac96b03fe83e0be1a7ff",
+        "path": "automation/standing/2026-10.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "65406a1143d99eb5f900666c49c2acc6132d1d01",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "4130bec5642f6f28df27029e6257ac178e5aecc9"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-10-06T16:25:10Z"
+}
