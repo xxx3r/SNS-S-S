@@ -1,0 +1,205 @@
+{
+  "artifacts": [
+    "automation/pr_lifecycle/120.json",
+    "automation/runs/2026/10/RUN-20261007T162746975203Z-daily-governance-triage-6b760397caea4d2d8552.json"
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "243 tests passed locally on the complete receipt-bearing reconciliation tree.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Repository semantic validation passed locally on the complete receipt-bearing reconciliation tree with 104 run receipts.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "scripts/check_baseline_artifacts.sh passed locally; generated baseline files were restored to accepted bytes.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Unpinned GitHub reads established main at c931b0daba4186984414b7602d3020e6a8534e46; AGENTS.md and the sole active Pre-Game v2 contract were read at that exact SHA.",
+      "name": "fresh default-branch source observation",
+      "status": "passed"
+    },
+    {
+      "evidence": "GitHub reports PR #120 merged as c931b0daba4186984414b7602d3020e6a8534e46 from final head 089f2e048505179f3a7e0fed884eb5c06b32ddeb; tests 37496355224, baseline 37496355084, and automation transaction 37496355089 passed.",
+      "name": "PR #120 live merge identity",
+      "status": "passed"
+    },
+    {
+      "evidence": "Asynchronous Codex review completed on final PR #120 head 089f2e048505179f3a7e0fed884eb5c06b32ddeb with no findings; GitHub exposes no unresolved review thread.",
+      "name": "review state",
+      "status": "passed"
+    },
+    {
+      "evidence": "In-run semantic review found the complete diff limited to PR #120 lifecycle truth and this receipt; no scientific, quest, belief, authority, memory, policy, or scheduler semantics changed. No independent approval is claimed.",
+      "name": "exact-head semantic review",
+      "status": "passed"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-10-07T16:27:46.975203Z",
+  "decision_effect": "Changed only PR #120 lifecycle metadata from merge_ready to the verified merged state; preserved the accepted SIM3 accounting result, Weekly appraisal boundary, and all scientific/governance state.",
+  "inheritance": [
+    {
+      "decision_effect": "Its qualified PR #120 merge and accepted scientific boundary permit mechanical post-merge lifecycle synchronization without repeating or expanding the SIM3 work.",
+      "kind": "RUN",
+      "ref": "RUN-20261006T162852474249Z-daily-governance-triage-2d41cf8d3ad818b17418"
+    }
+  ],
+  "loop_id": "daily-governance-triage",
+  "next_action": "Weekly appraises the accepted SIM3 accounting evidence and routes at most one bounded successor without repeating the completed grids; Monthly or human authority separately resolves SYNTH R2 semantics.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "inherited",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "lifecycle_path": "automation/pr_lifecycle/120.json",
+    "live_state": "closed/merged",
+    "merge_commit": "c931b0daba4186984414b7602d3020e6a8534e46",
+    "publication_branch": "pregame/lifecycle-120-20261007",
+    "qualified_head": "089f2e048505179f3a7e0fed884eb5c06b32ddeb",
+    "reconciled_pull_request": 120
+  },
+  "quest_context": {
+    "acceptance_slice": "mechanically reconcile merged PR #120 lifecycle state",
+    "claim_boundary": "Administrative lifecycle truth only; no scientific result, quest state, belief, authority, memory, policy, or scheduler state changes.",
+    "quest_id": "QST-SIM-0003",
+    "result": "PR_120_LIFECYCLE_RECONCILED",
+    "scope": "research-tooling"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20261007T162746975203Z-daily-governance-triage-6b760397caea4d2d8552",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "c931b0daba4186984414b7602d3020e6a8534e46",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20261001-OCTOBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-10-01T14:13:38Z\",\n  \"review_at\": \"2026-10-18T17:00:00Z\",\n  \"expires_at\": \"2026-11-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved on 2026-10-01: renew bounded authority, execute the existing META route first, and keep SYNTH R2 paused pending a separate scientific decision. This policy preserves September scopes, role actions, surfaces, checks and ceilings. It becomes execution authority only after qualified acceptance on main, never retroactively. No standing grant for SYNTH R2 generation, evaluator/holdout changes, forensic receipt corrections, protected control-plane changes, new hardware claims, spending or private exports. First work is the PR114 META assumptions document and byte-bound tests only; prior accepted baselines remain immutable.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "mechanically reconcile merged PR #120 lifecycle state",
+        "action": "maintenance",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "https://github.com/xxx3r/SNS-S-S/pull/120",
+          "automation/runs/2026/10/RUN-20261006T162852474249Z-daily-governance-triage-2d41cf8d3ad818b17418.json"
+        ],
+        "loop_id": "daily-governance-triage",
+        "paths": [
+          "automation/pr_lifecycle/120.json",
+          "automation/runs/2026/10/RUN-20261007T162746975203Z-daily-governance-triage-6b760397caea4d2d8552.json"
+        ],
+        "scope": "research-tooling",
+        "transaction_count": 1
+      },
+      {
+        "acceptance_slice": "mechanically reconcile merged PR #120 lifecycle state",
+        "action": "merge",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "https://github.com/xxx3r/SNS-S-S/pull/120",
+          "automation/runs/2026/10/RUN-20261006T162852474249Z-daily-governance-triage-2d41cf8d3ad818b17418.json"
+        ],
+        "loop_id": "daily-governance-triage",
+        "paths": [
+          "automation/pr_lifecycle/120.json",
+          "automation/runs/2026/10/RUN-20261007T162746975203Z-daily-governance-triage-6b760397caea4d2d8552.json"
+        ],
+        "scope": "research-tooling",
+        "transaction_count": 1
+      }
+    ],
+    "trigger_id": "daily-governance-triage:2026-10-07T16:24:37+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:f6ccfa8ab599efdccda3f3e8b857c1ed3a28915c43aa8bc2d02cd67acaff30ec",
+    "open_prs": [],
+    "records": [
+      {
+        "git_blob_sha": "96bac7f735e2b4d9a0da07f54babace6093f263e",
+        "path": "automation/contracts/daily-governance-triage.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "ba2c2594f46025ceb7e0b9e97ae59716623a019f",
+        "path": "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+        "role": "active_quest"
+      },
+      {
+        "git_blob_sha": "4f4beb045fad50da4bad201c6fe8850a7dda9fa8",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "a96f38646d07431da97980c2cf1e9a565eb74f11",
+        "path": "quests/dispositions/2026-10-04.json",
+        "role": "backlog_disposition"
+      },
+      {
+        "git_blob_sha": "5c5466ab891b487c680d374bce590112faa26519",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "38bf2eb1e8a97f809b85325a8ad64b5ecd23399e",
+        "path": "automation/pr_lifecycle/120.json",
+        "role": "merged_pr_lifecycle"
+      },
+      {
+        "git_blob_sha": "47abe76e61180c9a8d2d745791ee0a09bdb39f62",
+        "path": "automation/runs/2026/10/RUN-20261006T162852474249Z-daily-governance-triage-2d41cf8d3ad818b17418.json",
+        "role": "owner_receipt"
+      },
+      {
+        "git_blob_sha": "2ffd3a06afff302111d42c17c9393ef0ae44d6d8",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "5a278b2ad0d4382f0d3cac96b03fe83e0be1a7ff",
+        "path": "automation/standing/2026-10.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "65406a1143d99eb5f900666c49c2acc6132d1d01",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "c931b0daba4186984414b7602d3020e6a8534e46"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-10-07T16:24:37Z"
+}
