@@ -3,12 +3,12 @@
   "pr_number": 120,
   "quest_id": "QST-SIM-0003",
   "acceptance_slice": "zero-world SIM3 host-demand, unmet-demand, service-fraction, and role-conditioned receiver-opportunity accounting",
-  "state": "merge_ready",
-  "owner_run_id": "RUN-20261006T162852474249Z-daily-governance-triage-2d41cf8d3ad818b17418",
-  "source_commit": "4130bec5642f6f28df27029e6257ac178e5aecc9",
-  "head_commit": "3365b91df0ce148a038fd1c18d01c98163f19953",
-  "updated_at": "2026-10-06T16:28:52+00:00",
+  "state": "merged",
+  "owner_run_id": "RUN-20261007T162746975203Z-daily-governance-triage-6b760397caea4d2d8552",
+  "source_commit": "c931b0daba4186984414b7602d3020e6a8534e46",
+  "head_commit": "c931b0daba4186984414b7602d3020e6a8534e46",
+  "updated_at": "2026-10-07T16:27:46.975203+00:00",
   "next_review_after": "2026-10-11T15:00:00+00:00",
   "supersedes": [],
-  "reason": "PR #120 continues a valid Daily owner and implements the exact Weekly-selected zero-world telemetry slice. Scientific head 3365b91df0ce148a038fd1c18d01c98163f19953 passed hosted tests 37361370770 and baseline-artifacts 37361370934 plus independent local full pytest, semantic validation, and baseline qualification. Pre-Game found no substantive defect or review thread and adds only merge provenance; final receipt-bearing head still requires hosted qualification before merge."
+  "reason": "PR #120 final head 089f2e048505179f3a7e0fed884eb5c06b32ddeb passed tests run 37496355224, baseline-artifacts run 37496355084, and automation-transaction run 37496355089; asynchronous Codex review completed with no findings and no unresolved review thread. It then squash-merged as c931b0daba4186984414b7602d3020e6a8534e46. This mechanical reconciliation changes lifecycle metadata only and preserves the accepted SIM3 accounting result and Weekly appraisal boundary."
 }
