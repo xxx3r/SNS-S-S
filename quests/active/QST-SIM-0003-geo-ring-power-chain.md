@@ -1,6 +1,6 @@
 # QST-SIM-0003: GEO Ring Power-Chain Model
 
-Status: Active — receiver geometry appraised; host-service accounting next  
+Status: Active — host demand ruled out as the current synthetic delivery cap; delivery-path attribution next
 Priority: P1  
 Tags: [SIM, GEO, SBSP, POWER]
 
@@ -74,3 +74,19 @@ Before generating another phase, visibility, role-mix, efficiency, or ephemeris 
 - role-conditioned receiver-visible sunlit and eclipse opportunities.
 
 Add accounting-identity tests and preserve legacy summaries. This instrumentation slice generates no worlds and sets no mission adequacy threshold. A later experiment must freeze any threshold prospectively.
+
+## October 11 Weekly demand-sensitivity result
+
+PR #120's accepted measurement accounting enabled exactly two new demand cases without repeating the accepted `0.2 Wh/h` baseline. On the otherwise fixed coordinated fixture (`eclipse_fraction = 0.05`, beam efficiency `0.80`, visibility `0.25`, phase center `0`):
+
+- `0.1 Wh/h` demand: `0.37 Wh` delivered, `0.23 Wh` unmet, service fraction `0.616666667`;
+- accepted `0.2 Wh/h` baseline: `0.37 Wh` delivered, `0.83 Wh` unmet, service fraction `0.308333333`;
+- `0.4 Wh/h` demand: `0.37 Wh` delivered, `2.03 Wh` unmet, service fraction `0.154166667`.
+
+Delivery, curtailment, coverage, survival, and the `115` receiver-visible relay/storage opportunities are unchanged across the declared demand bracket. Within this deterministic synthetic fixture, host demand is therefore not the active delivery cap. This does not identify which remaining fixed element—receiver opportunity, policy, beam rate, storage state, or timestep ordering—is causal, and it does not establish mission adequacy.
+
+Artifact: `outputs/qst_sim_0003/host_demand_sensitivity.json`.
+
+### Next executable slice
+
+Before another world, instrument delivered energy by agent role and by receiver-visible sunlit/eclipse state. Add accounting identities tying the partitions to total delivered energy. The next comparison may then distinguish unused receiver opportunity from policy or beam-rate limitation without changing geometry, demand, role mix, or architecture.

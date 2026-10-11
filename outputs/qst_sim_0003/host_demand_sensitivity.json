@@ -1,0 +1,70 @@
+{
+  "absolute_delivery_tolerance_Wh": 1e-09,
+  "accepted_baseline": {
+    "case_id": "accepted-eclipse-0.05_beam-0.80_demand-0.20",
+    "delivered_total_Wh": 0.37,
+    "host_demand_rate_Wh_per_h": 0.2,
+    "host_demand_total_Wh": 1.2,
+    "host_service_fraction": 0.308333333,
+    "source": "outputs/qst_sim_0003/eclipse_beam_sweep.json",
+    "unmet_host_demand_Wh": 0.83
+  },
+  "accepted_fixture_binding_sha256": "373e87129677c839b23de2a3d8b3ec74da05bd066536346859577be52ea3797a",
+  "baseline_artifact": "outputs/qst_sim_0003/eclipse_beam_sweep.json",
+  "baseline_artifact_sha256": "b94e88b06c4bdd92eb04a291cda2eb967108c4eced744b89e3945157b2f63565",
+  "baseline_worlds_rerun": 0,
+  "cases": [
+    {
+      "case_id": "eclipse-0.05_beam-0.80_demand-0.10",
+      "delivered_delta_from_accepted_baseline_Wh": -0.0,
+      "delivery_equal_to_baseline_within_tolerance": true,
+      "host_demand_rate_Wh_per_h": 0.1,
+      "metrics": {
+        "coverage_fraction": 1.0,
+        "curtailed_total_Wh": 9475.752817593,
+        "dead_agent_count": 0,
+        "delivered_total_Wh": 0.37,
+        "host_demand_total_Wh": 0.6,
+        "host_service_fraction": 0.616666667,
+        "receiver_visible_opportunities_by_role": {
+          "relay": {"eclipse": 0, "sunlit": 50},
+          "storage": {"eclipse": 0, "sunlit": 65}
+        },
+        "unmet_host_demand_Wh": 0.23
+      }
+    },
+    {
+      "case_id": "eclipse-0.05_beam-0.80_demand-0.40",
+      "delivered_delta_from_accepted_baseline_Wh": -0.0,
+      "delivery_equal_to_baseline_within_tolerance": true,
+      "host_demand_rate_Wh_per_h": 0.4,
+      "metrics": {
+        "coverage_fraction": 1.0,
+        "curtailed_total_Wh": 9475.752817593,
+        "dead_agent_count": 0,
+        "delivered_total_Wh": 0.37,
+        "host_demand_total_Wh": 2.4,
+        "host_service_fraction": 0.154166667,
+        "receiver_visible_opportunities_by_role": {
+          "relay": {"eclipse": 0, "sunlit": 50},
+          "storage": {"eclipse": 0, "sunlit": 65}
+        },
+        "unmet_host_demand_Wh": 2.03
+      }
+    }
+  ],
+  "claim_boundary": "Exactly two new synthetic host-demand cases at 0.1 and 0.4 Wh/h, compared with the immutable accepted 0.2 Wh/h case on one otherwise identical fixture. The accepted baseline is loaded and not rerun. Exact deterministic equality is an internal sensitivity result only; no mission adequacy, preferred architecture, real ephemeris, relay-performance, or hardware-readiness claim is made.",
+  "fixed_coordinates": {
+    "beam_efficiency": 0.8,
+    "eclipse_fraction": 0.05,
+    "receiver_phase_center_rad": 0.0,
+    "receiver_visibility_fraction": 0.25
+  },
+  "interpretation": "Across the declared 0.1-0.4 Wh/h demand bracket, changing host demand changes unmet demand and service fraction but not delivered energy on this fixed synthetic fixture. Host demand is therefore not the active delivery cap inside this bracket; receiver opportunity, policy, beam rate, or another fixed power-chain element remains the model-internal bottleneck candidate.",
+  "new_world_count": 2,
+  "next_measurement": "Instrument role-conditioned delivered energy and delivery opportunity state before another world so the next comparison can distinguish unused receiver opportunity from policy or beam-rate limitation.",
+  "observation": "DELIVERY_DEMAND_INSENSITIVE_ON_DECLARED_FIXTURE",
+  "quest_id": "QST-SIM-0003",
+  "schema": "sns.qst-sim-0003.host-demand-sensitivity.v1",
+  "synthetic": true
+}
