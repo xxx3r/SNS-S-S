@@ -6,7 +6,7 @@ Current Executable Quest: QST-SIM-0003
 
 Queue Note: QST-FUND-0001 and QST-META-0001 are completed at their accepted bounded scopes. QST-SYNTH-0001 R2 remains at a reserved scientific-decision boundary; QST-STOR-0002 remains active at P0 with only its fast-rotator surface route locally falsified.
 
-Current Step: Under the accepted October policy, implement first-class QST-SIM-0003 host demand, unmet demand, service fraction, and role-conditioned receiver-visible sunlit/eclipse opportunity telemetry with accounting-identity tests. Generate no worlds and do not add phase, visibility, role-mix, efficiency, or ephemeris cases in this instrumentation slice.
+Current Step: Under the accepted October policy, instrument QST-SIM-0003 delivered energy by agent role and receiver-visible sunlit/eclipse state with accounting identities before another world. Do not change geometry, demand, role mix, policy, beam rate, architecture, or mission thresholds in this instrumentation slice.
 
 Last Evidence:
 
@@ -22,6 +22,7 @@ Last Evidence:
 - QST-META-0001 has mild numerical support for explicitly modeling steering angle and losses, not an SNS hardware or power-transfer claim.
 - QST-META-0001 is completed at its bounded abstraction scope after accepted PR #116 supplied the assumptions boundary and byte-bound tests.
 - The non-generating SIM3 overlap appraisal found 115 receiver-visible relay/storage opportunities at both accepted phase centers. Phase `π` moves 28 and 57 of those opportunities into eclipse at eclipse fractions 0.05 and 0.10, while accepted delivery falls to 0.283333333 Wh and 0.193333333 Wh. Materiality remains prospectively undefined.
+- The October 11 demand diagnostic generated only the declared `0.1` and `0.4 Wh/h` cases and loaded the accepted `0.2 Wh/h` baseline without rerunning it. All three deliver exactly `0.37 Wh`; service fractions are `0.616666667`, `0.308333333`, and `0.154166667`. Host demand is not the active synthetic delivery cap inside that bracket.
 
 Blockers / Known Limits:
 
@@ -107,3 +108,13 @@ Issue #103 inheritance observation: the phase appraisal reused the immutable swe
 ### Current next move (one shot)
 
 Instrument cumulative host demand, unmet host demand, host service fraction, and role-conditioned receiver-visible sunlit/eclipse opportunities with accounting-identity tests. Preserve existing summaries and generate no worlds. Any mission adequacy threshold must be frozen prospectively before later SIM3 comparison.
+
+## October 11 Weekly delivery
+
+Accepted PR #120 telemetry was used rather than merely acknowledged. Exactly two new QST-SIM-0003 worlds bracketed the accepted demand rate at `0.1` and `0.4 Wh/h`; the accepted `0.2 Wh/h` world was loaded, not rerun. Delivered energy stayed exactly `0.37 Wh` across all three rates while unmet demand rose and service fraction fell. The fixed fixture is supply/opportunity/policy limited inside this bracket, not demand limited.
+
+Issue #103 inheritance observation: the accepted October 4 appraisal forced telemetry before more geometry, PR #120 supplied that telemetry, and today's diagnostic reused the immutable baseline instead of repeating it. The SYNTH failed-world delivery quantity remains UNKNOWN, the STOR fast-rotator falsifier remains local, and no mission-adequacy threshold was invented after seeing the SIM3 result. The propagation defect discovered this week was stale short-memory and quest text still pointing at telemetry already merged in PR #120; this transaction reconciles those surfaces.
+
+### Current next move (one shot)
+
+Instrument role-conditioned delivered energy and delivery opportunity state with accounting identities before another world. The next comparison should distinguish unused receiver opportunity from policy or beam-rate limitation while holding geometry, demand, role mix, and architecture fixed.

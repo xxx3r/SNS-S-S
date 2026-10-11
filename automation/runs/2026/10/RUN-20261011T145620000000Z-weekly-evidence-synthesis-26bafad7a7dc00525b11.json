@@ -1,0 +1,322 @@
+{
+  "artifacts": [
+    {
+      "kind": "frozen two-case synthetic fixture",
+      "path": "configs/qst_sim_0003_host_demand_sensitivity.json"
+    },
+    {
+      "kind": "bounded diagnostic runner",
+      "path": "experiments/sim3_host_demand_sensitivity.py"
+    },
+    {
+      "kind": "two-world demand-sensitivity result",
+      "path": "outputs/qst_sim_0003/host_demand_sensitivity.json"
+    },
+    {
+      "kind": "grid, provenance, and accounting regressions",
+      "path": "tests/test_sim3_host_demand_sensitivity.py"
+    },
+    {
+      "kind": "canonical next move and Q4 inheritance observation",
+      "path": "memory/mem_log_short.md"
+    },
+    {
+      "kind": "immutable Weekly run receipt",
+      "path": "automation/runs/2026/10/RUN-20261011T145620000000Z-weekly-evidence-synthesis-26bafad7a7dc00525b11.json"
+    },
+    {
+      "kind": "PR ownership record",
+      "path": "automation/pr_lifecycle/122.json"
+    }
+  ],
+  "backlog_disposition": {
+    "note": "All 13 raw actions and both open issues were inspected. SIM3 demand sensitivity was selected; SIM2 and PV remain independent fallbacks. STOR architecture and SYNTH R2 remain reserved.",
+    "open_issues": [
+      {
+        "condition": "R2 remains stopped pending scientific decision on useful delivery during electrical failure.",
+        "next_review": "2026-10-18",
+        "number": 30,
+        "owner": "monthly-governance",
+        "status": "continue_blocked"
+      },
+      {
+        "condition": "Continue Q4 inheritance measurement through 2026-12-31.",
+        "next_review": "2026-10-18",
+        "number": 103,
+        "owner": "weekly-evidence-synthesis",
+        "status": "continue"
+      }
+    ],
+    "open_prs_at_source": [],
+    "quest_actions_summary": {
+      "accepted_historical": 2,
+      "closed_completed": 5,
+      "continue": 3,
+      "defer": 3,
+      "total": 13
+    }
+  },
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "Unpinned GitHub reads established main at a2323bcef259dc87a1da3b50baa1db22174e1a26; AGENTS.md and the sole active Weekly v2 contract were read at that exact SHA, and main was re-read unchanged immediately before publication.",
+      "name": "fresh default-branch source observation",
+      "status": "passed"
+    },
+    {
+      "evidence": "The bounded implement and merge requests pass automation.cli validate-standing-request under STAND-20261001-OCTOBER-ACTION-V1 at 2026-10-11T14:56:20Z; the memory reconciliation is a second bounded route request.",
+      "name": "standing request validation",
+      "status": "passed"
+    },
+    {
+      "evidence": "Exactly two new worlds were generated at 0.1 and 0.4 Wh/h. The accepted 0.2 Wh/h baseline was hash-bound and loaded without rerun; all other fixture coordinates remained fixed.",
+      "name": "scientific execution",
+      "status": "passed"
+    },
+    {
+      "evidence": "245 tests passed locally on the complete pre-receipt scientific tree.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Semantic repository validation passed locally with six active and six completed quests.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "scripts/check_baseline_artifacts.sh passed locally; generated outputs/latest changes were not retained.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Pending receipt-bearing publication, hosted qualification, and final review-thread inspection. No independent approval is claimed.",
+      "name": "exact-head semantic review",
+      "status": "not_run"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-10-11T15:12:00Z",
+  "decision_effect": "Ruled out host demand as the active delivery cap within the declared 0.1-0.4 Wh/h synthetic bracket and routed delivery-path attribution before another world.",
+  "inheritance": [
+    {
+      "decision_effect": "Required service and receiver-opportunity telemetry before another geometry case.",
+      "kind": "RUN",
+      "ref": "RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d"
+    },
+    {
+      "decision_effect": "Supplied the accepted first-class accounting used in this experiment.",
+      "kind": "artifact",
+      "ref": "PR #120 / c931b0daba4186984414b7602d3020e6a8534e46"
+    },
+    {
+      "decision_effect": "Provided the immutable 0.2 Wh/h baseline, preventing a duplicate world.",
+      "kind": "artifact",
+      "ref": "outputs/qst_sim_0003/eclipse_beam_sweep.json"
+    },
+    {
+      "decision_effect": "Preserved failed-world useful delivery as UNKNOWN; no SYNTH generation occurred.",
+      "kind": "artifact",
+      "ref": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md"
+    }
+  ],
+  "loop_id": "weekly-evidence-synthesis",
+  "next_action": "After PR #122's receipt-bearing head passes all hosted checks and remains review-clear, merge with an expected-head guard. Before another SIM3 world, instrument delivered energy by role and receiver-visible sunlit/eclipse state with accounting identities. Keep SYNTH R2 paused and STOR architecture reserved.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "inherited",
+    "scientific_artifacts": 1
+  },
+  "pr_context": {
+    "lifecycle_record_path": "automation/pr_lifecycle/122.json",
+    "live_state_at_receipt": "open/draft",
+    "publication_branch": "aurora/weekly-sim3-demand-2026-10-11",
+    "pull_request": 122,
+    "reviewed_scientific_head": "a112ecb332024b06643cd74b5fd6fd1efa54f88a"
+  },
+  "quest_context": {
+    "acceptance_slice": "run exactly two SIM3 host-demand sensitivity cases around the accepted fixed fixture without rerunning the accepted baseline",
+    "claim_boundary": "Two new synthetic demand cases on one fixed fixture; the accepted baseline was loaded and not rerun. The result identifies no mission threshold, architecture, real ephemeris, relay performance, or hardware readiness.",
+    "quest_id": "QST-SIM-0003",
+    "result": "DELIVERY_DEMAND_INSENSITIVE_ON_DECLARED_FIXTURE",
+    "scope": "swarm-power"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20261011T145620000000Z-weekly-evidence-synthesis-26bafad7a7dc00525b11",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "a2323bcef259dc87a1da3b50baa1db22174e1a26",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20261001-OCTOBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-10-01T14:13:38Z\",\n  \"review_at\": \"2026-10-18T17:00:00Z\",\n  \"expires_at\": \"2026-11-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved on 2026-10-01: renew bounded authority, execute the existing META route first, and keep SYNTH R2 paused pending a separate scientific decision. This policy preserves September scopes, role actions, surfaces, checks and ceilings. It becomes execution authority only after qualified acceptance on main, never retroactively. No standing grant for SYNTH R2 generation, evaluator/holdout changes, forensic receipt corrections, protected control-plane changes, new hardware claims, spending or private exports. First work is the PR114 META assumptions document and byte-bound tests only; prior accepted baselines remain immutable.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "run exactly two SIM3 host-demand sensitivity cases around the accepted fixed fixture without rerunning the accepted baseline",
+        "action": "implement",
+        "budgets": {
+          "disk_mb": 2,
+          "records": 1440,
+          "runtime_s": 30,
+          "worlds": 2
+        },
+        "evidence_refs": [
+          "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+          "outputs/qst_sim_0003/eclipse_beam_sweep.json",
+          "PR #120 accepted measurement accounting"
+        ],
+        "loop_id": "weekly-evidence-synthesis",
+        "paths": [
+          "configs/qst_sim_0003_host_demand_sensitivity.json",
+          "experiments/sim3_host_demand_sensitivity.py",
+          "outputs/qst_sim_0003/host_demand_sensitivity.json",
+          "tests/test_sim3_host_demand_sensitivity.py",
+          "automation/runs/2026/10/RUN-20261011T145620000000Z-weekly-evidence-synthesis-26bafad7a7dc00525b11.json",
+          "automation/pr_lifecycle/122.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 1
+      },
+      {
+        "acceptance_slice": "run exactly two SIM3 host-demand sensitivity cases around the accepted fixed fixture without rerunning the accepted baseline",
+        "action": "merge",
+        "budgets": {
+          "disk_mb": 2,
+          "records": 1440,
+          "runtime_s": 30,
+          "worlds": 2
+        },
+        "evidence_refs": [
+          "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+          "outputs/qst_sim_0003/eclipse_beam_sweep.json",
+          "PR #120 accepted measurement accounting"
+        ],
+        "loop_id": "weekly-evidence-synthesis",
+        "paths": [
+          "configs/qst_sim_0003_host_demand_sensitivity.json",
+          "experiments/sim3_host_demand_sensitivity.py",
+          "outputs/qst_sim_0003/host_demand_sensitivity.json",
+          "tests/test_sim3_host_demand_sensitivity.py",
+          "memory/mem_log_short.md",
+          "automation/runs/2026/10/RUN-20261011T145620000000Z-weekly-evidence-synthesis-26bafad7a7dc00525b11.json",
+          "automation/pr_lifecycle/122.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 1
+      },
+      {
+        "acceptance_slice": "reconcile accepted SIM3 demand evidence into canonical next move and Q4 inheritance observation",
+        "action": "route",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "outputs/qst_sim_0003/host_demand_sensitivity.json",
+          "PR #120 accepted measurement accounting"
+        ],
+        "loop_id": "weekly-evidence-synthesis",
+        "paths": [
+          "memory/mem_log_short.md",
+          "automation/runs/2026/10/RUN-20261011T145620000000Z-weekly-evidence-synthesis-26bafad7a7dc00525b11.json",
+          "automation/pr_lifecycle/122.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 2
+      }
+    ],
+    "trigger_id": "weekly-evidence-synthesis:2026-10-11T14:56:20+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:eae77ea7a5afd3d1c884928a37adbda6b36b0d3bf44d19b731578e6089db70d6",
+    "open_prs": [
+      {
+        "draft": true,
+        "head_sha": "a112ecb332024b06643cd74b5fd6fd1efa54f88a",
+        "number": 122,
+        "state": "open"
+      }
+    ],
+    "records": [
+      {
+        "git_blob_sha": "7a201194228a6595074e282bf758b5c0d26dab9d",
+        "path": "automation/contracts/weekly-evidence-synthesis.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "4f4beb045fad50da4bad201c6fe8850a7dda9fa8",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "a96f38646d07431da97980c2cf1e9a565eb74f11",
+        "path": "quests/dispositions/2026-10-04.json",
+        "role": "backlog_disposition"
+      },
+      {
+        "git_blob_sha": "5c5466ab891b487c680d374bce590112faa26519",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "ca3f96c520caa09ef54fffb9a2c94856269bf863",
+        "path": "automation/pr_lifecycle/120.json",
+        "role": "latest_pr_lifecycle"
+      },
+      {
+        "git_blob_sha": "30403661187339c8372ff2c79682b7ed34d0746c",
+        "path": "automation/runs/2026/10/RUN-20261004T150632773395Z-weekly-evidence-synthesis-320300a3dadc29128e9d.json",
+        "role": "latest_weekly_receipt"
+      },
+      {
+        "git_blob_sha": "72f4cd0a80fe246aacd3396199acce2ae4167180",
+        "path": "calendar/monthly/2026-10.md",
+        "role": "monthly_state"
+      },
+      {
+        "git_blob_sha": "2ffd3a06afff302111d42c17c9393ef0ae44d6d8",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "0944dadd1011748cc1de24846fdd3cc45b7d4470",
+        "path": "outputs/qst_sim_0003/eclipse_beam_sweep.json",
+        "role": "sim3_baseline"
+      },
+      {
+        "git_blob_sha": "ba2c2594f46025ceb7e0b9e97ae59716623a019f",
+        "path": "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+        "role": "sim3_quest"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "5a278b2ad0d4382f0d3cac96b03fe83e0be1a7ff",
+        "path": "automation/standing/2026-10.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "65406a1143d99eb5f900666c49c2acc6132d1d01",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "a2323bcef259dc87a1da3b50baa1db22174e1a26"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-10-11T14:56:20Z"
+}
