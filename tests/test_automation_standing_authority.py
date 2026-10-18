@@ -21,6 +21,7 @@ def test_daily_can_work_without_triage_authorization():
 
 
 def test_weekly_can_reconcile_the_complete_accepted_direction():
+    import subprocess
     p = json.loads(Path('automation/standing/2026-10.v1.json').read_text())
     r = request('weekly-evidence-synthesis', 'route')
     r.update(
@@ -38,6 +39,7 @@ def test_weekly_can_reconcile_the_complete_accepted_direction():
         ],
         budgets={'worlds': 0, 'records': 0, 'runtime_s': 0, 'disk_mb': 2},
         evidence_refs=['PR #122 accepted demand diagnostic'],
+        routing_source_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
     )
     validate_standing_request(p, r, now='2026-10-18T06:00:00Z')
     r['evidence_refs'] = []

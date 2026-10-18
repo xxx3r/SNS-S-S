@@ -23,15 +23,20 @@ Only `weekly-evidence-synthesis` plus action `route` gains these path patterns:
 - `quests/research_graph.json`
 - `calendar/roundups/**`
 
-Such a request must cite accepted evidence. Ordinary routing to existing memory
-surfaces retains its prior behavior. Existing role write surfaces, protected
+Such a request must cite accepted evidence. Active-quest/graph requests must
+also bind `routing_source_commit` to the receipt source. The CLI validates the
+actual proposed worktree against that Git source: active file names, numbered
+index IDs/targets, quest identity/status/priority/tags, and all graph data must
+remain unchanged. Requested active paths must already exist. This permits
+routing prose reconciliation but no membership, metadata or graph transition.
+Ordinary routing to existing memory surfaces retains its prior behavior. Existing role write surfaces, protected
 paths, scope, expiry, transaction ceilings and aggregate budgets still apply.
 
 Triage and Daily gain no new action surfaces. Raw quest actions, proposed and
 completed quest files, scientific implementation files and authority code remain
 outside routing. Activation/retirement, priority changes, consolidated beliefs,
-and scientific decisions retain their separate contract requirements. Structural
-validation does not certify the semantic legitimacy of a proposed edit.
+and scientific decisions retain their separate contract requirements. The transition guard checks these structural invariants; semantic review still
+checks the legitimacy of the routing prose.
 
 ## Tests and preservation
 
@@ -55,3 +60,15 @@ accepted source, reconciles #122/#123 lifecycle and advances the live next move.
 The midmonth packet is review evidence; it does not claim a completed Monthly
 review or future renewal. The next research slice remains zero-new-world SIM3
 delivery attribution, with existing fixture coordinates held fixed.
+
+## Pre-merge P1 correction
+
+Automated review of the first PR124 head correctly found that path permission
+alone could disguise a coordinated membership transition as routing. That head
+was not merged. The correction validates actual source/result trees and rejects
+coordinated file/index/graph additions and removals, index-only changes, quest
+identity/status/priority changes and graph edits. Receipt validation binds the
+request source to its enclosing receipt and replays against the immutable
+receipt-introduction commit; later separately authorized lifecycle changes do
+not invalidate an accepted routing receipt. New uncommitted receipts check the
+current proposed worktree. No historical receipt bytes are rewritten.

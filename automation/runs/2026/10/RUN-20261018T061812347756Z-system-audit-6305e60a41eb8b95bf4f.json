@@ -1,0 +1,217 @@
+{
+  "artifacts": [
+    {
+      "kind": "bounded human-authorized governance repair",
+      "path": "automation/standing.py"
+    },
+    {
+      "kind": "bounded human-authorized governance repair",
+      "path": "tests/test_automation_standing_authority.py"
+    },
+    {
+      "kind": "bounded human-authorized governance repair",
+      "path": "automation/reports/2026-10-18-routing-repair.md"
+    },
+    {
+      "kind": "bounded human-authorized governance repair",
+      "path": "automation/pr_lifecycle/122.json"
+    },
+    {
+      "kind": "bounded human-authorized governance repair",
+      "path": "automation/pr_lifecycle/123.json"
+    },
+    {
+      "kind": "bounded human-authorized governance repair",
+      "path": "memory/mem_log_short.md"
+    },
+    {
+      "kind": "bounded human-authorized governance repair",
+      "path": "quests/active/README.md"
+    },
+    {
+      "kind": "bounded human-authorized governance repair",
+      "path": "quests/active/QST-SIM-0003-geo-ring-power-chain.md"
+    },
+    {
+      "kind": "bounded human-authorized governance repair",
+      "path": "quests/dispositions/2026-10-18-routing-recovery.json"
+    },
+    {
+      "kind": "pre-merge P1 transition guard and regressions",
+      "path": "automation/cli.py"
+    },
+    {
+      "kind": "pre-merge P1 transition guard and regressions",
+      "path": "automation/receipts.py"
+    },
+    {
+      "kind": "pre-merge P1 transition guard and regressions",
+      "path": "automation/routing_guard.py"
+    },
+    {
+      "kind": "pre-merge P1 transition guard and regressions",
+      "path": "tests/test_automation_routing.py"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "272 tests passed after the pre-merge P1 repair, including coordinated-add/removal rejection and receipt-store replay across later lifecycle changes.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Semantic repository validation passed with six active/six completed quests; witness-bearing validation follows.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "scripts/check_baseline_artifacts.sh passed; generated outputs restored.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Automated review of a1ca4b7 identified the P1 path-only membership bypass. That head was not merged. Transition guard and regression coverage now address it.",
+      "name": "initial PR124 review",
+      "status": "failed"
+    },
+    {
+      "evidence": "A local module-name collision was caught by full pytest, corrected by restoring the existing routing.py and isolating routing_guard.py; final full suite passed.",
+      "name": "intermediate collection failure",
+      "status": "failed"
+    },
+    {
+      "evidence": "Pending publication; exact-head qualification remains required before merge.",
+      "name": "hosted and automated review of corrected head",
+      "status": "not_run"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "1.0.0",
+  "correction_of": "RUN-20261018T060838948239Z-system-audit-fb51a62081e74b26a775",
+  "created_at": "2026-10-18T06:18:12.347756+00:00",
+  "decision_effect": "Corrects the unmerged path-only PR124 proposal by enforcing actual source/result membership, identity/status/priority and graph invariants, source binding, and immutable receipt-introduction replay. No additional research attempt or authority renewal.",
+  "execution_accounting": {
+    "new_research_attempts": 0,
+    "novel_worlds": 0,
+    "test_reproduction": "Required deterministic replay only; not independent science."
+  },
+  "explicit_human_authority": {
+    "authority_code_repair": [
+      "automation/standing.py",
+      "tests/test_automation_standing_authority.py",
+      "automation/cli.py",
+      "automation/receipts.py",
+      "automation/routing_guard.py",
+      "tests/test_automation_routing.py"
+    ],
+    "instruction": "M explicitly authorized publishing governance records and moving any and all governance debris in the way tonight. This witness narrows implementation to the concrete route mismatch and qualified recovery acceptance.",
+    "limits": "Weekly route only gains active-quest/index/graph/disposition/internal-ledger paths with accepted evidence; other role actions, protected surfaces, scope, expiry, budgets, strategic and scientific reservations remain unchanged. Active file membership/index entries/quest metadata and graph data must be preserved against accepted Git source. Historical receipts replay their introduction tree.",
+    "publication_authorized": true,
+    "qualified_merge_authorized": true
+  },
+  "inheritance": [
+    {
+      "decision_effect": "Prior correction identified the route/quest mismatch and preserved it for this separately human-authorized governance transaction.",
+      "kind": "RUN",
+      "ref": "RUN-20261018T060035039779Z-system-audit-441866248c09671617bd"
+    },
+    {
+      "decision_effect": "Carries the accepted midmonth evidence and scientific stops forward; no renewal or repeated campaign.",
+      "kind": "artifact",
+      "ref": "automation/reports/2026-10-18-midmonth-recovery.md"
+    }
+  ],
+  "loop_id": "system-audit",
+  "next_action": "Publish corrected PR124 head, obtain green hosted checks and completed exact-head review, resolve P1, then expected-head merge and accepted-main backstop verification.",
+  "observability": {
+    "administrative_transactions": 0,
+    "continuity": "inherited",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "accepted_predecessor_head": "a1575109f2550001a1d7b64bba82754a83f5ac45",
+    "accepted_predecessor_merge": "342eae9dfc352b53062c759371c0fc225da2008d",
+    "accepted_predecessor_pr": 123,
+    "publication_branch": "aurora/sns-routing-repair-2026-10-18"
+  },
+  "quest_context": {
+    "claim_boundary": "No new research, evaluator, fixture, threshold, holdout, policy, contract, schema, or scheduler change.",
+    "scope": "Dedicated human-owned repair of Weekly route path mapping and accepted correction handoff"
+  },
+  "receipt_kind": "correction",
+  "run_id": "RUN-20261018T061812347756Z-system-audit-6305e60a41eb8b95bf4f",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "342eae9dfc352b53062c759371c0fc225da2008d",
+  "state_snapshot": {
+    "fingerprint": "sha256:e1af6e3acb2568baf787fdfce59cf122b7fc569cedd41cbd108feb093763f0df",
+    "open_prs": [],
+    "records": [
+      {
+        "git_blob_sha": "56dffe9dcb866632f2b16d5afef5ed964206bc45",
+        "path": "quests/dispositions/2026-10-18.json",
+        "role": "accepted_disposition"
+      },
+      {
+        "git_blob_sha": "b0884f997e5108fdbefd5a1ae9c634b466068e8f",
+        "path": "automation/contracts/system-audit.v1.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "999db89a5c110c2f7ef918329dd5f0d4a21b8790",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "1370857911d3b7fb817a723c3a7be7543a4f870b",
+        "path": "tests/test_automation_standing_authority.py",
+        "role": "authority_regressions"
+      },
+      {
+        "git_blob_sha": "975f29d0a21aa88a675be8c210c6dd5e0a0c7dee",
+        "path": "automation/standing.py",
+        "role": "authority_validator"
+      },
+      {
+        "git_blob_sha": "1d59825e38942e8463da72f9cb7a49d2b5dadb74",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "2ffd3a06afff302111d42c17c9393ef0ae44d6d8",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "5a278b2ad0d4382f0d3cac96b03fe83e0be1a7ff",
+        "path": "automation/standing/2026-10.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "65406a1143d99eb5f900666c49c2acc6132d1d01",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "342eae9dfc352b53062c759371c0fc225da2008d"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-10-18T06:01:59+00:00"
+}

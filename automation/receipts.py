@@ -219,7 +219,13 @@ def validate_run_receipt(
                 entry["budgets"][key] = max(value, entry["budgets"].get(key, 0))
             if request.get("loop_id") != loop_id:
                 raise ValueError("standing request role differs from receipt")
-            validate_standing_request(policy, request, now=str(receipt["created_at"]))
+            result_ref = None
+            if request.get('routing_source_commit') is not None:
+                from .routing_guard import receipt_result_ref
+                result_ref = receipt_result_ref(source_root, Path('automation/runs') / receipt_relative_path(receipt))
+            validate_standing_request(policy, request, now=str(receipt["created_at"]),
+                                      source_root=source_root, source_commit=source_commit,
+                                      result_ref=result_ref)
         for key, cap in policy["budget_caps"].items():
             if sum(entry["budgets"].get(key, 0) for entry in slices.values()) > cap:
                 raise ValueError("combined execution exceeds standing budget")

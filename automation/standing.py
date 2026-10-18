@@ -85,7 +85,8 @@ def validate_standing_policy(policy: Mapping[str, object]) -> None:
         raise ValueError('budget caps must stay inside constitutional ceilings')
 
 
-def validate_standing_request(policy: Mapping[str, object], request: Mapping[str, object], *, now: str) -> None:
+def validate_standing_request(policy: Mapping[str, object], request: Mapping[str, object], *, now: str,
+                              source_root='.', source_commit=None, result_ref=None) -> None:
     validate_standing_policy(policy)
     required = {'loop_id', 'action', 'scope', 'acceptance_slice', 'paths', 'budgets',
                 'transaction_count', 'evidence_refs'}
@@ -137,3 +138,9 @@ def validate_standing_request(policy: Mapping[str, object], request: Mapping[str
         raise ValueError('lifecycle action requires accepted evidence or reviewed proposal references')
     if any(not isinstance(ref, str) or not ref.strip() for ref in request['evidence_refs']):
         raise ValueError('empty evidence reference')
+    if weekly_route and any(path.startswith('quests/active/') or path == 'quests/research_graph.json' for path in request['paths']):
+        from .routing_guard import validate_routing_transition
+        declared_source = request.get('routing_source_commit')
+        if source_commit is not None and declared_source != source_commit:
+            raise ValueError('routing source must equal the receipt source')
+        validate_routing_transition(source_root, declared_source, request['paths'], result_ref=result_ref)
