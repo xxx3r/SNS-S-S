@@ -27,6 +27,13 @@ ACTION_SURFACES = {
     'route': ('memory/**', 'automation/runs/**', 'automation/pr_lifecycle/**'),
     'literature': ('calendar/evidence/**', 'calendar/belief_events/**', 'calendar/roundups/**', 'automation/runs/**'),
 }
+# Human-authorized reconciliation of Weekly's existing direction contract.
+# Other roles retain their original action surfaces; raw proposals and quest
+# membership transitions still require their separate lifecycle actions.
+WEEKLY_ROUTING_SURFACES = (
+    'quests/active/**', 'quests/dispositions/**',
+    'quests/research_graph.json', 'calendar/roundups/**',
+)
 PROTECTED = ('AGENTS.md', 'AURORA.md', 'automation/contracts/**', 'automation/schemas/**',
              'automation/standing.py', 'automation/state.py', 'automation/receipts.py',
              'automation/state_ownership.json', 'automation/orchestration.py',
@@ -100,12 +107,19 @@ def validate_standing_request(policy: Mapping[str, object], request: Mapping[str
         raise ValueError('transaction budget exceeded')
     if not isinstance(request['paths'], list) or not request['paths']:
         raise ValueError('effectful action requires a non-empty concrete paths list')
+    action_surfaces = ACTION_SURFACES.get(action)
+    weekly_route = role == 'weekly-evidence-synthesis' and action == 'route'
+    if weekly_route:
+        action_surfaces = (*action_surfaces, *WEEKLY_ROUTING_SURFACES)
+    routes_quest_state = False
     for item in request['paths']:
         path = safe_path(item)
         if any(fnmatchcase(path, pattern) for pattern in PROTECTED):
             raise ValueError('protected authority surface requires human transaction')
-        if action in ACTION_SURFACES and not any(fnmatchcase(path, pattern) for pattern in ACTION_SURFACES[action]):
+        if action_surfaces is not None and not any(fnmatchcase(path, pattern) for pattern in action_surfaces):
             raise ValueError('write outside action surfaces')
+        if weekly_route and any(fnmatchcase(path, pattern) for pattern in WEEKLY_ROUTING_SURFACES):
+            routes_quest_state = True
         if not any(fnmatchcase(path, pattern) for pattern in rules['write_surfaces']):
             raise ValueError('write outside role surfaces')
         # Tests of authority and their helpers are control-plane law, not routine maintenance.
@@ -119,7 +133,7 @@ def validate_standing_request(policy: Mapping[str, object], request: Mapping[str
             raise ValueError('experiment budget outside standing cap')
     if not isinstance(request['evidence_refs'], list):
         raise ValueError('evidence_refs must be a list')
-    if action in {'activate', 'terminalize', 'merge'} and not request['evidence_refs']:
+    if (action in {'activate', 'terminalize', 'merge'} or routes_quest_state) and not request['evidence_refs']:
         raise ValueError('lifecycle action requires accepted evidence or reviewed proposal references')
     if any(not isinstance(ref, str) or not ref.strip() for ref in request['evidence_refs']):
         raise ValueError('empty evidence reference')

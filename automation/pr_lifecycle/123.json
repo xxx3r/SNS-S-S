@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 123,
+  "quest_id": "QST-SIM-0003",
+  "acceptance_slice": "Repair PR122 live routing and bind complete demand diagnostic JSON",
+  "state": "merged",
+  "owner_run_id": "RUN-20261018T060035039779Z-system-audit-441866248c09671617bd",
+  "source_commit": "a8389f6bbe171e4429d51567666ed838dc66b977",
+  "head_commit": "a1575109f2550001a1d7b64bba82754a83f5ac45",
+  "updated_at": "2026-10-18T06:08:38.948239+00:00",
+  "next_review_after": "2026-10-18T17:00:00+00:00",
+  "supersedes": [],
+  "reason": "Expected-head squash merge 342eae9 after local and all three hosted checks and exact-head automated review completed clean. Original PR122 P1/P2 threads are resolved; no new science or renewal."
+}

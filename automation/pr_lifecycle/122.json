@@ -3,12 +3,12 @@
   "pr_number": 122,
   "quest_id": "QST-SIM-0003",
   "acceptance_slice": "two-case SIM3 host-demand sensitivity diagnostic with immutable accepted baseline",
-  "state": "merge_ready",
+  "state": "merged",
   "owner_run_id": "RUN-20261011T145620000000Z-weekly-evidence-synthesis-26bafad7a7dc00525b11",
   "source_commit": "a2323bcef259dc87a1da3b50baa1db22174e1a26",
-  "head_commit": "a112ecb332024b06643cd74b5fd6fd1efa54f88a",
-  "updated_at": "2026-10-11T15:12:00+00:00",
+  "head_commit": "d83d2196ce33a77e473ea98efbdc8add5efdba0f",
+  "updated_at": "2026-10-18T06:08:38.948239+00:00",
   "next_review_after": "2026-10-18T17:00:00+00:00",
   "supersedes": [],
-  "reason": "Exactly two new host-demand cases at 0.1 and 0.4 Wh/h used PR #120's accepted accounting and the hash-bound accepted 0.2 Wh/h baseline without rerunning it. Delivery remained 0.37 Wh throughout the declared bracket while service fraction changed from 0.616666667 to 0.308333333 to 0.154166667. Local full pytest, semantic validation, and baseline qualification passed on the scientific tree; final receipt-bearing hosted qualification and review-thread inspection remain required before merge."
+  "reason": "PR122 merged at a8389f6; late P1/P2 findings corrected by accepted PR123 at 342eae9; both original threads resolved. No repeated scientific execution."
 }
