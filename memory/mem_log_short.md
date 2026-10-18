@@ -6,7 +6,7 @@ Current Executable Quest: QST-SIM-0003
 
 Queue Note: QST-FUND-0001 and QST-META-0001 are completed at their accepted bounded scopes. QST-SYNTH-0001 R2 remains at a reserved scientific-decision boundary; QST-STOR-0002 remains active at P0 with only its fast-rotator surface route locally falsified.
 
-Current Step: Under the accepted October policy, instrument QST-SIM-0003 delivered energy by agent role and receiver-visible sunlit/eclipse state with accounting identities before another world. Do not change geometry, demand, role mix, policy, beam rate, architecture, or mission thresholds in this instrumentation slice.
+Current Step: First qualify and accept the PR #122 routing/reproduction correction. After acceptance, instrument QST-SIM-0003 delivered energy by agent role and receiver-visible sunlit/eclipse state with accounting identities before another world. Hold geometry, demand, role mix, policy, beam rate, architecture, and mission thresholds fixed. This recovery stops at review-ready; it does not implement that successor instrumentation.
 
 Last Evidence:
 
@@ -36,7 +36,10 @@ Aurora Score: A = 1.0 ∠ -20° | w_ext = 0.0
 
 Next Move (one shot):
 
-- Add the bounded SIM3 host-service and receiver-opportunity telemetry with accounting-identity tests before generating any new receiver geometry cases. Keep SYNTH R2 and STOR architecture changes paused at their separate scientific boundaries.
+- First qualify and accept the PR #122 routing/reproduction correction; then instrument SIM3 delivered energy by agent role and receiver-visible sunlit/eclipse state with accounting-identity tests before another world, holding geometry, demand, role mix, policy, beam rate, architecture, and mission thresholds fixed. PR #120 host-service telemetry is complete. Keep SYNTH R2 and STOR architecture changes paused at their separate scientific boundaries.
+
+The dated sections below preserve decision history. Their historical next moves
+are superseded by the Current Step and Next Move above; they are not live routes.
 
 ## Accepted September constitutional transition — 2026-09-02
 
@@ -113,8 +116,28 @@ Instrument cumulative host demand, unmet host demand, host service fraction, and
 
 Accepted PR #120 telemetry was used rather than merely acknowledged. Exactly two new QST-SIM-0003 worlds bracketed the accepted demand rate at `0.1` and `0.4 Wh/h`; the accepted `0.2 Wh/h` world was loaded, not rerun. Delivered energy stayed exactly `0.37 Wh` across all three rates while unmet demand rose and service fraction fell. The fixed fixture is supply/opportunity/policy limited inside this bracket, not demand limited.
 
-Issue #103 inheritance observation: the accepted October 4 appraisal forced telemetry before more geometry, PR #120 supplied that telemetry, and today's diagnostic reused the immutable baseline instead of repeating it. The SYNTH failed-world delivery quantity remains UNKNOWN, the STOR fast-rotator falsifier remains local, and no mission-adequacy threshold was invented after seeing the SIM3 result. The propagation defect discovered this week was stale short-memory and quest text still pointing at telemetry already merged in PR #120; this transaction reconciles those surfaces.
+Issue #103 inheritance observation: the accepted October 4 appraisal forced telemetry before more geometry, PR #120 supplied that telemetry, and today's diagnostic reused the immutable baseline instead of repeating it. The SYNTH failed-world delivery quantity remains UNKNOWN, the STOR fast-rotator falsifier remains local, and no mission-adequacy threshold was invented after seeing the SIM3 result. PR #122 intended to reconcile stale short-memory and quest text, but its late P1 review demonstrated that reconciliation was incomplete. The October 18 correction below addresses that finding without rewriting the accepted receipt.
 
 ### Current next move (one shot)
 
 Instrument role-conditioned delivered energy and delivery opportunity state with accounting identities before another world. The next comparison should distinguish unused receiver opportunity from policy or beam-rate limitation while holding geometry, demand, role mix, and architecture fixed.
+
+## October 18 explicit-human recovery — pending acceptance
+
+The recovery aligns the live memory, active index, and SIM3 quest and compares
+the complete deterministic demand result against the committed JSON. Existing
+scientific artifacts and receipts remain unchanged. Test reproduction is
+verification of accepted cases, not a new experimental campaign or independent evidence.
+
+The ordinary standing validator rejects quest files under `route` despite the
+Weekly prose contract allowing routing reconciliation. This repair uses the
+explicit human recovery instruction; it changes no validator, contract, policy,
+or scheduler. The mismatch remains a recommendation for a separate reviewed
+organization repair. See `automation/reports/2026-10-18-midmonth-recovery.md`.
+
+### Current next move (one shot)
+
+Qualify and accept this PR #122 correction before successor instrumentation.
+This explicit recovery stops at review-ready with no merge. SYNTH R2 and STOR
+architecture remain at their separate scientific boundaries. The midmonth
+review packet is prepared; no authority renewal or completed Monthly review is claimed.

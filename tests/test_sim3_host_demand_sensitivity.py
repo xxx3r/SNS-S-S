@@ -17,6 +17,12 @@ CONFIG = ROOT / "configs" / "qst_sim_0003_host_demand_sensitivity.json"
 
 def test_host_demand_diagnostic_is_bounded_and_preserves_accounting() -> None:
     result = load_and_run(CONFIG, ROOT)
+    committed = json.loads(
+        (ROOT / "outputs/qst_sim_0003/host_demand_sensitivity.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert result == committed
 
     assert result["new_world_count"] == 2
     assert result["baseline_worlds_rerun"] == 0

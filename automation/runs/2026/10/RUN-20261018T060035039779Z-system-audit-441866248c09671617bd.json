@@ -1,0 +1,196 @@
+{
+  "artifacts": [
+    {
+      "kind": "bounded repair or review packet",
+      "path": "tests/test_sim3_host_demand_sensitivity.py"
+    },
+    {
+      "kind": "bounded repair or review packet",
+      "path": "quests/active/README.md"
+    },
+    {
+      "kind": "bounded repair or review packet",
+      "path": "quests/active/QST-SIM-0003-geo-ring-power-chain.md"
+    },
+    {
+      "kind": "bounded repair or review packet",
+      "path": "memory/mem_log_short.md"
+    },
+    {
+      "kind": "bounded repair or review packet",
+      "path": "quests/dispositions/2026-10-18.json"
+    },
+    {
+      "kind": "bounded repair or review packet",
+      "path": "automation/reports/2026-10-18-midmonth-recovery.md"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "245 tests passed in 3.60s on complete repair tree before adding this witness. Complete committed diagnostic JSON equality is asserted in existing test.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Semantic validation passed; six active/six completed quests, no errors; witness-bearing validation follows publication preparation.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "scripts/check_baseline_artifacts.sh passed; temporary outputs/latest regeneration was restored, not retained.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Observed maintenance request and isolated route quest-path request both rejected with write outside action surfaces. No standing execution PASS is claimed; explicit human repair scope is recorded separately.",
+      "name": "standing request authority diagnostic",
+      "status": "passed"
+    },
+    {
+      "evidence": "Pending PR publication. Final exact-head check results belong to PR metadata, not retroactive changes to this witness.",
+      "name": "hosted qualification",
+      "status": "not_run"
+    },
+    {
+      "evidence": "Separate final diff review will follow publication; no independent reviewer approval claimed.",
+      "name": "semantic review",
+      "status": "not_run"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "1.0.0",
+  "correction_of": "RUN-20261011T145620000000Z-weekly-evidence-synthesis-26bafad7a7dc00525b11",
+  "created_at": "2026-10-18T06:00:35.039964+00:00",
+  "decision_effect": "Repairs the incomplete routing/reproduction transaction from PR122, preserves accepted two-case science and scientific stops, and makes the standing route/quest surface mismatch explicit for a separate human-owned organization repair.",
+  "explicit_human_authority": {
+    "authority_changes": false,
+    "instruction": "Explicit human instruction to repair the PR122 late P1/P2 findings and prepare the midmonth review packet, stopping review-ready without merge. No grant to change future automation authority.",
+    "merge_authorized_in_this_transaction": false,
+    "paths": [
+      "tests/test_sim3_host_demand_sensitivity.py",
+      "quests/active/README.md",
+      "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+      "memory/mem_log_short.md",
+      "quests/dispositions/2026-10-18.json",
+      "automation/reports/2026-10-18-midmonth-recovery.md",
+      "automation/runs/2026/10/RUN-20261018T060035039779Z-system-audit-441866248c09671617bd.json"
+    ],
+    "user_request": "Bounded PR122 routing/reproduction correction and review preparation; no new experiment, merge, renewal, or authority-code changes."
+  },
+  "inheritance": [
+    {
+      "decision_effect": "Accepted demand evidence selects delivery attribution; late P1/P2 findings select this correction instead of more science.",
+      "kind": "RUN",
+      "ref": "RUN-20261011T145620000000Z-weekly-evidence-synthesis-26bafad7a7dc00525b11"
+    },
+    {
+      "decision_effect": "Complete accepted result is reproduced in verification without modifying its bytes.",
+      "kind": "artifact",
+      "ref": "outputs/qst_sim_0003/host_demand_sensitivity.json"
+    }
+  ],
+  "loop_id": "system-audit",
+  "next_action": "Publish and qualify the correction review-ready, then stop without merge. A later qualified acceptance must precede successor SIM3 attribution instrumentation.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "inherited",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "corrects_pr": 122,
+    "publication_branch": "aurora/sns-pr122-recovery-2026-10-18",
+    "state_at_receipt": "local qualified repair; publication and hosted qualification pending"
+  },
+  "quest_context": {
+    "claim_boundary": "No new scientific result, protected organization edit, renewal, or merge. Accepted fixture replay is verification, not new independent evidence.",
+    "quest_id": "QST-SIM-0003",
+    "scope": "explicit-human PR122 P1/P2 recovery and midmonth packet only"
+  },
+  "receipt_kind": "correction",
+  "run_id": "RUN-20261018T060035039779Z-system-audit-441866248c09671617bd",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "a8389f6bbe171e4429d51567666ed838dc66b977",
+  "state_snapshot": {
+    "fingerprint": "sha256:a9f9217b338966f3c7226b689322b110405852133f32232dae9f073b668e900b",
+    "open_prs": [],
+    "records": [
+      {
+        "git_blob_sha": "748d05bdb01088f39d72a4a7f12538e262609ae5",
+        "path": "outputs/qst_sim_0003/host_demand_sensitivity.json",
+        "role": "accepted_result"
+      },
+      {
+        "git_blob_sha": "b0884f997e5108fdbefd5a1ae9c634b466068e8f",
+        "path": "automation/contracts/system-audit.v1.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "4f4beb045fad50da4bad201c6fe8850a7dda9fa8",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "8618fc4d5a5e26fed83ca9f25bc89bf7cb0beab2",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "a96f38646d07431da97980c2cf1e9a565eb74f11",
+        "path": "quests/dispositions/2026-10-04.json",
+        "role": "latest_disposition"
+      },
+      {
+        "git_blob_sha": "72f4cd0a80fe246aacd3396199acce2ae4167180",
+        "path": "calendar/monthly/2026-10.md",
+        "role": "monthly_state"
+      },
+      {
+        "git_blob_sha": "2ffd3a06afff302111d42c17c9393ef0ae44d6d8",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "4aadb547e3637fda22b1d7cb79a99b69a70f5896",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "ba2c2594f46025ceb7e0b9e97ae59716623a019f",
+        "path": "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+        "role": "sim3_quest"
+      },
+      {
+        "git_blob_sha": "04ea1228cbd39248aa2be36a223a936047801894",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "5a278b2ad0d4382f0d3cac96b03fe83e0be1a7ff",
+        "path": "automation/standing/2026-10.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "65406a1143d99eb5f900666c49c2acc6132d1d01",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "a8389f6bbe171e4429d51567666ed838dc66b977"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-10-18T05:55:05+00:00",
+  "verification_accounting": {
+    "accepted_cases_replayed": "Existing diagnostic cases during required pytest; not counted as independent evidence.",
+    "new_research_attempts": 0,
+    "novel_worlds": 0,
+    "outputs_changed": false
+  }
+}

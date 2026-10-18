@@ -1,6 +1,6 @@
 # QST-SIM-0003: GEO Ring Power-Chain Model
 
-Status: Active — receiver geometry appraised; host-service accounting next  
+Status: Active — host-service accounting and demand diagnostic accepted; correction acceptance precedes delivery attribution
 Priority: P1  
 Tags: [SIM, GEO, SBSP, POWER]
 
@@ -46,7 +46,7 @@ The accepted fixed 2 x 2 sweep at `receiver_visibility_fraction = 0.25` is retai
 
 This does not establish a real receiver bottleneck. It earns one bounded discriminating measurement using parameters already supported by accepted code.
 
-### Next executable slice
+### Historical next slice — receiver-availability diagnostic, subsequently accepted
 
 Use the same accepted coordinated 20% storage-node fixture, hold `beam_efficiency = 0.80`, and retain the two accepted eclipse fractions `0.05` and `0.10`.
 
@@ -64,7 +64,7 @@ Artifact: `outputs/qst_sim_0003/receiver_overlap_appraisal.json`.
 
 This is a model-internal overlap diagnostic, not a post-hoc materiality classification or proof that overlap alone causes the energy result. Storage state, policy state, timestep ordering, and the synthetic fixture remain mediators.
 
-### Next executable slice
+### Historical next slice — telemetry completed in PR #120
 
 Before generating another phase, visibility, role-mix, efficiency, or ephemeris case, make these quantities first-class deterministic telemetry:
 
@@ -74,3 +74,19 @@ Before generating another phase, visibility, role-mix, efficiency, or ephemeris 
 - role-conditioned receiver-visible sunlit and eclipse opportunities.
 
 Add accounting-identity tests and preserve legacy summaries. This instrumentation slice generates no worlds and sets no mission adequacy threshold. A later experiment must freeze any threshold prospectively.
+
+## October 18 recovery of PR #122 late findings
+
+PR #120 completed the telemetry above. PR #122's two new demand cases at
+`0.1` and `0.4 Wh/h` plus the loaded accepted `0.2 Wh/h` baseline all deliver
+`0.37 Wh`. This rules out demand as the active cap only within that fixed
+synthetic bracket; it does not identify a physical bottleneck or adequacy threshold.
+
+### Next executable slice
+
+First qualify and accept the PR #122 routing/reproduction correction. After
+acceptance, instrument delivered energy by agent role and receiver-visible
+sunlit/eclipse state with accounting-identity tests before another world.
+Hold geometry, demand, role mix, policy, beam rate, architecture, and mission
+thresholds fixed. This successor is instrumentation only; the present recovery
+does not implement it or generate new experimental evidence.
