@@ -144,7 +144,7 @@ def cmd_standing(args: argparse.Namespace) -> int:
     pointer = json.loads((root / "automation/standing/current.json").read_text())
     policy = json.loads((root / pointer["path"]).read_text())
     request = json.loads(Path(args.request).read_text())
-    validate_standing_request(policy, request, now=args.now)
+    validate_standing_request(policy, request, now=args.now, source_root=root)
     print(json.dumps({"valid": True, "policy_id": policy["policy_id"]}))
     return 0
 

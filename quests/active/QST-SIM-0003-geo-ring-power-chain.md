@@ -1,6 +1,6 @@
 # QST-SIM-0003: GEO Ring Power-Chain Model
 
-Status: Active — host-service accounting and demand diagnostic accepted; correction acceptance precedes delivery attribution
+Status: Active — host-service accounting and demand diagnostic accepted; PR #123 correction accepted; delivery attribution next
 Priority: P1  
 Tags: [SIM, GEO, SBSP, POWER]
 
@@ -84,8 +84,9 @@ synthetic bracket; it does not identify a physical bottleneck or adequacy thresh
 
 ### Next executable slice
 
-First qualify and accept the PR #122 routing/reproduction correction. After
-acceptance, instrument delivered energy by agent role and receiver-visible
+PR #123 accepted the PR #122 routing/reproduction correction at 342eae9.
+The dedicated human-owned routing repair reconciles Weekly direction permissions.
+The next executable slice is to instrument delivered energy by agent role and receiver-visible
 sunlit/eclipse state with accounting-identity tests before another world.
 Hold geometry, demand, role mix, policy, beam rate, architecture, and mission
 thresholds fixed. This successor is instrumentation only; the present recovery

@@ -20,6 +20,61 @@ def test_daily_can_work_without_triage_authorization():
     validate_standing_request(policy(), request(), now='2026-09-07T12:00:00Z')
 
 
+def test_weekly_can_reconcile_the_complete_accepted_direction():
+    import subprocess
+    p = json.loads(Path('automation/standing/2026-10.v1.json').read_text())
+    r = request('weekly-evidence-synthesis', 'route')
+    r.update(
+        scope='research-tooling',
+        acceptance_slice='Reconcile accepted SIM3 evidence across live routes',
+        paths=[
+            'quests/active/README.md',
+            'quests/active/QST-SIM-0003-geo-ring-power-chain.md',
+            'quests/research_graph.json',
+            'quests/dispositions/2026-10-18.json',
+            'memory/mem_log_short.md',
+            'calendar/roundups/2026-10-18.md',
+            'automation/runs/2026/10/example.json',
+            'automation/pr_lifecycle/123.json',
+        ],
+        budgets={'worlds': 0, 'records': 0, 'runtime_s': 0, 'disk_mb': 2},
+        evidence_refs=['PR #122 accepted demand diagnostic'],
+        routing_source_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
+    )
+    validate_standing_request(p, r, now='2026-10-18T06:00:00Z')
+    r['evidence_refs'] = []
+    with pytest.raises(ValueError, match='requires accepted evidence'):
+        validate_standing_request(p, r, now='2026-10-18T06:00:00Z')
+
+
+@pytest.mark.parametrize('path', [
+    'quests/actions/2026/10/proposal.json',
+    'quests/completed/QST-SIM-0003.md',
+    'quests/proposed/QST-NEW-0001.md',
+    'src/sim/simulation.py',
+    'automation/standing/2026-10.v1.json',
+    'automation/contracts/weekly-evidence-synthesis.v2.md',
+    'tests/test_automation_standing_authority.py',
+])
+def test_weekly_routing_does_not_grant_other_actions(path):
+    r = request('weekly-evidence-synthesis', 'route')
+    r.update(paths=[path], evidence_refs=['Accepted routing evidence'])
+    with pytest.raises(ValueError):
+        validate_standing_request(policy(), r, now='2026-09-07T12:00:00Z')
+
+
+@pytest.mark.parametrize('role', ['daily-governance-triage', 'daily-research-operator'])
+@pytest.mark.parametrize('path', [
+    'quests/active/README.md', 'quests/dispositions/2026-10-18.json',
+    'quests/research_graph.json', 'calendar/roundups/2026-10-18.md',
+])
+def test_weekly_routing_surfaces_do_not_expand_other_roles(role, path):
+    r = request(role, 'route')
+    r.update(paths=[path], evidence_refs=['Accepted routing evidence'])
+    with pytest.raises(ValueError):
+        validate_standing_request(policy(), r, now='2026-09-07T12:00:00Z')
+
+
 @pytest.mark.parametrize('change', [
     {'paths':[]}, {'paths':['../AGENTS.md']}, {'paths':['AGENTS.md']},
     {'paths':['automation/contracts/daily.v2.md']},

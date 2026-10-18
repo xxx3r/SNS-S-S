@@ -6,7 +6,7 @@ Current Executable Quest: QST-SIM-0003
 
 Queue Note: QST-FUND-0001 and QST-META-0001 are completed at their accepted bounded scopes. QST-SYNTH-0001 R2 remains at a reserved scientific-decision boundary; QST-STOR-0002 remains active at P0 with only its fast-rotator surface route locally falsified.
 
-Current Step: First qualify and accept the PR #122 routing/reproduction correction. After acceptance, instrument QST-SIM-0003 delivered energy by agent role and receiver-visible sunlit/eclipse state with accounting identities before another world. Hold geometry, demand, role mix, policy, beam rate, architecture, and mission thresholds fixed. This recovery stops at review-ready; it does not implement that successor instrumentation.
+Current Step: PR #123 accepted the PR #122 routing/reproduction correction at 342eae9dfc352b53062c759371c0fc225da2008d; the dedicated human-owned routing repair reconciles the validator with Weekly direction ownership. Under the accepted October policy, instrument QST-SIM-0003 delivered energy by agent role and receiver-visible sunlit/eclipse state with accounting identities before another world. Hold geometry, demand, role mix, policy, beam rate, architecture, and mission thresholds fixed. No successor research implementation is part of this recovery.
 
 Last Evidence:
 
@@ -36,7 +36,7 @@ Aurora Score: A = 1.0 ∠ -20° | w_ext = 0.0
 
 Next Move (one shot):
 
-- First qualify and accept the PR #122 routing/reproduction correction; then instrument SIM3 delivered energy by agent role and receiver-visible sunlit/eclipse state with accounting-identity tests before another world, holding geometry, demand, role mix, policy, beam rate, architecture, and mission thresholds fixed. PR #120 host-service telemetry is complete. Keep SYNTH R2 and STOR architecture changes paused at their separate scientific boundaries.
+- Instrument SIM3 delivered energy by agent role and receiver-visible sunlit/eclipse state with accounting-identity tests before another world, holding geometry, demand, role mix, policy, beam rate, architecture, and mission thresholds fixed. PR #120 telemetry and PR #123 correction are complete. Keep SYNTH R2 and STOR architecture changes paused at their separate scientific boundaries.
 
 The dated sections below preserve decision history. Their historical next moves
 are superseded by the Current Step and Next Move above; they are not live routes.
@@ -122,7 +122,7 @@ Issue #103 inheritance observation: the accepted October 4 appraisal forced tele
 
 Instrument role-conditioned delivered energy and delivery opportunity state with accounting identities before another world. The next comparison should distinguish unused receiver opportunity from policy or beam-rate limitation while holding geometry, demand, role mix, and architecture fixed.
 
-## October 18 explicit-human recovery — pending acceptance
+## October 18 explicit-human recovery — PR #123 accepted
 
 The recovery aligns the live memory, active index, and SIM3 quest and compares
 the complete deterministic demand result against the committed JSON. Existing
@@ -132,12 +132,16 @@ verification of accepted cases, not a new experimental campaign or independent e
 The ordinary standing validator rejects quest files under `route` despite the
 Weekly prose contract allowing routing reconciliation. This repair uses the
 explicit human recovery instruction; it changes no validator, contract, policy,
-or scheduler. The mismatch remains a recommendation for a separate reviewed
-organization repair. See `automation/reports/2026-10-18-midmonth-recovery.md`.
+or scheduler. The subsequently authorized dedicated routing repair implements that
+contract/validator reconciliation in its own reviewed transaction. See `automation/reports/2026-10-18-midmonth-recovery.md`.
 
 ### Current next move (one shot)
 
-Qualify and accept this PR #122 correction before successor instrumentation.
-This explicit recovery stops at review-ready with no merge. SYNTH R2 and STOR
+PR #123 merged after all hosted checks and clean completed exact-head review;
+both original #122 findings are resolved. The earlier review-ready-only stop
+is historical: M subsequently authorized publication and removal of the concrete
+governance obstructions. The dedicated Weekly routing-validator transaction
+reconciles that permission mismatch. Next, hand off only the bounded SIM3
+instrumentation above; do not reopen either completed correction. SYNTH R2 and STOR
 architecture remain at their separate scientific boundaries. The midmonth
-review packet is prepared; no authority renewal or completed Monthly review is claimed.
+review packet is accepted; no authority renewal or completed Monthly review is claimed.
