@@ -25,7 +25,7 @@ The intended routine worksheet is structurally well formed but cites only an off
 
 The single `request_valid` field was ambiguous between structural validity and overall execution readiness: the candidate case-B cell returned true while expressly noting that accepted work-item evidence was missing; the other cells returned false while recording structural PASS. These differing booleans are not a valid comparative success score. A future protocol should separate those quantities before running.
 
-Worker-written `assessment.json` files were copied unchanged and hashed in `output-hashes.json`; one worker also left `check.py`. Complete tool transcripts, reliable token counts, timing, and the verbatim final-message stream were not exported by the agent interface. Accordingly this capture falls short of the protocol's desired transcript record and supports no tool-cost or latency claim. Self-reported inspected paths are not trusted complete access telemetry. No native Codex CLI discovery harness was available.
+Worker-written `assessment.json` files were copied unchanged and hashed in `output-hashes.json`; one worker also left `check.py`. This run retained those artifacts rather than a complete message/tool transcript, and did not collect reliable token counts or timing. Accordingly this capture falls short of the protocol's desired transcript record and supports no tool-cost or latency claim. Self-reported inspected paths are not trusted complete access telemetry. No native Codex CLI discovery harness was available.
 
 The declarative prompt template captures common task requirements; actual dispatches used the same requirements with concrete workspace paths and condition-specific invocation. It is not a claim of byte-identical host prompts.
 
