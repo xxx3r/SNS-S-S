@@ -1,4 +1,6 @@
-# mem_log_short: Summer 2026 Spawn
+# mem_log_short: October 2026 current state
+
+Authority: resolve `automation/standing/current.json` from fresh accepted main and read `calendar/monthly/2026-10.md`, including its October 18 human-approved supplement. The October policy retains its existing expiry; the October 30 renewal remains a separate gate. Dated entries below are decision history, not new execution authority.
 
 Current Program: SNS-S-S as formal research instrument
 

@@ -7,7 +7,7 @@
 - Transaction tests: `python -m pytest -q tests/test_automation_*.py`
 - Repository semantics: `python -m automation.cli validate-repository`
 - Generated run log: `python -m automation.cli generate-long-log`
-- September audit: `python -m automation.cli audit --cutoff-time 2026-09-01T14:00:00Z --cutoff-commit <main-sha>`
+- Set `AUDIT_CUTOFF_UTC`, `AUDIT_CUTOFF_SHA`, and `AUDIT_ANCESTOR_SHA` from the explicitly frozen audit design, then run `python -m automation.cli audit --cutoff-time "$AUDIT_CUTOFF_UTC" --cutoff-commit "$AUDIT_CUTOFF_SHA" --cutoff-ancestor "$AUDIT_ANCESTOR_SHA"`; repeat `--cutoff-ancestor` for the frozen ancestry. The September replay retains its historical cutoff, not a default for new audits.
 
 ## Canonical scientific runs
 
