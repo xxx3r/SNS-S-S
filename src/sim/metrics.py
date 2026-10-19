@@ -38,6 +38,9 @@ class MetricsRecorder:
     receiver_visible_opportunities_by_role: List[dict[str, dict[str, int]]] = field(
         default_factory=list
     )
+    delivered_energy_by_role_state_Wh: List[dict[str, dict[str, float]]] = field(
+        default_factory=list
+    )
     coverage_fraction: List[float] = field(default_factory=list)
     mean_temperature_K: List[float] = field(default_factory=list)
     mode_counts: List[dict[str, int]] = field(default_factory=list)
@@ -48,6 +51,9 @@ class MetricsRecorder:
     _curtailed_cumulative: float = 0.0
     _load_cumulative: float = 0.0
     _receiver_visible_opportunities_by_role: dict[str, dict[str, int]] = field(
+        default_factory=dict
+    )
+    _delivered_energy_by_role_state_Wh: dict[str, dict[str, float]] = field(
         default_factory=dict
     )
 
@@ -63,6 +69,7 @@ class MetricsRecorder:
         roles: Sequence[str] | None = None,
         host_demand_Wh: float = 0.0,
         receiver_visible_opportunities_by_role: Mapping[str, Mapping[str, int]] | None = None,
+        delivered_energy_by_role_state_Wh: Mapping[str, Mapping[str, float]] | None = None,
     ) -> None:
         """Append one auditable timestep.
 
@@ -103,6 +110,18 @@ class MetricsRecorder:
                 for role, counts in sorted(self._receiver_visible_opportunities_by_role.items())
             }
         )
+        for role, amounts in (delivered_energy_by_role_state_Wh or {}).items():
+            cumulative = self._delivered_energy_by_role_state_Wh.setdefault(
+                role, {"sunlit": 0.0, "eclipse": 0.0}
+            )
+            cumulative["sunlit"] += max(0.0, float(amounts.get("sunlit", 0.0)))
+            cumulative["eclipse"] += max(0.0, float(amounts.get("eclipse", 0.0)))
+        self.delivered_energy_by_role_state_Wh.append(
+            {
+                role: dict(amounts)
+                for role, amounts in sorted(self._delivered_energy_by_role_state_Wh.items())
+            }
+        )
         self.coverage_fraction.append(max(0.0, min(1.0, coverage_fraction)))
         self.mean_temperature_K.append(_mean(result.core_temperature_K for result in results))
         self.mode_counts.append(dict(Counter(result.mode for result in results)))
@@ -124,6 +143,7 @@ class MetricsRecorder:
                 "unmet_host_demand_Wh": 0.0,
                 "host_service_fraction": 1.0,
                 "receiver_visible_opportunities_by_role": {},
+                "delivered_energy_by_role_state_Wh": {},
                 "coverage_fraction": 0.0,
             }
         return {
@@ -141,6 +161,7 @@ class MetricsRecorder:
             "unmet_host_demand_Wh": self.unmet_host_demand_Wh[-1],
             "host_service_fraction": self.host_service_fraction[-1],
             "receiver_visible_opportunities_by_role": self.receiver_visible_opportunities_by_role[-1],
+            "delivered_energy_by_role_state_Wh": self.delivered_energy_by_role_state_Wh[-1],
             "coverage_fraction": self.coverage_fraction[-1],
             "mean_temperature_K": self.mean_temperature_K[-1],
             "mode_counts": self.mode_counts[-1],

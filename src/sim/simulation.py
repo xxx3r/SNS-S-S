@@ -100,6 +100,10 @@ class Simulation:
                 "relay": {"sunlit": 0, "eclipse": 0},
                 "storage": {"sunlit": 0, "eclipse": 0},
             }
+            delivered_by_role_state = {
+                role.value: {"sunlit": 0.0, "eclipse": 0.0}
+                for role in AgentRole
+            }
             for agent in self.agents:
                 sample = self.world.sample(agent.theta, t)
                 if (
@@ -118,6 +122,8 @@ class Simulation:
                 )
                 result = agent.step(self.world, self.host, t=t, dt=self.config.dt, policy=self.policy, context=context)
                 step_results.append(result)
+                receiver_state = "sunlit" if sample.sunlit else "eclipse"
+                delivered_by_role_state[agent.role.value][receiver_state] += result.delivered_Wh
                 if agent.role in {AgentRole.SCOUT, AgentRole.SENSOR}:
                     self.covered_regions.add(result.region_id)
             coverage = len(self.covered_regions) / self.world.coverage_bin_count
@@ -130,5 +136,6 @@ class Simulation:
                 roles=[agent.role.value for agent in self.agents],
                 host_demand_Wh=self.host.cumulative_demand(t + self.config.dt),
                 receiver_visible_opportunities_by_role=receiver_opportunities,
+                delivered_energy_by_role_state_Wh=delivered_by_role_state,
             )
         return self.metrics
