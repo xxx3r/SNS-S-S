@@ -1,0 +1,7 @@
+interface:
+  display_name: "SNS Receipt and Provenance"
+  short_description: "Check SNS requests and exact-source receipt bindings"
+  default_prompt: "Use $sns-receipt-provenance to check an SNS request or receipt against its exact accepted source."
+
+policy:
+  allow_implicit_invocation: false

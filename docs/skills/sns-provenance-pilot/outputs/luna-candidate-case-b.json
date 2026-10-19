@@ -1,0 +1,38 @@
+{
+  "source_binding_valid": false,
+  "policy_binding_valid": false,
+  "request_valid": true,
+  "snapshot_structurally_valid": true,
+  "ready_for_publication": false,
+  "terminal_state": "BLOCKED_CONFLICT",
+  "blockers": [
+    "The supplied observation is offline fixture evidence at accepted main 12df122e14dfd81c39dfa21f5196d47a721608a7, but the draft snapshot and source_commit are pinned to e1d9c9df5364d2bc765ac27be935ff162df2af22. The draft commit is an ancestor, not the observed main head.",
+    "Snapshot records are internally valid for the draft commit, but the active_quest_index, canonical_memory, runtime_manifest, and stable_law blob identities differ from the observed main blobs; the snapshot is stale for the supplied observation.",
+    "draft.policy_json is not byte-identical to the exact accepted policy file selected by the standing pointer; its parsed object also omits the policy schema field. It does not establish the required exact policy-byte binding.",
+    "The request passes the standing-request validator under the accepted policy at the supplied audit time, but its generic fixture evidence reference does not identify accepted task evidence. The current Monthly supplement selects QST-SIM-0003 instrumentation under swarm-power as the next executable slice; this worksheet request is not shown as that accepted work item.",
+    "This is a partial preflight worksheet, not a qualified run receipt. No receipt envelope, standing_execution trigger binding, check evidence, decision effect, continuity evidence, or qualified terminal disposition was supplied; omitted receipt qualification cannot be inferred."
+  ],
+  "checks": [
+    "EXECUTED: validate_state_snapshot(snapshot) from repo/automation/provenance.py \u2014 PASS for schema, fingerprint, and structural constraints.",
+    "EXECUTED: read-only Git object comparison for every named snapshot record at draft source e1d9c9df5364d2bc765ac27be935ff162df2af22 \u2014 all listed blob identities match that draft source.",
+    "EXECUTED: read-only Git comparison of snapshot source and named record blobs against supplied accepted-main fixture 12df122e14dfd81c39dfa21f5196d47a721608a7 \u2014 source differs; active_quest_index, canonical_memory, runtime_manifest, and stable_law records differ.",
+    "EXECUTED: exact UTF-8 byte comparison of draft.policy_json with the policy file selected by the accepted-main standing pointer \u2014 FAIL.",
+    "EXECUTED: automation.standing.validate_standing_request using the selected accepted-main policy, supplied request, audit_time 2026-10-19T06:15:00Z, and source_commit 12df122e14dfd81c39dfa21f5196d47a721608a7 \u2014 PASS structurally.",
+    "NOT EXECUTED: complete receipt validation, including standing_execution, required check evidence, decision effect, continuity, and terminal-state qualification; the worksheet lacks the complete receipt fields.",
+    "NOT EXECUTED: python -m pytest -q, python -m automation.cli validate-repository, baseline-artifacts, exact-head review, hosted checks, ownership refresh, or publication/merge checks. This audit is offline and read-only."
+  ],
+  "next_action": "Refresh the preflight against the supplied accepted-main source and current ownership, rebuild the snapshot from that exact source, bind policy_json to the exact bytes selected by standing/current.json, and cite the accepted work item and decision dependencies. Then rerun standing-request validation. Treat this result as fixture-only: no execution, receipt qualification, publication, or merge is authorized by this assessment.",
+  "inspected_paths": [
+    "task.json",
+    "repo/.agents/skills/sns-receipt-provenance/SKILL.md",
+    "repo/AGENTS.md",
+    "repo/automation/contracts/daily-research-operator.v2.md",
+    "repo/automation/standing/current.json",
+    "repo/automation/standing/2026-10.v1.json",
+    "repo/automation/standing.py",
+    "repo/automation/provenance.py",
+    "repo/scripts/provenance_snapshot.py",
+    "repo/calendar/monthly/2026-10.md",
+    "repo/quests/active/README.md"
+  ]
+}

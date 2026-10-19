@@ -1,0 +1,38 @@
+{
+  "source_binding_valid": true,
+  "policy_binding_valid": true,
+  "request_valid": false,
+  "snapshot_structurally_valid": true,
+  "ready_for_publication": false,
+  "terminal_state": "BLOCKED_MISSING_EVIDENCE",
+  "blockers": [
+    "The fixture source commit equals the offline checkout HEAD and every supplied snapshot blob identity and fingerprint validates, but the supplied open-PR observation is fixture-only, not a live ownership check.",
+    "The embedded policy is byte-identical to the accepted current October policy and its pointer/blob binding is correct. The request passes the structural standing-request validator, but structural authority does not establish an accepted work-item scope.",
+    "The current October 18 human midmonth decision selects QST-SIM-0003 delivered-energy attribution instrumentation as the next Daily slice. The proposed research-tooling provenance worksheet is not tied to that active quest or its accepted next slice, so it is outside the currently selected Daily work despite the broad research-tooling policy scope and permitted docs surface.",
+    "The request cites only 'Offline preflight fixture' rather than accepted quest/evidence references. The snapshot also omits selected-quest and relevant accepted-evidence/ownership context needed to support this proposed work.",
+    "This is a partial worksheet, not a qualified run receipt. No receipt qualification, exact-head review, hosted checks, or publication evidence is supplied or inferred."
+  ],
+  "checks": [
+    "EXECUTED: git rev-parse HEAD; checkout HEAD 12df122e14dfd81c39dfa21f5196d47a721608a7 equals draft source_commit.",
+    "EXECUTED: automation.provenance.validate_state_snapshot and per-record Git blob SHA-1 comparisons; all supplied records match checkout bytes and fingerprint sha256:f16980eba0db7b41f77c098feeef98e187eb39803f6a7c2eaebb63809b54a95a recomputes.",
+    "EXECUTED: exact policy_json byte comparison, parsed policy comparison, standing-pointer inspection, and standing-authority blob comparison; all match automation/standing/current.json and automation/standing/2026-10.v1.json.",
+    "EXECUTED: python -m automation.cli validate-standing-request --request <fixture request> --now 2026-10-19T06:15:00Z; structural validation returned valid=true for STAND-20261001-OCTOBER-ACTION-V1.",
+    "EXECUTED: inspected AGENTS.md, the active Daily contract, October policy and monthly decisions, active quest index, and QST-SIM-0003 scope to test the request against current accepted direction.",
+    "NOT EXECUTED: full pytest, semantic repository validation, baseline-artifacts, hosted qualification, exact-head review, and publication; these are not claimed by this partial preflight worksheet."
+  ],
+  "next_action": "Do not publish or execute this worksheet request. Prepare a new bounded Daily request for the accepted QST-SIM-0003 attribution-instrumentation slice, bind it to the accepted SIM3 evidence and exact concrete artifact/test paths, refresh source and ownership, then run standing-request validation. Keep worlds at zero and proceed only through the repository's normal qualification and review gates; this assessment grants no execution or publication authority.",
+  "inspected_paths": [
+    "pilot_cells/luna-baseline-case-a/task.json",
+    "pilot_cells/luna-baseline-case-a/repo/AGENTS.md",
+    "pilot_cells/luna-baseline-case-a/repo/automation/contracts/daily-research-operator.v2.md",
+    "pilot_cells/luna-baseline-case-a/repo/automation/standing/current.json",
+    "pilot_cells/luna-baseline-case-a/repo/automation/standing/2026-10.v1.json",
+    "pilot_cells/luna-baseline-case-a/repo/automation/state_ownership.json",
+    "pilot_cells/luna-baseline-case-a/repo/automation/runtime_manifest.json",
+    "pilot_cells/luna-baseline-case-a/repo/automation/provenance.py",
+    "pilot_cells/luna-baseline-case-a/repo/automation/standing.py",
+    "pilot_cells/luna-baseline-case-a/repo/calendar/monthly/2026-10.md",
+    "pilot_cells/luna-baseline-case-a/repo/quests/active/README.md",
+    "pilot_cells/luna-baseline-case-a/repo/quests/active/QST-SIM-0003-geo-ring-power-chain.md"
+  ]
+}
