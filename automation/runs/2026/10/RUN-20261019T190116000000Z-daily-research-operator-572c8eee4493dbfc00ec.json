@@ -1,0 +1,246 @@
+{
+  "artifacts": [
+    {
+      "kind": "delivered-energy attribution telemetry",
+      "path": "src/sim/metrics.py"
+    },
+    {
+      "kind": "receiver-state and role attribution integration",
+      "path": "src/sim/simulation.py"
+    },
+    {
+      "kind": "accounting identity and boundary tests",
+      "path": "tests/test_sim3_measurement_accounting.py"
+    },
+    {
+      "kind": "immutable Daily run receipt",
+      "path": "automation/runs/2026/10/RUN-20261019T190116000000Z-daily-research-operator-572c8eee4493dbfc00ec.json"
+    },
+    {
+      "kind": "PR ownership record",
+      "path": "automation/pr_lifecycle/128.json"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "Fresh unpinned GitHub observation established main at 9e7dd61244f77025b8ef1193c94dafba5792e4ad; AGENTS.md, the active Daily v2 contract, October standing policy, human midmonth supplement, SIM3 quest, graph, ownership, runtime, and memory were read from that source.",
+      "name": "fresh default-branch source observation",
+      "status": "passed"
+    },
+    {
+      "evidence": "The one-transaction zero-world swarm-power implementation request passed automation.cli validate-standing-request under STAND-20261001-OCTOBER-ACTION-V1 at 2026-10-19T19:01:16Z.",
+      "name": "standing request validation",
+      "status": "passed"
+    },
+    {
+      "evidence": "Four focused SIM3 measurement-accounting tests passed locally, including delivered-total conservation, cumulative monotonicity, non-negativity, complete role/state partitions, and opportunity binding.",
+      "name": "focused tests",
+      "status": "passed"
+    },
+    {
+      "evidence": "A clean full checkout passed 273 tests locally; hosted tests run 39308342071 succeeded on implementation head cd7d9a4a99defd0dd773ee098a3e8498d035862d. The final receipt-bearing head must repeat the hosted gate before merge.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Repository semantic validation returned valid=true locally on the implementation worktree. The receipt-bearing head must pass the hosted automation-transaction gate before merge.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "Baseline-artifacts passed locally and hosted run 39308342124 succeeded on implementation head cd7d9a4a99defd0dd773ee098a3e8498d035862d. The final receipt-bearing head must repeat the hosted gate before merge.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Codex semantic review completed on implementation head cd7d9a4a99defd0dd773ee098a3e8498d035862d at 2026-10-19T19:10:05Z with no findings or unresolved threads. The final receipt-bearing head must repeat exact-head review before merge; no independent approval is claimed.",
+      "name": "exact-head semantic review",
+      "status": "passed"
+    },
+    {
+      "evidence": "No simulation world, experimental record, output artifact, materiality threshold, bottleneck classification, evaluator, holdout, belief, quest, authority, policy, memory, or scheduler state was created or changed.",
+      "name": "zero-generation boundary",
+      "status": "passed"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-10-19T19:12:00Z",
+  "decision_effect": "Added deterministic observability that partitions delivered host energy by agent role and receiver-visible sunlit/eclipse state without generating new evidence or changing scientific conclusions.",
+  "inheritance": [
+    {
+      "decision_effect": "The accepted October 18 human supplement selected exactly this zero-world SIM3 instrumentation slice and fixed its scientific boundaries.",
+      "kind": "artifact",
+      "ref": "calendar/monthly/2026-10.md"
+    },
+    {
+      "decision_effect": "The active quest requires delivered-energy attribution before any later world and forbids ex-post thresholds.",
+      "kind": "artifact",
+      "ref": "quests/active/QST-SIM-0003-geo-ring-power-chain.md"
+    },
+    {
+      "decision_effect": "The accepted human recovery handoff cleared the bounded Daily implementation route without creating a new policy.",
+      "kind": "artifact",
+      "ref": "https://github.com/xxx3r/SNS-S-S/pull/125"
+    }
+  ],
+  "loop_id": "daily-research-operator",
+  "next_action": "After the final receipt-bearing PR #128 head passes hosted tests, baseline artifacts, automation transaction validation, and exact-head semantic review, merge with an expected-head guard. Weekly then appraises accepted role/state delivery attribution before authorizing any new SIM3 world or materiality threshold.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "handoff",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "base_commit": "9e7dd61244f77025b8ef1193c94dafba5792e4ad",
+    "branch": "aurora/daily-sim3-delivery-attribution-2026-10-19",
+    "implementation_head": "cd7d9a4a99defd0dd773ee098a3e8498d035862d",
+    "lifecycle_record_path": "automation/pr_lifecycle/128.json",
+    "pull_request": 128
+  },
+  "quest_context": {
+    "acceptance_slice": "Instrument cumulative SIM3 delivered host energy by agent role and receiver-visible sunlit/eclipse state with accounting-identity tests, preserving existing summaries and generating zero worlds.",
+    "claim_boundary": "Instrumentation only. Zero simulation worlds or records were generated; geometry, demand, role mix, policy, beam rate, architecture, fixture/evaluator semantics, mission thresholds, scientific outputs, beliefs, and quest lifecycle remain unchanged. No limiting mechanism or materiality claim is made.",
+    "phase": "zero-world delivery attribution instrumentation",
+    "quest_id": "QST-SIM-0003",
+    "result": "DELIVERED_ENERGY_ATTRIBUTION_INSTRUMENTED",
+    "result_summary": "Metrics now expose cumulative delivered host energy partitioned by agent role and receiver sunlit/eclipse state. Tests bind the partition to total delivered energy, monotonicity, non-negativity, complete role/state keys, and existing receiver-visible opportunity accounting.",
+    "scope": "swarm-power"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20261019T190116000000Z-daily-research-operator-572c8eee4493dbfc00ec",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "9e7dd61244f77025b8ef1193c94dafba5792e4ad",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20261001-OCTOBER-ACTION-V1\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-10-01T14:13:38Z\",\n  \"review_at\": \"2026-10-18T17:00:00Z\",\n  \"expires_at\": \"2026-11-01T06:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"M approved on 2026-10-01: renew bounded authority, execute the existing META route first, and keep SYNTH R2 paused pending a separate scientific decision. This policy preserves September scopes, role actions, surfaces, checks and ceilings. It becomes execution authority only after qualified acceptance on main, never retroactively. No standing grant for SYNTH R2 generation, evaluator/holdout changes, forensic receipt corrections, protected control-plane changes, new hardware claims, spending or private exports. First work is the PR114 META assumptions document and byte-bound tests only; prior accepted baselines remain immutable.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "Instrument cumulative SIM3 delivered host energy by agent role and receiver-visible sunlit/eclipse state with accounting-identity tests, preserving all existing summaries and generating zero worlds.",
+        "action": "implement",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 10,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "calendar/monthly/2026-10.md",
+          "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+          "PR #125"
+        ],
+        "loop_id": "daily-research-operator",
+        "paths": [
+          "src/sim/metrics.py",
+          "src/sim/simulation.py",
+          "tests/test_sim3_measurement_accounting.py",
+          "automation/runs/2026/10/RUN-20261019T190116000000Z-daily-research-operator-572c8eee4493dbfc00ec.json",
+          "automation/pr_lifecycle/128.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 1
+      },
+      {
+        "acceptance_slice": "Instrument cumulative SIM3 delivered host energy by agent role and receiver-visible sunlit/eclipse state with accounting-identity tests, preserving all existing summaries and generating zero worlds.",
+        "action": "merge",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "PR #128",
+          "python -m pytest -q",
+          "python -m automation.cli validate-repository",
+          "baseline-artifacts",
+          "exact-head semantic review"
+        ],
+        "loop_id": "daily-research-operator",
+        "paths": [
+          "src/sim/metrics.py",
+          "src/sim/simulation.py",
+          "tests/test_sim3_measurement_accounting.py",
+          "automation/runs/2026/10/RUN-20261019T190116000000Z-daily-research-operator-572c8eee4493dbfc00ec.json",
+          "automation/pr_lifecycle/128.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 1
+      }
+    ],
+    "trigger_id": "daily-research-operator:2026-10-19T19:01:16+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:8a1cc4aabd106e9b6d94341578d73c5afc7b1b2a3d9b31f30b93979fcfba200e",
+    "open_prs": [
+      {
+        "draft": false,
+        "head_sha": "cd7d9a4a99defd0dd773ee098a3e8498d035862d",
+        "number": 128,
+        "state": "open"
+      }
+    ],
+    "records": [
+      {
+        "git_blob_sha": "a3fe2e7692177aaf8867bbc2a8db2fe3a7d97a26",
+        "path": "automation/contracts/daily-research-operator.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "36672b3e2206f04eed47f0039a33fd97577e1f30",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "905bedcee03efee9b27fcac32df8c44878725b43",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "4218dbd03c8217b7284de71cc6ded1b8d8bf75e3",
+        "path": "calendar/monthly/2026-10.md",
+        "role": "monthly_supplement"
+      },
+      {
+        "git_blob_sha": "2ffd3a06afff302111d42c17c9393ef0ae44d6d8",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "dfdb131b86a34aa756bcda2758f75ff73af5b5fe",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "abba925b2b02ae2edff94aa66bc56cfc9f1d09d8",
+        "path": "quests/active/QST-SIM-0003-geo-ring-power-chain.md",
+        "role": "sim3_quest"
+      },
+      {
+        "git_blob_sha": "ef71ca3efe80f2f00677d512ebdb7bc5ea514878",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "5a278b2ad0d4382f0d3cac96b03fe83e0be1a7ff",
+        "path": "automation/standing/2026-10.v1.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "65406a1143d99eb5f900666c49c2acc6132d1d01",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "a3de0e50d4474bc1283d0458c1fc7489c52c5db6",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "9e7dd61244f77025b8ef1193c94dafba5792e4ad"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-10-19T19:01:16Z"
+}

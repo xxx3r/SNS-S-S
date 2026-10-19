@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 128,
+  "quest_id": "QST-SIM-0003",
+  "acceptance_slice": "Instrument delivered host energy by agent role and receiver-visible sunlit/eclipse state with accounting identities",
+  "state": "merge_ready",
+  "owner_run_id": "RUN-20261019T190116000000Z-daily-research-operator-572c8eee4493dbfc00ec",
+  "source_commit": "9e7dd61244f77025b8ef1193c94dafba5792e4ad",
+  "head_commit": "cd7d9a4a99defd0dd773ee098a3e8498d035862d",
+  "updated_at": "2026-10-19T19:12:00+00:00",
+  "next_review_after": "2026-10-19T19:12:00+00:00",
+  "supersedes": [],
+  "reason": "Zero-world SIM3 instrumentation implementation passed implementation-head tests, baseline artifacts, and Codex semantic review with no findings. Final receipt-bearing hosted qualification and repeat exact-head review remain required before expected-head merge."
+}
