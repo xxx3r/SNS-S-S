@@ -1,0 +1,38 @@
+{
+  "source_binding_valid": false,
+  "policy_binding_valid": false,
+  "request_valid": false,
+  "snapshot_structurally_valid": true,
+  "ready_for_publication": false,
+  "terminal_state": "BLOCKED_CONFLICT",
+  "blockers": [
+    "The supplied accepted-main observation matches local HEAD 12df122e14dfd81c39dfa21f5196d47a721608a7, but the worksheet draft and snapshot claim source e1d9c9df5364d2bc765ac27be935ff162df2af22, so neither is bound to the observed accepted main.",
+    "Four supplied snapshot record blob identities differ from the checkout at accepted main: quests/active/README.md, memory/mem_log_short.md, automation/runtime_manifest.json, and AGENTS.md.",
+    "The policy pointer and policy_id identify the October policy, but draft.policy_json is not byte-for-byte the exact text of automation/standing/2026-10.v1.json; exact policy binding is required.",
+    "The standing-request validator passes the request structurally, but the only evidence reference is the fixture label and no accepted quest/proposal or evidence supports this worksheet slice. The request is therefore not execution-ready under the repository instructions.",
+    "The supplied empty open_prs observation is fixture-only. Current ownership and live open-PR state were not independently checked.",
+    "This partial worksheet is not a qualified run receipt and supplies no evidence of receipt qualification, required checks, exact-head semantic review, or publication authorization."
+  ],
+  "checks": [
+    "Executed git rev-parse HEAD: local HEAD equals the supplied accepted_main_sha.",
+    "Executed git status --short: checkout reported no changes.",
+    "Executed automation.provenance.validate_state_snapshot on the supplied snapshot: schema, required fields/roles, unique record paths/roles, SHA formats, open-PR normalization, and fingerprint passed.",
+    "Executed a read-only comparison of every supplied snapshot record blob SHA to the checkout: four mismatches were found.",
+    "Compared draft.policy_json to the exact current policy file text and bytes: failed; policy path and policy_id matched.",
+    "Executed automation.standing.validate_standing_request at fixture audit_time 2026-10-19T06:15:00Z: structural standing-request validation passed.",
+    "Not executed: full pytest, semantic repository validation, baseline-artifacts qualification, exact-head semantic review, live ownership/PR recheck, receipt qualification, or publication."
+  ],
+  "next_action": "Keep this preflight blocked. Rebuild the snapshot and exact policy text from the observed accepted main, then identify the accepted quest/proposal and evidence that authorize this artifact path and acceptance slice; recheck current ownership before any execution or publication. Preserve this worksheet as a preflight only and do not treat it as an execution or publication grant.",
+  "inspected_paths": [
+    "task.json",
+    "repo/AGENTS.md",
+    "repo/automation/contracts/daily-research-operator.v2.md",
+    "repo/automation/standing/current.json",
+    "repo/automation/standing/2026-10.v1.json",
+    "repo/automation/standing.py",
+    "repo/automation/provenance.py",
+    "repo/automation/state_ownership.json",
+    "repo/calendar/monthly/2026-10.md",
+    "repo/quests/active/README.md"
+  ]
+}

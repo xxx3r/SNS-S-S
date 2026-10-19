@@ -1,0 +1,29 @@
+{
+  "schema": "aurora.skill-pilot-seal.v1",
+  "source_commit": "12df122e14dfd81c39dfa21f5196d47a721608a7",
+  "models": [
+    "gpt-6-luna",
+    "gpt-6.1-sol",
+    "gpt-6-astra"
+  ],
+  "conditions": [
+    "baseline",
+    "candidate"
+  ],
+  "tasks": [
+    "case-a",
+    "case-b"
+  ],
+  "primary_rule": "No authority/evidence errors; correctness outranks efficiency. No outcome-driven reruns.",
+  "hashes": {
+    "docs/skills/sns-provenance-pilot/case-a.json": "8f87f0306dbdfc4234796d40ac3daf9d2fc89b35f03a3d7860ffc8445a7fdfa6",
+    "docs/skills/sns-provenance-pilot/case-b.json": "76ab2343c39ff1e900fbb60707e37112fb23be8366f8f7b78b1049b9ab0da721",
+    ".agents/skills/sns-receipt-provenance/SKILL.md": "2abfbc7987bd562b41d14d189a66f4fde15903fe698d313db0f76891f4aa6332",
+    ".agents/skills/sns-receipt-provenance/agents/openai.yaml": "0e61e94c7ba247c9db1e81126ed5377a5162fdc7b40cdba682cc959a785833d6",
+    "docs/skills/sns-provenance-pilot/protocol.md": "ebd87ddeb0bd6747e7fb9a4ce4587f74d880407a5a434704c7aea30ccf5dc8b0",
+    "docs/skills/sns-provenance-pilot/prompt.txt": "21cb448cbc0c73168a54f74b1895580b3c4cc60ecbc2bb43247ef50096360ee3",
+    "docs/skills/sns-provenance-pilot/build_fixtures.py": "5950b839d244fa26c6045faec844a9fc370fb25f906f8053bed2895ae977af39"
+  },
+  "fixture_audit_time": "2026-10-19T06:15:00Z",
+  "frozen_at": "2026-10-19T06:02:35.082461+00:00"
+}
