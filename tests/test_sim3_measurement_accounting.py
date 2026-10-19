@@ -103,6 +103,40 @@ def test_role_conditioned_receiver_opportunities_are_cumulative_and_partitioned(
         assert cumulative_totals == sorted(cumulative_totals)
 
 
+def test_delivered_energy_is_partitioned_by_role_and_receiver_state() -> None:
+    metrics = Simulation(_config()).run()
+
+    for delivered, partition in zip(
+        metrics.delivered_total_Wh,
+        metrics.delivered_energy_by_role_state_Wh,
+        strict=True,
+    ):
+        partition_total = sum(
+            amount
+            for role_amounts in partition.values()
+            for amount in role_amounts.values()
+        )
+        assert partition_total == pytest.approx(delivered)
+
+    final = metrics.summary()["delivered_energy_by_role_state_Wh"]
+    assert set(final) == {role.value for role in AgentRole}
+    for role, amounts in final.items():
+        assert set(amounts) == {"sunlit", "eclipse"}
+        assert amounts["sunlit"] >= 0.0
+        assert amounts["eclipse"] >= 0.0
+        cumulative_totals = [
+            sum(step[role].values())
+            for step in metrics.delivered_energy_by_role_state_Wh
+        ]
+        assert cumulative_totals == sorted(cumulative_totals)
+
+    opportunities = metrics.summary()["receiver_visible_opportunities_by_role"]
+    for role in (AgentRole.RELAY.value, AgentRole.STORAGE.value):
+        for state in ("sunlit", "eclipse"):
+            if final[role][state] > 0.0:
+                assert opportunities[role][state] > 0
+
+
 def test_legacy_summary_keys_and_empty_semantics_are_preserved() -> None:
     summary = Simulation(_config()).run().summary()
     legacy = {
