@@ -39,7 +39,7 @@ Observe and measure the autonomous research organism without silently changing o
 
 ## Frozen cutoff
 
-The September audit cutoff is `2026-09-01T14:00:00Z`, immediately before the ordinary 08:00 America/Denver daily trigger. Record the exact default-branch commit at execution. Receipts completed before the cutoff are included; in-flight and later work are reported separately.
+Declare the audit period and freeze its cutoff time and commit before analysis; record the exact default-branch commit observed at execution. Receipts completed before the cutoff are included; in-flight and later work are reported separately. For replay of the historical September audit, preserve its cutoff `2026-09-01T14:00:00Z`, immediately before that day's ordinary 08:00 America/Denver trigger. That historical cutoff is not the default for an October or later audit.
 
 ## Required metrics
 

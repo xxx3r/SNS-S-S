@@ -1,4 +1,4 @@
-# Active Quests: Summer 2026
+# Active Quests: October 2026
 
 Only quests listed here are active. Historical Q1 / Spring 2026 quest files have been removed from this directory and summarized in `quests/backlog/legacy_spring_2026.md`.
 

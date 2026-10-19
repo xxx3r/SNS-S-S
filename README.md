@@ -4,7 +4,7 @@
 
 SNS-S-S is Aurora Lab's open Python framework for turning the Solar-Nano-Sphere concept into a formal research instrument.
 
-The Summer 2026 mission is not hardware readiness. It is **model readiness**: a legible, testable system for swarm dynamics, energy-chain accounting, asteroid-resource confidence, literature tracking, and quest-based research execution.
+The October 2026 mission is **model readiness**: a legible, testable research instrument for swarm dynamics, energy-chain accounting, asteroid-resource confidence, literature tracking, and bounded autonomous research. Simulation evidence does not establish hardware readiness.
 
 > **SNS does not mine asteroids. SNS helps decide which asteroids deserve miners.**
 
@@ -12,7 +12,9 @@ The long-horizon vision remains an intelligent solar-system energy mesh. The nea
 
 ## Current program phase
 
-**2026: definition, simulation, and narrative**
+**October 2026: model readiness and bounded autonomous research**
+
+Read [AGENTS.md](AGENTS.md) for operating instructions, the [current standing-policy pointer](automation/standing/current.json) for authority, and the [October decisions](calendar/monthly/2026-10.md) for the accepted renewal and October 18 supplement. The [active quest index](quests/active/README.md) and [current memory](memory/mem_log_short.md) own executable direction. September setup and dated historical handoffs do not override these sources.
 
 This repository should make the following questions inspectable:
 
@@ -20,14 +22,14 @@ This repository should make the following questions inspectable:
 2. When does a coordinated swarm outperform independent nodes?
 3. How do asteroid illumination, thermal cycles, coverage gaps, and communication geometry affect mission value?
 4. What evidence is required before an asteroid target becomes credible enough for a precursor mission?
-5. How should weekly literature signals become explicit belief shifts and repo quests?
+5. How should Monthly literature and Weekly experimental evidence inform belief proposals and repo quests under their distinct authority?
 
-## Summer 2026 architecture
+## Research architecture
 
 ```text
 calendar/
-  roundups/          weekly research with machine-usable front matter
-  monthly/           roundup-of-roundups and belief consolidation
+  roundups/          internal Weekly delivery and retained research roundups
+  monthly/           Monthly literature, strategy, and belief consolidation
 
 docs/
   system/            SNS system definition, constraints, budgets, risks
@@ -52,7 +54,7 @@ outputs/              generated artifacts, not arguments by assertion
 
 ## Node ontology
 
-The Summer 2026 model treats an SNS node as a small thermodynamic agent, not a panel attached to a giant battery.
+The retained Summer 2026 baseline treats an SNS node as a small thermodynamic agent, not a panel attached to a giant battery. Existing configuration and artifact names retain their provenance.
 
 Each node tracks:
 
@@ -146,7 +148,7 @@ ARCI is not a mineral-valuation oracle. It is a research framework for exposing 
 
 ## Research calendar
 
-Weekly roundups use Markdown plus JSON-compatible YAML 1.2 front matter. Each Sunday roundup must emit:
+Monthly owns external literature and consolidated beliefs; Weekly owns internal research delivery and experimental synthesis. Structured roundups use Markdown plus JSON-compatible YAML 1.2 front matter with:
 
 - `weighted_belief_shifts`
 - `suggested_actions`
@@ -158,18 +160,7 @@ Template: `calendar/roundups/TEMPLATE.md`
 
 ## Active quests
 
-The canonical index is `quests/active/README.md`.
-
-Summer 2026 priorities are:
-
-1. minimal role-aware SNS agent
-2. asteroid illumination and coverage model
-3. GEO-ring power-chain model
-4. storage and thermal-control refinement
-5. metasurface steering abstraction
-6. ARCI v0.1
-7. roundup-to-quest pipeline
-8. public artifact outline
+The [canonical index](quests/active/README.md) owns current membership and direction; do not select work from an old priority list. The accepted October 18 handoff selects bounded SIM3 delivery-attribution instrumentation with zero new worlds. SYNTH R2 and STOR architecture remain at their separate scientific-decision boundaries. Completed ARCI, META and FUND work remains completed. Refresh the index, current memory and ownership before acting.
 
 Do not create a new theory galaxy when one measurable quest step will do.
 
@@ -192,7 +183,7 @@ The core favors the standard library. NumPy remains an explicit dependency for t
 
 ## 2026 win condition
 
-By the end of Summer 2026, an outside expert should be able to:
+A usable research instrument lets an outside expert:
 
 1. understand the mission in ten minutes,
 2. run asteroid and GEO examples,
