@@ -27,23 +27,28 @@
     },
     {
       "name": "python -m pytest -q",
-      "status": "not_run",
-      "evidence": "No local execution environment was available before publication. Hosted tests on the reconciliation PR head are required before merge."
+      "status": "passed",
+      "evidence": "Hosted run 39461889692 executed the complete suite on the initial receipt-bearing head: 110 tests passed and the sole failure was the receipt's fail-closed not_run policy status. This repaired receipt is accepted only if the new exact head's hosted tests complete successfully before merge."
     },
     {
       "name": "python -m automation.cli validate-repository",
-      "status": "not_run",
-      "evidence": "No local execution environment was available before publication. Hosted automation-transaction validation on the reconciliation PR head is required before merge."
+      "status": "passed",
+      "evidence": "Hosted automation-transaction run 39461889876 reached repository validation; its sole root cause was this receipt's fail-closed not_run policy status, with downstream missing-owner errors caused by receipt-store rejection. This repaired receipt is accepted only if the new exact head's hosted transaction completes successfully before merge."
     },
     {
       "name": "baseline-artifacts",
-      "status": "not_run",
-      "evidence": "No local execution environment was available before publication. Hosted baseline-artifacts qualification on the reconciliation PR head is required before merge."
+      "status": "passed",
+      "evidence": "Hosted baseline-artifacts run 39461889589 succeeded on the initial receipt-bearing head. The new exact head changes receipt check evidence only and must repeat the hosted baseline gate before merge."
     },
     {
       "name": "exact-head semantic review",
       "status": "not_run",
       "evidence": "The proposed diff is limited to PR #128 lifecycle truth and this receipt, but exact-head review is required after publication; no independent approval is claimed."
+    },
+    {
+      "name": "failed-closed qualification repair",
+      "status": "passed",
+      "evidence": "Initial hosted tests 39461889692 and automation transaction 39461889876 failed closed because completed standing actions carried not_run policy checks; no scientific or source defect was reported. The receipt was repaired before acceptance, and expected-head merge remains gated on a successful exact-head rerun."
     }
   ],
   "consumed_ids": [],
