@@ -28,22 +28,22 @@
     {
       "name": "python -m pytest -q",
       "status": "passed",
-      "evidence": "Hosted run 39461889692 executed the complete suite on the initial receipt-bearing head: 110 tests passed and the sole failure was the receipt's fail-closed not_run policy status. This repaired receipt is accepted only if the new exact head's hosted tests complete successfully before merge."
+      "evidence": "Hosted tests run 39462113325 succeeded on receipt-bearing head ba98365d7adf1bd778cb8bc927f8f95e69338196. This follow-up changes check evidence only; its new exact head must repeat the hosted gate before merge."
     },
     {
       "name": "python -m automation.cli validate-repository",
       "status": "passed",
-      "evidence": "Hosted automation-transaction run 39461889876 reached repository validation; its sole root cause was this receipt's fail-closed not_run policy status, with downstream missing-owner errors caused by receipt-store rejection. This repaired receipt is accepted only if the new exact head's hosted transaction completes successfully before merge."
+      "evidence": "Hosted automation-transaction run 39462113301 succeeded on receipt-bearing head ba98365d7adf1bd778cb8bc927f8f95e69338196, including automation tests, semantic repository validation, and the full pytest suite. This follow-up changes check evidence only; its new exact head must repeat the hosted gate before merge."
     },
     {
       "name": "baseline-artifacts",
       "status": "passed",
-      "evidence": "Hosted baseline-artifacts run 39461889589 succeeded on the initial receipt-bearing head. The new exact head changes receipt check evidence only and must repeat the hosted baseline gate before merge."
+      "evidence": "Hosted baseline-artifacts run 39462113808 succeeded on receipt-bearing head ba98365d7adf1bd778cb8bc927f8f95e69338196. This follow-up changes check evidence only; its new exact head must repeat the hosted gate before merge."
     },
     {
       "name": "exact-head semantic review",
       "status": "not_run",
-      "evidence": "The proposed diff is limited to PR #128 lifecycle truth and this receipt, but exact-head review is required after publication; no independent approval is claimed."
+      "evidence": "Review of head ba98365d7adf1bd778cb8bc927f8f95e69338196 raised a P1 against provisional policy-check statuses. This receipt replaces those with actual successful hosted run evidence; exact-head rereview is required before merge."
     },
     {
       "name": "failed-closed qualification repair",
