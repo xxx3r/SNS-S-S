@@ -91,3 +91,13 @@ sunlit/eclipse state with accounting-identity tests before another world.
 Hold geometry, demand, role mix, policy, beam rate, architecture, and mission
 thresholds fixed. This successor is instrumentation only; the present recovery
 does not implement it or generate new experimental evidence.
+
+## October 25 Weekly instrument appraisal
+
+PR #128 accepted the zero-world instrumentation above. It partitions cumulative delivered host energy by every declared agent role and receiver sunlit/eclipse state, preserves legacy summaries, and enforces conservation, monotonicity, non-negativity, complete-key, and receiver-opportunity identities. No accepted role/state attribution values were generated, so the instrument does not yet identify a limiting mechanism or materiality threshold.
+
+### Next executable slice
+
+Run exactly one instrumented replay of the hash-bound accepted `eclipse-0.05_beam-0.80` baseline at host demand `0.2 Wh/h`, receiver visibility `0.25`, and phase center `0.0`. Preserve the accepted coordinated role mix, six-hour duration, 300-second timestep, geometry, policy, beam rate, evaluator, and mission assumptions. The replay may produce at most one synthetic world and 720 agent-step records.
+
+The replay must reproduce every legacy summary field within existing deterministic tolerance before its new role/state partition can be interpreted. A mismatch invalidates the measurement and stops the route. Treat the replay as a measurement upgrade, not independent confirmation of the accepted `0.37 Wh` result. Do not add a second case or infer materiality, architecture preference, real ephemeris behavior, relay performance, or hardware readiness.
