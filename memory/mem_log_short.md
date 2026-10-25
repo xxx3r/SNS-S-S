@@ -8,7 +8,7 @@ Current Executable Quest: QST-SIM-0003
 
 Queue Note: QST-FUND-0001 and QST-META-0001 are completed at their accepted bounded scopes. QST-SYNTH-0001 R2 remains at a reserved scientific-decision boundary; QST-STOR-0002 remains active at P0 with only its fast-rotator surface route locally falsified.
 
-Current Step: PR #123 accepted the PR #122 routing/reproduction correction at 342eae9dfc352b53062c759371c0fc225da2008d; the dedicated human-owned routing repair reconciles the validator with Weekly direction ownership. Under the accepted October policy, instrument QST-SIM-0003 delivered energy by agent role and receiver-visible sunlit/eclipse state with accounting identities before another world. Hold geometry, demand, role mix, policy, beam rate, architecture, and mission thresholds fixed. No successor research implementation is part of this recovery.
+Current Step: PR #128 accepted zero-world QST-SIM-0003 delivered-energy attribution by role and receiver-visible sunlit/eclipse state. The October 25 Weekly appraisal confirms the instrument's accounting boundary but finds no accepted attribution values yet. Route exactly one instrumented replay of the immutable `eclipse-0.05_beam-0.80` baseline at 0.2 Wh/h, visibility 0.25, and phase center 0.0; require exact legacy-summary reproduction before interpreting the new partition.
 
 Last Evidence:
 
@@ -38,7 +38,7 @@ Aurora Score: A = 1.0 ∠ -20° | w_ext = 0.0
 
 Next Move (one shot):
 
-- Instrument SIM3 delivered energy by agent role and receiver-visible sunlit/eclipse state with accounting-identity tests before another world, holding geometry, demand, role mix, policy, beam rate, architecture, and mission thresholds fixed. PR #120 telemetry and PR #123 correction are complete. Keep SYNTH R2 and STOR architecture changes paused at their separate scientific boundaries.
+- Run one hash-bound, instrumented replay of the accepted `eclipse-0.05_beam-0.80` SIM3 baseline using the unchanged 0.2 Wh/h demand, 0.25 visibility, phase center 0.0, coordinated role mix, six-hour duration, and 300-second timestep. Stop if any legacy summary differs; otherwise report only the new role/state delivery partition and accounting identities. Count this as a measurement upgrade, not independent evidence for the old result. Keep SYNTH R2 and STOR architecture changes paused at their separate scientific boundaries.
 
 The dated sections below preserve decision history. Their historical next moves
 are superseded by the Current Step and Next Move above; they are not live routes.
@@ -147,3 +147,11 @@ reconciles that permission mismatch. Next, hand off only the bounded SIM3
 instrumentation above; do not reopen either completed correction. SYNTH R2 and STOR
 architecture remain at their separate scientific boundaries. The midmonth
 review packet is accepted; no authority renewal or completed Monthly review is claimed.
+
+## October 25 Weekly delivery
+
+Accepted PR #128 supplies the attribution instrument requested by the October 18 human supplement, with zero worlds generated. Weekly appraised the accepted code and tests: delivered energy is cumulatively partitioned by role and sunlit/eclipse state, sums to total delivered energy, remains non-negative and monotonic, and preserves legacy summaries and receiver-opportunity accounting.
+
+Because no accepted simulation output contains the new attribution values, no limiting mechanism or materiality claim is available yet. The next bounded measurement is one instrumented replay of the immutable accepted 0.2 Wh/h, eclipse-0.05, beam-0.80, visibility-0.25, phase-center-0 baseline. It must reproduce every legacy summary before the new partition is accepted and is not independent confirmation of the old 0.37 Wh result.
+
+Issue #103 inheritance observation: accepted demand evidence caused the missing observable to be instrumented before more parameter variation; the accepted demand worlds, SYNTH holdout, and falsified STOR route were not repeated; actual attribution values and materiality remain unknown. The five-day lag between PR #128 acceptance and live-route reconciliation is recorded without attributing it to an unobserved scheduler cause.

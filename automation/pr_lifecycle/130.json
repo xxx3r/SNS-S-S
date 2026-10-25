@@ -1,0 +1,15 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 130,
+  "quest_id": "QST-SIM-0003",
+  "acceptance_slice": "Appraise accepted SIM3 delivery-attribution instrumentation and route one hash-bound baseline measurement",
+  "state": "merge_ready",
+  "owner_run_id": "RUN-20261025T150352000000Z-weekly-evidence-synthesis-c68f2e7805d578820ca4",
+  "source_commit": "a6d272535d58ca2660a70d12dad82bb8c6f32846",
+  "head_commit": "89009fa3fba3366ca526045b694493913bc92a42",
+  "updated_at": "2026-10-25T15:12:00+00:00",
+  "next_review_after": "2026-10-30T00:00:00-06:00",
+  "supersedes": [],
+  "reason": "The zero-world routing tree passed 273 local tests, semantic repository validation, baseline-artifact qualification, standing-request validation, routing-transition validation, and Codex exact-head semantic review with no findings. Receipt-bearing hosted qualification and unresolved-thread inspection remain mandatory before expected-head merge."
+}
+
