@@ -28,22 +28,22 @@
     {
       "name": "python -m pytest -q",
       "status": "passed",
-      "evidence": "The qualified PR #130 final head passed tests run 40205842064. PR #133 lifecycle-only head 3201b65767122e3d12f511f9e7020474d93fd694 ran 272 passing tests and failed only because this paired owner receipt had not yet been published; the receipt-bearing exact head must rerun before merge."
+      "evidence": "PR #133 receipt-bearing head 13d3584c10f19d44af2e240ab128eed732de9e58 passed hosted tests run 40359177765."
     },
     {
       "name": "python -m automation.cli validate-repository",
       "status": "passed",
-      "evidence": "PR #130 final head passed automation-transaction run 40205842072. PR #133 lifecycle-only qualification failed closed on the intentionally missing paired owner receipt; this receipt repairs that sole semantic defect, and exact-head rerun remains mandatory."
+      "evidence": "PR #133 receipt-bearing head 13d3584c10f19d44af2e240ab128eed732de9e58 passed hosted automation-transaction run 40359177564, including automation tests, semantic repository validation, and the full pytest suite."
     },
     {
       "name": "baseline-artifacts",
       "status": "passed",
-      "evidence": "PR #133 lifecycle-only head 3201b65767122e3d12f511f9e7020474d93fd694 passed baseline-artifacts run 40358848270; the receipt-bearing exact head must repeat the hosted gate before merge."
+      "evidence": "PR #133 receipt-bearing head 13d3584c10f19d44af2e240ab128eed732de9e58 passed hosted baseline-artifacts run 40359177395."
     },
     {
       "name": "exact-head semantic review",
       "status": "not_run",
-      "evidence": "PR #133 must be reviewed on its receipt-bearing exact head before merge."
+      "evidence": "Review of head 13d3584c10f19d44af2e240ab128eed732de9e58 raised a P1 against inherited qualification labels. This receipt replaces them with actual PR #133 successful hosted-run evidence; exact-head rereview is required before merge."
     },
     {
       "name": "failed-closed qualification staging",
