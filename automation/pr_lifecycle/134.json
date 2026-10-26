@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 134,
+  "quest_id": "QST-SIM-0003",
+  "acceptance_slice": "Replay one immutable SIM3 baseline and measure delivered energy by role and receiver state",
+  "state": "merge_ready",
+  "owner_run_id": "RUN-20261026T185515000000Z-daily-research-operator-d9c5b2cdb0416a21ac3f",
+  "source_commit": "b6d95687f98b508262c5acbdd39d0a2661642f4d",
+  "head_commit": "b1075ffd4b7ae100ca49db409a29da855fc557d3",
+  "updated_at": "2026-10-26T19:05:00+00:00",
+  "next_review_after": "2026-11-01T09:00:00-07:00",
+  "supersedes": [],
+  "reason": "The one-world replay reproduced all 14 legacy summary fields within 1e-9, preserved the immutable baseline hash and accepted fixture binding, generated exactly 720 agent-step records, and passed 276 local tests, semantic repository validation, baseline qualification, hosted tests 40383265104, and hosted baseline-artifacts 40383265073. Receipt-bearing hosted automation validation and exact-head semantic review remain mandatory before expected-head merge."
+}
