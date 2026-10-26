@@ -3,13 +3,12 @@
   "pr_number": 130,
   "quest_id": "QST-SIM-0003",
   "acceptance_slice": "Appraise accepted SIM3 delivery-attribution instrumentation and route one hash-bound baseline measurement",
-  "state": "merge_ready",
-  "owner_run_id": "RUN-20261025T150352000000Z-weekly-evidence-synthesis-c68f2e7805d578820ca4",
-  "source_commit": "a6d272535d58ca2660a70d12dad82bb8c6f32846",
-  "head_commit": "89009fa3fba3366ca526045b694493913bc92a42",
-  "updated_at": "2026-10-25T15:12:00+00:00",
+  "state": "merged",
+  "owner_run_id": "RUN-20261026T162108000000Z-daily-governance-triage-b7d2a084c61137f9e5ad",
+  "source_commit": "e65130c9fed1e4cad7c99b0b4c277977556f7792",
+  "head_commit": "e65130c9fed1e4cad7c99b0b4c277977556f7792",
+  "updated_at": "2026-10-26T16:21:08+00:00",
   "next_review_after": "2026-10-30T00:00:00-06:00",
   "supersedes": [],
-  "reason": "The zero-world routing tree passed 273 local tests, semantic repository validation, baseline-artifact qualification, standing-request validation, routing-transition validation, and Codex exact-head semantic review with no findings. Receipt-bearing hosted qualification and unresolved-thread inspection remain mandatory before expected-head merge."
+  "reason": "PR #130 final head cbd403f203cbec44cd972d657a2745700bd8efbc passed tests run 40205842064, baseline-artifacts run 40205842080, and automation-transaction run 40205842072; exact-head Codex review completed with no findings and no unresolved review thread. It then squash-merged as e65130c9fed1e4cad7c99b0b4c277977556f7792. This mechanical reconciliation changes lifecycle metadata only and preserves the accepted zero-world Weekly appraisal, the single routed SIM3 baseline measurement, and all scientific authority boundaries."
 }
-
