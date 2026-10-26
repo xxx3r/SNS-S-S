@@ -33,9 +33,9 @@
       "status": "passed"
     },
     {
-      "evidence": "The single-transaction swarm-power implementation and merge requests passed automation.cli validate-standing-request under STAND-20261001-OCTOBER-ACTION-V1 at 2026-10-26T18:55:15Z. Validation occurred after the local deterministic replay had been computed but before publication; no conflicting authority or scope change was found.",
+      "evidence": "The single-transaction swarm-power implementation and merge requests passed automation.cli validate-standing-request under STAND-20261001-OCTOBER-ACTION-V1 at 2026-10-26T18:55:15Z, but validation occurred after the local deterministic replay had already been computed. The required pre-execution authority gate therefore did not pass, and retrospective validation cannot qualify the result.",
       "name": "standing request validation",
-      "status": "passed"
+      "status": "failed"
     },
     {
       "evidence": "All 14 legacy summary fields reproduced within absolute tolerance 1e-9 before the new attribution partition was interpreted. Baseline artifact sha256:b94e88b06c4bdd92eb04a291cda2eb967108c4eced744b89e3945157b2f63565 and accepted fixture binding sha256:373e87129677c839b23de2a3d8b3ec74da05bd066536346859577be52ea3797a were preserved.",
@@ -63,9 +63,9 @@
       "status": "passed"
     },
     {
-      "evidence": "Codex semantic review completed on implementation head b1075ffd4b7ae100ca49db409a29da855fc557d3 at 2026-10-26T19:04:33Z with no findings or unresolved threads. The final receipt-bearing head must repeat exact-head review before merge; no independent approval is claimed.",
+      "evidence": "Codex semantic review completed on implementation head b1075ffd4b7ae100ca49db409a29da855fc557d3 with no findings, but exact receipt-head review of 82f4606f4c9524eb9562fbb371f0ca688f95ab07 raised two P1 findings: the post-execution authority validation requires explicit governance disposition, and the lifecycle must remain ready_for_review.",
       "name": "exact-head semantic review",
-      "status": "passed"
+      "status": "failed"
     },
     {
       "evidence": "Exactly one synthetic world and 720 agent-step records were generated. No second case, materiality threshold, architecture preference, real ephemeris, relay-performance, hardware-readiness, belief, quest, policy, authority, memory, or scheduler change occurred.",
@@ -95,7 +95,7 @@
     }
   ],
   "loop_id": "daily-research-operator",
-  "next_action": "After PR #134 receipt-bearing head passes hosted tests, baseline artifacts, automation transaction validation, and exact-head semantic review, merge with an expected-head guard; Weekly then appraises the measured role/state partition without inventing a threshold or authorizing a second case.",
+  "next_action": "Obtain an explicit governance disposition for PR #134's post-execution authority-validation exception; preserve the disclosed chronology and do not repeat, merge, or scientifically adopt the replay until that disposition is recorded.",
   "observability": {
     "administrative_transactions": 1,
     "continuity": "handoff",
@@ -113,8 +113,8 @@
     "claim_boundary": "One synthetic replay of the immutable accepted eclipse-0.05_beam-0.80 baseline. This is a measurement upgrade, not independent confirmation. No second case, materiality threshold, architecture preference, real ephemeris, relay-performance, or hardware-readiness claim is made.",
     "phase": "hash-bound attribution baseline replay",
     "quest_id": "QST-SIM-0003",
-    "result": "ATTRIBUTION_BASELINE_REPLAY_COMPLETE",
-    "result_summary": "All 14 legacy fields matched within 1e-9. The 0.37 Wh total partitioned into 0.166666667 Wh from sunlit relays and 0.203333333 Wh from sunlit storage; all eclipse delivery was zero. Receiver-visible opportunities were 50 relay-sunlit and 65 storage-sunlit.",
+    "result": "ATTRIBUTION_BASELINE_REPLAY_UNQUALIFIED_PENDING_GOVERNANCE",
+    "result_summary": "The computed replay matched all 14 legacy fields within 1e-9 and produced a 0.37 Wh partition, but the required standing request was validated only after computation. The measurement remains unaccepted and must not be adopted or merged without an explicit governance disposition.",
     "scope": "swarm-power"
   },
   "receipt_kind": "run",
@@ -273,7 +273,7 @@
     "schema": "sns.state-snapshot.v1",
     "source_commit": "b6d95687f98b508262c5acbdd39d0a2661642f4d"
   },
-  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "terminal_state": "NEEDS_APPROVAL",
   "trigger": "scheduled",
   "trigger_time": "2026-10-26T18:55:15Z"
 }
