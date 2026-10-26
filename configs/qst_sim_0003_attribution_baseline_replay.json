@@ -1,0 +1,68 @@
+{
+  "schema": "sns.qst-sim-0003.attribution-baseline-replay-fixture.v1",
+  "quest_id": "QST-SIM-0003",
+  "synthetic": true,
+  "weekly_source": "automation/runs/2026/10/RUN-20261025T150352000000Z-weekly-evidence-synthesis-c68f2e7805d578820ca4.json",
+  "baseline_artifact": "outputs/qst_sim_0003/eclipse_beam_sweep.json",
+  "baseline_artifact_sha256": "b94e88b06c4bdd92eb04a291cda2eb967108c4eced744b89e3945157b2f63565",
+  "case_id": "eclipse-0.05_beam-0.80",
+  "replay_coordinates": {
+    "host_demand_rate_Wh_per_h": 0.2,
+    "eclipse_fraction": 0.05,
+    "beam_efficiency": 0.8,
+    "receiver_visibility_fraction": 0.25,
+    "receiver_phase_center_rad": 0.0
+  },
+  "absolute_tolerance_Wh": 1e-9,
+  "max_worlds": 1,
+  "max_agent_step_records": 720,
+  "fixture": {
+    "duration": 21600.0,
+    "dt": 300.0,
+    "scenario": "geo_ring",
+    "mission": "geo_ring_power_chain",
+    "solar_flux": 1360.0,
+    "num_agents": 10,
+    "host_demand_rate": 0.2,
+    "coverage_bin_count": 36,
+    "environment": {
+      "orbital_period_s": 86164.0,
+      "eclipse_fraction": 0.05,
+      "receiver_phase_center_rad": 0.0,
+      "receiver_visibility_fraction": 0.25
+    },
+    "agent_parameters": {
+      "pv_area": 0.5,
+      "pv_efficiency": 0.25,
+      "energy_max": 0.1,
+      "initial_energy": 0.05,
+      "capacitor_max": 0.003,
+      "initial_capacitor": 0.0,
+      "max_battery_charge_power": 0.1,
+      "max_capacitor_charge_power": 1.0,
+      "charge_efficiency": 0.9,
+      "discharge_efficiency": 0.9,
+      "power_idle": 0.002,
+      "power_idle_low": 0.0001,
+      "power_scout": 0.005,
+      "power_comm": 0.05,
+      "power_move": 0.02,
+      "low_threshold": 0.02,
+      "high_threshold": 0.08,
+      "beam_efficiency": 0.6,
+      "beam_rate": 0.05,
+      "move_rate": 0.0005,
+      "orientation_factor": 1.0,
+      "thermal_time_constant_s": 1800.0,
+      "initial_temperature_K": 290.0,
+      "min_operating_temperature_K": 240.0,
+      "max_operating_temperature_K": 350.0
+    }
+  },
+  "arm": {
+    "arm_id": "fixed_coordinated_storage_mix",
+    "policy": "coordinated",
+    "agent_roles": ["scout", "scout", "sensor", "relay", "storage", "scout", "scout", "sensor", "relay", "storage"]
+  },
+  "claim_boundary": "One synthetic replay of the immutable accepted eclipse-0.05_beam-0.80 baseline. The replay is a measurement upgrade, not independent confirmation. Any legacy-summary mismatch invalidates the attribution result. No second case, materiality threshold, architecture preference, real ephemeris, relay-performance, or hardware-readiness claim is authorized."
+}
