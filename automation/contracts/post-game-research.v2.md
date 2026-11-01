@@ -1,7 +1,7 @@
 ---
 schema: sns.loop-contract.v1
 loop_id: post-game-research
-contract_version: 1.0.0
+contract_version: 2.0.0
 status: active
 owner: SNS-S-S
 allowed_triggers:

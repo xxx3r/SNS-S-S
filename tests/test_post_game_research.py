@@ -19,7 +19,7 @@ def request(action="implement", path="docs/research/postgame_appraisal.md"):
 
 def test_postgame_contract_runtime_and_slot_order():
     registry=ContractRegistry.from_directory(ROOT / "automation/contracts")
-    assert registry.active("post-game-research").contract_version=="1.0.0"
+    assert registry.active("post-game-research").contract_version=="2.0.0"
     assert "CURRENT_MAIN_SHA" in render_bootstrap_prompt("post-game-research")
     manifest=load("automation/runtime_manifest.json")
     validate_runtime_manifest(manifest)
@@ -48,7 +48,7 @@ def test_postgame_is_a_new_policy_only():
     ("activate","quests/proposed/QST-NEW-0001.md"),
     ("govern","automation/standing/current.json"),
     ("implement","AGENTS.md"),
-    ("implement","automation/contracts/post-game-research.v1.md"),
+    ("implement","automation/contracts/post-game-research.v2.md"),
     ("implement","tests/test_automation_standing_authority.py"),
     ("route","quests/active/README.md"),
 ])
