@@ -8,9 +8,9 @@
       "quest_action_id": "QA-20260723T011500000000Z-propose-qst-synth-0001-a8b4c7d2e1905f63b1aa",
       "source_path": "quests/actions/2026/07/qa_20260723_synthetic_worlds_capability.json",
       "status": "continue",
-      "owner": "post-game-research",
+      "owner": "daily-research-operator",
       "next_review": "2026-11-15",
-      "condition": "Prepare and validate only a prospective development-only service/depletion semantics extension; no R2 generation or holdout access before separate acceptance."
+      "condition": "Implement and validate only the prospectively frozen development service/depletion semantics under fresh standing preflight; no R2 generation or holdout access before separate acceptance. Post-Game may prepare a protocol proposal but may not change the evaluator."
     },
     {
       "quest_action_id": "QA-20260726T145840000000Z-refine-qst-pv-0001-4b5c6d7e8f901a2b3c4d",
@@ -57,9 +57,9 @@
     {
       "number": 30,
       "status": "continue",
-      "owner": "post-game-research",
+      "owner": "daily-research-operator",
       "next_review": "2026-11-15",
-      "condition": "A1 development-only service/depletion semantics is preferred. R2 generation and sealed holdout access remain stopped until the semantics are separately accepted."
+      "condition": "A1 development-only service/depletion semantics is preferred. Daily owns evaluator implementation/validation under fresh preflight; Post-Game cannot change the evaluator. R2 generation and sealed holdout access remain stopped until the semantics are separately accepted."
     },
     {
       "number": 103,
@@ -92,6 +92,6 @@
       "condition": "Resolve the missing standing-action receipt finding and complete exact-head qualification without Monthly acquiring its SIM2/PV slice."
     }
   ],
-  "note": "Monthly selects A1 as the preferred prospective SYNTH semantics route, explicitly carries every outstanding SIM2/STOR/PV/SYNTH proposal with its owner and review condition, and preserves the R2 stop and every physical/architecture boundary. No quest membership, priority, standing policy, scheduler or consolidated physical belief changes.",
+  "note": "Monthly selects A1 as the preferred prospective SYNTH semantics route and assigns evaluator implementation/validation to Daily rather than Post-Game, explicitly carries every outstanding SIM2/STOR/PV/SYNTH proposal with its owner and review condition, and preserves the R2 stop and every physical/architecture boundary. No quest membership, priority, standing policy, scheduler or consolidated physical belief changes.",
   "supersedes": "quests/dispositions/2026-11-01.json"
 }
