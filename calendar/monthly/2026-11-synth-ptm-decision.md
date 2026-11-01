@@ -19,7 +19,7 @@
 
 | Route | What it answers | Smallest validation / falsifier | Main risk | Authority | Disposition |
 |---|---|---|---|---|---|
-| **A1 — stepwise depletion/service extension** | Under the frozen fixed thermostat demand, how much host load and heater demand are actually served before energy becomes inaccessible? | Development-only analytic fixtures: abundant battery reproduces the accepted full-service trajectory; zero battery serves zero energy; one-step partial depletion matches hand calculation; 30 s vs 60 s timestep remains within a prospectively declared tolerance; every step satisfies energy conservation. Any failure blocks adoption. | A service-allocation rule is a new scientific assumption; temperature-dependent accessibility and heater coupling can be implemented incorrectly. | Monthly chooses the route; Post-Game owns the prospective protocol/validation slice; later Monthly/human acceptance is required before R2. | **PREFERRED** |
+| **A1 — stepwise depletion/service extension** | Under the frozen fixed thermostat demand, how much host load and heater demand are actually served before energy becomes inaccessible? | Development-only analytic fixtures: abundant battery reproduces the accepted full-service trajectory; zero battery serves zero energy; one-step partial depletion matches hand calculation; 30 s vs 60 s timestep remains within a prospectively declared tolerance; every step satisfies energy conservation. Any failure blocks adoption. | A service-allocation rule is a new scientific assumption; temperature-dependent accessibility and heater coupling can be implemented incorrectly. | Monthly chooses the route; Daily Research Operator owns the prospective evaluator implementation/validation slice under its existing `implement` authority; later Monthly/human acceptance is required before R2. | **PREFERRED** |
 | **A2 — narrower supported-metric comparison** | Which bounded worlds pass/fail and how margins, temperatures and demanded energy differ under the existing aggregate evaluator? | Re-freeze the question and prove every reported field already exists; retain all failed worlds; prohibit “useful delivery” or policy-benefit language. | Changes the question. Negative final margin is not delivered host energy and cannot rank partial service. | Monthly/human must approve a new frozen criterion. | **FALLBACK ONLY** |
 | **STOP** | Preserves truthful uncertainty. | Use if A1 cannot satisfy conservation/regression/timestep tests or no one accepts the service rule. | No R2 policy-benefit result. | Monthly/human. | **REQUIRED UNTIL A1 IS ACCEPTED** |
 
@@ -55,7 +55,7 @@ Retain 3DI only as a requirements/break-even question. A later study must compar
 
 ## Smallest executable next slice
 
-- **Owner:** `post-game-research` (distinct from Weekly's live PR #140/PV route).
+- **Owner:** `daily-research-operator` (distinct from Weekly's live PR #140/PV route). Post-Game may appraise or prepare a protocol proposal but may not change the evaluator.
 - **Quest/scope:** active `QST-SYNTH-0001`, `thermal-storage`.
 - **Artifact:** prospective `service_depletion_v1` protocol plus development-only analytic/regression tests; no campaign result.
 - **Budget:** 0 generated worlds, 0 campaign records, at most 60 runtime seconds and 2 MB.
@@ -64,10 +64,10 @@ Retain 3DI only as a requirements/break-even question. A later study must compar
 
 ## Intake and backlog disposition
 
-- **Issue #30 — CONTINUE / Monthly decision made.** A1 is preferred; Post-Game may prepare and validate only the development semantics slice. R2/holdout remains stopped. Review after accepted A1 validation or on 2026-11-15.
+- **Issue #30 — CONTINUE / Monthly decision made.** A1 is preferred; Daily Research Operator may implement and validate only the development semantics slice after fresh preflight. Post-Game may prepare a protocol proposal but must not change the evaluator. R2/holdout remains stopped. Review after accepted A1 validation or on 2026-11-15.
 - **Issue #131 — DEFER.** Keep as a research candidate. Next condition is the source-backed closed reference witness above; review 2026-11-15.
 - **Draft PR #132 — DEFER MERGE.** Its careful claim-register structure is useful, but source archives remain unqualified and its October handoff text is stale. Before reconsideration: bind each numerical claim to a primary source or reproducible artifact, separate verified text from hypotheses, remove obsolete routing, and preserve private archives unless export is explicitly approved.
-- **Issue #103 — CONTINUE with Weekly through 2026-12-31.** Record whether the A1 decision prevents repeated holdout access and whether Post-Game produces a distinct validated artifact without a new permission hop.
+- **Issue #103 — CONTINUE with Weekly through 2026-12-31.** Record whether the A1 decision prevents repeated holdout access and whether Daily produces a distinct validated artifact under fresh standing preflight without repeated evidence.
 - **PR #140 — CONTINUE with existing Weekly owner.** Resolve its missing standing-action receipt finding, requalify the exact head, and merge only under Weekly's remaining transaction. Monthly does not duplicate or absorb its PV route.
 - **SIM2 resource-collapse proposal — DEFER with Weekly.** PR #139 completed only the rotation-policy comparison. Keep resource accounting as a distinct fallback; do not reuse or widen the accepted four-world matrix. Review 2026-11-08.
 - **SIM2 next-measurement proposal — CLOSED COMPLETED.** PR #139 executed the declared baseline-versus-survey matrix under both rotation regimes. Preserve the result and do not regenerate or expand it.
