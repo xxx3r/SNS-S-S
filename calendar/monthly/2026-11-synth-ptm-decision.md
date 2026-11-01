@@ -69,6 +69,10 @@ Retain 3DI only as a requirements/break-even question. A later study must compar
 - **Draft PR #132 — DEFER MERGE.** Its careful claim-register structure is useful, but source archives remain unqualified and its October handoff text is stale. Before reconsideration: bind each numerical claim to a primary source or reproducible artifact, separate verified text from hypotheses, remove obsolete routing, and preserve private archives unless export is explicitly approved.
 - **Issue #103 — CONTINUE with Weekly through 2026-12-31.** Record whether the A1 decision prevents repeated holdout access and whether Post-Game produces a distinct validated artifact without a new permission hop.
 - **PR #140 — CONTINUE with existing Weekly owner.** Resolve its missing standing-action receipt finding, requalify the exact head, and merge only under Weekly's remaining transaction. Monthly does not duplicate or absorb its PV route.
+- **SIM2 resource-collapse proposal — DEFER with Weekly.** PR #139 completed only the rotation-policy comparison. Keep resource accounting as a distinct fallback; do not reuse or widen the accepted four-world matrix. Review 2026-11-08.
+- **SIM2 next-measurement proposal — CLOSED COMPLETED.** PR #139 executed the declared baseline-versus-survey matrix under both rotation regimes. Preserve the result and do not regenerate or expand it.
+- **STOR auxiliary-safe-mode proposal — DEFER with Monthly.** It remains an architecture-changing alternative requiring a separate accepted Monthly/human architecture or assumption decision. The local fast-rotator falsifier is not a global architecture result. Review 2026-11-15.
+- **STOR environmental-margins proposal — DEFER with Monthly.** Do not revive the locally falsified baseline through parameter optimism. Any later work needs a separately accepted, source-bounded margins protocol. Review 2026-11-15.
 
 ## Belief and policy effect
 
