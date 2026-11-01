@@ -36,6 +36,9 @@ def test_protocol_freezes_exact_four_case_matrix_without_execution() -> None:
         (("comparison", "rotation_periods_s"), [7200.0], "exactly the declared rotation regimes"),
         (("budgets", "max_worlds"), 5, "budgets do not match"),
         (("primary_endpoint",), "final_fresh_coverage_fraction", "primary endpoint changed"),
+        (("common_fixture", "solar_flux_W_m2"), 900.0, "scientifically active frozen fixture"),
+        (("common_fixture", "host_demand_rate_Wh_per_h"), 1.0, "scientifically active frozen fixture"),
+        (("common_fixture", "agent_parameters", "move_rate"), 0.0, "scientifically active frozen fixture"),
     ],
 )
 def test_protocol_rejects_post_freeze_widening(tmp_path: Path, path: tuple[str, ...], value: object, message: str) -> None:

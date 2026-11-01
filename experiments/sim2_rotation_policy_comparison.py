@@ -20,6 +20,33 @@ from src.sim.simulation import Simulation
 SCHEMA = "sns.qst-sim-0002.rotation-policy-protocol.v1"
 EXPECTED_POLICIES = ["baseline", "survey"]
 EXPECTED_ROTATION_PERIODS_S = [7200.0, 43200.0]
+EXPECTED_COMMON_FIXTURE = {
+    "duration_s": 7200.0,
+    "dt_s": 60.0,
+    "solar_flux_W_m2": 1000.0,
+    "num_agents": 6,
+    "coverage_bin_count": 12,
+    "stale_after_s": 600.0,
+    "warmup_s": 600.0,
+    "host_demand_rate_Wh_per_h": 0.0,
+    "agent_roles": ["scout", "scout", "relay", "storage", "sensor", "relay"],
+    "agent_parameters": {
+        "pv_area": 0.4,
+        "pv_efficiency": 0.25,
+        "energy_max": 4.0,
+        "initial_energy": 1.0,
+        "power_idle": 0.15,
+        "power_idle_low": 0.05,
+        "power_scout": 0.15,
+        "power_comm": 0.15,
+        "power_move": 0.2,
+        "low_threshold": 0.4,
+        "high_threshold": 3.5,
+        "beam_efficiency": 0.6,
+        "beam_rate": 0.4,
+        "move_rate": 0.0005,
+    },
+}
 
 
 def load_protocol(path: str | Path) -> dict[str, Any]:
@@ -35,20 +62,11 @@ def load_protocol(path: str | Path) -> dict[str, Any]:
     if comparison.get("rotation_periods_s") != EXPECTED_ROTATION_PERIODS_S:
         raise ValueError("protocol must contain exactly the declared rotation regimes")
     fixture = protocol.get("common_fixture", {})
-    required_fixture = {
-        "duration_s": 7200.0,
-        "dt_s": 60.0,
-        "num_agents": 6,
-        "coverage_bin_count": 12,
-        "stale_after_s": 600.0,
-        "warmup_s": 600.0,
-    }
-    for name, expected in required_fixture.items():
+    for name, expected in EXPECTED_COMMON_FIXTURE.items():
         if fixture.get(name) != expected:
-            raise ValueError(f"unexpected frozen fixture value: {name}")
-    roles = fixture.get("agent_roles")
-    if roles != ["scout", "scout", "relay", "storage", "sensor", "relay"]:
-        raise ValueError("agent roles must preserve the frozen asymmetric survey geometry")
+            raise ValueError(f"unexpected scientifically active frozen fixture value: {name}")
+    if set(fixture) != set(EXPECTED_COMMON_FIXTURE):
+        raise ValueError("unexpected scientifically active frozen fixture fields")
     budgets = protocol.get("budgets", {})
     expected_records = (
         len(EXPECTED_POLICIES)
