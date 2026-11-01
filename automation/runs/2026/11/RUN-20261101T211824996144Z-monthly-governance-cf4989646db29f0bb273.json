@@ -190,10 +190,6 @@
         ],
         "loop_id": "monthly-governance",
         "paths": [
-          "calendar/monthly/2026-11-synth-ptm-decision.md",
-          "quests/dispositions/2026-11-01-monthly.json",
-          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
-          "automation/pr_lifecycle/141.json",
           "automation/runs/2026/11/RUN-20261101T211824996144Z-monthly-governance-cf4989646db29f0bb273.json"
         ],
         "scope": "materials",
