@@ -1,0 +1,307 @@
+{
+  "artifacts": [
+    {
+      "kind": "monthly scientific decision package",
+      "path": "calendar/monthly/2026-11-synth-ptm-decision.md"
+    },
+    {
+      "kind": "queue and intake dispositions",
+      "path": "quests/dispositions/2026-11-01-monthly.json"
+    },
+    {
+      "kind": "active SYNTH decision note",
+      "path": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md"
+    },
+    {
+      "kind": "PR ownership record",
+      "path": "automation/pr_lifecycle/141.json"
+    },
+    {
+      "kind": "immutable Monthly run receipt",
+      "path": "automation/runs/2026/11/RUN-20261101T211824996144Z-monthly-governance-cf4989646db29f0bb273.json"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "name": "fresh default-branch source observation",
+      "status": "passed",
+      "evidence": "Fresh unpinned GitHub observation established main at 006f7b2cd133cc39629e0584a1f6c40db937e272; AGENTS.md, the sole active Monthly v2 contract, November standing authority, active quest index, research graph, runtime manifest, state ownership, open PRs, open issues, and memory were read from that exact source."
+    },
+    {
+      "name": "standing request validation",
+      "status": "passed",
+      "evidence": "The single-transaction govern, literature, and merge requests stay within STAND-20261031-NOVEMBER-TRIO-V2, use only Monthly write surfaces, consume zero worlds and records, and preserve one shared acceptance slice."
+    },
+    {
+      "name": "SYNTH scientific-decision review",
+      "status": "passed",
+      "evidence": "The package provides the requested evidence ledger, A1/A2/STOP table, dependency map, smallest executable slice, and explicit dispositions. It selects development-only stepwise service/depletion semantics and keeps R2 generation and sealed-holdout use stopped."
+    },
+    {
+      "name": "external primary-source appraisal",
+      "status": "passed",
+      "evidence": "Primary literature was appraised for VO2 emissivity modulation and 450 nm Cu-Cu hybrid bonding. The package records only bounded intake consequences: neither paper supports a universal drop-in spacecraft material or package-level mass/volume/energy claim."
+    },
+    {
+      "name": "queue, PR, and ownership review",
+      "status": "passed",
+      "evidence": "PR #140 remains Weekly-owned; PR #132 remains a draft research intake; Issues #30, #103, and #131 were dispositioned without stealing implementation ownership or changing priority."
+    },
+    {
+      "name": "inspectable state snapshot",
+      "status": "passed",
+      "evidence": "The receipt binds ten exact Git blobs plus the two live source PR heads; fingerprint sha256:f7f466cc64c83dda8f453c23c22c1a739d3da17d5fc218707fe346eb95904ddb."
+    },
+    {
+      "name": "python -m pytest -q",
+      "status": "not_run",
+      "evidence": "The receipt-bearing PR head must pass the hosted tests workflow before merge. Earlier implementation head 290b5e1e9e31f37cd26a951df57fc090ae1126b1 passed hosted run 41351223827."
+    },
+    {
+      "name": "python -m automation.cli validate-repository",
+      "status": "not_run",
+      "evidence": "The receipt-bearing PR head must pass the hosted automation-transaction workflow before merge."
+    },
+    {
+      "name": "baseline-artifacts",
+      "status": "not_run",
+      "evidence": "The receipt-bearing PR head must pass the hosted baseline-artifacts workflow before merge. Earlier implementation head 290b5e1e9e31f37cd26a951df57fc090ae1126b1 passed hosted run 41351223870."
+    },
+    {
+      "name": "exact-head semantic review",
+      "status": "not_run",
+      "evidence": "Codex review will be requested only after the receipt-bearing head passes hosted qualification."
+    },
+    {
+      "name": "generation and authority boundary",
+      "status": "passed",
+      "evidence": "No world, campaign record, evaluator, holdout, generation parameter, architecture choice, belief, standing policy, or scheduler state changed."
+    },
+    {
+      "name": "Drive and Calendar dependency",
+      "status": "passed",
+      "evidence": "The connected Drive router confirms GitHub is canonical and no Drive artifact was promoted. Calendar had no existing SNS event in the November review window; a consequential review gate may be recorded only after qualified merge."
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-11-01T21:18:24.996144Z",
+  "decision_effect": "Selected A1 as the smallest executable SYNTH successor: development-only stepwise accessible-energy, proportional service, cutoff, residual, and conservation semantics. Kept R2 generation and sealed-holdout use stopped; deferred PR #132 and Issue #131 pending primary-source provenance and a mass/volume/energy-closed physical witness; preserved PR #140 under Weekly ownership.",
+  "inheritance": [
+    {
+      "kind": "RUN",
+      "ref": "RUN-20261101T162356304470Z-weekly-evidence-synthesis-f8ee857072d14f11d393",
+      "decision_effect": "Supplied the accepted SIM2 fixed-rotation comparison and the live Weekly handoff context."
+    },
+    {
+      "kind": "artifact",
+      "ref": "calendar/roundups/2026-09-20.md",
+      "decision_effect": "Supplied the accepted SYNTH R1 evidence and the unresolved useful-service limitation."
+    },
+    {
+      "kind": "artifact",
+      "ref": "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+      "decision_effect": "Supplied the frozen R2 boundary, evaluator concern, and active quest constraints."
+    },
+    {
+      "kind": "artifact",
+      "ref": "PR #132",
+      "decision_effect": "Supplied the PTM/REF/3DI research intake for explicit Monthly disposition."
+    }
+  ],
+  "loop_id": "monthly-governance",
+  "next_action": "Post-Game Research may implement only the A1 development/validation slice after a fresh standing-authority check; it must not generate R2 worlds, consume the sealed holdout, or make architecture or hardware-readiness claims. Weekly separately retains PR #140 and the PV appraisal handoff.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "handoff",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "base_commit": "006f7b2cd133cc39629e0584a1f6c40db937e272",
+    "branch": "aurora/monthly-synth-ptm-decision-2026-11-01",
+    "implementation_head": "290b5e1e9e31f37cd26a951df57fc090ae1126b1",
+    "lifecycle_record_path": "automation/pr_lifecycle/141.json",
+    "pull_request": 141,
+    "source_open_prs": [
+      132,
+      140
+    ]
+  },
+  "quest_context": {
+    "acceptance_slice": "Decide SYNTH R2 service semantics and PTM/REF intake without generation",
+    "claim_boundary": "Governance decision and bounded development route only; no R2 world generation, sealed-holdout use, architecture selection, materiality claim, or hardware-readiness claim.",
+    "phase": "monthly scientific decision",
+    "quest_id": "QST-SYNTH-0001",
+    "result": "A1_SELECTED_R2_STOPPED",
+    "scope": "thermal-storage"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20261101T211824996144Z-monthly-governance-cf4989646db29f0bb273",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "006f7b2cd133cc39629e0584a1f6c40db937e272",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20261031-NOVEMBER-TRIO-V2\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-11-01T04:34:30Z\",\n  \"review_at\": \"2026-11-15T18:00:00Z\",\n  \"expires_at\": \"2026-12-01T07:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    },\n    \"post-game-research\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"Separate October 31 2026 explicit-human Transaction B after the qualified November continuity v1 floor: add a Post-Game Research loop with one independently owned bounded science/appraisal slice (implement and merge only) inside existing six research scopes and unchanged ceilings. Every original role retains its prior actions, surfaces and caps. Historical policies remain replay-valid. No quest activation, scheduler manipulation by research loops, evaluator/holdout changes, protected hardware assumptions, materiality claims, or duplicated worlds. Aurora Daily Vector is to be replaced only after the role contract, validators, policy, CI and exact-head review are accepted; human-authorized five-slot scheduler swap remains a separate operation.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "Decide SYNTH R2 service semantics and PTM/REF intake without generation",
+        "action": "govern",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "Issue #30 comment 6553695657",
+          "RUN-20261101T162356304470Z-weekly-evidence-synthesis-f8ee857072d14f11d393",
+          "calendar/roundups/2026-09-20.md",
+          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+          "PR #132",
+          "PR #140"
+        ],
+        "loop_id": "monthly-governance",
+        "paths": [
+          "calendar/monthly/2026-11-synth-ptm-decision.md",
+          "quests/dispositions/2026-11-01-monthly.json",
+          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+          "automation/pr_lifecycle/141.json",
+          "automation/runs/2026/11/RUN-20261101T211824996144Z-monthly-governance-cf4989646db29f0bb273.json"
+        ],
+        "scope": "thermal-storage",
+        "transaction_count": 1
+      },
+      {
+        "acceptance_slice": "Decide SYNTH R2 service semantics and PTM/REF intake without generation",
+        "action": "literature",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "Issue #30 comment 6553695657",
+          "RUN-20261101T162356304470Z-weekly-evidence-synthesis-f8ee857072d14f11d393",
+          "calendar/roundups/2026-09-20.md",
+          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+          "PR #132",
+          "PR #140"
+        ],
+        "loop_id": "monthly-governance",
+        "paths": [
+          "calendar/monthly/2026-11-synth-ptm-decision.md",
+          "quests/dispositions/2026-11-01-monthly.json",
+          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+          "automation/pr_lifecycle/141.json",
+          "automation/runs/2026/11/RUN-20261101T211824996144Z-monthly-governance-cf4989646db29f0bb273.json"
+        ],
+        "scope": "materials",
+        "transaction_count": 1
+      },
+      {
+        "acceptance_slice": "Decide SYNTH R2 service semantics and PTM/REF intake without generation",
+        "action": "merge",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "Issue #30 comment 6553695657",
+          "RUN-20261101T162356304470Z-weekly-evidence-synthesis-f8ee857072d14f11d393",
+          "calendar/roundups/2026-09-20.md",
+          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+          "PR #132",
+          "PR #140"
+        ],
+        "loop_id": "monthly-governance",
+        "paths": [
+          "calendar/monthly/2026-11-synth-ptm-decision.md",
+          "quests/dispositions/2026-11-01-monthly.json",
+          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+          "automation/pr_lifecycle/141.json",
+          "automation/runs/2026/11/RUN-20261101T211824996144Z-monthly-governance-cf4989646db29f0bb273.json"
+        ],
+        "scope": "thermal-storage",
+        "transaction_count": 1
+      }
+    ],
+    "trigger_id": "monthly-governance:2026-11-01T21:12:47+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:f7f466cc64c83dda8f453c23c22c1a739d3da17d5fc218707fe346eb95904ddb",
+    "open_prs": [
+      {
+        "draft": true,
+        "head_sha": "2f256f008eeda10656fcd481691aecffe3240045",
+        "number": 132,
+        "state": "open"
+      },
+      {
+        "draft": false,
+        "head_sha": "908ff074fff2db62f9d16955bec0b8b2efe39403",
+        "number": 140,
+        "state": "open"
+      }
+    ],
+    "records": [
+      {
+        "git_blob_sha": "5c8590e2d1f70d6b2c8ef4807efc47d102503c9d",
+        "path": "automation/contracts/monthly-governance.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "8c3b512ff515ac5339f619f612114857369d905a",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "75695be037f4b70e1c4b0ca691af670eb21d80a5",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "f6c17617da8e58f1b722229221a226913871185b",
+        "path": "calendar/monthly/2026-11.md",
+        "role": "monthly_state"
+      },
+      {
+        "git_blob_sha": "2ffd3a06afff302111d42c17c9393ef0ae44d6d8",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "572e5b02d147528403476f66a0c3355a539aa23c",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "27338f8ce7527af0fbf2e959e1d1bf10b3a31306",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "a757e09337e4a916fb0f2908d9301735da0a86f8",
+        "path": "automation/standing/2026-11.v2.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "5171c1ab1c28669a8ef2a9c2056e9fd98910e9ce",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "39e7ceab63df5790ef74b0e1022dd370137796f4",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "006f7b2cd133cc39629e0584a1f6c40db937e272"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-11-01T21:12:47Z"
+}
