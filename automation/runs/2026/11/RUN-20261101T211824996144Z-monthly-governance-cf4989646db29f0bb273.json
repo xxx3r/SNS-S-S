@@ -55,18 +55,18 @@
     },
     {
       "name": "python -m pytest -q",
-      "status": "not_run",
-      "evidence": "The receipt-bearing review-preparation head must pass hosted tests before the merge request is recorded."
+      "status": "passed",
+      "evidence": "Hosted tests run 41351977726 succeeded on receipt-bearing review-preparation head 0700a3fb3cd5c1624f99154b713d4fd3fdde731b. The final exact head must repeat the gate before merge."
     },
     {
       "name": "python -m automation.cli validate-repository",
-      "status": "not_run",
-      "evidence": "The receipt-bearing review-preparation head must pass the hosted automation-transaction gate before the merge request is recorded."
+      "status": "passed",
+      "evidence": "Hosted automation-transaction run 41351977659 succeeded on review-preparation head 0700a3fb3cd5c1624f99154b713d4fd3fdde731b, including automation tests, semantic repository validation, and full pytest. The final exact head must repeat the gate before merge."
     },
     {
       "name": "baseline-artifacts",
-      "status": "not_run",
-      "evidence": "The receipt-bearing review-preparation head must pass hosted baseline qualification before the merge request is recorded."
+      "status": "passed",
+      "evidence": "Hosted baseline-artifacts run 41351977709 succeeded on review-preparation head 0700a3fb3cd5c1624f99154b713d4fd3fdde731b. The final exact head must repeat the gate before merge."
     },
     {
       "name": "exact-head semantic review",
@@ -82,6 +82,11 @@
       "name": "Drive and Calendar dependency",
       "status": "passed",
       "evidence": "The connected Drive router confirms GitHub is canonical and no Drive artifact was promoted. Calendar had no existing SNS event in the November review window; a consequential review gate may be recorded only after qualified merge."
+    },
+    {
+      "name": "failed-closed qualification repairs",
+      "status": "passed",
+      "evidence": "Initial qualification failed closed first on a missing lifecycle owner receipt, then on provisional completed-action checks, and then on an overbroad literature path set. Each defect was repaired before acceptance; no scientific output or protected authority changed."
     }
   ],
   "consumed_ids": [],
@@ -111,7 +116,7 @@
     }
   ],
   "loop_id": "monthly-governance",
-  "next_action": "Qualify the receipt-bearing head, then record the merge request and actual hosted check evidence before expected-head review and merge.",
+  "next_action": "Post-Game Research may implement only the A1 development/validation slice after a fresh standing-authority check; it must not generate R2 worlds, consume the sealed holdout, or make architecture or hardware-readiness claims. Weekly separately retains PR #140 and the PV appraisal handoff.",
   "observability": {
     "administrative_transactions": 1,
     "continuity": "handoff",
@@ -194,6 +199,33 @@
         ],
         "scope": "materials",
         "transaction_count": 1
+      },
+      {
+        "acceptance_slice": "Decide SYNTH R2 service semantics and PTM/REF intake without generation",
+        "action": "merge",
+        "budgets": {
+          "disk_mb": 1,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "PR #141",
+          "tests 41351977726",
+          "baseline-artifacts 41351977709",
+          "automation-transaction 41351977659",
+          "exact-head Codex review"
+        ],
+        "loop_id": "monthly-governance",
+        "paths": [
+          "calendar/monthly/2026-11-synth-ptm-decision.md",
+          "quests/dispositions/2026-11-01-monthly.json",
+          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
+          "automation/pr_lifecycle/141.json",
+          "automation/runs/2026/11/RUN-20261101T211824996144Z-monthly-governance-cf4989646db29f0bb273.json"
+        ],
+        "scope": "thermal-storage",
+        "transaction_count": 1
       }
     ],
     "trigger_id": "monthly-governance:2026-11-01T21:12:47+00:00"
@@ -269,7 +301,7 @@
     "schema": "sns.state-snapshot.v1",
     "source_commit": "006f7b2cd133cc39629e0584a1f6c40db937e272"
   },
-  "terminal_state": "NEEDS_APPROVAL",
+  "terminal_state": "DONE_WITH_LIMITATIONS",
   "trigger": "scheduled",
   "trigger_time": "2026-11-01T21:12:47Z"
 }
