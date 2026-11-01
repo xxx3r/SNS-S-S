@@ -22,6 +22,15 @@
       "order": 20
     },
     {
+      "loop_id": "post-game-research",
+      "automation_title": "SNS Post-Game Research",
+      "scheduler_managed": true,
+      "desired_enabled": true,
+      "timing_mode": "exact_schedule",
+      "schedule": "BEGIN:VEVENT\nDTSTART:20261102T160000\nRRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR,SA;BYHOUR=16;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+      "order": 25
+    },
+    {
       "loop_id": "weekly-evidence-synthesis",
       "automation_title": "SNS Weekly Research Delivery",
       "scheduler_managed": true,
@@ -60,9 +69,9 @@
   ],
   "slot_policy": {
     "active_task_limit": 5,
-    "external_reserved_task": "Aurora Daily Vector",
+    "external_reserved_task": "none (Aurora Daily Vector replaced by human-authorized Post-Game)",
     "monthly_normal_state": "paused",
-    "monthly_review_swap": "Before the next Monthly review, pause Observatory and enable Monthly; after accepted Monthly disposition, pause Monthly and resume Observatory. Human-authorized scheduler reconciliation only; Calendar reminder does not itself perform the swap.",
-    "review_gate": "2026-10-18: accepted human midmonth decisions are recorded in calendar/monthly/2026-10.md; 2026-10-30: separate renewal decision before the current policy expires at 2026-11-01T06:00:00Z."
+    "monthly_review_swap": "Before the Monthly review, pause Observatory and enable Monthly; after accepted disposition, pause Monthly and resume Observatory. Human-authorized scheduler changes only; normal five slots are Pre-Game, Daily, Post-Game, Weekly and Observatory.",
+    "review_gate": "2026-10-31 human-approved November floor and independent daily Trio change. November midmonth scientific check Nov 15; policy expires 2026-12-01T07:00:00Z."
   }
 }

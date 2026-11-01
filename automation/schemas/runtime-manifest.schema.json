@@ -24,7 +24,7 @@
     "loops": {
       "type": "array",
       "minItems": 5,
-      "maxItems": 6,
+      "maxItems": 7,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -42,6 +42,7 @@
             "enum": [
               "daily-governance-triage",
               "daily-research-operator",
+              "post-game-research",
               "weekly-evidence-synthesis",
               "monthly-governance",
               "system-audit",

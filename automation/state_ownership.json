@@ -10,7 +10,8 @@
       "weekly": "read",
       "monthly": "read",
       "audit": "observe",
-      "reconciliation": "Contract changes require a dedicated reviewed PR; no running loop edits its own active contract."
+      "reconciliation": "Contract changes require a dedicated reviewed PR; no running loop edits its own active contract.",
+      "postgame": "read"
     },
     {
       "path": "automation/schemas/**",
@@ -20,7 +21,8 @@
       "weekly": "read",
       "monthly": "read",
       "audit": "observe",
-      "reconciliation": "Schema changes require a dedicated reviewed automation transaction and must preserve accepted historical replay."
+      "reconciliation": "Schema changes require a dedicated reviewed automation transaction and must preserve accepted historical replay.",
+      "postgame": "read"
     },
     {
       "path": "automation/prompts/**",
@@ -30,7 +32,8 @@
       "weekly": "read",
       "monthly": "read",
       "audit": "observe",
-      "reconciliation": "The repository bootloader surface is human-owned research-organization code; running loops may not rewrite the prompt that instantiates them."
+      "reconciliation": "The repository bootloader surface is human-owned research-organization code; running loops may not rewrite the prompt that instantiates them.",
+      "postgame": "read"
     },
     {
       "path": "automation/runtime_manifest.json",
@@ -40,7 +43,8 @@
       "weekly": "read",
       "monthly": "propose",
       "audit": "observe",
-      "reconciliation": "The manifest declares desired external scheduler state. Audit reports drift and Monthly may propose changes, but changing the external research organization requires explicit human authority."
+      "reconciliation": "The manifest declares desired external scheduler state. Audit reports drift and Monthly may propose changes, but changing the external research organization requires explicit human authority.",
+      "postgame": "read"
     },
     {
       "path": "automation/runs/**",
@@ -50,7 +54,8 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "write",
-      "reconciliation": "Each loop creates a unique immutable file with exclusive-create semantics; corrections are new linked receipts. V2 provenance-only corrections do not grant a second scientific implementation attempt."
+      "reconciliation": "Each loop creates a unique immutable file with exclusive-create semantics; corrections are new linked receipts. V2 provenance-only corrections do not grant a second scientific implementation attempt.",
+      "postgame": "write"
     },
     {
       "path": "automation/delegations/**",
@@ -60,7 +65,8 @@
       "weekly": "read",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Monthly governance publishes bounded delegation envelopes. Explicit human instruction may bootstrap or override an envelope. Triage may consume but never widen it."
+      "reconciliation": "Monthly governance publishes bounded delegation envelopes. Explicit human instruction may bootstrap or override an envelope. Triage may consume but never widen it.",
+      "postgame": "read"
     },
     {
       "path": "automation/authorizations/**",
@@ -70,7 +76,8 @@
       "weekly": "read",
       "monthly": "read",
       "audit": "observe",
-      "reconciliation": "Triage may create immutable bounded authorizations only inside the current delegation envelope. Daily consumes them directly; monthly may review, narrow, revoke prospectively, or supersede through a new envelope."
+      "reconciliation": "Triage may create immutable bounded authorizations only inside the current delegation envelope. Daily consumes them directly; monthly may review, narrow, revoke prospectively, or supersede through a new envelope.",
+      "postgame": "read"
     },
     {
       "path": "automation/pr_lifecycle/**",
@@ -80,7 +87,8 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together.",
+      "postgame": "write"
     },
     {
       "path": "memory/mem_log_short.md",
@@ -90,7 +98,8 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together.",
+      "postgame": "read"
     },
     {
       "path": "memory/mem_log_long_0000_0999.md",
@@ -100,7 +109,8 @@
       "weekly": "none",
       "monthly": "none",
       "audit": "observe",
-      "reconciliation": "Legacy history is preserved but no longer receives mandatory scheduled appends; generated reports derive from immutable receipts."
+      "reconciliation": "Legacy history is preserved but no longer receives mandatory scheduled appends; generated reports derive from immutable receipts.",
+      "postgame": "read"
     },
     {
       "path": "calendar/evidence/**",
@@ -110,7 +120,8 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Monthly owns external literature and appraisal; Weekly records internal experimental synthesis. Raw events are immutable; beliefs remain proposals until Monthly consolidation."
+      "reconciliation": "Monthly owns external literature and appraisal; Weekly records internal experimental synthesis. Raw events are immutable; beliefs remain proposals until Monthly consolidation.",
+      "postgame": "read"
     },
     {
       "path": "calendar/belief_events/**",
@@ -120,7 +131,8 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Monthly owns external literature and appraisal; Weekly records internal experimental synthesis. Raw events are immutable; beliefs remain proposals until Monthly consolidation."
+      "reconciliation": "Monthly owns external literature and appraisal; Weekly records internal experimental synthesis. Raw events are immutable; beliefs remain proposals until Monthly consolidation.",
+      "postgame": "read"
     },
     {
       "path": "calendar/consolidated_beliefs.json",
@@ -130,7 +142,8 @@
       "weekly": "propose",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Monthly governance regenerates the consolidated view from immutable belief events. Triage has no belief-write authority."
+      "reconciliation": "Monthly governance regenerates the consolidated view from immutable belief events. Triage has no belief-write authority.",
+      "postgame": "read"
     },
     {
       "path": "calendar/roundups/**",
@@ -140,7 +153,8 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Monthly owns external literature and appraisal; Weekly records internal experimental synthesis. Raw events are immutable; beliefs remain proposals until Monthly consolidation."
+      "reconciliation": "Monthly owns external literature and appraisal; Weekly records internal experimental synthesis. Raw events are immutable; beliefs remain proposals until Monthly consolidation.",
+      "postgame": "read"
     },
     {
       "path": "calendar/monthly/**",
@@ -150,7 +164,8 @@
       "weekly": "read",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "One accepted monthly synthesis governs queue-wide decisions for its period. Triage reads but never rewrites constitutional state."
+      "reconciliation": "One accepted monthly synthesis governs queue-wide decisions for its period. Triage reads but never rewrites constitutional state.",
+      "postgame": "read"
     },
     {
       "path": "quests/research_graph.json",
@@ -160,7 +175,8 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together.",
+      "postgame": "read"
     },
     {
       "path": "quests/actions/**",
@@ -170,7 +186,8 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together.",
+      "postgame": "read"
     },
     {
       "path": "quests/active/**",
@@ -180,7 +197,8 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together.",
+      "postgame": "read"
     },
     {
       "path": "quests/completed/**",
@@ -190,7 +208,8 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together.",
+      "postgame": "read"
     },
     {
       "path": "quests/proposed/**",
@@ -200,7 +219,8 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together.",
+      "postgame": "read"
     },
     {
       "path": "quests/blocked/**",
@@ -210,7 +230,8 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together."
+      "reconciliation": "Weekly may enact bounded lifecycle/direction changes inside standing research scopes, with accepted evidence and current ownership. Monthly retains strategy and consolidated beliefs. Preserve historical records and reconcile queue/index/graph/memory together.",
+      "postgame": "read"
     },
     {
       "path": "src/**|experiments/**|configs/**|tests/**|outputs/**",
@@ -220,7 +241,8 @@
       "weekly": "write",
       "monthly": "read",
       "audit": "observe",
-      "reconciliation": "Daily and Weekly implement within standing accepted quest scope. Triage may merge qualified work and repair non-authority tests/docs/scripts; it cannot implement scientific source behavior. Action-specific validation narrows this union."
+      "reconciliation": "Daily and Weekly implement within standing accepted quest scope. Triage may merge qualified work and repair non-authority tests/docs/scripts; it cannot implement scientific source behavior. Action-specific validation narrows this union.",
+      "postgame": "write"
     },
     {
       "path": "automation/standing/**",
@@ -230,7 +252,8 @@
       "weekly": "read",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Monthly may publish a new immutable policy inside stable-law ceilings and move the current pointer. Other roles cannot widen authority. Human owns validator/schema changes."
+      "reconciliation": "Monthly may publish a new immutable policy inside stable-law ceilings and move the current pointer. Other roles cannot widen authority. Human owns validator/schema changes.",
+      "postgame": "read"
     },
     {
       "path": "automation/quest_history/**",
@@ -240,7 +263,8 @@
       "weekly": "write",
       "monthly": "write",
       "audit": "observe",
-      "reconciliation": "Append exact source-qualified record contexts before lifecycle transitions; never alter an archived record, context, or receipt to bypass live execution authority."
+      "reconciliation": "Append exact source-qualified record contexts before lifecycle transitions; never alter an archived record, context, or receipt to bypass live execution authority.",
+      "postgame": "read"
     }
   ]
 }
