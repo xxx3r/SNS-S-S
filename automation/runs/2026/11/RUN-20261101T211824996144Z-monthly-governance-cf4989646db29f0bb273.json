@@ -231,7 +231,7 @@
     "trigger_id": "monthly-governance:2026-11-01T21:12:47+00:00"
   },
   "state_snapshot": {
-    "fingerprint": "sha256:c52c8de161dc2c516110813bfd845a7d5998a7df173247a624fae4fea9b25811",
+    "fingerprint": "sha256:f7f466cc64c83dda8f453c23c22c1a739d3da17d5fc218707fe346eb95904ddb",
     "open_prs": [
       {
         "draft": true,
@@ -248,22 +248,22 @@
     ],
     "records": [
       {
-        "git_blob_sha": "5c8590e2d1f70d6b2c8ef4807efc47d102503c9d",
+        "git_blob_sha": "5c8590e2b3bf088cf3f7ced7e4c0d8f08fb19075",
         "path": "automation/contracts/monthly-governance.v2.md",
         "role": "active_contract"
       },
       {
-        "git_blob_sha": "8c3b512ff515ac5339f619f612114857369d905a",
+        "git_blob_sha": "8c3b512fdaf6f2e6a71ffb6e487cc9bb5bf420e1",
         "path": "quests/active/README.md",
         "role": "active_quest_index"
       },
       {
-        "git_blob_sha": "75695be037f4b70e1c4b0ca691af670eb21d80a5",
+        "git_blob_sha": "75695be087f70a1183d0651c68d5b869724a8574",
         "path": "memory/mem_log_short.md",
         "role": "canonical_memory"
       },
       {
-        "git_blob_sha": "f6c17617da8e58f1b722229221a226913871185b",
+        "git_blob_sha": "f6c176179fb75a3dce3fec9ed2b9b7ddcfee6ae2",
         "path": "calendar/monthly/2026-11.md",
         "role": "monthly_state"
       },
@@ -273,27 +273,27 @@
         "role": "research_graph"
       },
       {
-        "git_blob_sha": "572e5b02d147528403476f66a0c3355a539aa23c",
+        "git_blob_sha": "572e5b0254f21f002bb807702c6ed2188c055716",
         "path": "automation/runtime_manifest.json",
         "role": "runtime_manifest"
       },
       {
-        "git_blob_sha": "27338f8ce7527af0fbf2e959e1d1bf10b3a31306",
+        "git_blob_sha": "27338f8c32770a160b03bae5bfd17b7856401653",
         "path": "AGENTS.md",
         "role": "stable_law"
       },
       {
-        "git_blob_sha": "a757e09337e4a916fb0f2908d9301735da0a86f8",
+        "git_blob_sha": "a757e09346c1e6556a2f213bc01fd1a12040771c",
         "path": "automation/standing/2026-11.v2.json",
         "role": "standing_authority"
       },
       {
-        "git_blob_sha": "5171c1ab1c28669a8ef2a9c2056e9fd98910e9ce",
+        "git_blob_sha": "5171c1ab3a656c7709b37f3aad94ba7d560d4be3",
         "path": "automation/standing/current.json",
         "role": "standing_pointer"
       },
       {
-        "git_blob_sha": "39e7ceab63df5790ef74b0e1022dd370137796f4",
+        "git_blob_sha": "39e7ceab0607acab171b728c1cdaa531a0ffa0a9",
         "path": "automation/state_ownership.json",
         "role": "state_ownership"
       }
