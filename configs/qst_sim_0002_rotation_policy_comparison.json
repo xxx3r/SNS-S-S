@@ -1,0 +1,58 @@
+{
+  "schema": "sns.qst-sim-0002.rotation-policy-protocol.v1",
+  "quest_id": "QST-SIM-0002",
+  "status": "prospectively_frozen",
+  "comparison": {
+    "policies": ["baseline", "survey"],
+    "rotation_periods_s": [7200.0, 43200.0]
+  },
+  "common_fixture": {
+    "duration_s": 7200.0,
+    "dt_s": 60.0,
+    "solar_flux_W_m2": 1000.0,
+    "num_agents": 6,
+    "coverage_bin_count": 12,
+    "stale_after_s": 600.0,
+    "warmup_s": 600.0,
+    "host_demand_rate_Wh_per_h": 0.0,
+    "agent_roles": ["scout", "scout", "relay", "storage", "sensor", "relay"],
+    "agent_parameters": {
+      "pv_area": 0.4,
+      "pv_efficiency": 0.25,
+      "energy_max": 4.0,
+      "initial_energy": 1.0,
+      "power_idle": 0.15,
+      "power_idle_low": 0.05,
+      "power_scout": 0.15,
+      "power_comm": 0.15,
+      "power_move": 0.2,
+      "low_threshold": 0.4,
+      "high_threshold": 3.5,
+      "beam_efficiency": 0.6,
+      "beam_rate": 0.4,
+      "move_rate": 0.0005
+    }
+  },
+  "observation_rule": "After each simulated step, record the pre-move sampled region for every scout or sensor. Fresh coverage is one minus AsteroidWorld.stale_coverage_fraction over the fixed 600-second window. The survey policy may change later observations only through simulated agent motion.",
+  "primary_endpoint": "time_average_fresh_coverage_fraction_after_warmup",
+  "secondary_endpoints": [
+    "final_fresh_coverage_fraction",
+    "dead_agent_count",
+    "final_mean_agent_energy_Wh",
+    "minimum_agent_energy_Wh"
+  ],
+  "falsifier": "If survey has no positive primary-endpoint delta over baseline in either declared rotation regime and no survival advantage, the present simple-coordination value claim is not supported on this fixture.",
+  "budgets": {
+    "max_worlds": 4,
+    "max_agent_step_records": 2880,
+    "max_runtime_s": 60,
+    "max_disk_mb": 2
+  },
+  "exclusions": [
+    "irregular rotation",
+    "shadow-profile changes",
+    "policy tuning or parameter search",
+    "additional rotation regimes",
+    "real asteroid or mission-value claims"
+  ]
+}

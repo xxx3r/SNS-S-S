@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 138,
+  "quest_id": "QST-SIM-0002",
+  "acceptance_slice": "Freeze QST-SIM-0002 two-policy two-rotation protocol",
+  "state": "ready_for_review",
+  "owner_run_id": "RUN-20261101T161450457715Z-weekly-evidence-synthesis-75d770b3f67640686d7c",
+  "source_commit": "786e7a1f3a33d815b70c434da0edbce9aee8491f",
+  "head_commit": "ffb56e1838a72ac18dd861dcdab022e5945326ad",
+  "updated_at": "2026-11-01T16:14:50.457715+00:00",
+  "next_review_after": "2026-11-08T16:00:00+00:00",
+  "supersedes": [],
+  "reason": "PR #138 freezes the prospective SIM2 two-policy, two-rotation protocol at implementation head ffb56e1838a72ac18dd861dcdab022e5945326ad. No world or scientific result exists in this slice. Local focused tests, full tests, semantic validation, and baseline-artifact qualification passed; hosted exact-head qualification and review remain required before merge."
+}
