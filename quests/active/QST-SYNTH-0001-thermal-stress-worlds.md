@@ -58,3 +58,12 @@ Do not:
 - touch the sealed holdout while this boundary is unresolved.
 
 The next lawful SYNTH action is a separate scientific decision: either authorize a bounded evaluator extension that models partial service/depletion, or explicitly revise the frozen useful-delivery comparison requirement. Until then, other independent quests remain executable.
+
+
+## November 1 Monthly scientific decision
+
+Monthly prefers **A1: a prospectively frozen, development-only stepwise service/depletion semantics extension** over revising R2 to unsupported aggregate proxies. The extension must use an explicit non-increasing accessible-energy state, couple actual served heater energy into the temperature update, record requested and served host/heater energy plus cutoff and a conservation residual, and apply one declared proportional service fraction when a step cannot be fully served.
+
+The next acceptance slice is protocol and interface validation only: abundant-battery regression, zero-battery control, one-step analytic partial depletion, timestep-sensitivity bound, and per-step energy conservation. It may generate no campaign worlds, inspect no holdout bytes, change no ranges or policy family, and make no hardware claim. Any failed identity/regression/timestep test retains the STOP.
+
+Daily Research Operator owns that distinct prospective evaluator implementation/validation slice under November standing authority, subject to fresh ownership and standing-request preflight. Post-Game may prepare or appraise a protocol proposal but may not change the evaluator. R2 remains stopped until the resulting semantics receive separate Monthly or explicit-human acceptance. See `calendar/monthly/2026-11-synth-ptm-decision.md` and `quests/dispositions/2026-11-01-monthly.json`.

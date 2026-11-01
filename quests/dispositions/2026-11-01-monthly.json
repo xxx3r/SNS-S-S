@@ -1,0 +1,97 @@
+{
+  "schema": "sns.backlog-disposition.v1",
+  "authority": "Monthly Governance v2 under STAND-20261031-NOVEMBER-TRIO-V2 and explicit-human Issue #30 request",
+  "source_commit": "006f7b2cd133cc39629e0584a1f6c40db937e272",
+  "recorded_at": "2026-11-01T21:12:47+00:00",
+  "quest_actions": [
+    {
+      "quest_action_id": "QA-20260723T011500000000Z-propose-qst-synth-0001-a8b4c7d2e1905f63b1aa",
+      "source_path": "quests/actions/2026/07/qa_20260723_synthetic_worlds_capability.json",
+      "status": "continue",
+      "owner": "daily-research-operator",
+      "next_review": "2026-11-15",
+      "condition": "Implement and validate only the prospectively frozen development service/depletion semantics under fresh standing preflight; no R2 generation or holdout access before separate acceptance. Post-Game may prepare a protocol proposal but may not change the evaluator."
+    },
+    {
+      "quest_action_id": "QA-20260726T145840000000Z-refine-qst-pv-0001-4b5c6d7e8f901a2b3c4d",
+      "source_path": "quests/actions/2026/07/qa_20260726_qst_pv_0001_coupled_failures.json",
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-11-08",
+      "condition": "Preserve PR #140 ownership of the source-traceable PV evidence route; do not mix it with SYNTH service semantics."
+    },
+    {
+      "quest_action_id": "QA-20260731T025500000000Z-refine-qst-sim-0002-eeff0011223344556677",
+      "source_path": "quests/actions/2026/07/qa_20260712_qst_sim_0002_resource_collapse.json",
+      "status": "defer",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-11-08",
+      "condition": "Retain the independent SIM2 resource-accounting fallback under Weekly ownership. PR #139 completed only the accepted rotation-policy comparison; do not reuse or widen its four-world matrix for this distinct question."
+    },
+    {
+      "quest_action_id": "QA-20260823T145740000000Z-qst-sim-next-measurement-c46a452333333b7b9a3d",
+      "source_path": "quests/actions/2026/08/qa_20260823_qst_sim_0002_next_measurement.json",
+      "status": "closed_completed",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-12-31",
+      "condition": "Accepted PR #139 executed the declared four-case baseline-versus-survey matrix under two rotation regimes. Preserve its evidence and do not regenerate or expand the completed measurement."
+    },
+    {
+      "quest_action_id": "QA-20260731T025500000000Z-refine-qst-stor-0002-ddeeff00112233445566",
+      "source_path": "quests/actions/2026/07/qa_20260712_qst_stor_0002_auxiliary_safe_mode.json",
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-11-15",
+      "condition": "Keep the architecture-changing auxiliary-safe-mode alternative Monthly-owned. Reconsider only through a separate accepted Monthly or human architecture/assumption decision; do not treat the local fast-rotator falsifier as a global architecture result."
+    },
+    {
+      "quest_action_id": "QA-20260719T145804000000Z-refine-qst-stor-0002-d25dbac053534a7819eb",
+      "source_path": "quests/actions/2026/07/qa_20260719_qst_stor_0002_environmental_margins.json",
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-11-15",
+      "condition": "Do not revive the falsified local baseline through parameter optimism. Any environmental-margin work requires a separately accepted protocol with source-backed bounds and must preserve the existing local falsifier."
+    }
+  ],
+  "open_issues": [
+    {
+      "number": 30,
+      "status": "continue",
+      "owner": "daily-research-operator",
+      "next_review": "2026-11-15",
+      "condition": "A1 development-only service/depletion semantics is preferred. Daily owns evaluator implementation/validation under fresh preflight; Post-Game cannot change the evaluator. R2 generation and sealed holdout access remain stopped until the semantics are separately accepted."
+    },
+    {
+      "number": 103,
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-11-08",
+      "condition": "Continue the inheritance evaluation through 2026-12-31 and record whether the A1 decision changes later behavior without repeating evidence."
+    },
+    {
+      "number": 131,
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-11-15",
+      "condition": "Require a source-backed mass/volume/energy-closed reference witness before any adaptive-skin or architecture experiment."
+    }
+  ],
+  "open_prs": [
+    {
+      "number": 132,
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-11-15",
+      "condition": "Keep draft. Bind numerical claims to primary sources or reproducible artifacts, separate verified claims from hypotheses, and remove obsolete routing before documentation intake is reconsidered."
+    },
+    {
+      "number": 140,
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-11-08",
+      "condition": "Resolve the missing standing-action receipt finding and complete exact-head qualification without Monthly acquiring its SIM2/PV slice."
+    }
+  ],
+  "note": "Monthly selects A1 as the preferred prospective SYNTH semantics route and assigns evaluator implementation/validation to Daily rather than Post-Game, explicitly carries every outstanding SIM2/STOR/PV/SYNTH proposal with its owner and review condition, and preserves the R2 stop and every physical/architecture boundary. No quest membership, priority, standing policy, scheduler or consolidated physical belief changes.",
+  "supersedes": "quests/dispositions/2026-11-01.json"
+}

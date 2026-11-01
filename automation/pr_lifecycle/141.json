@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 141,
+  "quest_id": "QST-SYNTH-0001",
+  "acceptance_slice": "Decide SYNTH R2 service semantics and PTM/REF intake without generation",
+  "state": "ready_for_review",
+  "owner_run_id": "RUN-20261101T211824996144Z-monthly-governance-cf4989646db29f0bb273",
+  "source_commit": "006f7b2cd133cc39629e0584a1f6c40db937e272",
+  "head_commit": "290b5e1e9e31f37cd26a951df57fc090ae1126b1",
+  "updated_at": "2026-11-01T21:18:24.996144+00:00",
+  "next_review_after": "2026-11-15T18:00:00+00:00",
+  "supersedes": [],
+  "reason": "Monthly prefers a prospectively frozen, development-only stepwise service/depletion semantics extension and keeps R2 generation and sealed holdouts stopped. PTM/REF documentation intake remains deferred pending primary-source and reproducibility cleanup; no architecture, policy, scheduler, quest membership, physical belief, or scientific output changes."
+}
