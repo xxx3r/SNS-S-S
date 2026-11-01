@@ -231,7 +231,7 @@
     "trigger_id": "monthly-governance:2026-11-01T21:12:47+00:00"
   },
   "state_snapshot": {
-    "fingerprint": "sha256:f7f466cc64c83dda8f453c23c22c1a739d3da17d5fc218707fe346eb95904ddb",
+    "fingerprint": "sha256:c52c8de161dc2c516110813bfd845a7d5998a7df173247a624fae4fea9b25811",
     "open_prs": [
       {
         "draft": true,
