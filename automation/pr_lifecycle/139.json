@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 139,
+  "quest_id": "QST-SIM-0002",
+  "acceptance_slice": "Execute accepted QST-SIM-0002 fixed four-case matrix exactly once",
+  "state": "ready_for_review",
+  "owner_run_id": "RUN-20261101T162356304470Z-weekly-evidence-synthesis-f8ee857072d14f11d393",
+  "source_commit": "bcc28210d56edbf808fb24dc69cc914e05712d94",
+  "head_commit": "c6bc197a971a48c2617c7ab77c95723e3163f48e",
+  "updated_at": "2026-11-01T16:23:56.304470+00:00",
+  "next_review_after": "2026-11-08T16:00:00+00:00",
+  "supersedes": [],
+  "reason": "PR #139 records the one-time accepted SIM2 four-case result at implementation head c6bc197a971a48c2617c7ab77c95723e3163f48e. The fixed synthetic fixture produced a +0.007575757575757569 survey-minus-baseline primary delta in both declared rotation regimes and no dead-agent difference. Local tests, semantic validation, baseline-artifact qualification, and artifact integrity checks passed; hosted exact-head qualification and review remain required before merge."
+}
