@@ -13,12 +13,13 @@ from typing import Mapping
 ROLE_ACTIONS = {
     'daily-governance-triage': {'maintenance', 'merge', 'route'},
     'daily-research-operator': {'implement', 'merge'},
+    'post-game-research': {'implement', 'merge'},
     'weekly-evidence-synthesis': {'implement', 'maintenance', 'merge', 'activate', 'terminalize', 'route'},
     'monthly-governance': {'govern', 'literature', 'merge'},
 }
 BUDGET_CEILINGS = {'worlds':64, 'records':100000, 'runtime_s':600, 'disk_mb':100}
 CAPS = {'daily-governance-triage': 2, 'daily-research-operator': 1,
-        'weekly-evidence-synthesis': 4, 'monthly-governance': 1}
+        'post-game-research': 1, 'weekly-evidence-synthesis': 4, 'monthly-governance': 1}
 ACTION_SURFACES = {
     'implement': ('src/**', 'experiments/**', 'configs/**', 'tests/**', 'outputs/**', 'docs/**', 'automation/runs/**', 'automation/pr_lifecycle/**'),
     'maintenance': ('tests/**', 'docs/**', 'scripts/**', 'automation/runs/**', 'automation/pr_lifecycle/**'),
@@ -69,8 +70,11 @@ def validate_standing_policy(policy: Mapping[str, object]) -> None:
         raise ValueError('invalid standing authority validity/review interval')
     if not policy['research_scopes'] or not policy['required_checks']:
         raise ValueError('standing authority requires research scopes and checks')
-    if set(policy['roles']) != set(ROLE_ACTIONS):
-        raise ValueError('standing authority must specify all four action roles')
+    # Preserve historical four-role policies for exact-source replay; Post-Game
+    # has authority only when explicitly included by a later accepted policy.
+    legacy_roles = set(ROLE_ACTIONS) - {'post-game-research'}
+    if set(policy['roles']) not in (legacy_roles, set(ROLE_ACTIONS)):
+        raise ValueError('standing authority must specify historical or Post-Game role set')
     for role, row in policy['roles'].items():
         if not set(row['actions']) <= ROLE_ACTIONS[role] or not row['actions']:
             raise ValueError('role cannot widen its constitutional action set')

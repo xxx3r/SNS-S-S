@@ -13,7 +13,7 @@ def test_november_policy_is_strict_continuity():
     assert new["expires_at"] == "2026-12-01T07:00:00Z"
     for field in ("research_scopes", "roles", "budget_caps", "required_checks"):
         assert new[field] == old[field], field
-    assert json.loads((ROOT / "automation/standing/current.json").read_text()) == {"path": "automation/standing/2026-11.v1.json"}
+    assert json.loads((ROOT / "automation/standing/current.json").read_text())["path"] in {"automation/standing/2026-11.v1.json", "automation/standing/2026-11.v2.json"}
 
 def test_november_standing_execution_requires_valid_time():
     policy = json.loads((ROOT / "automation/standing/2026-11.v1.json").read_text())

@@ -36,6 +36,7 @@
       "enum": [
         "daily-governance-triage",
         "daily-research-operator",
+        "post-game-research",
         "weekly-evidence-synthesis",
         "monthly-governance",
         "system-audit"

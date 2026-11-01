@@ -8,7 +8,7 @@ The scheduler supplies the repository and loop ID, and names connected tools. Th
 
 Authority order: platform safety and explicit human instruction → this stable law → active role contract → executable schemas/validators → current Monthly/standing authority → accepted issue and quest scope → accepted evidence → canonical short memory → history. Accepted work-item scope operates within current authority; it cannot widen that authority. Unknown or conflicting authority is a blocker for the affected action. Historical implementation approvals, including Issue #79, do not authorize ordinary loops to rewrite their own powers.
 
-Research loop IDs remain `daily-governance-triage`, `daily-research-operator`, `weekly-evidence-synthesis`, `monthly-governance`, and `system-audit`. The weekly ID retains history while its active contract now owns delivery. External projection uses `automation/prompts/observatory.md`, outside research-governance authority.
+Research loop IDs remain `daily-governance-triage`, `daily-research-operator`, `post-game-research`, `weekly-evidence-synthesis`, `monthly-governance`, and `system-audit`. The weekly ID retains history while its active contract now owns delivery. External projection uses `automation/prompts/observatory.md`, outside research-governance authority.
 
 ## Role map
 
@@ -16,6 +16,7 @@ Research loop IDs remain `daily-governance-triage`, `daily-research-operator`, `
 |---|---|---|
 | Pre-Game | Prepare an executable day, review waiting work, clear routine maintenance | Qualified merges and mechanical lifecycle repair; no scientific implementation or quest activation |
 | Daily | One coherent scientific or engineering slice | Implement, verify, review, and merge within standing scope |
+| Post-Game | Independently challenge accepted Daily evidence or implement a distinct, bounded research slice | One standing-authorized implement/merge; no quest activation or policy authority |
 | Weekly | Execute research, clear issues/PRs, synthesize our results, direct the coming week | Up to four sequential slices; delegated activation and evidence-backed quest closure |
 | Monthly | External literature roundup, review Weekly outcomes, set strategy/budgets, consolidate beliefs | Portfolio strategy and standing policy within reserved boundaries |
 | Audit | Observe outcomes and failures | Recommendations only unless explicit human repair scope exists |
@@ -25,11 +26,11 @@ Research loop IDs remain `daily-governance-triage`, `daily-research-operator`, `
 
 Load `automation/standing/current.json` and its policy from freshly observed accepted main. The selected policy gives research scopes, per-role actions, write surfaces, budget ceilings, expiry and review date. Read the current period's accepted `calendar/monthly/` decisions for applicable supplements; a missed review does not itself change policy expiry. Expired policies and past review instructions remain history. `automation/state_ownership.json` remains normative. Monthly may narrow or replace the policy within this law; preserve old files and update the pointer only through a qualified governance transaction.
 
-Daily and Weekly may start bounded work under valid standing authority without a fresh Pre-Game AUTH token. Existing valid owners take precedence; historical AUTH and delegation records are replay evidence and cannot reopen a completed slice. Pre-Game selects and prepares work rather than becoming a mandatory permission hop.
+Daily, Post-Game and Weekly may start bounded work under valid standing authority without a fresh Pre-Game AUTH token. Existing valid owners take precedence; historical AUTH and delegation records are replay evidence and cannot reopen a completed slice. Pre-Game selects and prepares work rather than becoming a mandatory permission hop.
 
 Before acting, validate a concrete request with `python -m automation.cli validate-standing-request --request REQUEST.json --now CURRENT_UTC`, inspect the accepted quest/proposal and recheck current ownership. The helper checks role/scope/path/budget structure, not scientific truth. Role contracts specify the request and receipt fields.
 
-Limits per trigger: Daily one acceptance slice; Pre-Game two maintenance/delivery slices; Weekly four sequential slices; Monthly one coherent governance transaction. A merge completing the same slice is not a new experiment. Constitutional experimental ceilings are 64 worlds, 100,000 records, 600 runtime seconds and 100 MB per trigger; stricter protocol limits take precedence. Budgets are aggregate across a trigger and remain bounded by any stricter frozen experiment contract. Refresh source/ownership after every accepted transition. One acceptance slice has one current owner, at most one live implementation PR and one budget-consuming implementation receipt. Linked continuation/correction receipts do not grant repeat scientific attempts.
+Limits per trigger: Daily and Post-Game each have one independently owned acceptance slice; Pre-Game two maintenance/delivery slices; Weekly four sequential slices; Monthly one coherent governance transaction. A merge completing the same slice is not a new experiment. Constitutional experimental ceilings are 64 worlds, 100,000 records, 600 runtime seconds and 100 MB per trigger; stricter protocol limits take precedence. Budgets are aggregate across a trigger and remain bounded by any stricter frozen experiment contract. Refresh source/ownership after every accepted transition. One acceptance slice has one current owner, at most one live implementation PR and one budget-consuming implementation receipt. Linked continuation/correction receipts do not grant repeat scientific attempts.
 
 Weekly may activate an accepted bounded proposal inside approved research scopes when capacity exists, or terminalize a quest whose declared completion/falsifier criteria are demonstrated by accepted evidence. Preserve the quest and negative outcomes, reconcile all queue/graph/memory views together, and distinguish route falsification from whole-quest retirement. New quests require a unique ID, artifact, falsifier, budget, scope and accepted proposal; no silent ninth quest. Raw v1 quest-action files remain immutable proposals; delegated enactment is recorded in the standing execution receipt and disposition ledger, not by changing a proposal into an enacted v1 record. Strategic priority changes, consolidated beliefs and protected scientific choices remain Monthly/human responsibilities.
 
@@ -38,6 +39,10 @@ Weekly may activate an accepted bounded proposal inside approved research scopes
 Pre-Game and Weekly inspect all open issues/PRs and pending quest-action proposals. Monthly explicitly dispositions every outstanding proposal and reviews Weekly ledgers. Each item receives continue/accept/reject/defer, its evidence, owner and next date or condition. Preserve prior dispositions; do not recreate identical proposals. A missing disposition is unfinished governance work, not permission to forget the issue.
 
 Prefer valid owners, then graph-ready accepted work by strategic priority and active-index order. Local blockers exclude only their own route; shared/global blockers need demonstrated dependencies. Continue independent lawful work. No acknowledgement-only run when an executable artifact is available. Scientific failure is a legitimate completed measurement; closures alone are not research throughput.
+
+## Post-Game independent research
+
+Post-Game begins after Daily but does not need Weekly permission for work already covered by the accepted active quest and standing policy. It reads the latest accepted or blocked Daily result, challenges the inference, then completes at most one non-duplicative bounded research or source-appraisal slice. It must not acquire competing ownership or regenerate a consumed experiment. A new experiment requires a prospective freeze and preflight authority check. A candidate issue or draft PR is not an executable quest. Post-Game may not activate or close quests, rewrite the evaluator/holdout/policy/runtime, or pause other tasks. A local block must cause a documented independent fallback search; lack of executable work must be demonstrated rather than assumed.
 
 ## Scientific boundaries
 
@@ -78,7 +83,7 @@ Corrections use a new linked receipt with `receipt_kind: correction` and `correc
 
 Attempt GitHub before claiming repository unavailability. Google Drive is design/memory and accepted mirrors; first fetch the canonical router https://docs.google.com/document/d/1rTEVJyZzAr8oS199alaNgpHlc6wZeifUckQgiwUJRog/edit, then only relevant State/project detail. GitHub remains authoritative. Google Calendar records consequential gates and the current policy's review, not routine chatter. Wolfram is optional independent arithmetic/formal checking; unavailable Wolfram does not block standard-library provenance or independent work. No tool may supply invented experimental evidence.
 
-Five active scheduler slots prioritize Daily Vector, Pre-Game, Daily, Weekly and Observatory. Monthly remains configured but normally paused; follow the documented slot-swap review process. Do not silently treat a Calendar entry as a scheduler toggle or pause other loops after a local failure.
+Five normal active scheduler slots prioritize Pre-Game, Daily, Post-Game, Weekly and Observatory. Aurora Daily Vector is retired by the explicit October 31 human organizational decision, only after the independently reviewed Post-Game role is accepted and the external scheduler swap succeeds. Monthly remains configured but normally paused; follow the documented slot-swap review process. Do not silently treat a Calendar entry as a scheduler toggle or pause other loops after a local failure.
 
 ## Done
 

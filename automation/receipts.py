@@ -21,6 +21,7 @@ _SEMVER_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 _ALLOWED_LOOPS = {
     "daily-governance-triage",
     "daily-research-operator",
+    "post-game-research",
     "weekly-evidence-synthesis",
     "monthly-governance",
     "system-audit",

@@ -7,6 +7,7 @@ from typing import Mapping, Sequence
 _REQUIRED_LOOP_IDS = {
     "daily-governance-triage",
     "daily-research-operator",
+    "post-game-research",
     "weekly-evidence-synthesis",
     "monthly-governance",
     "system-audit",
@@ -103,6 +104,8 @@ def validate_runtime_manifest(manifest: Mapping[str, object]) -> None:
         raise ValueError(f"runtime manifest missing loops: {', '.join(sorted(missing))}")
     if scheduled_order["daily-governance-triage"] >= scheduled_order["daily-research-operator"]:
         raise ValueError("Pre-Game must precede Daily in orchestration order")
+    if scheduled_order["daily-research-operator"] >= scheduled_order["post-game-research"]:
+        raise ValueError("Daily must precede Post-Game in orchestration order")
 
 
 def compare_runtime_manifest(
