@@ -19,6 +19,38 @@
       "owner": "weekly-evidence-synthesis",
       "next_review": "2026-11-08",
       "condition": "Preserve PR #140 ownership of the source-traceable PV evidence route; do not mix it with SYNTH service semantics."
+    },
+    {
+      "quest_action_id": "QA-20260731T025500000000Z-refine-qst-sim-0002-eeff0011223344556677",
+      "source_path": "quests/actions/2026/07/qa_20260712_qst_sim_0002_resource_collapse.json",
+      "status": "defer",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-11-08",
+      "condition": "Retain the independent SIM2 resource-accounting fallback under Weekly ownership. PR #139 completed only the accepted rotation-policy comparison; do not reuse or widen its four-world matrix for this distinct question."
+    },
+    {
+      "quest_action_id": "QA-20260823T145740000000Z-qst-sim-next-measurement-c46a452333333b7b9a3d",
+      "source_path": "quests/actions/2026/08/qa_20260823_qst_sim_0002_next_measurement.json",
+      "status": "closed_completed",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-12-31",
+      "condition": "Accepted PR #139 executed the declared four-case baseline-versus-survey matrix under two rotation regimes. Preserve its evidence and do not regenerate or expand the completed measurement."
+    },
+    {
+      "quest_action_id": "QA-20260731T025500000000Z-refine-qst-stor-0002-ddeeff00112233445566",
+      "source_path": "quests/actions/2026/07/qa_20260712_qst_stor_0002_auxiliary_safe_mode.json",
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-11-15",
+      "condition": "Keep the architecture-changing auxiliary-safe-mode alternative Monthly-owned. Reconsider only through a separate accepted Monthly or human architecture/assumption decision; do not treat the local fast-rotator falsifier as a global architecture result."
+    },
+    {
+      "quest_action_id": "QA-20260719T145804000000Z-refine-qst-stor-0002-d25dbac053534a7819eb",
+      "source_path": "quests/actions/2026/07/qa_20260719_qst_stor_0002_environmental_margins.json",
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-11-15",
+      "condition": "Do not revive the falsified local baseline through parameter optimism. Any environmental-margin work requires a separately accepted protocol with source-backed bounds and must preserve the existing local falsifier."
     }
   ],
   "open_issues": [
@@ -60,6 +92,6 @@
       "condition": "Resolve the missing standing-action receipt finding and complete exact-head qualification without Monthly acquiring its SIM2/PV slice."
     }
   ],
-  "note": "Monthly selects A1 as the preferred prospective SYNTH semantics route while preserving the R2 stop and every physical/architecture boundary. No quest membership, priority, standing policy, scheduler or consolidated physical belief changes.",
+  "note": "Monthly selects A1 as the preferred prospective SYNTH semantics route, explicitly carries every outstanding SIM2/STOR/PV/SYNTH proposal with its owner and review condition, and preserves the R2 stop and every physical/architecture boundary. No quest membership, priority, standing policy, scheduler or consolidated physical belief changes.",
   "supersedes": "quests/dispositions/2026-11-01.json"
 }
