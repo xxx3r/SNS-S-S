@@ -16,14 +16,17 @@ PROTOCOL = ROOT / "configs/qst_sim_0002_rotation_policy_comparison.json"
 
 
 def test_protocol_freezes_exact_four_case_matrix_without_execution() -> None:
+    output_root = ROOT / "outputs"
+    before = {path.relative_to(ROOT) for path in output_root.rglob("*")}
     protocol = load_protocol(PROTOCOL)
+    after = {path.relative_to(ROOT) for path in output_root.rglob("*")}
     assert protocol["comparison"] == {
         "policies": ["baseline", "survey"],
         "rotation_periods_s": [7200.0, 43200.0],
     }
     assert protocol["budgets"]["max_worlds"] == 4
     assert protocol["budgets"]["max_agent_step_records"] == 2880
-    assert not (ROOT / "outputs/qst_sim_0002/rotation_policy_comparison.json").exists()
+    assert after == before
 
 
 @pytest.mark.parametrize(
