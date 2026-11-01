@@ -46,7 +46,7 @@
     {
       "name": "queue, PR, and ownership review",
       "status": "passed",
-      "evidence": "PR #140 remains Weekly-owned; PR #132 remains a draft research intake; Issues #30, #103, and #131 were dispositioned without stealing implementation ownership or changing priority."
+      "evidence": "PR #140 remains Weekly-owned; PR #132 remains a draft research intake; Issues #30, #103, and #131 were dispositioned. The two outstanding SIM2 proposals and two Monthly-owned STOR proposals now carry explicit evidence-backed status, owner, condition, and review dates without reopening completed measurements."
     },
     {
       "name": "inspectable state snapshot",
@@ -87,6 +87,11 @@
       "name": "failed-closed qualification repairs",
       "status": "passed",
       "evidence": "Initial qualification failed closed first on a missing lifecycle owner receipt, then on provisional completed-action checks, and then on an overbroad literature path set. Each defect was repaired before acceptance; no scientific output or protected authority changed."
+    },
+    {
+      "name": "exact-head proposal-ledger review repair",
+      "status": "passed",
+      "evidence": "Codex review of head 3e8a05a4c4d23432dc40ce15a50ea900fbcd51f0 found four outstanding SIM2/STOR proposals omitted from the Monthly ledger. The ledger and decision package now explicitly close the completed SIM2 measurement and defer the distinct SIM2/STOR routes with preserved owners and review conditions; rereview is required."
     }
   ],
   "consumed_ids": [],
