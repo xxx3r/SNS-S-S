@@ -87,6 +87,7 @@ def validate_ownership_matrix(matrix: Mapping[str, object]) -> None:
     authorities = {
         "daily-governance-triage",
         "daily-research-operator",
+        "post-game-research",
         "weekly-evidence-synthesis",
         "monthly-governance",
         "system-audit",
@@ -108,6 +109,8 @@ def validate_ownership_matrix(matrix: Mapping[str, object]) -> None:
         for key in ("triage", "daily", "weekly", "monthly", "audit"):
             if surface[key] not in permissions:
                 raise ValueError(f"invalid {key} permission for {path}")
+        if "postgame" in surface and surface["postgame"] not in permissions:
+            raise ValueError(f"invalid postgame permission for {path}")
         if not str(surface["reconciliation"]).strip():
             raise ValueError(f"surface {path} requires a reconciliation rule")
 
