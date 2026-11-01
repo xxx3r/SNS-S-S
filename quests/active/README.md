@@ -1,4 +1,4 @@
-# Active Quests: October 2026
+# Active Quests: November 2026
 
 Only quests listed here are active. Historical Q1 / Spring 2026 quest files have been removed from this directory and summarized in `quests/backlog/legacy_spring_2026.md`.
 
@@ -23,10 +23,12 @@ Keep 1–8 active quests. Each quest must produce an inspectable artifact and st
 
 ## Selection rule
 
-The human-approved October standing policy applies only after qualified acceptance on main and expires at 2026-11-01T06:00:00Z. The September policy remains expired historical authority.
+Resolve `automation/standing/current.json` from freshly accepted main. The November Trio v2 policy is current, with a midmonth review on 2026-11-15 and expiry at 2026-12-01T07:00:00Z. Older policies remain historical replay authority only.
 
 QST-SYNTH-0001 R2 remains `NEEDS_SCIENTIFIC_DECISION`: electrical-failure useful delivery is unresolved in the accepted evaluator, so the sealed holdout stays untouched. QST-STOR-0002 remains P0 with only its declared fast-rotator route locally falsified.
 
 QST-META-0001 completed after PR #116 accepted its missing assumptions boundary and byte-bound tests; the deterministic 12-point output remains synthetic evidence, not a physical beam or hardware claim.
 
-QST-SIM-0003 is the current executable direction. PR #128 accepted delivered-energy attribution by role and receiver-visible sunlit/eclipse state with accounting identities, generating zero worlds. Weekly's October 25 appraisal confirms that the instrument is qualified but contains no accepted attribution values yet. The next executable slice is exactly one instrumented replay of the immutable `eclipse-0.05_beam-0.80` baseline at 0.2 Wh/h, visibility 0.25, and phase center 0.0. It must reproduce every legacy summary before reporting the new partition; any mismatch invalidates the measurement. Hold geometry, demand, role mix, policy, beam rate, architecture, evaluator semantics, and mission thresholds fixed. Do not count the replay as independent evidence for the legacy 0.37 Wh result. Materiality remains prospectively undefined. See `calendar/roundups/2026-10-25.md` and `quests/dispositions/2026-10-18-routing-recovery.json`.
+PR #134's one-world SIM3 replay is present on main and must not be repeated. Its immutable receipt discloses post-execution standing validation, so this reconciliation does not promote the role/state partition into qualified scientific evidence or infer a bottleneck. QST-SIM-0003 remains active without another generation route.
+
+QST-SIM-0002 is the current work-conserving executable direction. Freeze one bounded comparison in which observation geometry actually depends on simulated agent motion: baseline versus survey policy under exactly two declared constant-rotation regimes, with stale-coverage windows, identical budgets, and explicit survival/energy context. Generate nothing until the prospective request and protocol qualify. Stop after the fixed four-case matrix; do not add irregular rotation, optimize policy, or make asteroid-mission claims. See `calendar/roundups/2026-11-01.md` and `quests/dispositions/2026-11-01.json`.

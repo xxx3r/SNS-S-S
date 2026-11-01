@@ -101,3 +101,9 @@ PR #128 accepted the zero-world instrumentation above. It partitions cumulative 
 Run exactly one instrumented replay of the hash-bound accepted `eclipse-0.05_beam-0.80` baseline at host demand `0.2 Wh/h`, receiver visibility `0.25`, and phase center `0.0`. Preserve the accepted coordinated role mix, six-hour duration, 300-second timestep, geometry, policy, beam rate, evaluator, and mission assumptions. The replay may produce at most one synthetic world and 720 agent-step records.
 
 The replay must reproduce every legacy summary field within existing deterministic tolerance before its new role/state partition can be interpreted. A mismatch invalidates the measurement and stops the route. Treat the replay as a measurement upgrade, not independent confirmation of the accepted `0.37 Wh` result. Do not add a second case or infer materiality, architecture preference, real ephemeris behavior, relay performance, or hardware readiness.
+
+## November 1 lifecycle reconciliation
+
+PR #134 is present on accepted main at `00dda553a4e7099336a932d7fe0841b02eefef24`. Its committed replay reproduces all 14 legacy fields and records `0.166666667 Wh` sunlit relay delivery plus `0.203333333 Wh` sunlit storage delivery, with zero eclipse delivery. However, the immutable Daily receipt discloses that its standing request was validated only after local computation and exact-head semantic review failed on that chronology.
+
+The repository therefore preserves three distinct facts: the bytes merged; the one world must not be repeated merely to improve process history; and the partition is not promoted here into qualified scientific evidence or a bottleneck/materiality claim. SIM3 remains active, but no additional SIM3 generation is routed by this reconciliation. The next work-conserving scientific slice moves to the independent active SIM2 lane while Monthly/human review retains the authority to disposition the PR #134 scientific exception.
