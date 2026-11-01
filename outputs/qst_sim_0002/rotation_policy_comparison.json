@@ -1,0 +1,72 @@
+{
+  "agent_step_records": 2880,
+  "cases": [
+    {
+      "agent_step_records": 720,
+      "dead_agent_count": 0,
+      "final_fresh_coverage_fraction": 0.25,
+      "final_mean_agent_energy_Wh": 1.033191358024692,
+      "minimum_agent_energy_Wh": 0.9527777777777798,
+      "policy": "baseline",
+      "rotation_period_s": 7200.0,
+      "rotation_rate_rad_s": 0.0008726646259971648,
+      "time_average_fresh_coverage_fraction_after_warmup": 0.25,
+      "world_count": 1
+    },
+    {
+      "agent_step_records": 720,
+      "dead_agent_count": 0,
+      "final_fresh_coverage_fraction": 0.25,
+      "final_mean_agent_energy_Wh": 1.0303117283950625,
+      "minimum_agent_energy_Wh": 0.9277222222222246,
+      "policy": "survey",
+      "rotation_period_s": 7200.0,
+      "rotation_rate_rad_s": 0.0008726646259971648,
+      "time_average_fresh_coverage_fraction_after_warmup": 0.25757575757575757,
+      "world_count": 1
+    },
+    {
+      "agent_step_records": 720,
+      "dead_agent_count": 0,
+      "final_fresh_coverage_fraction": 0.25,
+      "final_mean_agent_energy_Wh": 1.0342870370370412,
+      "minimum_agent_energy_Wh": 0.8888888888888937,
+      "policy": "baseline",
+      "rotation_period_s": 43200.0,
+      "rotation_rate_rad_s": 0.0001454441043328608,
+      "time_average_fresh_coverage_fraction_after_warmup": 0.25,
+      "world_count": 1
+    },
+    {
+      "agent_step_records": 720,
+      "dead_agent_count": 0,
+      "final_fresh_coverage_fraction": 0.25,
+      "final_mean_agent_energy_Wh": 1.0127561728395111,
+      "minimum_agent_energy_Wh": 0.8888888888888937,
+      "policy": "survey",
+      "rotation_period_s": 43200.0,
+      "rotation_rate_rad_s": 0.0001454441043328608,
+      "time_average_fresh_coverage_fraction_after_warmup": 0.25757575757575757,
+      "world_count": 1
+    }
+  ],
+  "claim_boundary": "Fixed synthetic four-case comparison only; no irregular rotation, optimized policy, real asteroid, mission value, or hardware claim.",
+  "contrasts": [
+    {
+      "rotation_period_s": 7200.0,
+      "survey_minus_baseline_dead_agent_delta": 0,
+      "survey_minus_baseline_primary_delta": 0.007575757575757569
+    },
+    {
+      "rotation_period_s": 43200.0,
+      "survey_minus_baseline_dead_agent_delta": 0,
+      "survey_minus_baseline_primary_delta": 0.007575757575757569
+    }
+  ],
+  "primary_endpoint": "time_average_fresh_coverage_fraction_after_warmup",
+  "protocol": "configs/qst_sim_0002_rotation_policy_comparison.json",
+  "quest_id": "QST-SIM-0002",
+  "schema": "sns.qst-sim-0002.rotation-policy-result.v1",
+  "synthetic": true,
+  "world_count": 4
+}
