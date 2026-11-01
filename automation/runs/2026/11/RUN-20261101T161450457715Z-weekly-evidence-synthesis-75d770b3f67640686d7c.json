@@ -1,0 +1,243 @@
+{
+  "artifacts": [
+    {
+      "kind": "fixed protocol configuration",
+      "path": "configs/qst_sim_0002_rotation_policy_comparison.json"
+    },
+    {
+      "kind": "executable comparison harness",
+      "path": "experiments/sim2_rotation_policy_comparison.py"
+    },
+    {
+      "kind": "protocol lock tests",
+      "path": "tests/test_sim2_rotation_policy_comparison.py"
+    },
+    {
+      "kind": "environment assumptions",
+      "path": "docs/system/asteroid_environment_assumptions.md"
+    },
+    {
+      "kind": "PR #138 lifecycle ownership",
+      "path": "automation/pr_lifecycle/138.json"
+    },
+    {
+      "kind": "immutable Weekly run receipt",
+      "path": "automation/runs/2026/11/RUN-20261101T161450457715Z-weekly-evidence-synthesis-75d770b3f67640686d7c.json"
+    }
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "293 tests passed locally after the protocol implementation; no test was skipped by the operator.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Semantic repository validation returned valid=true before receipt publication.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "scripts/check_baseline_artifacts.sh passed; outputs/latest was restored and no scientific output was added.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Five focused tests passed, including rejection of matrix widening and acceptance only of the fixed four cases.",
+      "name": "focused protocol tests",
+      "status": "passed"
+    },
+    {
+      "evidence": "After PR #137 merged, an unpinned GitHub read established main 786e7a1f3a33d815b70c434da0edbce9aee8491f; AGENTS.md and the sole active Weekly v2 contract were re-read at that exact SHA.",
+      "name": "fresh default-branch source observation",
+      "status": "passed"
+    },
+    {
+      "evidence": "Implement and merge requests passed under STAND-20261031-NOVEMBER-TRIO-V2 with zero worlds, zero records, zero scientific runtime, and transaction_count=2.",
+      "name": "validate-standing-request",
+      "status": "passed"
+    },
+    {
+      "evidence": "Operator review of the receipt-bearing diff found a bounded protocol-only slice with no generated world, measured endpoint, quest membership change, priority change, belief change, policy change, scheduler change, or protected architecture decision.",
+      "name": "exact-head semantic review",
+      "status": "passed"
+    },
+    {
+      "evidence": "Required on PR #138 final head before merge.",
+      "name": "hosted exact-head qualification",
+      "status": "not_run"
+    }
+  ],
+  "consumed_ids": [
+    "RUN-20261101T160622045391Z-weekly-evidence-synthesis-b37bd3b8f0e540d199f1"
+  ],
+  "contract_version": "2.0.0",
+  "created_at": "2026-11-01T16:14:50.457715+00:00",
+  "decision_effect": "Prospectively froze one bounded QST-SIM-0002 comparison so later execution can be distinguished from post hoc protocol selection; produced no scientific result.",
+  "inheritance": [
+    {
+      "decision_effect": "Supplied the accepted independent SIM2 route and prohibited repetition of the unqualified SIM3 replay.",
+      "kind": "RUN",
+      "ref": "RUN-20261101T160622045391Z-weekly-evidence-synthesis-b37bd3b8f0e540d199f1"
+    },
+    {
+      "decision_effect": "Supplied the quest question and coverage objective while leaving execution parameters to this prospective freeze.",
+      "kind": "artifact",
+      "ref": "quests/active/QST-SIM-0002-rotation-aware-coverage.md"
+    }
+  ],
+  "loop_id": "weekly-evidence-synthesis",
+  "next_action": "After PR #138 is accepted on main, execute the fixed four-case matrix exactly once under a separately validated transaction; do not widen or reinterpret the protocol.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "inherited",
+    "scientific_artifacts": 0
+  },
+  "pr_context": {
+    "base_commit": "786e7a1f3a33d815b70c434da0edbce9aee8491f",
+    "branch": "aurora/weekly-sim2-rotation-policy-2026-11-01",
+    "implementation_head": "ffb56e1838a72ac18dd861dcdab022e5945326ad",
+    "implementation_head_scope": "fixed config, executable comparison harness, protocol-lock tests, and assumptions note",
+    "pr_number": 138,
+    "qualification_binding": "Local required checks pass; hosted checks, exact-head review, a fresh main observation, and expected-head merge remain required before acceptance."
+  },
+  "quest_context": {
+    "acceptance_slice": "Freeze QST-SIM-0002 two-policy two-rotation protocol",
+    "claim_boundary": "Protocol and executable harness only. No world was generated, no endpoint was measured, and no scientific claim or quest lifecycle transition is made.",
+    "phase": "prospective protocol freeze",
+    "quest_id": "QST-SIM-0002",
+    "result": "PROTOCOL_FROZEN_EXECUTION_DEFERRED",
+    "result_summary": "Fixed baseline-versus-survey policy comparison across 7200 s and 43200 s rotation periods with one primary endpoint, four total cases, and at most 2880 records.",
+    "scope": "swarm-power"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20261101T161450457715Z-weekly-evidence-synthesis-75d770b3f67640686d7c",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "786e7a1f3a33d815b70c434da0edbce9aee8491f",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20261031-NOVEMBER-TRIO-V2\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-11-01T04:34:30Z\",\n  \"review_at\": \"2026-11-15T18:00:00Z\",\n  \"expires_at\": \"2026-12-01T07:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"implement\",\n        \"maintenance\",\n        \"merge\",\n        \"activate\",\n        \"terminalize\",\n        \"route\"\n      ],\n      \"max_transactions\": 4,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    },\n    \"post-game-research\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"Separate October 31 2026 explicit-human Transaction B after the qualified November continuity v1 floor: add a Post-Game Research loop with one independently owned bounded science/appraisal slice (implement and merge only) inside existing six research scopes and unchanged ceilings. Every original role retains its prior actions, surfaces and caps. Historical policies remain replay-valid. No quest activation, scheduler manipulation by research loops, evaluator/holdout changes, protected hardware assumptions, materiality claims, or duplicated worlds. Aurora Daily Vector is to be replaced only after the role contract, validators, policy, CI and exact-head review are accepted; human-authorized five-slot scheduler swap remains a separate operation.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "Freeze QST-SIM-0002 two-policy two-rotation protocol",
+        "action": "implement",
+        "budgets": {
+          "disk_mb": 2,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "RUN-20261101T160622045391Z-weekly-evidence-synthesis-b37bd3b8f0e540d199f1",
+          "quests/active/QST-SIM-0002-rotation-aware-coverage.md"
+        ],
+        "loop_id": "weekly-evidence-synthesis",
+        "paths": [
+          "configs/qst_sim_0002_rotation_policy_comparison.json",
+          "experiments/sim2_rotation_policy_comparison.py",
+          "tests/test_sim2_rotation_policy_comparison.py",
+          "docs/system/asteroid_environment_assumptions.md",
+          "automation/pr_lifecycle/138.json",
+          "automation/runs/2026/11/RUN-20261101T161450457715Z-weekly-evidence-synthesis-75d770b3f67640686d7c.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 2
+      },
+      {
+        "acceptance_slice": "Freeze QST-SIM-0002 two-policy two-rotation protocol",
+        "action": "merge",
+        "budgets": {
+          "disk_mb": 2,
+          "records": 0,
+          "runtime_s": 0,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "RUN-20261101T160622045391Z-weekly-evidence-synthesis-b37bd3b8f0e540d199f1",
+          "293 tests passed",
+          "semantic repository validation passed",
+          "baseline artifacts passed"
+        ],
+        "loop_id": "weekly-evidence-synthesis",
+        "paths": [
+          "configs/qst_sim_0002_rotation_policy_comparison.json",
+          "experiments/sim2_rotation_policy_comparison.py",
+          "tests/test_sim2_rotation_policy_comparison.py",
+          "docs/system/asteroid_environment_assumptions.md",
+          "automation/pr_lifecycle/138.json",
+          "automation/runs/2026/11/RUN-20261101T161450457715Z-weekly-evidence-synthesis-75d770b3f67640686d7c.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 2
+      }
+    ],
+    "trigger_id": "weekly-evidence-synthesis:2026-11-01T16:01:20+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:2a9fdcadab7a6a42e937e751a38eb9ec0f5b2c182625db3601e402a03111131f",
+    "open_prs": [
+      {
+        "draft": true,
+        "head_sha": "2f256f008eeda10656fcd481691aecffe3240045",
+        "number": 132,
+        "state": "open"
+      }
+    ],
+    "records": [
+      {
+        "git_blob_sha": "7a201194228a6595074e282bf758b5c0d26dab9d",
+        "path": "automation/contracts/weekly-evidence-synthesis.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "8c3b512fdaf6f2e6a71ffb6e487cc9bb5bf420e1",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "75695be087f70a1183d0651c68d5b869724a8574",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "f6c176179fb75a3dce3fec9ed2b9b7ddcfee6ae2",
+        "path": "calendar/monthly/2026-11.md",
+        "role": "monthly_state"
+      },
+      {
+        "git_blob_sha": "2ffd3a06afff302111d42c17c9393ef0ae44d6d8",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "572e5b0254f21f002bb807702c6ed2188c055716",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "27338f8c32770a160b03bae5bfd17b7856401653",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "a757e09346c1e6556a2f213bc01fd1a12040771c",
+        "path": "automation/standing/2026-11.v2.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "5171c1ab3a656c7709b37f3aad94ba7d560d4be3",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "39e7ceab0607acab171b728c1cdaa531a0ffa0a9",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "786e7a1f3a33d815b70c434da0edbce9aee8491f"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-11-01T16:01:20+00:00"
+}
