@@ -1,0 +1,74 @@
+{
+  "schema": "sns.backlog-disposition.v1",
+  "authority": "Weekly Research Delivery v2 under STAND-20261031-NOVEMBER-TRIO-V2",
+  "source_commit": "eab55915bfa41dc37b8e63dc42a0b8dba2ca9e20",
+  "recorded_at": "2026-11-01T16:04:15+00:00",
+  "quest_actions": [
+    {
+      "quest_action_id": "QA-20260731T025500000000Z-refine-qst-sim-0002-eeff0011223344556677",
+      "source_path": "quests/actions/2026/07/qa_20260712_qst_sim_0002_resource_collapse.json",
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-11-01",
+      "condition": "Use only as context for the bounded rotation-sensitive SIM2 policy comparison; do not add resource accounting to the same slice."
+    },
+    {
+      "quest_action_id": "QA-20260823T145740000000Z-qst-sim-next-measurement-c46a452333333b7b9a3d",
+      "source_path": "quests/actions/2026/08/qa_20260823_qst_sim_0002_next_measurement.json",
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-11-01",
+      "condition": "Freeze and execute at most one four-case baseline-versus-survey matrix under two rotation regimes, using simulated motion-derived observations and a prospective stale window."
+    },
+    {
+      "quest_action_id": "QA-20260726T145840000000Z-refine-qst-pv-0001-4b5c6d7e8f901a2b3c4d",
+      "source_path": "quests/actions/2026/07/qa_20260726_qst_pv_0001_coupled_failures.json",
+      "status": "defer",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-11-08",
+      "condition": "Retain as the next independent fallback after the bounded SIM2 slice; do not mix literature translation with the SIM2 experiment."
+    },
+    {
+      "quest_action_id": "QA-20260723T011500000000Z-propose-qst-synth-0001-a8b4c7d2e1905f63b1aa",
+      "source_path": "quests/actions/2026/07/qa_20260723_synthetic_worlds_capability.json",
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-11-15",
+      "condition": "R2 remains stopped pending a scientific decision on failed-world useful delivery; preserve sealed holdouts and the integrated SYNTH/PTM-REF decision request."
+    }
+  ],
+  "open_issues": [
+    {
+      "number": 30,
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-11-15",
+      "condition": "R2 remains stopped. The November 1 human-requested integrated SYNTH/PTM-REF brief requires a scientific decision; Weekly does not invent depletion semantics or inspect sealed holdouts."
+    },
+    {
+      "number": 103,
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-11-08",
+      "condition": "Continue through 2026-12-31; record the PR #134 chronology defect, non-repetition, stale-route repair and independent SIM2 fallback in the November 1 ledger."
+    },
+    {
+      "number": 131,
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-11-15",
+      "condition": "Research candidate only. First discriminating gate is a source-backed, mass/volume-closed reference thermal network before any adaptive-skin comparison or architecture claim."
+    }
+  ],
+  "open_prs": [
+    {
+      "number": 132,
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-11-15",
+      "condition": "Keep draft and unmerged. Decide documentation intake separately from source qualification, quest activation, implementation and architecture; verify primary claims and original evidence provenance first."
+    }
+  ],
+  "note": "All four open repository items were inspected. PR #134 lifecycle is reconciled as merged without changing its immutable receipt or qualifying its scientific chronology. No quest membership, priority, graph edge, consolidated belief, policy, scheduler or protected architecture changes.",
+  "supersedes": "quests/dispositions/2026-10-18-routing-recovery.json"
+}

@@ -1,14 +1,14 @@
-# mem_log_short: October 2026 current state
+# mem_log_short: November 2026 current state
 
-Authority: resolve `automation/standing/current.json` from fresh accepted main and read `calendar/monthly/2026-10.md`, including its October 18 human-approved supplement. The October policy retains its existing expiry; the October 30 renewal remains a separate gate. Dated entries below are decision history, not new execution authority.
+Authority: resolve `automation/standing/current.json` from fresh accepted main and read `calendar/monthly/2026-11.md`. The November Trio v2 policy is current, reviews on November 15, and expires at 2026-12-01T07:00:00Z. Dated entries below are decision history, not new execution authority.
 
 Current Program: SNS-S-S as formal research instrument
 
-Current Executable Quest: QST-SIM-0003
+Current Executable Quest: QST-SIM-0002
 
 Queue Note: QST-FUND-0001 and QST-META-0001 are completed at their accepted bounded scopes. QST-SYNTH-0001 R2 remains at a reserved scientific-decision boundary; QST-STOR-0002 remains active at P0 with only its fast-rotator surface route locally falsified.
 
-Current Step: PR #128 accepted zero-world QST-SIM-0003 delivered-energy attribution by role and receiver-visible sunlit/eclipse state. The October 25 Weekly appraisal confirms the instrument's accounting boundary but finds no accepted attribution values yet. Route exactly one instrumented replay of the immutable `eclipse-0.05_beam-0.80` baseline at 0.2 Wh/h, visibility 0.25, and phase center 0.0; require exact legacy-summary reproduction before interpreting the new partition.
+Current Step: PR #134's one-world QST-SIM-0003 replay is present on accepted main and reproduced every legacy summary, but its immutable receipt records that standing validation happened after computation. Preserve the merged bytes and do not repeat the world; do not promote its partition into qualified scientific evidence or a bottleneck claim. Route an independent, prospectively frozen QST-SIM-0002 baseline-versus-survey comparison under exactly two declared rotation regimes.
 
 Last Evidence:
 
@@ -38,7 +38,7 @@ Aurora Score: A = 1.0 ∠ -20° | w_ext = 0.0
 
 Next Move (one shot):
 
-- Run one hash-bound, instrumented replay of the accepted `eclipse-0.05_beam-0.80` SIM3 baseline using the unchanged 0.2 Wh/h demand, 0.25 visibility, phase center 0.0, coordinated role mix, six-hour duration, and 300-second timestep. Stop if any legacy summary differs; otherwise report only the new role/state delivery partition and accounting identities. Count this as a measurement upgrade, not independent evidence for the old result. Keep SYNTH R2 and STOR architecture changes paused at their separate scientific boundaries.
+- Prospectively freeze one QST-SIM-0002 four-case matrix: baseline versus survey policy at two declared constant-rotation periods, with identical agents, duration, timestep, stale-window metric and budgets. Observation events must come from simulated scout/sensor motion rather than an identical body-fixed schedule. Report stale-coverage, survival and energy context; stop before irregular rotation, parameter search or mission-value claims. Keep SYNTH R2, PR #134 scientific adoption, and STOR architecture changes at their separate decision boundaries.
 
 The dated sections below preserve decision history. Their historical next moves
 are superseded by the Current Step and Next Move above; they are not live routes.

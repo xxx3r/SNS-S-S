@@ -3,12 +3,12 @@
   "pr_number": 134,
   "quest_id": "QST-SIM-0003",
   "acceptance_slice": "Replay one immutable SIM3 baseline and measure delivered energy by role and receiver state",
-  "state": "ready_for_review",
+  "state": "merged",
   "owner_run_id": "RUN-20261026T185515000000Z-daily-research-operator-d9c5b2cdb0416a21ac3f",
   "source_commit": "b6d95687f98b508262c5acbdd39d0a2661642f4d",
-  "head_commit": "82f4606f4c9524eb9562fbb371f0ca688f95ab07",
-  "updated_at": "2026-10-26T19:10:00+00:00",
-  "next_review_after": "2026-11-01T09:00:00-07:00",
+  "head_commit": "00dda553a4e7099336a932d7fe0841b02eefef24",
+  "updated_at": "2026-11-01T16:04:15+00:00",
+  "next_review_after": "2026-11-15T11:00:00-07:00",
   "supersedes": [],
-  "reason": "The one-world replay reproduced all 14 legacy summary fields within 1e-9 and the receipt-bearing head passed hosted tests 40383906804, baseline-artifacts 40383906915, and automation-transaction 40383907260. Exact-head review found that standing-request validation occurred after local computation, so the result is not qualified for merge. Preserve the run without repeating it and await an explicit governance disposition."
+  "reason": "PR #134 was subsequently squash-merged by explicit human action as 00dda553a4e7099336a932d7fe0841b02eefef24 and is present on accepted main. This lifecycle reconciliation records the observed merge only. It does not rewrite the immutable Daily receipt, cure the disclosed post-execution standing-validation defect, or promote the replay into qualified scientific evidence. The one world must not be repeated merely to obtain a cleaner chronology."
 }
