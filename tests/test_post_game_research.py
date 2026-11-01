@@ -62,3 +62,13 @@ def test_postgame_ownership_is_explicit_and_readonly_on_controls():
     assert all(row.get("postgame") in ("read","write","propose","observe","none") for row in matrix["surfaces"])
     protected={"automation/contracts/**","automation/schemas/**","automation/prompts/**","automation/standing/**","automation/runtime_manifest.json"}
     assert all(row["postgame"]=="read" for row in matrix["surfaces"] if row["path"] in protected)
+
+def test_stable_law_and_manifest_agree_on_five_slots():
+    text=(ROOT / "AGENTS.md").read_text()
+    assert "Pre-Game, Daily, Post-Game, Weekly and Observatory" in text
+    assert "prioritize Daily Vector, Pre-Game" not in text
+    manifest=load("automation/runtime_manifest.json")
+    names={r["automation_title"] for r in manifest["loops"] if r["scheduler_managed"] and r["desired_enabled"]}
+    assert names == {"SNS Pre-Game Triage", "SNS Daily Research Operator",
+                     "SNS Post-Game Research", "SNS Weekly Research Delivery",
+                     "SNS Daily Observatory Refresh"}

@@ -83,7 +83,7 @@ Corrections use a new linked receipt with `receipt_kind: correction` and `correc
 
 Attempt GitHub before claiming repository unavailability. Google Drive is design/memory and accepted mirrors; first fetch the canonical router https://docs.google.com/document/d/1rTEVJyZzAr8oS199alaNgpHlc6wZeifUckQgiwUJRog/edit, then only relevant State/project detail. GitHub remains authoritative. Google Calendar records consequential gates and the current policy's review, not routine chatter. Wolfram is optional independent arithmetic/formal checking; unavailable Wolfram does not block standard-library provenance or independent work. No tool may supply invented experimental evidence.
 
-Five active scheduler slots prioritize Daily Vector, Pre-Game, Daily, Weekly and Observatory. Monthly remains configured but normally paused; follow the documented slot-swap review process. Do not silently treat a Calendar entry as a scheduler toggle or pause other loops after a local failure.
+Five normal active scheduler slots prioritize Pre-Game, Daily, Post-Game, Weekly and Observatory. Aurora Daily Vector is retired by the explicit October 31 human organizational decision, only after the independently reviewed Post-Game role is accepted and the external scheduler swap succeeds. Monthly remains configured but normally paused; follow the documented slot-swap review process. Do not silently treat a Calendar entry as a scheduler toggle or pause other loops after a local failure.
 
 ## Done
 
