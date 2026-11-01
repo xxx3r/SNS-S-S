@@ -1,0 +1,65 @@
+{
+  "schema": "sns.backlog-disposition.v1",
+  "authority": "Monthly Governance v2 under STAND-20261031-NOVEMBER-TRIO-V2 and explicit-human Issue #30 request",
+  "source_commit": "006f7b2cd133cc39629e0584a1f6c40db937e272",
+  "recorded_at": "2026-11-01T21:12:47+00:00",
+  "quest_actions": [
+    {
+      "quest_action_id": "QA-20260723T011500000000Z-propose-qst-synth-0001-a8b4c7d2e1905f63b1aa",
+      "source_path": "quests/actions/2026/07/qa_20260723_synthetic_worlds_capability.json",
+      "status": "continue",
+      "owner": "post-game-research",
+      "next_review": "2026-11-15",
+      "condition": "Prepare and validate only a prospective development-only service/depletion semantics extension; no R2 generation or holdout access before separate acceptance."
+    },
+    {
+      "quest_action_id": "QA-20260726T145840000000Z-refine-qst-pv-0001-4b5c6d7e8f901a2b3c4d",
+      "source_path": "quests/actions/2026/07/qa_20260726_qst_pv_0001_coupled_failures.json",
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-11-08",
+      "condition": "Preserve PR #140 ownership of the source-traceable PV evidence route; do not mix it with SYNTH service semantics."
+    }
+  ],
+  "open_issues": [
+    {
+      "number": 30,
+      "status": "continue",
+      "owner": "post-game-research",
+      "next_review": "2026-11-15",
+      "condition": "A1 development-only service/depletion semantics is preferred. R2 generation and sealed holdout access remain stopped until the semantics are separately accepted."
+    },
+    {
+      "number": 103,
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-11-08",
+      "condition": "Continue the inheritance evaluation through 2026-12-31 and record whether the A1 decision changes later behavior without repeating evidence."
+    },
+    {
+      "number": 131,
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-11-15",
+      "condition": "Require a source-backed mass/volume/energy-closed reference witness before any adaptive-skin or architecture experiment."
+    }
+  ],
+  "open_prs": [
+    {
+      "number": 132,
+      "status": "defer",
+      "owner": "monthly-governance",
+      "next_review": "2026-11-15",
+      "condition": "Keep draft. Bind numerical claims to primary sources or reproducible artifacts, separate verified claims from hypotheses, and remove obsolete routing before documentation intake is reconsidered."
+    },
+    {
+      "number": 140,
+      "status": "continue",
+      "owner": "weekly-evidence-synthesis",
+      "next_review": "2026-11-08",
+      "condition": "Resolve the missing standing-action receipt finding and complete exact-head qualification without Monthly acquiring its SIM2/PV slice."
+    }
+  ],
+  "note": "Monthly selects A1 as the preferred prospective SYNTH semantics route while preserving the R2 stop and every physical/architecture boundary. No quest membership, priority, standing policy, scheduler or consolidated physical belief changes.",
+  "supersedes": "quests/dispositions/2026-11-01.json"
+}
