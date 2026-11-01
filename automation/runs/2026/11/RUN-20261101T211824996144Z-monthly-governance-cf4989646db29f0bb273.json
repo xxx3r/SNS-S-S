@@ -92,6 +92,11 @@
       "name": "exact-head proposal-ledger review repair",
       "status": "passed",
       "evidence": "Codex review of head 3e8a05a4c4d23432dc40ce15a50ea900fbcd51f0 found four outstanding SIM2/STOR proposals omitted from the Monthly ledger. The ledger and decision package now explicitly close the completed SIM2 measurement and defer the distinct SIM2/STOR routes with preserved owners and review conditions; rereview is required."
+    },
+    {
+      "name": "Post-Game evaluator-boundary review repair",
+      "status": "passed",
+      "evidence": "Codex review of head e77113c882e1c93a5c47f8cef415f492a4a38fb3 correctly found that A1 changes the thermal evaluator and cannot be assigned to Post-Game. The decision, quest note, ledger, and handoff now assign implementation/validation to Daily under its existing implement authority; Post-Game is limited to proposal/appraisal work. Exact-head rereview is required."
     }
   ],
   "consumed_ids": [],
@@ -121,7 +126,7 @@
     }
   ],
   "loop_id": "monthly-governance",
-  "next_action": "Post-Game Research may implement only the A1 development/validation slice after a fresh standing-authority check; it must not generate R2 worlds, consume the sealed holdout, or make architecture or hardware-readiness claims. Weekly separately retains PR #140 and the PV appraisal handoff.",
+  "next_action": "Daily Research Operator may implement only the A1 development/validation slice after a fresh standing-authority and ownership check; Post-Game may prepare or appraise a protocol proposal but must not change the evaluator. Neither loop may generate R2 worlds, consume the sealed holdout, or make architecture or hardware-readiness claims. Weekly separately retains PR #140 and the PV appraisal handoff.",
   "observability": {
     "administrative_transactions": 1,
     "continuity": "handoff",
