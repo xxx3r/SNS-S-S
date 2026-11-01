@@ -56,17 +56,17 @@
     {
       "name": "python -m pytest -q",
       "status": "not_run",
-      "evidence": "The receipt-bearing PR head must pass the hosted tests workflow before merge. Earlier implementation head 290b5e1e9e31f37cd26a951df57fc090ae1126b1 passed hosted run 41351223827."
+      "evidence": "The receipt-bearing review-preparation head must pass hosted tests before the merge request is recorded."
     },
     {
       "name": "python -m automation.cli validate-repository",
       "status": "not_run",
-      "evidence": "The receipt-bearing PR head must pass the hosted automation-transaction workflow before merge."
+      "evidence": "The receipt-bearing review-preparation head must pass the hosted automation-transaction gate before the merge request is recorded."
     },
     {
       "name": "baseline-artifacts",
       "status": "not_run",
-      "evidence": "The receipt-bearing PR head must pass the hosted baseline-artifacts workflow before merge. Earlier implementation head 290b5e1e9e31f37cd26a951df57fc090ae1126b1 passed hosted run 41351223870."
+      "evidence": "The receipt-bearing review-preparation head must pass hosted baseline qualification before the merge request is recorded."
     },
     {
       "name": "exact-head semantic review",
@@ -111,7 +111,7 @@
     }
   ],
   "loop_id": "monthly-governance",
-  "next_action": "Post-Game Research may implement only the A1 development/validation slice after a fresh standing-authority check; it must not generate R2 worlds, consume the sealed holdout, or make architecture or hardware-readiness claims. Weekly separately retains PR #140 and the PV appraisal handoff.",
+  "next_action": "Qualify the receipt-bearing head, then record the merge request and actual hosted check evidence before expected-head review and merge.",
   "observability": {
     "administrative_transactions": 1,
     "continuity": "handoff",
@@ -198,34 +198,6 @@
         ],
         "scope": "materials",
         "transaction_count": 1
-      },
-      {
-        "acceptance_slice": "Decide SYNTH R2 service semantics and PTM/REF intake without generation",
-        "action": "merge",
-        "budgets": {
-          "disk_mb": 1,
-          "records": 0,
-          "runtime_s": 0,
-          "worlds": 0
-        },
-        "evidence_refs": [
-          "Issue #30 comment 6553695657",
-          "RUN-20261101T162356304470Z-weekly-evidence-synthesis-f8ee857072d14f11d393",
-          "calendar/roundups/2026-09-20.md",
-          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
-          "PR #132",
-          "PR #140"
-        ],
-        "loop_id": "monthly-governance",
-        "paths": [
-          "calendar/monthly/2026-11-synth-ptm-decision.md",
-          "quests/dispositions/2026-11-01-monthly.json",
-          "quests/active/QST-SYNTH-0001-thermal-stress-worlds.md",
-          "automation/pr_lifecycle/141.json",
-          "automation/runs/2026/11/RUN-20261101T211824996144Z-monthly-governance-cf4989646db29f0bb273.json"
-        ],
-        "scope": "thermal-storage",
-        "transaction_count": 1
       }
     ],
     "trigger_id": "monthly-governance:2026-11-01T21:12:47+00:00"
@@ -301,7 +273,7 @@
     "schema": "sns.state-snapshot.v1",
     "source_commit": "006f7b2cd133cc39629e0584a1f6c40db937e272"
   },
-  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "terminal_state": "NEEDS_APPROVAL",
   "trigger": "scheduled",
   "trigger_time": "2026-11-01T21:12:47Z"
 }
