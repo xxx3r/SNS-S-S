@@ -161,6 +161,11 @@ def test_receipt_store_enforces_transition_and_replays_accepted_tree(routing_tre
         if not target.exists():
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(Path(path).read_bytes())
+    # Historical October fixture must bind the October pointer explicitly;
+    # the live November pointer is not part of the fixture's accepted source.
+    (root / records['standing_pointer']).write_text(
+        json.dumps({'path': records['standing_authority']}) + '\n'
+    )
     git('add', '.')
     git('commit', '-qm', 'Accepted policy and source records')
     source = git('rev-parse', 'HEAD')
