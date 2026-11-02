@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 143,
+  "quest_id": "QST-SYNTH-0001",
+  "acceptance_slice": "QST-SYNTH-0001 service_depletion_v1 prospective development semantics and analytic validation",
+  "state": "ready_for_review",
+  "owner_run_id": "RUN-20261102T200651460199Z-daily-research-operator-ba5c32c2b0800844e89f",
+  "source_commit": "55456d40f0ed85e763a631b3ca4310a415c29a18",
+  "head_commit": "cf52f2433f03ab4d2b936007ea4f99d689bdc019",
+  "updated_at": "2026-11-02T20:06:51.460199+00:00",
+  "next_review_after": "2026-11-15T18:00:00+00:00",
+  "supersedes": [],
+  "reason": "Prospective development-only A1 service/depletion interface; implementation head passed hosted tests 41515991423 and baseline-artifacts 41515991466. Final receipt-bearing head still requires automation-transaction validation, repeated hosted gates, and exact-head semantic review before merge. R2 and sealed holdout remain stopped."
+}
