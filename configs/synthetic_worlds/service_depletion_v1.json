@@ -1,0 +1,38 @@
+{
+  "schema": "sns.thermal-service-depletion-protocol.v1",
+  "quest_id": "QST-SYNTH-0001",
+  "phase": "A1-development-validation",
+  "state": "PROSPECTIVE_NO_CAMPAIGN_GENERATION",
+  "authority": "calendar/monthly/2026-11-synth-ptm-decision.md",
+  "interface": "src/sim/service_depletion.py",
+  "semantics": {
+    "energy_state": "explicit_non_increasing_accessible_energy",
+    "service_rule": "one_proportional_fraction_for_host_and_requested_heater_per_step",
+    "heater_coupling": "served_heater_energy_only",
+    "cutoff_rule": "first_partially_served_step; all later service is zero",
+    "fixture_override": "development fixtures may reduce but never increase model-derived initial accessible energy",
+    "identity": "initial_accessible = served_host + served_heater + remaining_accessible + inaccessible_derating"
+  },
+  "development_tests": [
+    "abundant_energy_full_service_regression",
+    "zero_accessible_energy_zero_service",
+    "one_step_partial_depletion_hand_calculation",
+    "no_service_after_cutoff_and_non_negative_delivery",
+    "thirty_vs_sixty_second_timestep_sensitivity",
+    "per_step_and_final_energy_conservation"
+  ],
+  "tolerances": {
+    "energy_identity_absolute_Wh": 1e-12,
+    "timestep_served_host_absolute_Wh": 5e-5,
+    "timestep_final_temperature_absolute_K": 0.25
+  },
+  "budgets": {"generated_worlds": 0, "campaign_records": 0, "runtime_s": 60, "disk_mb": 2},
+  "forbidden": [
+    "sealed holdout access",
+    "campaign generation",
+    "range or policy-family changes",
+    "R2 policy-benefit claims",
+    "battery-chemistry, packaging, radiator, architecture, or flight-readiness claims"
+  ],
+  "acceptance_boundary": "A validated development interface only; Monthly or explicit-human acceptance is still required before R2."
+}
