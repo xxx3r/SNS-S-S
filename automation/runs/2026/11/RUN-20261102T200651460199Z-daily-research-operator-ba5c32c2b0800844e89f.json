@@ -53,6 +53,11 @@
       "name": "Drive and Calendar relevance",
       "status": "passed",
       "evidence": "Drive router confirmed GitHub is authoritative. The accepted repository decision already fixes the November 15 review gate; no new Calendar event was needed."
+    },
+    {
+      "name": "failed-closed staging qualification repair",
+      "status": "passed",
+      "evidence": "Initial receipt-bearing head 905a80c848cdf31d13fc5b4cd4e4dfd0750b9450 failed closed because a completed receipt requested merge before its own required semantic gate could run. Before acceptance, this staging repair removes the merge request and keeps the terminal state non-completed so the implementation can be qualified without asserting unrun evidence."
     }
   ],
   "consumed_ids": [],
@@ -77,7 +82,7 @@
     }
   ],
   "loop_id": "daily-research-operator",
-  "next_action": "After the receipt-bearing PR #143 head passes hosted tests, semantic repository validation, baseline artifacts, and exact-head semantic review with no unresolved findings, merge with an expected-head guard. Monthly or explicit-human authority must then accept or reject the semantics before R2 or sealed-holdout access.",
+  "next_action": "Qualify this staging receipt head with hosted tests, semantic repository validation, and baseline artifacts; then publish a completed exact-evidence receipt, perform exact-head semantic review, re-read main, and merge only with an expected-head guard.",
   "observability": {
     "administrative_transactions": 1,
     "scientific_artifacts": 1,
@@ -131,34 +136,6 @@
           "quests/dispositions/2026-11-01-monthly.json"
         ],
         "action": "implement"
-      },
-      {
-        "loop_id": "daily-research-operator",
-        "scope": "thermal-storage",
-        "acceptance_slice": "QST-SYNTH-0001 service_depletion_v1 prospective development semantics and analytic validation",
-        "paths": [
-          "src/sim/service_depletion.py",
-          "configs/synthetic_worlds/service_depletion_v1.json",
-          "tests/test_service_depletion.py",
-          "docs/research/service_depletion_v1.md",
-          "automation/runs/2026/11/RUN-20261102T200651460199Z-daily-research-operator-ba5c32c2b0800844e89f.json",
-          "automation/pr_lifecycle/143.json"
-        ],
-        "budgets": {
-          "worlds": 0,
-          "records": 0,
-          "runtime_s": 0,
-          "disk_mb": 2
-        },
-        "transaction_count": 1,
-        "evidence_refs": [
-          "https://github.com/xxx3r/SNS-S-S/pull/143",
-          "hosted tests",
-          "python -m automation.cli validate-repository",
-          "baseline-artifacts",
-          "exact-head semantic review"
-        ],
-        "action": "merge"
       }
     ],
     "trigger_id": "daily-research-operator:2026-11-02T20:01:54+00:00"
@@ -260,7 +237,7 @@
     ],
     "fingerprint": "sha256:b4882a0a251d91968f0b2ba285ca34e6a8147fdca6a22cbf801dd62b2a98fef2"
   },
-  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "terminal_state": "NEEDS_GOVERNANCE_REVIEW",
   "trigger": "scheduled",
   "trigger_time": "2026-11-02T20:01:54Z"
 }
