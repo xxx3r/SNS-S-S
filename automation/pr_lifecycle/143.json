@@ -3,12 +3,12 @@
   "pr_number": 143,
   "quest_id": "QST-SYNTH-0001",
   "acceptance_slice": "QST-SYNTH-0001 service_depletion_v1 prospective development semantics and analytic validation",
-  "state": "ready_for_review",
+  "state": "changes_requested",
   "owner_run_id": "RUN-20261102T200651460199Z-daily-research-operator-ba5c32c2b0800844e89f",
   "source_commit": "55456d40f0ed85e763a631b3ca4310a415c29a18",
-  "head_commit": "cf52f2433f03ab4d2b936007ea4f99d689bdc019",
-  "updated_at": "2026-11-02T20:06:51.460199+00:00",
-  "next_review_after": "2026-11-15T18:00:00+00:00",
+  "head_commit": "5cd871e45d3c8d23a328ffca300f6f288efc9bdf",
+  "updated_at": "2026-11-03T13:05:59.970738+00:00",
+  "next_review_after": "2026-11-03T20:00:00+00:00",
   "supersedes": [],
-  "reason": "Prospective development-only A1 service/depletion interface; implementation head passed hosted tests 41515991423 and baseline-artifacts 41515991466. Final receipt-bearing head still requires automation-transaction validation, repeated hosted gates, and exact-head semantic review before merge. R2 and sealed holdout remain stopped."
+  "reason": "PR #143 merged as 7a751c4f390cdf798e212d8f1238e6ceeed132f3, but a late unresolved P2 found that each trace row records post-temperature state with pre-temperature-derating energy. The final aggregate remains conserved, yet the trace cannot reproduce the reported final energy boundary. Pre-Game records changes_requested and routes the bounded source/test repair to Daily; lifecycle must not be marked merged until that finding is repaired and resolved. R2 and sealed-holdout use remain stopped."
 }
