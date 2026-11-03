@@ -19,6 +19,14 @@ def test_abundant_energy_serves_full_fixed_policy():
     assert result.served_heater_energy_Wh == pytest.approx(result.requested_heater_energy_Wh)
     assert all(step.service_fraction == pytest.approx(1.0) for step in result.trace)
 
+def test_final_trace_row_matches_aggregate_after_temperature_derating():
+    result=simulate_service_depletion(scenario(eclipse_duration_h=1/60))
+    final=result.trace[-1]
+    assert final.temperature_K == pytest.approx(result.final_temperature_K)
+    assert final.remaining_accessible_Wh == pytest.approx(result.remaining_accessible_energy_Wh)
+    assert final.inaccessible_derating_Wh == pytest.approx(result.inaccessible_derating_energy_Wh)
+    assert final.conservation_residual_Wh == pytest.approx(0.0,abs=1e-12)
+
 def test_zero_accessible_energy_serves_nothing():
     result=simulate_service_depletion(scenario(),initial_accessible_energy_Wh=0.0)
     assert result.served_host_energy_Wh == 0.0
