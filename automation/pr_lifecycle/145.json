@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 145,
+  "quest_id": "QST-SYNTH-0001",
+  "acceptance_slice": "QST-SYNTH-0001 service_depletion_v1 trace-boundary consistency repair",
+  "state": "merge_ready",
+  "owner_run_id": "RUN-20261103T200329000000Z-daily-research-operator-6f3c9a1d8e204b7ca551",
+  "source_commit": "eefc751404646f0b52eff69dc9ad0f91903ccf84",
+  "head_commit": "29cede665d9c23740930dbc4d7d989b4ee3d169b",
+  "updated_at": "2026-11-03T20:12:00+00:00",
+  "next_review_after": "2026-11-03T20:03:29+00:00",
+  "supersedes": [],
+  "reason": "The zero-world trace-boundary repair is staged and its receipt-bearing head passed tests, baseline artifacts, and automation semantic validation; final completed-head qualification remains required before merge."
+}
