@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 145,
+  "quest_id": "QST-SYNTH-0001",
+  "acceptance_slice": "QST-SYNTH-0001 service_depletion_v1 trace-boundary consistency repair",
+  "state": "ready_for_review",
+  "owner_run_id": "RUN-20261103T200329000000Z-daily-research-operator-6f3c9a1d8e204b7ca551",
+  "source_commit": "eefc751404646f0b52eff69dc9ad0f91903ccf84",
+  "head_commit": "e5f7873b8a1e13530319722d18b754dda0b6a84b",
+  "updated_at": "2026-11-03T20:03:29+00:00",
+  "next_review_after": "2026-11-03T20:03:29+00:00",
+  "supersedes": [],
+  "reason": "Bounded zero-world repair for PR #143 late P2; receipt-bearing head must pass all hosted gates before merge."
+}
