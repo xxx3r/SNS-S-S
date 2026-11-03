@@ -138,6 +138,7 @@ def simulate_service_depletion(
         temperature_K, pcm_remaining_J = _temperature_step(
             scenario, temperature_K, served_heater_W, dt_s, pcm_remaining_J)
         minimum_temperature_K = min(minimum_temperature_K, temperature_K)
+        apply_derating(temperature_K)
         elapsed_s += dt_s
         residual = (initial_Wh - served_host_Wh - served_heater_Wh
                     - remaining_Wh - inaccessible_Wh)
@@ -149,7 +150,6 @@ def simulate_service_depletion(
             inaccessible_derating_Wh=inaccessible_Wh, temperature_K=temperature_K,
             conservation_residual_Wh=residual))
 
-    apply_derating(temperature_K)
     final_residual = (initial_Wh - served_host_Wh - served_heater_Wh
                       - remaining_Wh - inaccessible_Wh)
     max_residual = max([abs(item.conservation_residual_Wh) for item in trace]
