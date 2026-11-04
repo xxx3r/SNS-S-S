@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 146,
+  "quest_id": "QST-SYNTH-0001",
+  "acceptance_slice": "mechanically reconcile merged PR #143 and PR #145 lifecycles after the qualified trace-boundary repair",
+  "state": "merge_ready",
+  "owner_run_id": "RUN-20261104T130041000000Z-daily-governance-triage-2c7a80e31f6d49b5a214",
+  "source_commit": "59944ed5ed75abd5b32043d40f7297e920a8bafd",
+  "head_commit": "1df30de9712904dc50699a3e2eeb23d711cadc1e",
+  "updated_at": "2026-11-04T13:10:00+00:00",
+  "next_review_after": "2026-11-04T13:00:41+00:00",
+  "supersedes": [],
+  "reason": "The lifecycle-only synchronization has passed repaired receipt-bearing tests, baseline artifacts, automation semantic validation, and in-run exact-head review. Final completed-head qualification remains required before merge."
+}
