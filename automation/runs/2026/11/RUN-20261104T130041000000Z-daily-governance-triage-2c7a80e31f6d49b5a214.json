@@ -56,6 +56,11 @@
       "name": "Drive and Calendar corroboration",
       "status": "passed",
       "evidence": "Drive confirms GitHub is authoritative. Calendar already contains the November 15 scientific review gate, so no duplicate event is needed."
+    },
+    {
+      "name": "failed-closed receipt snapshot repair",
+      "status": "passed",
+      "evidence": "Initial receipt-bearing head b5525c48733bde571786cbf6979e8e696b1d575b failed hosted tests run 41834974493 because the snapshot used the pr_lifecycle role twice. The repair removes the duplicate role while retaining PR #145 evidence through the owner receipt and live GitHub observation; no accepted state or scientific behavior changed."
     }
   ],
   "consumed_ids": [],
@@ -178,11 +183,6 @@
         "git_blob_sha": "b35c443ccdd0b0300456178aa819c1945be3e927"
       },
       {
-        "role": "pr_lifecycle",
-        "path": "automation/pr_lifecycle/145.json",
-        "git_blob_sha": "799e0addf07090a4093907b6478a744e75c88d36"
-      },
-      {
         "role": "research_graph",
         "path": "quests/research_graph.json",
         "git_blob_sha": "2ffd3a06afff302111d42c17c9393ef0ae44d6d8"
@@ -227,7 +227,7 @@
         "state": "open"
       }
     ],
-    "fingerprint": "sha256:0dbaca92c7bf65bfd9740fb89d441b3032e5c83191b6a010960f663ddebb511f"
+    "fingerprint": "sha256:49b842d6fab6a9205a56e23239b1bbb7a9693df40412a60794cd2526dd92e55e"
   },
   "terminal_state": "NEEDS_GOVERNANCE_REVIEW",
   "trigger": "scheduled",
