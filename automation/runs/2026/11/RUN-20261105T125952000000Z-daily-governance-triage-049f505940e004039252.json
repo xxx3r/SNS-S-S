@@ -27,24 +27,24 @@
       "status": "passed"
     },
     {
-      "evidence": "Receipt-bearing head 18c1097442f7665a87a995acb4822fbd204ed6e2 passed hosted tests run 42033564140 and local full pytest with 303 tests.",
+      "evidence": "Repaired receipt-bearing head e402a197843e566f5eb49a050b86a58c080c22dd passed hosted tests run 42033950934 and local full pytest with 303 tests; the completed receipt head must repeat this gate before merge.",
       "name": "python -m pytest -q",
       "status": "passed"
     },
     {
-      "evidence": "Receipt-bearing head 18c1097442f7665a87a995acb4822fbd204ed6e2 passed automation-transaction run 42033564071, including semantic repository validation and full pytest; local completed-transaction validation was also valid with 123 receipts and no errors.",
+      "evidence": "Repaired receipt-bearing head e402a197843e566f5eb49a050b86a58c080c22dd passed automation-transaction run 42033950966, including semantic repository validation and full pytest; local completed-transaction validation was also valid with 123 receipts and no errors. The completed receipt head must repeat this gate before merge.",
       "name": "python -m automation.cli validate-repository",
       "status": "passed"
     },
     {
-      "evidence": "Receipt-bearing head 18c1097442f7665a87a995acb4822fbd204ed6e2 passed hosted baseline-artifacts run 42033564083 and local scripts/check_baseline_artifacts.sh.",
+      "evidence": "Repaired receipt-bearing head e402a197843e566f5eb49a050b86a58c080c22dd passed hosted baseline-artifacts run 42033951058 and local scripts/check_baseline_artifacts.sh; the completed receipt head must repeat this gate before merge.",
       "name": "baseline-artifacts",
       "status": "passed"
     },
     {
-      "evidence": "Initial review of head 18c1097442f7665a87a995acb4822fbd204ed6e2 found one valid P1 concerning bootstrap evidence labeling. The receipt is repaired; exact-head rereview remains pending.",
+      "evidence": "Initial review found one valid P1 in bootstrap evidence labeling; repaired head e402a197843e566f5eb49a050b86a58c080c22dd then received a completed no-findings Codex rereview. The completed receipt head must repeat review before merge.",
       "name": "exact-head semantic review",
-      "status": "not_run"
+      "status": "passed"
     },
     {
       "evidence": "No scientific source, evaluator, protocol, world, record, output, quest, belief, memory, policy, authority, architecture, holdout, or scheduler state changed.",
@@ -69,14 +69,14 @@
     }
   ],
   "loop_id": "daily-governance-triage",
-  "next_action": "Complete hosted qualification and exact-head review, then re-read main, standing policy, open owners and review threads before expected-head merge of PR #147.",
+  "next_action": "After the completed receipt head repeats hosted tests, semantic validation, baseline artifacts, and exact-head review, re-read main, standing policy, open owners, and review threads before expected-head merge of PR #147.",
   "observability": {
     "administrative_transactions": 1,
     "continuity": "inherited",
     "scientific_artifacts": 0
   },
   "pr_context": {
-    "implementation_head": "456d14ad48c29f2012972c5e3944324803f37cc8",
+    "implementation_head": "e402a197843e566f5eb49a050b86a58c080c22dd",
     "lifecycle_record_path": "automation/pr_lifecycle/147.json",
     "publication_branch": "pregame/reconcile-pr146-20261105",
     "publication_pull_request": 147,
@@ -134,7 +134,10 @@
         },
         "evidence_refs": [
           "https://github.com/xxx3r/SNS-S-S/pull/147",
-          "pending hosted exact-head qualification and semantic review"
+          "hosted tests run 42033950934",
+          "automation-transaction run 42033950966",
+          "baseline-artifacts run 42033951058",
+          "completed no-findings Codex rereview"
         ],
         "loop_id": "daily-governance-triage",
         "paths": [
