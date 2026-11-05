@@ -4,11 +4,11 @@ Authority: resolve `automation/standing/current.json` from fresh accepted main a
 
 Current Program: SNS-S-S as formal research instrument
 
-Current Executable Quest: QST-SIM-0002
+Current Executable Quest: QST-PV-0001
 
 Queue Note: QST-FUND-0001 and QST-META-0001 are completed at their accepted bounded scopes. QST-SYNTH-0001 R2 remains at a reserved scientific-decision boundary; QST-STOR-0002 remains active at P0 with only its fast-rotator surface route locally falsified.
 
-Current Step: PR #134's one-world QST-SIM-0003 replay is present on accepted main and reproduced every legacy summary, but its immutable receipt records that standing validation happened after computation. Preserve the merged bytes and do not repeat the world; do not promote its partition into qualified scientific evidence or a bottleneck claim. Route an independent, prospectively frozen QST-SIM-0002 baseline-versus-survey comparison under exactly two declared rotation regimes.
+Current Step: PR #139 accepted the once-executed QST-SIM-0002 four-case matrix after PR #138 froze it prospectively. Survey minus baseline time-average fresh coverage was `+0.007575757575757569` at both `7200 s` and `43200 s`; all four cases had zero dead agents. Preserve the result without repetition. The equal deltas do not establish a rotation-regime effect, and the zero dead-agent delta supplies no survival advantage. Route the independent QST-PV-0001 source-traceable parameter sheet next.
 
 Last Evidence:
 
@@ -20,6 +20,7 @@ Last Evidence:
 - Mission-shadow work found no declared passive circular asteroid orbit that guarantees the 15-minute limit; surface-fixed deployment requires selected fast-rotator targets; active sunward hosted standoff changes the architecture by requiring navigation, propulsion, fault tolerance, and host service.
 - The accepted fast-rotator constraint-cost artifact corrected the illuminated heat-rejection path and triggered `FALSIFIED_ON_DECLARED_GRID`: zero simultaneous thermal passes across the declared emissivity/load grid.
 - QST-SIM-0002 now has reproducible finite-time stale coverage, but the identical body-fixed two-rotation schedule was non-informative about rotation-regime effects.
+- The accepted motion-derived SIM2 comparison produced the same small `+0.007575757575757569` survey coverage delta in both declared rotation regimes, with zero dead-agent difference. This is fixed-fixture coordination evidence, not rotation sensitivity or mission value.
 - QST-CALENDAR-0001 has accepted fail-closed validation and deterministic proposal staging.
 - QST-META-0001 has mild numerical support for explicitly modeling steering angle and losses, not an SNS hardware or power-transfer claim.
 - QST-META-0001 is completed at its bounded abstraction scope after accepted PR #116 supplied the assumptions boundary and byte-bound tests.
@@ -38,7 +39,7 @@ Aurora Score: A = 1.0 ∠ -20° | w_ext = 0.0
 
 Next Move (one shot):
 
-- Prospectively freeze one QST-SIM-0002 four-case matrix: baseline versus survey policy at two declared constant-rotation periods, with identical agents, duration, timestep, stale-window metric and budgets. Observation events must come from simulated scout/sensor motion rather than an identical body-fixed schedule. Report stale-coverage, survival and energy context; stop before irregular rotation, parameter search or mission-value claims. Keep SYNTH R2, PR #134 scientific adoption, and STOR architecture changes at their separate decision boundaries.
+- Build the QST-PV-0001 source-traceable degradation parameter sheet from primary evidence, recording units, ranges, environment and duration. Preserve scenario bands when conditions do not translate cleanly, and do not add a simulation run or canonical coefficient in the same slice. Keep SIM2 repetition, SYNTH R2, PR #134 scientific adoption, and STOR architecture changes at their separate decision boundaries.
 
 The dated sections below preserve decision history. Their historical next moves
 are superseded by the Current Step and Next Move above; they are not live routes.
