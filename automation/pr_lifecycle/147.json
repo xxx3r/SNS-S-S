@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 147,
+  "quest_id": "QST-SYNTH-0001",
+  "acceptance_slice": "mechanically reconcile merged PR #146 lifecycle after qualified A1 lifecycle synchronization",
+  "state": "merge_ready",
+  "owner_run_id": "RUN-20261105T125952000000Z-daily-governance-triage-049f505940e004039252",
+  "source_commit": "fd725b387bf9f8c56189c89e74aa90191c26b53a",
+  "head_commit": "e402a197843e566f5eb49a050b86a58c080c22dd",
+  "updated_at": "2026-11-05T12:59:52+00:00",
+  "next_review_after": "2026-11-15T18:00:00+00:00",
+  "supersedes": [],
+  "reason": "PR #147 repaired the initial P1 receipt-evidence defect, then head e402a197843e566f5eb49a050b86a58c080c22dd passed tests 42033950934, baseline artifacts 42033951058, automation transaction 42033950966, and a completed no-findings Codex rereview. No scientific behavior, evidence, quest, belief, memory, policy, authority, architecture, holdout, or scheduler state changes. A1 remains development-only pending Monthly or explicit-human acceptance before R2 or sealed-holdout use. The completed receipt head must repeat mandatory qualification before expected-head merge."
+}
