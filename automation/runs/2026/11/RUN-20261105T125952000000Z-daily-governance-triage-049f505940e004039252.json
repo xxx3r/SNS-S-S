@@ -27,24 +27,24 @@
       "status": "passed"
     },
     {
-      "evidence": "Local bootstrap qualification passed 302 tests; the sole remaining failure was the expected missing owner receipt for lifecycle #147, which this build creates. Full validation will be repeated immediately against the completed transaction.",
+      "evidence": "Receipt-bearing head 18c1097442f7665a87a995acb4822fbd204ed6e2 passed hosted tests run 42033564140 and local full pytest with 303 tests.",
       "name": "python -m pytest -q",
       "status": "passed"
     },
     {
-      "evidence": "Local semantic bootstrap validation found only the expected missing owner receipt for lifecycle #147; all other repository invariants passed. Full validation will be repeated immediately after receipt creation.",
+      "evidence": "Receipt-bearing head 18c1097442f7665a87a995acb4822fbd204ed6e2 passed automation-transaction run 42033564071, including semantic repository validation and full pytest; local completed-transaction validation was also valid with 123 receipts and no errors.",
       "name": "python -m automation.cli validate-repository",
       "status": "passed"
     },
     {
-      "evidence": "Local scripts/check_baseline_artifacts.sh passed for outputs/latest.",
+      "evidence": "Receipt-bearing head 18c1097442f7665a87a995acb4822fbd204ed6e2 passed hosted baseline-artifacts run 42033564083 and local scripts/check_baseline_artifacts.sh.",
       "name": "baseline-artifacts",
       "status": "passed"
     },
     {
-      "evidence": "In-run semantic review found the PR #146 lifecycle transition mechanically supported by exact merge identity, qualified checks, and no unresolved review threads, with no scientific or authority change.",
+      "evidence": "Initial review of head 18c1097442f7665a87a995acb4822fbd204ed6e2 found one valid P1 concerning bootstrap evidence labeling. The receipt is repaired; exact-head rereview remains pending.",
       "name": "exact-head semantic review",
-      "status": "passed"
+      "status": "not_run"
     },
     {
       "evidence": "No scientific source, evaluator, protocol, world, record, output, quest, belief, memory, policy, authority, architecture, holdout, or scheduler state changed.",
@@ -88,7 +88,7 @@
     "acceptance_slice": "mechanically reconcile merged PR #146 lifecycle after qualified A1 lifecycle synchronization",
     "claim_boundary": "Administrative synchronization only; A1 remains development-only and Monthly or explicit-human acceptance is still required before R2 or sealed-holdout use.",
     "quest_id": "QST-SYNTH-0001",
-    "result": "PR146_LIFECYCLE_RECONCILIATION_STAGED",
+    "result": "PR146_LIFECYCLE_RECONCILIATION_QUALIFIED",
     "scope": "research-tooling"
   },
   "receipt_kind": "run",
