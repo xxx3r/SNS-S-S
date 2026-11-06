@@ -43,6 +43,7 @@ Fallback: prospectively review the SYNTH A1 exact-exhaustion versus first-unserv
 5. **Scientific honesty:** model energy conservation alone does not prove correct cutoff or physical thermostat timing; source-interpretation notes do not become flight claims.
 6. **Publication discipline:** no reserved human authority, tests, security, experimental ceilings or historical receipts are weakened.
 7. **Seven-day outcome:** count qualified scientific/protocol artifacts, non-generating falsifiers, active candidate-to-qualified-result latency, repeat worlds, admin-only PRs and human rescues. A green CI or a large PR count is not the success metric.
+8. **Exit option:** if Pre-Game remains mainly an administrative PR generator and Daily still cannot turn inherited questions into qualified work, treat this repair as falsified. Propose an explicit human-approved one-week *two-agent* Daily + Post-Game pilot with Pre-Game paused, using Weekly for backlog work. Do not toggle tasks automatically.
 
 ## Rollout, not a silent switch
 

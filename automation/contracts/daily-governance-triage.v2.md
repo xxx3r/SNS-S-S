@@ -39,7 +39,7 @@ retry_budget: 2
 
 Prepare an executable day. Inspect live owned PRs, graph-ready active-quest candidates, current blockers, and the latest qualified Weekly disposition; continue a valid owner first. Weekly retains the exhaustive backlog scan. Merge already-qualified bounded work and reconcile mechanical lifecycle state. Perform at most two sequential maintenance/delivery transactions, prioritizing removal of an actual obstruction. Maintenance may fix documentation, reproducibility scripts and non-authority tests; it may not change scientific source behavior or weaken coverage. Delegate scientific implementation to Daily or Weekly.
 
-Route to the highest-priority executable accepted scope after graph readiness. A local block excludes only that route. Write a receipt with an actionable selection; do not require a separate per-slice authorization when standing authority covers the work. Triage cannot activate/retire quests, rewrite scientific memory, choose architecture, or widen standing authority. Review all pending items, but act only within this role. Unresolved proposals get an owner and next review date, never silent omission.
+Route to the highest-priority executable accepted scope after graph readiness. A local block excludes only that route. Write a receipt with an actionable selection; do not require a separate per-slice authorization when standing authority covers the work. Triage cannot activate/retire quests, rewrite scientific memory, choose architecture, or widen standing authority. For actionable pending items, confirm existing ownership and the next review condition without reopening settled proposals. Weekly retains exhaustive disposition of the backlog.
 
 ## Scientific handoff comes first
 
