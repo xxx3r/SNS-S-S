@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 149,
+  "quest_id": "QST-SIM-0002",
+  "acceptance_slice": "Non-generating QST-SIM-0002 observation-eligibility and metric-semantics audit",
+  "state": "ready_for_review",
+  "owner_run_id": "RUN-20261106T195630000000Z-daily-research-operator-58aa646c639d89a7eb1f",
+  "source_commit": "bf51c46d39d3e7318fdeafe1f6ed020a4a45a92c",
+  "head_commit": "8952b1d8b85dd53acee165e8df754379fa0c0d01",
+  "updated_at": "2026-11-06T20:09:25.757003+00:00",
+  "next_review_after": "2026-11-15T18:00:00+00:00",
+  "supersedes": [],
+  "reason": "PR #149 adds a non-generating, source-bound SIM2 observation-eligibility audit. Implementation head 8952b1d8b85dd53acee165e8df754379fa0c0d01 passed hosted tests 42285527034 and baseline artifacts 42285527231. Two review findings correctly identified current-worktree reads in historical replay and the CLI entry point; both paths now load every source byte from accepted commit bf51c46d39d3e7318fdeafe1f6ed020a4a45a92c, while a separate test evaluates current-source semantics. Local semantic validation and 317 tests pass. The repaired receipt-bearing head must pass all hosted gates and exact-head semantic rereview before expected-head merge."
+}
