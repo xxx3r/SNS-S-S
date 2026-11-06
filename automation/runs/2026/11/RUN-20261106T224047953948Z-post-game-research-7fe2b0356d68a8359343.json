@@ -1,0 +1,218 @@
+{
+  "schema": "sns.loop-run.v2",
+  "receipt_kind": "run",
+  "run_id": "RUN-20261106T224047953948Z-post-game-research-7fe2b0356d68a8359343",
+  "loop_id": "post-game-research",
+  "contract_version": "2.0.0",
+  "trigger": "explicit-human",
+  "trigger_time": "2026-11-06T22:32:00Z",
+  "source_commit": "23d3bf568116d42d7ae91d1f8b451c3956299bc3",
+  "quest_context": {
+    "quest_id": "QST-CALENDAR-0001",
+    "scope": "research-tooling",
+    "acceptance_slice": "QST-CALENDAR-0001 non-generating staging whitespace-alias counterexample",
+    "result": "WHITESPACE_ALIAS_PASSES_PROPOSAL_STAGING",
+    "claim_boundary": "Source stages trailing-space alias as a separate proposal. Does not establish downstream governance acceptance."
+  },
+  "pr_context": {
+    "publication_pull_request": 150,
+    "publication_branch": "postgame/calendar-id-alias-audit-20261106",
+    "implementation_head": "7c05f96d355856040930b46474c6e2baf696045c",
+    "target_pull_requests": [
+      150
+    ],
+    "lifecycle_record_path": "automation/pr_lifecycle/150.json"
+  },
+  "consumed_ids": [],
+  "artifacts": [
+    "tests/test_roundup_staging_whitespace_alias_audit.py",
+    "docs/research/calendar_staging_alias_audit.md",
+    "outputs/qst_calendar_0001/staging_alias_audit.json",
+    "automation/runs/2026/11/RUN-20261106T224047953948Z-post-game-research-7fe2b0356d68a8359343.json",
+    "automation/pr_lifecycle/150.json"
+  ],
+  "checks": [
+    {
+      "name": "fresh accepted main and owner source",
+      "status": "passed",
+      "evidence": "GitHub accepted main 23d3bf568116d42d7ae91d1f8b451c3956299bc3, active Post-Game v2, November Wheel v3 policy, Calendar active quest and current PR ownership."
+    },
+    {
+      "name": "standing request validation",
+      "status": "passed",
+      "evidence": "Official python -m automation.cli validate-standing-request command executed on hosted implementation checkout inside test_postgame_request_preflight_and_repository_semantics; success in tests run 42306578079."
+    },
+    {
+      "name": "zero-world counterexample",
+      "status": "passed",
+      "evidence": "Actual repository-importing pytest verifies exact duplicate rejection and whitespace-alias staging, with no world or record generation; tests run 42306578079."
+    },
+    {
+      "name": "python -m pytest -q",
+      "status": "passed",
+      "evidence": "Hosted implementation-head 7c05f96d355856040930b46474c6e2baf696045c run 42306578079: 320 passed."
+    },
+    {
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed",
+      "evidence": "Official semantic repository CLI command completed with subprocess check=True during hosted pytest test_postgame_request_preflight_and_repository_semantics; run 42306578079."
+    },
+    {
+      "name": "baseline-artifacts",
+      "status": "passed",
+      "evidence": "Hosted implementation-head baseline-artifacts run 42306578086: success."
+    },
+    {
+      "name": "exact-head semantic review",
+      "status": "not_run",
+      "evidence": "Separate review on final receipt-bearing commit required before merge."
+    }
+  ],
+  "belief_effects": [],
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "next_action": "Pre-Game: in a temporary proposal-only directory, test whether production roundup_to_quests CLI stages exact-ID plus trailing-space pair and whether downstream quest-action validation rejects the malformed alias; no queue writes. Independent fallback: source-only SIM2 event-telemetry identifiability specification with no new world or evaluator change.",
+  "created_at": "2026-11-06T22:43:00Z",
+  "decision_effect": "Source-grounded non-generating Calendar counterexample: identical raw IDs are rejected, but a trailing-space alias of an existing active ID becomes propose_new, without proving downstream enactment.",
+  "inheritance": [
+    {
+      "kind": "artifact",
+      "ref": "quests/active/QST-CALENDAR-0001-roundup-parser.md",
+      "decision_effect": "Tests accepted duplicate-rejection success criterion."
+    },
+    {
+      "kind": "artifact",
+      "ref": "src/research/quest_engine.py",
+      "decision_effect": "Locates the missing normalization in currently implemented proposal semantics."
+    },
+    {
+      "kind": "artifact",
+      "ref": "automation/runs/2026/11/RUN-20261106T195630000000Z-daily-research-operator-58aa646c639d89a7eb1f.json",
+      "decision_effect": "Takes an independent quest after today's SIM2 audit rather than repeating it."
+    }
+  ],
+  "observability": {
+    "administrative_transactions": 1,
+    "scientific_artifacts": 1,
+    "continuity": "inherited",
+    "first_artifact_at": "2026-11-06T22:39:16Z"
+  },
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20261106-SNS-RESEARCH-WHEEL-V3\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-11-06T18:30:00Z\",\n  \"review_at\": \"2026-11-15T18:00:00Z\",\n  \"expires_at\": \"2026-12-01T07:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\",\n        \"implement\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"literature\",\n        \"implement\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    },\n    \"post-game-research\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"Explicit human authorization Nov 6 2026: original eight-path scientific map, [Formula]/[Mechanism]/[Implementation], dual evidence confidence and unified daily wheel. Pre-Game gains only zero-world docs/tests research preparation, Weekly external literature action and proposal-only quest intake. Original science scopes, budgets, Daily/Post-Game/Monthly actions, sealed holdouts, physical decisions, historical policies and receipts remain intact. Scheduler changes require separately verified readback.\"\n}\n",
+    "requests": [
+      {
+        "loop_id": "post-game-research",
+        "action": "implement",
+        "scope": "research-tooling",
+        "acceptance_slice": "QST-CALENDAR-0001 non-generating staging whitespace-alias counterexample",
+        "paths": [
+          "tests/test_roundup_staging_whitespace_alias_audit.py",
+          "docs/research/calendar_staging_alias_audit.md",
+          "outputs/qst_calendar_0001/staging_alias_audit.json",
+          "automation/runs/2026/11/RUN-20261106T224047953948Z-post-game-research-7fe2b0356d68a8359343.json",
+          "automation/pr_lifecycle/150.json"
+        ],
+        "budgets": {
+          "worlds": 0,
+          "records": 0,
+          "runtime_s": 60,
+          "disk_mb": 2
+        },
+        "transaction_count": 1,
+        "evidence_refs": [
+          "https://github.com/xxx3r/SNS-S-S/pull/149",
+          "quests/active/QST-CALENDAR-0001-roundup-parser.md",
+          "https://github.com/xxx3r/SNS-S-S/actions/runs/42306578079",
+          "https://github.com/xxx3r/SNS-S-S/actions/runs/42306578086"
+        ]
+      }
+    ],
+    "trigger_id": "post-game-research:2026-11-06T22:32:00+00:00"
+  },
+  "state_snapshot": {
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "23d3bf568116d42d7ae91d1f8b451c3956299bc3",
+    "records": [
+      {
+        "role": "active_contract",
+        "path": "automation/contracts/post-game-research.v2.md",
+        "git_blob_sha": "e8739b80c23bb6d1ab65b0724168037c4f280e65"
+      },
+      {
+        "role": "active_quest",
+        "path": "quests/active/QST-CALENDAR-0001-roundup-parser.md",
+        "git_blob_sha": "9dc7376671111acf082077f32aaefaf9f4f92ade"
+      },
+      {
+        "role": "active_quest_index",
+        "path": "quests/active/README.md",
+        "git_blob_sha": "e04e7ae548cd6ccb941631696353ff820f90b9a7"
+      },
+      {
+        "role": "canonical_memory",
+        "path": "memory/mem_log_short.md",
+        "git_blob_sha": "4a9ccd024eef8f7b05ed7eef3be5aa37cf425150"
+      },
+      {
+        "role": "monthly_state",
+        "path": "calendar/monthly/2026-11.md",
+        "git_blob_sha": "f6c176179fb75a3dce3fec9ed2b9b7ddcfee6ae2"
+      },
+      {
+        "role": "research_graph",
+        "path": "quests/research_graph.json",
+        "git_blob_sha": "2ffd3a06afff302111d42c17c9393ef0ae44d6d8"
+      },
+      {
+        "role": "research_wheel",
+        "path": "docs/research/SNS_RESEARCH_WHEEL_V3.md",
+        "git_blob_sha": "5dd394adac6c40b12a577aa4128eebb3c9509af8"
+      },
+      {
+        "role": "runtime_manifest",
+        "path": "automation/runtime_manifest.json",
+        "git_blob_sha": "c4280ca89db13a505cdf96f3a8b6b02bac3a93ee"
+      },
+      {
+        "role": "stable_law",
+        "path": "AGENTS.md",
+        "git_blob_sha": "0157fd5983471f04a6100a99efb6dc112caeb049"
+      },
+      {
+        "role": "standing_authority",
+        "path": "automation/standing/2026-11.v3.json",
+        "git_blob_sha": "485bf094a5f88365d35b7e523b2252e6a64c249b"
+      },
+      {
+        "role": "standing_pointer",
+        "path": "automation/standing/current.json",
+        "git_blob_sha": "7086a8f2b6e6da8f98bd5d03aee62cc4f07916d1"
+      },
+      {
+        "role": "state_ownership",
+        "path": "automation/state_ownership.json",
+        "git_blob_sha": "9eea9ee248554da95fff3aa39f5e4e2e361ca02b"
+      }
+    ],
+    "open_prs": [
+      {
+        "number": 132,
+        "head_sha": "2f256f008eeda10656fcd481691aecffe3240045",
+        "draft": true,
+        "state": "open"
+      },
+      {
+        "number": 140,
+        "head_sha": "908ff074fff2db62f9d16955bec0b8b2efe39403",
+        "draft": false,
+        "state": "open"
+      },
+      {
+        "number": 150,
+        "head_sha": "7c05f96d355856040930b46474c6e2baf696045c",
+        "draft": true,
+        "state": "open"
+      }
+    ],
+    "fingerprint": "sha256:50c1240c19001347d2b43c61ded5b51a0c69bd758760160468fca87dda23fe72"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "sns.pr-lifecycle.v1",
+  "pr_number": 150,
+  "quest_id": "QST-CALENDAR-0001",
+  "acceptance_slice": "QST-CALENDAR-0001 non-generating staging whitespace-alias counterexample",
+  "state": "draft_active",
+  "owner_run_id": "RUN-20261106T224047953948Z-post-game-research-7fe2b0356d68a8359343",
+  "source_commit": "23d3bf568116d42d7ae91d1f8b451c3956299bc3",
+  "head_commit": "7c05f96d355856040930b46474c6e2baf696045c",
+  "updated_at": "2026-11-06T22:43:00+00:00",
+  "next_review_after": "2026-11-15T18:00:00+00:00",
+  "supersedes": [],
+  "reason": "Non-generating Calendar alias characterization. Hosted implementation-head 320 tests, standing-request/semantic CLI and baseline-artifacts passed. Final receipt-bearing-head checks and independent semantic review remain required. No world generation, holdout, authority, queue or hardware change."
+}
