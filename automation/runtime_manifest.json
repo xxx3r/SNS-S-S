@@ -8,8 +8,8 @@
       "automation_title": "SNS Pre-Game Triage",
       "scheduler_managed": true,
       "desired_enabled": true,
-      "timing_mode": "flexible_schedule",
-      "schedule": "BEGIN:VEVENT\nDTSTART:20260808T100000\nRRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR,SA;BYHOUR=10;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+      "timing_mode": "exact_schedule",
+      "schedule": "BEGIN:VEVENT\nDTSTART:20260803T120000Z\nRRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR,SA;BYHOUR=6;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
       "order": 10
     },
     {
@@ -61,7 +61,7 @@
       "loop_id": "observatory-projection",
       "automation_title": "SNS Daily Observatory Refresh",
       "scheduler_managed": true,
-      "desired_enabled": true,
+      "desired_enabled": false,
       "timing_mode": "flexible_schedule",
       "schedule": "BEGIN:VEVENT\nDTSTART:20260731T150000\nRRULE:FREQ=DAILY;BYHOUR=15;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
       "order": 60
@@ -69,9 +69,9 @@
   ],
   "slot_policy": {
     "active_task_limit": 5,
-    "external_reserved_task": "none (Aurora Daily Vector replaced by human-authorized Post-Game)",
+    "external_reserved_task": "none; four active SNS research tasks plus two configured paused tasks within five-slot budget",
     "monthly_normal_state": "paused",
-    "monthly_review_swap": "Before the Monthly review, pause Observatory and enable Monthly; after accepted disposition, pause Monthly and resume Observatory. Human-authorized scheduler changes only; normal five slots are Pre-Game, Daily, Post-Game, Weekly and Observatory.",
-    "review_gate": "2026-10-31 human-approved November floor and independent daily Trio change. November midmonth scientific check Nov 15; policy expires 2026-12-01T07:00:00Z."
+    "monthly_review_swap": "Human-directed manual observatory publication. Observatory remains paused for compute savings, Monthly remains paused until an explicit review slot swap or manually authorized run; do not auto-enable either.",
+    "review_gate": "2026-11-06 human-authorized November Research Wheel v3, four active research tasks; Observatory paused for manual November 7 publication, Monthly paused. November 15 science review remains; authority expires 2026-12-01T07:00:00Z."
   }
 }

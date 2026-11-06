@@ -11,10 +11,10 @@ from pathlib import PurePosixPath
 from typing import Mapping
 
 ROLE_ACTIONS = {
-    'daily-governance-triage': {'maintenance', 'merge', 'route'},
+    'daily-governance-triage': {'maintenance', 'merge', 'route', 'implement'},
     'daily-research-operator': {'implement', 'merge'},
     'post-game-research': {'implement', 'merge'},
-    'weekly-evidence-synthesis': {'implement', 'maintenance', 'merge', 'activate', 'terminalize', 'route'},
+    'weekly-evidence-synthesis': {'implement', 'maintenance', 'merge', 'activate', 'terminalize', 'route', 'literature'},
     'monthly-governance': {'govern', 'literature', 'merge'},
 }
 BUDGET_CEILINGS = {'worlds':64, 'records':100000, 'runtime_s':600, 'disk_mb':100}
@@ -130,12 +130,19 @@ def validate_standing_request(policy: Mapping[str, object], request: Mapping[str
         # Tests of authority and their helpers are control-plane law, not routine maintenance.
         if action != 'govern' and (path.startswith('automation/') and not path.startswith(('automation/runs/', 'automation/pr_lifecycle/', 'automation/quest_history/')) or path.startswith('tests/test_automation_')):
             raise ValueError('control-plane changes require a dedicated human transaction')
+    # Wheel v3: human-approved Pre-Game implement means only non-generating
+    # scientific preparation in docs/tests. Historical policies remain valid.
+    if role == 'daily-governance-triage' and action == 'implement':
+        if any(not (fnmatchcase(path, 'docs/**') or fnmatchcase(path, 'tests/**')) for path in request['paths']):
+            raise ValueError('Pre-Game research preparation must be docs/tests only')
     budgets = request['budgets']
     if not isinstance(budgets, dict) or set(budgets) != set(policy['budget_caps']):
         raise ValueError('request must declare all budget dimensions')
     for name, amount in budgets.items():
         if type(amount) is not int or not 0 <= amount <= policy['budget_caps'][name]:
             raise ValueError('experiment budget outside standing cap')
+    if role == 'daily-governance-triage' and action == 'implement' and budgets['worlds'] != 0:
+        raise ValueError('Pre-Game research preparation cannot generate worlds')
     if not isinstance(request['evidence_refs'], list):
         raise ValueError('evidence_refs must be a list')
     if (action in {'activate', 'terminalize', 'merge'} or routes_quest_state) and not request['evidence_refs']:

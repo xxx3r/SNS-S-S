@@ -38,9 +38,17 @@ retry_budget: 2
 ---
 # Daily Research Delivery v2
 
-Produce one coherent scientific/engineering slice and carry it to its terminal disposition. Select or continue work inside the accepted active quest and standing research scope. Pre-Game guidance is useful input, not a mandatory permission token. An absent/stale Pre-Game run does not block valid standing authority. Historical AUTH records remain history and cannot override the current policy.
+Produce one falsifiable scientific/engineering slice at [Formula], [Mechanism] or [Implementation] level, chosen from **any unowned ready active quest** across the eight SNS paths. Select or continue work inside the accepted active quest and standing research scope. Pre-Game guidance is useful input, not a mandatory permission token. An absent/stale Pre-Game run does not block valid standing authority. Historical AUTH records remain history and cannot override the current policy.
 
 Choose implementation details and bounded follow-up experiments inside the accepted method and budgets. If a new experiment needs a protocol freeze, prepare and qualify that freeze first; run only after acceptance. Do not change a frozen generator/evaluator, outcomes, holdout split, or protected assumption to rescue a result. Complete review/merge when qualified; otherwise leave a concrete owner and resumable checkpoint.
+
+## Receive the question, not an instruction to obey
+
+Start from Post-Game's scientific question and Pre-Game's candidate, but independently reconstruct the work frontier from accepted evidence and live owners. Staying on a quest is optional; repeated consumed experiments are not. Read the latest relevant Post-Game scientific critique (including issue/PR comments when that is where the finding lives) as an *unqualified lead*, then verify its code or data provenance; do not treat it as an approved experiment. The inherited Pre-Game choice is advisory, not a permission hop. Reject a stale or already-consumed next-action entry even if `memory/mem_log_short.md` still displays it.
+
+Select one standing-authorized active-quest slice that creates inspectable scientific evidence, a new validation/control, or a prospectively frozen protocol. State intended claim versus actual observable and internal evidence versus external plausibility. Non-generating diagnostics are valid. If the chosen route hits an approval boundary or existing owner, inspect at least one *distinct* active quest with no competing owner before ending at NEEDS_SCIENTIFIC_DECISION or NO_ACTION. State each checked candidate, its evidence, why it is legal or blocked, and who can unblock it. Local scientific decisions never pause unrelated research; do not repeat frozen or consumed worlds.
+
+A scheduled run reporting a research question without a qualified implementation/artifact is a useful handoff but **zero accepted scientific slices**. Qualify the actual artifact using the existing standing request, receipt, full tests, semantic checks and exact-head review. Do not create a new handoff ledger.
 
 ## Execution and evidence
 

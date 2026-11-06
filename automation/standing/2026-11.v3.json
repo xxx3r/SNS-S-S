@@ -1,0 +1,127 @@
+{
+  "schema": "sns.standing-authority.v1",
+  "policy_id": "STAND-20261106-SNS-RESEARCH-WHEEL-V3",
+  "authority": "explicit-human",
+  "recorded_at": "2026-11-06T18:30:00Z",
+  "review_at": "2026-11-15T18:00:00Z",
+  "expires_at": "2026-12-01T07:00:00Z",
+  "research_scopes": {
+    "thermal-storage": "Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.",
+    "swarm-power": "Existing illumination, coverage, GEO delivery and beam-control models.",
+    "materials": "PV degradation and metasurface abstraction within declared material assumptions.",
+    "resource-intelligence": "ARCI score/confidence and synthetic target measurement.",
+    "research-tooling": "Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.",
+    "public-synthesis": "Prepare research explanations; external publication belongs to Observatory."
+  },
+  "roles": {
+    "daily-governance-triage": {
+      "actions": [
+        "maintenance",
+        "merge",
+        "route",
+        "implement"
+      ],
+      "max_transactions": 2,
+      "write_surfaces": [
+        "automation/runs/**",
+        "automation/pr_lifecycle/**",
+        "src/**",
+        "experiments/**",
+        "configs/**",
+        "tests/**",
+        "outputs/**",
+        "docs/**",
+        "scripts/**"
+      ]
+    },
+    "daily-research-operator": {
+      "actions": [
+        "implement",
+        "merge"
+      ],
+      "max_transactions": 1,
+      "write_surfaces": [
+        "automation/runs/**",
+        "automation/pr_lifecycle/**",
+        "src/**",
+        "experiments/**",
+        "configs/**",
+        "tests/**",
+        "outputs/**",
+        "docs/**"
+      ]
+    },
+    "weekly-evidence-synthesis": {
+      "actions": [
+        "literature",
+        "implement",
+        "merge",
+        "route"
+      ],
+      "max_transactions": 2,
+      "write_surfaces": [
+        "automation/runs/**",
+        "automation/pr_lifecycle/**",
+        "src/**",
+        "experiments/**",
+        "configs/**",
+        "tests/**",
+        "outputs/**",
+        "docs/**",
+        "quests/**",
+        "memory/mem_log_short.md",
+        "scripts/**",
+        "calendar/evidence/**",
+        "calendar/belief_events/**",
+        "calendar/roundups/**",
+        "automation/quest_history/**"
+      ]
+    },
+    "monthly-governance": {
+      "actions": [
+        "govern",
+        "literature",
+        "merge"
+      ],
+      "max_transactions": 1,
+      "write_surfaces": [
+        "automation/runs/**",
+        "automation/pr_lifecycle/**",
+        "quests/**",
+        "memory/mem_log_short.md",
+        "calendar/**",
+        "automation/standing/**",
+        "automation/delegations/**"
+      ]
+    },
+    "post-game-research": {
+      "actions": [
+        "implement",
+        "merge"
+      ],
+      "max_transactions": 1,
+      "write_surfaces": [
+        "automation/runs/**",
+        "automation/pr_lifecycle/**",
+        "src/**",
+        "experiments/**",
+        "configs/**",
+        "tests/**",
+        "outputs/**",
+        "docs/**"
+      ]
+    }
+  },
+  "budget_caps": {
+    "worlds": 64,
+    "records": 100000,
+    "runtime_s": 600,
+    "disk_mb": 100
+  },
+  "required_checks": [
+    "python -m pytest -q",
+    "python -m automation.cli validate-repository",
+    "baseline-artifacts"
+  ],
+  "rationale": "Explicit human authorization Nov 6 2026: original eight-path scientific map, [Formula]/[Mechanism]/[Implementation], dual evidence confidence and unified daily wheel. Pre-Game gains only zero-world docs/tests research preparation, Weekly external literature action and proposal-only quest intake. Original science scopes, budgets, Daily/Post-Game/Monthly actions, sealed holdouts, physical decisions, historical policies and receipts remain intact. Scheduler changes require separately verified readback."
+}

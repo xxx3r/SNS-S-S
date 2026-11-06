@@ -9,6 +9,6 @@ Each run establishes the repository's current default-branch `main` head through
 
 Bind `AGENTS.md`, the active loop contract and decision state to the newly observed `CURRENT_MAIN_SHA`. Before publication or merge, observe default-branch HEAD again and refresh decision state if it moved. If current default-branch state cannot be observed, terminate with an explicit source-observation blocker rather than substituting a prior SHA.
 
-The `weekly-evidence-synthesis` ID is stable historical identity; its current role is Weekly Research Delivery. Observatory has a separate projection route. Tool mentions express intended use; connector availability must be observed, and optional Wolfram availability is never a provenance prerequisite.
+The `weekly-evidence-synthesis` ID is a stable historical identity; under Wheel v3 its present role is the **Weekly External Research Telescope**. The active source-bound contract supplies exact authority. The trio shares a question, not the previous agent's permission or stale SHA. Observatory has a separate projection route. Tool mentions express intended use; connector availability must be observed, and optional Wolfram availability is never a provenance prerequisite.
 
 The scheduler API exposes prompt, title, timing and enabled state. It does not expose a tool-attachment field here. Preserve existing connected task contexts, verify configuration readback, and distinguish that from a successful scheduled run.

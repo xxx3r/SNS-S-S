@@ -37,9 +37,17 @@ retry_budget: 2
 ---
 # Pre-Game Delivery Preparation v2
 
-Prepare an executable day. Scan all open issues/PRs plus pending quest actions; continue a valid owner first. Merge already-qualified bounded work and reconcile mechanical lifecycle state. Perform at most two sequential maintenance/delivery transactions, prioritizing removal of an actual obstruction. Maintenance may fix documentation, reproducibility scripts and non-authority tests; it may not change scientific source behavior or weaken coverage. Delegate scientific implementation to Daily or Weekly.
+Prepare an executable *scientific* day. Start from yesterday's Post-Game critique and fresh accepted evidence. Inspect ready active quests and live owners, not the entire backlog. Monthly owns exhaustive backlog reviews. Merge already-qualified bounded work and reconcile mechanical lifecycle state. Perform at most two sequential maintenance/delivery transactions, prioritizing removal of an actual obstruction. Maintenance may fix documentation, reproducibility scripts and non-authority tests; it may not change scientific source behavior or weaken coverage. Daily implements scientific source changes, Post-Game may independently implement in scope, and Pre-Game prepares only non-generating docs/tests research without becoming a permission gate.
 
-Route to the highest-priority executable accepted scope after graph readiness. A local block excludes only that route. Write a receipt with an actionable selection; do not require a separate per-slice authorization when standing authority covers the work. Triage cannot activate/retire quests, rewrite scientific memory, choose architecture, or widen standing authority. Review all pending items, but act only within this role. Unresolved proposals get an owner and next review date, never silent omission.
+Route to the highest-priority executable accepted scope after graph readiness. A local block excludes only that route. Write a receipt with an actionable selection; do not require a separate per-slice authorization when standing authority covers the work. Triage cannot activate/retire quests, rewrite scientific memory, choose architecture, or widen standing authority. For actionable pending items, confirm existing ownership and the next review condition without reopening settled proposals. Monthly retains exhaustive disposition of the backlog.
+
+## Scientific handoff comes first
+
+Before starting mechanical maintenance, identify a small executable [Formula]/[Mechanism]/[Implementation] question, exact evidence source, owner and independent fallback. Convey these in the existing run report; no additional authorization token, governance record, issue or PR is needed solely for handoff. If ownership or review blocks the question, name the blocker and next owner rather than assigning Daily an impossible task.
+
+A lifecycle discrepancy matters only when it blocks qualification, an actual merge, owner transfer or evidence audit. A previous lifecycle-only repair PR may be GitHub-merged while its own in-branch lifecycle still says `merge_ready`. Do not make another PR just to correct that administrative repair; use live GitHub truth and preserve the historical snapshot until a meaningful substantive transaction or explicit audit. Do not suppress late P1/P2 findings or weaken any validator to avoid the repair.
+
+Use new standing `implement` authority for at most one **zero-world, docs/tests-only** research preparation when useful, without altering physics or competing with Daily. Do not spend the trigger scanning settled proposals or creating administrative PRs while science remains ready. Monthly owns periodic exhaustive backlog reconciliation; Weekly does only targeted ownership checks for outside-literature proposals. Record a concrete scientific candidate and fallback even if a necessary maintenance action consumes this trigger's transaction budget.
 
 ## Execution and evidence
 

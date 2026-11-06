@@ -1,14 +1,14 @@
 # mem_log_short: November 2026 current state
 
-Authority: resolve `automation/standing/current.json` from fresh accepted main and read `calendar/monthly/2026-11.md`. The November Trio v2 policy is current, reviews on November 15, and expires at 2026-12-01T07:00:00Z. Dated entries below are decision history, not new execution authority.
+Authority: resolve `automation/standing/current.json` from fresh accepted main and read `calendar/monthly/2026-11.md`. The human-approved November Research Wheel v3 policy is current only after its reviewed PR and pointer land on accepted main; review November 15, expiry 2026-12-01T07:00:00Z. Prior v2 remains historical authority for its original runs. Dated entries below are decision history, not new execution authority.
 
 Current Program: SNS-S-S as formal research instrument
 
-Current Executable Quest: QST-SIM-0002
+Current Scientific Frontier: any unowned, graph-ready active quest inside standing scope; SIM2 observation-semantics audit is a candidate, not an exclusive assignment. See `docs/research/SNS_RESEARCH_WHEEL_V3.md`.
 
 Queue Note: QST-FUND-0001 and QST-META-0001 are completed at their accepted bounded scopes. QST-SYNTH-0001 R2 remains at a reserved scientific-decision boundary; QST-STOR-0002 remains active at P0 with only its fast-rotator surface route locally falsified.
 
-Current Step: PR #134's one-world QST-SIM-0003 replay is present on accepted main and reproduced every legacy summary, but its immutable receipt records that standing validation happened after computation. Preserve the merged bytes and do not repeat the world; do not promote its partition into qualified scientific evidence or a bottleneck claim. Route an independent, prospectively frozen QST-SIM-0002 baseline-versus-survey comparison under exactly two declared rotation regimes.
+Current Step: PR #139 accepted the prospectively frozen **four-case QST-SIM-0002 baseline/survey comparison** on November 1. The four synthetic worlds are consumed and must not be regenerated. The observed +10 fresh-bin-minute advantage is valid for its declared synthetic metric, but whether credited mode/region events represent operational sensing is an OPEN semantic question. PR #134's one-world SIM3 replay also must not be regenerated or promoted into qualified new physical evidence. Choose the smallest independent, non-generating source-bound SIM2 observation-eligibility audit, or another ready active quest with no competing owner.
 
 Last Evidence:
 
@@ -19,7 +19,7 @@ Last Evidence:
 - A matched 17-case architectural escape comparison found first discrete-grid survivors at 15 mm seed diameter, 15-minute eclipse duration, or 80 mW host-supplied thermostatic heat.
 - Mission-shadow work found no declared passive circular asteroid orbit that guarantees the 15-minute limit; surface-fixed deployment requires selected fast-rotator targets; active sunward hosted standoff changes the architecture by requiring navigation, propulsion, fault tolerance, and host service.
 - The accepted fast-rotator constraint-cost artifact corrected the illuminated heat-rejection path and triggered `FALSIFIED_ON_DECLARED_GRID`: zero simultaneous thermal passes across the declared emissivity/load grid.
-- QST-SIM-0002 now has reproducible finite-time stale coverage, but the identical body-fixed two-rotation schedule was non-informative about rotation-regime effects.
+- QST-SIM-0002 has reproducible finite-time stale coverage and PR #139's accepted four-case matrix; survey improves synthetic mean freshness by 10/1320 bin-minutes in both declared rotation periods. Operational sensing eligibility and event-level rotation sensitivity remain unverified; do not silently equate this synthetic metric with real sensing.
 - QST-CALENDAR-0001 has accepted fail-closed validation and deterministic proposal staging.
 - QST-META-0001 has mild numerical support for explicitly modeling steering angle and losses, not an SNS hardware or power-transfer claim.
 - QST-META-0001 is completed at its bounded abstraction scope after accepted PR #116 supplied the assumptions boundary and byte-bound tests.
@@ -34,11 +34,11 @@ Blockers / Known Limits:
 - Small weight perturbations causing major grade reversals would falsify the headline-grade framing and keep ARCI as a multidimensional dashboard.
 - Irregular asteroid geometry, tumbling, seasonal illumination, package qualification, PV degradation, pointing, receiver coupling, and communications remain open research boundaries.
 
-Aurora Score: A = 1.0 ∠ -20° | w_ext = 0.0
+Historical Aurora Score (not calibrated internal/external confidence): A = 1.0 ∠ -20° | w_ext = 0.0. Report actual claim-specific external and internal evidence separately in Wheel v3.
 
 Next Move (one shot):
 
-- Prospectively freeze one QST-SIM-0002 four-case matrix: baseline versus survey policy at two declared constant-rotation periods, with identical agents, duration, timestep, stale-window metric and budgets. Observation events must come from simulated scout/sensor motion rather than an identical body-fixed schedule. Report stale-coverage, survival and energy context; stop before irregular rotation, parameter search or mission-value claims. Keep SYNTH R2, PR #134 scientific adoption, and STOR architecture changes at their separate decision boundaries.
+- Candidate A: perform a **non-generating QST-SIM-0002 observation-eligibility audit** showing which agent modes/timestamps actually contribute the frozen freshness metric, without changing its evaluator, regeneration or physical interpretation. Candidate B: independently test QST-CALENDAR-0001 deterministic duplicate staging or another unowned active-quest microstep. Pre-Game, Daily and Post-Game may select/continue an eligible quest within Wheel v3 and its standing rules without Weekly approval. Maintain distinct [Formula]/[Mechanism]/[Implementation] levels and external/internal evidence. Keep SYNTH R2, SIM3 #134 adoption, and STOR architecture changes at their separate protected boundaries.
 
 The dated sections below preserve decision history. Their historical next moves
 are superseded by the Current Step and Next Move above; they are not live routes.
