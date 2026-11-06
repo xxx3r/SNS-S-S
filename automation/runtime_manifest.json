@@ -8,8 +8,8 @@
       "automation_title": "SNS Pre-Game Triage",
       "scheduler_managed": true,
       "desired_enabled": true,
-      "timing_mode": "flexible_schedule",
-      "schedule": "BEGIN:VEVENT\nDTSTART:20260808T100000\nRRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR,SA;BYHOUR=10;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+      "timing_mode": "exact_schedule",
+      "schedule": "BEGIN:VEVENT\nDTSTART:20260803T120000Z\nRRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR,SA;BYHOUR=6;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
       "order": 10
     },
     {
