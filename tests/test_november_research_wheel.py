@@ -53,3 +53,14 @@ def test_program_map_levels_dual_confidence_and_source_freshness():
         prompt=render_bootstrap_prompt(role)
         assert "SNS_RESEARCH_WHEEL_V3.md" in prompt
         assert "CURRENT_MAIN_SHA" in prompt
+
+def test_v3_weekly_external_ownership_and_monthly_backlog_are_consistent():
+    ownership=json.loads((ROOT/"automation/state_ownership.json").read_text())
+    for row in ownership["surfaces"]:
+        if row["path"] in {"calendar/evidence/**","calendar/belief_events/**","calendar/roundups/**"}:
+            assert row["weekly"]=="write"
+            assert "Weekly owns independent external literature" in row["reconciliation"]
+            assert "Monthly owns external literature" not in row["reconciliation"]
+    pre=(ROOT/"automation/contracts/daily-governance-triage.v2.md").read_text()
+    assert "Monthly owns periodic exhaustive backlog reconciliation" in pre
+    assert "Weekly owns complete backlog reconciliation" not in pre
