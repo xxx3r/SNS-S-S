@@ -1,0 +1,247 @@
+{
+  "artifacts": [
+    "experiments/sim2_observation_eligibility_audit.py",
+    "tests/test_sim2_observation_eligibility_audit.py",
+    "outputs/qst_sim_0002/observation_eligibility_audit.json",
+    "docs/research/sim2_observation_eligibility_audit.md",
+    "automation/runs/2026/11/RUN-20261106T195630000000Z-daily-research-operator-58aa646c639d89a7eb1f.json",
+    "automation/pr_lifecycle/149.json"
+  ],
+  "belief_effects": [],
+  "checks": [
+    {
+      "evidence": "Fresh unpinned GitHub reads established main at bf51c46d39d3e7318fdeafe1f6ed020a4a45a92c; AGENTS.md, Research Wheel v3, and the sole active Daily v2 contract were fetched at that exact source.",
+      "name": "fresh default-branch source observation",
+      "status": "passed"
+    },
+    {
+      "evidence": "The one-transaction swarm-power request passed validate-standing-request under STAND-20261106-SNS-RESEARCH-WHEEL-V3 with zero worlds, zero records, 60 runtime seconds, and 2 MB.",
+      "name": "standing request validation",
+      "status": "passed"
+    },
+    {
+      "evidence": "Local full pytest passed 316 tests; hosted tests run 42285527034 passed on implementation head 8952b1d8b85dd53acee165e8df754379fa0c0d01. The receipt-bearing head must repeat this gate before merge.",
+      "name": "python -m pytest -q",
+      "status": "passed"
+    },
+    {
+      "evidence": "Local semantic repository validation passed on the implementation tree. The receipt-bearing head must pass the hosted automation transaction before merge.",
+      "name": "python -m automation.cli validate-repository",
+      "status": "passed"
+    },
+    {
+      "evidence": "Local baseline artifact qualification and hosted run 42285527231 passed on implementation head 8952b1d8b85dd53acee165e8df754379fa0c0d01. The receipt-bearing head must repeat this gate before merge.",
+      "name": "baseline-artifacts",
+      "status": "passed"
+    },
+    {
+      "evidence": "Focused tests replace Simulation construction with a failing sentinel, reproduce the audit artifact byte-for-byte, and verify the accepted four-case result SHA-256 is unchanged.",
+      "name": "non-generating audit",
+      "status": "passed"
+    },
+    {
+      "evidence": "Requested only after the immutable receipt and lifecycle record land on the final PR head.",
+      "name": "exact-head semantic review",
+      "status": "not_run"
+    },
+    {
+      "evidence": "Drive confirms GitHub is authoritative. Calendar already contains the November 15 scientific review gate, so no duplicate event was created.",
+      "name": "Drive and Calendar corroboration",
+      "status": "passed"
+    }
+  ],
+  "consumed_ids": [],
+  "contract_version": "2.0.0",
+  "created_at": "2026-11-06T20:09:25.757003Z",
+  "decision_effect": "Confirmed from accepted source that SIM2 credits every SCOUT/SENSOR role after every step without a mode gate and that its aggregate output contains no event trace; preserved the accepted result and all four consumed worlds unchanged.",
+  "inheritance": [
+    {
+      "decision_effect": "Reinterprets only the declared metric semantics of the accepted four-case aggregate; it does not repeat or supersede the experiment.",
+      "kind": "artifact",
+      "ref": "outputs/qst_sim_0002/rotation_policy_comparison.json"
+    }
+  ],
+  "loop_id": "daily-research-operator",
+  "next_action": "Post-Game should independently test whether a prospectively frozen event trace can distinguish operational sensing eligibility and rotation-sensitive history without regenerating the accepted four worlds; independent fallback is a non-generating QST-CALENDAR-0001 duplicate-staging audit.",
+  "observability": {
+    "administrative_transactions": 1,
+    "continuity": "inherited",
+    "scientific_artifacts": 1
+  },
+  "pr_context": {
+    "implementation_head": "8952b1d8b85dd53acee165e8df754379fa0c0d01",
+    "lifecycle_record_path": "automation/pr_lifecycle/149.json",
+    "publication_branch": "daily/sim2-observation-eligibility-audit-20261106",
+    "publication_pull_request": 149,
+    "target_pull_requests": [
+      149
+    ]
+  },
+  "quest_context": {
+    "acceptance_slice": "Non-generating QST-SIM-0002 observation-eligibility and metric-semantics audit",
+    "claim_boundary": "The accepted +10 fresh-bin-minute aggregate remains valid for its declared role-only synthetic metric, but it does not establish operational sensing eligibility, event-level rotation sensitivity, physical sensing, hardware readiness, or mission performance.",
+    "quest_id": "QST-SIM-0002",
+    "result": "SIM2_ROLE_ONLY_OBSERVATION_CREDIT_CONFIRMED",
+    "scope": "swarm-power"
+  },
+  "receipt_kind": "run",
+  "run_id": "RUN-20261106T195630000000Z-daily-research-operator-58aa646c639d89a7eb1f",
+  "schema": "sns.loop-run.v2",
+  "source_commit": "bf51c46d39d3e7318fdeafe1f6ed020a4a45a92c",
+  "standing_execution": {
+    "policy_json": "{\n  \"schema\": \"sns.standing-authority.v1\",\n  \"policy_id\": \"STAND-20261106-SNS-RESEARCH-WHEEL-V3\",\n  \"authority\": \"explicit-human\",\n  \"recorded_at\": \"2026-11-06T18:30:00Z\",\n  \"review_at\": \"2026-11-15T18:00:00Z\",\n  \"expires_at\": \"2026-12-01T07:00:00Z\",\n  \"research_scopes\": {\n    \"thermal-storage\": \"Declared thermal, storage, eclipse and survival model questions; protected architecture choices remain reserved.\",\n    \"swarm-power\": \"Existing illumination, coverage, GEO delivery and beam-control models.\",\n    \"materials\": \"PV degradation and metasurface abstraction within declared material assumptions.\",\n    \"resource-intelligence\": \"ARCI score/confidence and synthetic target measurement.\",\n    \"research-tooling\": \"Reproducibility, evidence parsing and research instrumentation; no authority/CI changes.\",\n    \"public-synthesis\": \"Prepare research explanations; external publication belongs to Observatory.\"\n  },\n  \"roles\": {\n    \"daily-governance-triage\": {\n      \"actions\": [\n        \"maintenance\",\n        \"merge\",\n        \"route\",\n        \"implement\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"scripts/**\"\n      ]\n    },\n    \"daily-research-operator\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    },\n    \"weekly-evidence-synthesis\": {\n      \"actions\": [\n        \"literature\",\n        \"implement\",\n        \"merge\",\n        \"route\"\n      ],\n      \"max_transactions\": 2,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"scripts/**\",\n        \"calendar/evidence/**\",\n        \"calendar/belief_events/**\",\n        \"calendar/roundups/**\",\n        \"automation/quest_history/**\"\n      ]\n    },\n    \"monthly-governance\": {\n      \"actions\": [\n        \"govern\",\n        \"literature\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"quests/**\",\n        \"memory/mem_log_short.md\",\n        \"calendar/**\",\n        \"automation/standing/**\",\n        \"automation/delegations/**\"\n      ]\n    },\n    \"post-game-research\": {\n      \"actions\": [\n        \"implement\",\n        \"merge\"\n      ],\n      \"max_transactions\": 1,\n      \"write_surfaces\": [\n        \"automation/runs/**\",\n        \"automation/pr_lifecycle/**\",\n        \"src/**\",\n        \"experiments/**\",\n        \"configs/**\",\n        \"tests/**\",\n        \"outputs/**\",\n        \"docs/**\"\n      ]\n    }\n  },\n  \"budget_caps\": {\n    \"worlds\": 64,\n    \"records\": 100000,\n    \"runtime_s\": 600,\n    \"disk_mb\": 100\n  },\n  \"required_checks\": [\n    \"python -m pytest -q\",\n    \"python -m automation.cli validate-repository\",\n    \"baseline-artifacts\"\n  ],\n  \"rationale\": \"Explicit human authorization Nov 6 2026: original eight-path scientific map, [Formula]/[Mechanism]/[Implementation], dual evidence confidence and unified daily wheel. Pre-Game gains only zero-world docs/tests research preparation, Weekly external literature action and proposal-only quest intake. Original science scopes, budgets, Daily/Post-Game/Monthly actions, sealed holdouts, physical decisions, historical policies and receipts remain intact. Scheduler changes require separately verified readback.\"\n}\n",
+    "requests": [
+      {
+        "acceptance_slice": "Non-generating QST-SIM-0002 observation-eligibility and metric-semantics audit",
+        "action": "implement",
+        "budgets": {
+          "disk_mb": 2,
+          "records": 0,
+          "runtime_s": 60,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "QST-SIM-0002 accepted four-case result sha256:672be0348dd6f766db62e81dc2768b291ccd773a9089261c100b67a893d1bf08",
+          "https://github.com/xxx3r/SNS-S-S/issues/103",
+          "https://github.com/xxx3r/SNS-S-S/pull/149",
+          "hosted tests run 42285527034",
+          "hosted baseline-artifacts run 42285527231"
+        ],
+        "loop_id": "daily-research-operator",
+        "paths": [
+          "experiments/sim2_observation_eligibility_audit.py",
+          "tests/test_sim2_observation_eligibility_audit.py",
+          "outputs/qst_sim_0002/observation_eligibility_audit.json",
+          "docs/research/sim2_observation_eligibility_audit.md",
+          "automation/runs/2026/11/RUN-20261106T195630000000Z-daily-research-operator-58aa646c639d89a7eb1f.json",
+          "automation/pr_lifecycle/149.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 1
+      },
+      {
+        "acceptance_slice": "Non-generating QST-SIM-0002 observation-eligibility and metric-semantics audit",
+        "action": "merge",
+        "budgets": {
+          "disk_mb": 2,
+          "records": 0,
+          "runtime_s": 60,
+          "worlds": 0
+        },
+        "evidence_refs": [
+          "https://github.com/xxx3r/SNS-S-S/pull/149",
+          "hosted tests run 42285527034",
+          "hosted baseline-artifacts run 42285527231",
+          "final exact-head automation transaction and semantic review required before merge"
+        ],
+        "loop_id": "daily-research-operator",
+        "paths": [
+          "experiments/sim2_observation_eligibility_audit.py",
+          "tests/test_sim2_observation_eligibility_audit.py",
+          "outputs/qst_sim_0002/observation_eligibility_audit.json",
+          "docs/research/sim2_observation_eligibility_audit.md",
+          "automation/runs/2026/11/RUN-20261106T195630000000Z-daily-research-operator-58aa646c639d89a7eb1f.json",
+          "automation/pr_lifecycle/149.json"
+        ],
+        "scope": "swarm-power",
+        "transaction_count": 1
+      }
+    ],
+    "trigger_id": "daily-research-operator:2026-11-06T19:56:30+00:00"
+  },
+  "state_snapshot": {
+    "fingerprint": "sha256:555394ca459c89a69a8fc70c333021b61504bdfac954261f81001a75bf891a8d",
+    "open_prs": [
+      {
+        "draft": true,
+        "head_sha": "2f256f008eeda10656fcd481691aecffe3240045",
+        "number": 132,
+        "state": "open"
+      },
+      {
+        "draft": false,
+        "head_sha": "908ff074fff2db62f9d16955bec0b8b2efe39403",
+        "number": 140,
+        "state": "open"
+      },
+      {
+        "draft": false,
+        "head_sha": "8952b1d8b85dd53acee165e8df754379fa0c0d01",
+        "number": 149,
+        "state": "open"
+      }
+    ],
+    "records": [
+      {
+        "git_blob_sha": "099b3a015df166af39bba09f6dbf7c7a325334b4",
+        "path": "outputs/qst_sim_0002/rotation_policy_comparison.json",
+        "role": "accepted_result"
+      },
+      {
+        "git_blob_sha": "29d50d589e9ef77b03f0140b0672e913b8f648a4",
+        "path": "automation/contracts/daily-research-operator.v2.md",
+        "role": "active_contract"
+      },
+      {
+        "git_blob_sha": "f83c7f33fa204262059f6a1c7f10367cb8406f7f",
+        "path": "quests/active/QST-SIM-0002-asteroid-illumination-model.md",
+        "role": "active_quest"
+      },
+      {
+        "git_blob_sha": "e04e7ae548cd6ccb941631696353ff820f90b9a7",
+        "path": "quests/active/README.md",
+        "role": "active_quest_index"
+      },
+      {
+        "git_blob_sha": "4a9ccd024eef8f7b05ed7eef3be5aa37cf425150",
+        "path": "memory/mem_log_short.md",
+        "role": "canonical_memory"
+      },
+      {
+        "git_blob_sha": "f6c176179fb75a3dce3fec9ed2b9b7ddcfee6ae2",
+        "path": "calendar/monthly/2026-11.md",
+        "role": "monthly_state"
+      },
+      {
+        "git_blob_sha": "2ffd3a06afff302111d42c17c9393ef0ae44d6d8",
+        "path": "quests/research_graph.json",
+        "role": "research_graph"
+      },
+      {
+        "git_blob_sha": "5dd394adac6c40b12a577aa4128eebb3c9509af8",
+        "path": "docs/research/SNS_RESEARCH_WHEEL_V3.md",
+        "role": "research_wheel"
+      },
+      {
+        "git_blob_sha": "c4280ca89db13a505cdf96f3a8b6b02bac3a93ee",
+        "path": "automation/runtime_manifest.json",
+        "role": "runtime_manifest"
+      },
+      {
+        "git_blob_sha": "0157fd5983471f04a6100a99efb6dc112caeb049",
+        "path": "AGENTS.md",
+        "role": "stable_law"
+      },
+      {
+        "git_blob_sha": "485bf094a5f88365d35b7e523b2252e6a64c249b",
+        "path": "automation/standing/2026-11.v3.json",
+        "role": "standing_authority"
+      },
+      {
+        "git_blob_sha": "7086a8f2b6e6da8f98bd5d03aee62cc4f07916d1",
+        "path": "automation/standing/current.json",
+        "role": "standing_pointer"
+      },
+      {
+        "git_blob_sha": "9eea9ee248554da95fff3aa39f5e4e2e361ca02b",
+        "path": "automation/state_ownership.json",
+        "role": "state_ownership"
+      }
+    ],
+    "schema": "sns.state-snapshot.v1",
+    "source_commit": "bf51c46d39d3e7318fdeafe1f6ed020a4a45a92c"
+  },
+  "terminal_state": "DONE_WITH_LIMITATIONS",
+  "trigger": "scheduled",
+  "trigger_time": "2026-11-06T19:56:30Z"
+}
