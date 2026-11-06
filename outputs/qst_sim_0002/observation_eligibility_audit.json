@@ -1,0 +1,67 @@
+{
+  "accepted_result_event_fields": [],
+  "accepted_source_commit": "bf51c46d39d3e7318fdeafe1f6ed020a4a45a92c",
+  "claim_boundary": "Source-semantics audit only; no fifth world, accepted-output rewrite, frozen-evaluator change, physical sensing claim, mission-value threshold or asteroid-performance conclusion.",
+  "confidence": {
+    "external": {
+      "claim": "No external sensing-performance or hardware-validity source is evaluated by this internal code audit.",
+      "direction": "unknown"
+    },
+    "internal": {
+      "claim": "The accepted synthetic metric credits every scout/sensor step by role and does not test operating mode.",
+      "direction": "up"
+    }
+  },
+  "declared_observation_rule": "After each simulated step, record the pre-move sampled region for every scout or sensor. Fresh coverage is one minus AsteroidWorld.stale_coverage_fraction over the fixed 600-second window. The survey policy may change later observations only through simulated agent motion.",
+  "findings": {
+    "event_level_occupancy_recoverable_from_accepted_result": false,
+    "operational_sensing_eligibility_demonstrated": false,
+    "role_only_credit_confirmed": true,
+    "rotation_directly_changes_region_identity": false
+  },
+  "generation": {
+    "records": 0,
+    "worlds": 0
+  },
+  "implemented_credit_gate": {
+    "checks_operating_mode": false,
+    "credited_roles": [
+      "scout",
+      "sensor"
+    ],
+    "predicate": "agent.role in {AgentRole.SCOUT, AgentRole.SENSOR}"
+  },
+  "interpretation": "The +10 fresh-bin-minute aggregate remains valid for the prospectively declared role-only synthetic metric, but it does not demonstrate operational sensing eligibility. Body rotation changes illumination and policy conditions, while region identity is computed directly from agent theta. The committed aggregate contains no event trace, so equal endpoint deltas cannot distinguish identical occupancy from summary information loss.",
+  "policy_modes_reachable_by_source": {
+    "baseline": [
+      "HARVEST",
+      "SLEEP"
+    ],
+    "survey": [
+      "COMM_BEAM",
+      "HARVEST",
+      "IDLE",
+      "MOVE",
+      "SCOUT",
+      "SLEEP"
+    ]
+  },
+  "quest_id": "QST-SIM-0002",
+  "region_identity": {
+    "directly_references_rotation_rate": false,
+    "parameters": [
+      "theta"
+    ]
+  },
+  "schema": "sns.qst-sim-0002.observation-eligibility-audit.v1",
+  "smallest_next_test": "Prospectively freeze event telemetry containing timestamp, role, operating mode, sampled region and an explicit sensing-eligibility predicate before any future non-repeated SIM2 comparison.",
+  "source_sha256": {
+    "accepted_result": "672be0348dd6f766db62e81dc2768b291ccd773a9089261c100b67a893d1bf08",
+    "agent": "9c717b138c3ab0af37280bd23b58bf3650024e9b0abf5c5942ffc8c290681951",
+    "experiment": "dc95b95a5ae6a7022cd7c6606cec60786de25dc204f3690b95bba8815932b290",
+    "policies": "831ee151d051775c91a0f072c168fcd29e4a68c0ee632750d3a5917c27ea3a8a",
+    "protocol": "e3242cb1d9ac7de50851d843f851e4548784a1ce9f378638cb9c078ba7021140",
+    "world": "ad37fc97a70560f79c803ef82067d6330201badaed356d8fe7c699f5b25c1d46"
+  },
+  "synthetic": true
+}
