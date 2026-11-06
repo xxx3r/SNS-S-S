@@ -10,7 +10,7 @@ import ast
 import hashlib
 import json
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 
 SCHEMA = "sns.qst-sim-0002.observation-eligibility-audit.v1"
@@ -25,8 +25,8 @@ SOURCE_PATHS = {
 }
 
 
-def _sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+def _sha256(payload: bytes) -> str:
+    return hashlib.sha256(payload).hexdigest()
 
 
 def _function(tree: ast.AST, name: str) -> ast.FunctionDef:
@@ -103,24 +103,34 @@ def _region_inputs(world_source: str) -> dict[str, Any]:
     }
 
 
-def audit_repository(root: str | Path, *, accepted_source_commit: str) -> dict[str, Any]:
+def audit_repository(
+    root: str | Path,
+    *,
+    accepted_source_commit: str,
+    source_loader: Callable[[str], bytes] | None = None,
+) -> dict[str, Any]:
     """Return a deterministic audit of the frozen metric without simulation."""
     base = Path(root)
-    source_files = {name: base / path for name, path in SOURCE_PATHS.items()}
-    for path in source_files.values():
-        if not path.is_file():
-            raise ValueError(f"missing audit source: {path.relative_to(base)}")
+    if source_loader is None:
+        def source_loader(path: str) -> bytes:
+            source = base / path
+            if not source.is_file():
+                raise ValueError(f"missing audit source: {path}")
+            return source.read_bytes()
 
-    protocol = json.loads(source_files["protocol"].read_text(encoding="utf-8"))
-    accepted = json.loads(source_files["accepted_result"].read_text(encoding="utf-8"))
+    source_bytes = {name: source_loader(path) for name, path in SOURCE_PATHS.items()}
+    source_text = {name: payload.decode("utf-8") for name, payload in source_bytes.items()}
+
+    protocol = json.loads(source_text["protocol"])
+    accepted = json.loads(source_text["accepted_result"])
     if protocol.get("quest_id") != QUEST_ID or accepted.get("quest_id") != QUEST_ID:
         raise ValueError("unexpected SIM2 source identity")
     if accepted.get("world_count") != 4 or accepted.get("agent_step_records") != 2880:
         raise ValueError("accepted SIM2 result identity changed")
 
-    gate = _credit_gate(source_files["experiment"].read_text(encoding="utf-8"))
-    policy_source = source_files["policies"].read_text(encoding="utf-8")
-    region = _region_inputs(source_files["world"].read_text(encoding="utf-8"))
+    gate = _credit_gate(source_text["experiment"])
+    policy_source = source_text["policies"]
+    region = _region_inputs(source_text["world"])
     case_keys = set().union(*(case.keys() for case in accepted["cases"]))
     event_fields = sorted(key for key in case_keys if "event" in key or "observation" in key or "trace" in key)
 
@@ -130,7 +140,7 @@ def audit_repository(root: str | Path, *, accepted_source_commit: str) -> dict[s
         "accepted_source_commit": accepted_source_commit,
         "synthetic": True,
         "generation": {"worlds": 0, "records": 0},
-        "source_sha256": {name: _sha256(path) for name, path in sorted(source_files.items())},
+        "source_sha256": {name: _sha256(payload) for name, payload in sorted(source_bytes.items())},
         "declared_observation_rule": protocol["observation_rule"],
         "implemented_credit_gate": gate,
         "policy_modes_reachable_by_source": {

@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 
 import pytest
 
@@ -25,9 +26,22 @@ def test_audit_reproduces_committed_artifact_without_simulation(monkeypatch: pyt
         raise AssertionError("the source audit must not instantiate Simulation")
 
     monkeypatch.setattr(simulation.Simulation, "__init__", forbidden)
+    def pinned_source(path: str) -> bytes:
+        return subprocess.check_output(["git", "-C", str(ROOT), "show", f"{SOURCE_COMMIT}:{path}"])
+
     expected = json.loads(AUDIT.read_text(encoding="utf-8"))
-    assert audit_repository(ROOT, accepted_source_commit=SOURCE_COMMIT) == expected
+    assert audit_repository(
+        ROOT,
+        accepted_source_commit=SOURCE_COMMIT,
+        source_loader=pinned_source,
+    ) == expected
     assert expected["generation"] == {"worlds": 0, "records": 0}
+
+
+def test_current_source_still_has_role_only_credit() -> None:
+    current = audit_repository(ROOT, accepted_source_commit="CURRENT_WORKTREE")
+    assert current["findings"]["role_only_credit_confirmed"] is True
+    assert current["implemented_credit_gate"]["checks_operating_mode"] is False
 
 
 def test_role_only_credit_is_confirmed_but_physical_sensing_is_not() -> None:

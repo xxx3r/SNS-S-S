@@ -20,7 +20,7 @@
       "status": "passed"
     },
     {
-      "evidence": "Local full pytest passed 316 tests; hosted tests run 42285527034 passed on implementation head 8952b1d8b85dd53acee165e8df754379fa0c0d01. The receipt-bearing head must repeat this gate before merge.",
+      "evidence": "Local full pytest passed 317 tests after repairing historical-source replay; hosted tests run 42285527034 passed on implementation head 8952b1d8b85dd53acee165e8df754379fa0c0d01. The repaired receipt-bearing head must repeat this gate before merge.",
       "name": "python -m pytest -q",
       "status": "passed"
     },
@@ -35,7 +35,7 @@
       "status": "passed"
     },
     {
-      "evidence": "Focused tests replace Simulation construction with a failing sentinel, reproduce the audit artifact byte-for-byte, and verify the accepted four-case result SHA-256 is unchanged.",
+      "evidence": "Focused tests replace Simulation construction with a failing sentinel, reproduce the historical audit from git-show bytes pinned to accepted source bf51c46d39d3e7318fdeafe1f6ed020a4a45a92c, test current-source semantics separately, and verify the accepted four-case result SHA-256 is unchanged.",
       "name": "non-generating audit",
       "status": "passed"
     },
