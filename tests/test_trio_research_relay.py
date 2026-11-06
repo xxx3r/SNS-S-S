@@ -28,7 +28,7 @@ def test_relay_uses_existing_receipts_instead_of_new_approval_hops():
     assert "Do not create a new governance ledger" in law
     assert "A quest-local NEEDS_SCIENTIFIC_DECISION" in law
     assert "Never open a PR solely to mark the previous lifecycle-only" in law
-    assert "full open-issue/PR" in law
+    assert "Monthly periodically owns exhaustive PR/issue" in law
 
 
 def test_roles_share_relay_but_retain_distinct_authority():
@@ -39,7 +39,7 @@ def test_roles_share_relay_but_retain_distinct_authority():
     assert "Do not make another PR just to correct" in pre
     assert "at least one *distinct* active quest" in daily
     assert "zero accepted science" in post
-    assert "already-executed protocol" in weekly
+    assert "Under current Wheel v3 standing authority" in weekly
     for text in (pre, daily, post):
         assert "validate-standing-request" in text
 

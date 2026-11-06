@@ -26,7 +26,7 @@ def test_postgame_contract_runtime_and_slot_order():
     rows={r["loop_id"]:r for r in manifest["loops"]}
     assert rows["daily-governance-triage"]["order"] < rows["daily-research-operator"]["order"] < rows["post-game-research"]["order"]
     assert rows["post-game-research"]["order"] < rows["weekly-evidence-synthesis"]["order"]
-    assert sum(bool(r["desired_enabled"]) for r in manifest["loops"] if r["scheduler_managed"]) == 5
+    assert sum(bool(r["desired_enabled"]) for r in manifest["loops"] if r["scheduler_managed"]) == 4
 
 def test_postgame_is_a_new_policy_only():
     old=load("automation/standing/2026-10.v1.json")
@@ -65,10 +65,9 @@ def test_postgame_ownership_is_explicit_and_readonly_on_controls():
 
 def test_stable_law_and_manifest_agree_on_five_slots():
     text=(ROOT / "AGENTS.md").read_text()
-    assert "Pre-Game, Daily, Post-Game, Weekly and Observatory" in text
+    assert "Pre-Game, Daily, Post-Game and Weekly" in text
     assert "prioritize Daily Vector, Pre-Game" not in text
     manifest=load("automation/runtime_manifest.json")
     names={r["automation_title"] for r in manifest["loops"] if r["scheduler_managed"] and r["desired_enabled"]}
     assert names == {"SNS Pre-Game Triage", "SNS Daily Research Operator",
-                     "SNS Post-Game Research", "SNS Weekly Research Delivery",
-                     "SNS Daily Observatory Refresh"}
+                     "SNS Post-Game Research", "SNS Weekly Research Delivery"}

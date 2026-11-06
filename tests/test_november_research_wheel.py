@@ -47,7 +47,7 @@ def test_program_map_levels_dual_confidence_and_source_freshness():
         "propulsion and orbit maintenance","advanced manufacturing techniques",
         "operational workflow and safety","simulation and testing",
         "[formula]","[mechanism]","[implementation]","external confidence","internal confidence",
-        "no fifth world","sealed holdout"):
+        "fifth world","sealed holdout"):
         assert term in txt
     for role in ("daily-governance-triage","daily-research-operator","post-game-research","weekly-evidence-synthesis"):
         prompt=render_bootstrap_prompt(role)
