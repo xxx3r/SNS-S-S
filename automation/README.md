@@ -17,7 +17,7 @@ platform safety / explicit human instruction
   -> historical records and older plans
 ```
 
-Pre-Game routes and authorizes. Daily executes. Weekly proposes from evidence. Monthly governs shared state. Audit observes and recommends.
+Under Wheel v3, Pre-Game, Daily and Post-Game form a continuous scientific question→test→critique wheel. Each can select unowned, graph-ready active research without waiting for another agent's approval; Pre-Game may run only non-generating docs/tests preparation. Weekly is primarily an external literature telescope proposing falsifiable connections with separate external confidence; Monthly owns strategic governance. See `docs/research/SNS_RESEARCH_WHEEL_V3.md` and current standing policy. Audit observes and recommends.
 
 ## Four organization layers
 

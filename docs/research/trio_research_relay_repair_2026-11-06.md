@@ -1,5 +1,7 @@
 # SNS-S-S Research Relay repair | November 6, 2026
 
+**Historical proposal, superseded by the human-authorized SNS Research Wheel v3.** See `docs/research/SNS_RESEARCH_WHEEL_V3.md` and the accepted current standing policy for live instructions. The original draft below is retained as the audit trail, not an active veto.
+
 Status: **human-proposed, review-only**. This document does not itself grant runtime authority, accept an experiment, change a schedule or direct a merge.
 
 ## Mechanism
