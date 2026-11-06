@@ -24,6 +24,14 @@ _FRESH_SOURCE_HANDSHAKE = (
     "If a fresh default-branch observation cannot be made, stop as a source-observation blocker. "
 )
 
+_RESEARCH_WHEEL = (
+    "Operate the June eight-path SNS [Formula]→[Mechanism]→[Implementation] program. "
+    "Read docs/research/SNS_RESEARCH_WHEEL_V3.md at verified main. "
+    "Keep external literature confidence separate from internal experimental confidence. "
+    "Pre-Game, Daily and Post-Game form one scientific question→test→critique→next-question wheel, with freedom to choose lawful unowned active quests. "
+    "Weekly primarily searches independent papers, maps cross-path connections and proposes tests, never requiring a per-quest permission hop. "
+)
+
 _RESEARCH_RELAY = (
     "After the fresh source/ownership check, recover unresolved scientific questions from accepted results and the latest relevant Post-Game critique; "
     "treat these as candidate leads, never as standing authority or permission to repeat an experiment. "
@@ -46,6 +54,7 @@ def render_bootstrap_prompt(loop_id: str) -> str:
         f"Use @GitHub to operate xxx3r/SNS-S-S as loop `{loop_id}`. "
         + _FRESH_SOURCE_HANDSHAKE
         + "Resolve the one currently active repository contract for this loop ID at CURRENT_MAIN_SHA and follow its instructions. "
+        + (_RESEARCH_WHEEL if loop_id in {"daily-governance-triage", "daily-research-operator", "post-game-research", "weekly-evidence-synthesis"} else "")
         + (_RESEARCH_RELAY if loop_id in {"daily-governance-triage", "daily-research-operator", "post-game-research", "weekly-evidence-synthesis"} else "")
         + "Use connected @Google Drive and @Google Calendar when relevant; @Wolfram is optional. "
         "The repository owns scope, execution, validation and handoff; report the actual outcome and limitations."

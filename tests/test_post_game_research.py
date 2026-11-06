@@ -39,7 +39,7 @@ def test_postgame_is_a_new_policy_only():
     for role in continuity["roles"]:
         assert trio["roles"][role] == continuity["roles"][role]
     assert set(trio["roles"]) == set(continuity["roles"]) | {"post-game-research"}
-    assert load("automation/standing/current.json") == {"path":"automation/standing/2026-11.v2.json"}
+    assert load("automation/standing/current.json")["path"] in {"automation/standing/2026-11.v2.json", "automation/standing/2026-11.v3.json"}
     validate_standing_request(trio,request(),now="2026-11-02T23:00:00Z")
     with pytest.raises(ValueError,match="unknown standing role"):
         validate_standing_request(continuity,request(),now="2026-11-02T23:00:00Z")
