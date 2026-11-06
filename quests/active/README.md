@@ -23,7 +23,7 @@ Keep 1–8 active quests. Each quest must produce an inspectable artifact and st
 
 ## Selection rule
 
-Resolve `automation/standing/current.json` from freshly accepted main. The November Trio v2 policy is current, with a midmonth review on 2026-11-15 and expiry at 2026-12-01T07:00:00Z. Older policies remain historical replay authority only.
+Resolve `automation/standing/current.json` from freshly accepted main. The November Wheel v3 policy is current after qualified acceptance of its pointer, with a midmonth review on 2026-11-15 and expiry at 2026-12-01T07:00:00Z. Older policies remain historical replay authority only.
 
 QST-SYNTH-0001 R2 remains `NEEDS_SCIENTIFIC_DECISION`: electrical-failure useful delivery is unresolved in the accepted evaluator, so the sealed holdout stays untouched. QST-STOR-0002 remains P0 with only its declared fast-rotator route locally falsified.
 
@@ -31,4 +31,4 @@ QST-META-0001 completed after PR #116 accepted its missing assumptions boundary 
 
 PR #134's one-world SIM3 replay is present on main and must not be repeated. Its immutable receipt discloses post-execution standing validation, so this reconciliation does not promote the role/state partition into qualified scientific evidence or infer a bottleneck. QST-SIM-0003 remains active without another generation route.
 
-QST-SIM-0002 is the current work-conserving executable direction. Freeze one bounded comparison in which observation geometry actually depends on simulated agent motion: baseline versus survey policy under exactly two declared constant-rotation regimes, with stale-coverage windows, identical budgets, and explicit survival/energy context. Generate nothing until the prospective request and protocol qualify. Stop after the fixed four-case matrix; do not add irregular rotation, optimize policy, or make asteroid-mission claims. See `calendar/roundups/2026-11-01.md` and `quests/dispositions/2026-11-01.json`.
+QST-SIM-0002's fixed four-case experiment was **already accepted in PR #139 on November 1**; never regenerate the four worlds. A non-generating *observation-eligibility and metric-semantics* audit is one candidate next scientific step. It must test event credit versus valid sensing mode without altering frozen cases or inferring asteroid mission performance. Independent fallback: QST-CALENDAR-0001 deterministic staging/duplicate rejection or another ready unowned active quest. The three daily-wheel agents can move between eligible active quests and preserve independent ownership; no Weekly per-step permission is required. See `docs/research/SNS_RESEARCH_WHEEL_V3.md`, `calendar/roundups/2026-11-01.md` and `quests/dispositions/2026-11-01.json`.
