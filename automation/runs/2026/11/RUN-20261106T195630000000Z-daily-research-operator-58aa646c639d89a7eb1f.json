@@ -35,7 +35,7 @@
       "status": "passed"
     },
     {
-      "evidence": "Focused tests replace Simulation construction with a failing sentinel, reproduce the historical audit from git-show bytes pinned to accepted source bf51c46d39d3e7318fdeafe1f6ed020a4a45a92c, test current-source semantics separately, and verify the accepted four-case result SHA-256 is unchanged.",
+      "evidence": "Focused tests replace Simulation construction with a failing sentinel, reproduce the historical audit from git-show bytes pinned to accepted source bf51c46d39d3e7318fdeafe1f6ed020a4a45a92c, use the same pinned loader in the CLI entry point, test current-source semantics separately, and verify the accepted four-case result SHA-256 is unchanged.",
       "name": "non-generating audit",
       "status": "passed"
     },

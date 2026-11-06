@@ -5,11 +5,10 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-import subprocess
 
 import pytest
 
-from experiments.sim2_observation_eligibility_audit import audit_repository
+from experiments.sim2_observation_eligibility_audit import audit_repository, git_source_loader
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,14 +25,11 @@ def test_audit_reproduces_committed_artifact_without_simulation(monkeypatch: pyt
         raise AssertionError("the source audit must not instantiate Simulation")
 
     monkeypatch.setattr(simulation.Simulation, "__init__", forbidden)
-    def pinned_source(path: str) -> bytes:
-        return subprocess.check_output(["git", "-C", str(ROOT), "show", f"{SOURCE_COMMIT}:{path}"])
-
     expected = json.loads(AUDIT.read_text(encoding="utf-8"))
     assert audit_repository(
         ROOT,
         accepted_source_commit=SOURCE_COMMIT,
-        source_loader=pinned_source,
+        source_loader=git_source_loader(ROOT, SOURCE_COMMIT),
     ) == expected
     assert expected["generation"] == {"worlds": 0, "records": 0}
 

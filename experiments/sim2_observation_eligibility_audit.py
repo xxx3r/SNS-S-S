@@ -10,11 +10,14 @@ import ast
 import hashlib
 import json
 from pathlib import Path
+import re
+import subprocess
 from typing import Any, Callable
 
 
 SCHEMA = "sns.qst-sim-0002.observation-eligibility-audit.v1"
 QUEST_ID = "QST-SIM-0002"
+ACCEPTED_SOURCE_COMMIT = "bf51c46d39d3e7318fdeafe1f6ed020a4a45a92c"
 SOURCE_PATHS = {
     "protocol": "configs/qst_sim_0002_rotation_policy_comparison.json",
     "experiment": "experiments/sim2_rotation_policy_comparison.py",
@@ -27,6 +30,18 @@ SOURCE_PATHS = {
 
 def _sha256(payload: bytes) -> str:
     return hashlib.sha256(payload).hexdigest()
+
+
+def git_source_loader(root: str | Path, source_commit: str) -> Callable[[str], bytes]:
+    """Load audit inputs from one immutable Git commit, never the worktree."""
+    if not re.fullmatch(r"[0-9a-f]{40}", source_commit):
+        raise ValueError("source_commit must be a lowercase 40-character Git SHA")
+    base = Path(root)
+
+    def load(path: str) -> bytes:
+        return subprocess.check_output(["git", "-C", str(base), "show", f"{source_commit}:{path}"])
+
+    return load
 
 
 def _function(tree: ast.AST, name: str) -> ast.FunctionDef:
@@ -186,7 +201,11 @@ def audit_repository(
 def main() -> None:
     root = Path(__file__).resolve().parents[1]
     output = root / "outputs/qst_sim_0002/observation_eligibility_audit.json"
-    result = audit_repository(root, accepted_source_commit="bf51c46d39d3e7318fdeafe1f6ed020a4a45a92c")
+    result = audit_repository(
+        root,
+        accepted_source_commit=ACCEPTED_SOURCE_COMMIT,
+        source_loader=git_source_loader(root, ACCEPTED_SOURCE_COMMIT),
+    )
     output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps({"output": str(output), "worlds": 0, "records": 0}, sort_keys=True))
 
