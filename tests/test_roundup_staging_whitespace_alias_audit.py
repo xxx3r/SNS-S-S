@@ -69,3 +69,46 @@ def test_whitespace_alias_evades_duplicate_detection_in_current_source():
         ("QST-CALENDAR-0001 ", "propose_new"),
     ]
     assert all(a.authority == "proposal" for a in staged.quest_actions)
+
+
+def test_postgame_request_preflight_and_repository_semantics(tmp_path):
+    """Run the repository's own CLI checks on the hosted exact-source checkout.
+
+    These are structural/semantic checks, not an independent science review.
+    """
+    import json
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1]
+    request = {
+        "loop_id": "post-game-research",
+        "action": "implement",
+        "scope": "research-tooling",
+        "acceptance_slice": "QST-CALENDAR-0001 non-generating staging whitespace-alias counterexample",
+        "paths": [
+            "tests/test_roundup_staging_whitespace_alias_audit.py",
+            "docs/research/calendar_staging_alias_audit.md",
+            "outputs/qst_calendar_0001/staging_alias_audit.json",
+            "automation/runs/2026/11/RUN-20261106T224047953948Z-post-game-research-7fe2b0356d68a8359343.json",
+            "automation/pr_lifecycle/150.json",
+        ],
+        "budgets": {"worlds": 0, "records": 0, "runtime_s": 60, "disk_mb": 2},
+        "transaction_count": 1,
+        "evidence_refs": [
+            "https://github.com/xxx3r/SNS-S-S/pull/149",
+            "quests/active/QST-CALENDAR-0001-roundup-parser.md",
+        ],
+    }
+    request_file = tmp_path / "postgame_request.json"
+    request_file.write_text(json.dumps(request), encoding="utf-8")
+    subprocess.run(
+        [sys.executable, "-m", "automation.cli", "validate-standing-request",
+         "--request", str(request_file), "--now", "2026-11-06T22:40:47Z"],
+        cwd=root, check=True, capture_output=True, text=True,
+    )
+    subprocess.run(
+        [sys.executable, "-m", "automation.cli", "validate-repository"],
+        cwd=root, check=True, capture_output=True, text=True,
+    )
