@@ -1,0 +1,37 @@
+{
+  "schema": "sns.calendar-staging-alias-audit.v1",
+  "source_commit": "23d3bf568116d42d7ae91d1f8b451c3956299bc3",
+  "scope": "non-generating source-semantic reproduction",
+  "quest_id": "QST-CALENDAR-0001",
+  "question": "Does an unnormalized whitespace alias pass staged duplicate and existing-ID checks?",
+  "controls": [
+    {
+      "case": "exact existing",
+      "raw_id": "QST-CALENDAR-0001",
+      "classified_as": "refine_existing"
+    },
+    {
+      "case": "same-string duplicate",
+      "raw_id": "QST-CALENDAR-0001",
+      "classified_as": "rejected_duplicate"
+    }
+  ],
+  "counterexample": {
+    "pair": [
+      "QST-CALENDAR-0001",
+      "QST-CALENDAR-0001 "
+    ],
+    "classifications": [
+      "refine_existing",
+      "propose_new"
+    ],
+    "staged_as_proposals_only": true
+  },
+  "worlds_generated": 0,
+  "experimental_records_generated": 0,
+  "limits": [
+    "Isolated reproduction before hosted full-source verification",
+    "Not proof of accepted quest activation or downstream validator acceptance",
+    "No physical inference"
+  ]
+}
