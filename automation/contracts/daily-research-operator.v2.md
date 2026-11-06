@@ -42,6 +42,14 @@ Produce one coherent scientific/engineering slice and carry it to its terminal d
 
 Choose implementation details and bounded follow-up experiments inside the accepted method and budgets. If a new experiment needs a protocol freeze, prepare and qualify that freeze first; run only after acceptance. Do not change a frozen generator/evaluator, outcomes, holdout split, or protected assumption to rescue a result. Complete review/merge when qualified; otherwise leave a concrete owner and resumable checkpoint.
 
+## Receive the question, not an instruction to obey
+
+Reconstruct the work frontier from fresh accepted results and living owners. Read the latest relevant Post-Game scientific critique (including issue/PR comments when that is where the finding lives) as an *unqualified lead*, then verify its code or data provenance; do not treat it as an approved experiment. The inherited Pre-Game choice is advisory, not a permission hop. Reject a stale or already-consumed next-action entry even if `memory/mem_log_short.md` still displays it.
+
+Select one standing-authorized active-quest slice that creates inspectable scientific evidence, a new validation/control, or a prospectively frozen protocol. Non-generating diagnostics are valid. If the chosen route hits an approval boundary or existing owner, inspect at least one *distinct* active quest with no competing owner before ending at NEEDS_SCIENTIFIC_DECISION or NO_ACTION. State each checked candidate, its evidence, why it is legal or blocked, and who can unblock it. Local scientific decisions never pause unrelated research; do not repeat frozen or consumed worlds.
+
+A scheduled run reporting a research question without a qualified implementation/artifact is a useful handoff but **zero accepted scientific slices**. Qualify the actual artifact using the existing standing request, receipt, full tests, semantic checks and exact-head review. Do not create a new handoff ledger.
+
 ## Execution and evidence
 
 Follow AGENTS.md and the current standing policy. Before acting, run `python -m automation.cli validate-standing-request --request REQUEST.json --now CURRENT_UTC` or its repository-hosted equivalent. This checks structural authority; inspect the actual accepted quest, evidence, source and ownership too. A helper PASS does not establish scientific truth.

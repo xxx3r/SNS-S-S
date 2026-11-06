@@ -16,12 +16,18 @@ _REQUIRED_LOOP_IDS = {
 _TIMING_MODES = {"exact_schedule", "flexible_schedule", "condition_watch", "explicit_only"}
 
 _FRESH_SOURCE_HANDSHAKE = (
-    "Start every trigger by discarding repository SHA, active-contract selection, queue state, and next-action state inherited from prior runs; "
-    "prior scheduled-run context is history, never current repository authority. "
+    "Start every trigger by treating inherited repository SHA, active-contract selection, queue state, and next-action claims as unverified; "
+    "prior scheduled-run context is research history, never current repository authority. "
     "Make a fresh unpinned GitHub read of the xxx3r/SNS-S-S default branch main, record CURRENT_MAIN_SHA, and fetch AGENTS.md plus the current repository instructions at that exact SHA. "
     "Never adopt a source SHA solely from prior task or conversation context. "
     "Immediately before any publication or merge, re-read default-branch HEAD; if it moved, refresh decision state from the new head. "
     "If a fresh default-branch observation cannot be made, stop as a source-observation blocker. "
+)
+
+_RESEARCH_RELAY = (
+    "After the fresh source/ownership check, recover unresolved scientific questions from accepted results and the latest relevant Post-Game critique; "
+    "treat these as candidate leads, never as standing authority or permission to repeat an experiment. "
+    "Choose the smallest lawful evidence-producing action or document a concrete independent fallback and local blockers. "
 )
 
 
@@ -40,7 +46,8 @@ def render_bootstrap_prompt(loop_id: str) -> str:
         f"Use @GitHub to operate xxx3r/SNS-S-S as loop `{loop_id}`. "
         + _FRESH_SOURCE_HANDSHAKE
         + "Resolve the one currently active repository contract for this loop ID at CURRENT_MAIN_SHA and follow its instructions. "
-        "Use connected @Google Drive and @Google Calendar when relevant; @Wolfram is optional. "
+        + (_RESEARCH_RELAY if loop_id in {"daily-governance-triage", "daily-research-operator", "post-game-research", "weekly-evidence-synthesis"} else "")
+        + "Use connected @Google Drive and @Google Calendar when relevant; @Wolfram is optional. "
         "The repository owns scope, execution, validation and handoff; report the actual outcome and limitations."
     )
 

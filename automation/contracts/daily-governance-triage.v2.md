@@ -41,6 +41,14 @@ Prepare an executable day. Scan all open issues/PRs plus pending quest actions; 
 
 Route to the highest-priority executable accepted scope after graph readiness. A local block excludes only that route. Write a receipt with an actionable selection; do not require a separate per-slice authorization when standing authority covers the work. Triage cannot activate/retire quests, rewrite scientific memory, choose architecture, or widen standing authority. Review all pending items, but act only within this role. Unresolved proposals get an owner and next review date, never silent omission.
 
+## Scientific handoff comes first
+
+Before starting mechanical maintenance, identify the highest-priority *executable* accepted scientific question, its exact evidence source and current owner, plus one independent fallback. Convey these in the existing run report; no additional authorization token, governance record, issue or PR is needed solely for handoff. If ownership or review blocks the question, name the blocker and next owner rather than assigning Daily an impossible task.
+
+A lifecycle discrepancy matters only when it blocks qualification, an actual merge, owner transfer or evidence audit. A previous lifecycle-only repair PR may be GitHub-merged while its own in-branch lifecycle still says `merge_ready`. Do not make another PR just to correct that administrative repair; use live GitHub truth and preserve the historical snapshot until a meaningful substantive transaction or explicit audit. Do not suppress late P1/P2 findings or weaken any validator to avoid the repair.
+
+Do not spend the whole trigger scanning settled proposals or creating administrative PRs while an independent research route remains ready. Weekly owns complete backlog reconciliation. Record a concrete scientific candidate and fallback even if a necessary maintenance action consumes this trigger's transaction budget.
+
 ## Execution and evidence
 
 Follow AGENTS.md and the current standing policy. Before acting, run `python -m automation.cli validate-standing-request --request REQUEST.json --now CURRENT_UTC` or its repository-hosted equivalent. This checks structural authority; inspect the actual accepted quest, evidence, source and ownership too. A helper PASS does not establish scientific truth.

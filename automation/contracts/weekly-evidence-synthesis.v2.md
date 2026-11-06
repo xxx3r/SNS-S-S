@@ -51,6 +51,10 @@ For lifecycle changes, reconcile index, quest files, graph, disposition and cano
 
 Finish with next week's executable direction and the four metrics: accepted experimental artifacts, evidence-backed quest dispositions, waiting time, human interventions. No closure quota. Escalate genuine strategic uncertainty while completing independent delegated work.
 
+## Keep current research direction current
+
+After a qualified result consumes a scheduled experiment, update the canonical short memory, active-index next move and relevant disposition together when authorized, instead of leaving the already-executed protocol as the next task. Distinguish queued scientific leads from accepted experimental authority; do not convert noncanonical Post-Game comments into accepted results. Prioritize resolving existing Weekly-owned PRs and their substantive review/receipt findings over launching an overlapping successor. Include in the ordinary Weekly roundup one next evidence-producing question and a distinct lawful fallback, both with concrete source and owner; no extra handoff document or task token.
+
 ## Execution and evidence
 
 Follow AGENTS.md and the current standing policy. Before acting, run `python -m automation.cli validate-standing-request --request REQUEST.json --now CURRENT_UTC` or its repository-hosted equivalent. This checks structural authority; inspect the actual accepted quest, evidence, source and ownership too. A helper PASS does not establish scientific truth.
