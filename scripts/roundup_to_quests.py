@@ -43,20 +43,35 @@ def main() -> None:
     )
     roundup = parse_roundup(args.roundup)
     actions = quest_actions_from_roundup(roundup, active_quest_ids=active, all_quest_ids=all_ids)
-    args.out.mkdir(parents=True, exist_ok=True)
-
+    # Plan the complete proposal-only batch before writing any artifact.
+    # Event IDs are intentionally unique, but proposal Markdown paths are
+    # stable. Never allow a subsequent invocation to replace earlier evidence.
+    planned: list[tuple[Path, str]] = []
     for action in actions:
         event_path = args.out / f"{action.quest_action_id}.json"
-        event_path.write_text(json.dumps(action.as_event(), indent=2, sort_keys=True) + "\n", encoding="utf-8")
-        print(event_path)
+        event_content = json.dumps(action.as_event(), indent=2, sort_keys=True) + "\n"
         slug = action.quest.title.lower().replace(" ", "-")
         if action.action_type == "propose_new":
             proposal_path = args.out / f"{action.quest.quest_id.lower()}-{slug}.md"
-            proposal_path.write_text(render_quest_markdown(action.quest), encoding="utf-8")
+            proposal_content = render_quest_markdown(action.quest)
         else:
             proposal_path = args.out / f"refine-{action.quest.quest_id.lower()}-{slug}.md"
-            proposal_path.write_text(render_refinement_markdown(action), encoding="utf-8")
-        print(proposal_path)
+            proposal_content = render_refinement_markdown(action)
+        planned.extend(((event_path, event_content), (proposal_path, proposal_content)))
+
+    paths = [path for path, _ in planned]
+    if len(paths) != len(set(paths)):
+        raise ValueError("staging batch contains duplicate output paths")
+    for path in paths:
+        if path.exists():
+            raise FileExistsError(f"staging output already exists: {path}")
+
+    args.out.mkdir(parents=True, exist_ok=True)
+    for path, content in planned:
+        # Exclusive creation also prevents overwrites if another process races.
+        with path.open("x", encoding="utf-8") as stream:
+            stream.write(content)
+        print(path)
 
 
 if __name__ == "__main__":
